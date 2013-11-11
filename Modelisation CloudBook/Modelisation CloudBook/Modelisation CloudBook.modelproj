@@ -22,6 +22,13 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
+    <Content Include="Revocation d%27un ami.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Revocation d%27un ami.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Revocation d'un ami.sequencediagram</DependentUpon>
+    </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="Recherche d'un nouvel ami.sequencediagram">
       <SubType>Content</SubType>
