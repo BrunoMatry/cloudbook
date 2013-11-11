@@ -23,6 +23,13 @@
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
     <Folder Include="ModelDefinition\" />
+    <Content Include="Recherche d'un ami.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Recherche d'un ami.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Recherche d'un ami.sequencediagram</DependentUpon>
+    </Content>
     <Content Include="ModelDefinition\Modelisation CloudBook.uml">
       <SubType>Content</SubType>
     </Content>
