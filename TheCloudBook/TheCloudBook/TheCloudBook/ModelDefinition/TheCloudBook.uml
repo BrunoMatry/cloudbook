@@ -73,7 +73,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="5b2d0625-2e6b-4ee7-b8d5-4d6fa221307c"
-              LastKnownName="Changer l'historique d'une application"
+              LastKnownName="Mettre à jour l'historique d'une application"
               LastKnownLocation="TheCloudBook.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -93,6 +93,45 @@
                 <memberEnd
                   Id="acca2319-b56a-41ac-a81c-f0f0d29f5c9d"
                   name="Changer l'historique d'une application"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="d5d18e22-cfaf-4b6b-aaa8-a4ef07461446"
+            isDerived="false"
+            sourceEndRoleName="Utilisateur humain"
+            targetEndRoleName="Modifier les  données identifiant l'application"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="141f4a29-791f-4925-88a5-856c02f445e4"
+              LastKnownName="Modifier les  données identifiant l'application"
+              LastKnownLocation="TheCloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7aff6346-93ce-4001-969b-6cc54b33a23e"
+                  name="Utilisateur humain"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="779b9121-4fea-42fb-aa14-55e42c0e5d7d"
+                  name="Modifier les  données identifiant l'application"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -125,6 +164,13 @@
             <useCaseMoniker
               Id="5834f61f-80ce-4680-8c02-61a450fea3cb"
               LastKnownName="Intégrer la machine cliente sur le réseau gossip sous-jacent"
+              LastKnownLocation="TheCloudBook.uml" />
+          </include>
+          <include
+            Id="760b7d20-266d-48b5-a636-87e5e9a87145">
+            <useCaseMoniker
+              Id="22a31cd7-a30c-42df-8ef6-2cf7998bbe76"
+              LastKnownName="Entrer les données identifiant l'application"
               LastKnownLocation="TheCloudBook.uml" />
           </include>
         </additions>
@@ -185,7 +231,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="c8f3708b-964c-4443-99ed-ddc7c2c35688"
-              LastKnownName="Traiter une demande de partage d'information"
+              LastKnownName="Traiter une demande de partage d'informations"
               LastKnownLocation="TheCloudBook.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -332,13 +378,91 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="2242cf98-6385-4863-8545-4150eb90c353"
+            isDerived="false"
+            sourceEndRoleName="Application membre"
+            targetEndRoleName="Traitement de demande de partage"
+            isLeaf="false"
+            isAbstract="false">
+            <subsystemMoniker
+              Id="37e8b0b8-bf61-40d8-b817-1ef3ae2395a6"
+              LastKnownName="Traitement de demande de partage"
+              LastKnownLocation="TheCloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="58efb1fd-cd6e-4f50-bdac-e86802ccfd85"
+                  name="Application membre"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2400c23c-63fc-412e-84ae-125acd95c3b2"
+                  name="Traitement de demande de partage"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="912c780f-1f95-4055-a72e-b1a04115f861"
+            isDerived="false"
+            sourceEndRoleName="Application membre"
+            targetEndRoleName="Prise de mesures de performances"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="f5383fb2-323e-495b-a8a0-2884ffc6a543"
+              LastKnownName="Récupération de mesures de performances"
+              LastKnownLocation="TheCloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b23ac97e-467c-4a56-abf0-abb606c74866"
+                  name="Application membre"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fc5a2f3e-bb0a-4d37-bea2-aae555d3e71d"
+                  name="Prise de mesures de performances"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
       </actor>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <useCase
         Id="5b2d0625-2e6b-4ee7-b8d5-4d6fa221307c"
-        name="Changer l'historique d'une application"
+        name="Mettre à jour l'historique d'une application"
         isAbstract="false"
         isLeaf="false" />
     </packageHasNamedElement>
@@ -371,7 +495,7 @@
             isSubstitutable="false">
             <useCaseMoniker
               Id="c8f3708b-964c-4443-99ed-ddc7c2c35688"
-              LastKnownName="Traiter une demande de partage d'information"
+              LastKnownName="Traiter une demande de partage d'informations"
               LastKnownLocation="TheCloudBook.uml" />
           </generalization>
         </generalsInternal>
@@ -405,7 +529,7 @@
             isSubstitutable="false">
             <useCaseMoniker
               Id="c8f3708b-964c-4443-99ed-ddc7c2c35688"
-              LastKnownName="Traiter une demande de partage d'information"
+              LastKnownName="Traiter une demande de partage d'informations"
               LastKnownLocation="TheCloudBook.uml" />
           </generalization>
         </generalsInternal>
@@ -437,7 +561,7 @@
     <packageHasNamedElement>
       <useCase
         Id="c8f3708b-964c-4443-99ed-ddc7c2c35688"
-        name="Traiter une demande de partage d'information"
+        name="Traiter une demande de partage d'informations"
         isAbstract="false"
         isLeaf="false" />
     </packageHasNamedElement>
@@ -848,6 +972,13 @@
               LastKnownName="Prendre connaissance de l'initiateur"
               LastKnownLocation="TheCloudBook.uml" />
           </include>
+          <include
+            Id="06b7e0af-feea-4af5-a7ad-8507d741039b">
+            <useCaseMoniker
+              Id="eb28bda2-d286-4362-9639-4d275146f9c7"
+              LastKnownName="Réponse"
+              LastKnownLocation="TheCloudBook.uml" />
+          </include>
         </additions>
       </useCase>
     </packageHasNamedElement>
@@ -1019,6 +1150,42 @@
           </extend>
         </extendedCases>
       </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <subsystem
+        Id="37e8b0b8-bf61-40d8-b817-1ef3ae2395a6"
+        name="Traitement de demande de partage"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="f5383fb2-323e-495b-a8a0-2884ffc6a543"
+        name="Récupération de mesures de performances"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="eb28bda2-d286-4362-9639-4d275146f9c7"
+        name="Réponse"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="22a31cd7-a30c-42df-8ef6-2cf7998bbe76"
+        name="Entrer les données identifiant l'application"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="141f4a29-791f-4925-88a5-856c02f445e4"
+        name="Modifier les  données identifiant l'application"
+        isAbstract="false"
+        isLeaf="false" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

@@ -70,11 +70,11 @@
         <useCaseShapeMoniker Id="b0277722-3197-4756-8bd8-462ebf876b2e" />
       </nodes>
     </includeConnector>
-    <useCaseShape Id="3efedd1c-f537-4685-a26f-a12953fb508f" absoluteBounds="8.25, 2, 1, 0.75" customColor="238, 237, 131" heightOffset="0">
+    <useCaseShape Id="3efedd1c-f537-4685-a26f-a12953fb508f" absoluteBounds="8.25, 2, 1.5, 0.75" customColor="238, 237, 131" heightOffset="0">
       <useCaseMoniker Id="2ef583fa-c8c1-4370-8dec-50fc846197d8" LastKnownName="Ordonnancement des demandes" />
       <relativeChildShapes />
     </useCaseShape>
-    <includeConnector edgePoints="[(6.07576152873414 : 1.41227415034429); (8.29923847126586 : 2.21272584965571)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black" useCaseStereotype="«inclure»">
+    <includeConnector edgePoints="[(6.08190577431013 : 1.40230192477004); (8.37596227924662 : 2.16698742641554)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black" useCaseStereotype="«inclure»">
       <includeMoniker Id="22442604-a5b1-4081-a11b-77784c302e68" />
       <relativeChildShapes />
       <nodes>

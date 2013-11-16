@@ -44,6 +44,10 @@
             <useCaseMoniker Id="8779788f-2fc5-4b38-855c-cf36184272a4" LastKnownName="Prendre connaissance de l'initiateur" />
             <elementDefinition Id="e340169e-5934-4a9b-96e5-99081e2aaf7c" />
           </include>
+          <include Id="6a5a3c06-24ef-4c8e-842a-3e7a8a7d5e06">
+            <useCaseMoniker Id="361c639a-0bac-4575-947e-aa48775239c2" LastKnownName="Réponse" />
+            <elementDefinition Id="06b7e0af-feea-4af5-a7ad-8507d741039b" />
+          </include>
         </additions>
       </useCase>
     </useCaseModelRootHasTypes>
@@ -76,6 +80,11 @@
             <elementDefinition Id="a7e34ccb-6f87-4242-b0f6-b9dde96415c7" />
           </extend>
         </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="361c639a-0bac-4575-947e-aa48775239c2" name="Réponse" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="eb28bda2-d286-4362-9639-4d275146f9c7" />
       </useCase>
     </useCaseModelRootHasTypes>
   </packagedElements>

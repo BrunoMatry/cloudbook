@@ -22,7 +22,7 @@
             <elementDefinition Id="e95e8723-58a4-4611-9309-ede8fe3bea37" />
           </association>
           <association Id="b266acbd-d414-4c1e-86e7-3097e5abd038" isDerived="false" sourceEndRoleName="Utilisateur" targetEndRoleName="Changer l'historique d'une application" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="9149bf2c-ef50-4f80-a6a1-c7e8c7d06998" LastKnownName="Changer l'historique d'une application" />
+            <useCaseMoniker Id="9149bf2c-ef50-4f80-a6a1-c7e8c7d06998" LastKnownName="Mettre à jour l'historique d'une application" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="da3ed81c-bd51-485f-bab0-3578976f4c3b" name="Utilisateur" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -37,6 +37,22 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="973ccf6a-fd07-4e9f-89de-22f5dabc5adc" />
           </association>
+          <association Id="6c8c5bf8-845e-4a8d-bb32-f619f939eeb3" isDerived="false" sourceEndRoleName="Utilisateur humain" targetEndRoleName="Modifier les  données identifiant l'application" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="8c4a8578-74f5-4149-8111-b3bbb4c7d882" LastKnownName="Modifier les  données identifiant l'application" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a563a96c-3b17-44c4-bd9b-e1ff3b51e99e" name="Utilisateur humain" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="7aff6346-93ce-4001-969b-6cc54b33a23e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ecfea945-6330-4c6e-ad05-74d9056f4027" name="Modifier les  données identifiant l'application" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="779b9121-4fea-42fb-aa14-55e42c0e5d7d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d5d18e22-cfaf-4b6b-aaa8-a4ef07461446" />
+          </association>
         </targetEnds>
       </actor>
     </useCaseModelRootHasTypes>
@@ -47,6 +63,10 @@
           <include Id="86294a98-26d6-48a9-a378-8d9b0ea4d9ee">
             <useCaseMoniker Id="0eb7ed52-a656-4bea-86c2-f7a33f681c31" LastKnownName="Intégrer la machine cliente sur le réseau gossip sous-jacent" />
             <elementDefinition Id="562d11ae-ceb7-4798-a656-a6ff8b952af6" />
+          </include>
+          <include Id="37a58180-995c-443b-911a-62fe7e712459">
+            <useCaseMoniker Id="890b1228-8d49-4535-8559-c5c61cede47a" LastKnownName="Entrer les données identifiant l'application" />
+            <elementDefinition Id="760b7d20-266d-48b5-a636-87e5e9a87145" />
           </include>
         </additions>
       </useCase>
@@ -72,7 +92,7 @@
             <elementDefinition Id="a17078a5-1188-4c7b-9c34-e1b216819711" />
           </association>
           <association Id="860e3504-b3bb-4a7c-82e9-eef4d00d27ef" isDerived="false" sourceEndRoleName="Application" targetEndRoleName="Traiter une question" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="ba68e1a2-79da-453a-917a-f3e5d0958639" LastKnownName="Traiter une demande de partage d'information" />
+            <useCaseMoniker Id="ba68e1a2-79da-453a-917a-f3e5d0958639" LastKnownName="Traiter une demande de partage d'informations" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="b5756620-0b29-4151-8dfd-206b50e37a42" name="Application" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -119,11 +139,27 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="7f8962fc-1e1a-473f-a49b-bba53407c5a0" />
           </association>
+          <association Id="1afe7168-8ba5-407d-8581-87f736868421" isDerived="false" sourceEndRoleName="Application membre" targetEndRoleName="Prise de mesures de performances" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="fa48a86f-7354-4529-b68d-b18a0474760f" LastKnownName="Récupération de mesures de performances" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fe85db85-e596-4527-b805-9d23e6190ec2" name="Application membre" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b23ac97e-467c-4a56-abf0-abb606c74866" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="92d40284-413b-462e-a512-03c5bee6a81c" name="Prise de mesures de performances" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="fc5a2f3e-bb0a-4d37-bea2-aae555d3e71d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="912c780f-1f95-4055-a72e-b1a04115f861" />
+          </association>
         </targetEnds>
       </actor>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="9149bf2c-ef50-4f80-a6a1-c7e8c7d06998" name="Changer l'historique d'une application" isAbstract="false" isLeaf="false">
+      <useCase Id="9149bf2c-ef50-4f80-a6a1-c7e8c7d06998" name="Mettre à jour l'historique d'une application" isAbstract="false" isLeaf="false">
         <elementDefinition Id="5b2d0625-2e6b-4ee7-b8d5-4d6fa221307c" />
       </useCase>
     </useCaseModelRootHasTypes>
@@ -133,32 +169,9 @@
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="ba68e1a2-79da-453a-917a-f3e5d0958639" name="Traiter une demande de partage d'information" isAbstract="false" isLeaf="false">
+      <useCase Id="ba68e1a2-79da-453a-917a-f3e5d0958639" name="Traiter une demande de partage d'informations" isAbstract="false" isLeaf="false">
         <elementDefinition Id="c8f3708b-964c-4443-99ed-ddc7c2c35688" />
       </useCase>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
-      <actor Id="49e62a30-936d-4a7b-a4db-7063ce8d06f0" name="Noeud &quot;maître&quot;" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="5d522c88-fb6b-4021-b2eb-93c9ca69a79f" />
-        <targetEnds>
-          <association Id="8de6444e-5c4f-45bf-9428-fbd4f2763d70" isDerived="false" sourceEndRoleName="Noeud &quot;maître&quot;" targetEndRoleName="Intégrer la machine cliente sur le réseau P2P sous-jacent" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="0eb7ed52-a656-4bea-86c2-f7a33f681c31" LastKnownName="Intégrer la machine cliente sur le réseau gossip sous-jacent" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="1f21a9ca-0d3a-4c4d-8384-bc1602a4b43c" name="Noeud &quot;maître&quot;" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="5c7002a0-3d22-4995-9276-bd66ffa42bd8" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="e417aae7-f6c7-4d3d-a9be-c971b847e6bb" name="Intégrer la machine cliente sur le réseau P2P sous-jacent" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="f6d2191f-6daf-497c-9e46-05c2ed53fef7" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="ce397784-25a2-40f6-9cb5-ee08d1c510ed" />
-          </association>
-        </targetEnds>
-      </actor>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
       <useCase Id="66f08572-9a70-4e5a-8064-1f314507fbc5" name="Création de liens d'amitié" isAbstract="false" isLeaf="false">
@@ -173,6 +186,21 @@
     <useCaseModelRootHasTypes>
       <useCase Id="49a5d1c9-40d4-4219-a0c0-a1c792d00333" name="Destruction de liens d'amitié" isAbstract="false" isLeaf="false">
         <elementDefinition Id="b481fc12-de6d-4c11-b6da-fd3c6c287256" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="fa48a86f-7354-4529-b68d-b18a0474760f" name="Récupération de mesures de performances" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f5383fb2-323e-495b-a8a0-2884ffc6a543" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="890b1228-8d49-4535-8559-c5c61cede47a" name="Entrer les données identifiant l'application" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="22a31cd7-a30c-42df-8ef6-2cf7998bbe76" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="8c4a8578-74f5-4149-8111-b3bbb4c7d882" name="Modifier les  données identifiant l'application" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="141f4a29-791f-4925-88a5-856c02f445e4" />
       </useCase>
     </useCaseModelRootHasTypes>
   </packagedElements>
