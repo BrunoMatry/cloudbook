@@ -1,35 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="0e14893e-0030-4229-8339-316f5d92b6dc" name="UMLUseCaseDiagram1" linkedPackageId="e83e1074-ee00-4506-b8c8-5fb379e2f606" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
-  <ownedCommentsInternal>
-    <comment Id="7863bfb7-305c-4cc1-9434-c0abf841e7db">
-      <elementDefinition Id="8a12104b-4dfc-471d-8156-38267262a521" />
-      <body>Sur la base de l'historique, qui doit donc déjà consister en un classement</body>
-      <annotatedElements>
-        <useCaseMoniker Id="ef66e2cb-991a-4ccf-b712-5f5a8f94a489" LastKnownName="Répondre à la question1" />
-      </annotatedElements>
-    </comment>
-  </ownedCommentsInternal>
-  <profileInstances>
-    <packageHasProfileInstances Id="c7c8fbb4-82a4-4140-b86b-19d8f1b6b0ac">
-      <profileInstance Id="cce85d55-8498-45b5-bc95-b53596f14b7f" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="96ad1191-7e7d-407d-8dfe-ffafd6f8ee13">
-      <profileInstance Id="28081454-2d93-469f-b86e-e786002a2be0" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <useCaseModelRootHasTypes>
-      <actor Id="09ae7087-1a91-420e-8225-73da1ee053d4" name="Application membre2" isAbstract="false" isLeaf="false">
+      <actor Id="09ae7087-1a91-420e-8225-73da1ee053d4" name="Application membre" isAbstract="false" isLeaf="false">
         <elementDefinition Id="2ecf93f0-8531-44e9-8cca-ca5f2820b0dc" />
         <targetEnds>
           <association Id="5b8482a7-546b-432b-a720-7c0360309f05" isDerived="false" sourceEndRoleName="Application" targetEndRoleName="Traiter une question" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="9769c8a2-ae6c-40fc-9154-ccfa4cf1595a" LastKnownName="Traiter une requête" />
+            <useCaseMoniker Id="9769c8a2-ae6c-40fc-9154-ccfa4cf1595a" LastKnownName="Traiter une  demande de partage d'information" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="bbc5084b-377d-4806-aeeb-07d6bfcb2331" name="Application" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -48,50 +25,36 @@
       </actor>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="9769c8a2-ae6c-40fc-9154-ccfa4cf1595a" name="Traiter une requête" isAbstract="false" isLeaf="false">
+      <useCase Id="9769c8a2-ae6c-40fc-9154-ccfa4cf1595a" name="Traiter une  demande de partage d'information" isAbstract="false" isLeaf="false">
         <elementDefinition Id="8e7aca54-c800-449b-ad2b-44f55c72d677" />
-      </useCase>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
-      <useCase Id="bfb811d8-c27a-4fed-9be3-66d2982f5210" name="Transmettre la requête" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="05477f3a-a1e4-4eff-9663-5ddf104f59a5" />
-        <generalsInternal>
-          <generalization Id="c298bfca-3e1b-416c-85a0-c1c741ab1937" isSubstitutable="false">
-            <useCaseMoniker Id="9769c8a2-ae6c-40fc-9154-ccfa4cf1595a" LastKnownName="Traiter une requête" />
-            <elementDefinition Id="6ff82bba-3f35-4aa5-9398-80096bfb6d87" />
-          </generalization>
-        </generalsInternal>
         <additions>
-          <include Id="0040e5e5-a0ca-4646-b8a1-d9f9c029ecc4">
-            <useCaseMoniker Id="c0949944-cee3-4aa1-a0a7-65d59bf6e546" LastKnownName="Transmettre la référence du noeud initiateur de la requête" />
-            <elementDefinition Id="d41656b2-6282-4cd0-8810-dd1bf2014df6" />
+          <include Id="c61c3080-efef-4b15-ae9c-51bba42f8049">
+            <useCaseMoniker Id="bfb811d8-c27a-4fed-9be3-66d2982f5210" LastKnownName="Effectuer pour soi-même la même demande" />
+            <elementDefinition Id="412108c7-07fb-4119-b73e-966831d52180" />
           </include>
-          <include Id="ff2c70c9-e609-4f1e-911d-dc30c7e3352e">
-            <useCaseMoniker Id="d56a81ce-e6d7-498f-aaed-e5ab8d1d0953" LastKnownName="Transemettre la question" />
-            <elementDefinition Id="acb3b845-5ffd-4a82-9d40-cee7e284a660" />
+          <include Id="033b2a97-1134-47a7-8583-d9787f948074">
+            <useCaseMoniker Id="5ab478b7-bdb9-4d8f-abec-f21aae24ba0f" LastKnownName="Partager ses informations avec l'initiateur" />
+            <elementDefinition Id="db2f40b3-82c9-49f9-acf2-130ed07ee66b" />
           </include>
-        </additions>
-      </useCase>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
-      <useCase Id="5ab478b7-bdb9-4d8f-abec-f21aae24ba0f" name="Répondre à la requête1" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="985016d3-6846-4f70-993d-f9de3f9e7450" />
-        <generalsInternal>
-          <generalization Id="3b672d1b-0723-4a07-90be-6afc4c679e75" isSubstitutable="false">
-            <useCaseMoniker Id="9769c8a2-ae6c-40fc-9154-ccfa4cf1595a" LastKnownName="Traiter une requête" />
-            <elementDefinition Id="10d1893c-31d8-4e6c-b711-a7ba18cc8468" />
-          </generalization>
-        </generalsInternal>
-        <additions>
-          <include Id="51b21096-075f-4064-87bd-9df04cc4f66d">
+          <include Id="83d1fb1e-5509-430b-a5c1-cb35acf3ed24">
+            <useCaseMoniker Id="0a129222-c8c9-4be8-b079-11effc24e838" LastKnownName="Classer les informations reçues selon un indice de pertinence" />
+            <elementDefinition Id="9071549f-652a-4638-9046-a41905b0796b" />
+          </include>
+          <include Id="1903889d-2705-4bd0-b372-490cfa150993">
             <useCaseMoniker Id="8779788f-2fc5-4b38-855c-cf36184272a4" LastKnownName="Prendre connaissance de l'initiateur" />
-            <elementDefinition Id="c3fac661-5e9c-42b5-a7aa-ef7d95e7c8dd" />
-          </include>
-          <include Id="1e02336f-eb0b-40e6-8dc2-456a3d78e2bf">
-            <useCaseMoniker Id="ef66e2cb-991a-4ccf-b712-5f5a8f94a489" LastKnownName="Répondre à la question1" />
-            <elementDefinition Id="3b9ba8f0-7921-4efb-8c86-ea5734077356" />
+            <elementDefinition Id="e340169e-5934-4a9b-96e5-99081e2aaf7c" />
           </include>
         </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="bfb811d8-c27a-4fed-9be3-66d2982f5210" name="Effectuer pour soi-même la même demande" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="05477f3a-a1e4-4eff-9663-5ddf104f59a5" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="5ab478b7-bdb9-4d8f-abec-f21aae24ba0f" name="Partager ses informations avec l'initiateur" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="985016d3-6846-4f70-993d-f9de3f9e7450" />
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
@@ -100,27 +63,17 @@
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="ef66e2cb-991a-4ccf-b712-5f5a8f94a489" name="Répondre à la question1" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="482e2be3-fda6-4e31-85fb-29843c57e69f" />
+      <useCase Id="0a129222-c8c9-4be8-b079-11effc24e838" name="Classer les informations reçues selon un indice de pertinence" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8ffb3c48-b160-4b0a-b2bf-f41df56a29d8" />
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="c0949944-cee3-4aa1-a0a7-65d59bf6e546" name="Transmettre la référence du noeud initiateur de la requête" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="cc1ca0f7-2a57-470e-9dc9-046f417938a5" />
-      </useCase>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
-      <useCase Id="d56a81ce-e6d7-498f-aaed-e5ab8d1d0953" name="Transemettre la question" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="a2f3cad2-7d4b-4581-9597-46703f62bd09" />
-      </useCase>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
-      <useCase Id="fa9de64f-98c5-4ac6-a3ef-06aadc191c42" name="Pas de voisins" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="a8040d13-b098-4ffd-a54a-f014d56f7b19" />
+      <useCase Id="b6a77553-ef91-4aa0-975a-a8ea60146ab5" name="Pas d'informations ajoutées" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="64cefa30-124c-4870-81cc-0f380f4fd3dc" />
         <extendedCases>
-          <extend Id="d054e8ad-c58d-4492-85c0-ace9095aab13">
-            <useCaseMoniker Id="bfb811d8-c27a-4fed-9be3-66d2982f5210" LastKnownName="Transmettre la requête" />
-            <elementDefinition Id="09d13790-c14e-4dc1-b9c7-aa978a754173" />
+          <extend Id="1c5f0ebf-2131-418b-ae98-245ce42cf968">
+            <useCaseMoniker Id="0a129222-c8c9-4be8-b079-11effc24e838" LastKnownName="Classer les informations reçues selon un indice de pertinence" />
+            <elementDefinition Id="a7e34ccb-6f87-4242-b0f6-b9dde96415c7" />
           </extend>
         </extendedCases>
       </useCase>
@@ -128,5 +81,19 @@
   </packagedElements>
   <package Id="e83e1074-ee00-4506-b8c8-5fb379e2f606" name="TheCloudBook">
     <elementDefinition Id="2eb59cff-69d0-40f9-a32e-8479acc1f02c" />
+    <profileInstances>
+      <packageHasProfileInstances Id="c7c8fbb4-82a4-4140-b86b-19d8f1b6b0ac">
+        <profileInstance Id="cce85d55-8498-45b5-bc95-b53596f14b7f" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="96ad1191-7e7d-407d-8dfe-ffafd6f8ee13">
+        <profileInstance Id="28081454-2d93-469f-b86e-e786002a2be0" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </useCaseModelRoot>

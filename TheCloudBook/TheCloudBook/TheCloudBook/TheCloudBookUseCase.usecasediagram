@@ -1,28 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="3360cb96-97a5-4bc6-b889-f101925634e6" name="UMLUseCaseDiagram1" linkedPackageId="4761545e-5f03-40c1-bc11-f83299c49e91" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
-  <ownedCommentsInternal>
-    <comment Id="9f1fac66-7fb5-417c-9d4c-4c8b3ad7b043">
-      <elementDefinition Id="51561224-7b03-44c1-a91a-6099febae457" />
-      <body>Module Politique de réponse</body>
-      <annotatedElements>
-        <useCaseMoniker Id="ba68e1a2-79da-453a-917a-f3e5d0958639" LastKnownName="Traiter une requête" />
-      </annotatedElements>
-    </comment>
-    <comment Id="1660d68d-31b3-41e7-ab11-b6059c9d5742">
-      <elementDefinition Id="4903653b-6a25-4f57-b34f-a630f7fcb890" />
-      <body>Utilisation du module de classification</body>
-      <annotatedElements>
-        <useCaseMoniker Id="c60de429-d9b9-4350-bb66-2e3b9d6b5514" LastKnownName="Création de liens initiaux" />
-      </annotatedElements>
-    </comment>
-    <comment Id="8b36f7f8-0160-492a-806d-9a44a226f551">
-      <elementDefinition Id="7a4d56ec-984f-455e-8880-e24e423b1adc" />
-      <body>au niveau P2P</body>
-      <annotatedElements>
-        <actorMoniker Id="49e62a30-936d-4a7b-a4db-7063ce8d06f0" LastKnownName="Noeud &quot;maître&quot;" />
-      </annotatedElements>
-    </comment>
-  </ownedCommentsInternal>
   <packagedElements>
     <useCaseModelRootHasTypes>
       <actor Id="480edc48-5b77-4a74-92c2-5581d22229a5" name="Utilisateur humain" isAbstract="false" isLeaf="false">
@@ -67,12 +44,8 @@
       <useCase Id="9410a90a-b536-49fb-af83-66188d9f6f88" name="Enregistrer une application sur le réseau" isAbstract="false" isLeaf="false">
         <elementDefinition Id="80ac585f-a7b4-4e98-89c0-2558eb727f05" />
         <additions>
-          <include Id="88d4d4ab-5f3d-4a8c-b3c9-4d461bb408f5">
-            <useCaseMoniker Id="c60de429-d9b9-4350-bb66-2e3b9d6b5514" LastKnownName="Création de liens initiaux" />
-            <elementDefinition Id="2b7ad208-c018-4dff-ae78-947d972ada9d" />
-          </include>
           <include Id="86294a98-26d6-48a9-a378-8d9b0ea4d9ee">
-            <useCaseMoniker Id="0eb7ed52-a656-4bea-86c2-f7a33f681c31" LastKnownName="Intégrer la machine cliente sur le réseau P2P sous-jacent" />
+            <useCaseMoniker Id="0eb7ed52-a656-4bea-86c2-f7a33f681c31" LastKnownName="Intégrer la machine cliente sur le réseau gossip sous-jacent" />
             <elementDefinition Id="562d11ae-ceb7-4798-a656-a6ff8b952af6" />
           </include>
         </additions>
@@ -83,7 +56,7 @@
         <elementDefinition Id="10cd778e-6077-4617-936e-a1dcd57c3377" />
         <targetEnds>
           <association Id="460fe800-6e7b-4f80-aa44-6676fc3ccdca" isDerived="false" sourceEndRoleName="Application" targetEndRoleName="Questionner" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="c16351ce-88c9-4f00-b2df-91e83a2a7dc5" LastKnownName="Questionner" />
+            <useCaseMoniker Id="c16351ce-88c9-4f00-b2df-91e83a2a7dc5" LastKnownName="Demander un partage d'informations" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="f0413eed-8436-40f7-9243-9e67a78eff97" name="Application" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -99,7 +72,7 @@
             <elementDefinition Id="a17078a5-1188-4c7b-9c34-e1b216819711" />
           </association>
           <association Id="860e3504-b3bb-4a7c-82e9-eef4d00d27ef" isDerived="false" sourceEndRoleName="Application" targetEndRoleName="Traiter une question" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="ba68e1a2-79da-453a-917a-f3e5d0958639" LastKnownName="Traiter une requête" />
+            <useCaseMoniker Id="ba68e1a2-79da-453a-917a-f3e5d0958639" LastKnownName="Traiter une demande de partage d'information" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="b5756620-0b29-4151-8dfd-206b50e37a42" name="Application" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -115,7 +88,7 @@
             <elementDefinition Id="4d498f5b-0054-4cdf-9232-341e345ed1c7" />
           </association>
           <association Id="b02936fb-7474-4fff-ab11-d6034e0e8450" isDerived="false" sourceEndRoleName="Application membre" targetEndRoleName="Création de liens &quot;d'amitié&quot; aléatoires" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="66f08572-9a70-4e5a-8064-1f314507fbc5" LastKnownName="Création de liens &quot;d'amitié&quot; " />
+            <useCaseMoniker Id="66f08572-9a70-4e5a-8064-1f314507fbc5" LastKnownName="Création de liens d'amitié" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="e01f6d3c-3dd5-4d13-9787-ca07de2b0c5d" name="Application membre" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -155,12 +128,12 @@
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="c16351ce-88c9-4f00-b2df-91e83a2a7dc5" name="Questionner" isAbstract="false" isLeaf="false">
+      <useCase Id="c16351ce-88c9-4f00-b2df-91e83a2a7dc5" name="Demander un partage d'informations" isAbstract="false" isLeaf="false">
         <elementDefinition Id="aeb70d3a-a3c3-488c-aefc-324fdd257517" />
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="ba68e1a2-79da-453a-917a-f3e5d0958639" name="Traiter une requête" isAbstract="false" isLeaf="false">
+      <useCase Id="ba68e1a2-79da-453a-917a-f3e5d0958639" name="Traiter une demande de partage d'information" isAbstract="false" isLeaf="false">
         <elementDefinition Id="c8f3708b-964c-4443-99ed-ddc7c2c35688" />
       </useCase>
     </useCaseModelRootHasTypes>
@@ -169,7 +142,7 @@
         <elementDefinition Id="5d522c88-fb6b-4021-b2eb-93c9ca69a79f" />
         <targetEnds>
           <association Id="8de6444e-5c4f-45bf-9428-fbd4f2763d70" isDerived="false" sourceEndRoleName="Noeud &quot;maître&quot;" targetEndRoleName="Intégrer la machine cliente sur le réseau P2P sous-jacent" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="0eb7ed52-a656-4bea-86c2-f7a33f681c31" LastKnownName="Intégrer la machine cliente sur le réseau P2P sous-jacent" />
+            <useCaseMoniker Id="0eb7ed52-a656-4bea-86c2-f7a33f681c31" LastKnownName="Intégrer la machine cliente sur le réseau gossip sous-jacent" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="1f21a9ca-0d3a-4c4d-8384-bc1602a4b43c" name="Noeud &quot;maître&quot;" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -188,42 +161,14 @@
       </actor>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="66f08572-9a70-4e5a-8064-1f314507fbc5" name="Création de liens &quot;d'amitié&quot; " isAbstract="false" isLeaf="false">
+      <useCase Id="66f08572-9a70-4e5a-8064-1f314507fbc5" name="Création de liens d'amitié" isAbstract="false" isLeaf="false">
         <elementDefinition Id="b24e053e-d03b-4f76-b06e-fa5797493520" />
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="c60de429-d9b9-4350-bb66-2e3b9d6b5514" name="Création de liens initiaux" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="ca95ea4d-e7da-40d7-b8e2-3d0a6f2ec342" />
-      </useCase>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
-      <useCase Id="0eb7ed52-a656-4bea-86c2-f7a33f681c31" name="Intégrer la machine cliente sur le réseau P2P sous-jacent" isAbstract="false" isLeaf="false">
+      <useCase Id="0eb7ed52-a656-4bea-86c2-f7a33f681c31" name="Intégrer la machine cliente sur le réseau gossip sous-jacent" isAbstract="false" isLeaf="false">
         <elementDefinition Id="5834f61f-80ce-4680-8c02-61a450fea3cb" />
       </useCase>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
-      <actor Id="45a273d8-2dc7-4609-bc3d-582e14b98cd2" name="Application membre" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="ea26d4ef-c900-4b1a-8ae2-373c03202a69" />
-        <targetEnds>
-          <association Id="1214409e-1b0e-447e-ab07-57b4d2870040" isDerived="false" sourceEndRoleName="Noeud courant" targetEndRoleName="Création de liens initiaux" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="c60de429-d9b9-4350-bb66-2e3b9d6b5514" LastKnownName="Création de liens initiaux" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="7742e1a8-5119-4558-96ba-3f08a5d47454" name="Noeud courant" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="d5cc057d-9b1b-4bf2-802c-3eff7bfa4ac1" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="939569a2-4ed1-4227-8fb4-c199aa2ab1da" name="Création de liens initiaux" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="3ab02080-699b-4a30-a567-030a4db13dc9" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="fe5b076a-3918-4b26-9343-369996971d97" />
-          </association>
-        </targetEnds>
-      </actor>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
       <useCase Id="49a5d1c9-40d4-4219-a0c0-a1c792d00333" name="Destruction de liens d'amitié" isAbstract="false" isLeaf="false">
