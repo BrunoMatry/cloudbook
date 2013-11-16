@@ -701,7 +701,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="0c5b1f2e-1b84-4e76-9716-c2c3ab1d8539"
-              LastKnownName="Questionner"
+              LastKnownName="Demander un partage d'informations"
               LastKnownLocation="TheCloudBook.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -737,7 +737,7 @@
     <packageHasNamedElement>
       <useCase
         Id="0c5b1f2e-1b84-4e76-9716-c2c3ab1d8539"
-        name="Questionner"
+        name="Demander un partage d'informations"
         isAbstract="false"
         isLeaf="false">
         <additions>
@@ -745,7 +745,21 @@
             Id="2db55f47-0d2e-4e59-9e46-9b60ec90648c">
             <useCaseMoniker
               Id="ce84bd5b-a3e4-4bad-ad4a-c9653646d486"
-              LastKnownName="Intégrer la réponse dans le classement du noeud courant"
+              LastKnownName="Classer les informations reçues selon un indice de pertinence"
+              LastKnownLocation="TheCloudBook.uml" />
+          </include>
+          <include
+            Id="2295c23b-e7b7-48df-be3e-d20d92383c18">
+            <useCaseMoniker
+              Id="6a73e2ac-c64b-4b07-9620-0c1f57374187"
+              LastKnownName="Choix des amis avec qui partager"
+              LastKnownLocation="TheCloudBook.uml" />
+          </include>
+          <include
+            Id="f4b02f95-9a4d-4e90-88cf-82161d2bdc90">
+            <useCaseMoniker
+              Id="8f135b75-8179-4f34-810e-d8de55779453"
+              LastKnownName="Envoi des demandes de partage"
               LastKnownLocation="TheCloudBook.uml" />
           </include>
         </additions>
@@ -754,22 +768,22 @@
     <packageHasNamedElement>
       <useCase
         Id="ce84bd5b-a3e4-4bad-ad4a-c9653646d486"
-        name="Intégrer la réponse dans le classement du noeud courant"
+        name="Classer les informations reçues selon un indice de pertinence"
         isAbstract="false"
         isLeaf="false" />
     </packageHasNamedElement>
     <packageHasNamedElement>
       <useCase
         Id="530131bc-1699-41d9-afd1-6f5685d97648"
-        name="Pas de voisins"
+        name="Pas d'amis, action impossible"
         isAbstract="false"
         isLeaf="false">
         <extendedCases>
           <extend
-            Id="bb61ed16-d538-4a67-9d70-0cc2f220a36d">
+            Id="cee06a2d-3fdf-43c0-878e-9bd3fe677f2b">
             <useCaseMoniker
-              Id="0c5b1f2e-1b84-4e76-9716-c2c3ab1d8539"
-              LastKnownName="Questionner"
+              Id="8f135b75-8179-4f34-810e-d8de55779453"
+              LastKnownName="Envoi des demandes de partage"
               LastKnownLocation="TheCloudBook.uml" />
           </extend>
         </extendedCases>
@@ -778,7 +792,7 @@
     <packageHasNamedElement>
       <useCase
         Id="27cc0690-279d-4844-b5cd-8e9719fcbc05"
-        name="Pas de réponse"
+        name="Pas d'informations ajoutées"
         isAbstract="false"
         isLeaf="false">
         <extendedCases>
@@ -786,7 +800,7 @@
             Id="83571784-c932-41df-b840-ec427db35d40">
             <useCaseMoniker
               Id="ce84bd5b-a3e4-4bad-ad4a-c9653646d486"
-              LastKnownName="Intégrer la réponse dans le classement du noeud courant"
+              LastKnownName="Classer les informations reçues selon un indice de pertinence"
               LastKnownLocation="TheCloudBook.uml" />
           </extend>
         </extendedCases>
@@ -965,6 +979,51 @@
       <useCase
         Id="b481fc12-de6d-4c11-b6da-fd3c6c287256"
         name="Destruction de liens d'amitié"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="6a73e2ac-c64b-4b07-9620-0c1f57374187"
+        name="Choix des amis avec qui partager"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="d91264b8-d030-4393-9691-1b6a6c68943b">
+            <useCaseMoniker
+              Id="dbfea762-907a-4a08-a18e-83c603345808"
+              LastKnownName="Sélection selon un indice de confiance"
+              LastKnownLocation="TheCloudBook.uml" />
+          </include>
+          <include
+            Id="5342898d-e50a-45d4-b3ef-72261bb75248">
+            <useCaseMoniker
+              Id="b1784bd0-30eb-4294-b820-aecc40ce7ac1"
+              LastKnownName="Ordonnancement des demandes"
+              LastKnownLocation="TheCloudBook.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="dbfea762-907a-4a08-a18e-83c603345808"
+        name="Sélection selon un indice de confiance"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="b1784bd0-30eb-4294-b820-aecc40ce7ac1"
+        name="Ordonnancement des demandes"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="8f135b75-8179-4f34-810e-d8de55779453"
+        name="Envoi des demandes de partage"
         isAbstract="false"
         isLeaf="false" />
     </packageHasNamedElement>
