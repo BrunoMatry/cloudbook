@@ -2,11 +2,11 @@
 <useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="dd9fb1d3-3dd4-4a79-927c-c5da13faabe3" name="UMLUseCaseDiagram1" linkedPackageId="c7f12140-c15f-4773-9a33-162908c03c9b" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
   <packagedElements>
     <useCaseModelRootHasTypes>
-      <actor Id="736dbc97-3f7c-4fee-9701-c993051d54c4" name="Application membre1" isAbstract="false" isLeaf="false">
+      <actor Id="736dbc97-3f7c-4fee-9701-c993051d54c4" name="Application membre" isAbstract="false" isLeaf="false">
         <elementDefinition Id="07f9a829-c9fa-49d6-813a-7b053680f043" />
         <targetEnds>
           <association Id="04aba13d-fb88-416b-bde2-03c93bd06868" isDerived="false" sourceEndRoleName="Application" targetEndRoleName="Questionner" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="43476025-5099-4dd7-8131-9ff9757b5f5c" LastKnownName="Demander un partage d'informations" />
+            <useCaseMoniker Id="43476025-5099-4dd7-8131-9ff9757b5f5c" LastKnownName="Partager des informations" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="69c51aff-d814-46b1-9d24-b41da6f98f79" name="Application" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -25,7 +25,7 @@
       </actor>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="43476025-5099-4dd7-8131-9ff9757b5f5c" name="Demander un partage d'informations" isAbstract="false" isLeaf="false">
+      <useCase Id="43476025-5099-4dd7-8131-9ff9757b5f5c" name="Partager des informations" isAbstract="false" isLeaf="false">
         <elementDefinition Id="0c5b1f2e-1b84-4e76-9716-c2c3ab1d8539" />
         <additions>
           <include Id="0f427fc7-f47e-43bb-a52c-47ef383715f5">
@@ -37,7 +37,7 @@
             <elementDefinition Id="2295c23b-e7b7-48df-be3e-d20d92383c18" />
           </include>
           <include Id="4eb082cc-937f-49ec-b625-a80a893f4192">
-            <useCaseMoniker Id="d82d1aa8-d8b4-42f7-8465-bda78108fa78" LastKnownName="Envoi des demandes de partage" />
+            <useCaseMoniker Id="d82d1aa8-d8b4-42f7-8465-bda78108fa78" LastKnownName="Initiation des partages" />
             <elementDefinition Id="f4b02f95-9a4d-4e90-88cf-82161d2bdc90" />
           </include>
         </additions>
@@ -53,7 +53,7 @@
         <elementDefinition Id="530131bc-1699-41d9-afd1-6f5685d97648" />
         <extendedCases>
           <extend Id="726cfb30-a481-4052-a753-86262ca66a10">
-            <useCaseMoniker Id="d82d1aa8-d8b4-42f7-8465-bda78108fa78" LastKnownName="Envoi des demandes de partage" />
+            <useCaseMoniker Id="d82d1aa8-d8b4-42f7-8465-bda78108fa78" LastKnownName="Initiation des partages" />
             <elementDefinition Id="cee06a2d-3fdf-43c0-878e-9bd3fe677f2b" />
           </extend>
         </extendedCases>
@@ -79,7 +79,7 @@
             <elementDefinition Id="d91264b8-d030-4393-9691-1b6a6c68943b" />
           </include>
           <include Id="22442604-a5b1-4081-a11b-77784c302e68">
-            <useCaseMoniker Id="2ef583fa-c8c1-4370-8dec-50fc846197d8" LastKnownName="Ordonnancement des demandes" />
+            <useCaseMoniker Id="2ef583fa-c8c1-4370-8dec-50fc846197d8" LastKnownName="Ordonnancement des partages" />
             <elementDefinition Id="5342898d-e50a-45d4-b3ef-72261bb75248" />
           </include>
         </additions>
@@ -91,12 +91,12 @@
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="2ef583fa-c8c1-4370-8dec-50fc846197d8" name="Ordonnancement des demandes" isAbstract="false" isLeaf="false">
+      <useCase Id="2ef583fa-c8c1-4370-8dec-50fc846197d8" name="Ordonnancement des partages" isAbstract="false" isLeaf="false">
         <elementDefinition Id="b1784bd0-30eb-4294-b820-aecc40ce7ac1" />
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="d82d1aa8-d8b4-42f7-8465-bda78108fa78" name="Envoi des demandes de partage" isAbstract="false" isLeaf="false">
+      <useCase Id="d82d1aa8-d8b4-42f7-8465-bda78108fa78" name="Initiation des partages" isAbstract="false" isLeaf="false">
         <elementDefinition Id="8f135b75-8179-4f34-810e-d8de55779453" />
       </useCase>
     </useCaseModelRootHasTypes>

@@ -6,7 +6,7 @@
         <elementDefinition Id="2ecf93f0-8531-44e9-8cca-ca5f2820b0dc" />
         <targetEnds>
           <association Id="5b8482a7-546b-432b-a720-7c0360309f05" isDerived="false" sourceEndRoleName="Application" targetEndRoleName="Traiter une question" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="9769c8a2-ae6c-40fc-9154-ccfa4cf1595a" LastKnownName="Traiter une  demande de partage d'information" />
+            <useCaseMoniker Id="9769c8a2-ae6c-40fc-9154-ccfa4cf1595a" LastKnownName="Traiter un partage d'information entrant" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="bbc5084b-377d-4806-aeeb-07d6bfcb2331" name="Application" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -25,11 +25,11 @@
       </actor>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="9769c8a2-ae6c-40fc-9154-ccfa4cf1595a" name="Traiter une  demande de partage d'information" isAbstract="false" isLeaf="false">
+      <useCase Id="9769c8a2-ae6c-40fc-9154-ccfa4cf1595a" name="Traiter un partage d'information entrant" isAbstract="false" isLeaf="false">
         <elementDefinition Id="8e7aca54-c800-449b-ad2b-44f55c72d677" />
         <additions>
           <include Id="c61c3080-efef-4b15-ae9c-51bba42f8049">
-            <useCaseMoniker Id="bfb811d8-c27a-4fed-9be3-66d2982f5210" LastKnownName="Effectuer pour soi-même la même demande" />
+            <useCaseMoniker Id="bfb811d8-c27a-4fed-9be3-66d2982f5210" LastKnownName="Effectuer pour soi-même le même partage" />
             <elementDefinition Id="412108c7-07fb-4119-b73e-966831d52180" />
           </include>
           <include Id="033b2a97-1134-47a7-8583-d9787f948074">
@@ -52,7 +52,7 @@
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="bfb811d8-c27a-4fed-9be3-66d2982f5210" name="Effectuer pour soi-même la même demande" isAbstract="false" isLeaf="false">
+      <useCase Id="bfb811d8-c27a-4fed-9be3-66d2982f5210" name="Effectuer pour soi-même le même partage" isAbstract="false" isLeaf="false">
         <elementDefinition Id="05477f3a-a1e4-4eff-9663-5ddf104f59a5" />
       </useCase>
     </useCaseModelRootHasTypes>

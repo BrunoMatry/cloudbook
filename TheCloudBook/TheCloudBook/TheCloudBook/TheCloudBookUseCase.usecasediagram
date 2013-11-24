@@ -76,7 +76,7 @@
         <elementDefinition Id="10cd778e-6077-4617-936e-a1dcd57c3377" />
         <targetEnds>
           <association Id="460fe800-6e7b-4f80-aa44-6676fc3ccdca" isDerived="false" sourceEndRoleName="Application" targetEndRoleName="Questionner" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="c16351ce-88c9-4f00-b2df-91e83a2a7dc5" LastKnownName="Demander un partage d'informations" />
+            <useCaseMoniker Id="c16351ce-88c9-4f00-b2df-91e83a2a7dc5" LastKnownName="Partager des informations" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="f0413eed-8436-40f7-9243-9e67a78eff97" name="Application" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -92,7 +92,7 @@
             <elementDefinition Id="a17078a5-1188-4c7b-9c34-e1b216819711" />
           </association>
           <association Id="860e3504-b3bb-4a7c-82e9-eef4d00d27ef" isDerived="false" sourceEndRoleName="Application" targetEndRoleName="Traiter une question" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="ba68e1a2-79da-453a-917a-f3e5d0958639" LastKnownName="Traiter une demande de partage d'informations" />
+            <useCaseMoniker Id="ba68e1a2-79da-453a-917a-f3e5d0958639" LastKnownName="Traiter un partage d'informations entrant" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="b5756620-0b29-4151-8dfd-206b50e37a42" name="Application" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -164,12 +164,12 @@
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="c16351ce-88c9-4f00-b2df-91e83a2a7dc5" name="Demander un partage d'informations" isAbstract="false" isLeaf="false">
+      <useCase Id="c16351ce-88c9-4f00-b2df-91e83a2a7dc5" name="Partager des informations" isAbstract="false" isLeaf="false">
         <elementDefinition Id="aeb70d3a-a3c3-488c-aefc-324fdd257517" />
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="ba68e1a2-79da-453a-917a-f3e5d0958639" name="Traiter une demande de partage d'informations" isAbstract="false" isLeaf="false">
+      <useCase Id="ba68e1a2-79da-453a-917a-f3e5d0958639" name="Traiter un partage d'informations entrant" isAbstract="false" isLeaf="false">
         <elementDefinition Id="c8f3708b-964c-4443-99ed-ddc7c2c35688" />
       </useCase>
     </useCaseModelRootHasTypes>

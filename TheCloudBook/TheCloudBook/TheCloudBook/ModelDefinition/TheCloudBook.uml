@@ -192,7 +192,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="aeb70d3a-a3c3-488c-aefc-324fdd257517"
-              LastKnownName="Demander un partage d'informations"
+              LastKnownName="Partager des informations"
               LastKnownLocation="TheCloudBook.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -231,7 +231,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="c8f3708b-964c-4443-99ed-ddc7c2c35688"
-              LastKnownName="Traiter une demande de partage d'informations"
+              LastKnownName="Traiter un partage d'informations entrant"
               LastKnownLocation="TheCloudBook.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -469,7 +469,7 @@
     <packageHasNamedElement>
       <useCase
         Id="aeb70d3a-a3c3-488c-aefc-324fdd257517"
-        name="Demander un partage d'informations"
+        name="Partager des informations"
         isAbstract="false"
         isLeaf="false">
         <additions>
@@ -495,7 +495,7 @@
             isSubstitutable="false">
             <useCaseMoniker
               Id="c8f3708b-964c-4443-99ed-ddc7c2c35688"
-              LastKnownName="Traiter une demande de partage d'informations"
+              LastKnownName="Traiter un partage d'informations entrant"
               LastKnownLocation="TheCloudBook.uml" />
           </generalization>
         </generalsInternal>
@@ -529,7 +529,7 @@
             isSubstitutable="false">
             <useCaseMoniker
               Id="c8f3708b-964c-4443-99ed-ddc7c2c35688"
-              LastKnownName="Traiter une demande de partage d'informations"
+              LastKnownName="Traiter un partage d'informations entrant"
               LastKnownLocation="TheCloudBook.uml" />
           </generalization>
         </generalsInternal>
@@ -561,7 +561,7 @@
     <packageHasNamedElement>
       <useCase
         Id="c8f3708b-964c-4443-99ed-ddc7c2c35688"
-        name="Traiter une demande de partage d'informations"
+        name="Traiter un partage d'informations entrant"
         isAbstract="false"
         isLeaf="false" />
     </packageHasNamedElement>
@@ -607,7 +607,7 @@
             Id="905e8f75-911c-4ff5-838f-8e5ddd5b7921">
             <useCaseMoniker
               Id="aeb70d3a-a3c3-488c-aefc-324fdd257517"
-              LastKnownName="Demander un partage d'informations"
+              LastKnownName="Partager des informations"
               LastKnownLocation="TheCloudBook.uml" />
           </extend>
           <extend
@@ -770,7 +770,7 @@
     <packageHasNamedElement>
       <actor
         Id="07f9a829-c9fa-49d6-813a-7b053680f043"
-        name="Application membre1"
+        name="Application membre"
         isAbstract="false"
         isLeaf="false">
         <targetEnds>
@@ -783,7 +783,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="0c5b1f2e-1b84-4e76-9716-c2c3ab1d8539"
-              LastKnownName="Demander un partage d'informations"
+              LastKnownName="Partager des informations"
               LastKnownLocation="TheCloudBook.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -819,7 +819,7 @@
     <packageHasNamedElement>
       <useCase
         Id="0c5b1f2e-1b84-4e76-9716-c2c3ab1d8539"
-        name="Demander un partage d'informations"
+        name="Partager des informations"
         isAbstract="false"
         isLeaf="false">
         <additions>
@@ -841,7 +841,7 @@
             Id="f4b02f95-9a4d-4e90-88cf-82161d2bdc90">
             <useCaseMoniker
               Id="8f135b75-8179-4f34-810e-d8de55779453"
-              LastKnownName="Envoi des demandes de partage"
+              LastKnownName="Initiation des partages"
               LastKnownLocation="TheCloudBook.uml" />
           </include>
         </additions>
@@ -865,7 +865,7 @@
             Id="cee06a2d-3fdf-43c0-878e-9bd3fe677f2b">
             <useCaseMoniker
               Id="8f135b75-8179-4f34-810e-d8de55779453"
-              LastKnownName="Envoi des demandes de partage"
+              LastKnownName="Initiation des partages"
               LastKnownLocation="TheCloudBook.uml" />
           </extend>
         </extendedCases>
@@ -904,7 +904,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="8e7aca54-c800-449b-ad2b-44f55c72d677"
-              LastKnownName="Traiter une  demande de partage d'information"
+              LastKnownName="Traiter un partage d'information entrant"
               LastKnownLocation="TheCloudBook.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -940,7 +940,7 @@
     <packageHasNamedElement>
       <useCase
         Id="8e7aca54-c800-449b-ad2b-44f55c72d677"
-        name="Traiter une  demande de partage d'information"
+        name="Traiter un partage d'information entrant"
         isAbstract="false"
         isLeaf="false">
         <additions>
@@ -948,7 +948,7 @@
             Id="412108c7-07fb-4119-b73e-966831d52180">
             <useCaseMoniker
               Id="05477f3a-a1e4-4eff-9663-5ddf104f59a5"
-              LastKnownName="Effectuer pour soi-même la même demande"
+              LastKnownName="Effectuer pour soi-même le même partage"
               LastKnownLocation="TheCloudBook.uml" />
           </include>
           <include
@@ -985,7 +985,7 @@
     <packageHasNamedElement>
       <useCase
         Id="05477f3a-a1e4-4eff-9663-5ddf104f59a5"
-        name="Effectuer pour soi-même la même demande"
+        name="Effectuer pour soi-même le même partage"
         isAbstract="false"
         isLeaf="false">
         <additions>
@@ -1062,7 +1062,7 @@
             Id="09d13790-c14e-4dc1-b9c7-aa978a754173">
             <useCaseMoniker
               Id="05477f3a-a1e4-4eff-9663-5ddf104f59a5"
-              LastKnownName="Effectuer pour soi-même la même demande"
+              LastKnownName="Effectuer pour soi-même le même partage"
               LastKnownLocation="TheCloudBook.uml" />
           </extend>
         </extendedCases>
@@ -1093,7 +1093,7 @@
             Id="5342898d-e50a-45d4-b3ef-72261bb75248">
             <useCaseMoniker
               Id="b1784bd0-30eb-4294-b820-aecc40ce7ac1"
-              LastKnownName="Ordonnancement des demandes"
+              LastKnownName="Ordonnancement des partages"
               LastKnownLocation="TheCloudBook.uml" />
           </include>
         </additions>
@@ -1109,14 +1109,14 @@
     <packageHasNamedElement>
       <useCase
         Id="b1784bd0-30eb-4294-b820-aecc40ce7ac1"
-        name="Ordonnancement des demandes"
+        name="Ordonnancement des partages"
         isAbstract="false"
         isLeaf="false" />
     </packageHasNamedElement>
     <packageHasNamedElement>
       <useCase
         Id="8f135b75-8179-4f34-810e-d8de55779453"
-        name="Envoi des demandes de partage"
+        name="Initiation des partages"
         isAbstract="false"
         isLeaf="false" />
     </packageHasNamedElement>
