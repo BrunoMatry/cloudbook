@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="472fe3aa-4398-423b-91e4-0e1ed8cb8cb8" name="UMLClassDiagram1" linkedPackageId="b637bb5b-ed56-4030-91f6-3f2e041e7580" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="844917df-435b-46c6-bfef-e536c4589713">
+      <profileInstance Id="2fec0c7d-946f-400a-a0aa-fdc17f7e48e1" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="e534730e-d781-4ece-97ff-f8c7c9f049e0">
+      <profileInstance Id="24906a77-a3d9-4c8a-98e3-36c290396603" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="161d3160-b58a-4337-bd18-ffab0dbeeb8d" name="gossip">
+        <elementDefinition Id="55558d22-dc21-4e1f-8d83-af0cefba501c" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="2ab860b6-8fcd-4503-8897-ac7287728a33" name="GossipMember" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="2e9ed8d0-d66c-47ac-908f-d3b172adfe13" />
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="d3ed7fee-f52c-43e0-9c61-f8d74b131278" name="thecloudbook">
+        <ownedCommentsInternal>
+          <comment Id="79085274-9587-411d-91d3-83ceca6355f5">
+            <elementDefinition Id="66857861-56db-4339-a7d6-e5663c45ddad" />
+            <body>Module gestion des amis se sert du module de traitement des données
+TODO : réfléchir à sa pertinence</body>
+          </comment>
+        </ownedCommentsInternal>
+        <elementDefinition Id="d51a486e-db98-415c-96e8-14b0b96ed34f" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="d82bbc62-7943-4274-9e41-23603a4cb856" name="Experience" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="47266ffb-a099-4678-aa89-2458661dc186" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="3f2f50d1-6635-40c5-8936-bd9a7431a657" name="Measure" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="0193963f-f479-45be-bbef-4e84678ab6b6" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="a5c18da1-110f-4db0-88fc-2552f545268f" name="AppNode" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="6b29daf6-ad3a-467f-a4c0-2d8d4a9f2f62" />
+              <generalsInternal>
+                <generalization Id="13fc6612-8627-4f96-a99d-8d034d70b74b" isSubstitutable="false">
+                  <classMoniker Id="2ab860b6-8fcd-4503-8897-ac7287728a33" LastKnownName="GossipMember" />
+                  <elementDefinition Id="ec8b8738-cba8-4318-98c7-247f32efda6e" />
+                </generalization>
+              </generalsInternal>
+              <targetEnds>
+                <association Id="7a890905-da02-4c6c-833e-ab16b16cb839" isDerived="false" sourceEndRoleName="" targetEndRoleName="ranking" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="aaf77e5a-fb7a-4982-aaed-04ba6e02e903" LastKnownName="CloudRanking" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="0b201856-dd78-42ef-8aa6-fdc60c7c308f" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="5ec706df-c08c-4cd4-b20a-edbbc38ed075" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="bfcf52e2-5082-4d31-a267-45339dd2610e" name="ranking" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                        <elementDefinition Id="16212416-c63e-423d-a5d3-762f75797c81" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="6e2125d0-f04c-4fa0-a020-721f54435563" />
+                </association>
+                <association Id="1137302e-8047-46a7-a94b-232f3569c044" isDerived="false" sourceEndRoleName="appNode" targetEndRoleName="rankingBuilder" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="3b9e4178-5dea-4627-9baa-3d64bf5bcdb0" LastKnownName="RankingFactory" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="288a6998-7ff5-4d14-93b6-f5290e9a8cf8" name="appNode" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="b1c31594-2e9f-4c9a-8218-f89d0e38e93e" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="34dfbb44-1284-4b97-b6ea-5109dd393809" name="rankingBuilder" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="c3858b52-bc44-4aa1-8e0b-17e9538af508" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="d1052812-c035-4e5e-8001-765828086684" />
+                </association>
+                <association Id="b08cc1fc-964e-4acc-868e-e87e77f50bf4" isDerived="false" sourceEndRoleName="" targetEndRoleName="experience" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="d82bbc62-7943-4274-9e41-23603a4cb856" LastKnownName="Experience" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="746024bc-210d-4d88-bc37-a3ec5bebb831" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="127eaea0-d819-40ea-92de-d4c7bea27ff4" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="a8e47729-20c5-432d-857b-14aeed9c8ee4" name="experience" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                        <elementDefinition Id="f232db4a-395d-41aa-ba9b-7c1f1b04d2ea" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="ff357e0c-f644-4165-b01d-e10ff069266f" />
+                </association>
+                <association Id="b83998f7-4458-4bd6-a8fe-6088b65a6efc" isDerived="false" sourceEndRoleName="" targetEndRoleName="measure" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="3f2f50d1-6635-40c5-8936-bd9a7431a657" LastKnownName="Measure" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="9b477dbd-79cb-4a4b-8541-b48943dc0377" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="c85e50aa-6dbb-4fe1-8821-6a430909105d" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="746ebd94-eda3-459f-afff-c09e6f94587c" name="measure" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                        <elementDefinition Id="21bc673b-308e-4d0a-a513-995d9480ec49" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="72fab853-e50a-49af-80a4-8542b744be92" />
+                </association>
+                <association Id="1cd895a0-210a-41d9-bbd0-735f49ab5bad" isDerived="false" sourceEndRoleName="" targetEndRoleName="appRanking" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="a62673fe-b87b-4a1a-adb5-0f01451eb8bb" LastKnownName="AppRanking" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="6feb71ab-1cdf-4130-b14e-b974442b2e14" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="53f88ac5-9a59-4552-8e3f-00ca61093718" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="c63faad9-d57e-431e-8dd3-f20db859328c" name="appRanking" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                        <elementDefinition Id="08d01356-14d9-4a40-9845-5303149fb80b" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="af9216a1-267d-4f4e-8a6a-e621360e35ac" />
+                </association>
+              </targetEnds>
+              <ownedOperationsInternal>
+                <operation Id="a05322aa-4bc1-4513-8cdc-a77444c6ef99" name="generateRanking" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="f78a0a04-e7f1-4668-9276-21de5a295631" />
+                </operation>
+                <operation Id="232fbebe-8d55-4ee4-b4a1-241f7c88fa69" name="share" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="3eb907a3-f2fd-4234-a234-30ebd6c19520" />
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="2e1de880-7705-4b14-a7cd-4f077995be45" name="Engine" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="8d1d375d-f0b8-44a0-a72b-ca4f88abcd82" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="e4690fc1-4fba-4c00-8ed8-ae381471bce8" name="MeasureCollector" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="7dcb53c0-da01-4789-acb6-8e5adfe4c230" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <package Id="f8af3c5a-9ada-4248-8661-9cc7ab7a1cb3" name="datamanagement">
+              <elementDefinition Id="3fb4cd85-9c3c-495c-abc6-6c9c4277b63c" />
+              <packagedElements>
+                <packageHasNamedElement>
+                  <package Id="41976cd0-586b-4e96-8b14-e78451ba158d" name="abstract">
+                    <ownedCommentsInternal>
+                      <comment Id="498656f6-564a-42c1-b01f-7f2a0f14242f">
+                        <elementDefinition Id="1726ad96-e8db-4d3e-a652-d4301435eb10" />
+                        <body>Abstract factory</body>
+                        <annotatedElements>
+                          <classMoniker Id="3b9e4178-5dea-4627-9baa-3d64bf5bcdb0" LastKnownName="RankingFactory" />
+                        </annotatedElements>
+                      </comment>
+                    </ownedCommentsInternal>
+                    <elementDefinition Id="b483beff-029e-4fea-b369-5d33212b2e82" />
+                    <packagedElements>
+                      <packageHasNamedElement>
+                        <class Id="3b9e4178-5dea-4627-9baa-3d64bf5bcdb0" name="RankingFactory" isAbstract="true" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="0c54f719-bdad-41a1-b358-94e77c2110a1" />
+                          <ownedOperationsInternal>
+                            <operation Id="e0967de7-8744-46b5-ae97-c70d9cf5f4cd" name="makeAppRanking" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="9626d129-2574-40da-9b8f-1d001b95daa9" />
+                            </operation>
+                            <operation Id="bdf63ac3-8652-4a62-b3b7-e7a8a5d95161" name="makeCloudRanking" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="c1f21255-5c3c-42eb-bfcf-7e84abba234f" />
+                              <ownedParameters>
+                                <operationHasOwnedParameters>
+                                  <parameter Id="56627a3c-fe9e-4db9-a26d-63aa17c1641f" name="appR" direction="In" isUnique="false">
+                                    <elementDefinition Id="6cb7edfb-c1f5-444a-bfca-40111f17be0a" />
+                                    <type_NamedElement>
+                                      <referencedTypeMoniker Id="7e3df7ed-3a37-402a-98f4-1c97adfb240c" LastKnownName="AppRanking" />
+                                    </type_NamedElement>
+                                  </parameter>
+                                </operationHasOwnedParameters>
+                              </ownedParameters>
+                            </operation>
+                          </ownedOperationsInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="a62673fe-b87b-4a1a-adb5-0f01451eb8bb" name="AppRanking" isAbstract="true" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="50f84fcd-8e5f-4573-8e05-5b13438aed23" />
+                          <targetEnds>
+                            <association Id="0db28e67-be50-40b5-aa4f-3354cbd39ad7" isDerived="false" sourceEndRoleName="" targetEndRoleName="appNode" isLeaf="false" isAbstract="false">
+                              <classMoniker Id="a5c18da1-110f-4db0-88fc-2552f545268f" LastKnownName="AppNode" />
+                              <relationshipOwnedElementsInternal>
+                                <associationHasOwnedEnds>
+                                  <memberEnd Id="b05e02c4-87ed-40c3-9b7c-4f242728f4fa" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                                    <elementDefinition Id="aa468ba6-a9a4-4fa6-a7e4-c7f39a5bf7b1" />
+                                  </memberEnd>
+                                </associationHasOwnedEnds>
+                                <associationHasOwnedEnds>
+                                  <memberEnd Id="60d8f475-b66d-42ce-badd-31ec81d91206" name="appNode" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                                    <lowerValueInternal>
+                                      <literalString Id="496fc682-1cd9-4b05-b186-ff97e348c4f3" name="Lower" value="*">
+                                        <elementDefinition Id="c24951a2-3e7a-481f-920f-b3fff50cee7a" />
+                                      </literalString>
+                                    </lowerValueInternal>
+                                    <upperValueInternal>
+                                      <literalString Id="898bcebd-9bf2-4cc3-b672-7a06f5a46e1a" name="Upper" value="*">
+                                        <elementDefinition Id="c9f868a9-4dbe-4fba-b60d-02c83d738db7" />
+                                      </literalString>
+                                    </upperValueInternal>
+                                    <elementDefinition Id="d9b4484b-2d5c-44fa-a0ce-6ecad02c5d91" />
+                                  </memberEnd>
+                                </associationHasOwnedEnds>
+                              </relationshipOwnedElementsInternal>
+                              <elementDefinition Id="0e7a7442-8aac-408a-b14a-dac1f8109b0a" />
+                            </association>
+                          </targetEnds>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="aaf77e5a-fb7a-4982-aaed-04ba6e02e903" name="CloudRanking" isAbstract="true" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="52963420-ec2b-463c-b288-6bdd5fe6b33d" />
+                        </class>
+                      </packageHasNamedElement>
+                    </packagedElements>
+                  </package>
+                </packageHasNamedElement>
+              </packagedElements>
+            </package>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <packageHasNamedElement>
+      <referencedType Id="7e3df7ed-3a37-402a-98f4-1c97adfb240c" name="AppRanking" isAbstract="false" isLeaf="false" cachedFullName="TheCloudBook::thecloudbook::datamanagement::abstract::AppRanking">
+        <elementDefinition Id="50f84fcd-8e5f-4573-8e05-5b13438aed23" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="b637bb5b-ed56-4030-91f6-3f2e041e7580" name="TheCloudBook">
+    <elementDefinition Id="2eb59cff-69d0-40f9-a32e-8479acc1f02c" />
+  </package>
+</logicalClassDesignerModel>
