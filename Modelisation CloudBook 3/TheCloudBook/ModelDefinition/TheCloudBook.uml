@@ -1,0 +1,1211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel"
+  dslVersion="1.0.0.0"
+  Id="2eb59cff-69d0-40f9-a32e-8479acc1f02c"
+  name="TheCloudBook" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <actor
+        Id="29269c08-4112-41d0-acb7-6956827c45be"
+        name="Utilisateur humain"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="e95e8723-58a4-4611-9309-ede8fe3bea37"
+            isDerived="false"
+            sourceEndRoleName="Actor1"
+            targetEndRoleName="Enregistrer une application sur le réseau"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="80ac585f-a7b4-4e98-89c0-2558eb727f05"
+              LastKnownName="Enregistrer une application sur le réseau"
+              LastKnownLocation="TheCloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ca43f7a0-120f-4bb3-879a-edda6b4444e5"
+                  name="Actor1"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="708229f6-641a-432c-9a90-106713da0798"
+                  name="Enregistrer une application sur le réseau"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="973ccf6a-fd07-4e9f-89de-22f5dabc5adc"
+            isDerived="false"
+            sourceEndRoleName="Utilisateur"
+            targetEndRoleName="Changer l'historique d'une application"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="5b2d0625-2e6b-4ee7-b8d5-4d6fa221307c"
+              LastKnownName="Mettre à jour l'historique d'une application"
+              LastKnownLocation="TheCloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="cebb4c89-d6ef-473e-b74b-2647e17600c0"
+                  name="Utilisateur"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="acca2319-b56a-41ac-a81c-f0f0d29f5c9d"
+                  name="Changer l'historique d'une application"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="d5d18e22-cfaf-4b6b-aaa8-a4ef07461446"
+            isDerived="false"
+            sourceEndRoleName="Utilisateur humain"
+            targetEndRoleName="Modifier les  données identifiant l'application"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="141f4a29-791f-4925-88a5-856c02f445e4"
+              LastKnownName="Modifier les  données identifiant l'application"
+              LastKnownLocation="TheCloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7aff6346-93ce-4001-969b-6cc54b33a23e"
+                  name="Utilisateur humain"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="779b9121-4fea-42fb-aa14-55e42c0e5d7d"
+                  name="Modifier les  données identifiant l'application"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="80ac585f-a7b4-4e98-89c0-2558eb727f05"
+        name="Enregistrer une application sur le réseau"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="2b7ad208-c018-4dff-ae78-947d972ada9d">
+            <useCaseMoniker
+              Id="ca95ea4d-e7da-40d7-b8e2-3d0a6f2ec342"
+              LastKnownName="Création de liens initiaux"
+              LastKnownLocation="TheCloudBook.uml" />
+          </include>
+          <include
+            Id="562d11ae-ceb7-4798-a656-a6ff8b952af6">
+            <useCaseMoniker
+              Id="5834f61f-80ce-4680-8c02-61a450fea3cb"
+              LastKnownName="Intégrer la machine cliente sur le réseau gossip sous-jacent"
+              LastKnownLocation="TheCloudBook.uml" />
+          </include>
+          <include
+            Id="760b7d20-266d-48b5-a636-87e5e9a87145">
+            <useCaseMoniker
+              Id="22a31cd7-a30c-42df-8ef6-2cf7998bbe76"
+              LastKnownName="Entrer les données identifiant l'application"
+              LastKnownLocation="TheCloudBook.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="10cd778e-6077-4617-936e-a1dcd57c3377"
+        name="Application membre"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="a17078a5-1188-4c7b-9c34-e1b216819711"
+            isDerived="false"
+            sourceEndRoleName="Application"
+            targetEndRoleName="Questionner"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="aeb70d3a-a3c3-488c-aefc-324fdd257517"
+              LastKnownName="Partager des informations"
+              LastKnownLocation="TheCloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a1e39dfa-b16a-403c-b80c-f3100f7c59ea"
+                  name="Application"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5a6c462f-3371-40ad-a332-1e7b655294c6"
+                  name="Questionner"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="4d498f5b-0054-4cdf-9232-341e345ed1c7"
+            isDerived="false"
+            sourceEndRoleName="Application"
+            targetEndRoleName="Traiter une question"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="c8f3708b-964c-4443-99ed-ddc7c2c35688"
+              LastKnownName="Traiter un partage d'informations entrant"
+              LastKnownLocation="TheCloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0d11537f-cf6b-4390-9648-13a95efbccc9"
+                  name="Application"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="001f0c1a-78c7-4ba8-a2b3-d7bf6ea66a2b"
+                  name="Traiter une question"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="2d0d1be9-3b5e-4259-a3e3-d043c8e07cfd"
+            isDerived="false"
+            sourceEndRoleName="Application membre"
+            targetEndRoleName="Se faire des amis"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="29b6fa39-1255-4b3b-8caa-9c5fc26be29c"
+              LastKnownName="Se faire des amis aléatoire"
+              LastKnownLocation="TheCloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="bc7a4f6b-ff79-45ab-8dfd-572d15a423d8"
+                  name="Application membre"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="44fe4f92-410a-412e-9305-260aa4548c17"
+                  name="Se faire des amis"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="dde7e369-fda8-40ad-9677-92c9d4374f4a"
+            isDerived="false"
+            sourceEndRoleName="Application membre"
+            targetEndRoleName="Création de liens &quot;d'amitié&quot; aléatoires"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="b24e053e-d03b-4f76-b06e-fa5797493520"
+              LastKnownName="Création de liens d'amitié"
+              LastKnownLocation="TheCloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e4c4db20-1b73-423a-abd3-b2a7e2fb5cf7"
+                  name="Application membre"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6cb03b2b-c742-4900-ad0f-15812b390cad"
+                  name="Création de liens &quot;d'amitié&quot; aléatoires"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="7f8962fc-1e1a-473f-a49b-bba53407c5a0"
+            isDerived="false"
+            sourceEndRoleName="Application membre"
+            targetEndRoleName="Destruction de liens d'amitié"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="b481fc12-de6d-4c11-b6da-fd3c6c287256"
+              LastKnownName="Destruction de liens d'amitié"
+              LastKnownLocation="TheCloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f8115cb2-5021-419f-8ee2-e5dad98e3745"
+                  name="Application membre"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b9c989d5-a4d0-4088-98f1-11a1b0c907f9"
+                  name="Destruction de liens d'amitié"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="2242cf98-6385-4863-8545-4150eb90c353"
+            isDerived="false"
+            sourceEndRoleName="Application membre"
+            targetEndRoleName="Traitement de demande de partage"
+            isLeaf="false"
+            isAbstract="false">
+            <subsystemMoniker
+              Id="37e8b0b8-bf61-40d8-b817-1ef3ae2395a6"
+              LastKnownName="Traitement de demande de partage"
+              LastKnownLocation="TheCloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="58efb1fd-cd6e-4f50-bdac-e86802ccfd85"
+                  name="Application membre"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2400c23c-63fc-412e-84ae-125acd95c3b2"
+                  name="Traitement de demande de partage"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="912c780f-1f95-4055-a72e-b1a04115f861"
+            isDerived="false"
+            sourceEndRoleName="Application membre"
+            targetEndRoleName="Prise de mesures de performances"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="f5383fb2-323e-495b-a8a0-2884ffc6a543"
+              LastKnownName="Récupération de mesures de performances"
+              LastKnownLocation="TheCloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b23ac97e-467c-4a56-abf0-abb606c74866"
+                  name="Application membre"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fc5a2f3e-bb0a-4d37-bea2-aae555d3e71d"
+                  name="Prise de mesures de performances"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="5b2d0625-2e6b-4ee7-b8d5-4d6fa221307c"
+        name="Mettre à jour l'historique d'une application"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="aeb70d3a-a3c3-488c-aefc-324fdd257517"
+        name="Partager des informations"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="8026493b-0a6b-4368-a9df-94ec1d39c529">
+            <useCaseMoniker
+              Id="a673bad5-fc9c-4933-8a2f-9e1797004107"
+              LastKnownName="Intégrer la réponse dans le classement du noeud courant"
+              LastKnownLocation="TheCloudBook.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="b628a772-3a94-4f0c-965a-3e62da69b7db"
+        name="Répondre à la requête"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="6e80ab71-1e45-4b5a-947c-9cb5db37b4a7"
+            isSubstitutable="false">
+            <useCaseMoniker
+              Id="c8f3708b-964c-4443-99ed-ddc7c2c35688"
+              LastKnownName="Traiter un partage d'informations entrant"
+              LastKnownLocation="TheCloudBook.uml" />
+          </generalization>
+        </generalsInternal>
+        <additions>
+          <include
+            Id="5e15d49b-b676-4c66-a86e-1373d4f95566">
+            <useCaseMoniker
+              Id="f1878d09-6983-4d6e-9edb-89660d0f81d7"
+              LastKnownName="Prendre connaissance de l'initiateur"
+              LastKnownLocation="TheCloudBook.uml" />
+          </include>
+          <include
+            Id="517369d4-b5dc-4e2b-b9a8-43766f856b43">
+            <useCaseMoniker
+              Id="032f77b0-a0ed-4495-9c09-11519e539d73"
+              LastKnownName="Répondre à la question"
+              LastKnownLocation="TheCloudBook.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="e9a30c0c-cc49-4796-b432-fd5df528eaf9"
+        name="Transmettre la requête"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="29844a36-7265-4c3c-b993-506876c13e10"
+            isSubstitutable="false">
+            <useCaseMoniker
+              Id="c8f3708b-964c-4443-99ed-ddc7c2c35688"
+              LastKnownName="Traiter un partage d'informations entrant"
+              LastKnownLocation="TheCloudBook.uml" />
+          </generalization>
+        </generalsInternal>
+        <additions>
+          <include
+            Id="94aa0228-0924-49f4-8d69-24db19fa65e5">
+            <useCaseMoniker
+              Id="379a1b27-d1e2-43d7-8c80-26918071376a"
+              LastKnownName="Transmettre la référence du noeud initiateur de la requête"
+              LastKnownLocation="TheCloudBook.uml" />
+          </include>
+          <include
+            Id="9b8539d9-1234-4dc2-b068-2386f05dc148">
+            <useCaseMoniker
+              Id="4331fb69-a23a-4676-93d5-fe6808d1be88"
+              LastKnownName="Transemettre la question"
+              LastKnownLocation="TheCloudBook.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="379a1b27-d1e2-43d7-8c80-26918071376a"
+        name="Transmettre la référence du noeud initiateur de la requête"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="c8f3708b-964c-4443-99ed-ddc7c2c35688"
+        name="Traiter un partage d'informations entrant"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="a673bad5-fc9c-4933-8a2f-9e1797004107"
+        name="Intégrer la réponse dans le classement du noeud courant"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="1fee44bc-9ea5-4d8e-9f89-27a43add1d77"
+        name="Pas de réponse"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="dd3ccf19-b8e4-4012-8885-387791eb4050">
+            <useCaseMoniker
+              Id="a673bad5-fc9c-4933-8a2f-9e1797004107"
+              LastKnownName="Intégrer la réponse dans le classement du noeud courant"
+              LastKnownLocation="TheCloudBook.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="8750c079-9450-4721-9912-489da64a726e"
+        name="Répondre à une question"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="92d95f1b-6205-4a30-9043-424d01124946"
+        name="Pas de voisins"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="905e8f75-911c-4ff5-838f-8e5ddd5b7921">
+            <useCaseMoniker
+              Id="aeb70d3a-a3c3-488c-aefc-324fdd257517"
+              LastKnownName="Partager des informations"
+              LastKnownLocation="TheCloudBook.uml" />
+          </extend>
+          <extend
+            Id="888c7c4b-8ff7-43a4-b1ed-600471bae0a4">
+            <useCaseMoniker
+              Id="e9a30c0c-cc49-4796-b432-fd5df528eaf9"
+              LastKnownName="Transmettre la requête"
+              LastKnownLocation="TheCloudBook.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="4331fb69-a23a-4676-93d5-fe6808d1be88"
+        name="Transemettre la question"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="032f77b0-a0ed-4495-9c09-11519e539d73"
+        name="Répondre à la question"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="f1878d09-6983-4d6e-9edb-89660d0f81d7"
+        name="Prendre connaissance de l'initiateur"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="5d522c88-fb6b-4021-b2eb-93c9ca69a79f"
+        name="Noeud &quot;maître&quot;"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="ce397784-25a2-40f6-9cb5-ee08d1c510ed"
+            isDerived="false"
+            sourceEndRoleName="Noeud &quot;maître&quot;"
+            targetEndRoleName="Intégrer la machine cliente sur le réseau P2P sous-jacent"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="5834f61f-80ce-4680-8c02-61a450fea3cb"
+              LastKnownName="Intégrer la machine cliente sur le réseau gossip sous-jacent"
+              LastKnownLocation="TheCloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5c7002a0-3d22-4995-9276-bd66ffa42bd8"
+                  name="Noeud &quot;maître&quot;"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f6d2191f-6daf-497c-9e46-05c2ed53fef7"
+                  name="Intégrer la machine cliente sur le réseau P2P sous-jacent"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="b24e053e-d03b-4f76-b06e-fa5797493520"
+        name="Création de liens d'amitié"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ca95ea4d-e7da-40d7-b8e2-3d0a6f2ec342"
+        name="Création de liens initiaux"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="5834f61f-80ce-4680-8c02-61a450fea3cb"
+        name="Intégrer la machine cliente sur le réseau gossip sous-jacent"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="ea26d4ef-c900-4b1a-8ae2-373c03202a69"
+        name="Application membre"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="fe5b076a-3918-4b26-9343-369996971d97"
+            isDerived="false"
+            sourceEndRoleName="Noeud courant"
+            targetEndRoleName="Création de liens initiaux"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="ca95ea4d-e7da-40d7-b8e2-3d0a6f2ec342"
+              LastKnownName="Création de liens initiaux"
+              LastKnownLocation="TheCloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d5cc057d-9b1b-4bf2-802c-3eff7bfa4ac1"
+                  name="Noeud courant"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3ab02080-699b-4a30-a567-030a4db13dc9"
+                  name="Création de liens initiaux"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="29b6fa39-1255-4b3b-8caa-9c5fc26be29c"
+        name="Se faire des amis aléatoire"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="07f9a829-c9fa-49d6-813a-7b053680f043"
+        name="Application membre"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="017ab5ea-940d-4360-b1f3-e21f23c695a4"
+            isDerived="false"
+            sourceEndRoleName="Application"
+            targetEndRoleName="Questionner"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="0c5b1f2e-1b84-4e76-9716-c2c3ab1d8539"
+              LastKnownName="Partager des informations"
+              LastKnownLocation="TheCloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="82ef0400-cb13-42da-9a24-ff5634afe07a"
+                  name="Application"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="71e5f23b-c9e3-4c11-81b1-fab603dbd694"
+                  name="Questionner"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="0c5b1f2e-1b84-4e76-9716-c2c3ab1d8539"
+        name="Partager des informations"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="2db55f47-0d2e-4e59-9e46-9b60ec90648c">
+            <useCaseMoniker
+              Id="ce84bd5b-a3e4-4bad-ad4a-c9653646d486"
+              LastKnownName="Classer les informations reçues selon un indice de pertinence"
+              LastKnownLocation="TheCloudBook.uml" />
+          </include>
+          <include
+            Id="2295c23b-e7b7-48df-be3e-d20d92383c18">
+            <useCaseMoniker
+              Id="6a73e2ac-c64b-4b07-9620-0c1f57374187"
+              LastKnownName="Choix des amis avec qui partager"
+              LastKnownLocation="TheCloudBook.uml" />
+          </include>
+          <include
+            Id="f4b02f95-9a4d-4e90-88cf-82161d2bdc90">
+            <useCaseMoniker
+              Id="8f135b75-8179-4f34-810e-d8de55779453"
+              LastKnownName="Initiation des partages"
+              LastKnownLocation="TheCloudBook.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ce84bd5b-a3e4-4bad-ad4a-c9653646d486"
+        name="Classer les informations reçues selon un indice de pertinence"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="530131bc-1699-41d9-afd1-6f5685d97648"
+        name="Pas d'amis, action impossible"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="cee06a2d-3fdf-43c0-878e-9bd3fe677f2b">
+            <useCaseMoniker
+              Id="8f135b75-8179-4f34-810e-d8de55779453"
+              LastKnownName="Initiation des partages"
+              LastKnownLocation="TheCloudBook.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="27cc0690-279d-4844-b5cd-8e9719fcbc05"
+        name="Pas d'informations ajoutées"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="83571784-c932-41df-b840-ec427db35d40">
+            <useCaseMoniker
+              Id="ce84bd5b-a3e4-4bad-ad4a-c9653646d486"
+              LastKnownName="Classer les informations reçues selon un indice de pertinence"
+              LastKnownLocation="TheCloudBook.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="2ecf93f0-8531-44e9-8cca-ca5f2820b0dc"
+        name="Application membre"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="1cd08ce0-bb15-4666-a399-8760ea72fd8e"
+            isDerived="false"
+            sourceEndRoleName="Application"
+            targetEndRoleName="Traiter une question"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="8e7aca54-c800-449b-ad2b-44f55c72d677"
+              LastKnownName="Traiter un partage d'information entrant"
+              LastKnownLocation="TheCloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5bf20e8c-d6c6-4575-ae3f-89f1915ed45b"
+                  name="Application"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c143a4ba-1191-4b93-b256-c7d18ab21494"
+                  name="Traiter une question"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="8e7aca54-c800-449b-ad2b-44f55c72d677"
+        name="Traiter un partage d'information entrant"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="412108c7-07fb-4119-b73e-966831d52180">
+            <useCaseMoniker
+              Id="05477f3a-a1e4-4eff-9663-5ddf104f59a5"
+              LastKnownName="Effectuer pour soi-même le même partage"
+              LastKnownLocation="TheCloudBook.uml" />
+          </include>
+          <include
+            Id="db2f40b3-82c9-49f9-acf2-130ed07ee66b">
+            <useCaseMoniker
+              Id="985016d3-6846-4f70-993d-f9de3f9e7450"
+              LastKnownName="Partager ses informations avec l'initiateur"
+              LastKnownLocation="TheCloudBook.uml" />
+          </include>
+          <include
+            Id="9071549f-652a-4638-9046-a41905b0796b">
+            <useCaseMoniker
+              Id="8ffb3c48-b160-4b0a-b2bf-f41df56a29d8"
+              LastKnownName="Classer les informations reçues selon un indice de pertinence"
+              LastKnownLocation="TheCloudBook.uml" />
+          </include>
+          <include
+            Id="e340169e-5934-4a9b-96e5-99081e2aaf7c">
+            <useCaseMoniker
+              Id="9c037ab4-2ded-4e01-af1c-cea68c182b91"
+              LastKnownName="Prendre connaissance de l'initiateur"
+              LastKnownLocation="TheCloudBook.uml" />
+          </include>
+          <include
+            Id="06b7e0af-feea-4af5-a7ad-8507d741039b">
+            <useCaseMoniker
+              Id="eb28bda2-d286-4362-9639-4d275146f9c7"
+              LastKnownName="Réponse"
+              LastKnownLocation="TheCloudBook.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="05477f3a-a1e4-4eff-9663-5ddf104f59a5"
+        name="Effectuer pour soi-même le même partage"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="d41656b2-6282-4cd0-8810-dd1bf2014df6">
+            <useCaseMoniker
+              Id="cc1ca0f7-2a57-470e-9dc9-046f417938a5"
+              LastKnownName="Transmettre la référence du noeud initiateur de la requête"
+              LastKnownLocation="TheCloudBook.uml" />
+          </include>
+          <include
+            Id="acb3b845-5ffd-4a82-9d40-cee7e284a660">
+            <useCaseMoniker
+              Id="a2f3cad2-7d4b-4581-9597-46703f62bd09"
+              LastKnownName="Transemettre la question"
+              LastKnownLocation="TheCloudBook.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="985016d3-6846-4f70-993d-f9de3f9e7450"
+        name="Partager ses informations avec l'initiateur"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="3b9ba8f0-7921-4efb-8c86-ea5734077356">
+            <useCaseMoniker
+              Id="482e2be3-fda6-4e31-85fb-29843c57e69f"
+              LastKnownName="Répondre à la question1"
+              LastKnownLocation="TheCloudBook.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="9c037ab4-2ded-4e01-af1c-cea68c182b91"
+        name="Prendre connaissance de l'initiateur"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="482e2be3-fda6-4e31-85fb-29843c57e69f"
+        name="Répondre à la question1"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="cc1ca0f7-2a57-470e-9dc9-046f417938a5"
+        name="Transmettre la référence du noeud initiateur de la requête"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="a2f3cad2-7d4b-4581-9597-46703f62bd09"
+        name="Transemettre la question"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="a8040d13-b098-4ffd-a54a-f014d56f7b19"
+        name="Pas de voisins"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="09d13790-c14e-4dc1-b9c7-aa978a754173">
+            <useCaseMoniker
+              Id="05477f3a-a1e4-4eff-9663-5ddf104f59a5"
+              LastKnownName="Effectuer pour soi-même le même partage"
+              LastKnownLocation="TheCloudBook.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="b481fc12-de6d-4c11-b6da-fd3c6c287256"
+        name="Destruction de liens d'amitié"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="6a73e2ac-c64b-4b07-9620-0c1f57374187"
+        name="Choix des amis avec qui partager"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="d91264b8-d030-4393-9691-1b6a6c68943b">
+            <useCaseMoniker
+              Id="dbfea762-907a-4a08-a18e-83c603345808"
+              LastKnownName="Sélection selon un indice de confiance"
+              LastKnownLocation="TheCloudBook.uml" />
+          </include>
+          <include
+            Id="5342898d-e50a-45d4-b3ef-72261bb75248">
+            <useCaseMoniker
+              Id="b1784bd0-30eb-4294-b820-aecc40ce7ac1"
+              LastKnownName="Ordonnancement des partages"
+              LastKnownLocation="TheCloudBook.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="dbfea762-907a-4a08-a18e-83c603345808"
+        name="Sélection selon un indice de confiance"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="b1784bd0-30eb-4294-b820-aecc40ce7ac1"
+        name="Ordonnancement des partages"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="8f135b75-8179-4f34-810e-d8de55779453"
+        name="Initiation des partages"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="e787301d-6a5f-496e-a0c3-510b7e9341bb"
+        name="Intégrer les données "
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="8ffb3c48-b160-4b0a-b2bf-f41df56a29d8"
+        name="Classer les informations reçues selon un indice de pertinence"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="64cefa30-124c-4870-81cc-0f380f4fd3dc"
+        name="Pas d'informations ajoutées"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="a7e34ccb-6f87-4242-b0f6-b9dde96415c7">
+            <useCaseMoniker
+              Id="8ffb3c48-b160-4b0a-b2bf-f41df56a29d8"
+              LastKnownName="Classer les informations reçues selon un indice de pertinence"
+              LastKnownLocation="TheCloudBook.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <subsystem
+        Id="37e8b0b8-bf61-40d8-b817-1ef3ae2395a6"
+        name="Traitement de demande de partage"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="f5383fb2-323e-495b-a8a0-2884ffc6a543"
+        name="Récupération de mesures de performances"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="eb28bda2-d286-4362-9639-4d275146f9c7"
+        name="Réponse"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="22a31cd7-a30c-42df-8ef6-2cf7998bbe76"
+        name="Entrer les données identifiant l'application"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="141f4a29-791f-4925-88a5-856c02f445e4"
+        name="Modifier les  données identifiant l'application"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>
