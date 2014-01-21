@@ -1,40 +1,89 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="27104f83-49ad-464a-a3ee-600b521ca026" name="Modules" linkedPackageId="bb3ff10a-0d33-4cef-b3f0-d8068115a770" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="2fc00707-b6ed-4d01-8f13-8e7df3e7b29c">
-      <profileInstance Id="8572f41f-9a1c-4840-a384-9fc507bcca13" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="46ea5fb7-8023-4dc0-9a85-f630c1ad366f">
-      <profileInstance Id="6fd0831e-05ad-4585-83af-4a0245d6fa26" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="27104f83-49ad-464a-a3ee-600b521ca026" name="Modules" linkedPackageId="bb3ff10a-0d33-4cef-b3f0-d8068115a770" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="667beceb-3032-40ee-a36e-c0562bdac785">
+      <elementDefinition Id="f6dea155-cc2c-45fa-bd4d-5842540d34ee" />
+      <body>Singleton (connu par tout le monde)</body>
+      <annotatedElements>
+        <classMoniker Id="c49bf23f-8468-4596-8909-3e30d8bf299f" LastKnownName="Network" />
+      </annotatedElements>
+    </comment>
+    <comment Id="8cb033ba-f4f5-43be-92a8-b781265b48fd">
+      <elementDefinition Id="a55f74c4-2859-4d7f-a385-be16aa98c89a" />
+      <body>access, instantiate</body>
+    </comment>
+  </ownedCommentsInternal>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
-      <class Id="cc489fd8-7d2b-4865-85c7-f911b937a745" name="Motor" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="cc489fd8-7d2b-4865-85c7-f911b937a745" name="Engine" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="11158b77-87ac-4d5e-acb9-a3898796ece4" />
-        <suppliersInternal>
-          <interfaceRealization Id="1e528f3f-251b-4bc8-bb8a-344048659764">
-            <interfaceMoniker Id="d960a53e-1815-458a-bdb3-bb972e8d5bdd" LastKnownName="IMotor" />
-            <elementDefinition Id="935ebd70-fb89-483f-90dc-b85466ced11c" />
-          </interfaceRealization>
-        </suppliersInternal>
+        <targetEnds>
+          <association Id="bd010dd1-4863-4128-994f-a0d884322913" isDerived="false" sourceEndRoleName="Engine" targetEndRoleName="RequestManager" isLeaf="false" isAbstract="false">
+            <classMoniker Id="d8197bc1-fa0f-4f7c-9e8c-11d2133da763" LastKnownName="RequestManager" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="14a34f55-ff41-40de-a8ad-d7ea24b774f4" name="Engine" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="acb5e326-86ef-4a95-82ec-bb420df76337" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3c21d960-149c-4bf6-bb5a-f2676dd549b6" name="RequestManager" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="c2726e87-6fb1-496b-a29c-e67930ff75ab" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="4611b8bb-1e5a-4fb0-b90f-78c0ce6fe4a3" />
+          </association>
+          <association Id="e9758d1a-b293-408f-879b-fd2072edcf78" isDerived="false" sourceEndRoleName="Engine" targetEndRoleName="FriendManager" isLeaf="false" isAbstract="false">
+            <classMoniker Id="82a71e2e-71eb-480b-bb9e-fcbb5deeea17" LastKnownName="FriendManager" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="88cec2d2-b8e3-4cbf-a562-281d4e939164" name="Engine" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e4cc8b99-0f91-491f-9855-7e30eda917d8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2b0636b7-01d4-4654-a9bc-f5ab576d5b0e" name="FriendManager" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="55ddf613-1050-4f27-84d6-5108dc474ff1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="5b747b5b-575a-487e-935f-b2c1eb611469" />
+          </association>
+        </targetEnds>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
       <class Id="82a71e2e-71eb-480b-bb9e-fcbb5deeea17" name="FriendManager" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="0b199594-23e9-4283-9be3-9043a7cf48aa" />
-        <suppliersInternal>
-          <interfaceRealization Id="d882d287-eae5-4bc7-9650-296cda67ebb9">
-            <interfaceMoniker Id="9ba021d3-da9a-474d-8198-4d28a7473085" LastKnownName="IFriendManager" />
-            <elementDefinition Id="13798dbe-e323-4197-8119-02cfa6174d65" />
-          </interfaceRealization>
-        </suppliersInternal>
+        <targetEnds>
+          <association Id="ab2e93fc-5fa1-4405-a112-5eed3f6f1174" isDerived="false" sourceEndRoleName="FriendManager" targetEndRoleName="Friend" isLeaf="false" isAbstract="false">
+            <classMoniker Id="8b631f85-c91e-48fe-9f15-2bf40ade64aa" LastKnownName="Friend" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6e08db6e-33c4-496f-92a5-6fa043d82ff7" name="FriendManager" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b4bf55b7-b1cf-4f33-bc39-f198df5804b6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="bede3848-47d6-435d-abb7-fee45ba3fad3" name="Friend" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="21dc1cc9-31fd-4e2d-b101-f8573041fdce" name="Lower" value="*">
+                      <elementDefinition Id="7218bdb1-f46f-4811-b2d0-f0374de629c1" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="3160268c-c143-4f0e-adee-7f967022fe60" name="Upper" value="*">
+                      <elementDefinition Id="891dc108-db65-438e-ab72-bf30a79718ed" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="c9579674-f071-4176-8b28-1922bf8c74b2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ddd448eb-558b-41bc-b512-83f8a4643362" />
+          </association>
+        </targetEnds>
         <ownedOperationsInternal>
           <operation Id="7a24a00b-db8c-415a-bf4e-9a2b232e527c" name="getNewFriend" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="c463f54e-a754-450a-99c9-404e8e20f239" />
@@ -71,54 +120,7 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="8b631f85-c91e-48fe-9f15-2bf40ade64aa" name="Friend" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="42e92a9f-2f6e-44ac-bc72-8816ae9dd1b8" />
-        <suppliersInternal>
-          <interfaceRealization Id="67915d86-3e46-4e9f-b73b-0cbd71ff7081">
-            <interfaceMoniker Id="24479ae6-546e-4300-b9c0-5ade051bb199" LastKnownName="IFriend" />
-            <elementDefinition Id="38fd6bd0-2247-423f-8c6f-008a6b653438" />
-          </interfaceRealization>
-        </suppliersInternal>
       </class>
-    </logicalClassDesignerModelHasTypes>
-    <logicalClassDesignerModelHasTypes>
-      <Interface Id="24479ae6-546e-4300-b9c0-5ade051bb199" name="IFriend" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="86581b70-474a-4ff9-846f-d1427acd4ccc" />
-      </Interface>
-    </logicalClassDesignerModelHasTypes>
-    <logicalClassDesignerModelHasTypes>
-      <Interface Id="9ba021d3-da9a-474d-8198-4d28a7473085" name="IFriendManager" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="7e92d34d-ecf6-4b44-9e1f-9798f036f431" />
-        <ownedOperations>
-          <operation Id="c22bc2fc-3c0c-4531-bd0f-ec409222e5bf" name="getNewFriend" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="d633f20f-ea4d-4ef6-b1b3-d5aa5851b2b5" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="b738db1c-fe63-49d6-879d-7733d03a75ec" direction="Return">
-                  <elementDefinition Id="d8499f84-da0f-4ac7-ab58-068946b86cf2" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="ac6e514a-1110-4a2b-be48-975b00c31000" LastKnownName="IFriend" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="119a0a6e-aa1f-4ba9-8cde-70e6362b5da1" name="state" direction="In">
-                  <elementDefinition Id="c6938b80-595f-4b42-be69-d52f8fe70758" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="bfe216e4-8472-4104-84a8-2f89662ff88d" LastKnownName="IState" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="894bc530-39e7-4418-9ec0-1eb7aef08ca3" name="network" direction="In">
-                  <elementDefinition Id="7a3d6673-4768-4669-9d65-84a73c5f167c" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="4d004e47-5d1b-47a3-a100-a55f88ad210f" LastKnownName="INetwork" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-        </ownedOperations>
-      </Interface>
     </logicalClassDesignerModelHasTypes>
     <packageHasNamedElement>
       <referencedType Id="ac6e514a-1110-4a2b-be48-975b00c31000" name="IFriend" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::IFriend">
@@ -126,54 +128,13 @@
       </referencedType>
     </packageHasNamedElement>
     <logicalClassDesignerModelHasTypes>
-      <Interface Id="d960a53e-1815-458a-bdb3-bb972e8d5bdd" name="IMotor" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="84be156b-97f7-4810-8427-fa8c37c04bf1" />
-      </Interface>
-    </logicalClassDesignerModelHasTypes>
-    <logicalClassDesignerModelHasTypes>
-      <Interface Id="4a6ec556-9e44-4086-99c2-2121bf79041c" name="INetwork" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="09c5eecd-26dd-4b88-8efb-749c43c14abf" />
-        <ownedOperations>
-          <operation Id="d91d6511-29d9-4eb9-8e0a-c352a80c16fe" name="getProfiles" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="e0542607-5457-445c-a6fc-9f871e2f44b4" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="7a872cd2-2982-4c2a-b06f-e4f196cd9fd7" direction="Return">
-                  <elementDefinition Id="8b5358d9-35c3-4ad6-bfb5-5140f4b98b1f" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="45d11631-4a85-48f1-b819-0dc48a58e1fc" LastKnownName="IProfile" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="ce4812c6-8eab-424b-a385-2801b48b5b2a" name="n" direction="In">
-                  <elementDefinition Id="c080c8ad-72c0-45aa-b0b7-4c84eafbe807" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="55a4885d-0859-4403-9bb9-de133237265d" LastKnownName="int" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="9a47e1d2-0aec-4bcb-8848-87ba20225366" name="ips" direction="In">
-                  <elementDefinition Id="ab3a0185-50b8-422b-ac6a-ca078aced005" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="80156b48-9482-4a3a-903c-1271a4024e7a" LastKnownName="Vector&lt;String&gt;" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-        </ownedOperations>
-      </Interface>
-    </logicalClassDesignerModelHasTypes>
-    <logicalClassDesignerModelHasTypes>
       <class Id="c49bf23f-8468-4596-8909-3e30d8bf299f" name="Network" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="f1967018-9c40-4908-a6a1-30d7c27ebb18" />
         <suppliersInternal>
-          <interfaceRealization Id="2e897ac1-aac9-4fe3-abd3-60388109bebe">
-            <interfaceMoniker Id="4a6ec556-9e44-4086-99c2-2121bf79041c" LastKnownName="INetwork" />
-            <elementDefinition Id="ce306ce6-b70d-489c-a81f-8b5ca17c797e" />
-          </interfaceRealization>
+          <dependency Id="fc8ed5bc-1f99-460d-9727-c5f43d7b0889">
+            <classMoniker Id="8b631f85-c91e-48fe-9f15-2bf40ade64aa" LastKnownName="Friend" />
+            <elementDefinition Id="d0c25994-fde5-4d6a-bc18-e78188308e7e" />
+          </dependency>
         </suppliersInternal>
         <ownedOperationsInternal>
           <operation Id="76278051-ea58-4060-b2d8-fcd932ee84ec" name="getProfiles" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
@@ -208,75 +169,6 @@
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
-    <logicalClassDesignerModelHasTypes>
-      <class Id="73cad98c-8c91-47b8-aebe-5e418cc0d7c1" name="State" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="2a0aeb62-81d3-432a-aff4-6194fc174c37" />
-        <suppliersInternal>
-          <interfaceRealization Id="b72efde4-67fc-4752-bfd1-37fa7999e6c9">
-            <interfaceMoniker Id="cd813499-532e-4459-a533-ded2c53c34e1" LastKnownName="IState" />
-            <elementDefinition Id="8f949272-c9d2-43d5-91a3-8a0757f72674" />
-          </interfaceRealization>
-        </suppliersInternal>
-        <ownedAttributesInternal>
-          <property Id="862e9d2b-3eb3-42f2-9364-02f8e6ed966f" name="friends" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="c9b093f5-c81e-4e91-af8a-4c648a730f6b" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="8a80fa60-533d-4a60-817b-66101e99a263" LastKnownName="Vector&lt;IFriend&gt;" />
-            </type_NamedElement>
-          </property>
-        </ownedAttributesInternal>
-        <ownedOperationsInternal>
-          <operation Id="9837e8e2-afe4-4ebd-9069-46ee399b82ae" name="getFriends" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="ec858e66-c792-41ba-b557-9f35d0ebae8e" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="e9edf44c-c681-46a0-b0e4-ec67cb6b2900" direction="Return">
-                  <elementDefinition Id="73c45a5d-3bab-4507-9ff0-d7957157f8eb" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="cfe2fa37-b005-4540-ba49-d99f9a6ef1d2" LastKnownName="Vector&lt;IFriend&gt;" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-        </ownedOperationsInternal>
-      </class>
-    </logicalClassDesignerModelHasTypes>
-    <logicalClassDesignerModelHasTypes>
-      <Interface Id="cd813499-532e-4459-a533-ded2c53c34e1" name="IState" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="2f4e4cdb-b73a-46ec-acfe-8bff50bbb6ba" />
-        <ownedOperations>
-          <operation Id="027a3ee6-9fbc-47cd-b9f5-721357380b20" name="getFriends" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="a9fca1ca-1acb-4db6-80d8-dfe5f6c78c59" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="3a967492-4a3a-49a9-9368-500480b6ddfb" direction="Return">
-                  <elementDefinition Id="0d0e6943-830c-4ef3-808b-fd415d11b533" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="2cc5e2bd-6b26-4c88-b290-fe2aa7a0ff9c" LastKnownName="Vector&lt;IFriend&gt;" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-        </ownedOperations>
-      </Interface>
-    </logicalClassDesignerModelHasTypes>
-    <packageHasNamedElement>
-      <referencedType Id="8a80fa60-533d-4a60-817b-66101e99a263" name="Vector&lt;IFriend&gt;" isAbstract="false" isLeaf="false" cachedFullName="Vector&lt;IFriend&gt;">
-        <elementDefinition Id="fe57191b-e576-439a-945a-cf6489ef865f" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="cfe2fa37-b005-4540-ba49-d99f9a6ef1d2" name="Vector&lt;IFriend&gt;" isAbstract="false" isLeaf="false" cachedFullName="Vector&lt;IFriend&gt;">
-        <elementDefinition Id="fe57191b-e576-439a-945a-cf6489ef865f" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="2cc5e2bd-6b26-4c88-b290-fe2aa7a0ff9c" name="Vector&lt;IFriend&gt;" isAbstract="false" isLeaf="false" cachedFullName="Vector&lt;IFriend&gt;">
-        <elementDefinition Id="fe57191b-e576-439a-945a-cf6489ef865f" />
-      </referencedType>
-    </packageHasNamedElement>
     <packageHasNamedElement>
       <referencedType Id="bfe216e4-8472-4104-84a8-2f89662ff88d" name="IState" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::IState">
         <elementDefinition Id="2f4e4cdb-b73a-46ec-acfe-8bff50bbb6ba" />
@@ -285,35 +177,6 @@
     <packageHasNamedElement>
       <referencedType Id="4d004e47-5d1b-47a3-a100-a55f88ad210f" name="INetwork" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::INetwork">
         <elementDefinition Id="09c5eecd-26dd-4b88-8efb-749c43c14abf" />
-      </referencedType>
-    </packageHasNamedElement>
-    <logicalClassDesignerModelHasTypes>
-      <class Id="d26edac9-8ffb-4a79-8120-c663b76148e6" name="Profile" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="0df767fc-c2f3-486a-b0ab-09a3863820dd" />
-        <suppliersInternal>
-          <interfaceRealization Id="b80dadbb-e501-40c9-b049-fc9b041d8f23">
-            <interfaceMoniker Id="3a059189-ac70-4bd8-9e45-e5ca6a3be26b" LastKnownName="IProfile" />
-            <elementDefinition Id="74333e0d-4079-4fe7-b4e4-70eb322b404d" />
-          </interfaceRealization>
-        </suppliersInternal>
-        <ownedAttributesInternal>
-          <property Id="cba5b66c-f933-40b6-b0bd-0437368c0d49" name="state" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="a488924b-7945-496e-b492-6973c0323bd6" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="eef2d0fb-fc48-4423-99ca-f79726facd82" LastKnownName="IState" />
-            </type_NamedElement>
-          </property>
-        </ownedAttributesInternal>
-      </class>
-    </logicalClassDesignerModelHasTypes>
-    <logicalClassDesignerModelHasTypes>
-      <Interface Id="3a059189-ac70-4bd8-9e45-e5ca6a3be26b" name="IProfile" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="cc2b204b-8b77-4c95-84ec-7baca3adb46d" />
-      </Interface>
-    </logicalClassDesignerModelHasTypes>
-    <packageHasNamedElement>
-      <referencedType Id="eef2d0fb-fc48-4423-99ca-f79726facd82" name="IState" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::IState">
-        <elementDefinition Id="2f4e4cdb-b73a-46ec-acfe-8bff50bbb6ba" />
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -331,8 +194,27 @@
         <elementDefinition Id="51b90189-6a3c-436c-8d56-c24c743a4cb7" />
       </referencedType>
     </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d8197bc1-fa0f-4f7c-9e8c-11d2133da763" name="RequestManager" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="129ef1bf-7aa6-42ca-be7c-00502f577c6a" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
   </packagedElements>
   <package Id="bb3ff10a-0d33-4cef-b3f0-d8068115a770" name="Modelisation CloudBook">
     <elementDefinition Id="94208107-703b-4bbf-9f51-c1243885138f" />
+    <profileInstances>
+      <packageHasProfileInstances Id="2fc00707-b6ed-4d01-8f13-8e7df3e7b29c">
+        <profileInstance Id="8572f41f-9a1c-4840-a384-9fc507bcca13" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="46ea5fb7-8023-4dc0-9a85-f630c1ad366f">
+        <profileInstance Id="6fd0831e-05ad-4585-83af-4a0245d6fa26" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>

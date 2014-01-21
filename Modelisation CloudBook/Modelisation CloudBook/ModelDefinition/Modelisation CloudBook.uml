@@ -1,8 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="94208107-703b-4bbf-9f51-c1243885138f"
   name="Modelisation CloudBook" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="f6dea155-cc2c-45fa-bd4d-5842540d34ee">
+      <body>Singleton (connu par tout le monde)</body>
+      <annotatedElements>
+        <classMoniker
+          Id="f1967018-9c40-4908-a6a1-30d7c27ebb18"
+          LastKnownName="Network"
+          LastKnownLocation="Modelisation CloudBook.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="a55f74c4-2859-4d7f-a385-be16aa98c89a">
+      <body>access, instantiate</body>
+    </comment>
+  </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances
       Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
@@ -40,7 +56,7 @@
             <covered>
               <lifelineMoniker
                 Id="dbff54c7-71c7-4457-a33b-0ad768ec6e92"
-                LastKnownName="Motor"
+                LastKnownName="Engine"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -50,7 +66,7 @@
             <coveredLifelines>
               <lifelineMoniker
                 Id="dbff54c7-71c7-4457-a33b-0ad768ec6e92"
-                LastKnownName="Motor"
+                LastKnownName="Engine"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </coveredLifelines>
             <finish>
@@ -110,7 +126,7 @@
             <covered>
               <lifelineMoniker
                 Id="dbff54c7-71c7-4457-a33b-0ad768ec6e92"
-                LastKnownName="Motor"
+                LastKnownName="Engine"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -120,7 +136,7 @@
             <covered>
               <lifelineMoniker
                 Id="dbff54c7-71c7-4457-a33b-0ad768ec6e92"
-                LastKnownName="Motor"
+                LastKnownName="Engine"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -131,7 +147,7 @@
             <coveredLifelines>
               <lifelineMoniker
                 Id="dbff54c7-71c7-4457-a33b-0ad768ec6e92"
-                LastKnownName="Motor"
+                LastKnownName="Engine"
                 LastKnownLocation="Modelisation CloudBook.uml" />
               <lifelineMoniker
                 Id="1ecbf9a5-bf86-4c48-b2f3-ece07e3ba16b"
@@ -149,7 +165,7 @@
                 <coveredLifelines>
                   <lifelineMoniker
                     Id="dbff54c7-71c7-4457-a33b-0ad768ec6e92"
-                    LastKnownName="Motor"
+                    LastKnownName="Engine"
                     LastKnownLocation="Modelisation CloudBook.uml" />
                   <lifelineMoniker
                     Id="1ecbf9a5-bf86-4c48-b2f3-ece07e3ba16b"
@@ -211,7 +227,7 @@
             <covered>
               <lifelineMoniker
                 Id="dbff54c7-71c7-4457-a33b-0ad768ec6e92"
-                LastKnownName="Motor"
+                LastKnownName="Engine"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -308,7 +324,7 @@
             <covered>
               <lifelineMoniker
                 Id="dbff54c7-71c7-4457-a33b-0ad768ec6e92"
-                LastKnownName="Motor"
+                LastKnownName="Engine"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -555,7 +571,7 @@
             <covered>
               <lifelineMoniker
                 Id="dbff54c7-71c7-4457-a33b-0ad768ec6e92"
-                LastKnownName="Motor"
+                LastKnownName="Engine"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -603,7 +619,7 @@
             <covered>
               <lifelineMoniker
                 Id="dbff54c7-71c7-4457-a33b-0ad768ec6e92"
-                LastKnownName="Motor"
+                LastKnownName="Engine"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -693,7 +709,7 @@
             <covered>
               <lifelineMoniker
                 Id="dbff54c7-71c7-4457-a33b-0ad768ec6e92"
-                LastKnownName="Motor"
+                LastKnownName="Engine"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -1021,7 +1037,7 @@
             <covered>
               <lifelineMoniker
                 Id="dbff54c7-71c7-4457-a33b-0ad768ec6e92"
-                LastKnownName="Motor"
+                LastKnownName="Engine"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -1057,7 +1073,7 @@
             <covered>
               <lifelineMoniker
                 Id="dbff54c7-71c7-4457-a33b-0ad768ec6e92"
-                LastKnownName="Motor"
+                LastKnownName="Engine"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -1065,9 +1081,9 @@
         <lifelines>
           <lifeline
             Id="dbff54c7-71c7-4457-a33b-0ad768ec6e92"
-            name="Motor"
+            name="Engine"
             isActor="false"
-            lifelineDisplayName="Motor">
+            lifelineDisplayName="Engine">
             <represents>
               <propertyMoniker
                 Id="18044da7-764e-45e5-bfb5-46e74ddd5b90"
@@ -1455,7 +1471,7 @@
             <type_NamedElement>
               <classMoniker
                 Id="11158b77-87ac-4d5e-acb9-a3898796ece4"
-                LastKnownName="Motor"
+                LastKnownName="Engine"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </type_NamedElement>
           </property>
@@ -2707,7 +2723,7 @@
     <packageHasNamedElement>
       <class
         Id="11158b77-87ac-4d5e-acb9-a3898796ece4"
-        name="Motor"
+        name="Engine"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -2720,6 +2736,86 @@
               LastKnownLocation="Modelisation CloudBook.uml" />
           </interfaceRealization>
         </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="4611b8bb-1e5a-4fb0-b90f-78c0ce6fe4a3"
+            isDerived="false"
+            sourceEndRoleName="Engine"
+            targetEndRoleName="RequestManager"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="129ef1bf-7aa6-42ca-be7c-00502f577c6a"
+              LastKnownName="RequestManager"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="acb5e326-86ef-4a95-82ec-bb420df76337"
+                  name="Engine"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c2726e87-6fb1-496b-a29c-e67930ff75ab"
+                  name="RequestManager"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="5b747b5b-575a-487e-935f-b2c1eb611469"
+            isDerived="false"
+            sourceEndRoleName="Engine"
+            targetEndRoleName="FriendManager"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="0b199594-23e9-4283-9be3-9043a7cf48aa"
+              LastKnownName="FriendManager"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e4cc8b99-0f91-491f-9855-7e30eda917d8"
+                  name="Engine"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="55ddf613-1050-4f27-84d6-5108dc474ff1"
+                  name="FriendManager"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -2738,6 +2834,60 @@
               LastKnownLocation="Modelisation CloudBook.uml" />
           </interfaceRealization>
         </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="ddd448eb-558b-41bc-b512-83f8a4643362"
+            isDerived="false"
+            sourceEndRoleName="FriendManager"
+            targetEndRoleName="Friend"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="42e92a9f-2f6e-44ac-bc72-8816ae9dd1b8"
+              LastKnownName="Friend"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b4bf55b7-b1cf-4f33-bc39-f198df5804b6"
+                  name="FriendManager"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c9579674-f071-4176-8b28-1922bf8c74b2"
+                  name="Friend"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="7218bdb1-f46f-4811-b2d0-f0374de629c1"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="891dc108-db65-438e-ab72-bf30a79718ed"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedOperationsInternal>
           <operation
             Id="c463f54e-a754-450a-99c9-404e8e20f239"
@@ -2956,6 +3106,13 @@
               LastKnownName="INetwork"
               LastKnownLocation="Modelisation CloudBook.uml" />
           </interfaceRealization>
+          <dependency
+            Id="d0c25994-fde5-4d6a-bc18-e78188308e7e">
+            <classMoniker
+              Id="42e92a9f-2f6e-44ac-bc72-8816ae9dd1b8"
+              LastKnownName="Friend"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </dependency>
         </suppliersInternal>
         <ownedOperationsInternal>
           <operation
@@ -3277,6 +3434,14 @@
             LastKnownLocation="Modelisation CloudBook.uml" />
         </operation>
       </receiveOperationEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="129ef1bf-7aa6-42ca-be7c-00502f577c6a"
+        name="RequestManager"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
