@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="b4347472-733a-47c6-8340-b3bfb188428c" name="Network" linkedPackageId="ba59ba86-1753-4f49-9658-b1c15f3d252f" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="3ca934e0-bd74-497c-8da5-75b56c0f4b5a">
+      <elementDefinition Id="6d250e28-d7e2-4a4d-884f-c9a25b9ff3fb" />
+      <body>Singleton</body>
+      <annotatedElements>
+        <classMoniker Id="b2e1d615-6942-4ecc-86b3-9473b6c92c52" LastKnownName="Network" />
+      </annotatedElements>
+    </comment>
+    <comment Id="163f3881-73f7-4b1d-bc50-4efc06670dde">
+      <elementDefinition Id="8aac2c98-0aee-47ac-9d2e-1c7201854e73" />
+      <body>Interface with the gossip library</body>
+      <annotatedElements>
+        <classMoniker Id="13d450a4-76f5-4039-8d7b-e9748dfb1278" LastKnownName="GossipModule" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="d243089b-d7a3-45f6-b57f-3f4ba883dbdb">
+      <profileInstance Id="2dcf05f0-d1af-4df2-9c18-dc2a934acddd" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="8c8b6d71-d0c9-47e0-8017-33d8b2d729ea">
+      <profileInstance Id="68772313-8dba-4197-bbe0-a2ca64980042" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b2e1d615-6942-4ecc-86b3-9473b6c92c52" name="Network" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d12b6130-8059-406e-8fdf-8cf815211a5c" />
+        <ownedAttributesInternal>
+          <property Id="b5606d4f-9937-4a11-8e39-ac4fd82354d2" name="INSTANCE" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="229b25aa-506d-47a1-acaa-1b853b0cbd8a" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="3e5b3b77-1ae2-4089-ad69-62b06eb8f8ad" LastKnownName="Network" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="3bac7f44-ba3f-4525-babd-014b94444fd9" name="Network" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8a9dff1b-537f-475a-95a8-9639cc4d5ee1" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="3e5b3b77-1ae2-4089-ad69-62b06eb8f8ad" name="Network" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::Network">
+        <elementDefinition Id="f1967018-9c40-4908-a6a1-30d7c27ebb18" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="13d450a4-76f5-4039-8d7b-e9748dfb1278" name="GossipModule" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="4306bf2f-c899-4279-8843-9251805d0d93" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="af85eb18-4547-4fd6-afb6-97df356e8d21" name="abstractNetworkFactory">
+        <elementDefinition Id="98f09da5-964e-4fa6-a77a-5802659fea09" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <Interface Id="5ccb2ec7-2a9e-4703-a1b6-70ad4d9e4e9e" name="NetworkFactory" isAbstract="false" isLeaf="false">
+              <elementDefinition Id="2a601f9d-c4ca-4af9-b303-e49eee796c28" />
+            </Interface>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="4b090f40-1f85-4ce1-b1c6-3c31669c0d9e" name="ClientServerFactory" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="c433e549-801d-4b1f-828d-7ae58d8852a3" />
+              <suppliersInternal>
+                <interfaceRealization Id="f8efc603-bbcb-4b4c-a9ba-bcd5513d817e">
+                  <interfaceMoniker Id="5ccb2ec7-2a9e-4703-a1b6-70ad4d9e4e9e" LastKnownName="NetworkFactory" />
+                  <elementDefinition Id="1341d6c4-dace-47f3-b997-e068269d4783" />
+                </interfaceRealization>
+              </suppliersInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="a207bf5f-c386-4ddc-b33e-7c6c272e0764" name="P2PFactory" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="11d9bb5c-7a32-4db5-a693-9d7d9b0770d6" />
+              <suppliersInternal>
+                <interfaceRealization Id="a0e08208-141d-4b46-a87f-d93a740a232e">
+                  <interfaceMoniker Id="5ccb2ec7-2a9e-4703-a1b6-70ad4d9e4e9e" LastKnownName="NetworkFactory" />
+                  <elementDefinition Id="855ec0d9-668c-4e5d-ae4f-dbabe9dfce52" />
+                </interfaceRealization>
+              </suppliersInternal>
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="58462021-0c11-406c-8ea2-4d974de5ab4a" name="FriendApp" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0322dda1-a545-4486-9a86-337143892c90" />
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="ba59ba86-1753-4f49-9658-b1c15f3d252f" name="Modelisation CloudBook">
+    <elementDefinition Id="94208107-703b-4bbf-9f51-c1243885138f" />
+  </package>
+</logicalClassDesignerModel>

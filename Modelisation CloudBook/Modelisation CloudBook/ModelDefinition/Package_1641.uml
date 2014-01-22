@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="98f09da5-964e-4fa6-a77a-5802659fea09"
+  name="abstractNetworkFactory" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <Interface
+        Id="2a601f9d-c4ca-4af9-b303-e49eee796c28"
+        name="NetworkFactory"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="c433e549-801d-4b1f-828d-7ae58d8852a3"
+        name="ClientServerFactory"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="1341d6c4-dace-47f3-b997-e068269d4783">
+            <interfaceMoniker
+              Id="2a601f9d-c4ca-4af9-b303-e49eee796c28"
+              LastKnownName="NetworkFactory"
+              LastKnownLocation="Package_1641.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="11d9bb5c-7a32-4db5-a693-9d7d9b0770d6"
+        name="P2PFactory"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="855ec0d9-668c-4e5d-ae4f-dbabe9dfce52">
+            <interfaceMoniker
+              Id="2a601f9d-c4ca-4af9-b303-e49eee796c28"
+              LastKnownName="NetworkFactory"
+              LastKnownLocation="Package_1641.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

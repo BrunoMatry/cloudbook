@@ -18,6 +18,26 @@
       Id="a55f74c4-2859-4d7f-a385-be16aa98c89a">
       <body>access, instantiate</body>
     </comment>
+    <comment
+      Id="6d250e28-d7e2-4a4d-884f-c9a25b9ff3fb">
+      <body>Singleton</body>
+      <annotatedElements>
+        <classMoniker
+          Id="d12b6130-8059-406e-8fdf-8cf815211a5c"
+          LastKnownName="Network"
+          LastKnownLocation="Modelisation CloudBook.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="8aac2c98-0aee-47ac-9d2e-1c7201854e73">
+      <body>Interface with the gossip library</body>
+      <annotatedElements>
+        <classMoniker
+          Id="4306bf2f-c899-4279-8843-9251805d0d93"
+          LastKnownName="GossipModule"
+          LastKnownLocation="Modelisation CloudBook.uml" />
+      </annotatedElements>
+    </comment>
   </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances
@@ -3442,6 +3462,67 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="d12b6130-8059-406e-8fdf-8cf815211a5c"
+        name="Network"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="229b25aa-506d-47a1-acaa-1b853b0cbd8a"
+            name="INSTANCE"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="f1967018-9c40-4908-a6a1-30d7c27ebb18"
+                LastKnownName="Network"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="8a9dff1b-537f-475a-95a8-9639cc4d5ee1"
+            name="Network"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4306bf2f-c899-4279-8843-9251805d0d93"
+        name="GossipModule"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="98f09da5-964e-4fa6-a77a-5802659fea09"
+        LastKnownName="abstractNetworkFactory"
+        LastKnownLocation="Package_1641.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="0322dda1-a545-4486-9a86-337143892c90"
+        name="FriendApp"
+        isAbstract="false"
+        isLeaf="false" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

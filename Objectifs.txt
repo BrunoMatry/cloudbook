@@ -19,3 +19,7 @@ Ne pas hésiter à être créatif, surtout avec le moteur. Chaque module doit être v
 Exemple : moteur se charge de la visualisation des scenarios d'échange, Network de l'état du réseau, FriendManager de la liste des amis...
 
 Bien définir les contraintes de chaque module (cf celle du Network définie plus haut).
+
+------------------------------
+
+Le network ordonnace les envois, il suffit de lui demander un ordre particulier et il s'en charge
