@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
   dslVersion="1.0.0.0"
   Id="98f09da5-964e-4fa6-a77a-5802659fea09"
   name="abstractNetworkFactory" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -13,7 +13,7 @@
         <ownedOperations>
           <operation
             Id="ca0050ac-bb17-4231-89e0-4ff915f7fc1b"
-            name="makeManager"
+            name="getManager"
             isLeaf="false"
             isStatic="false"
             isAbstract="true"
@@ -81,6 +81,32 @@
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ee9acc6f-7583-496b-bdfd-bb0628d7ad13"
+                  name="members"
+                  direction="In"
+                  isUnique="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="1a8e8981-e508-4b37-ba0f-68d0634ade96"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="1b9062a2-9346-4d23-896b-29396a9e14d9"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="74cc5dc8-68d5-4669-88ed-3d440abd2c5c"
+                      LastKnownName="Member"
+                      LastKnownLocation="Package_1641.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
         </ownedOperations>
@@ -105,7 +131,7 @@
         <ownedOperationsInternal>
           <operation
             Id="d48a3650-0744-488e-9291-7a26519f12ae"
-            name="makeManager"
+            name="getManager"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -173,6 +199,32 @@
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="eb8d6a94-d128-4fc0-b379-155469adf7c1"
+                  name="members"
+                  direction="In"
+                  isUnique="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="3221891c-c508-46b3-8ac7-77eb5aca4ef8"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="12c406dc-a3c0-4b63-91e4-ca2ee8a62966"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="74cc5dc8-68d5-4669-88ed-3d440abd2c5c"
+                      LastKnownName="Member"
+                      LastKnownLocation="Package_1641.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
         </ownedOperationsInternal>
@@ -197,7 +249,7 @@
         <ownedOperationsInternal>
           <operation
             Id="07b5534f-6b9a-4b9c-b6c3-abcd20759101"
-            name="makeManager"
+            name="getManager"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -261,6 +313,32 @@
                     <undefinedTypeMoniker
                       Id="d3487975-24ee-4c4f-a582-e983e78f20d8"
                       LastKnownName="Request"
+                      LastKnownLocation="Package_1641.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4e2518b3-54af-4e37-8264-afabba673b39"
+                  name="members"
+                  direction="In"
+                  isUnique="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="c63f92ca-60bc-4d79-b43d-4c58add1be6d"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="e4f979a0-c94d-44a2-bac2-33c405b8ff28"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="74cc5dc8-68d5-4669-88ed-3d440abd2c5c"
+                      LastKnownName="Member"
                       LastKnownLocation="Package_1641.uml" />
                   </type_NamedElement>
                 </parameter>
