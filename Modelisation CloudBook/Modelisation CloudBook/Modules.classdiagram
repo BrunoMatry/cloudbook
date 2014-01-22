@@ -51,6 +51,21 @@
             <elementDefinition Id="5b747b5b-575a-487e-935f-b2c1eb611469" />
           </association>
         </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="0c4d75b5-1596-4e96-b2a5-19fbc487d862" name="handleRequest" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="36f7d2f1-5e10-453a-bace-372c0e3970a7" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="28cbf256-b82f-4641-87b8-113c7c582123" name="request" direction="In" isUnique="false">
+                  <elementDefinition Id="423c3761-b921-4483-86b6-349455a58786" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="11f23f9c-f33d-4911-9648-4ab0d9cfa076" LastKnownName="Request" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -136,6 +151,24 @@
             <elementDefinition Id="d0c25994-fde5-4d6a-bc18-e78188308e7e" />
           </dependency>
         </suppliersInternal>
+        <targetEnds>
+          <association Id="612a2aa9-329a-4ea2-83b2-ef73f181fb59" isDerived="false" sourceEndRoleName="Network" targetEndRoleName="Engine" isLeaf="false" isAbstract="false">
+            <classMoniker Id="cc489fd8-7d2b-4865-85c7-f911b937a745" LastKnownName="Engine" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="97dc0d8f-4665-4f95-b426-aad906b2688c" name="Network" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="70257156-0fdc-4a14-95f8-89964f89a043" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="87b0e944-6cff-4bf1-b7e1-461fd11b20ce" name="Engine" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="f86466c5-4a0d-442f-be81-4c507315fe32" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="82a9082c-adfa-4367-bf7a-7c9227ea615a" />
+          </association>
+        </targetEnds>
         <ownedOperationsInternal>
           <operation Id="76278051-ea58-4060-b2d8-fcd932ee84ec" name="getProfiles" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="84fffd6e-dc63-4e82-a84b-89cc22e88a1f" />
@@ -161,6 +194,32 @@
                   <elementDefinition Id="98a2a0ec-76cf-4442-99be-5b714d30256f" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="80156b48-9482-4a3a-903c-1271a4024e7a" LastKnownName="Vector&lt;String&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="f2630bc3-d524-4ee1-87f5-fa5be2cfcb22" name="send" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="86119437-e4e1-4b0c-a4a5-5717694283b1" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e2b3b2ce-20df-48fd-bb0b-4982aa10f7df" name="friends" direction="In" isUnique="false">
+                  <elementDefinition Id="9b25ed1b-963a-4882-a098-cf6aa227032d" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="387a5b7e-54e6-4955-bd3b-7e89e3b0e206" LastKnownName="List&lt;Friend&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="77af6c6c-ef06-4de5-a535-a897990ae509" name="receiveRequest" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ca6aae85-1489-46ea-ab0c-01d75d0be98a" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="cc9d8884-0bca-4e13-946e-366d44b20487" name="request" direction="In" isUnique="false">
+                  <elementDefinition Id="a511af51-dd11-41b3-8670-f5e7148de977" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="11f23f9c-f33d-4911-9648-4ab0d9cfa076" LastKnownName="Request" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -199,6 +258,16 @@
         <elementDefinition Id="129ef1bf-7aa6-42ca-be7c-00502f577c6a" />
       </class>
     </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="387a5b7e-54e6-4955-bd3b-7e89e3b0e206" name="List&lt;Friend&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;Friend&gt;">
+        <elementDefinition Id="1ee3936a-eafd-4c86-9584-4311d78eae80" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="11f23f9c-f33d-4911-9648-4ab0d9cfa076" name="Request" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::Request">
+        <elementDefinition Id="15f9c115-43f6-4912-b2ef-e458bf906f36" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="bb3ff10a-0d33-4cef-b3f0-d8068115a770" name="Modelisation CloudBook">
     <elementDefinition Id="94208107-703b-4bbf-9f51-c1243885138f" />

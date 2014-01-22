@@ -9,7 +9,82 @@
         Id="2a601f9d-c4ca-4af9-b303-e49eee796c28"
         name="NetworkFactory"
         isAbstract="false"
-        isLeaf="false" />
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="ca0050ac-bb17-4231-89e0-4ff915f7fc1b"
+            name="makeManager"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d44c0989-4758-4e8b-b9e4-a1a98e91fb3f"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="861e5183-5c6e-4f19-a5d4-5125bffcb057"
+                      LastKnownName="Manager"
+                      LastKnownLocation="Package_1641.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="a4d67dfc-e63a-465d-9b2c-b969e67b82f9"
+            name="makeMember"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="24f629b7-0c52-4fff-ba59-7bd93b1ccd75"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="74cc5dc8-68d5-4669-88ed-3d440abd2c5c"
+                      LastKnownName="Member"
+                      LastKnownLocation="Package_1641.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="83d0bd39-28b0-4627-a81b-77ecf2734404"
+            name="makeRequest"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d6daa9e8-edb3-43aa-8a98-96e412c38b1e"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="d3487975-24ee-4c4f-a582-e983e78f20d8"
+                      LastKnownName="Request"
+                      LastKnownLocation="Package_1641.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
@@ -27,6 +102,80 @@
               LastKnownLocation="Package_1641.uml" />
           </interfaceRealization>
         </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="d48a3650-0744-488e-9291-7a26519f12ae"
+            name="makeManager"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="85044fe3-73ab-4d48-ab69-d77f580b4c1d"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="861e5183-5c6e-4f19-a5d4-5125bffcb057"
+                      LastKnownName="Manager"
+                      LastKnownLocation="Package_1641.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="d1d09a3b-31cd-47b6-bde2-bf8d8311d547"
+            name="makeMember"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0e0db601-52ba-43bf-a26b-8867e9e16c12"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="74cc5dc8-68d5-4669-88ed-3d440abd2c5c"
+                      LastKnownName="Member"
+                      LastKnownLocation="Package_1641.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="4cee6e37-7d3b-479e-a6cf-bd0cc95e3f9a"
+            name="makeRequest"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="bcd7f21f-0054-4541-a5ad-9e8ece0da4f5"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="d3487975-24ee-4c4f-a582-e983e78f20d8"
+                      LastKnownName="Request"
+                      LastKnownLocation="Package_1641.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -45,7 +194,96 @@
               LastKnownLocation="Package_1641.uml" />
           </interfaceRealization>
         </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="07b5534f-6b9a-4b9c-b6c3-abcd20759101"
+            name="makeManager"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="fd8acac8-1859-4d77-ac2a-761ecd704184"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="861e5183-5c6e-4f19-a5d4-5125bffcb057"
+                      LastKnownName="Manager"
+                      LastKnownLocation="Package_1641.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="2136d831-ad34-4c2d-9911-dcdfd45c7e15"
+            name="makeMember"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9a33fd38-7071-41d5-9264-bfc525197e20"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="74cc5dc8-68d5-4669-88ed-3d440abd2c5c"
+                      LastKnownName="Member"
+                      LastKnownLocation="Package_1641.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="56dc6392-3aef-42f4-8bfd-1bcf83d74fef"
+            name="makeRequest"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="81d5be6a-faff-4795-83c2-b39b5e5e1587"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="d3487975-24ee-4c4f-a582-e983e78f20d8"
+                      LastKnownName="Request"
+                      LastKnownLocation="Package_1641.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="861e5183-5c6e-4f19-a5d4-5125bffcb057"
+        name="Manager" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="74cc5dc8-68d5-4669-88ed-3d440abd2c5c"
+        name="Member" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="d3487975-24ee-4c4f-a582-e983e78f20d8"
+        name="Request" />
     </packageHasNamedElement>
   </packagedElements>
 </package>
