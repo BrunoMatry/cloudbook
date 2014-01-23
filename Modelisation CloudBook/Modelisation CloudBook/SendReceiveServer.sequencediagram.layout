@@ -44,14 +44,14 @@
       </nodes>
     </returnMessageConnector>
     <lifelineShape Id="b71f6fc4-f9fa-49a9-8e78-e05fc239ae4c" absoluteBounds="8.0026044845581055, 1, 0.15, 7" visible="true" visualStyleMode="Modified">
-      <lifelineMoniker Id="80decf5b-9f9d-45d5-9f9c-7fd8914b4d88" LastKnownName=": Server" />
+      <lifelineMoniker Id="80decf5b-9f9d-45d5-9f9c-7fd8914b4d88" LastKnownName=": CommunicationModule" />
       <relativeChildShapes>
-        <umlLifelineHeadShape Id="5cbcede8-8fe0-4971-bd12-c10b78011474" absoluteBounds="7.5776044845581056, 0.6, 1, 0.4" customColor="White" visualStyleMode="Modified">
-          <lifelineMoniker Id="80decf5b-9f9d-45d5-9f9c-7fd8914b4d88" LastKnownName=": Server" />
+        <umlLifelineHeadShape Id="5cbcede8-8fe0-4971-bd12-c10b78011474" absoluteBounds="7.2555996489524839, 0.6, 1.6440096712112426, 0.4" customColor="White" visualStyleMode="Modified">
+          <lifelineMoniker Id="80decf5b-9f9d-45d5-9f9c-7fd8914b4d88" LastKnownName=": CommunicationModule" />
           <relativeChildShapes />
         </umlLifelineHeadShape>
         <lifelineHoverShape Id="4c8eaf65-a00f-4671-9d77-c01bcbe407fe" absoluteBounds="8.0026044845581055, 1, 0, 7">
-          <lifelineMoniker Id="80decf5b-9f9d-45d5-9f9c-7fd8914b4d88" LastKnownName=": Server" />
+          <lifelineMoniker Id="80decf5b-9f9d-45d5-9f9c-7fd8914b4d88" LastKnownName=": CommunicationModule" />
         </lifelineHoverShape>
         <umlExecutionSpecificationShape Id="ea11efe3-9c84-49a9-8a2e-82015ecfaaf4" absoluteBounds="8.0026044845581055, 2.395833333333333, 0.15, 0.55" customColor="184, 204, 215" visualStyleMode="Modified">
           <behaviorExecutionSpecificationMoniker Id="c83af603-5b1f-4f0a-9605-643bfb8fed8e" LastKnownName="BehaviorExecutionSpecification2" />

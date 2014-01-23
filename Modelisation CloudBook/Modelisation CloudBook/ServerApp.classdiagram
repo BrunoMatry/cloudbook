@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="167e4883-d43c-4a5a-86c9-7c3745d0aa7b" name="ServerApp" linkedPackageId="7fcc2720-be11-493a-b349-d88a63b710cc" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="df6567eb-ccff-4b71-8f44-fe4543778288">
+      <elementDefinition Id="500fe901-ab8a-4748-8aa2-c2458fa1768d" />
+      <body>Active Object - server side
+
+import network;</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="9206dcf4-8097-4824-b357-d2a4b0a6b04f">
+      <profileInstance Id="d5687e4b-fafb-4536-9773-61605f908332" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="a823f69a-7b84-4d8b-92e0-7da4b7d6dd35">
+      <profileInstance Id="9cecd792-4564-4a9a-9de1-dc98b755d8dc" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b96c39ef-7032-451c-8ad6-f57b4a2aa5a2" name="Scheduler" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="dd244b7c-ce68-4ce5-b055-a34202a1c3c8" />
+        <generalsInternal>
+          <generalization Id="c07e01fc-d406-425d-9fee-e306fed24216" isSubstitutable="false">
+            <classMoniker Id="9a512c49-2fcd-46cf-b434-1cff97285f92" LastKnownName="Thread" />
+            <elementDefinition Id="2e7967d3-4249-4341-9547-0a1cb131d3bc" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="94175ae9-0890-4224-83b0-118d3b7abcb3" name="enqueue" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="31eaa20d-5933-453e-920e-7b0aa4262129" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="427b01f8-d382-4b05-bef2-370627202d23" name="req" direction="In" isUnique="false">
+                  <elementDefinition Id="c7f6c290-08d1-4b80-929a-c99bfc68a9d4" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="1c77b3a2-b19e-4723-a4a8-bb4301a1e821" LastKnownName="ServerRequest" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="233fcc84-3383-4575-adc2-57d14c7d70ec" name="dispatch" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="66d90837-0629-4ecd-9c27-037ceb030820" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="efb89db4-45d5-44e7-a612-1adc01d75bfe" name="req" direction="In" isUnique="false">
+                  <elementDefinition Id="7968e9c4-982a-4c2a-9181-ec682723f737" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="1c77b3a2-b19e-4723-a4a8-bb4301a1e821" LastKnownName="ServerRequest" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d1c22141-e4ba-4cc4-9c39-ee83a913dfae" name="Servant" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="53eecfb5-24c5-4a75-a949-5f3952199b98" />
+        <generalsInternal>
+          <generalization Id="71f76f87-009c-4f47-a3ad-6ecc3df4ce77" isSubstitutable="false">
+            <classMoniker Id="9a512c49-2fcd-46cf-b434-1cff97285f92" LastKnownName="Thread" />
+            <elementDefinition Id="eed20e9f-91c9-42b0-a789-90ff145e858a" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="453f6091-b96a-429d-9cc8-8897b10d0f18" name="getMemberList" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="631ace8b-5674-4a9a-b045-176bd42efde7" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f193559d-ef01-43d1-a0b6-011113997840" name="members" direction="In" isUnique="false">
+                  <lowerValueInternal>
+                    <literalString Id="60367a2d-31c3-400c-a5d5-cd8ed578ec05" name="Lower" value="*">
+                      <elementDefinition Id="fb255c6f-2ebd-4455-8df8-c23ed8ff446d" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="ba324d25-3c21-463c-a18d-ef18e00d8a25" name="Upper" value="*">
+                      <elementDefinition Id="daaeef93-f606-462c-ae6d-036ff64d7ee5" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="d79ec953-1f4f-420c-ba04-9f1c8c9ca55a" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="276c8bcb-9f9b-4b0f-934c-8d1c79d4a231" LastKnownName="Member" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="fb6f8736-de4f-4256-bab4-badae0a38111" name="java.*">
+        <elementDefinition Id="be0e5821-4d54-486e-8b14-529d47786ef8" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="9a512c49-2fcd-46cf-b434-1cff97285f92" name="Thread" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="ac4d54cc-517e-48fd-af72-eb794906ff34" />
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <packageHasNamedElement>
+      <referencedType Id="1c77b3a2-b19e-4723-a4a8-bb4301a1e821" name="ServerRequest" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::ServerRequest">
+        <elementDefinition Id="bc1d503e-d3fd-47c5-a19e-02517b27c87b" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="276c8bcb-9f9b-4b0f-934c-8d1c79d4a231" name="Member" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::Member">
+        <elementDefinition Id="2b6778ad-e427-4b1f-a9d0-38da74c4864f" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="7fcc2720-be11-493a-b349-d88a63b710cc" name="Modelisation CloudBook">
+    <elementDefinition Id="94208107-703b-4bbf-9f51-c1243885138f" />
+  </package>
+</logicalClassDesignerModel>
