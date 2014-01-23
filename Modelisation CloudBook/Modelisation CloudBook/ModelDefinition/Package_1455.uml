@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
   dslVersion="1.0.0.0"
   Id="be0e5821-4d54-486e-8b14-529d47786ef8"
-  name="java.*" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  name="java.util.concurent" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
   <packagedElements>
     <packageHasNamedElement>
       <class
@@ -11,6 +11,87 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="9342c0be-5a67-427c-97fe-0d9d26c54421"
+        name="FutureTask"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedRedefinableTemplateSignatureInternal>
+          <redefinableTemplateSignature
+            Id="414ea8da-444d-43bd-966d-b28a97b9b5a2"
+            parameters=""
+            isLeaf="false">
+            <ownedParameters>
+              <classifierTemplateParameter
+                Id="a2557a34-a1d4-49f6-9f37-06130fbbb486">
+                <ownedParameterableElement>
+                  <class
+                    Id="8e914886-9680-4b80-a61d-8d19b7528a48"
+                    name="T"
+                    isAbstract="false"
+                    isLeaf="false"
+                    isActiveClass="false" />
+                </ownedParameterableElement>
+                <nonOwnedDefault>
+                  <classMoniker
+                    Id="d1c887df-5e02-43f8-8c0a-412b06acb07e"
+                    LastKnownName="ClientMember"
+                    LastKnownLocation="Package_1622.uml" />
+                </nonOwnedDefault>
+                <defaultClassifier>
+                  <classMoniker
+                    Id="d1c887df-5e02-43f8-8c0a-412b06acb07e"
+                    LastKnownName="ClientMember"
+                    LastKnownLocation="Package_1622.uml" />
+                </defaultClassifier>
+              </classifierTemplateParameter>
+            </ownedParameters>
+          </redefinableTemplateSignature>
+        </ownedRedefinableTemplateSignatureInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="f5bd04c9-98af-4b03-9910-87ec9c82a0e2"
+        name="Queue"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedRedefinableTemplateSignatureInternal>
+          <redefinableTemplateSignature
+            Id="a2e2c8a0-bf58-45b0-8fa6-af784b890d8a"
+            parameters=""
+            isLeaf="false">
+            <ownedParameters>
+              <classifierTemplateParameter
+                Id="0d1e7cad-3f7f-4a29-a0bb-57901c3db681">
+                <ownedParameterableElement>
+                  <class
+                    Id="e45546d3-d6c2-4547-b89c-dc87d19b0466"
+                    name="T"
+                    isAbstract="false"
+                    isLeaf="false"
+                    isActiveClass="false" />
+                </ownedParameterableElement>
+                <nonOwnedDefault>
+                  <classMoniker
+                    Id="b45e73f9-e99d-4edd-b985-40a58bcb5aa5"
+                    LastKnownName="ServerRequest"
+                    LastKnownLocation="Package_1508.uml" />
+                </nonOwnedDefault>
+                <defaultClassifier>
+                  <classMoniker
+                    Id="b45e73f9-e99d-4edd-b985-40a58bcb5aa5"
+                    LastKnownName="ServerRequest"
+                    LastKnownLocation="Package_1508.uml" />
+                </defaultClassifier>
+              </classifierTemplateParameter>
+            </ownedParameters>
+          </redefinableTemplateSignature>
+        </ownedRedefinableTemplateSignatureInternal>
+      </Interface>
     </packageHasNamedElement>
   </packagedElements>
 </package>

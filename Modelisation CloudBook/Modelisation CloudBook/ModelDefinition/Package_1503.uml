@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
   dslVersion="1.0.0.0"
   Id="02bfc9bc-583a-448d-959b-acd34479e751"
-  name="server-client" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  name="active-object-server-library" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
   <ownedCommentsInternal>
     <comment
       Id="6a5331f9-5005-44b5-b751-a85dc3627081">
@@ -134,15 +134,6 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
-        <suppliersInternal>
-          <interfaceRealization
-            Id="433d7408-9525-42c2-8474-9678676fe9aa">
-            <interfaceMoniker
-              Id="2b6778ad-e427-4b1f-a9d0-38da74c4864f"
-              LastKnownName="Member"
-              LastKnownLocation="Modelisation CloudBook.uml" />
-          </interfaceRealization>
-        </suppliersInternal>
         <ownedOperationsInternal>
           <operation
             Id="f8ee456d-7fbf-44bf-a774-e63867ef477f"
@@ -269,7 +260,7 @@
             isQuery="false" />
           <operation
             Id="fd97991b-627d-4b47-852c-27bb32369d3e"
-            name="Server"
+            name="CommunicationModule"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -286,15 +277,6 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
-        <suppliersInternal>
-          <interfaceRealization
-            Id="964c2e00-f452-4460-a014-5246206ef6a4">
-            <interfaceMoniker
-              Id="2b6778ad-e427-4b1f-a9d0-38da74c4864f"
-              LastKnownName="Member"
-              LastKnownLocation="Modelisation CloudBook.uml" />
-          </interfaceRealization>
-        </suppliersInternal>
         <targetEnds>
           <association
             Id="96234d72-58ce-4c66-8866-e167de36d788"
@@ -376,6 +358,14 @@
           </operation>
         </ownedOperationsInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="0433dd1c-6d70-4224-a13c-d4edb3adf0df"
+        name="Class1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
     </packageHasNamedElement>
   </packagedElements>
 </package>
