@@ -52,7 +52,7 @@
                 <parameter Id="28cbf256-b82f-4641-87b8-113c7c582123" name="request" direction="In" isUnique="false">
                   <elementDefinition Id="423c3761-b921-4483-86b6-349455a58786" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="11f23f9c-f33d-4911-9648-4ab0d9cfa076" LastKnownName="IRequest" />
+                    <referencedTypeMoniker Id="11f23f9c-f33d-4911-9648-4ab0d9cfa076" LastKnownName="NetworkRequest" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -171,7 +171,7 @@
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="11f23f9c-f33d-4911-9648-4ab0d9cfa076" name="IRequest" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::IRequest">
+      <referencedType Id="11f23f9c-f33d-4911-9648-4ab0d9cfa076" name="NetworkRequest" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::NetworkRequest">
         <elementDefinition Id="15f9c115-43f6-4912-b2ef-e458bf906f36" />
       </referencedType>
     </packageHasNamedElement>
@@ -259,7 +259,7 @@
                       <parameter Id="cc9d8884-0bca-4e13-946e-366d44b20487" name="request" direction="In" isUnique="false">
                         <elementDefinition Id="a511af51-dd11-41b3-8670-f5e7148de977" />
                         <type_NamedElement>
-                          <referencedTypeMoniker Id="11f23f9c-f33d-4911-9648-4ab0d9cfa076" LastKnownName="IRequest" />
+                          <referencedTypeMoniker Id="11f23f9c-f33d-4911-9648-4ab0d9cfa076" LastKnownName="NetworkRequest" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>

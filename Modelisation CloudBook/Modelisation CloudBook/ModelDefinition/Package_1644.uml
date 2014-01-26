@@ -51,7 +51,7 @@
             <type_NamedElement>
               <interfaceMoniker
                 Id="2b6778ad-e427-4b1f-a9d0-38da74c4864f"
-                LastKnownName="Member"
+                LastKnownName="NetworkMember"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </type_NamedElement>
           </property>
@@ -129,7 +129,7 @@
             Id="a225869c-e08a-434b-a8fa-a8200fb4c572">
             <interfaceMoniker
               Id="2b6778ad-e427-4b1f-a9d0-38da74c4864f"
-              LastKnownName="Member"
+              LastKnownName="NetworkMember"
               LastKnownLocation="Modelisation CloudBook.uml" />
           </interfaceRealization>
         </suppliersInternal>
@@ -163,14 +163,22 @@
                   </upperValueInternal>
                   <type_NamedElement>
                     <interfaceMoniker
-                      Id="2b6778ad-e427-4b1f-a9d0-38da74c4864f"
+                      Id="2bb70b93-dfd9-462c-8171-cfdc69b0790b"
                       LastKnownName="Member"
-                      LastKnownLocation="Modelisation CloudBook.uml" />
+                      LastKnownLocation="Package1_1456.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="51b80d47-3054-4d1a-8e96-15a32a0de970"
+            name="getMembers"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -186,7 +194,7 @@
             Id="ff3c9f1b-ffd4-478a-bb9d-ed3f4b1532bf">
             <interfaceMoniker
               Id="2b6778ad-e427-4b1f-a9d0-38da74c4864f"
-              LastKnownName="Member"
+              LastKnownName="NetworkMember"
               LastKnownLocation="Modelisation CloudBook.uml" />
           </interfaceRealization>
         </suppliersInternal>
@@ -261,14 +269,22 @@
                   </upperValueInternal>
                   <type_NamedElement>
                     <interfaceMoniker
-                      Id="2b6778ad-e427-4b1f-a9d0-38da74c4864f"
+                      Id="2bb70b93-dfd9-462c-8171-cfdc69b0790b"
                       LastKnownName="Member"
-                      LastKnownLocation="Modelisation CloudBook.uml" />
+                      LastKnownLocation="Package1_1456.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="acf6f781-46a2-447b-a18b-6e85f05e5bb4"
+            name="getMembers"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -451,7 +467,7 @@
                   <type_NamedElement>
                     <interfaceMoniker
                       Id="2b6778ad-e427-4b1f-a9d0-38da74c4864f"
-                      LastKnownName="Member"
+                      LastKnownName="NetworkMember"
                       LastKnownLocation="Modelisation CloudBook.uml" />
                   </type_NamedElement>
                 </parameter>

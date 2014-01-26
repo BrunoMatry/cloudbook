@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+  dslVersion="1.0.0.0"
+  Id="f3ef46c5-15fd-453e-9f28-13a90723b3d5"
+  name="java.util.concurent" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="b64430b9-a1fb-4718-ab50-16c5205499f4"
+        name="Thread"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="84e3dc38-c06b-4ff2-95ff-f487a6fc4ab4"
+        name="FutureTask"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedRedefinableTemplateSignatureInternal>
+          <redefinableTemplateSignature
+            Id="56cf0aa9-7db6-4448-9799-dc3e5173a553"
+            parameters=""
+            isLeaf="false">
+            <ownedParameters>
+              <classifierTemplateParameter
+                Id="ff37e6d9-3e7d-4c89-9b97-a24c4e23d5e0">
+                <ownedParameterableElement>
+                  <class
+                    Id="6933b002-f37a-4a96-86cd-e48ab5a4639b"
+                    name="T"
+                    isAbstract="false"
+                    isLeaf="false"
+                    isActiveClass="false" />
+                </ownedParameterableElement>
+                <nonOwnedDefault>
+                  <classMoniker
+                    Id="1ada6445-82a7-4b45-9361-795a601a1330"
+                    LastKnownName="ClientMember"
+                    LastKnownLocation="Package_1503.uml" />
+                </nonOwnedDefault>
+                <defaultClassifier>
+                  <classMoniker
+                    Id="3247268e-0ac4-4953-b12b-200104ec433f"
+                    LastKnownName="ClientMember"
+                    LastKnownLocation="Package1_1456.uml" />
+                </defaultClassifier>
+              </classifierTemplateParameter>
+            </ownedParameters>
+          </redefinableTemplateSignature>
+        </ownedRedefinableTemplateSignatureInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="f5081518-fb70-455f-b719-3bc96684e7a2"
+        name="Queue"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedRedefinableTemplateSignatureInternal>
+          <redefinableTemplateSignature
+            Id="414c2bc9-068e-445e-bfd2-9aeeaeff3a22"
+            parameters=""
+            isLeaf="false">
+            <ownedParameters>
+              <classifierTemplateParameter
+                Id="7fe122e8-cc02-4a79-b905-8622caa500f1">
+                <ownedParameterableElement>
+                  <class
+                    Id="b4a5d79c-6ce8-4b91-a221-25479c7bb54f"
+                    name="T"
+                    isAbstract="false"
+                    isLeaf="false"
+                    isActiveClass="false" />
+                </ownedParameterableElement>
+                <nonOwnedDefault>
+                  <classMoniker
+                    Id="b45e73f9-e99d-4edd-b985-40a58bcb5aa5"
+                    LastKnownName="ServerRequest"
+                    LastKnownLocation="Package_1508.uml" />
+                </nonOwnedDefault>
+              </classifierTemplateParameter>
+            </ownedParameters>
+          </redefinableTemplateSignature>
+        </ownedRedefinableTemplateSignatureInternal>
+      </Interface>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
