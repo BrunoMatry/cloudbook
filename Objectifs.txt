@@ -1,25 +1,19 @@
-Diagramme global (reprenant le diagramme des modules) est à compléter par tout le monde, au besoin.
-Normalement, il ne faut que rajouter des méthodes ou des attributs sur ce diagramme.
+Interfaçage avec unity3d ou javaFX 3d (au choix) : pour une démo, si cela s'intègre bien
 
-il s'agit bien d'une application cliente
-(pour le client-serveur, c'est celui qui s'occupe de Network qui modélise l'application serveur)
+requête : un seul type 
 
-Pensez à la partie Vue --> déterminer rapidement les contraintes liées à l'interface graphique.
+séparation amis / infos pour permettre une désynchronisation --> effacer les infos mais pas les amis etc...
+(problème de gestion de mémoire)
+Les amis aussi caractérisés par le moment de dernière communication.
+Amis caractérisés par un état : amis actifs, inactifs.
 
-définir des relations de composition de façon à bien identifier qui a le droit de faire quoi.
+Sérialisation pour les machines en local (pas sur le serveur).
 
-Rôle de chaque module :
- * Moteur (Engine) : tous les algorithmes comportementaux généraux d'un noeud.
-	Normalement pas besoin de beaucoup d'autres classes pour cette partie.
- * Network : tout ce qui concerne la communication, algorithme de gossip pour l'échange d'informations
+3d : pour la démo, application "à part" qui montre comment ça fonctionne
 
-S'il y a besoin d'interagir avec le réseau, déléguer à Network. Respecter la contrainte suivante : le Network ne peut interagir qu'avec des Friend.
+fenêtres :
+enregistrer
+resultats/suggestions
+état du noeud
+gestion des amis (---> détail de chaque ami)
 
-Ne pas hésiter à être créatif, surtout avec le moteur. Chaque module doit être visible dans l'application.
-Exemple : moteur se charge de la visualisation des scenarios d'échange, Network de l'état du réseau, FriendManager de la liste des amis...
-
-Bien définir les contraintes de chaque module (cf celle du Network définie plus haut).
-
-------------------------------
-
-Le network ordonnace les envois, il suffit de lui demander un ordre particulier et il s'en charge
