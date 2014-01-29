@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="be0e5821-4d54-486e-8b14-529d47786ef8"
   name="java.util.concurent" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -37,14 +37,14 @@
                 </ownedParameterableElement>
                 <nonOwnedDefault>
                   <classMoniker
-                    Id="d1c887df-5e02-43f8-8c0a-412b06acb07e"
-                    LastKnownName="ClientMember"
+                    Id="ac7a2589-1979-41f3-94cf-115ff70cf7b7"
+                    LastKnownName="PartialInfo"
                     LastKnownLocation="Package_1622.uml" />
                 </nonOwnedDefault>
                 <defaultClassifier>
                   <classMoniker
-                    Id="d1c887df-5e02-43f8-8c0a-412b06acb07e"
-                    LastKnownName="ClientMember"
+                    Id="ac7a2589-1979-41f3-94cf-115ff70cf7b7"
+                    LastKnownName="PartialInfo"
                     LastKnownLocation="Package_1622.uml" />
                 </defaultClassifier>
               </classifierTemplateParameter>

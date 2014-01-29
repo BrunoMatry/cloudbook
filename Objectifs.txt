@@ -1,7 +1,5 @@
 Interfaçage avec unity3d ou javaFX 3d (au choix) : pour une démo, si cela s'intègre bien
 
-requête : un seul type 
-
 séparation amis / infos pour permettre une désynchronisation --> effacer les infos mais pas les amis etc...
 (problème de gestion de mémoire)
 Les amis aussi caractérisés par le moment de dernière communication.
@@ -18,4 +16,23 @@ gestion des amis (---> détail de chaque ami)
 Le serveur connaît tout le monde
 '---> une inondation du graphe consiste à interroger simplement chaque noeud choisi par l'envoyeur de la requête.
 	'---> les réponses sont récupérées et retransmises à l'envoyeur uniquement.
+
+Plusieurs types de requêtes :
+- sur moi
+- sur les autres (ne semble pas très intéressant à priori, sauf pour faire connaître "passivement" de l'information)
+
+Sur moi :
+- mesures
+	réponse => prendre l'information (+ classer dans ses amis) et envoyer mon cloud actuel si intéressant
+		   + retransmettre aux connaissances proches de ce vecteur de mesure.
+- historique
+	réponse => si je connais les mesures de l'envoyeur, je recalcule mon résultat. Sinon, je les demande
+- mes connaissances (càd qui je connais, pas ce que je connais sur eux)
+	réponse => si je suis assez proche, je demande des informations sur le contact
+		   Dans tous les cas, retransmission de la requête.
+- mon résultat (classement des clouds)
+	réponse => pondération de mon résultat en fonction de la proximité avec l'envoyeur
+		   (je peux lui demander son vecteur de mesures éventuellement)
+- demande d'information (sur mesures, historique, connaissances, etc...)
+	réponse => si je connais la réponse, je l'envoie, sinon je retransmet à mes connaissances.
 

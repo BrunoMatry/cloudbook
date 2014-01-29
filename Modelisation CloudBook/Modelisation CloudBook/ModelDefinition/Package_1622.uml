@@ -2,7 +2,7 @@
 <package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="3f3ad25f-7c05-494f-ac45-fc94658d36ab"
-  name="active-object-server-library" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  name="thecloudbook-active-object-library" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
   <ownedCommentsInternal>
     <comment
       Id="99e82aea-cbd8-46e0-ba16-20ac6e384634">
@@ -1147,6 +1147,36 @@
             </ownedParameters>
           </operation>
         </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="ac7a2589-1979-41f3-94cf-115ff70cf7b7"
+        name="PartialInfo"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="e8e03653-f98b-478a-bd47-23ed8deb2907"
+            name="friendId"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
   </packagedElements>

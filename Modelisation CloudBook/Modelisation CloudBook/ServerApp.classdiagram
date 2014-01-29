@@ -35,10 +35,10 @@ in fact, a library used by the Client app</body>
                         </class>
                       </ownedParameterableElement>
                       <nonOwnedDefault>
-                        <referencedTypeMoniker Id="f9d06ad6-e51c-4b9a-b33b-b2c379e68dbf" LastKnownName="Member" />
+                        <referencedTypeMoniker Id="e58b593a-c67a-4318-8a68-f6e332d442dc" LastKnownName="PartialInfo" />
                       </nonOwnedDefault>
                       <defaultClassifier>
-                        <classMoniker Id="28c36855-6b23-4467-99cc-58de77db121b" LastKnownName="Member" />
+                        <classMoniker Id="68ffcfa3-4c59-4054-b54d-1e567495f0bc" LastKnownName="PartialInfo" />
                       </defaultClassifier>
                     </classifierTemplateParameter>
                   </ownedParameters>
@@ -88,7 +88,7 @@ in fact, a library used by the Client app</body>
       </referencedType>
     </packageHasNamedElement>
     <logicalClassDesignerModelHasPackages>
-      <package Id="0c1e4e36-b926-49e3-a08a-66094b1fd12a" name="active-object-server-library">
+      <package Id="0c1e4e36-b926-49e3-a08a-66094b1fd12a" name="thecloudbook-active-object-library">
         <ownedCommentsInternal>
           <comment Id="b4dbfef2-630a-4322-81df-956c9fb11a69">
             <elementDefinition Id="99e82aea-cbd8-46e0-ba16-20ac6e384634" />
@@ -219,30 +219,6 @@ in fact, a library used by the Client app</body>
                 </operation>
                 <operation Id="4993f7c0-4450-4513-bd44-806c71a57dd6" name="receive" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="0a86e24e-a269-4f9f-8ee6-30a883190512" />
-                </operation>
-              </ownedOperationsInternal>
-            </class>
-          </packageHasNamedElement>
-          <packageHasNamedElement>
-            <class Id="28c36855-6b23-4467-99cc-58de77db121b" name="Member" isAbstract="false" isLeaf="false" isActiveClass="false">
-              <elementDefinition Id="d1c887df-5e02-43f8-8c0a-412b06acb07e" />
-              <suppliersInternal>
-                <interfaceRealization Id="90f883df-7c91-4da6-9da8-c98eb8442a5d">
-                  <interfaceMoniker Id="fd83db7a-0be6-4427-89ee-6f3d3e5b849a" LastKnownName="IMember" />
-                  <elementDefinition Id="57fb4504-279e-4034-8906-710ef034be30" />
-                </interfaceRealization>
-              </suppliersInternal>
-              <ownedAttributesInternal>
-                <property Id="2c1784f8-3254-4d45-8094-c08a8fa8815f" name="ip" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="b7c0db11-981a-423f-a2b4-262fb8fcc7b5" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="37b1af74-530a-4d18-b680-edbb7d33b3b1" LastKnownName="IP" />
-                  </type_NamedElement>
-                </property>
-              </ownedAttributesInternal>
-              <ownedOperationsInternal>
-                <operation Id="4ec417f0-e881-4d3e-b167-ed74a41dd86f" name="getMembers" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="806285e1-c9af-4807-a86f-df8351a4b820" />
                 </operation>
               </ownedOperationsInternal>
             </class>
@@ -427,16 +403,6 @@ in fact, a library used by the Client app</body>
             </class>
           </packageHasNamedElement>
           <packageHasNamedElement>
-            <Interface Id="fd83db7a-0be6-4427-89ee-6f3d3e5b849a" name="IMember" isAbstract="false" isLeaf="false">
-              <elementDefinition Id="a951048c-0369-4ead-bb82-1915f92de2c3" />
-              <ownedOperations>
-                <operation Id="f1fc92b6-9a59-45db-b3a5-6c6d75958c85" name="getMembers" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="15576609-6ea7-4ba4-a572-bd4b4597f217" />
-                </operation>
-              </ownedOperations>
-            </Interface>
-          </packageHasNamedElement>
-          <packageHasNamedElement>
             <Interface Id="1798e271-8200-4298-ab61-d8a9359badf9" name="Request" isAbstract="false" isLeaf="false">
               <elementDefinition Id="02ec4805-5244-45b7-b3da-11101ff95261" />
               <ownedOperations>
@@ -538,14 +504,22 @@ in fact, a library used by the Client app</body>
               </ownedOperationsInternal>
             </class>
           </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="68ffcfa3-4c59-4054-b54d-1e567495f0bc" name="PartialInfo" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="ac7a2589-1979-41f3-94cf-115ff70cf7b7" />
+              <ownedAttributesInternal>
+                <property Id="a6d8a3c9-d744-4b83-83b3-93307a5db163" name="friendId" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="e8e03653-f98b-478a-bd47-23ed8deb2907" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0559dff6-fc87-4179-9924-f49fb5b3b854" LastKnownName="String" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
+            </class>
+          </packageHasNamedElement>
         </packagedElements>
       </package>
     </logicalClassDesignerModelHasPackages>
-    <packageHasNamedElement>
-      <referencedType Id="f9d06ad6-e51c-4b9a-b33b-b2c379e68dbf" name="Member" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::active-object-server-library::Member">
-        <elementDefinition Id="d1c887df-5e02-43f8-8c0a-412b06acb07e" />
-      </referencedType>
-    </packageHasNamedElement>
     <packageHasNamedElement>
       <referencedType Id="7915d36c-4a86-4776-81f3-05984980514d" name="ServerRequest" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::server-client::ServerRequest">
         <elementDefinition Id="b45e73f9-e99d-4edd-b985-40a58bcb5aa5" />
@@ -579,6 +553,16 @@ in fact, a library used by the Client app</body>
     <packageHasNamedElement>
       <referencedType Id="37b1af74-530a-4d18-b680-edbb7d33b3b1" name="IP" isAbstract="false" isLeaf="false" cachedFullName="IP">
         <elementDefinition Id="bdb405e2-8540-42dc-a42a-8233497bb52c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="0559dff6-fc87-4179-9924-f49fb5b3b854" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="e58b593a-c67a-4318-8a68-f6e332d442dc" name="PartialInfo" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::thecloudbook-active-object-library::PartialInfo">
+        <elementDefinition Id="ac7a2589-1979-41f3-94cf-115ff70cf7b7" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

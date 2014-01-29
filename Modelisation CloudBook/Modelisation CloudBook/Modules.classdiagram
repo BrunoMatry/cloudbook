@@ -1,9 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="27104f83-49ad-464a-a3ee-600b521ca026" name="Modules" linkedPackageId="bb3ff10a-0d33-4cef-b3f0-d8068115a770" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <ownedCommentsInternal>
-    <comment Id="8cb033ba-f4f5-43be-92a8-b781265b48fd">
-      <elementDefinition Id="a55f74c4-2859-4d7f-a385-be16aa98c89a" />
-      <body>access, instantiate</body>
+    <comment Id="febea319-ceb9-4122-b533-1da42d708a25">
+      <elementDefinition Id="588f0ad3-8b5b-4687-ac56-8bf2ca49ebf1" />
+      <body>Separation friend / information</body>
+      <annotatedElements>
+        <classMoniker Id="8b631f85-c91e-48fe-9f15-2bf40ade64aa" LastKnownName="Friend" />
+        <classMoniker Id="ab59eeb1-3b44-4a81-9fde-407853b78141" LastKnownName="FriendInfo" />
+      </annotatedElements>
+    </comment>
+    <comment Id="4d481eda-59b4-44b0-9df4-e473ecaa92e5">
+      <elementDefinition Id="f1fff311-bcd3-47b7-9218-b8c5023c13af" />
+      <body>hash-map associating an ID to each friend</body>
+    </comment>
+    <comment Id="d0076d39-6f82-49e7-a7e3-b16251e43c73">
+      <elementDefinition Id="5a4c9117-0a10-424a-b81c-fd52315eb32c" />
+      <body>TODO : ce n'est qu'un squelette =&gt; à compléter !!!</body>
+      <annotatedElements>
+        <classMoniker Id="21876d9a-2723-4a44-8159-b6b34d1201e0" LastKnownName="History" />
+        <classMoniker Id="4c53cd44-71ed-44f7-8c86-9b3d96bd421d" LastKnownName="Information" />
+        <classMoniker Id="1b7e7aad-ab95-4767-acd9-51882223a668" LastKnownName="CloudRanking" />
+      </annotatedElements>
+    </comment>
+    <comment Id="ad55d3ec-5dbf-4655-a8c6-3ff9435de830">
+      <elementDefinition Id="901c94bf-1e3b-4291-bc00-4818f18200ca" />
+      <body>Singleton
+
+current application information</body>
+      <annotatedElements>
+        <classMoniker Id="ee9dfc25-386e-475b-8503-fe067f23eff3" LastKnownName="MyInformation" />
+      </annotatedElements>
+    </comment>
+    <comment Id="cecd1bc7-c1f1-4201-a577-ad32ffa7cb00">
+      <elementDefinition Id="aaca4ed1-a477-4f4b-a32f-50bdfba50101" />
+      <body>A request consist in the sharing of a part of information</body>
+      <annotatedElements>
+        <classMoniker Id="ee2dadb9-9a1d-41eb-98a9-34b534814a58" LastKnownName="Request" />
+      </annotatedElements>
     </comment>
   </ownedCommentsInternal>
   <packagedElements>
@@ -52,7 +85,7 @@
                 <parameter Id="28cbf256-b82f-4641-87b8-113c7c582123" name="request" direction="In" isUnique="false">
                   <elementDefinition Id="423c3761-b921-4483-86b6-349455a58786" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="11f23f9c-f33d-4911-9648-4ab0d9cfa076" LastKnownName="NetworkRequest" />
+                    <referencedTypeMoniker Id="11f23f9c-f33d-4911-9648-4ab0d9cfa076" LastKnownName="ITCBService" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -128,6 +161,42 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="8b631f85-c91e-48fe-9f15-2bf40ade64aa" name="Friend" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="42e92a9f-2f6e-44ac-bc72-8816ae9dd1b8" />
+        <targetEnds>
+          <association Id="1bd2eb3b-e1ed-4f4f-8fe6-ba90145b1127" isDerived="false" sourceEndRoleName="Friend" targetEndRoleName="FriendInfo" isLeaf="false" isAbstract="false">
+            <classMoniker Id="ab59eeb1-3b44-4a81-9fde-407853b78141" LastKnownName="FriendInfo" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="cd39d5c9-fbbc-41e8-9fc2-f9721d1ea318" name="Friend" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b5377771-f1cf-48ea-8617-c06352d9b08d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7a9c515f-9657-4e88-8625-4db8494c8db2" name="FriendInfo" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="e2b875e4-e91c-4378-a911-7b69f67a61ee" name="Lower" value="0">
+                      <elementDefinition Id="228320fb-ac72-4e03-b7a1-1c180c14f42f" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="816f6a66-7c75-44c3-a208-fb4836a12e30" name="Upper" value="1">
+                      <elementDefinition Id="9d78a906-1a8d-45e0-8ba0-494b2b8b78ab" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="1e6d6cde-62b2-42f8-a977-ae9985a33e78" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c2314159-be68-44a2-b814-4e42bfc7bbb8" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="6c8d9fc4-83ee-4e7b-9f59-c6e71a136c14" name="actif" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f3292ef1-577e-4277-b449-063415bda300" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="8f9f4af8-cdd3-4229-9be2-f422b3d9ec0f" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <packageHasNamedElement>
@@ -171,7 +240,7 @@
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="11f23f9c-f33d-4911-9648-4ab0d9cfa076" name="NetworkRequest" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::NetworkRequest">
+      <referencedType Id="11f23f9c-f33d-4911-9648-4ab0d9cfa076" name="ITCBService" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::ITCBService">
         <elementDefinition Id="15f9c115-43f6-4912-b2ef-e458bf906f36" />
       </referencedType>
     </packageHasNamedElement>
@@ -259,7 +328,7 @@
                       <parameter Id="cc9d8884-0bca-4e13-946e-366d44b20487" name="request" direction="In" isUnique="false">
                         <elementDefinition Id="a511af51-dd11-41b3-8670-f5e7148de977" />
                         <type_NamedElement>
-                          <referencedTypeMoniker Id="11f23f9c-f33d-4911-9648-4ab0d9cfa076" LastKnownName="NetworkRequest" />
+                          <referencedTypeMoniker Id="11f23f9c-f33d-4911-9648-4ab0d9cfa076" LastKnownName="ITCBService" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
@@ -271,6 +340,166 @@
         </packagedElements>
       </package>
     </logicalClassDesignerModelHasPackages>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="ab59eeb1-3b44-4a81-9fde-407853b78141" name="FriendInfo" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="38ffdb7e-9894-4bd5-9075-495bbc4dae13" />
+        <generalsInternal>
+          <generalization Id="024bbf59-c9fe-4dbf-848f-80a77da0f69c" isSubstitutable="false">
+            <classMoniker Id="4c53cd44-71ed-44f7-8c86-9b3d96bd421d" LastKnownName="Information" />
+            <elementDefinition Id="4308b025-37bc-4439-8271-aee517eac9b2" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="25c54ada-ff43-4143-915f-50654a8f9990" name="FriendInfo" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="15da2ae3-433a-4bd7-89f0-3c6499581c39" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0ee8d59d-f387-4db5-ab8b-1d5f567cc143" name="partInfo" direction="In" isUnique="false">
+                  <elementDefinition Id="30a3bbbd-7884-4dfa-94d2-d6bcce3e9170" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="8bde3ea7-4f86-4175-a39d-50500b90c3dd" LastKnownName="thecloudbook-active-object-library.PartialInfo" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="8f9f4af8-cdd3-4229-9be2-f422b3d9ec0f" name="bool" isAbstract="false" isLeaf="false" cachedFullName="bool">
+        <elementDefinition Id="137ee10f-1409-4f53-8893-e7ddba773fb0" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="ee2dadb9-9a1d-41eb-98a9-34b534814a58" name="Request" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="59486883-52e2-43f6-a198-4bc818a87414" />
+        <targetEnds>
+          <association Id="8487fdb7-f1ee-43a4-9613-6c0f3f9e104d" isDerived="false" sourceEndRoleName="Request" targetEndRoleName="Information" isLeaf="false" isAbstract="false">
+            <classMoniker Id="4c53cd44-71ed-44f7-8c86-9b3d96bd421d" LastKnownName="Information" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e67b6342-a5d6-4cc0-8c8d-fce25dec6f7b" name="Request" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="fd30eaa6-9c6f-4309-bd72-c8d6d037adc8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1bc1897f-a933-46be-9a3d-930ddcb68121" name="Information" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="8c39a014-2acb-4a6d-a831-b07c6ad87bea" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b69251ba-3bf5-4675-b268-8e54ccd00014" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="419b2942-98e1-46eb-a7fc-01f4e506e773" name="targets" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <lowerValueInternal>
+              <literalString Id="a2470e73-d485-420f-8232-7c99fb2142d1" name="Lower" value="*">
+                <elementDefinition Id="ea43da25-7078-4c89-90cf-83140a0d0bed" />
+              </literalString>
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString Id="0fd5ac61-406f-4d67-98d6-bd6e63b97e64" name="Upper" value="*">
+                <elementDefinition Id="9a0b3748-3ace-4211-b054-63625496a0ff" />
+              </literalString>
+            </upperValueInternal>
+            <elementDefinition Id="676ccb27-91f7-4eff-9ed8-791853d839e6" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="37b16c3e-d9e2-4f64-ba66-161d8ea699d1" LastKnownName="Friend" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="8bde3ea7-4f86-4175-a39d-50500b90c3dd" name="thecloudbook-active-object-library.PartialInfo" isAbstract="false" isLeaf="false" cachedFullName="thecloudbook-active-object-library.PartialInfo">
+        <elementDefinition Id="17a22ac4-865a-452c-b42e-5b362b65df21" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="37b16c3e-d9e2-4f64-ba66-161d8ea699d1" name="Friend" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::Friend">
+        <elementDefinition Id="42e92a9f-2f6e-44ac-bc72-8816ae9dd1b8" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="4c53cd44-71ed-44f7-8c86-9b3d96bd421d" name="Information" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="bd25d984-dba7-4afe-83b3-8d28e88a775d" />
+        <targetEnds>
+          <association Id="737c9050-cc52-4966-8f18-6e8458294145" isDerived="false" sourceEndRoleName="Information" targetEndRoleName="History" isLeaf="false" isAbstract="false">
+            <classMoniker Id="21876d9a-2723-4a44-8159-b6b34d1201e0" LastKnownName="History" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a6a8599e-1194-4c2a-8d2c-3621c8bf8fb8" name="Information" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="8d69d5da-1003-441c-b901-a5e8ee2150ca" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1f6e7fd5-98ce-412b-b31d-c395c2bc5c2a" name="History" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="74fc4560-7bac-4635-8d5a-63b96d3bf6b8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="9e2177c2-d699-4aff-9c33-326902a38ede" />
+          </association>
+          <association Id="3c98be45-ce85-4479-8d71-a499393e328f" isDerived="false" sourceEndRoleName="Information" targetEndRoleName="CloudRanking" isLeaf="false" isAbstract="false">
+            <classMoniker Id="1b7e7aad-ab95-4767-acd9-51882223a668" LastKnownName="CloudRanking" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="44b7adaf-0472-4898-96df-beeefbb42359" name="Information" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="064b20eb-fc13-4664-a34e-05d349099c25" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="bb7a43b8-801f-40ab-b18b-b5a9a52fbcde" name="CloudRanking" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="bf001592-18e5-494b-89e7-7092bda4ccf6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="19f1a965-3478-4169-8142-e03968f7cfb3" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="21876d9a-2723-4a44-8159-b6b34d1201e0" name="History" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6e94a115-2705-4f1c-9d43-4dd236bccd8d" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="1b7e7aad-ab95-4767-acd9-51882223a668" name="CloudRanking" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c1a91fb0-fa49-4223-82ac-c33d89f947f5" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="ee9dfc25-386e-475b-8503-fe067f23eff3" name="MyInformation" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="4b89d6dd-1d43-4eab-8ee2-7984f26a5025" />
+        <generalsInternal>
+          <generalization Id="28638969-8fe4-4e25-8dd4-363548b581f4" isSubstitutable="false">
+            <classMoniker Id="4c53cd44-71ed-44f7-8c86-9b3d96bd421d" LastKnownName="Information" />
+            <elementDefinition Id="9dc8a462-d17a-433b-b1e6-8c40be13efdb" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="e62190d7-7ac4-4f7a-bf34-eec97a3378a3" name="INSTANCE" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="dee6b7c6-7197-4e9c-ae30-ea680d03139e" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="0141bcf2-7f7c-4cb9-a81f-1266b5c8e41b" LastKnownName="MyInformation()" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="9d5ee7a7-bba9-4fd5-8fc6-ba966b029758" name="MyInformation" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="208a881e-c411-45fe-aee8-bd9ee4887193" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="0141bcf2-7f7c-4cb9-a81f-1266b5c8e41b" name="MyInformation()" isAbstract="false" isLeaf="false" cachedFullName="MyInformation()">
+        <elementDefinition Id="3e885273-1eb9-4122-8b79-876fa0f220da" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="bb3ff10a-0d33-4cef-b3f0-d8068115a770" name="Modelisation CloudBook">
     <elementDefinition Id="94208107-703b-4bbf-9f51-c1243885138f" />
