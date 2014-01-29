@@ -97,14 +97,6 @@ in fact, a library used by the Client app</body>
               <classMoniker Id="f20f08fc-b810-4fd9-9ed0-ddc1b8d0e436" LastKnownName="ProxyMemberGetter" />
             </annotatedElements>
           </comment>
-          <comment Id="a10a1354-d4ff-4e8e-89b3-f3f1773f7cef">
-            <elementDefinition Id="fca5c54f-d460-42e0-9d63-4f003d17f154" />
-            <body>Singleton
-Is a thread waiting for mementos to add</body>
-            <annotatedElements>
-              <classMoniker Id="6061d0a6-ecc6-4583-abd9-230b907cf51c" LastKnownName="Saves" />
-            </annotatedElements>
-          </comment>
         </ownedCommentsInternal>
         <elementDefinition Id="3f3ad25f-7c05-494f-ac45-fc94658d36ab" />
         <packagedElements>
@@ -240,6 +232,14 @@ Is a thread waiting for mementos to add</body>
                   <elementDefinition Id="57fb4504-279e-4034-8906-710ef034be30" />
                 </interfaceRealization>
               </suppliersInternal>
+              <ownedAttributesInternal>
+                <property Id="2c1784f8-3254-4d45-8094-c08a8fa8815f" name="ip" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="b7c0db11-981a-423f-a2b4-262fb8fcc7b5" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="37b1af74-530a-4d18-b680-edbb7d33b3b1" LastKnownName="IP" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
               <ownedOperationsInternal>
                 <operation Id="4ec417f0-e881-4d3e-b167-ed74a41dd86f" name="getMembers" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="806285e1-c9af-4807-a86f-df8351a4b820" />
@@ -538,111 +538,6 @@ Is a thread waiting for mementos to add</body>
               </ownedOperationsInternal>
             </class>
           </packageHasNamedElement>
-          <packageHasNamedElement>
-            <class Id="21360120-139c-4dcb-8e7e-44126d2a98a1" name="NetworkMemento" isAbstract="false" isLeaf="false" isActiveClass="false">
-              <elementDefinition Id="6867d1b2-060c-4353-93b9-be3533f70011" />
-              <targetEnds>
-                <association Id="8fb850a8-afd6-4898-93c0-620d2e0b35e2" isDerived="false" sourceEndRoleName="NetworkMemento" targetEndRoleName="Member" isLeaf="false" isAbstract="false">
-                  <classMoniker Id="28c36855-6b23-4467-99cc-58de77db121b" LastKnownName="Member" />
-                  <relationshipOwnedElementsInternal>
-                    <associationHasOwnedEnds>
-                      <memberEnd Id="cbbd0980-1b6e-4808-9713-4117ec1f7824" name="NetworkMemento" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
-                        <elementDefinition Id="abf6bab1-d349-492a-abfc-b51c138e155f" />
-                      </memberEnd>
-                    </associationHasOwnedEnds>
-                    <associationHasOwnedEnds>
-                      <memberEnd Id="5f1ad202-03ba-43a1-a3e0-47882520467c" name="Member" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
-                        <lowerValueInternal>
-                          <literalString Id="b4dc9a8c-8cb5-4176-9d5f-8be3f9b92108" name="Lower" value="*">
-                            <elementDefinition Id="a78189e1-b5b2-4048-b77a-ba4624e6ce5a" />
-                          </literalString>
-                        </lowerValueInternal>
-                        <upperValueInternal>
-                          <literalString Id="286b1f2d-95da-43e5-8dcb-42efa0c4d11c" name="Upper" value="*">
-                            <elementDefinition Id="2de0a224-a038-4751-9d9c-f753952763f3" />
-                          </literalString>
-                        </upperValueInternal>
-                        <elementDefinition Id="1049f19e-d7f7-416a-b30b-74a93dc31c84" />
-                      </memberEnd>
-                    </associationHasOwnedEnds>
-                  </relationshipOwnedElementsInternal>
-                  <elementDefinition Id="7c98464b-0b43-472e-b344-08b9f9ef2f94" />
-                </association>
-              </targetEnds>
-              <ownedAttributesInternal>
-                <property Id="2ff761a0-253f-46ba-93a0-481061759a3f" name="ip" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="3b0f3289-b528-4331-9893-a11da40e2023" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="37b1af74-530a-4d18-b680-edbb7d33b3b1" LastKnownName="IP" />
-                  </type_NamedElement>
-                </property>
-              </ownedAttributesInternal>
-              <ownedOperationsInternal>
-                <operation Id="415c011c-0453-472b-9f2d-3c9c7490de30" name="NetworkMemento" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="b6bdad8e-dfc1-4381-ad3d-068a58f50b0d" />
-                </operation>
-              </ownedOperationsInternal>
-            </class>
-          </packageHasNamedElement>
-          <packageHasNamedElement>
-            <class Id="6061d0a6-ecc6-4583-abd9-230b907cf51c" name="Saves" isAbstract="false" isLeaf="false" isActiveClass="false">
-              <elementDefinition Id="44c69ec5-5328-49ce-837e-31a1c3bdb23b" />
-              <targetEnds>
-                <association Id="43dfb44e-9dd6-434e-a7c6-da7170b72ab8" isDerived="false" sourceEndRoleName="Saves" targetEndRoleName="NetworkMemento" isLeaf="false" isAbstract="false">
-                  <classMoniker Id="21360120-139c-4dcb-8e7e-44126d2a98a1" LastKnownName="NetworkMemento" />
-                  <relationshipOwnedElementsInternal>
-                    <associationHasOwnedEnds>
-                      <memberEnd Id="58adb3b5-0625-4ba1-9a74-813bb7364e5f" name="Saves" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
-                        <elementDefinition Id="60beb2c5-32e1-4dd8-9940-dc3f053ae46d" />
-                      </memberEnd>
-                    </associationHasOwnedEnds>
-                    <associationHasOwnedEnds>
-                      <memberEnd Id="bbe94cd4-3151-4be0-aa64-10fca593c1dd" name="NetworkMemento" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
-                        <lowerValueInternal>
-                          <literalString Id="8c2f3ac2-be30-45be-8847-91654ca9a2cc" name="Lower" value="*">
-                            <elementDefinition Id="d755a38b-b6a5-4f71-8438-c618edd633b8" />
-                          </literalString>
-                        </lowerValueInternal>
-                        <upperValueInternal>
-                          <literalString Id="33f0b38e-21eb-412e-977e-409eea0e1bce" name="Upper" value="*">
-                            <elementDefinition Id="b080be47-2a6f-4ef0-80a4-5d93ef1a9f34" />
-                          </literalString>
-                        </upperValueInternal>
-                        <elementDefinition Id="7c40276a-fdbb-4e5f-ab8e-34d37065d479" />
-                      </memberEnd>
-                    </associationHasOwnedEnds>
-                  </relationshipOwnedElementsInternal>
-                  <elementDefinition Id="769ad466-dfc4-4b18-b16b-edee86ca75f7" />
-                </association>
-              </targetEnds>
-              <ownedAttributesInternal>
-                <property Id="ce550ce8-deae-4eeb-8e4a-70e6c3437a5f" name="INSTANCE" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="36525908-3ad9-4254-b8ae-da6685ad1642" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="c9ed7e51-18ba-4977-94fb-02992af3c059" LastKnownName="Saves" />
-                  </type_NamedElement>
-                </property>
-              </ownedAttributesInternal>
-              <ownedOperationsInternal>
-                <operation Id="6148b286-6a05-40c5-a69c-07ec1524062d" name="Saves" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="8914799d-3c25-438d-9b09-5f8a6d3b5848" />
-                </operation>
-                <operation Id="a1b969e4-b543-4e35-92c3-f881a0a4d246" name="add" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="14cd74b8-3cab-4227-93a1-bcbc2605548a" />
-                  <ownedParameters>
-                    <operationHasOwnedParameters>
-                      <parameter Id="5d8ed049-c1c0-4210-900c-968a5a65091f" name="save" direction="In" isUnique="false">
-                        <elementDefinition Id="d465e24f-4898-4942-a8b3-f82dc730642f" />
-                        <type_NamedElement>
-                          <referencedTypeMoniker Id="4fc67eb6-12c2-498f-a8e7-629a71a70118" LastKnownName="NetworkMemento" />
-                        </type_NamedElement>
-                      </parameter>
-                    </operationHasOwnedParameters>
-                  </ownedParameters>
-                </operation>
-              </ownedOperationsInternal>
-            </class>
-          </packageHasNamedElement>
         </packagedElements>
       </package>
     </logicalClassDesignerModelHasPackages>
@@ -684,16 +579,6 @@ Is a thread waiting for mementos to add</body>
     <packageHasNamedElement>
       <referencedType Id="37b1af74-530a-4d18-b680-edbb7d33b3b1" name="IP" isAbstract="false" isLeaf="false" cachedFullName="IP">
         <elementDefinition Id="bdb405e2-8540-42dc-a42a-8233497bb52c" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="c9ed7e51-18ba-4977-94fb-02992af3c059" name="Saves" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::active-object-server-library::Saves">
-        <elementDefinition Id="44c69ec5-5328-49ce-837e-31a1c3bdb23b" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="4fc67eb6-12c2-498f-a8e7-629a71a70118" name="NetworkMemento" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::active-object-server-library::NetworkMemento">
-        <elementDefinition Id="6867d1b2-060c-4353-93b9-be3533f70011" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

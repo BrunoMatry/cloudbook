@@ -7,8 +7,6 @@ séparation amis / infos pour permettre une désynchronisation --> effacer les inf
 Les amis aussi caractérisés par le moment de dernière communication.
 Amis caractérisés par un état : amis actifs, inactifs.
 
-Sérialisation pour les machines en local (pas sur le serveur).
-
 3d : pour la démo, application "à part" qui montre comment ça fonctionne
 
 fenêtres :
@@ -16,4 +14,8 @@ enregistrer
 resultats/suggestions
 état du noeud
 gestion des amis (---> détail de chaque ami)
+
+Le serveur connaît tout le monde
+'---> une inondation du graphe consiste à interroger simplement chaque noeud choisi par l'envoyeur de la requête.
+	'---> les réponses sont récupérées et retransmises à l'envoyeur uniquement.
 

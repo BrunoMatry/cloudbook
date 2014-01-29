@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="3f3ad25f-7c05-494f-ac45-fc94658d36ab"
   name="active-object-server-library" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -11,17 +11,6 @@
         <classMoniker
           Id="7550eae6-a348-4f73-8d23-ae1453a1feac"
           LastKnownName="ProxyMemberGetter"
-          LastKnownLocation="Package_1622.uml" />
-      </annotatedElements>
-    </comment>
-    <comment
-      Id="fca5c54f-d460-42e0-9d63-4f003d17f154">
-      <body>Singleton
-Is a thread waiting for mementos to add</body>
-      <annotatedElements>
-        <classMoniker
-          Id="44c69ec5-5328-49ce-837e-31a1c3bdb23b"
-          LastKnownName="Saves"
           LastKnownLocation="Package_1622.uml" />
       </annotatedElements>
     </comment>
@@ -338,6 +327,27 @@ Is a thread waiting for mementos to add</body>
               LastKnownLocation="Package_1622.uml" />
           </interfaceRealization>
         </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="b7c0db11-981a-423f-a2b4-262fb8fcc7b5"
+            name="ip"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="bdb405e2-8540-42dc-a42a-8233497bb52c"
+                LastKnownName="IP"
+                LastKnownLocation="Package_1622.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="806285e1-c9af-4807-a86f-df8351a4b820"
