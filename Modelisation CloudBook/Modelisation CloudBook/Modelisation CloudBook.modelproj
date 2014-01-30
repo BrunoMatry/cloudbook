@@ -58,6 +58,9 @@
     <Content Include="ModelDefinition\Package_1644.uml">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ModelDefinition\Package_2129.uml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ModelDefinition\Package_2231.uml">
       <SubType>Content</SubType>
     </Content>
@@ -82,19 +85,19 @@
       <SubType>Content</SubType>
       <DependentUpon>Modules.classdiagram</DependentUpon>
     </Content>
-    <Content Include="SendReceiveServer.sequencediagram">
+    <Content Include="SendRequestToServer.sequencediagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="SendReceiveServer.sequencediagram.layout">
+    <Content Include="SendRequestToServer.sequencediagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>SendReceiveServer.sequencediagram</DependentUpon>
+      <DependentUpon>SendRequestToServer.sequencediagram</DependentUpon>
     </Content>
-    <Content Include="ServerApp.classdiagram">
+    <Content Include="ActiveObjectLibrary.classdiagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="ServerApp.classdiagram.layout">
+    <Content Include="ActiveObjectLibrary.classdiagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>ServerApp.classdiagram</DependentUpon>
+      <DependentUpon>ActiveObjectLibrary.classdiagram</DependentUpon>
     </Content>
     <Content Include="SaveState.sequencediagram">
       <SubType>Content</SubType>
@@ -102,6 +105,20 @@
     <Content Include="SaveState.sequencediagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>SaveState.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Server.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Server.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="ForwardRequestToClient.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ForwardRequestToClient.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>ForwardRequestToClient.sequencediagram</DependentUpon>
     </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="Recherche d'un nouvel ami.sequencediagram">

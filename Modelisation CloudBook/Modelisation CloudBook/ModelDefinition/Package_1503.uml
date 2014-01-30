@@ -197,6 +197,31 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="71f4f648-cc52-4cea-aea8-5e51b829a5e2"
+            name="getResult"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="fa77f8b2-1825-4bb5-bbae-965ba3e78221"
+                  name="snd"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="f1edc787-07c9-4c58-a06e-707ffe08cead"
+                      LastKnownName="Sendable"
+                      LastKnownLocation="Package_1622.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>

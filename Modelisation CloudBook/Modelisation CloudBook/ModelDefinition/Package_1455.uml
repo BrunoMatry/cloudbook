@@ -26,27 +26,20 @@
             isLeaf="false">
             <ownedParameters>
               <classifierTemplateParameter
-                Id="a2557a34-a1d4-49f6-9f37-06130fbbb486">
+                Id="080eb0cc-6302-4d08-96ae-53d66e14938b">
                 <ownedParameterableElement>
-                  <class
-                    Id="8e914886-9680-4b80-a61d-8d19b7528a48"
+                  <Interface
+                    Id="ca1711ab-919b-47fc-9b0f-431410c0c65f"
                     name="T"
                     isAbstract="false"
-                    isLeaf="false"
-                    isActiveClass="false" />
+                    isLeaf="false" />
                 </ownedParameterableElement>
-                <nonOwnedDefault>
-                  <classMoniker
-                    Id="ac7a2589-1979-41f3-94cf-115ff70cf7b7"
-                    LastKnownName="PartialInfo"
+                <constrainingClassifier>
+                  <interfaceMoniker
+                    Id="92952e69-8ce3-4b24-b16a-4050b8d63d62"
+                    LastKnownName="Result"
                     LastKnownLocation="Package_1622.uml" />
-                </nonOwnedDefault>
-                <defaultClassifier>
-                  <classMoniker
-                    Id="ac7a2589-1979-41f3-94cf-115ff70cf7b7"
-                    LastKnownName="PartialInfo"
-                    LastKnownLocation="Package_1622.uml" />
-                </defaultClassifier>
+                </constrainingClassifier>
               </classifierTemplateParameter>
             </ownedParameters>
           </redefinableTemplateSignature>
@@ -75,18 +68,12 @@
                     isLeaf="false"
                     isActiveClass="false" />
                 </ownedParameterableElement>
-                <nonOwnedDefault>
+                <constrainingClassifier>
                   <classMoniker
-                    Id="b45e73f9-e99d-4edd-b985-40a58bcb5aa5"
-                    LastKnownName="ServerRequest"
-                    LastKnownLocation="Package_1508.uml" />
-                </nonOwnedDefault>
-                <defaultClassifier>
-                  <classMoniker
-                    Id="b45e73f9-e99d-4edd-b985-40a58bcb5aa5"
-                    LastKnownName="ServerRequest"
-                    LastKnownLocation="Package_1508.uml" />
-                </defaultClassifier>
+                    Id="20be7ea3-04b6-40c7-8408-bfaa058feb74"
+                    LastKnownName="GetResult"
+                    LastKnownLocation="Package_1622.uml" />
+                </constrainingClassifier>
               </classifierTemplateParameter>
             </ownedParameters>
           </redefinableTemplateSignature>

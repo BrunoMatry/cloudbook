@@ -36,3 +36,5 @@ Sur moi :
 - demande d'information (sur mesures, historique, connaissances, etc...)
 	réponse => si je connais la réponse, je l'envoie, sinon je retransmet à mes connaissances.
 
+Besoin d'une bibliothèque de requêtes, partagée par les clients et les serveurs
+

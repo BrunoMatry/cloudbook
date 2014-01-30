@@ -82,10 +82,18 @@ current application information</body>
             <elementDefinition Id="36f7d2f1-5e10-453a-bace-372c0e3970a7" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="28cbf256-b82f-4641-87b8-113c7c582123" name="request" direction="In" isUnique="false">
-                  <elementDefinition Id="423c3761-b921-4483-86b6-349455a58786" />
+                <parameter Id="e6cb82df-5805-4306-afff-5d149197ce5c" name="request" direction="In" isUnique="false">
+                  <elementDefinition Id="02c6f3da-51c6-4a75-8d5d-f9db354d928d" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="11f23f9c-f33d-4911-9648-4ab0d9cfa076" LastKnownName="ITCBService" />
+                    <referencedTypeMoniker Id="22c4d7c1-2d0a-4870-92fb-44ac65b11a61" LastKnownName="Request" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a8802d85-4f78-4162-93bb-4a8f34d8c9e4" direction="Return" isUnique="false">
+                  <elementDefinition Id="1d8a25b4-2643-4c15-a649-a5d1096eb444" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="65d7dafa-a8eb-473c-b9b8-6cc04f574a70" LastKnownName="Result" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -498,6 +506,16 @@ current application information</body>
     <packageHasNamedElement>
       <referencedType Id="0141bcf2-7f7c-4cb9-a81f-1266b5c8e41b" name="MyInformation()" isAbstract="false" isLeaf="false" cachedFullName="MyInformation()">
         <elementDefinition Id="3e885273-1eb9-4122-8b79-876fa0f220da" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="22c4d7c1-2d0a-4870-92fb-44ac65b11a61" name="Request" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::Request">
+        <elementDefinition Id="59486883-52e2-43f6-a198-4bc818a87414" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="65d7dafa-a8eb-473c-b9b8-6cc04f574a70" name="Result" isAbstract="false" isLeaf="false" cachedFullName="Result">
+        <elementDefinition Id="dfe5a493-a354-4de2-a21c-a54162e50c35" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

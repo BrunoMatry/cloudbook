@@ -10,7 +10,37 @@
       <annotatedElements>
         <classMoniker
           Id="7550eae6-a348-4f73-8d23-ae1453a1feac"
-          LastKnownName="ProxyMemberGetter"
+          LastKnownName="ProxyClientService"
+          LastKnownLocation="Package_1622.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="a5bce68a-f6df-4e87-a216-cac72291f181">
+      <body>Each object that would be to send must implement this interface</body>
+      <annotatedElements>
+        <interfaceMoniker
+          Id="f1edc787-07c9-4c58-a06e-707ffe08cead"
+          LastKnownName="Sendable"
+          LastKnownLocation="Package_1622.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="bfd24b56-cefb-42c9-beef-a6f4d18b29b7">
+      <body>Each object that is considered as a result must implement this interface</body>
+      <annotatedElements>
+        <interfaceMoniker
+          Id="92952e69-8ce3-4b24-b16a-4050b8d63d62"
+          LastKnownName="Result"
+          LastKnownLocation="Package_1622.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="ef51fd95-da83-4b0b-8480-b91c2c635003">
+      <body>Command</body>
+      <annotatedElements>
+        <classMoniker
+          Id="20be7ea3-04b6-40c7-8408-bfaa058feb74"
+          LastKnownName="GetResult"
           LastKnownLocation="Package_1622.uml" />
       </annotatedElements>
     </comment>
@@ -29,7 +59,7 @@
     <packageHasNamedElement>
       <class
         Id="20be7ea3-04b6-40c7-8408-bfaa058feb74"
-        name="ServerRequest"
+        name="GetResult"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -38,7 +68,7 @@
             Id="61284f90-adb1-4722-b090-0bf21f3925c8">
             <interfaceMoniker
               Id="02ec4805-5244-45b7-b3da-11101ff95261"
-              LastKnownName="Request"
+              LastKnownName="IGetResult"
               LastKnownLocation="Package_1622.uml" />
           </interfaceRealization>
         </suppliersInternal>
@@ -85,7 +115,7 @@
           <association
             Id="e17a48b0-a9b1-49a7-a02e-feeba18f3b12"
             isDerived="false"
-            sourceEndRoleName="ServerRequest"
+            sourceEndRoleName="command"
             targetEndRoleName="FutureTask"
             isLeaf="false"
             isAbstract="false">
@@ -97,7 +127,7 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="a386d247-4bfd-4f64-8325-27309ba1afec"
-                  name="ServerRequest"
+                  name="command"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -121,45 +151,6 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
-          <association
-            Id="95c75655-04f2-4d92-8ad0-3b14d73d3c27"
-            isDerived="false"
-            sourceEndRoleName="ServerRequest"
-            targetEndRoleName="Queue"
-            isLeaf="false"
-            isAbstract="false">
-            <interfaceMoniker
-              Id="f5bd04c9-98af-4b03-9910-87ec9c82a0e2"
-              LastKnownName="Queue"
-              LastKnownLocation="Package_1455.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="26b7f129-3ce3-403c-bb05-b52a15b5717d"
-                  name="ServerRequest"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="5c9a7297-bc17-4203-ab91-afc05f047924"
-                  name="Queue"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
         </targetEnds>
         <ownedAttributesInternal>
           <property
@@ -178,25 +169,25 @@
               <literalString
                 Id="cb779559-6a90-4f1f-99b6-888fd5a12c37"
                 name="Lower"
-                value="*" />
+                value="1" />
             </lowerValueInternal>
             <upperValueInternal>
               <literalString
                 Id="95337961-6834-4cce-a01e-3b4afb4c8a8a"
                 name="Upper"
-                value="*" />
+                value="1" />
             </upperValueInternal>
             <type_NamedElement>
               <interfaceMoniker
-                Id="a951048c-0369-4ead-bb82-1915f92de2c3"
-                LastKnownName="IMember"
+                Id="92952e69-8ce3-4b24-b16a-4050b8d63d62"
+                LastKnownName="Result"
                 LastKnownLocation="Package_1622.uml" />
             </type_NamedElement>
           </property>
           <property
-            Id="bbbecfa7-b5b6-4f17-b8d8-516aa9f898a9"
-            name="ip"
-            visibility="Private"
+            Id="715b5f30-9bf0-425b-92cd-8152c93cd625"
+            name="sendable"
+            visibility="Protected"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -206,9 +197,9 @@
             aggregation="None"
             isComposite="false">
             <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="bdb405e2-8540-42dc-a42a-8233497bb52c"
-                LastKnownName="IP"
+              <interfaceMoniker
+                Id="f1edc787-07c9-4c58-a06e-707ffe08cead"
+                LastKnownName="Sendable"
                 LastKnownLocation="Package_1622.uml" />
             </type_NamedElement>
           </property>
@@ -265,7 +256,7 @@
           </operation>
           <operation
             Id="d4e78ce4-dc19-42aa-b0e9-73fc6f1f8ce6"
-            name="ServerRequest"
+            name="GetResult"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -274,26 +265,14 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="b7b2c368-a1c4-4bc1-8385-6f97947aba79"
-                  name="members"
+                  Id="140d2783-1375-4a94-aeef-8be3535d924f"
+                  name="sendable"
                   direction="In"
                   isUnique="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="f6b6ed81-3fba-489b-a0e4-b6f728aedac9"
-                      name="Lower"
-                      value="*" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="c351f5d0-afaa-489f-b28c-8978e5274123"
-                      name="Upper"
-                      value="*" />
-                  </upperValueInternal>
                   <type_NamedElement>
                     <interfaceMoniker
-                      Id="a951048c-0369-4ead-bb82-1915f92de2c3"
-                      LastKnownName="IMember"
+                      Id="f1edc787-07c9-4c58-a06e-707ffe08cead"
+                      LastKnownName="Sendable"
                       LastKnownLocation="Package_1622.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -363,7 +342,7 @@
     <packageHasNamedElement>
       <class
         Id="7550eae6-a348-4f73-8d23-ae1453a1feac"
-        name="ProxyMemberGetter"
+        name="ProxyClientService"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -372,7 +351,7 @@
             Id="2ebd35ea-7392-4125-83b6-7e97903fd1a2">
             <interfaceMoniker
               Id="57ae412b-441c-4cd3-b76a-7ac51b1b96fe"
-              LastKnownName="IMemberGetter"
+              LastKnownName="IClientService"
               LastKnownLocation="Package_1622.uml" />
           </interfaceRealization>
         </suppliersInternal>
@@ -380,19 +359,18 @@
           <association
             Id="bea9f7d7-47dc-4863-806f-de7db5d7444f"
             isDerived="false"
-            sourceEndRoleName="ProxyMemberGetter"
-            targetEndRoleName="MemberGetter"
+            sourceEndRoleName=""
+            targetEndRoleName="clientService"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
               Id="2bb64fe8-a562-42cd-9785-93c8b9ae75bb"
-              LastKnownName="MemberGetter"
+              LastKnownName="ClientService"
               LastKnownLocation="Package_1622.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="012e5ddf-f792-432c-8c71-c61a4656a28d"
-                  name="ProxyMemberGetter"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -405,7 +383,7 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="4436d5fa-674b-4f5b-ab92-444fe536a06f"
-                  name="MemberGetter"
+                  name="clientService"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -420,7 +398,7 @@
         <ownedOperationsInternal>
           <operation
             Id="e63d0477-ff4d-4afe-9573-1affc16f92aa"
-            name="getMemberList"
+            name="getResult"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -433,22 +411,23 @@
                   name="members"
                   direction="In"
                   isUnique="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="c1172b0f-23b5-4899-8900-e114b68984ee"
-                      name="Lower"
-                      value="*" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="31fb3cd5-d114-4e2a-a6ce-82626ff48889"
-                      name="Upper"
-                      value="*" />
-                  </upperValueInternal>
                   <type_NamedElement>
                     <interfaceMoniker
-                      Id="a951048c-0369-4ead-bb82-1915f92de2c3"
-                      LastKnownName="IMember"
+                      Id="f1edc787-07c9-4c58-a06e-707ffe08cead"
+                      LastKnownName="Sendable"
+                      LastKnownLocation="Package_1622.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="65f6c9d1-7e43-453c-b0cd-047400fa3efd"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="92952e69-8ce3-4b24-b16a-4050b8d63d62"
+                      LastKnownName="Result"
                       LastKnownLocation="Package_1622.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -465,6 +444,15 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="944da8ad-a55a-4004-83b3-f779860e605e">
+            <interfaceMoniker
+              Id="990c1a0b-2589-4c8c-883f-968c60dd6bca"
+              LastKnownName="IScheduler"
+              LastKnownLocation="Package_1622.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
         <generalsInternal>
           <generalization
             Id="2e7967d3-4249-4341-9547-0a1cb131d3bc"
@@ -519,12 +507,12 @@
             Id="a798014d-ea31-4306-b722-9115d9c6ef34"
             isDerived="false"
             sourceEndRoleName="Scheduler"
-            targetEndRoleName="ProxyMember"
+            targetEndRoleName="proxyClientService"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
               Id="7550eae6-a348-4f73-8d23-ae1453a1feac"
-              LastKnownName="ProxyMemberGetter"
+              LastKnownName="ProxyClientService"
               LastKnownLocation="Package_1622.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -543,7 +531,7 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="059bdd0e-9226-454b-b81b-b6d212c2ba91"
-                  name="ProxyMember"
+                  name="proxyClientService"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -597,7 +585,7 @@
         <ownedOperationsInternal>
           <operation
             Id="31eaa20d-5933-453e-920e-7b0aa4262129"
-            name="send"
+            name="onReceived"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -606,15 +594,15 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="c57cb02f-64f2-4abd-a1a9-2124c4561ae6"
-                  name="req"
+                  Id="d951973c-9524-4763-8d97-64e52d3a9e89"
+                  name="command"
                   direction="In"
                   isUnique="false">
                   <type_NamedElement>
                     <classMoniker
-                      Id="bc1d503e-d3fd-47c5-a19e-02517b27c87b"
-                      LastKnownName="ServerRequest"
-                      LastKnownLocation="Package_1503.uml" />
+                      Id="20be7ea3-04b6-40c7-8408-bfaa058feb74"
+                      LastKnownName="GetResult"
+                      LastKnownLocation="Package_1622.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -631,15 +619,15 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="7968e9c4-982a-4c2a-9181-ec682723f737"
-                  name="req"
+                  Id="429edd4e-b67c-4aac-bee1-d43b74b6c950"
+                  name="command"
                   direction="In"
                   isUnique="false">
                   <type_NamedElement>
                     <classMoniker
-                      Id="bc1d503e-d3fd-47c5-a19e-02517b27c87b"
-                      LastKnownName="ServerRequest"
-                      LastKnownLocation="Package_1503.uml" />
+                      Id="20be7ea3-04b6-40c7-8408-bfaa058feb74"
+                      LastKnownName="GetResult"
+                      LastKnownLocation="Package_1622.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -652,9 +640,18 @@
       <class
         Id="53eecfb5-24c5-4a75-a949-5f3952199b98"
         name="Servant"
-        isAbstract="false"
+        isAbstract="true"
         isLeaf="false"
         isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="83d844e6-4d6b-4fe0-88d5-fd67909d9536">
+            <interfaceMoniker
+              Id="57ae412b-441c-4cd3-b76a-7ac51b1b96fe"
+              LastKnownName="IClientService"
+              LastKnownLocation="Package_1622.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
         <generalsInternal>
           <generalization
             Id="eed20e9f-91c9-42b0-a789-90ff145e858a"
@@ -667,37 +664,38 @@
         </generalsInternal>
         <ownedOperationsInternal>
           <operation
-            Id="631ace8b-5674-4a9a-b045-176bd42efde7"
-            name="getMemberList"
+            Id="4c685d52-4797-4776-83ca-e13770b328b4"
+            name="getResult"
             isLeaf="false"
             isStatic="false"
-            isAbstract="false"
+            isAbstract="true"
             concurrency="Sequential"
             isQuery="false">
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="d79ec953-1f4f-420c-ba04-9f1c8c9ca55a"
-                  name="members"
+                  Id="78993ad1-fd7c-4979-9f57-6c4a451b9200"
+                  name="snd"
                   direction="In"
                   isUnique="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="fb255c6f-2ebd-4455-8df8-c23ed8ff446d"
-                      name="Lower"
-                      value="*" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="daaeef93-f606-462c-ae6d-036ff64d7ee5"
-                      name="Upper"
-                      value="*" />
-                  </upperValueInternal>
                   <type_NamedElement>
                     <interfaceMoniker
-                      Id="2b6778ad-e427-4b1f-a9d0-38da74c4864f"
-                      LastKnownName="NetworkMember"
-                      LastKnownLocation="Modelisation CloudBook.uml" />
+                      Id="f1edc787-07c9-4c58-a06e-707ffe08cead"
+                      LastKnownName="Sendable"
+                      LastKnownLocation="Package_1622.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ea83e78a-a9fa-456a-a413-038e54c87006"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="92952e69-8ce3-4b24-b16a-4050b8d63d62"
+                      LastKnownName="Result"
+                      LastKnownLocation="Package_1622.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -755,7 +753,7 @@
     <packageHasNamedElement>
       <Interface
         Id="02ec4805-5244-45b7-b3da-11101ff95261"
-        name="Request"
+        name="IGetResult"
         isAbstract="false"
         isLeaf="false">
         <ownedOperations>
@@ -822,13 +820,13 @@
     <packageHasNamedElement>
       <Interface
         Id="57ae412b-441c-4cd3-b76a-7ac51b1b96fe"
-        name="IMemberGetter"
+        name="IClientService"
         isAbstract="false"
         isLeaf="false">
         <ownedOperations>
           <operation
             Id="0b7eb34c-5f73-40bd-8ed2-38a498755b0d"
-            name="getMemberList"
+            name="getResult"
             isLeaf="false"
             isStatic="false"
             isAbstract="true"
@@ -837,26 +835,27 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="1abe6111-de93-438b-81c1-a5cfec7e3539"
-                  name="members"
+                  Id="1d790c87-b32b-40ab-b2c4-b71b1851aa66"
+                  name="snd"
                   direction="In"
                   isUnique="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="8e4e0171-650d-426d-855a-422068679c02"
-                      name="Lower"
-                      value="*" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="946e0309-e8de-424d-bfeb-ee8026b1a3e9"
-                      name="Upper"
-                      value="*" />
-                  </upperValueInternal>
                   <type_NamedElement>
                     <interfaceMoniker
-                      Id="a951048c-0369-4ead-bb82-1915f92de2c3"
-                      LastKnownName="IMember"
+                      Id="f1edc787-07c9-4c58-a06e-707ffe08cead"
+                      LastKnownName="Sendable"
+                      LastKnownLocation="Package_1622.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="49c0a1cc-0907-4c68-94e6-7f693b5c4eb3"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="92952e69-8ce3-4b24-b16a-4050b8d63d62"
+                      LastKnownName="Result"
                       LastKnownLocation="Package_1622.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -869,7 +868,7 @@
     <packageHasNamedElement>
       <class
         Id="2bb64fe8-a562-42cd-9785-93c8b9ae75bb"
-        name="MemberGetter"
+        name="ClientService"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -878,14 +877,14 @@
             Id="99dadb75-87df-425e-a777-a551f2d37eca">
             <interfaceMoniker
               Id="57ae412b-441c-4cd3-b76a-7ac51b1b96fe"
-              LastKnownName="IMemberGetter"
+              LastKnownName="IClientService"
               LastKnownLocation="Package_1622.uml" />
           </interfaceRealization>
         </suppliersInternal>
         <ownedOperationsInternal>
           <operation
             Id="322588a9-5ea0-46fd-b1d5-b776ddf78783"
-            name="getMemberList"
+            name="getResult"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -898,22 +897,23 @@
                   name="members"
                   direction="In"
                   isUnique="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="8cb1e94f-a86a-426a-a424-3dd45a71548e"
-                      name="Lower"
-                      value="*" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="45768e8b-ae4e-4cf5-8852-9b6d07c09164"
-                      name="Upper"
-                      value="*" />
-                  </upperValueInternal>
                   <type_NamedElement>
                     <interfaceMoniker
-                      Id="a951048c-0369-4ead-bb82-1915f92de2c3"
-                      LastKnownName="IMember"
+                      Id="f1edc787-07c9-4c58-a06e-707ffe08cead"
+                      LastKnownName="Sendable"
+                      LastKnownLocation="Package_1622.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f103a117-7097-410c-a3a4-ee6803dbe10c"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="92952e69-8ce3-4b24-b16a-4050b8d63d62"
+                      LastKnownName="Result"
                       LastKnownLocation="Package_1622.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -1178,6 +1178,88 @@
           </property>
         </ownedAttributesInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="f1edc787-07c9-4c58-a06e-707ffe08cead"
+        name="Sendable"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="92952e69-8ce3-4b24-b16a-4050b8d63d62"
+        name="Result"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="990c1a0b-2589-4c8c-883f-968c60dd6bca"
+        name="IScheduler"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="f748ad21-180c-4e27-8697-3faa04021ff2"
+            name="dispatch"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="87e1d343-c521-4048-bac1-2c33186ac57d"
+                  name="command"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="20be7ea3-04b6-40c7-8408-bfaa058feb74"
+                      LastKnownName="GetResult"
+                      LastKnownLocation="Package_1622.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="ab38d478-f683-47ca-b78e-bdfb2a5c0e7e"
+            name="onReceived"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e8926263-55d9-460e-9c71-8390fb247140"
+                  name="command"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="20be7ea3-04b6-40c7-8408-bfaa058feb74"
+                      LastKnownName="GetResult"
+                      LastKnownLocation="Package_1622.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="62f5ac99-2465-4e4e-b33b-d35698db0304"
+        name="Class2"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
     </packageHasNamedElement>
   </packagedElements>
 </package>
