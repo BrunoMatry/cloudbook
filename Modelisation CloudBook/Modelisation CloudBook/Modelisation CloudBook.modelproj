@@ -36,6 +36,13 @@
       <SubType>Content</SubType>
       <DependentUpon>Bloc Gestion des amis\Revocation d'un ami.sequencediagram</DependentUpon>
     </Content>
+    <Content Include="Bloc Moteur\EnregistrementApplication.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Bloc Moteur\EnregistrementApplication.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Bloc Moteur\EnregistrementApplication.sequencediagram</DependentUpon>
+    </Content>
     <Content Include="Bloc Réseau\ActiveObjectLibrary.classdiagram">
       <SubType>Content</SubType>
     </Content>
@@ -43,12 +50,40 @@
       <SubType>Content</SubType>
       <DependentUpon>Bloc Réseau\ActiveObjectLibrary.classdiagram</DependentUpon>
     </Content>
+    <Content Include="Bloc Réseau\ForwardRequestToClient.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Bloc Réseau\ForwardRequestToClient.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Bloc Réseau\ForwardRequestToClient.sequencediagram</DependentUpon>
+    </Content>
     <Content Include="Bloc Réseau\Network.classdiagram">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Bloc Réseau\Network.classdiagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>Bloc Réseau\Network.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="Bloc Réseau\SaveState.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Bloc Réseau\SaveState.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Bloc Réseau\SaveState.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Bloc Réseau\SendRequestToServer.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Bloc Réseau\SendRequestToServer.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Bloc Réseau\SendRequestToServer.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Bloc Réseau\Server.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Bloc Réseau\Server.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Bloc Réseau\Server.classdiagram</DependentUpon>
     </Content>
     <Content Include="ModelDefinition\Package1_1456.uml">
       <SubType>Content</SubType>
@@ -99,39 +134,12 @@
       <SubType>Content</SubType>
       <DependentUpon>Modules.classdiagram</DependentUpon>
     </Content>
-    <Content Include="SendRequestToServer.sequencediagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="SendRequestToServer.sequencediagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>SendRequestToServer.sequencediagram</DependentUpon>
-    </Content>
-    <Content Include="SaveState.sequencediagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="SaveState.sequencediagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>SaveState.sequencediagram</DependentUpon>
-    </Content>
-    <Content Include="Server.classdiagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Server.classdiagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>Server.classdiagram</DependentUpon>
-    </Content>
-    <Content Include="ForwardRequestToClient.sequencediagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="ForwardRequestToClient.sequencediagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>ForwardRequestToClient.sequencediagram</DependentUpon>
-    </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="ModelDefinition\Modelisation CloudBook.uml">
       <SubType>Content</SubType>
     </Content>
     <Folder Include="Bloc Réseau" />
     <Folder Include="Bloc Gestion des amis" />
+    <Folder Include="Bloc Moteur" />
   </ItemGroup>
 </Project>
