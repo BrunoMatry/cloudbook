@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
   dslVersion="1.0.0.0"
   Id="94208107-703b-4bbf-9f51-c1243885138f"
   name="Modelisation CloudBook" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -93,6 +93,54 @@ current application information</body>
           LastKnownName="Request"
           LastKnownLocation="Modelisation CloudBook.uml" />
       </annotatedElements>
+    </comment>
+    <comment
+      Id="8a1b6793-6e38-4d62-b8b4-17ad2fbd1a55">
+      <body>pertinent ?</body>
+    </comment>
+    <comment
+      Id="2afbb422-1485-4ea7-a7ee-8102c404af18">
+      <body>[oui]</body>
+    </comment>
+    <comment
+      Id="cb6b0aaf-0f22-42b0-a47e-a8cc67c550ed">
+      <body>[non]</body>
+    </comment>
+    <comment
+      Id="b410e75d-8704-426b-9ca3-8f19ccfec03b">
+      <body>requete à transférer ?</body>
+    </comment>
+    <comment
+      Id="a25ee1dd-fc2a-4539-8295-7ccf0ebccfba">
+      <body>[oui]</body>
+    </comment>
+    <comment
+      Id="d07cd423-b45f-4596-abdc-03f868c76a3f">
+      <body>[non]</body>
+    </comment>
+    <comment
+      Id="ddfabf36-9695-4f6b-9f45-8ce5950253b2">
+      <body>[oui]</body>
+    </comment>
+    <comment
+      Id="286d5218-8881-47b7-b789-4a8da930636d">
+      <body>[non]</body>
+    </comment>
+    <comment
+      Id="fa2f0598-699f-4f25-b135-fd2fbb2c01f1">
+      <body>requete(s) en attente ?</body>
+    </comment>
+    <comment
+      Id="621c57d3-5dc2-493f-a30c-0b33b6aceb99">
+      <body>requete(s) en attente ?</body>
+    </comment>
+    <comment
+      Id="54378f8a-005d-46f9-9609-1037f3fc5912">
+      <body>[oui]</body>
+    </comment>
+    <comment
+      Id="c19442cd-4bd6-49ca-a529-d4a25d35a54a">
+      <body>[non]</body>
     </comment>
   </ownedCommentsInternal>
   <packagedElements>
@@ -14704,6 +14752,248 @@ current application information</body>
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="d9691cf5-1761-4052-bbda-143881865cc5"
+        name="Activity1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="2db8cd6e-100d-4517-a644-b8470fa8239f"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="75ee786e-58b7-474b-97d6-694332ead07f"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="41f6a994-4d0f-4a33-bf51-4630cc2dd520"
+                  LastKnownName="Réception d'une requête"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="41f6a994-4d0f-4a33-bf51-4630cc2dd520"
+            name="Réception d'une requête"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="225ab5cb-dcc5-4e57-b8ec-c8ef5dc7a2b1"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="bd93a35a-60b8-463a-a5c2-181672afb560"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="79dc5c4c-a216-4326-82a8-374527928349"
+            name="Met la requête dans la liste d'attente"
+            isLeaf="false" />
+          <opaqueAction
+            Id="9aac3528-0a6a-4aa1-a09f-3dd19e69ea69"
+            name="Vérification de la pertinence de l'emmetteur"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="1bb3d369-3bf2-43ec-b869-203ac69f8429"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="1583ee27-64db-4943-b7a6-ce882ce7d6c9"
+                  LastKnownName="Decision11"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="cfd6d798-89a6-436b-9418-5e0e39f75a51"
+            name="Ajoute l'emmetteur à la liste d'amis"
+            isLeaf="false" />
+          <opaqueAction
+            Id="50a5c805-a3a7-4ad5-97a4-9fb59606bb53"
+            name="Ajoute les infos"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="5ad6c9e3-770e-49ca-942e-3a2ecfc4fdf4"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="24239639-4ac1-452d-83a6-014c77890fb7"
+                  LastKnownName="Decision12"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <forkNode
+            Id="8bb9e02a-f214-462c-beac-b981a7265b8b"
+            name="Fork1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="8ce51ee3-17ef-43d7-ac9d-a98f451e94b5"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="50a5c805-a3a7-4ad5-97a4-9fb59606bb53"
+                  LastKnownName="Ajoute les infos"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="66512415-83fb-4940-ba02-832aa880b409"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="cfd6d798-89a6-436b-9418-5e0e39f75a51"
+                  LastKnownName="Ajoute l'emmetteur à la liste d'amis"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
+          <opaqueAction
+            Id="fa6a57ae-0c16-4893-b5f5-413bf1509183"
+            name="Transfert la requête"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="4579ffcb-bec2-48f1-83fa-169c53094153"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="0b7d74ef-bd8d-4a12-99f6-d2d7f795fd56"
+                  LastKnownName="Decision13"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="bd93a35a-60b8-463a-a5c2-181672afb560"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ac86c669-dbfc-41d1-b41b-e31bec1baf89"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="9aac3528-0a6a-4aa1-a09f-3dd19e69ea69"
+                  LastKnownName="Vérification de la pertinence de l'emmetteur"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="41ed226f-69c1-4317-b0a3-78aeafe6d106"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="79dc5c4c-a216-4326-82a8-374527928349"
+                  LastKnownName="Met la requête dans la liste d'attente"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <decisionNode
+            Id="1583ee27-64db-4943-b7a6-ce882ce7d6c9"
+            name="Decision11"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="409b9214-2df9-4eef-988f-5d5728ce76ce"
+                isLeaf="false">
+                <forkNodeMoniker
+                  Id="8bb9e02a-f214-462c-beac-b981a7265b8b"
+                  LastKnownName="Fork1"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="4fb01db3-96a8-4ec6-b058-9ead63e8a2e8"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="dc197220-042f-4273-bf7f-8992823fa71c"
+                  LastKnownName="Decision121"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <decisionNode
+            Id="24239639-4ac1-452d-83a6-014c77890fb7"
+            name="Decision12"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="923c688f-7941-4419-845a-171ec679e884"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="fa6a57ae-0c16-4893-b5f5-413bf1509183"
+                  LastKnownName="Transfert la requête"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="eb91fbef-d288-48ac-b709-14a0ea3d5287"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="e3f8762c-73bb-4322-aa33-eb675fbbad17"
+                  LastKnownName="Decision2"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <decisionNode
+            Id="0b7d74ef-bd8d-4a12-99f6-d2d7f795fd56"
+            name="Decision13"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="87af0f36-242f-409e-86fc-3dd9084e06e1"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="2febc01b-eb49-44b3-b21c-0a4bcd668fb4"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <activityFinalNode
+            Id="2febc01b-eb49-44b3-b21c-0a4bcd668fb4"
+            name="ActivityFinal1"
+            isLeaf="false" />
+          <opaqueAction
+            Id="fd105456-b4a5-4201-b5e4-38247c9cc241"
+            name="Prend une requête de la liste d'attente"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f585952a-e582-4abf-a9b1-d71163b783e9"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="9aac3528-0a6a-4aa1-a09f-3dd19e69ea69"
+                  LastKnownName="Vérification de la pertinence de l'emmetteur"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="e3f8762c-73bb-4322-aa33-eb675fbbad17"
+            name="Decision2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="77d94ba6-4fd6-438d-8c73-a7cb13ac7b22"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="fd105456-b4a5-4201-b5e4-38247c9cc241"
+                  LastKnownName="Prend une requête de la liste d'attente"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <decisionNode
+            Id="dc197220-042f-4273-bf7f-8992823fa71c"
+            name="Decision121"
+            isLeaf="false" />
+        </nodes>
+      </activity>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
