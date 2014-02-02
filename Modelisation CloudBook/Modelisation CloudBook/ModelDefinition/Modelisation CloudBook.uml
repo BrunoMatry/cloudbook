@@ -14414,6 +14414,297 @@ current application information</body>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="f1c41a76-65f2-44e0-bdd8-5fe297fb1476"
+        name="IEngine"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="a396f455-69a2-40d2-8d63-366ad55dd779"
+            name="setInformation"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="b95992e9-c9d3-497a-b13b-456390d2e968"
+            name="handleRequest"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="a38a340d-ecdc-4fb2-8338-70d988e2e782"
+        name="Engine"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="8e739927-2807-47f6-b20d-c55727ac5fda">
+            <interfaceMoniker
+              Id="f1c41a76-65f2-44e0-bdd8-5fe297fb1476"
+              LastKnownName="IEngine"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="f5177f04-ed91-42e5-8f7f-eafbbb87f164"
+            name="setInformation"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="0a67ab80-c3a2-49f3-826b-4922d8a5df86"
+            name="shareInformation"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="f3473a98-4313-4d2e-849c-c5fb2b89fc11"
+            name="handleRequest"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="87689feb-dea1-4a36-8c09-a6531f8d6ba5"
+            name="updateInformation"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="5e18cd86-1b2a-4c1b-867d-e9a51cbad093"
+        name="AppMounter"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="d1681f5c-453e-4ccc-90bd-6d5e4b9e8635">
+            <interfaceMoniker
+              Id="8843169a-eede-4848-9b41-8d277eb9b52e"
+              LastKnownName="IAppMounter"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="7b1f64ef-5a92-4db1-9d5a-f64841d09667"
+            name="mountFriendManager"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="d86ce492-8488-461f-a270-9383ab69b85c"
+            name="mountMyInformation"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="217dd496-ee60-436c-831e-84d7aef9e7a7"
+            name="mountMonitoring"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="8843169a-eede-4848-9b41-8d277eb9b52e"
+        name="IAppMounter"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="b97f4993-95ce-4085-9506-49787dbef39d"
+            name="mountFriendManager"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="3f4f17fe-3f65-48cf-8ef9-3ae399a75479"
+            name="mountMyInformation"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="c442f15b-cb1e-4bb8-b6cd-e604c611e49d"
+            name="mountMonitoring"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="b2339966-8c69-4e11-a704-c4695996fc9f"
+        name="IMonitoring"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="70bd4cb3-a990-46b5-a35d-58620115da60"
+            name="pushInformation"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="51cda176-a383-4462-ae58-5e81d93bdc93"
+        name="Monitoring"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="753bcff4-8011-472c-903c-2bb48b6c09e5">
+            <interfaceMoniker
+              Id="b2339966-8c69-4e11-a704-c4695996fc9f"
+              LastKnownName="IMonitoring"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="29266b3a-0b8a-481c-aea3-e0813ab316f0"
+            name="pushInformation"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="4a313da5-b010-44aa-aa5b-91d5adf9cf50"
+        name="IMyInformation"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="2083a32d-5e6a-41b8-819d-169bac3ed888"
+        name="MyInformation"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="2c670766-80b4-4f0f-85cf-1c7eb551d846">
+            <interfaceMoniker
+              Id="4a313da5-b010-44aa-aa5b-91d5adf9cf50"
+              LastKnownName="IMyInformation"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="9d4d5733-afee-42c2-ad95-d3cb914509b0"
+            isDerived="false"
+            sourceEndRoleName="MyInformation"
+            targetEndRoleName="Information"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="f665a627-c12b-4f89-b712-189fe42660ff"
+              LastKnownName="Information"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="eb102c32-d5af-4455-a5f3-9c215ff113e9"
+                  name="MyInformation"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5290bb53-c7cf-4c5e-925d-40e0751d27b5"
+                  name="Information"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="a25746c5-155d-4c6f-8822-f807dc5d1353"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="9de90127-834b-4e4f-b51b-ac337c41da22"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f665a627-c12b-4f89-b712-189fe42660ff"
+        name="Information"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
   </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"
