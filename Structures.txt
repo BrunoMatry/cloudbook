@@ -1,0 +1,25 @@
+Requête :
+	Label :
+		Source
+		Destinataire
+		Date/heure
+		Compteur (nombre de rebond sur les noeuds)
+		Accusé de réception
+		Id de la requête?
+	Information :
+		Peu d'infos ?
+		Demande de voisin ?
+		[...]
+		
+Donnée :
+	Source
+	Date
+	Info
+	Confiance/pertinence à l'enregistrement ?
+	
+	
+Garbage collector :
+	Informations : suppression si plus pertientes
+	Amis : suppression si trop vieux sans info
+	
+Sérialisation pour la sauvegarde
