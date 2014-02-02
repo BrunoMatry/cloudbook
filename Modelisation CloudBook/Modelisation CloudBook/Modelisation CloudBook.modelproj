@@ -22,6 +22,13 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
+    <Content Include="General2.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="General2.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>General2.classdiagram</DependentUpon>
+    </Content>
     <Content Include="ModelDefinition\Package1_1456.uml">
       <SubType>Content</SubType>
     </Content>
@@ -119,6 +126,13 @@
     <Content Include="ForwardRequestToClient.sequencediagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>ForwardRequestToClient.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="TheCloudBookUseCase2.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="TheCloudBookUseCase2.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>TheCloudBookUseCase2.usecasediagram</DependentUpon>
     </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="Recherche d'un nouvel ami.sequencediagram">
