@@ -12833,6 +12833,1271 @@ current application information</body>
         Id="ad828ab6-1373-4452-b5cb-9cd23137b64e"
         name="ExecutionEvent" />
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <interaction
+        Id="fbe42618-dfe4-429f-bcae-9db9f81bce20"
+        name="TraitementRequete"
+        collapseFragmentsFlag="false"
+        isActiveClass="false"
+        isAbstract="false"
+        isLeaf="false"
+        isReentrant="false">
+        <ownedCommentsInternal>
+          <comment
+            Id="d1a0f196-1374-4054-a0d4-8a3f5842ecc5">
+            <body>TODO !</body>
+          </comment>
+        </ownedCommentsInternal>
+        <fragments>
+          <messageOccurrenceSpecification
+            Id="e7eb192b-7b84-4015-8be7-c91aeb284119"
+            name="MessageOccurrenceSpecification1">
+            <covered>
+              <lifelineMoniker
+                Id="7dea5072-e71b-47ca-bd09-bebe4aff7893"
+                LastKnownName=": network"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="1ddbf79d-5ee2-4570-8e20-7bcbdb5399a0"
+            name="BehaviorExecutionSpecification1">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="7dea5072-e71b-47ca-bd09-bebe4aff7893"
+                LastKnownName=": network"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="90ca40b5-543d-4479-8a9a-a2fe37a5fd0a"
+                LastKnownName="ExecutionOccurrenceSpecification2"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="22c8f181-57cb-4f3d-b870-b08c96e6831b"
+                LastKnownName="ExecutionOccurrenceSpecification1"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="a28edede-060b-4318-9d8c-2d2e8df8e1ae"
+                LastKnownName="MessageOccurrenceSpecification2"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="93ed621b-4fc3-4db3-b6fa-b14bac05a0ca"
+                LastKnownName="MessageOccurrenceSpecification3"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="22c8f181-57cb-4f3d-b870-b08c96e6831b"
+            name="ExecutionOccurrenceSpecification1">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="b9881b94-13b9-4e25-bee5-7091c5e96487"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="7dea5072-e71b-47ca-bd09-bebe4aff7893"
+                LastKnownName=": network"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="a28edede-060b-4318-9d8c-2d2e8df8e1ae"
+            name="MessageOccurrenceSpecification2">
+            <covered>
+              <lifelineMoniker
+                Id="7dea5072-e71b-47ca-bd09-bebe4aff7893"
+                LastKnownName=": network"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="1b6dbc3b-0542-4461-8712-37d20188584d"
+            name="BehaviorExecutionSpecification2">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="0c900121-5e4a-4baf-8a3e-064b3dc3f4a0"
+                LastKnownName=": engine"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="13a8151f-3f89-4632-9e54-c81093bb474b"
+                LastKnownName="ExecutionOccurrenceSpecification4"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="4e573d54-e021-4629-b441-0c0a99dd527a"
+                LastKnownName="ExecutionOccurrenceSpecification3"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="5bd36a22-52d1-4a51-a4ec-818905477aaf"
+                LastKnownName="MessageOccurrenceSpecification4"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="1d88af75-e76b-4c38-a8e7-2bfa3d3c5d4b"
+                LastKnownName="MessageOccurrenceSpecification5"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="4e573d54-e021-4629-b441-0c0a99dd527a"
+            name="ExecutionOccurrenceSpecification3">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="63d57a67-3d65-4b77-81d1-11e1d75e3560"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="0c900121-5e4a-4baf-8a3e-064b3dc3f4a0"
+                LastKnownName=": engine"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="93ed621b-4fc3-4db3-b6fa-b14bac05a0ca"
+            name="MessageOccurrenceSpecification3">
+            <covered>
+              <lifelineMoniker
+                Id="7dea5072-e71b-47ca-bd09-bebe4aff7893"
+                LastKnownName=": network"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="5bd36a22-52d1-4a51-a4ec-818905477aaf"
+            name="MessageOccurrenceSpecification4">
+            <covered>
+              <lifelineMoniker
+                Id="0c900121-5e4a-4baf-8a3e-064b3dc3f4a0"
+                LastKnownName=": engine"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="005b8291-9b47-4f8a-b49e-f4ad564764f1"
+            name="BehaviorExecutionSpecification3">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="8f560a5f-8887-48c0-bef8-fa1fd570fe75"
+                LastKnownName=": requestManager"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="96e1d280-8c49-4dc9-95f6-3648c102e042"
+                LastKnownName="ExecutionOccurrenceSpecification6"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="350281c7-6ee5-4003-97dd-0f4ffa5a6712"
+                LastKnownName="ExecutionOccurrenceSpecification5"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="3978d6a1-82d5-4b0a-98b1-2e0202d25ac1"
+                LastKnownName="MessageOccurrenceSpecification6"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="90ca40b5-543d-4479-8a9a-a2fe37a5fd0a"
+            name="ExecutionOccurrenceSpecification2">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="fdb4bf85-1f88-423b-82a1-ce65f4c3c4e3"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="7dea5072-e71b-47ca-bd09-bebe4aff7893"
+                LastKnownName=": network"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="350281c7-6ee5-4003-97dd-0f4ffa5a6712"
+            name="ExecutionOccurrenceSpecification5">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="f6286198-a6c7-4d93-a126-e0605d75ce68"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="8f560a5f-8887-48c0-bef8-fa1fd570fe75"
+                LastKnownName=": requestManager"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="1d88af75-e76b-4c38-a8e7-2bfa3d3c5d4b"
+            name="MessageOccurrenceSpecification5">
+            <covered>
+              <lifelineMoniker
+                Id="0c900121-5e4a-4baf-8a3e-064b3dc3f4a0"
+                LastKnownName=": engine"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="3978d6a1-82d5-4b0a-98b1-2e0202d25ac1"
+            name="MessageOccurrenceSpecification6">
+            <covered>
+              <lifelineMoniker
+                Id="8f560a5f-8887-48c0-bef8-fa1fd570fe75"
+                LastKnownName=": requestManager"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="13a8151f-3f89-4632-9e54-c81093bb474b"
+            name="ExecutionOccurrenceSpecification4">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="c5f48c67-d781-441d-9098-6c928ba29c0b"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="0c900121-5e4a-4baf-8a3e-064b3dc3f4a0"
+                LastKnownName=": engine"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="96e1d280-8c49-4dc9-95f6-3648c102e042"
+            name="ExecutionOccurrenceSpecification6">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="8ac60cf5-d828-41ca-97f2-e96330ba587e"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="8f560a5f-8887-48c0-bef8-fa1fd570fe75"
+                LastKnownName=": requestManager"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline
+            Id="7dea5072-e71b-47ca-bd09-bebe4aff7893"
+            name=": network"
+            isActor="false"
+            lifelineDisplayName=": network">
+            <topLevelOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="e7eb192b-7b84-4015-8be7-c91aeb284119"
+                LastKnownName="MessageOccurrenceSpecification1"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="22c8f181-57cb-4f3d-b870-b08c96e6831b"
+                LastKnownName="ExecutionOccurrenceSpecification1"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="90ca40b5-543d-4479-8a9a-a2fe37a5fd0a"
+                LastKnownName="ExecutionOccurrenceSpecification2"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="0c900121-5e4a-4baf-8a3e-064b3dc3f4a0"
+            name=": engine"
+            isActor="false"
+            lifelineDisplayName=": engine">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="4e573d54-e021-4629-b441-0c0a99dd527a"
+                LastKnownName="ExecutionOccurrenceSpecification3"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="13a8151f-3f89-4632-9e54-c81093bb474b"
+                LastKnownName="ExecutionOccurrenceSpecification4"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="8f560a5f-8887-48c0-bef8-fa1fd570fe75"
+            name=": requestManager"
+            isActor="false"
+            lifelineDisplayName=": requestManager">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="350281c7-6ee5-4003-97dd-0f4ffa5a6712"
+                LastKnownName="ExecutionOccurrenceSpecification5"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="96e1d280-8c49-4dc9-95f6-3648c102e042"
+                LastKnownName="ExecutionOccurrenceSpecification6"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message
+            Id="c54d7fe2-b85f-475e-88a5-0ff22baef005"
+            name="Reçoit une requête"
+            messageKind="Complete"
+            messageSort="AsynchCall"
+            createSelfMessage="true">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="e7eb192b-7b84-4015-8be7-c91aeb284119"
+                LastKnownName="MessageOccurrenceSpecification1"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="a28edede-060b-4318-9d8c-2d2e8df8e1ae"
+                LastKnownName="MessageOccurrenceSpecification2"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="20255690-b442-4ca3-9b59-63360df9bd9e"
+            name="Transmet la requête"
+            messageKind="Complete"
+            messageSort="AsynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="93ed621b-4fc3-4db3-b6fa-b14bac05a0ca"
+                LastKnownName="MessageOccurrenceSpecification3"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="5bd36a22-52d1-4a51-a4ec-818905477aaf"
+                LastKnownName="MessageOccurrenceSpecification4"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="237fa65b-5d9c-4e0a-8c5f-ecf9964d0e70"
+            name="Redirige la requête"
+            messageKind="Complete"
+            messageSort="AsynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="1d88af75-e76b-4c38-a8e7-2bfa3d3c5d4b"
+                LastKnownName="MessageOccurrenceSpecification5"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="3978d6a1-82d5-4b0a-98b1-2e0202d25ac1"
+                LastKnownName="MessageOccurrenceSpecification6"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </receiveEvent>
+          </message>
+        </messages>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="b9881b94-13b9-4e25-bee5-7091c5e96487"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="fdb4bf85-1f88-423b-82a1-ce65f4c3c4e3"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="63d57a67-3d65-4b77-81d1-11e1d75e3560"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="c5f48c67-d781-441d-9098-6c928ba29c0b"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="f6286198-a6c7-4d93-a126-e0605d75ce68"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="8ac60cf5-d828-41ca-97f2-e96330ba587e"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <interaction
+        Id="e15aef90-83dd-405c-b99d-800b47697a63"
+        name="PartageInformations"
+        collapseFragmentsFlag="false"
+        isActiveClass="false"
+        isAbstract="false"
+        isLeaf="false"
+        isReentrant="false">
+        <ownedCommentsInternal>
+          <comment
+            Id="3f26fbf9-364e-4843-9f5e-b474fd09fd6d">
+            <body>Peut-être parallélisé avec l'étape précédente</body>
+            <annotatedElements>
+              <behaviorExecutionSpecificationMoniker
+                Id="0e5c0942-90c2-46aa-8816-4ae4bbf3e119"
+                LastKnownName="BehaviorExecutionSpecification3"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </annotatedElements>
+          </comment>
+        </ownedCommentsInternal>
+        <fragments>
+          <behaviorExecutionSpecification
+            Id="e5e89bcb-5670-48c3-a729-d8b5c2334c1a"
+            name="BehaviorExecutionSpecification1">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="b5417895-7354-4bf6-a998-1cf576738ec6"
+                LastKnownName=": engine"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="1ea2ef0b-d336-47ae-ba98-fb9a354669e3"
+                LastKnownName="ExecutionOccurrenceSpecification2"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="0603a578-9565-4799-8f6c-82c51a4d6d39"
+                LastKnownName="ExecutionOccurrenceSpecification1"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="63e634a2-74f3-426f-b46e-f8924e608798"
+                LastKnownName="MessageOccurrenceSpecification2"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="7cfb7d41-7ae4-4786-8af5-d318ca99c6b4"
+                LastKnownName="MessageOccurrenceSpecification3"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="600ea1ae-3318-4f45-b20e-2bc892ca0c6a"
+                LastKnownName="MessageOccurrenceSpecification6"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="95860292-afa1-424c-b007-4346f9ca64df"
+                LastKnownName="MessageOccurrenceSpecification7"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="ebd78cb5-c755-4739-afe6-6bdfdbf42d50"
+                LastKnownName="MessageOccurrenceSpecification10"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="300d481b-8d1c-4976-891d-e797f713051e"
+                LastKnownName="MessageOccurrenceSpecification17"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="9db0f98f-7ba8-4079-938e-4a93895cae7c"
+                LastKnownName="MessageOccurrenceSpecification20"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="efb2d6b9-c6f7-4b1b-b0a0-7bacc2bffa1c"
+                LastKnownName="MessageOccurrenceSpecification21"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="0603a578-9565-4799-8f6c-82c51a4d6d39"
+            name="ExecutionOccurrenceSpecification1">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="1c889404-9f1f-40f6-baab-e6c297285dfd"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="b5417895-7354-4bf6-a998-1cf576738ec6"
+                LastKnownName=": engine"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="0c60a48f-8664-408a-9ddf-13b8f1834b5a"
+            name="MessageOccurrenceSpecification1">
+            <covered>
+              <lifelineMoniker
+                Id="5c228790-8416-4358-9bc2-4dcbf473452c"
+                LastKnownName="Clock"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="63e634a2-74f3-426f-b46e-f8924e608798"
+            name="MessageOccurrenceSpecification2">
+            <covered>
+              <lifelineMoniker
+                Id="b5417895-7354-4bf6-a998-1cf576738ec6"
+                LastKnownName=": engine"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="40bd9783-0e6a-48b0-8f9d-6d346bb6d08b"
+            name="BehaviorExecutionSpecification2">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="074f5407-6c21-44d0-a1f3-802ad68e0b70"
+                LastKnownName=": myInformation"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="d751eafb-e32f-46a9-814b-14c5317fddfa"
+                LastKnownName="ExecutionOccurrenceSpecification4"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="09ced6aa-3b82-4582-8a6b-2d1e67c93739"
+                LastKnownName="ExecutionOccurrenceSpecification3"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="4f0bafd7-6a38-45e0-b245-9274996abc96"
+                LastKnownName="MessageOccurrenceSpecification4"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="10e76ee4-be81-43e3-85c0-9dfa7d4d8c44"
+                LastKnownName="MessageOccurrenceSpecification5"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="09ced6aa-3b82-4582-8a6b-2d1e67c93739"
+            name="ExecutionOccurrenceSpecification3">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="f59196cc-b6e1-4053-a46b-a22de9d56d51"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="074f5407-6c21-44d0-a1f3-802ad68e0b70"
+                LastKnownName=": myInformation"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="7cfb7d41-7ae4-4786-8af5-d318ca99c6b4"
+            name="MessageOccurrenceSpecification3">
+            <covered>
+              <lifelineMoniker
+                Id="b5417895-7354-4bf6-a998-1cf576738ec6"
+                LastKnownName=": engine"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="4f0bafd7-6a38-45e0-b245-9274996abc96"
+            name="MessageOccurrenceSpecification4">
+            <covered>
+              <lifelineMoniker
+                Id="074f5407-6c21-44d0-a1f3-802ad68e0b70"
+                LastKnownName=": myInformation"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="600ea1ae-3318-4f45-b20e-2bc892ca0c6a"
+            name="MessageOccurrenceSpecification6">
+            <covered>
+              <lifelineMoniker
+                Id="b5417895-7354-4bf6-a998-1cf576738ec6"
+                LastKnownName=": engine"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="10e76ee4-be81-43e3-85c0-9dfa7d4d8c44"
+            name="MessageOccurrenceSpecification5">
+            <covered>
+              <lifelineMoniker
+                Id="074f5407-6c21-44d0-a1f3-802ad68e0b70"
+                LastKnownName=": myInformation"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="d751eafb-e32f-46a9-814b-14c5317fddfa"
+            name="ExecutionOccurrenceSpecification4">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="0ee37462-4284-4e82-84b9-f8b6c7e0603b"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="074f5407-6c21-44d0-a1f3-802ad68e0b70"
+                LastKnownName=": myInformation"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="0e5c0942-90c2-46aa-8816-4ae4bbf3e119"
+            name="BehaviorExecutionSpecification3">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="839bc23d-044b-44e8-af2c-5b9eacee302c"
+                LastKnownName=": friendManager"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="1eb9f0ce-4e24-4434-af2f-7e3c66fedfa1"
+                LastKnownName="ExecutionOccurrenceSpecification6"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="ec69f855-a1d3-4991-a7d4-bf53af4b73df"
+                LastKnownName="ExecutionOccurrenceSpecification5"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="ba5af999-4b95-4062-91a5-ed61c68640d8"
+                LastKnownName="MessageOccurrenceSpecification8"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="679f540f-f523-4ca6-b4fe-8428487d4253"
+                LastKnownName="MessageOccurrenceSpecification9"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="ec69f855-a1d3-4991-a7d4-bf53af4b73df"
+            name="ExecutionOccurrenceSpecification5">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="4ab854d3-a64f-435a-ad3a-5d0dda92f5b3"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="839bc23d-044b-44e8-af2c-5b9eacee302c"
+                LastKnownName=": friendManager"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="ba5af999-4b95-4062-91a5-ed61c68640d8"
+            name="MessageOccurrenceSpecification8">
+            <covered>
+              <lifelineMoniker
+                Id="839bc23d-044b-44e8-af2c-5b9eacee302c"
+                LastKnownName=": friendManager"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="95860292-afa1-424c-b007-4346f9ca64df"
+            name="MessageOccurrenceSpecification7">
+            <covered>
+              <lifelineMoniker
+                Id="b5417895-7354-4bf6-a998-1cf576738ec6"
+                LastKnownName=": engine"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="ebd78cb5-c755-4739-afe6-6bdfdbf42d50"
+            name="MessageOccurrenceSpecification10">
+            <covered>
+              <lifelineMoniker
+                Id="b5417895-7354-4bf6-a998-1cf576738ec6"
+                LastKnownName=": engine"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="679f540f-f523-4ca6-b4fe-8428487d4253"
+            name="MessageOccurrenceSpecification9">
+            <covered>
+              <lifelineMoniker
+                Id="839bc23d-044b-44e8-af2c-5b9eacee302c"
+                LastKnownName=": friendManager"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="1eb9f0ce-4e24-4434-af2f-7e3c66fedfa1"
+            name="ExecutionOccurrenceSpecification6">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="f80b94e8-4419-430a-8205-c562331b9b30"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="839bc23d-044b-44e8-af2c-5b9eacee302c"
+                LastKnownName=": friendManager"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="beb32aa3-4fbf-4461-b5d7-fe1b65fdfd10"
+            name="BehaviorExecutionSpecification7">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="17eec273-28ff-4131-9dd8-3c6f1fdf910d"
+                LastKnownName=": requestManager"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="4e7e2767-b15c-4744-9f7f-7f1b5065085c"
+                LastKnownName="ExecutionOccurrenceSpecification14"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="a8ef94ed-454a-46aa-9be3-57e52d615c2e"
+                LastKnownName="ExecutionOccurrenceSpecification13"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="429bb8d2-de91-4654-8ba8-cfceb061bb59"
+                LastKnownName="MessageOccurrenceSpecification18"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="7563acfa-4c61-461a-8e3d-5bbd3be544da"
+                LastKnownName="MessageOccurrenceSpecification19"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="a8ef94ed-454a-46aa-9be3-57e52d615c2e"
+            name="ExecutionOccurrenceSpecification13">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="6096a94a-c2fb-40a2-8ad6-491978a73684"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="17eec273-28ff-4131-9dd8-3c6f1fdf910d"
+                LastKnownName=": requestManager"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="300d481b-8d1c-4976-891d-e797f713051e"
+            name="MessageOccurrenceSpecification17">
+            <covered>
+              <lifelineMoniker
+                Id="b5417895-7354-4bf6-a998-1cf576738ec6"
+                LastKnownName=": engine"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="429bb8d2-de91-4654-8ba8-cfceb061bb59"
+            name="MessageOccurrenceSpecification18">
+            <covered>
+              <lifelineMoniker
+                Id="17eec273-28ff-4131-9dd8-3c6f1fdf910d"
+                LastKnownName=": requestManager"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="7563acfa-4c61-461a-8e3d-5bbd3be544da"
+            name="MessageOccurrenceSpecification19">
+            <covered>
+              <lifelineMoniker
+                Id="17eec273-28ff-4131-9dd8-3c6f1fdf910d"
+                LastKnownName=": requestManager"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="9db0f98f-7ba8-4079-938e-4a93895cae7c"
+            name="MessageOccurrenceSpecification20">
+            <covered>
+              <lifelineMoniker
+                Id="b5417895-7354-4bf6-a998-1cf576738ec6"
+                LastKnownName=": engine"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="4e7e2767-b15c-4744-9f7f-7f1b5065085c"
+            name="ExecutionOccurrenceSpecification14">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="fabd64d5-9b4f-40f1-8a26-5db73e91afd2"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="17eec273-28ff-4131-9dd8-3c6f1fdf910d"
+                LastKnownName=": requestManager"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="59f11355-28a4-49af-a191-583128059485"
+            name="BehaviorExecutionSpecification8">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="8ee2a43d-73a3-4871-a200-b433f774d68a"
+                LastKnownName=": network"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="ec0490cc-fa7f-4d01-a118-ec00ba6535e7"
+                LastKnownName="ExecutionOccurrenceSpecification16"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="4bb90631-5768-4c9d-82fb-45ecf647b0d8"
+                LastKnownName="ExecutionOccurrenceSpecification15"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="b318bc0d-141e-4105-ad64-5f8ba20b630c"
+                LastKnownName="MessageOccurrenceSpecification22"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="4bb90631-5768-4c9d-82fb-45ecf647b0d8"
+            name="ExecutionOccurrenceSpecification15">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="29b6a3d5-513c-4fb3-a333-f72804cfdb20"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="8ee2a43d-73a3-4871-a200-b433f774d68a"
+                LastKnownName=": network"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="efb2d6b9-c6f7-4b1b-b0a0-7bacc2bffa1c"
+            name="MessageOccurrenceSpecification21">
+            <covered>
+              <lifelineMoniker
+                Id="b5417895-7354-4bf6-a998-1cf576738ec6"
+                LastKnownName=": engine"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="b318bc0d-141e-4105-ad64-5f8ba20b630c"
+            name="MessageOccurrenceSpecification22">
+            <covered>
+              <lifelineMoniker
+                Id="8ee2a43d-73a3-4871-a200-b433f774d68a"
+                LastKnownName=": network"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="1ea2ef0b-d336-47ae-ba98-fb9a354669e3"
+            name="ExecutionOccurrenceSpecification2">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="e8836f57-9eb9-4196-9af7-efb8884d0dd3"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="b5417895-7354-4bf6-a998-1cf576738ec6"
+                LastKnownName=": engine"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="ec0490cc-fa7f-4d01-a118-ec00ba6535e7"
+            name="ExecutionOccurrenceSpecification16">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="7b072c2d-d857-4884-a1ce-bd338f694585"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="8ee2a43d-73a3-4871-a200-b433f774d68a"
+                LastKnownName=": network"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline
+            Id="5c228790-8416-4358-9bc2-4dcbf473452c"
+            name="Clock"
+            isActor="false"
+            lifelineDisplayName="Clock">
+            <topLevelOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="0c60a48f-8664-408a-9ddf-13b8f1834b5a"
+                LastKnownName="MessageOccurrenceSpecification1"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="b5417895-7354-4bf6-a998-1cf576738ec6"
+            name=": engine"
+            isActor="false"
+            lifelineDisplayName=": engine">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="0603a578-9565-4799-8f6c-82c51a4d6d39"
+                LastKnownName="ExecutionOccurrenceSpecification1"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="1ea2ef0b-d336-47ae-ba98-fb9a354669e3"
+                LastKnownName="ExecutionOccurrenceSpecification2"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="074f5407-6c21-44d0-a1f3-802ad68e0b70"
+            name=": myInformation"
+            isActor="false"
+            lifelineDisplayName=": myInformation">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="09ced6aa-3b82-4582-8a6b-2d1e67c93739"
+                LastKnownName="ExecutionOccurrenceSpecification3"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="d751eafb-e32f-46a9-814b-14c5317fddfa"
+                LastKnownName="ExecutionOccurrenceSpecification4"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="839bc23d-044b-44e8-af2c-5b9eacee302c"
+            name=": friendManager"
+            isActor="false"
+            lifelineDisplayName=": friendManager">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="ec69f855-a1d3-4991-a7d4-bf53af4b73df"
+                LastKnownName="ExecutionOccurrenceSpecification5"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="1eb9f0ce-4e24-4434-af2f-7e3c66fedfa1"
+                LastKnownName="ExecutionOccurrenceSpecification6"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="17eec273-28ff-4131-9dd8-3c6f1fdf910d"
+            name=": requestManager"
+            isActor="false"
+            lifelineDisplayName=": requestManager">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="a8ef94ed-454a-46aa-9be3-57e52d615c2e"
+                LastKnownName="ExecutionOccurrenceSpecification13"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="4e7e2767-b15c-4744-9f7f-7f1b5065085c"
+                LastKnownName="ExecutionOccurrenceSpecification14"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="8ee2a43d-73a3-4871-a200-b433f774d68a"
+            name=": network"
+            isActor="false"
+            lifelineDisplayName=": network">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="4bb90631-5768-4c9d-82fb-45ecf647b0d8"
+                LastKnownName="ExecutionOccurrenceSpecification15"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="ec0490cc-fa7f-4d01-a118-ec00ba6535e7"
+                LastKnownName="ExecutionOccurrenceSpecification16"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message
+            Id="1564cffe-f9b4-48d5-a685-527037c2c750"
+            name="Toutes les t secondes"
+            messageKind="Complete"
+            messageSort="AsynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="0c60a48f-8664-408a-9ddf-13b8f1834b5a"
+                LastKnownName="MessageOccurrenceSpecification1"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="63e634a2-74f3-426f-b46e-f8924e608798"
+                LastKnownName="MessageOccurrenceSpecification2"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="966a2362-32aa-4b02-9982-f8d402484bb1"
+            name="Recupérer information"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="7cfb7d41-7ae4-4786-8af5-d318ca99c6b4"
+                LastKnownName="MessageOccurrenceSpecification3"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="4f0bafd7-6a38-45e0-b245-9274996abc96"
+                LastKnownName="MessageOccurrenceSpecification4"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="6c1d28fb-8fd3-470d-8477-e995e2de3334"
+            name="&lt;&lt;return information&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="10e76ee4-be81-43e3-85c0-9dfa7d4d8c44"
+                LastKnownName="MessageOccurrenceSpecification5"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="600ea1ae-3318-4f45-b20e-2bc892ca0c6a"
+                LastKnownName="MessageOccurrenceSpecification6"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="9026315f-c5b2-44c3-8dc3-eeedd48ea302"
+            name="Recupération d'amis"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="95860292-afa1-424c-b007-4346f9ca64df"
+                LastKnownName="MessageOccurrenceSpecification7"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="ba5af999-4b95-4062-91a5-ed61c68640d8"
+                LastKnownName="MessageOccurrenceSpecification8"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="56be08a3-b35b-49b9-894f-29cc3bfa5549"
+            name="&lt;&lt;return amis&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="679f540f-f523-4ca6-b4fe-8428487d4253"
+                LastKnownName="MessageOccurrenceSpecification9"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="ebd78cb5-c755-4739-afe6-6bdfdbf42d50"
+                LastKnownName="MessageOccurrenceSpecification10"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="85d22f32-0287-402d-83ab-8448aca39ae3"
+            name="&lt;&lt;create requests&gt;&gt;"
+            messageKind="Complete"
+            messageSort="CreateMessage"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="300d481b-8d1c-4976-891d-e797f713051e"
+                LastKnownName="MessageOccurrenceSpecification17"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="429bb8d2-de91-4654-8ba8-cfceb061bb59"
+                LastKnownName="MessageOccurrenceSpecification18"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="f378ed56-fd79-4a5d-954b-f6d76d99412f"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="7563acfa-4c61-461a-8e3d-5bbd3be544da"
+                LastKnownName="MessageOccurrenceSpecification19"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="9db0f98f-7ba8-4079-938e-4a93895cae7c"
+                LastKnownName="MessageOccurrenceSpecification20"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="d9857c17-ebd3-4938-8d93-e696d823ab2d"
+            name="Envoi des requêtes"
+            messageKind="Complete"
+            messageSort="AsynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="efb2d6b9-c6f7-4b1b-b0a0-7bacc2bffa1c"
+                LastKnownName="MessageOccurrenceSpecification21"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="b318bc0d-141e-4105-ad64-5f8ba20b630c"
+                LastKnownName="MessageOccurrenceSpecification22"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </receiveEvent>
+          </message>
+        </messages>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="1c889404-9f1f-40f6-baab-e6c297285dfd"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="e8836f57-9eb9-4196-9af7-efb8884d0dd3"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="f59196cc-b6e1-4053-a46b-a22de9d56d51"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="0ee37462-4284-4e82-84b9-f8b6c7e0603b"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="4ab854d3-a64f-435a-ad3a-5d0dda92f5b3"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="f80b94e8-4419-430a-8205-c562331b9b30"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="6096a94a-c2fb-40a2-8ad6-491978a73684"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="fabd64d5-9b4f-40f1-8a26-5db73e91afd2"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="29b6a3d5-513c-4fb3-a333-f72804cfdb20"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="7b072c2d-d857-4884-a1ce-bd338f694585"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
   </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"

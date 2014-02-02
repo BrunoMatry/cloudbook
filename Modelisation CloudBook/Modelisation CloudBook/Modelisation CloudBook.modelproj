@@ -57,6 +57,13 @@
       <SubType>Content</SubType>
       <DependentUpon>Bloc Moteur\MAJManuelleInformations.sequencediagram</DependentUpon>
     </Content>
+    <Content Include="Bloc Moteur\PartageInformations.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Bloc Moteur\PartageInformations.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Bloc Moteur\PartageInformations.sequencediagram</DependentUpon>
+    </Content>
     <Content Include="Bloc Réseau\ActiveObjectLibrary.classdiagram">
       <SubType>Content</SubType>
     </Content>
@@ -98,6 +105,13 @@
     <Content Include="Bloc Réseau\Server.classdiagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>Bloc Réseau\Server.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="Bloc Traitement Requete\TraitementRequete.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Bloc Traitement Requete\TraitementRequete.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Bloc Traitement Requete\TraitementRequete.sequencediagram</DependentUpon>
     </Content>
     <Content Include="ModelDefinition\Package1_1456.uml">
       <SubType>Content</SubType>
@@ -155,5 +169,6 @@
     <Folder Include="Bloc Réseau" />
     <Folder Include="Bloc Gestion des amis" />
     <Folder Include="Bloc Moteur" />
+    <Folder Include="Bloc Traitement Requete" />
   </ItemGroup>
 </Project>
