@@ -43,6 +43,20 @@
       <SubType>Content</SubType>
       <DependentUpon>Bloc Moteur\EnregistrementApplication.sequencediagram</DependentUpon>
     </Content>
+    <Content Include="Bloc Moteur\MAJInformations.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Bloc Moteur\MAJInformations.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Bloc Moteur\MAJInformations.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Bloc Moteur\MAJManuelleInformations.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Bloc Moteur\MAJManuelleInformations.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Bloc Moteur\MAJManuelleInformations.sequencediagram</DependentUpon>
+    </Content>
     <Content Include="Bloc Réseau\ActiveObjectLibrary.classdiagram">
       <SubType>Content</SubType>
     </Content>
