@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="ecbf38c0-23c7-4b01-8693-e550ecfdc90b" name="Recherche d'un nouvel ami" linkedPackageId="64530239-e0d0-4027-bf64-21f29a78bc9a" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
+<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="ecbf38c0-23c7-4b01-8693-e550ecfdc90b" name="Recherche d'un nouvel ami" linkedPackageId="64530239-e0d0-4027-bf64-21f29a78bc9a" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
   <packagedElements>
     <packageHasNamedElement>
       <interaction Id="e3368630-083e-434b-b86c-e5aca40ad65e" name="Recherche d'un nouvel ami" collapseFragmentsFlag="false" isActiveClass="false" isAbstract="false" isLeaf="false" isReentrant="false">
@@ -14,13 +14,13 @@
           <messageOccurrenceSpecification Id="87fcf6df-ca4a-4660-9c30-038a9197e77a" name="MessageOccurrenceSpecification1">
             <elementDefinition Id="7cbd976c-f105-4670-87a7-421b3c540254" />
             <covered>
-              <lifelineMoniker Id="833742a6-7625-42bf-a674-a1cbedb7d0aa" LastKnownName="Motor" />
+              <lifelineMoniker Id="833742a6-7625-42bf-a674-a1cbedb7d0aa" LastKnownName="Engine" />
             </covered>
           </messageOccurrenceSpecification>
           <behaviorExecutionSpecification Id="64a3b9a5-01e8-4d08-a843-c57440f26963" name="BehaviorExecutionSpecification1">
             <elementDefinition Id="3da6fbdc-4c65-4a0c-a7ad-b5ef6a6df202" />
             <coveredLifelines>
-              <lifelineMoniker Id="833742a6-7625-42bf-a674-a1cbedb7d0aa" LastKnownName="Motor" />
+              <lifelineMoniker Id="833742a6-7625-42bf-a674-a1cbedb7d0aa" LastKnownName="Engine" />
             </coveredLifelines>
             <finish>
               <executionOccurrenceSpecificationMoniker Id="a9c9c4c2-e1cc-4d4f-84b0-45adb7287892" LastKnownName="ExecutionOccurrenceSpecification2" />
@@ -46,19 +46,19 @@
               </executionOccurrenceSpecificationReferencesEvent>
             </event>
             <covered>
-              <lifelineMoniker Id="833742a6-7625-42bf-a674-a1cbedb7d0aa" LastKnownName="Motor" />
+              <lifelineMoniker Id="833742a6-7625-42bf-a674-a1cbedb7d0aa" LastKnownName="Engine" />
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification Id="8e1852e8-a80a-4fdc-9458-a2ccb1a91949" name="MessageOccurrenceSpecification2">
             <elementDefinition Id="7eaed56a-114c-4dcf-bc1c-b5c000b3c1ed" />
             <covered>
-              <lifelineMoniker Id="833742a6-7625-42bf-a674-a1cbedb7d0aa" LastKnownName="Motor" />
+              <lifelineMoniker Id="833742a6-7625-42bf-a674-a1cbedb7d0aa" LastKnownName="Engine" />
             </covered>
           </messageOccurrenceSpecification>
           <combinedFragment Id="1e16908c-789c-45a6-a51e-8a37920bc7bb" name="CombinedFragment1" interactionOperator="Loop">
             <elementDefinition Id="5ba9f79e-113d-40e0-a2cf-17ae967f6309" />
             <coveredLifelines>
-              <lifelineMoniker Id="833742a6-7625-42bf-a674-a1cbedb7d0aa" LastKnownName="Motor" />
+              <lifelineMoniker Id="833742a6-7625-42bf-a674-a1cbedb7d0aa" LastKnownName="Engine" />
               <lifelineMoniker Id="d6c7a565-977d-4332-9849-0b9a1d5b2b2d" LastKnownName="FriendManager" />
               <lifelineMoniker Id="e787564c-b271-48c1-b6a1-f5ac99df6b87" LastKnownName="State" />
             </coveredLifelines>
@@ -66,7 +66,7 @@
               <interactionOperand Id="fcad5c10-ee52-4333-a0af-61b01bfbb9ba" name="InteractionOperand1">
                 <elementDefinition Id="6310e199-a519-47b7-9dc9-cd89ea2b2e05" />
                 <coveredLifelines>
-                  <lifelineMoniker Id="833742a6-7625-42bf-a674-a1cbedb7d0aa" LastKnownName="Motor" />
+                  <lifelineMoniker Id="833742a6-7625-42bf-a674-a1cbedb7d0aa" LastKnownName="Engine" />
                   <lifelineMoniker Id="d6c7a565-977d-4332-9849-0b9a1d5b2b2d" LastKnownName="FriendManager" />
                   <lifelineMoniker Id="e787564c-b271-48c1-b6a1-f5ac99df6b87" LastKnownName="State" />
                 </coveredLifelines>
@@ -99,7 +99,7 @@
           <operandOccurrenceSpecification Id="4b1a6392-e616-47c6-9e52-226b5e4a596a" name="OperandOccurrenceSpecification9">
             <elementDefinition Id="1893a85e-c90c-4423-9c3b-4f611fbe325f" />
             <covered>
-              <lifelineMoniker Id="833742a6-7625-42bf-a674-a1cbedb7d0aa" LastKnownName="Motor" />
+              <lifelineMoniker Id="833742a6-7625-42bf-a674-a1cbedb7d0aa" LastKnownName="Engine" />
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification Id="1271573b-72c8-4979-8f98-82f9a13121ba" name="OperandOccurrenceSpecification11">
@@ -147,7 +147,7 @@
           <messageOccurrenceSpecification Id="ac4057ee-25a4-4b4c-ae4d-cd84883b8348" name="MessageOccurrenceSpecification35">
             <elementDefinition Id="ec212f3c-d9f8-4378-aae9-4dbb790524ce" />
             <covered>
-              <lifelineMoniker Id="833742a6-7625-42bf-a674-a1cbedb7d0aa" LastKnownName="Motor" />
+              <lifelineMoniker Id="833742a6-7625-42bf-a674-a1cbedb7d0aa" LastKnownName="Engine" />
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="5aea6c25-aa76-448c-8fd5-884b1599e0bb" name="MessageOccurrenceSpecification36">
@@ -276,7 +276,7 @@
           <messageOccurrenceSpecification Id="d79ad931-7f69-4aa7-be72-06e0af4e8ac8" name="MessageOccurrenceSpecification38">
             <elementDefinition Id="58e12ea1-9763-4f08-868b-11b9bf4bdf7f" />
             <covered>
-              <lifelineMoniker Id="833742a6-7625-42bf-a674-a1cbedb7d0aa" LastKnownName="Motor" />
+              <lifelineMoniker Id="833742a6-7625-42bf-a674-a1cbedb7d0aa" LastKnownName="Engine" />
             </covered>
           </messageOccurrenceSpecification>
           <executionOccurrenceSpecification Id="99f3fb67-acfd-42c2-89db-ef0dd7ef78ec" name="ExecutionOccurrenceSpecification22">
@@ -290,10 +290,10 @@
               <lifelineMoniker Id="d6c7a565-977d-4332-9849-0b9a1d5b2b2d" LastKnownName="FriendManager" />
             </covered>
           </executionOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="080c93d5-59e0-4234-b11e-10c87ee3e0a9" name="OperandOccurrenceSpecification12">
-            <elementDefinition Id="0bf55c85-1608-4ee2-b2d6-6e9b29da3247" />
+          <operandOccurrenceSpecification Id="5d657c7a-b81c-4dd2-9e06-c279cc37a66d" name="OperandOccurrenceSpecification10">
+            <elementDefinition Id="064f76d6-a93f-4ade-acfa-2a5323d6454d" />
             <covered>
-              <lifelineMoniker Id="d6c7a565-977d-4332-9849-0b9a1d5b2b2d" LastKnownName="FriendManager" />
+              <lifelineMoniker Id="833742a6-7625-42bf-a674-a1cbedb7d0aa" LastKnownName="Engine" />
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification Id="a792105a-4f80-4790-80fb-a0b1fd0f8fa2" name="OperandOccurrenceSpecification14">
@@ -302,10 +302,10 @@
               <lifelineMoniker Id="e787564c-b271-48c1-b6a1-f5ac99df6b87" LastKnownName="State" />
             </covered>
           </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="5d657c7a-b81c-4dd2-9e06-c279cc37a66d" name="OperandOccurrenceSpecification10">
-            <elementDefinition Id="064f76d6-a93f-4ade-acfa-2a5323d6454d" />
+          <operandOccurrenceSpecification Id="080c93d5-59e0-4234-b11e-10c87ee3e0a9" name="OperandOccurrenceSpecification12">
+            <elementDefinition Id="0bf55c85-1608-4ee2-b2d6-6e9b29da3247" />
             <covered>
-              <lifelineMoniker Id="833742a6-7625-42bf-a674-a1cbedb7d0aa" LastKnownName="Motor" />
+              <lifelineMoniker Id="d6c7a565-977d-4332-9849-0b9a1d5b2b2d" LastKnownName="FriendManager" />
             </covered>
           </operandOccurrenceSpecification>
           <behaviorExecutionSpecification Id="c066690e-1b13-4d37-b0e3-84e21c826c4c" name="BehaviorExecutionSpecification2">
@@ -349,7 +349,7 @@
           <messageOccurrenceSpecification Id="570af02a-9b8c-4da0-b0f1-ebda0dfb4c9a" name="MessageOccurrenceSpecification3">
             <elementDefinition Id="eeda75cb-c5ca-4a9c-bd44-2ffcc6da21b9" />
             <covered>
-              <lifelineMoniker Id="833742a6-7625-42bf-a674-a1cbedb7d0aa" LastKnownName="Motor" />
+              <lifelineMoniker Id="833742a6-7625-42bf-a674-a1cbedb7d0aa" LastKnownName="Engine" />
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="1561072a-3ae3-4e4e-afdc-49e1ac71be57" name="MessageOccurrenceSpecification19">
@@ -431,16 +431,16 @@
               <lifelineMoniker Id="d6c7a565-977d-4332-9849-0b9a1d5b2b2d" LastKnownName="FriendManager" />
             </covered>
           </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="4a2738dd-c562-4c64-92ec-7294be8127b4" name="MessageOccurrenceSpecification24">
-            <elementDefinition Id="418796f5-6d02-4f54-947e-b06fea70e21f" />
-            <covered>
-              <lifelineMoniker Id="d6c7a565-977d-4332-9849-0b9a1d5b2b2d" LastKnownName="FriendManager" />
-            </covered>
-          </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="9ca61bac-c20b-41fd-b2a5-dd79ea1ef3a1" name="MessageOccurrenceSpecification23">
             <elementDefinition Id="6307629f-1eb9-438d-a865-93afc930e6ac" />
             <covered>
               <lifelineMoniker Id="e787564c-b271-48c1-b6a1-f5ac99df6b87" LastKnownName="State" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="4a2738dd-c562-4c64-92ec-7294be8127b4" name="MessageOccurrenceSpecification24">
+            <elementDefinition Id="418796f5-6d02-4f54-947e-b06fea70e21f" />
+            <covered>
+              <lifelineMoniker Id="d6c7a565-977d-4332-9849-0b9a1d5b2b2d" LastKnownName="FriendManager" />
             </covered>
           </messageOccurrenceSpecification>
           <executionOccurrenceSpecification Id="8b1e0fa8-32b7-41aa-a952-5afd2a037709" name="ExecutionOccurrenceSpecification14">
@@ -536,7 +536,7 @@
           <messageOccurrenceSpecification Id="01a0fd3e-f95f-421b-b723-058f12bc453b" name="MessageOccurrenceSpecification6">
             <elementDefinition Id="0d6e561a-cbe4-48f6-a3c7-28a2c7ca5a81" />
             <covered>
-              <lifelineMoniker Id="833742a6-7625-42bf-a674-a1cbedb7d0aa" LastKnownName="Motor" />
+              <lifelineMoniker Id="833742a6-7625-42bf-a674-a1cbedb7d0aa" LastKnownName="Engine" />
             </covered>
           </messageOccurrenceSpecification>
           <executionOccurrenceSpecification Id="f00526bc-4385-43b7-8da6-ba8e40d98fa3" name="ExecutionOccurrenceSpecification4">
@@ -558,12 +558,12 @@
               </executionOccurrenceSpecificationReferencesEvent>
             </event>
             <covered>
-              <lifelineMoniker Id="833742a6-7625-42bf-a674-a1cbedb7d0aa" LastKnownName="Motor" />
+              <lifelineMoniker Id="833742a6-7625-42bf-a674-a1cbedb7d0aa" LastKnownName="Engine" />
             </covered>
           </executionOccurrenceSpecification>
         </fragments>
         <lifelines>
-          <lifeline Id="833742a6-7625-42bf-a674-a1cbedb7d0aa" name="Motor" isActor="false" lifelineDisplayName="Motor">
+          <lifeline Id="833742a6-7625-42bf-a674-a1cbedb7d0aa" name="Engine" isActor="false" lifelineDisplayName="Engine">
             <elementDefinition Id="dbff54c7-71c7-4457-a33b-0ad768ec6e92" />
             <represents>
               <propertyMoniker Id="435f9a8a-d9bf-4179-a753-2e1507087772" />
@@ -863,19 +863,5 @@
   </packagedElements>
   <package Id="64530239-e0d0-4027-bf64-21f29a78bc9a" name="Modelisation CloudBook">
     <elementDefinition Id="94208107-703b-4bbf-9f51-c1243885138f" />
-    <profileInstances>
-      <packageHasProfileInstances Id="157ba4ee-eef0-468e-ba96-6210db81cb9d">
-        <profileInstance Id="3c7b3b43-0179-45b2-8da1-7924668ef193" name="StandardProfileL2">
-          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-        </profileInstance>
-        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-      </packageHasProfileInstances>
-      <packageHasProfileInstances Id="e3c96072-4c15-4c3f-8746-f2b8d2f3dd1c">
-        <profileInstance Id="9602a8f7-e66e-434c-aa4d-4889bc01a290" name="StandardProfileL3">
-          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-        </profileInstance>
-        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-      </packageHasProfileInstances>
-    </profileInstances>
   </package>
 </SequenceDesignerModel>

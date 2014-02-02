@@ -36,6 +36,13 @@
       <SubType>Content</SubType>
       <DependentUpon>Bloc Gestion des amis\Revocation d'un ami.sequencediagram</DependentUpon>
     </Content>
+    <Content Include="Bloc Gestion des amis\FriendManager.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Bloc Gestion des amis\FriendManager.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Bloc Gestion des amis\FriendManager.classdiagram</DependentUpon>
+    </Content>
     <Content Include="Bloc Informations\MyInformation.classdiagram">
       <SubType>Content</SubType>
     </Content>
