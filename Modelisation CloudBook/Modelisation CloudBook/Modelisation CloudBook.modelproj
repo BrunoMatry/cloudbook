@@ -22,12 +22,33 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
-    <Content Include="General2.classdiagram">
+    <Content Include="Bloc Gestion des amis\Recherche d%27un nouvel ami.sequencediagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="General2.classdiagram.layout">
+    <Content Include="Bloc Gestion des amis\Recherche d%27un nouvel ami.sequencediagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>General2.classdiagram</DependentUpon>
+      <DependentUpon>Bloc Gestion des amis\Recherche d'un nouvel ami.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Bloc Gestion des amis\Revocation d%27un ami.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Bloc Gestion des amis\Revocation d%27un ami.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Bloc Gestion des amis\Revocation d'un ami.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Bloc Réseau\ActiveObjectLibrary.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Bloc Réseau\ActiveObjectLibrary.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Bloc Réseau\ActiveObjectLibrary.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="Bloc Réseau\Network.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Bloc Réseau\Network.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Bloc Réseau\Network.classdiagram</DependentUpon>
     </Content>
     <Content Include="ModelDefinition\Package1_1456.uml">
       <SubType>Content</SubType>
@@ -71,20 +92,6 @@
     <Content Include="ModelDefinition\Package_2231.uml">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Network.classdiagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Network.classdiagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>Network.classdiagram</DependentUpon>
-    </Content>
-    <Content Include="Revocation d%27un ami.sequencediagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Revocation d%27un ami.sequencediagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>Revocation d'un ami.sequencediagram</DependentUpon>
-    </Content>
     <Content Include="Modules.classdiagram">
       <SubType>Content</SubType>
     </Content>
@@ -98,13 +105,6 @@
     <Content Include="SendRequestToServer.sequencediagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>SendRequestToServer.sequencediagram</DependentUpon>
-    </Content>
-    <Content Include="ActiveObjectLibrary.classdiagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="ActiveObjectLibrary.classdiagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>ActiveObjectLibrary.classdiagram</DependentUpon>
     </Content>
     <Content Include="SaveState.sequencediagram">
       <SubType>Content</SubType>
@@ -127,23 +127,11 @@
       <SubType>Content</SubType>
       <DependentUpon>ForwardRequestToClient.sequencediagram</DependentUpon>
     </Content>
-    <Content Include="TheCloudBookUseCase2.usecasediagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="TheCloudBookUseCase2.usecasediagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>TheCloudBookUseCase2.usecasediagram</DependentUpon>
-    </Content>
     <Folder Include="ModelDefinition\" />
-    <Content Include="Recherche d'un nouvel ami.sequencediagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Recherche d'un nouvel ami.sequencediagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>Recherche d'un nouvel ami.sequencediagram</DependentUpon>
-    </Content>
     <Content Include="ModelDefinition\Modelisation CloudBook.uml">
       <SubType>Content</SubType>
     </Content>
+    <Folder Include="Bloc Réseau" />
+    <Folder Include="Bloc Gestion des amis" />
   </ItemGroup>
 </Project>
