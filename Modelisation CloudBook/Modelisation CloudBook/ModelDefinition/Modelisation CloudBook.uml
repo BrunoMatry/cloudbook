@@ -14098,6 +14098,322 @@ current application information</body>
         Id="7b072c2d-d857-4884-a1ce-bd338f694585"
         name="ExecutionEvent" />
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="93906fe9-a601-4e23-a946-be4998504be8"
+        name="IRequest"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="a6ac3d75-4c42-45fe-b44b-4b90056b594b"
+            name="getTransmitter"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="7d7205ab-11db-436d-9adc-73c688c69175"
+            name="getTypeRequest"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="e896b3f0-29e3-416f-b967-3612c25bec03"
+            name="getRecipient"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="43b133b5-e19d-46be-b7b6-6580bb5a1400"
+            name="getTime"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="787b7353-df9e-4c6f-9ab9-fd1d98d9e77f"
+            name="getInformation"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="4fab09e4-c1cc-4ab1-b2c9-e0ade134d24b"
+            name="getId"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="08f42d0d-af97-4333-b25a-8d9dfb0ae6a9"
+        name="InfoRequest"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="ed8b5237-43a0-4fe0-b9b3-67431123de8f"
+            isSubstitutable="false">
+            <classMoniker
+              Id="efc5f0d2-05b5-4b91-a92b-be20c814f7f1"
+              LastKnownName="AbstractRequest"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="01286b4d-4037-4dbb-9e8d-778edbe1493f"
+            name="getInformation"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="40bbb558-001a-4df4-ad92-8be48ed7ee19"
+            name="getTypeRequest"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="36dbc91c-a741-4f5f-9f54-255cc3615013"
+        name="FriendRequest"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="023b4efe-5fe8-4d36-9d93-f63de9a39910"
+            isSubstitutable="false">
+            <classMoniker
+              Id="efc5f0d2-05b5-4b91-a92b-be20c814f7f1"
+              LastKnownName="AbstractRequest"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="391bb2aa-995f-4e14-9a7b-77796db0f376"
+            name="getInformation"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="e0d0c6da-1831-4e8e-be15-e6da5942aaa5"
+            name="getTypeRequest"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="9bfce56a-8369-44b8-b8ea-9f869f5f4db8"
+        name="IRequestManager"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="2d4c037d-063a-4cec-a628-26da09aabefa"
+            name="createRequest"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5760384b-e9d8-4f72-9e2f-a2cde7523db1"
+                  name="target"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b55b4cd0-425b-4814-b892-d780a571a833"
+                  name="data"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="6060b0c6-6d5e-4e10-9414-f7735434c851"
+            name="handleRequest"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="39d1ff73-264d-47a4-b4c6-6105f9bca1c7"
+                  name="IRequest"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="101322c5-d44c-40df-a87c-c4d31e3699a7"
+        name="RequestManager"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="805f8eac-30c7-4a4c-a96f-459cb1944438">
+            <interfaceMoniker
+              Id="9bfce56a-8369-44b8-b8ea-9f869f5f4db8"
+              LastKnownName="IRequestManager"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="aafbf3d6-886f-4385-96c0-354b23e03639"
+            name="createRequest"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="40fb568a-2509-4520-aa5b-1533cff8581e"
+                  name="target"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ceeeafe1-bece-4999-951d-d47c606cb643"
+                  name="data"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="bb1c09b4-d142-4a67-bafa-e4f19183fdde"
+            name="handleRequest"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="73795780-c15d-471c-9406-0356aa8b4f2a"
+                  name="IRequest"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="7346cd02-0268-41ca-ae14-ea4f4db2b6fe"
+            name="computeRelevance"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="efc5f0d2-05b5-4b91-a92b-be20c814f7f1"
+        name="AbstractRequest"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="24d995a7-fa6b-43bc-9f9d-881f71bdca33"
+            name="getTransmitter"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="3325f1ab-dcae-4267-a464-da0760662f76"
+            name="getTypeRequest"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="67920fd3-691c-458d-8df5-89f0db666c7e"
+            name="getRecipient"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="068072ad-1e9c-4eef-917b-bdf04c322729"
+            name="getTime"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="14d4f89a-641b-4b3d-80bd-88119a7df5b3"
+            name="getInformation"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="184c660c-864d-4bf1-811f-d01e8ce975f7"
+            name="getId"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
   </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"

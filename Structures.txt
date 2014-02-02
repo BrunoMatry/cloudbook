@@ -22,4 +22,4 @@ Garbage collector :
 	Informations : suppression si plus pertientes
 	Amis : suppression si trop vieux sans info
 	
-Sérialisation pour la sauvegarde
+Sérialisation du bloc myInformation pour la sauvegarde

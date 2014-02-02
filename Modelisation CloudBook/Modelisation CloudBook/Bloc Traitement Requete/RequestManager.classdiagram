@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="baed6060-a1c6-4831-8f97-dd7d6959cc99" name="RequestManager" linkedPackageId="81856cc7-c5db-4ea5-9418-6ac5191cd2fc" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c50c212a-cba7-4bb9-8c56-6434e49ac57a" name="InfoRequest" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="08f42d0d-af97-4333-b25a-8d9dfb0ae6a9" />
+        <generalsInternal>
+          <generalization Id="b65b8bc4-05db-45f2-847b-60b93f189b40" isSubstitutable="false">
+            <classMoniker Id="fe96013a-f012-44d2-b7be-dd625ddf9cb9" LastKnownName="AbstractRequest" />
+            <elementDefinition Id="ed8b5237-43a0-4fe0-b9b3-67431123de8f" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="d2c80fa4-4b93-4844-9236-1ddeefc56484" name="getInformation" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="01286b4d-4037-4dbb-9e8d-778edbe1493f" />
+          </operation>
+          <operation Id="b1f68da5-b37b-4ab2-9783-f072eb46ea67" name="getTypeRequest" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="40bbb558-001a-4df4-ad92-8be48ed7ee19" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="4334326b-82ff-4f96-bd7c-9003a7512e37" name="FriendRequest" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="36dbc91c-a741-4f5f-9f54-255cc3615013" />
+        <generalsInternal>
+          <generalization Id="ea8de4e3-12ec-46d2-85d7-1310a987a9e8" isSubstitutable="false">
+            <classMoniker Id="fe96013a-f012-44d2-b7be-dd625ddf9cb9" LastKnownName="AbstractRequest" />
+            <elementDefinition Id="023b4efe-5fe8-4d36-9d93-f63de9a39910" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="e64bfe25-b099-46eb-87dd-e97738b77c63" name="getInformation" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="391bb2aa-995f-4e14-9a7b-77796db0f376" />
+          </operation>
+          <operation Id="f464ed47-56b9-4189-877d-191166134a76" name="getTypeRequest" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e0d0c6da-1831-4e8e-be15-e6da5942aaa5" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="24141796-2888-4585-a157-6c356b6cb4b2" name="IRequestManager" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9bfce56a-8369-44b8-b8ea-9f869f5f4db8" />
+        <ownedOperations>
+          <operation Id="950a97ed-c55b-4c4c-a233-3c383375a5db" name="createRequest" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2d4c037d-063a-4cec-a628-26da09aabefa" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8b5b5270-e4dd-4c1e-adad-404001a5f468" name="target" direction="In" isUnique="false">
+                  <elementDefinition Id="5760384b-e9d8-4f72-9e2f-a2cde7523db1" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7dd3a43f-c2b6-43c0-bcdf-988719c67034" name="data" direction="In" isUnique="false">
+                  <elementDefinition Id="b55b4cd0-425b-4814-b892-d780a571a833" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="dbfd537c-8f5f-4372-b65c-cda21c74f003" name="handleRequest" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6060b0c6-6d5e-4e10-9414-f7735434c851" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5532dff0-913c-4dc7-b427-2684c1a7ec82" name="IRequest" direction="In" isUnique="false">
+                  <elementDefinition Id="39d1ff73-264d-47a4-b4c6-6105f9bca1c7" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="3cd17f72-5328-4a07-8e5f-6826b0f93172" name="RequestManager" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="101322c5-d44c-40df-a87c-c4d31e3699a7" />
+        <suppliersInternal>
+          <interfaceRealization Id="0948ae8f-c05d-40df-9a31-09c2ace6cd1a">
+            <interfaceMoniker Id="24141796-2888-4585-a157-6c356b6cb4b2" LastKnownName="IRequestManager" />
+            <elementDefinition Id="805f8eac-30c7-4a4c-a96f-459cb1944438" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="2c2b1951-8c0b-4fb4-987a-3b3d8a2c0d0d" name="createRequest" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="aafbf3d6-886f-4385-96c0-354b23e03639" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="40d989df-c698-4e99-9ecc-ff4d814bcb0a" name="target" direction="In" isUnique="false">
+                  <elementDefinition Id="40fb568a-2509-4520-aa5b-1533cff8581e" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e602679c-5a26-4e93-86bf-5593ca2751c7" name="data" direction="In" isUnique="false">
+                  <elementDefinition Id="ceeeafe1-bece-4999-951d-d47c606cb643" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="aed6d935-a76b-4c11-b58c-7a12361c6645" name="handleRequest" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="bb1c09b4-d142-4a67-bafa-e4f19183fdde" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b686aedf-d5e2-45be-ad1c-0e72a09c80f0" name="IRequest" direction="In" isUnique="false">
+                  <elementDefinition Id="73795780-c15d-471c-9406-0356aa8b4f2a" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="525fcae3-5e77-415e-b2fe-4f2ca3699545" name="computeRelevance" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7346cd02-0268-41ca-ae14-ea4f4db2b6fe" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="fe96013a-f012-44d2-b7be-dd625ddf9cb9" name="AbstractRequest" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="efc5f0d2-05b5-4b91-a92b-be20c814f7f1" />
+        <ownedOperationsInternal>
+          <operation Id="7b6bdab5-f6d3-404f-a0ff-0032f902b14f" name="getTransmitter" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="24d995a7-fa6b-43bc-9f9d-881f71bdca33" />
+          </operation>
+          <operation Id="32d71cc9-4621-49b1-8a0c-c26975df006f" name="getTypeRequest" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3325f1ab-dcae-4267-a464-da0760662f76" />
+          </operation>
+          <operation Id="2593eec9-18fd-450e-9874-2ff929226c15" name="getRecipient" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="67920fd3-691c-458d-8df5-89f0db666c7e" />
+          </operation>
+          <operation Id="13bdfa07-ae12-4421-bc90-628d035dd34e" name="getTime" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="068072ad-1e9c-4eef-917b-bdf04c322729" />
+          </operation>
+          <operation Id="ed148adb-aeec-40d1-a6d6-cc68c605e03b" name="getInformation" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="14d4f89a-641b-4b3d-80bd-88119a7df5b3" />
+          </operation>
+          <operation Id="c54a8cdf-d2c5-4feb-88f3-cedd7a8187b0" name="getId" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="184c660c-864d-4bf1-811f-d01e8ce975f7" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="81856cc7-c5db-4ea5-9418-6ac5191cd2fc" name="Modelisation CloudBook">
+    <elementDefinition Id="94208107-703b-4bbf-9f51-c1243885138f" />
+  </package>
+</logicalClassDesignerModel>

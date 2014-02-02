@@ -36,6 +36,13 @@
       <SubType>Content</SubType>
       <DependentUpon>Bloc Gestion des amis\Revocation d'un ami.sequencediagram</DependentUpon>
     </Content>
+    <Content Include="Bloc Moteur\Engine.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Bloc Moteur\Engine.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Bloc Moteur\Engine.classdiagram</DependentUpon>
+    </Content>
     <Content Include="Bloc Moteur\EnregistrementApplication.sequencediagram">
       <SubType>Content</SubType>
     </Content>
@@ -105,6 +112,13 @@
     <Content Include="Bloc Réseau\Server.classdiagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>Bloc Réseau\Server.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="Bloc Traitement Requete\RequestManager.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Bloc Traitement Requete\RequestManager.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Bloc Traitement Requete\RequestManager.classdiagram</DependentUpon>
     </Content>
     <Content Include="Bloc Traitement Requete\TraitementRequete.sequencediagram">
       <SubType>Content</SubType>
