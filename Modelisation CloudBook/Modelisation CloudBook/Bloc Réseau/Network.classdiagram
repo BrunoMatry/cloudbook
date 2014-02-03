@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="b4347472-733a-47c6-8340-b3bfb188428c" name="Network" linkedPackageId="ba59ba86-1753-4f49-9658-b1c15f3d252f" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="b4347472-733a-47c6-8340-b3bfb188428c" name="Network" linkedPackageId="ba59ba86-1753-4f49-9658-b1c15f3d252f" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <ownedCommentsInternal>
     <comment Id="3ca934e0-bd74-497c-8da5-75b56c0f4b5a">
       <elementDefinition Id="6d250e28-d7e2-4a4d-884f-c9a25b9ff3fb" />
@@ -616,10 +616,10 @@
           </generalization>
         </generalsInternal>
         <ownedAttributesInternal>
-          <property Id="a2ccd803-eaa4-47df-8dac-ba2e18c9bd95" name="waitingThread" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="a2ccd803-eaa4-47df-8dac-ba2e18c9bd95" name="waitingThread" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="2fcf32c6-741b-46ca-b6eb-f31bed92c3e1" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="d92b1783-3387-40fc-aea0-3a6bcfa1909c" LastKnownName="Thread" />
+              <referencedTypeMoniker Id="abecdf2e-3b0e-4ca0-ba5f-f95e545a207f" LastKnownName="Thread" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
@@ -775,11 +775,6 @@
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="d92b1783-3387-40fc-aea0-3a6bcfa1909c" name="Thread" isAbstract="false" isLeaf="false" cachedFullName="Thread">
-        <elementDefinition Id="fad0e539-591c-4661-a8d2-86a6295ca637" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
       <referencedType Id="51d4d23a-d0ab-4974-b468-5301b16b7296" name="GetResult" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::thecloudbook-active-object-library::GetResult">
         <elementDefinition Id="20be7ea3-04b6-40c7-8408-bfaa058feb74" />
       </referencedType>
@@ -795,7 +790,7 @@
       </referencedType>
     </packageHasNamedElement>
     <logicalClassDesignerModelHasTypes>
-      <class Id="d4b63970-4682-4d13-8cba-b6a59eb69627" name="ClientServant" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="d4b63970-4682-4d13-8cba-b6a59eb69627" name="ClientServant" isAbstract="true" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="128fad44-ba71-42b8-b2bd-a6b9b3c85dbf" />
         <generalsInternal>
           <generalization Id="22967c4e-4cb5-45e1-b606-54cc0590810f" isSubstitutable="false">
@@ -853,22 +848,13 @@
         <elementDefinition Id="dfe5a493-a354-4de2-a21c-a54162e50c35" />
       </referencedType>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="abecdf2e-3b0e-4ca0-ba5f-f95e545a207f" name="Thread" isAbstract="false" isLeaf="false" cachedFullName="Thread">
+        <elementDefinition Id="fad0e539-591c-4661-a8d2-86a6295ca637" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="ba59ba86-1753-4f49-9658-b1c15f3d252f" name="Modelisation CloudBook">
     <elementDefinition Id="94208107-703b-4bbf-9f51-c1243885138f" />
-    <profileInstances>
-      <packageHasProfileInstances Id="d243089b-d7a3-45f6-b57f-3f4ba883dbdb">
-        <profileInstance Id="2dcf05f0-d1af-4df2-9c18-dc2a934acddd" name="StandardProfileL2">
-          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-        </profileInstance>
-        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-      </packageHasProfileInstances>
-      <packageHasProfileInstances Id="8c8b6d71-d0c9-47e0-8017-33d8b2d729ea">
-        <profileInstance Id="68772313-8dba-4197-bbe0-a2ca64980042" name="StandardProfileL3">
-          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-        </profileInstance>
-        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-      </packageHasProfileInstances>
-    </profileInstances>
   </package>
 </logicalClassDesignerModel>

@@ -222,36 +222,11 @@ current application information</body>
         <elementDefinition Id="09c5eecd-26dd-4b88-8efb-749c43c14abf" />
       </referencedType>
     </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="45d11631-4a85-48f1-b819-0dc48a58e1fc" name="IProfile" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::IProfile">
-        <elementDefinition Id="cc2b204b-8b77-4c95-84ec-7baca3adb46d" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="55a4885d-0859-4403-9bb9-de133237265d" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
-        <elementDefinition Id="ce126c28-7853-4d05-adb7-0cd57e68c6e0" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="80156b48-9482-4a3a-903c-1271a4024e7a" name="Vector&lt;String&gt;" isAbstract="false" isLeaf="false" cachedFullName="Vector&lt;String&gt;">
-        <elementDefinition Id="51b90189-6a3c-436c-8d56-c24c743a4cb7" />
-      </referencedType>
-    </packageHasNamedElement>
     <logicalClassDesignerModelHasTypes>
       <class Id="d8197bc1-fa0f-4f7c-9e8c-11d2133da763" name="RequestManager" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="129ef1bf-7aa6-42ca-be7c-00502f577c6a" />
       </class>
     </logicalClassDesignerModelHasTypes>
-    <packageHasNamedElement>
-      <referencedType Id="387a5b7e-54e6-4955-bd3b-7e89e3b0e206" name="List&lt;Friend&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;Friend&gt;">
-        <elementDefinition Id="1ee3936a-eafd-4c86-9584-4311d78eae80" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="11f23f9c-f33d-4911-9648-4ab0d9cfa076" name="ITCBService" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::ITCBService">
-        <elementDefinition Id="15f9c115-43f6-4912-b2ef-e458bf906f36" />
-      </referencedType>
-    </packageHasNamedElement>
     <logicalClassDesignerModelHasPackages>
       <package Id="9ff9ff01-2b0f-4688-8f07-c1448d88e163" name="network">
         <ownedCommentsInternal>
@@ -287,56 +262,35 @@ current application information</body>
                 </association>
               </targetEnds>
               <ownedOperationsInternal>
-                <operation Id="76278051-ea58-4060-b2d8-fcd932ee84ec" name="getProfiles" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="84fffd6e-dc63-4e82-a84b-89cc22e88a1f" />
+                <operation Id="58013ed6-0d3c-4392-8a0c-58637ea3ba45" name="getResult" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="bda98688-a080-4fc4-9623-17e10e472dbf" />
                   <ownedParameters>
                     <operationHasOwnedParameters>
-                      <parameter Id="2cfad372-b5f6-4659-84ec-0bc0dae9b40c" direction="Return">
-                        <elementDefinition Id="8f49e682-15bc-4c0f-9309-831e8d500a1c" />
+                      <parameter Id="0d76914e-0e9a-4196-8036-0ea9a2327fa6" name="req" direction="In" isUnique="false">
+                        <elementDefinition Id="48fac7f8-b283-4b48-8c75-66725950ede4" />
                         <type_NamedElement>
-                          <referencedTypeMoniker Id="45d11631-4a85-48f1-b819-0dc48a58e1fc" LastKnownName="IProfile" />
-                        </type_NamedElement>
-                      </parameter>
-                    </operationHasOwnedParameters>
-                    <operationHasOwnedParameters>
-                      <parameter Id="b4770b03-da3a-423d-8d0e-8c198970235a" name="n" direction="In">
-                        <elementDefinition Id="d91bc68c-0405-458e-8fb0-09906b3a3c15" />
-                        <type_NamedElement>
-                          <referencedTypeMoniker Id="55a4885d-0859-4403-9bb9-de133237265d" LastKnownName="int" />
-                        </type_NamedElement>
-                      </parameter>
-                    </operationHasOwnedParameters>
-                    <operationHasOwnedParameters>
-                      <parameter Id="84221bb0-0b28-4f57-bfc8-b1bb343133ef" name="ips" direction="In">
-                        <elementDefinition Id="98a2a0ec-76cf-4442-99be-5b714d30256f" />
-                        <type_NamedElement>
-                          <referencedTypeMoniker Id="80156b48-9482-4a3a-903c-1271a4024e7a" LastKnownName="Vector&lt;String&gt;" />
+                          <referencedTypeMoniker Id="8413f0e5-ffe7-4b36-b13d-dddc7611d8d6" LastKnownName="Request" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
                   </ownedParameters>
                 </operation>
-                <operation Id="f2630bc3-d524-4ee1-87f5-fa5be2cfcb22" name="send" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="86119437-e4e1-4b0c-a4a5-5717694283b1" />
+                <operation Id="03791701-bf84-4878-8973-f1cc2d18ab6b" name="handleRequest" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="23ad4489-76f2-405f-8dd8-f80706a6f061" />
                   <ownedParameters>
                     <operationHasOwnedParameters>
-                      <parameter Id="e2b3b2ce-20df-48fd-bb0b-4982aa10f7df" name="friends" direction="In" isUnique="false">
-                        <elementDefinition Id="9b25ed1b-963a-4882-a098-cf6aa227032d" />
+                      <parameter Id="4cd82a5b-7bee-4415-a61d-b7b1d14007cd" name="request" direction="In" isUnique="false">
+                        <elementDefinition Id="270328b0-c845-448f-b316-539130ca9d62" />
                         <type_NamedElement>
-                          <referencedTypeMoniker Id="387a5b7e-54e6-4955-bd3b-7e89e3b0e206" LastKnownName="List&lt;Friend&gt;" />
+                          <referencedTypeMoniker Id="5648192a-c04d-48ee-a7d8-6a434e803789" LastKnownName="Request" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
-                  </ownedParameters>
-                </operation>
-                <operation Id="77af6c6c-ef06-4de5-a535-a897990ae509" name="receiveRequest" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="ca6aae85-1489-46ea-ab0c-01d75d0be98a" />
-                  <ownedParameters>
                     <operationHasOwnedParameters>
-                      <parameter Id="cc9d8884-0bca-4e13-946e-366d44b20487" name="request" direction="In" isUnique="false">
-                        <elementDefinition Id="a511af51-dd11-41b3-8670-f5e7148de977" />
+                      <parameter Id="37cde8eb-8572-4a52-9d90-d3bac9b9e06a" direction="Return" isUnique="false">
+                        <elementDefinition Id="04e8e207-b0d3-4d30-90bb-df994b2c02c2" />
                         <type_NamedElement>
-                          <referencedTypeMoniker Id="11f23f9c-f33d-4911-9648-4ab0d9cfa076" LastKnownName="ITCBService" />
+                          <referencedTypeMoniker Id="503e0719-e078-4567-930c-cb0952451986" LastKnownName="Result" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
@@ -518,22 +472,23 @@ current application information</body>
         <elementDefinition Id="dfe5a493-a354-4de2-a21c-a54162e50c35" />
       </referencedType>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="8413f0e5-ffe7-4b36-b13d-dddc7611d8d6" name="Request" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::Request">
+        <elementDefinition Id="59486883-52e2-43f6-a198-4bc818a87414" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="5648192a-c04d-48ee-a7d8-6a434e803789" name="Request" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::Request">
+        <elementDefinition Id="59486883-52e2-43f6-a198-4bc818a87414" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="503e0719-e078-4567-930c-cb0952451986" name="Result" isAbstract="false" isLeaf="false" cachedFullName="Result">
+        <elementDefinition Id="dfe5a493-a354-4de2-a21c-a54162e50c35" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="bb3ff10a-0d33-4cef-b3f0-d8068115a770" name="Modelisation CloudBook">
     <elementDefinition Id="94208107-703b-4bbf-9f51-c1243885138f" />
-    <profileInstances>
-      <packageHasProfileInstances Id="2fc00707-b6ed-4d01-8f13-8e7df3e7b29c">
-        <profileInstance Id="8572f41f-9a1c-4840-a384-9fc507bcca13" name="StandardProfileL2">
-          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-        </profileInstance>
-        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-      </packageHasProfileInstances>
-      <packageHasProfileInstances Id="46ea5fb7-8023-4dc0-9a85-f630c1ad366f">
-        <profileInstance Id="6fd0831e-05ad-4585-83af-4a0245d6fa26" name="StandardProfileL3">
-          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-        </profileInstance>
-        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-      </packageHasProfileInstances>
-    </profileInstances>
   </package>
 </logicalClassDesignerModel>
