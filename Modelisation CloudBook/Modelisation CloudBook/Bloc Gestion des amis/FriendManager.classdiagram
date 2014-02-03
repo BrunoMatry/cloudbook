@@ -1,5 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="f3fb65ab-81ac-469b-af19-83a8bf1725b3" name="UMLClassDiagram1" linkedPackageId="aaafe107-b29e-4b5a-a69b-0e7fca8d8411" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="b0348968-f8cb-4eb0-bfbb-17b1e1f3486f">
+      <elementDefinition Id="85e90ba8-8fe8-45ee-83ae-86259a09dca2" />
+      <body>Interface definie dans la librairie Active Object définie dans le module réseau</body>
+      <annotatedElements>
+        <interfaceMoniker Id="e510e3c5-883b-4e48-af1d-aea9ec9c498e" LastKnownName="Result" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="0dfe8037-f804-43db-be10-53e9e05e0352" name="FriendManager" isAbstract="false" isLeaf="false" isActiveClass="false">
@@ -83,6 +92,12 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="36b660f4-f711-474f-bf31-a08e04e6c0ab" name="Friend" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="b07fa611-e5c8-4896-924d-c6e6b8a0e249" />
+        <suppliersInternal>
+          <interfaceRealization Id="4b2f6da3-a55f-4971-b22a-06db270c38b0">
+            <interfaceMoniker Id="e510e3c5-883b-4e48-af1d-aea9ec9c498e" LastKnownName="Result" />
+            <elementDefinition Id="db558a09-b9da-4e55-ad55-3eee45c56bb3" />
+          </interfaceRealization>
+        </suppliersInternal>
         <ownedAttributesInternal>
           <property Id="b9ba1dbd-48f8-428c-84c7-705dfb24aee5" name="id" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="e8c89a67-1986-4710-a8b9-ae32c2e67ac3" />
@@ -90,10 +105,10 @@
               <referencedTypeMoniker Id="fe63c760-fba5-4d81-907b-09e140e8338b" LastKnownName="int" />
             </type_NamedElement>
           </property>
-          <property Id="746d5ed2-d045-4870-ae78-7bc74c9fa356" name="relevance" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="746d5ed2-d045-4870-ae78-7bc74c9fa356" name="vecteur" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="484fcc35-692c-4f52-ab61-f8d9914a71a4" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="fe63c760-fba5-4d81-907b-09e140e8338b" LastKnownName="int" />
+              <referencedTypeMoniker Id="ee82621a-5871-4260-8dac-3013791af147" LastKnownName="AppVector" />
             </type_NamedElement>
           </property>
           <property Id="dbf99467-69da-4e00-8291-0b26c8cf3915" name="confidence" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -230,7 +245,7 @@
           <property Id="12a65953-7d9c-4137-a391-5ba6ccb3d12b" name="vecteur" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="97903d6a-3a40-4b24-be7c-ff68ff89e869" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="f2715a5e-4028-40f8-8c37-f610176db3d0" LastKnownName="vector&lt;int&gt;" />
+              <referencedTypeMoniker Id="57d7ec95-09f5-4c20-b802-f97ce7a8eff0" LastKnownName="AppVector" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
@@ -251,14 +266,15 @@
         <elementDefinition Id="0210aa2b-7f6c-44e6-85a6-ad491ed16f76" />
       </referencedType>
     </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="f2715a5e-4028-40f8-8c37-f610176db3d0" name="vector&lt;int&gt;" isAbstract="false" isLeaf="false" cachedFullName="vector&lt;int&gt;">
-        <elementDefinition Id="0d09feaf-cfd2-4a24-9a44-76800f9db8af" />
-      </referencedType>
-    </packageHasNamedElement>
     <logicalClassDesignerModelHasTypes>
       <class Id="85088de5-a340-4a42-8e9f-b9e0d8d26481" name="Message" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="ec37915d-d3cb-45a1-9320-49568f18b32e" />
+        <suppliersInternal>
+          <interfaceRealization Id="8bfa2e6f-ae69-4f1a-9860-7dc0d8d4b7b3">
+            <interfaceMoniker Id="e510e3c5-883b-4e48-af1d-aea9ec9c498e" LastKnownName="Result" />
+            <elementDefinition Id="c80a299b-aa16-4fdf-8f33-36ce451228b3" />
+          </interfaceRealization>
+        </suppliersInternal>
         <ownedAttributesInternal>
           <property Id="64e188c7-9db4-45a8-9b3f-ee88b4022e55" name="idSender" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="4ce333f2-7a01-45bb-bcdc-ba550a9f3081" />
@@ -266,10 +282,10 @@
               <referencedTypeMoniker Id="8f9380bf-a447-4e35-bcad-95b8abc00294" LastKnownName="int" />
             </type_NamedElement>
           </property>
-          <property Id="228c6488-60ae-498b-8981-d1db6b38f99a" name="relevance" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="228c6488-60ae-498b-8981-d1db6b38f99a" name="vecteur" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="a19de87d-79d9-4839-a643-9481f2a485dc" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="fe63c760-fba5-4d81-907b-09e140e8338b" LastKnownName="int" />
+              <referencedTypeMoniker Id="91b531f6-8a6a-4df2-8984-9c28ddd734a8" LastKnownName="AppVector" />
             </type_NamedElement>
           </property>
           <property Id="e2d029d4-00ff-48d0-a79c-65b26b5dc8fc" name="date" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -310,6 +326,12 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="b105f685-8af4-4e78-80d8-0787bcff8a79" name="Mesure" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="1f500c32-c327-482d-bccc-580e515f71bb" />
+        <suppliersInternal>
+          <interfaceRealization Id="a786a040-222f-464c-8490-08627b0b03aa">
+            <interfaceMoniker Id="e510e3c5-883b-4e48-af1d-aea9ec9c498e" LastKnownName="Result" />
+            <elementDefinition Id="66264699-9d9b-4afe-9c84-d8d741782bab" />
+          </interfaceRealization>
+        </suppliersInternal>
         <ownedAttributesInternal>
           <property Id="c31d1b9a-3782-4c70-8a9b-f9d961cd00ed" name="date" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="92978cfb-5c5f-4a4a-86c5-2d05bbb8a34a" />
@@ -334,6 +356,12 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="08fdd44c-f5bf-4bb6-a2f7-e2cf15a57f1a" name="State" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="3e20e12c-a065-4058-9cb2-bf7e32d733b2" />
+        <suppliersInternal>
+          <interfaceRealization Id="822c63df-4031-48cd-bac7-bcda03e1e6a8">
+            <interfaceMoniker Id="e510e3c5-883b-4e48-af1d-aea9ec9c498e" LastKnownName="Result" />
+            <elementDefinition Id="0307ff28-c7c9-4c7c-9a58-f75ad931ef78" />
+          </interfaceRealization>
+        </suppliersInternal>
         <targetEnds>
           <association Id="f545be86-0a9b-4e59-96ad-55a8f50e5ab1" isDerived="false" sourceEndRoleName="" targetEndRoleName="cloud" isLeaf="false" isAbstract="false">
             <enumerationMoniker Id="08073b7a-5987-462f-a9a1-b904847ff4b3" LastKnownName="Cloud" />
@@ -378,6 +406,54 @@
         </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="e510e3c5-883b-4e48-af1d-aea9ec9c498e" name="Result" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9bd1fa75-070a-4642-a2cd-feaf931ca22b" />
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="154513d3-1069-44e6-8c17-702864c2d5a8" name="AppVector" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="a58f4666-20d6-4103-8c3c-fdc8281629cc" />
+        <ownedAttributesInternal>
+          <property Id="f2d0bafa-e591-432a-a221-81377d52ac30" name="tab" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <lowerValueInternal>
+              <literalString Id="5c4cf36e-859f-4c66-a957-0031dd63edde" name="Lower" value="*">
+                <elementDefinition Id="d49dd715-3cdb-491a-9856-96da6274b658" />
+              </literalString>
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString Id="1cb53631-44e0-496d-93e0-5132eeb257b7" name="Upper" value="*">
+                <elementDefinition Id="43187767-7cc0-4d8e-88d2-77e4c1b28ca9" />
+              </literalString>
+            </upperValueInternal>
+            <elementDefinition Id="7cb58d83-9a04-4734-9da1-28e1350a1eb1" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="bc2533b9-80ec-4dfe-9f3a-19e6f38387a5" LastKnownName="double" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="57d7ec95-09f5-4c20-b802-f97ce7a8eff0" name="AppVector" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::AppVector">
+        <elementDefinition Id="a58f4666-20d6-4103-8c3c-fdc8281629cc" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="91b531f6-8a6a-4df2-8984-9c28ddd734a8" name="AppVector" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::AppVector">
+        <elementDefinition Id="a58f4666-20d6-4103-8c3c-fdc8281629cc" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="ee82621a-5871-4260-8dac-3013791af147" name="AppVector" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::AppVector">
+        <elementDefinition Id="a58f4666-20d6-4103-8c3c-fdc8281629cc" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="bc2533b9-80ec-4dfe-9f3a-19e6f38387a5" name="double" isAbstract="false" isLeaf="false" cachedFullName="double">
+        <elementDefinition Id="06adbcca-cd54-451e-994b-f609ef5493f2" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="aaafe107-b29e-4b5a-a69b-0e7fca8d8411" name="Modelisation CloudBook">
     <elementDefinition Id="94208107-703b-4bbf-9f51-c1243885138f" />
