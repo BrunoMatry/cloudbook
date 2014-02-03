@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="167e4883-d43c-4a5a-86c9-7c3745d0aa7b" name="ServerApp" linkedPackageId="7fcc2720-be11-493a-b349-d88a63b710cc" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="167e4883-d43c-4a5a-86c9-7c3745d0aa7b" name="ServerApp" linkedPackageId="7fcc2720-be11-493a-b349-d88a63b710cc" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <ownedCommentsInternal>
     <comment Id="df6567eb-ccff-4b71-8f44-fe4543778288">
       <elementDefinition Id="500fe901-ab8a-4748-8aa2-c2458fa1768d" />
@@ -399,6 +399,47 @@ in fact, a library used by the Client app</body>
           <packageHasNamedElement>
             <Interface Id="be1e3676-85ac-4803-ad11-bd23cfcfab91" name="Sendable" isAbstract="false" isLeaf="false">
               <elementDefinition Id="f1edc787-07c9-4c58-a06e-707ffe08cead" />
+              <ownedOperations>
+                <operation Id="40a4eb3a-e6eb-4fb4-8438-b8d38cef3285" name="getDate" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="ae023a29-3710-4191-9277-f77776e3a130" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="65978884-8fbe-4633-b2d7-bd34715140a6" direction="Return" isUnique="false">
+                        <elementDefinition Id="33e5e873-5cbd-49de-a337-22a945fb0500" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="e3266662-cbf8-4cb1-a4b8-d2422aa79ae7" LastKnownName="Date" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="85ea12df-e947-4979-985e-a12c7a740486" name="getInformation" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="69f4e402-372c-4623-8cd7-ea8d44bb5791" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="6b270bc3-c746-446a-940b-cc90a0a90bcd" direction="Return" isUnique="false">
+                        <elementDefinition Id="e96f7604-2686-49db-bb02-074d486d52ec" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="dd579784-fb5e-4c4f-bf1c-5855f5db3cc8" LastKnownName="Information" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="2b2e15d7-5a55-478f-b9ae-103e59b1b379" name="getRecipient" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="d15e10db-870f-4082-bac7-d57ac2bc1414" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="f533ad26-b785-4514-83eb-2afe784ef24d" direction="Return" isUnique="false">
+                        <elementDefinition Id="03b78acf-6f55-4652-8d88-660f97492c19" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="c05786e5-b9d5-430d-93bd-30a8cd393e37" LastKnownName="int" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperations>
             </Interface>
           </packageHasNamedElement>
           <packageHasNamedElement>
@@ -439,6 +480,11 @@ in fact, a library used by the Client app</body>
               </ownedOperations>
             </Interface>
           </packageHasNamedElement>
+          <packageHasNamedElement>
+            <Interface Id="d80f4b12-6c7f-456d-a7fd-6807acbef7ae" name="Information" isAbstract="false" isLeaf="false">
+              <elementDefinition Id="b5ca5e37-fc48-41a5-b35c-6b6082b0989e" />
+            </Interface>
+          </packageHasNamedElement>
         </packagedElements>
       </package>
     </logicalClassDesignerModelHasPackages>
@@ -475,6 +521,21 @@ in fact, a library used by the Client app</body>
     <packageHasNamedElement>
       <referencedType Id="ba63a4d6-567a-405b-a317-eea5c47accaf" name="GetResult" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::thecloudbook-active-object-library::GetResult">
         <elementDefinition Id="20be7ea3-04b6-40c7-8408-bfaa058feb74" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="e3266662-cbf8-4cb1-a4b8-d2422aa79ae7" name="Date" isAbstract="false" isLeaf="false" cachedFullName="Date">
+        <elementDefinition Id="0210aa2b-7f6c-44e6-85a6-ad491ed16f76" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="dd579784-fb5e-4c4f-bf1c-5855f5db3cc8" name="Information" isAbstract="false" isLeaf="false" cachedFullName="Information">
+        <elementDefinition Id="b6e140de-2b67-450e-9302-e4dcc51088fa" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="c05786e5-b9d5-430d-93bd-30a8cd393e37" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
+        <elementDefinition Id="ce126c28-7853-4d05-adb7-0cd57e68c6e0" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

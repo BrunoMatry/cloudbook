@@ -1184,7 +1184,82 @@
         Id="f1edc787-07c9-4c58-a06e-707ffe08cead"
         name="Sendable"
         isAbstract="false"
-        isLeaf="false" />
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="ae023a29-3710-4191-9277-f77776e3a130"
+            name="getDate"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="33e5e873-5cbd-49de-a337-22a945fb0500"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="0210aa2b-7f6c-44e6-85a6-ad491ed16f76"
+                      LastKnownName="Date"
+                      LastKnownLocation="Modelisation CloudBook.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="69f4e402-372c-4623-8cd7-ea8d44bb5791"
+            name="getInformation"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e96f7604-2686-49db-bb02-074d486d52ec"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="b6e140de-2b67-450e-9302-e4dcc51088fa"
+                      LastKnownName="Information"
+                      LastKnownLocation="Package_1622.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="d15e10db-870f-4082-bac7-d57ac2bc1414"
+            name="getRecipient"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="03b78acf-6f55-4652-8d88-660f97492c19"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="ce126c28-7853-4d05-adb7-0cd57e68c6e0"
+                      LastKnownName="int"
+                      LastKnownLocation="Modelisation CloudBook.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <Interface
@@ -1260,6 +1335,18 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="b6e140de-2b67-450e-9302-e4dcc51088fa"
+        name="Information" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="b5ca5e37-fc48-41a5-b35c-6b6082b0989e"
+        name="Information"
+        isAbstract="false"
+        isLeaf="false" />
     </packageHasNamedElement>
   </packagedElements>
 </package>
