@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="b34819e6-d245-47ee-bbdd-824314ca14bc" name="Engine" linkedPackageId="964e705b-db58-4808-9a2c-6aea7f525705" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="b34819e6-d245-47ee-bbdd-824314ca14bc" name="Engine" linkedPackageId="964e705b-db58-4808-9a2c-6aea7f525705" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <Interface Id="7dba6114-a01c-4c24-aa9e-51bb09d630a5" name="IEngine" isAbstract="false" isLeaf="false">
@@ -7,6 +7,13 @@
         <ownedOperations>
           <operation Id="2627daec-c905-4569-8c27-218932623674" name="setInformation" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="a396f455-69a2-40d2-8d63-366ad55dd779" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="23ec8512-4e06-4640-a9d5-0e35d75cf0de" name="Information info" direction="In" isUnique="false">
+                  <elementDefinition Id="c7973f88-8796-4b06-b6aa-b5c0fa06b1b8" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="baf69d5b-a20d-4e34-a5df-7bf16becb4dd" name="handleRequest" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="b95992e9-c9d3-497a-b13b-456390d2e968" />
@@ -46,6 +53,13 @@
         <ownedOperationsInternal>
           <operation Id="4497354a-d76a-47b7-822b-ba77a39617ba" name="setInformation" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="f5177f04-ed91-42e5-8f7f-eafbbb87f164" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5e81e432-815c-4aca-a132-6049a7d5c9f2" name="Information info" direction="In" isUnique="false">
+                  <elementDefinition Id="afb67160-3ee9-429c-9953-cdde7a157f49" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="ee1c1919-98cc-4754-82e2-22f2a578e00b" name="shareInformation" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="0a67ab80-c3a2-49f3-826b-4922d8a5df86" />
