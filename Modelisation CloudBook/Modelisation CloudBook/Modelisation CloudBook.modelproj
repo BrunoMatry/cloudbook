@@ -99,12 +99,12 @@
       <SubType>Content</SubType>
       <DependentUpon>Bloc Réseau\Network.classdiagram</DependentUpon>
     </Content>
-    <Content Include="Bloc Réseau\SaveState.sequencediagram">
+    <Content Include="Bloc Réseau\(deprecated) SaveState.sequencediagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Bloc Réseau\SaveState.sequencediagram.layout">
+    <Content Include="Bloc Réseau\(deprecated) SaveState.sequencediagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>Bloc Réseau\SaveState.sequencediagram</DependentUpon>
+      <DependentUpon>Bloc Réseau\(deprecated) SaveState.sequencediagram</DependentUpon>
     </Content>
     <Content Include="Bloc Réseau\SendRequestToServer.sequencediagram">
       <SubType>Content</SubType>
