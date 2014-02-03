@@ -1,0 +1,7 @@
+Vues
+	G enregistrer
+	B resultats/suggestions
+	G état du noeud (édition)
+	B gestion des amis (---> détail de chaque ami)
+
+Sérialisation => Abderrahmane
