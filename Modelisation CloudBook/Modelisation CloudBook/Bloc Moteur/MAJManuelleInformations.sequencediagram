@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="1271ce02-1389-407b-9e9a-825f87083adb" name="MAJManuelleInformations" linkedPackageId="9c871ddb-07f2-4201-afee-bad10615d1d7" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
+<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="1271ce02-1389-407b-9e9a-825f87083adb" name="MAJManuelleInformations" linkedPackageId="9c871ddb-07f2-4201-afee-bad10615d1d7" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
   <packagedElements>
     <packageHasNamedElement>
       <interaction Id="17ede542-fd37-484c-b68b-c6a2fa1001cd" name="MAJManuelleInformations" collapseFragmentsFlag="false" isActiveClass="false" isAbstract="false" isLeaf="false" isReentrant="false">
@@ -47,7 +47,7 @@
           <behaviorExecutionSpecification Id="a0338441-6ba0-4787-8fa9-52dee11a967f" name="BehaviorExecutionSpecification2">
             <elementDefinition Id="fde799f8-5d03-476d-8dcc-8efcc3120f5f" />
             <coveredLifelines>
-              <lifelineMoniker Id="fdbb1bbe-d221-4b56-a489-cb0d86f60ebc" LastKnownName=": myInformation" />
+              <lifelineMoniker Id="fdbb1bbe-d221-4b56-a489-cb0d86f60ebc" LastKnownName=": node" />
             </coveredLifelines>
             <finish>
               <executionOccurrenceSpecificationMoniker Id="cd13693f-d10e-4c9f-ba5a-6dc226df27dd" LastKnownName="ExecutionOccurrenceSpecification4" />
@@ -67,7 +67,7 @@
               </executionOccurrenceSpecificationReferencesEvent>
             </event>
             <covered>
-              <lifelineMoniker Id="fdbb1bbe-d221-4b56-a489-cb0d86f60ebc" LastKnownName=": myInformation" />
+              <lifelineMoniker Id="fdbb1bbe-d221-4b56-a489-cb0d86f60ebc" LastKnownName=": node" />
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification Id="2d2e599b-15cc-49ee-8aa5-22d2be29871e" name="MessageOccurrenceSpecification3">
@@ -79,7 +79,7 @@
           <messageOccurrenceSpecification Id="185e8353-38fd-45d7-88b3-af899a105639" name="MessageOccurrenceSpecification4">
             <elementDefinition Id="400241da-52a0-4021-a06b-255cdaa14932" />
             <covered>
-              <lifelineMoniker Id="fdbb1bbe-d221-4b56-a489-cb0d86f60ebc" LastKnownName=": myInformation" />
+              <lifelineMoniker Id="fdbb1bbe-d221-4b56-a489-cb0d86f60ebc" LastKnownName=": node" />
             </covered>
           </messageOccurrenceSpecification>
           <executionOccurrenceSpecification Id="f1bb1865-a4b5-42e5-9046-86ddc2fa71df" name="ExecutionOccurrenceSpecification2">
@@ -101,7 +101,7 @@
               </executionOccurrenceSpecificationReferencesEvent>
             </event>
             <covered>
-              <lifelineMoniker Id="fdbb1bbe-d221-4b56-a489-cb0d86f60ebc" LastKnownName=": myInformation" />
+              <lifelineMoniker Id="fdbb1bbe-d221-4b56-a489-cb0d86f60ebc" LastKnownName=": node" />
             </covered>
           </executionOccurrenceSpecification>
         </fragments>
@@ -114,7 +114,7 @@
               <executionOccurrenceSpecificationMoniker Id="f1bb1865-a4b5-42e5-9046-86ddc2fa71df" LastKnownName="ExecutionOccurrenceSpecification2" />
             </topLevelOccurrences>
           </lifeline>
-          <lifeline Id="fdbb1bbe-d221-4b56-a489-cb0d86f60ebc" name=": myInformation" isActor="false" lifelineDisplayName=": myInformation">
+          <lifeline Id="fdbb1bbe-d221-4b56-a489-cb0d86f60ebc" name=": node" isActor="false" lifelineDisplayName=": node">
             <elementDefinition Id="30886b37-2084-4ab2-9e7e-3ca55aaacf74" />
             <topLevelOccurrences>
               <executionOccurrenceSpecificationMoniker Id="550d5f4a-8115-4390-a840-23648182cc19" LastKnownName="ExecutionOccurrenceSpecification3" />
