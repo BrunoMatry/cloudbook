@@ -22,19 +22,19 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
-    <Content Include="Bloc Gestion des amis\Recherche d%27un nouvel ami.sequencediagram">
+    <Content Include="Bloc Gestion des amis\(deprecated) Recherche d'un nouvel ami.sequencediagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Bloc Gestion des amis\Recherche d%27un nouvel ami.sequencediagram.layout">
+    <Content Include="Bloc Gestion des amis\(deprecated) Recherche d'un nouvel ami.sequencediagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>Bloc Gestion des amis\Recherche d'un nouvel ami.sequencediagram</DependentUpon>
+      <DependentUpon>Bloc Gestion des amis\(deprecated) Recherche d'un nouvel ami.sequencediagram</DependentUpon>
     </Content>
-    <Content Include="Bloc Gestion des amis\Revocation d%27un ami.sequencediagram">
+    <Content Include="Bloc Gestion des amis\(deprecated) Revocation d'un ami.sequencediagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Bloc Gestion des amis\Revocation d%27un ami.sequencediagram.layout">
+    <Content Include="Bloc Gestion des amis\(deprecated) Revocation d'un ami.sequencediagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>Bloc Gestion des amis\Revocation d'un ami.sequencediagram</DependentUpon>
+      <DependentUpon>Bloc Gestion des amis\(deprecated) Revocation d'un ami.sequencediagram</DependentUpon>
     </Content>
     <Content Include="Bloc Gestion des amis\FriendManager.classdiagram">
       <SubType>Content</SubType>
@@ -42,13 +42,6 @@
     <Content Include="Bloc Gestion des amis\FriendManager.classdiagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>Bloc Gestion des amis\FriendManager.classdiagram</DependentUpon>
-    </Content>
-    <Content Include="Bloc Informations\MyInformation.classdiagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Bloc Informations\MyInformation.classdiagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>Bloc Informations\MyInformation.classdiagram</DependentUpon>
     </Content>
     <Content Include="Bloc Moteur\Engine.classdiagram">
       <SubType>Content</SubType>
@@ -205,6 +198,5 @@
     <Folder Include="Bloc Gestion des amis" />
     <Folder Include="Bloc Moteur" />
     <Folder Include="Bloc Traitement Requete" />
-    <Folder Include="Bloc Informations" />
   </ItemGroup>
 </Project>
