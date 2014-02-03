@@ -16,7 +16,7 @@
         <OperationElementListCompartment Id="2dac2a76-df0e-4981-8ef1-df550f263a72" absoluteBounds="4.39, 1.2613281125823657, 2.9699999999999998, 0.84179684768120455" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <realizationConnector edgePoints="[(4.375 : 1.11132811258237); (3.375 : 1.11132811258237)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" showAsLollipop="false">
+    <realizationConnector edgePoints="[(4.375 : 1.11132811258237); (3.375 : 1.11132811258237)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" showAsLollipop="false">
       <interfaceRealizationMoniker Id="277796d6-8290-49f5-ba7d-789ea584afad" />
       <relativeChildShapes />
       <nodes>
@@ -38,7 +38,7 @@
         <OperationElementListCompartment Id="ce1949b2-5f1f-4031-ab02-f4a0bff34533" absoluteBounds="0.515, 3.2261718675494193, 2.8449999999999998, 0.6816406026482581" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </interfaceShape>
-    <realizationConnector edgePoints="[(4.375 : 3.31640623509884); (3.375 : 3.31640623509884)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" showAsLollipop="false">
+    <realizationConnector edgePoints="[(4.375 : 3.31640623509884); (3.375 : 3.31640623509884)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" showAsLollipop="false">
       <interfaceRealizationMoniker Id="a207ebee-ec6d-475e-8427-da21b5100b53" />
       <relativeChildShapes />
       <nodes>
@@ -60,7 +60,7 @@
         <OperationElementListCompartment Id="69e485af-74d8-44e6-b8a6-c518d4af24b7" absoluteBounds="4.39, 5.10117186754942, 2.9699999999999998, 0.36132811258236563" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <realizationConnector edgePoints="[(4.375 : 5.03124999006589); (3.375 : 5.03124999006589)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" showAsLollipop="false">
+    <realizationConnector edgePoints="[(4.375 : 5.03124999006589); (3.375 : 5.03124999006589)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" showAsLollipop="false">
       <interfaceRealizationMoniker Id="9860a4b4-15cb-43c5-973b-3aaeec2545cb" />
       <relativeChildShapes />
       <nodes>
