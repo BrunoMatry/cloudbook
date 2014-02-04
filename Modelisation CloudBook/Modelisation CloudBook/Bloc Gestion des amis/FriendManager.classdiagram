@@ -1,5 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="f3fb65ab-81ac-469b-af19-83a8bf1725b3" name="UMLClassDiagram1" linkedPackageId="aaafe107-b29e-4b5a-a69b-0e7fca8d8411" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="f3fb65ab-81ac-469b-af19-83a8bf1725b3" name="UMLClassDiagram1" linkedPackageId="aaafe107-b29e-4b5a-a69b-0e7fca8d8411" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="1baed3ef-0487-4425-a93c-af2cfee288e4">
+      <elementDefinition Id="ea5775d5-b36d-43a7-9fa8-a147947f58e9" />
+      <body>Un thread tourne en parallèle pour néttoyer la liste d'amis de manière régulière
+il appelle la mthode update du FriendManager
+
+Il faut un thread similaire pour faire le nétoyage dans les messages (dans le RequestManager ??)
+</body>
+    </comment>
+  </ownedCommentsInternal>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="0dfe8037-f804-43db-be10-53e9e05e0352" name="FriendManager" isAbstract="false" isLeaf="false" isActiveClass="false">
@@ -114,12 +124,24 @@
               <referencedTypeMoniker Id="5326c3a1-e596-4cdd-a9fb-92908ee56f17" LastKnownName="Date" />
             </type_NamedElement>
           </property>
+          <property Id="75200bf4-f747-4cea-a71f-361ec8139327" name="relevant" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="bf745c50-d0e0-4b02-bbfe-16597458b559" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="153cdf51-5ac3-4ada-bd65-a955fa4579f4" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
       <class Id="6abee6ac-2a03-4d1e-ba03-02cd75138b2d" name="Node" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="678193de-9a2e-4644-9dea-11a5a88ef147" />
+        <suppliersInternal>
+          <interfaceRealization Id="1e00574f-3a21-444b-9e06-602881457c67">
+            <interfaceMoniker Id="12298b1f-f2da-428c-8781-2153a2155218" LastKnownName="Serializable" />
+            <elementDefinition Id="d1e0e618-af3c-4b6a-a55a-2c18181913dc" />
+          </interfaceRealization>
+        </suppliersInternal>
         <targetEnds>
           <association Id="bfd10e23-a436-4069-8d1d-22cece1f71b7" isDerived="false" sourceEndRoleName="node" targetEndRoleName="friends" isLeaf="false" isAbstract="false">
             <classMoniker Id="36b660f4-f711-474f-bf31-a08e04e6c0ab" LastKnownName="Friend" />
@@ -240,6 +262,112 @@
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="e6b29e9c-9806-4853-8c8f-cbd8a1479a12" name="getId" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fee62ed8-90ed-4010-9b5d-8eed82b83d57" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="49821db2-2f34-4c00-a935-ffca66a7c671" direction="Return" isUnique="false">
+                  <elementDefinition Id="21e1ad1b-c373-4f19-9db7-0531e7a126bf" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="fe63c760-fba5-4d81-907b-09e140e8338b" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="8f93276a-a43f-4595-9b06-cbb3d70c41e1" name="getVector" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="70b52408-d50e-45c2-aada-dcdc71e0c5fb" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="67677316-6e0f-40cb-994f-41a6b63c3d0b" direction="Return" isUnique="false">
+                  <elementDefinition Id="213c2f8b-edf3-4b40-a4cf-bc1f4f5fc502" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="fe697fa4-bb7c-4f6b-b9e9-7c4f9c69d738" LastKnownName="AppVector" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="b3bbe6a3-6791-4a65-8150-8b26559dabeb" name="getFriends" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="de031dc3-c70d-461b-b9d2-a498ea672748" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="59d519e8-7f9a-4286-be97-9d213d54d177" direction="Return" isUnique="false">
+                  <elementDefinition Id="06e67ae6-03f7-43ee-af9f-8699f7683dab" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="bb2b333a-a6c0-4b60-a579-7379c7a0c366" LastKnownName="Friend[]" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="fc7a7436-821a-4436-9004-fdd8dd6f2220" name="getMessages" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2c3e480a-9464-45b4-a62b-77b5d15b53a4" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ad5ba330-adda-4a31-b2d7-7f9321f23c38" direction="Return" isUnique="false">
+                  <elementDefinition Id="03418400-1f35-4ee1-bda0-90e868a32fd0" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c3d66b6f-2730-47f3-b112-6810f6af7834" LastKnownName="Message[]" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="32f9cb45-86c7-4870-877b-fcd34dbf85f7" name="get" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7046ff01-9194-4429-a14a-4d4d03123b61" />
+          </operation>
+          <operation Id="edc7f0fd-31fa-425e-9f95-d33f8547ce30" name="getMesures" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3a25cc86-85e2-41ad-9d92-e36c0dc8cb24" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="bf169a07-d1d5-4ea4-9cab-29360a40db34" direction="Return" isUnique="false">
+                  <elementDefinition Id="93f207a9-58a3-41a0-abcb-a3fabe2196e4" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="234e43c9-0346-4ee1-b4f2-52993dace18a" LastKnownName="Mesure[]" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="650ec276-f423-4314-8e25-372cf28d6041" name="getHistory" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="966f3538-983b-4588-914f-21a05d7a5dc9" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c47bbec6-7bb6-4e07-b079-a7b79c633df0" direction="Return" isUnique="false">
+                  <elementDefinition Id="838a352c-d3f8-4c9c-8e2f-31f6bcdf5941" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="e5c52a36-f3e6-4ea7-85d3-2042bd503132" LastKnownName="State[]" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="c3a7cecc-5870-4b57-97bb-01a3c5ee19d5" name="getInformation" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="188179b9-c9a1-4185-b951-4c414d6f4be3" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="21723a2b-c86c-46f6-85e1-bd79a7669e89" direction="Return" isUnique="false">
+                  <elementDefinition Id="3e30e54d-da0a-4cc9-9d72-3d80dbe84b07" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="fe65ff80-60ea-4c09-8d0a-bf8fde5e364b" LastKnownName="Information" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="460bb4b6-6bf0-48b3-9a76-1720f3fdf097" name="add" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="66034127-c8c4-4585-9494-2d49a38c7a53" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0de04e7e-aed1-4247-8fbe-63129c8826ab" name="Information info" direction="In" isUnique="false">
+                  <elementDefinition Id="a5d3926d-539f-4cd5-93b8-372d9906aaed" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <packageHasNamedElement>
@@ -289,6 +417,12 @@
             <elementDefinition Id="0adf95f1-b92a-4d12-9c3c-b7a8d9355790" />
             <type_NamedElement>
               <referencedTypeMoniker Id="03c82194-a541-4617-ad60-0778e6149bbf" LastKnownName="Info" />
+            </type_NamedElement>
+          </property>
+          <property Id="9771ee5d-9074-49f9-8861-5ddd9d3d5cea" name="relevant" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="9695f5d7-c139-4207-8d85-af6b2a1d6e18" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="3ccdb6a1-9687-4fdb-a22c-4540de0a0fb4" LastKnownName="bool" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
@@ -445,6 +579,41 @@
         <elementDefinition Id="a58f4666-20d6-4103-8c3c-fdc8281629cc" />
       </referencedType>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="bb2b333a-a6c0-4b60-a579-7379c7a0c366" name="Friend[]" isAbstract="false" isLeaf="false" cachedFullName="Friend[]">
+        <elementDefinition Id="6f7ab102-c4e1-4e4e-9f66-5c8c8e9b902f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="c3d66b6f-2730-47f3-b112-6810f6af7834" name="Message[]" isAbstract="false" isLeaf="false" cachedFullName="Message[]">
+        <elementDefinition Id="6606ffdc-4805-47b7-92b6-f76b6c36284e" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="234e43c9-0346-4ee1-b4f2-52993dace18a" name="Mesure[]" isAbstract="false" isLeaf="false" cachedFullName="Mesure[]">
+        <elementDefinition Id="eca86f10-e9b8-4e15-8818-1da421fe2498" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="e5c52a36-f3e6-4ea7-85d3-2042bd503132" name="State[]" isAbstract="false" isLeaf="false" cachedFullName="State[]">
+        <elementDefinition Id="8a647759-6761-4a06-a4b0-a1583d028d1e" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="fe65ff80-60ea-4c09-8d0a-bf8fde5e364b" name="Information" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::Information">
+        <elementDefinition Id="bd25d984-dba7-4afe-83b3-8d28e88a775d" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="153cdf51-5ac3-4ada-bd65-a955fa4579f4" name="bool" isAbstract="false" isLeaf="false" cachedFullName="bool">
+        <elementDefinition Id="137ee10f-1409-4f53-8893-e7ddba773fb0" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="12298b1f-f2da-428c-8781-2153a2155218" name="Serializable" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="889e319e-d635-47a9-a25d-404c00a956b1" />
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
   </packagedElements>
   <package Id="aaafe107-b29e-4b5a-a69b-0e7fca8d8411" name="Modelisation CloudBook">
     <elementDefinition Id="94208107-703b-4bbf-9f51-c1243885138f" />
