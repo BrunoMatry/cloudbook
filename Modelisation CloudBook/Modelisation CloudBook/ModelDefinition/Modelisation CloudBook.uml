@@ -166,6 +166,24 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
       Id="54c427a1-5a33-4f6e-b8fa-79a217775805">
       <body>déjà amis ?</body>
     </comment>
+    <comment
+      Id="8b99d86b-513b-476f-ae07-6ddba63e3ecd">
+      <body>Les informations d'un noeud ont toutes une version "cachée" et une version "visible"</body>
+    </comment>
+    <comment
+      Id="c93fc265-3c95-4451-b1b6-4aa4a8a8f56d">
+      <body>TODO : edition</body>
+    </comment>
+    <comment
+      Id="1baad2af-3ab2-4d52-8217-df92dc82524b">
+      <body>Détail : Bruno</body>
+      <annotatedElements>
+        <classMoniker
+          Id="37c70dee-23b7-44eb-9b42-68e96f627fa3"
+          LastKnownName="FriendView"
+          LastKnownLocation="Modelisation CloudBook.uml" />
+      </annotatedElements>
+    </comment>
   </ownedCommentsInternal>
   <packagedElements>
     <packageHasNamedElement>
@@ -16576,47 +16594,6 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
               LastKnownLocation="Modelisation CloudBook.uml" />
           </generalization>
         </generalsInternal>
-        <targetEnds>
-          <association
-            Id="16a3cea7-53b7-4857-9704-9368043fafac"
-            isDerived="false"
-            sourceEndRoleName="MemberView"
-            targetEndRoleName="AppVectorView"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="ec93605c-4593-43fe-a1c1-ffc919eca5f1"
-              LastKnownName="AppVectorView"
-              LastKnownLocation="Modelisation CloudBook.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="b26b5640-c53e-4f19-b0c6-500eec1715df"
-                  name="MemberView"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="Composite"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="1e401af7-ff3b-4ba4-9a9c-e40dc4cbe978"
-                  name="AppVectorView"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="true" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-        </targetEnds>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -16635,23 +16612,31 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
               LastKnownName="MemberView"
               LastKnownLocation="Modelisation CloudBook.uml" />
           </generalization>
+          <generalization
+            Id="ce742cee-341d-4c4a-91c1-7636423706b0"
+            isSubstitutable="false">
+            <classMoniker
+              Id="5dc59025-59d3-4619-96de-d1e9e791e939"
+              LastKnownName="Parent"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </generalization>
         </generalsInternal>
         <targetEnds>
           <association
-            Id="79d6ba90-2f47-4477-88b8-c80e22b64526"
+            Id="630e3d4a-82d6-4e45-a125-3326e5764ec6"
             isDerived="false"
             sourceEndRoleName="NodeView"
-            targetEndRoleName="FriendView"
+            targetEndRoleName="NodeComponentView"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
-              Id="37c70dee-23b7-44eb-9b42-68e96f627fa3"
-              LastKnownName="FriendView"
+              Id="953770f9-0ccd-4fb2-ab2d-4aa816458fc3"
+              LastKnownName="NodeComponentView"
               LastKnownLocation="Modelisation CloudBook.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="b66f1146-0ab8-4f8d-af6b-c465597bc2e1"
+                  Id="68ec3da7-207e-4082-a02b-db4e7f3832d6"
                   name="NodeView"
                   isLeaf="false"
                   isStatic="false"
@@ -16664,15 +16649,28 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="3fa1c6c2-f658-47c8-b15a-15ff2cd71666"
-                  name="FriendView"
+                  Id="ec3fbd89-f642-4893-9bcd-e310ddc9357f"
+                  name="NodeComponentView"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="true" />
+                  isComposite="true">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="01e22f0d-b75b-46df-a0a7-9dae3328e4b2"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="075dd90d-9dd2-40ec-8c69-e1177eb92614"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -16688,14 +16686,54 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
         isActiveClass="false">
         <generalsInternal>
           <generalization
-            Id="0827d2a3-b339-4398-8894-501658d89aac"
+            Id="a0795b8a-5da0-4442-ab12-58759117184e"
             isSubstitutable="false">
             <classMoniker
-              Id="33190f82-7e92-43be-9bff-77d5ad713160"
-              LastKnownName="MemberView"
+              Id="953770f9-0ccd-4fb2-ab2d-4aa816458fc3"
+              LastKnownName="NodeComponentView"
               LastKnownLocation="Modelisation CloudBook.uml" />
           </generalization>
         </generalsInternal>
+        <targetEnds>
+          <association
+            Id="9c1e283c-f3e7-4d44-8b7a-8b64f4ce72dc"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName="vectorView"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="ec93605c-4593-43fe-a1c1-ffc919eca5f1"
+              LastKnownName="AppVectorView"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="80b40bb5-b2f9-4164-9851-97c18817d54b"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2f5326d8-8305-4fd0-9ba0-b263724a5355"
+                  name="vectorView"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -16707,14 +16745,54 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
         isActiveClass="false">
         <generalsInternal>
           <generalization
-            Id="30f81b07-1856-41b0-9f4b-b5449e53bdfb"
+            Id="6d42f89c-c39d-4fd5-90c9-f2173701b2a1"
             isSubstitutable="false">
+            <classMoniker
+              Id="953770f9-0ccd-4fb2-ab2d-4aa816458fc3"
+              LastKnownName="NodeComponentView"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="9d53dace-14bf-468f-a101-390184ea0123"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName="GridPane"
+            isLeaf="false"
+            isAbstract="false">
             <classMoniker
               Id="e8fcffd4-a4f1-4ca8-99e2-4442fbbe5aa1"
               LastKnownName="GridPane"
               LastKnownLocation="Modelisation CloudBook.uml" />
-          </generalization>
-        </generalsInternal>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="bfe061ab-c97d-44ce-bc07-d8cd9970d944"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="705cd387-78df-403a-a981-6aa8e17bd8f4"
+                  name="GridPane"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -16743,8 +16821,8 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             isLeaf="false"
             isAbstract="false">
             <classMoniker
-              Id="33190f82-7e92-43be-9bff-77d5ad713160"
-              LastKnownName="MemberView"
+              Id="d8bbd63b-5f90-4bcd-bc89-2ea935d43bb3"
+              LastKnownName="NodeView"
               LastKnownLocation="Modelisation CloudBook.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -16798,6 +16876,323 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
         Id="5dc59025-59d3-4619-96de-d1e9e791e939"
         name="Parent"
         isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="06da5b90-bb74-4f5f-aa3a-4c4cb897e833"
+        name="MesureView"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="cb99686f-8d7c-43ec-94c7-0466866f638f"
+            isSubstitutable="false">
+            <classMoniker
+              Id="953770f9-0ccd-4fb2-ab2d-4aa816458fc3"
+              LastKnownName="NodeComponentView"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="fd30dd97-a835-4b5b-b0a0-dec9e8f253b2"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName="GridPane"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="e8fcffd4-a4f1-4ca8-99e2-4442fbbe5aa1"
+              LastKnownName="GridPane"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="126c6e8b-2155-402e-89a1-8ea4e8b43637"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e309f52b-5db4-45fd-b770-5ed4c36f8bb7"
+                  name="GridPane"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="cccb07b7-4deb-4e28-bf3d-7465582fb741"
+        name="StateView"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="6392b244-d490-49e7-885d-8e4cac307032"
+            isSubstitutable="false">
+            <classMoniker
+              Id="953770f9-0ccd-4fb2-ab2d-4aa816458fc3"
+              LastKnownName="NodeComponentView"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="441ad1ba-f01f-4410-9cf3-039c22b15afc"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName="CloudView"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="94877660-b43d-4570-a2d6-2e3926532518"
+              LastKnownName="CloudView"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ceec019e-63bc-4e4c-8c5a-080642fd447e"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fbfe9559-d0d3-447d-9444-c0c4a315efdd"
+                  name="CloudView"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="af6c1f33-8ede-4385-ab16-bc872052ea82"
+        name="MessageView"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="bd3448af-b064-4c51-aa62-99aff9f9c128"
+            isSubstitutable="false">
+            <classMoniker
+              Id="953770f9-0ccd-4fb2-ab2d-4aa816458fc3"
+              LastKnownName="NodeComponentView"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="3132b800-1b18-48de-82ad-d6849969ae76"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName="Text"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="5c9d8b00-08bf-4daa-b02f-66883e69f728"
+              LastKnownName="Text"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c266e7ef-ab64-4bb8-9097-1af94325388b"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6b0350dc-0dd1-4cf9-9c80-d8d5f35bbb7c"
+                  name="Text"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="953770f9-0ccd-4fb2-ab2d-4aa816458fc3"
+        name="NodeComponentView"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="a79f0a39-4016-4b30-8a50-39aac7c6ba51"
+            isDerived="false"
+            sourceEndRoleName="component"
+            targetEndRoleName="SummarizedView"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="97c9c18b-6f4a-4aee-a350-24b8cdbd8322"
+              LastKnownName="SummarizedView"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="dff5ead0-2977-48c9-a350-ddc1c640ba4b"
+                  name="component"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9958d998-5ee6-496a-81d0-8954ddc4353d"
+                  name="SummarizedView"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="a11f1a00-c137-47e4-af82-5a10e5dd188a"
+            name="getSummarizedView"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9b9b1367-38d1-4665-a99a-c7f4f6025f39"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="307fd778-db43-47ee-8d41-520fc050c27b"
+                      LastKnownName="SummarizedView"
+                      LastKnownLocation="Modelisation CloudBook.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="97c9c18b-6f4a-4aee-a350-24b8cdbd8322"
+        name="SummarizedView"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="6584ca2f-f532-4a98-865e-4561a1f8b48e"
+            name="getComponent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c64efb42-4ebf-4c4e-a151-8405dfce5a72"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="953770f9-0ccd-4fb2-ab2d-4aa816458fc3"
+                      LastKnownName="NodeComponentView"
+                      LastKnownLocation="Modelisation CloudBook.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f7db8864-3e17-4c70-9936-0138a8c04ba7"
+        name="HiddenViewDecorator"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="307fd778-db43-47ee-8d41-520fc050c27b"
+        name="SummarizedView" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="5c9d8b00-08bf-4daa-b02f-66883e69f728"
+        name="Text"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="94877660-b43d-4570-a2d6-2e3926532518"
+        name="CloudView"
+        isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />
     </packageHasNamedElement>
