@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="8acae003-4515-4eca-8f7e-c6ff36ddac31" name="UMLClassDiagram1" linkedPackageId="f6e63310-72d7-48e1-a4ec-11c4d38d777d" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="2a7c4df4-2c7a-486b-b164-e0492477e201" name="MemberView" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="33190f82-7e92-43be-9bff-77d5ad713160" />
+        <generalsInternal>
+          <generalization Id="b92ea45e-6136-4965-afa9-f4f11fb9ad45" isSubstitutable="false">
+            <classMoniker Id="473f55a2-0af9-4b12-9a86-0238d7096123" LastKnownName="Parent" />
+            <elementDefinition Id="5e4efb37-845c-4169-8d27-61744eb40099" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="8fab14c6-8a4e-475a-bc92-3404e9f2b667" isDerived="false" sourceEndRoleName="MemberView" targetEndRoleName="AppVectorView" isLeaf="false" isAbstract="false">
+            <classMoniker Id="5beb648a-ca80-4229-b665-7a7a3eb3b063" LastKnownName="AppVectorView" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4c317348-a690-4676-8577-1dd377c0a251" name="MemberView" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b26b5640-c53e-4f19-b0c6-500eec1715df" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="46dd5aaf-d641-482c-80ee-7763c3e69f4c" name="AppVectorView" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="1e401af7-ff3b-4ba4-9a9c-e40dc4cbe978" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="16a3cea7-53b7-4857-9704-9368043fafac" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="8567a419-43a3-49cf-8b3c-2bf1e1ce03e3" name="NodeView" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d8bbd63b-5f90-4bcd-bc89-2ea935d43bb3" />
+        <generalsInternal>
+          <generalization Id="d8596217-115e-4d1c-9a37-e0dbcb578cf3" isSubstitutable="false">
+            <classMoniker Id="2a7c4df4-2c7a-486b-b164-e0492477e201" LastKnownName="MemberView" />
+            <elementDefinition Id="abdbfdba-ac1e-47ea-8718-1287db116fcf" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="366239fb-ad8f-483d-bc15-df8d341e0936" isDerived="false" sourceEndRoleName="NodeView" targetEndRoleName="FriendView" isLeaf="false" isAbstract="false">
+            <classMoniker Id="267dfb77-0221-4717-a8cd-db8957531192" LastKnownName="FriendView" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1640ddea-c74d-400d-a558-6dd29bc0c1d5" name="NodeView" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b66f1146-0ab8-4f8d-af6b-c465597bc2e1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3bc788bf-046f-46a3-8926-3c0c3bf6bf09" name="FriendView" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="3fa1c6c2-f658-47c8-b15a-15ff2cd71666" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="79d6ba90-2f47-4477-88b8-c80e22b64526" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="267dfb77-0221-4717-a8cd-db8957531192" name="FriendView" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="37c70dee-23b7-44eb-9b42-68e96f627fa3" />
+        <generalsInternal>
+          <generalization Id="3c2409a3-2c7d-4696-86aa-d29a70edf6d9" isSubstitutable="false">
+            <classMoniker Id="2a7c4df4-2c7a-486b-b164-e0492477e201" LastKnownName="MemberView" />
+            <elementDefinition Id="0827d2a3-b339-4398-8894-501658d89aac" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="5beb648a-ca80-4229-b665-7a7a3eb3b063" name="AppVectorView" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ec93605c-4593-43fe-a1c1-ffc919eca5f1" />
+        <generalsInternal>
+          <generalization Id="784a3606-a862-42af-95d1-26faf6ffea26" isSubstitutable="false">
+            <classMoniker Id="c5076d90-f973-448a-9bae-285c7422abd1" LastKnownName="GridPane" />
+            <elementDefinition Id="30f81b07-1856-41b0-9f4b-b5449e53bdfb" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b9cfcf1e-5ea2-4c7d-b5f3-37aab045e459" name="FriendManagerView" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c4b9f415-1c90-41a8-9604-ed0af5035ceb" />
+        <generalsInternal>
+          <generalization Id="9049e06e-2be6-4fc0-8dd2-42553d5caf3a" isSubstitutable="false">
+            <classMoniker Id="90e875b5-6468-4587-9c5e-37ec569b4d70" LastKnownName="Stage" />
+            <elementDefinition Id="8f8bb501-b85e-4c71-b1ef-ac7198d8e11b" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="d9553440-3e69-476c-a8b1-ff980519c5ba" isDerived="false" sourceEndRoleName="FriendManagerView" targetEndRoleName="MemberView" isLeaf="false" isAbstract="false">
+            <classMoniker Id="2a7c4df4-2c7a-486b-b164-e0492477e201" LastKnownName="MemberView" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="59b9fb23-1cd5-4d99-876e-36b6070acca8" name="FriendManagerView" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="7721d1a0-d0dc-433e-bad5-0f2ddc1a9780" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="cb995fd5-e302-4812-bf11-17f85d59913b" name="MemberView" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="46ae3c98-ae02-4401-9098-949979ae05b8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="0e49a5fd-a483-4dd8-9076-29935dad20e8" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c5076d90-f973-448a-9bae-285c7422abd1" name="GridPane" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e8fcffd4-a4f1-4ca8-99e2-4442fbbe5aa1" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="90e875b5-6468-4587-9c5e-37ec569b4d70" name="Stage" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f4838851-d9de-40a7-afc2-cdbdd0adb65c" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="473f55a2-0af9-4b12-9a86-0238d7096123" name="Parent" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5dc59025-59d3-4619-96de-d1e9e791e939" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="f6e63310-72d7-48e1-a4ec-11c4d38d777d" name="Modelisation CloudBook">
+    <elementDefinition Id="94208107-703b-4bbf-9f51-c1243885138f" />
+  </package>
+</logicalClassDesignerModel>

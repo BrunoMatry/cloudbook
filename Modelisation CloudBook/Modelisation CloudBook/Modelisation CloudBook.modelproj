@@ -43,6 +43,13 @@
       <SubType>Content</SubType>
       <DependentUpon>Bloc Gestion des amis\FriendManager.classdiagram</DependentUpon>
     </Content>
+    <Content Include="Bloc Gestion des amis\NodeView.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Bloc Gestion des amis\NodeView.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Bloc Gestion des amis\NodeView.classdiagram</DependentUpon>
+    </Content>
     <Content Include="Bloc Moteur\Engine.classdiagram">
       <SubType>Content</SubType>
     </Content>
@@ -77,6 +84,13 @@
     <Content Include="Bloc Moteur\PartageInformations.sequencediagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>Bloc Moteur\PartageInformations.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Bloc Moteur\VueEnregistrement.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Bloc Moteur\VueEnregistrement.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Bloc Moteur\VueEnregistrement.classdiagram</DependentUpon>
     </Content>
     <Content Include="Bloc Réseau\ActiveObjectLibrary.classdiagram">
       <SubType>Content</SubType>
