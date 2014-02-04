@@ -68,5 +68,9 @@
         <interfaceShapeMoniker Id="58a803ca-a4eb-4caf-985d-feee20e2cda5" />
       </nodes>
     </realizationConnector>
+    <commentShape Id="dd59da9c-736c-4310-85c7-778c8b4d6ff5" absoluteBounds="8, 0.75, 1.375, 1.75" customColor="251, 247, 200">
+      <commentMoniker Id="a47eba17-9196-4787-b28e-3c6990a82e62" />
+      <relativeChildShapes />
+    </commentShape>
   </nestedChildShapes>
 </logicalClassDesignerDiagram>
