@@ -52,14 +52,14 @@
       </nodes>
     </asyncMessageConnector>
     <lifelineShape Id="938ecaf8-373c-48a4-96f5-7ee7a26f7784" absoluteBounds="4.1041668256123867, 1, 0.15, 7" visible="true" visualStyleMode="Modified">
-      <lifelineMoniker Id="5456e784-1e01-41ea-b653-5eab14b566d3" LastKnownName=": myInformation" />
+      <lifelineMoniker Id="5456e784-1e01-41ea-b653-5eab14b566d3" LastKnownName=": node" />
       <relativeChildShapes>
-        <umlLifelineHeadShape Id="05c41c0c-6ff3-4a44-bb73-2947ecbbe33e" absoluteBounds="3.5824495466550195, 0.6, 1.1934345579147339, 0.4" customColor="White" visualStyleMode="Modified">
-          <lifelineMoniker Id="5456e784-1e01-41ea-b653-5eab14b566d3" LastKnownName=": myInformation" />
+        <umlLifelineHeadShape Id="05c41c0c-6ff3-4a44-bb73-2947ecbbe33e" absoluteBounds="3.6791668256123868, 0.6, 1, 0.4" customColor="White" visualStyleMode="Modified">
+          <lifelineMoniker Id="5456e784-1e01-41ea-b653-5eab14b566d3" LastKnownName=": node" />
           <relativeChildShapes />
         </umlLifelineHeadShape>
         <lifelineHoverShape Id="8fdde811-b847-4512-93e6-9dbde49eb17c" absoluteBounds="4.1041668256123867, 1, 0, 7">
-          <lifelineMoniker Id="5456e784-1e01-41ea-b653-5eab14b566d3" LastKnownName=": myInformation" />
+          <lifelineMoniker Id="5456e784-1e01-41ea-b653-5eab14b566d3" LastKnownName=": node" />
         </lifelineHoverShape>
         <umlExecutionSpecificationShape Id="684db01f-6884-4c7b-8997-4ee420be32d2" absoluteBounds="4.1041668256123867, 1.6208333333333336, 0.15, 0.55000000000000027" customColor="184, 204, 215" visualStyleMode="Modified">
           <behaviorExecutionSpecificationMoniker Id="099c1d39-c34f-4060-a8e6-8fbfefa369c3" LastKnownName="BehaviorExecutionSpecification2" />
@@ -113,7 +113,7 @@
       <commentMoniker Id="a479dc0f-7b30-44fd-90d3-6f22d64fed08" />
       <relativeChildShapes />
     </commentShape>
-    <commentConnector edgePoints="[(5.875 : 2.61041666666667); (5.55624984105428 : 2.61041666666667)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
+    <commentConnector edgePoints="[(5.875 : 2.61041666666667); (5.55624984105428 : 2.61041666666667)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
       <relativeChildShapes />
       <nodes>
         <commentShapeMoniker Id="4270073e-db1f-492e-b1f8-a986f75d6c2c" />

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
   dslVersion="1.0.0.0"
   Id="d70ae1d5-2f67-4f5b-9a91-5b2220b3cc58"
   name="network" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -63,8 +63,8 @@
         </targetEnds>
         <ownedOperationsInternal>
           <operation
-            Id="84fffd6e-dc63-4e82-a84b-89cc22e88a1f"
-            name="getProfiles"
+            Id="bda98688-a080-4fc4-9623-17e10e472dbf"
+            name="getResult"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -73,63 +73,14 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="8f49e682-15bc-4c0f-9309-831e8d500a1c"
-                  direction="Return">
-                  <type_NamedElement>
-                    <interfaceMoniker
-                      Id="cc2b204b-8b77-4c95-84ec-7baca3adb46d"
-                      LastKnownName="IProfile"
-                      LastKnownLocation="Modelisation CloudBook.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="d91bc68c-0405-458e-8fb0-09906b3a3c15"
-                  name="n"
-                  direction="In">
-                  <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="ce126c28-7853-4d05-adb7-0cd57e68c6e0"
-                      LastKnownName="int"
-                      LastKnownLocation="Modelisation CloudBook.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="98a2a0ec-76cf-4442-99be-5b714d30256f"
-                  name="ips"
-                  direction="In">
-                  <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="51b90189-6a3c-436c-8d56-c24c743a4cb7"
-                      LastKnownName="Vector&lt;String&gt;"
-                      LastKnownLocation="Modelisation CloudBook.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
-            Id="86119437-e4e1-4b0c-a4a5-5717694283b1"
-            name="send"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="9b25ed1b-963a-4882-a098-cf6aa227032d"
-                  name="friends"
+                  Id="48fac7f8-b283-4b48-8c75-66725950ede4"
+                  name="req"
                   direction="In"
                   isUnique="false">
                   <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="1ee3936a-eafd-4c86-9584-4311d78eae80"
-                      LastKnownName="List&lt;Friend&gt;"
+                    <classMoniker
+                      Id="59486883-52e2-43f6-a198-4bc818a87414"
+                      LastKnownName="Request"
                       LastKnownLocation="Modelisation CloudBook.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -137,8 +88,8 @@
             </ownedParameters>
           </operation>
           <operation
-            Id="ca6aae85-1489-46ea-ab0c-01d75d0be98a"
-            name="receiveRequest"
+            Id="23ad4489-76f2-405f-8dd8-f80706a6f061"
+            name="handleRequest"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -147,14 +98,27 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="a511af51-dd11-41b3-8670-f5e7148de977"
+                  Id="270328b0-c845-448f-b316-539130ca9d62"
                   name="request"
                   direction="In"
                   isUnique="false">
                   <type_NamedElement>
-                    <interfaceMoniker
-                      Id="15f9c115-43f6-4912-b2ef-e458bf906f36"
-                      LastKnownName="ITCBService"
+                    <classMoniker
+                      Id="59486883-52e2-43f6-a198-4bc818a87414"
+                      LastKnownName="Request"
+                      LastKnownLocation="Modelisation CloudBook.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="04e8e207-b0d3-4d30-90bb-df994b2c02c2"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="dfe5a493-a354-4de2-a21c-a54162e50c35"
+                      LastKnownName="Result"
                       LastKnownLocation="Modelisation CloudBook.uml" />
                   </type_NamedElement>
                 </parameter>

@@ -7,9 +7,31 @@
         <ownedOperations>
           <operation Id="2627daec-c905-4569-8c27-218932623674" name="setInformation" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="a396f455-69a2-40d2-8d63-366ad55dd779" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="23ec8512-4e06-4640-a9d5-0e35d75cf0de" name="Information info" direction="In" isUnique="false">
+                  <elementDefinition Id="c7973f88-8796-4b06-b6aa-b5c0fa06b1b8" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="baf69d5b-a20d-4e34-a5df-7bf16becb4dd" name="handleRequest" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="b95992e9-c9d3-497a-b13b-456390d2e968" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="2a0157c9-30e6-4623-bc86-bd4d3f1dfe62" name="request Request" direction="In" isUnique="false">
+                  <elementDefinition Id="400ed7ff-6ca5-4c6f-9348-8bbdcf6c6922" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="075ff88d-1251-4152-acab-b9657e5380c7" direction="Return" isUnique="false">
+                  <elementDefinition Id="95a41e34-ae9b-455a-b052-54b0237f394c" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="9218e750-043e-49f0-bdb0-ef66bc008c6d" LastKnownName="Result" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperations>
       </Interface>
@@ -23,15 +45,42 @@
             <elementDefinition Id="8e739927-2807-47f6-b20d-c55727ac5fda" />
           </interfaceRealization>
         </suppliersInternal>
+        <ownedAttributesInternal>
+          <property Id="96af38fd-f3d2-452d-9f6e-17566e3edfb6" name="INSTANCE" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0608ecca-782d-4753-b9b9-093c6aecc78e" />
+          </property>
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="4497354a-d76a-47b7-822b-ba77a39617ba" name="setInformation" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="f5177f04-ed91-42e5-8f7f-eafbbb87f164" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5e81e432-815c-4aca-a132-6049a7d5c9f2" name="Information info" direction="In" isUnique="false">
+                  <elementDefinition Id="afb67160-3ee9-429c-9953-cdde7a157f49" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="ee1c1919-98cc-4754-82e2-22f2a578e00b" name="shareInformation" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="0a67ab80-c3a2-49f3-826b-4922d8a5df86" />
           </operation>
           <operation Id="e11ed79e-dce0-4966-900f-c88ab8396b6e" name="handleRequest" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="f3473a98-4313-4d2e-849c-c5fb2b89fc11" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="239b0838-b872-4e31-9b14-89ad0f1259e5" name="request Request" direction="In" isUnique="false">
+                  <elementDefinition Id="cf506000-2959-4e37-8bd4-7d21a6d7744f" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a703f540-9c2c-4e76-9ca2-5877f4cfa63a" direction="Return" isUnique="false">
+                  <elementDefinition Id="f5b03e59-d3bf-4518-a2e4-5af93d8344ca" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="9218e750-043e-49f0-bdb0-ef66bc008c6d" LastKnownName="Result" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="5b4b538d-a2fb-4914-b7b4-d16f9dd11756" name="updateInformation" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="87689feb-dea1-4a36-8c09-a6531f8d6ba5" />
@@ -52,7 +101,7 @@
           <operation Id="e84eb155-8247-4594-a27c-a9f03c389998" name="mountFriendManager" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="7b1f64ef-5a92-4db1-9d5a-f64841d09667" />
           </operation>
-          <operation Id="860b1108-287a-4bb3-aa67-9a5b71c94132" name="mountMyInformation" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="860b1108-287a-4bb3-aa67-9a5b71c94132" name="mountNode" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="d86ce492-8488-461f-a270-9383ab69b85c" />
           </operation>
           <operation Id="1e1e641f-b76d-4a45-b150-67af3480146b" name="mountMonitoring" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
@@ -68,7 +117,7 @@
           <operation Id="187d19fd-686e-4f28-b124-f5bf462cc17a" name="mountFriendManager" isLeaf="false" isStatic="true" isAbstract="true" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="b97f4993-95ce-4085-9506-49787dbef39d" />
           </operation>
-          <operation Id="192f5969-fa5e-4f73-b19d-b9b915ee06f3" name="mountMyInformation" isLeaf="false" isStatic="true" isAbstract="true" concurrency="Sequential" isQuery="false">
+          <operation Id="192f5969-fa5e-4f73-b19d-b9b915ee06f3" name="mountNode" isLeaf="false" isStatic="true" isAbstract="true" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="3f4f17fe-3f65-48cf-8ef9-3ae399a75479" />
           </operation>
           <operation Id="386e57df-9457-4826-9c6f-612a5a6a25c7" name="mountMonitoring" isLeaf="false" isStatic="true" isAbstract="true" concurrency="Sequential" isQuery="false">
@@ -103,6 +152,11 @@
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="9218e750-043e-49f0-bdb0-ef66bc008c6d" name="Result" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::Result">
+        <elementDefinition Id="61fec10c-a2dc-4fd4-a747-51106c957b05" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="964e705b-db58-4808-9a2c-6aea7f525705" name="Modelisation CloudBook">
     <elementDefinition Id="94208107-703b-4bbf-9f51-c1243885138f" />

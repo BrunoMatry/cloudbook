@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="25b13e06-e529-4a8f-8e41-223960eb2c4d" name="PartageInformations" linkedPackageId="f35d1952-ba4e-4833-b746-b734670cb66e" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
+<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="25b13e06-e529-4a8f-8e41-223960eb2c4d" name="PartageInformations" linkedPackageId="f35d1952-ba4e-4833-b746-b734670cb66e" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
   <packagedElements>
     <packageHasNamedElement>
       <interaction Id="9c94bfb4-de5b-456b-aa3f-3c51d13746fd" name="PartageInformations" collapseFragmentsFlag="false" isActiveClass="false" isAbstract="false" isLeaf="false" isReentrant="false">
@@ -62,7 +62,7 @@
           <behaviorExecutionSpecification Id="099c1d39-c34f-4060-a8e6-8fbfefa369c3" name="BehaviorExecutionSpecification2">
             <elementDefinition Id="40bd9783-0e6a-48b0-8f9d-6d346bb6d08b" />
             <coveredLifelines>
-              <lifelineMoniker Id="5456e784-1e01-41ea-b653-5eab14b566d3" LastKnownName=": myInformation" />
+              <lifelineMoniker Id="5456e784-1e01-41ea-b653-5eab14b566d3" LastKnownName=": node" />
             </coveredLifelines>
             <finish>
               <executionOccurrenceSpecificationMoniker Id="17746765-cb9d-4c44-bf98-c921ff15c12f" LastKnownName="ExecutionOccurrenceSpecification4" />
@@ -83,7 +83,7 @@
               </executionOccurrenceSpecificationReferencesEvent>
             </event>
             <covered>
-              <lifelineMoniker Id="5456e784-1e01-41ea-b653-5eab14b566d3" LastKnownName=": myInformation" />
+              <lifelineMoniker Id="5456e784-1e01-41ea-b653-5eab14b566d3" LastKnownName=": node" />
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification Id="dc26edbc-5a96-4298-a310-cd7e7c2d31a8" name="MessageOccurrenceSpecification3">
@@ -95,7 +95,7 @@
           <messageOccurrenceSpecification Id="fc5bea93-c7dc-45d0-b97c-40440b88c280" name="MessageOccurrenceSpecification4">
             <elementDefinition Id="4f0bafd7-6a38-45e0-b245-9274996abc96" />
             <covered>
-              <lifelineMoniker Id="5456e784-1e01-41ea-b653-5eab14b566d3" LastKnownName=": myInformation" />
+              <lifelineMoniker Id="5456e784-1e01-41ea-b653-5eab14b566d3" LastKnownName=": node" />
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="a2c04d1c-ac8d-4bae-96a2-d5eeba5ce1cf" name="MessageOccurrenceSpecification6">
@@ -107,7 +107,7 @@
           <messageOccurrenceSpecification Id="b091c1cd-e4a2-4333-87d9-aff94b3b7638" name="MessageOccurrenceSpecification5">
             <elementDefinition Id="10e76ee4-be81-43e3-85c0-9dfa7d4d8c44" />
             <covered>
-              <lifelineMoniker Id="5456e784-1e01-41ea-b653-5eab14b566d3" LastKnownName=": myInformation" />
+              <lifelineMoniker Id="5456e784-1e01-41ea-b653-5eab14b566d3" LastKnownName=": node" />
             </covered>
           </messageOccurrenceSpecification>
           <executionOccurrenceSpecification Id="17746765-cb9d-4c44-bf98-c921ff15c12f" name="ExecutionOccurrenceSpecification4">
@@ -118,7 +118,7 @@
               </executionOccurrenceSpecificationReferencesEvent>
             </event>
             <covered>
-              <lifelineMoniker Id="5456e784-1e01-41ea-b653-5eab14b566d3" LastKnownName=": myInformation" />
+              <lifelineMoniker Id="5456e784-1e01-41ea-b653-5eab14b566d3" LastKnownName=": node" />
             </covered>
           </executionOccurrenceSpecification>
           <behaviorExecutionSpecification Id="290dc129-ad6c-470c-b6c3-25a43ac41e60" name="BehaviorExecutionSpecification3">
@@ -160,16 +160,16 @@
               <lifelineMoniker Id="2571fa2b-45e5-4a20-b9a2-fab562ad946d" LastKnownName=": engine" />
             </covered>
           </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="8c099971-45b8-4822-abce-cc210a104be6" name="MessageOccurrenceSpecification10">
-            <elementDefinition Id="ebd78cb5-c755-4739-afe6-6bdfdbf42d50" />
-            <covered>
-              <lifelineMoniker Id="2571fa2b-45e5-4a20-b9a2-fab562ad946d" LastKnownName=": engine" />
-            </covered>
-          </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="f244a1d6-04d6-408e-95f1-058c034c2645" name="MessageOccurrenceSpecification9">
             <elementDefinition Id="679f540f-f523-4ca6-b4fe-8428487d4253" />
             <covered>
               <lifelineMoniker Id="0a69a467-f710-41cb-aad2-be97ba5c1040" LastKnownName=": friendManager" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="8c099971-45b8-4822-abce-cc210a104be6" name="MessageOccurrenceSpecification10">
+            <elementDefinition Id="ebd78cb5-c755-4739-afe6-6bdfdbf42d50" />
+            <covered>
+              <lifelineMoniker Id="2571fa2b-45e5-4a20-b9a2-fab562ad946d" LastKnownName=": engine" />
             </covered>
           </messageOccurrenceSpecification>
           <executionOccurrenceSpecification Id="3f425e29-0732-49a6-9784-68e7d9799c64" name="ExecutionOccurrenceSpecification6">
@@ -320,7 +320,7 @@
               <executionOccurrenceSpecificationMoniker Id="d58d7ab4-769b-43cc-9b60-66db5bd68934" LastKnownName="ExecutionOccurrenceSpecification2" />
             </topLevelOccurrences>
           </lifeline>
-          <lifeline Id="5456e784-1e01-41ea-b653-5eab14b566d3" name=": myInformation" isActor="false" lifelineDisplayName=": myInformation">
+          <lifeline Id="5456e784-1e01-41ea-b653-5eab14b566d3" name=": node" isActor="false" lifelineDisplayName=": node">
             <elementDefinition Id="074f5407-6c21-44d0-a1f3-802ad68e0b70" />
             <topLevelOccurrences>
               <executionOccurrenceSpecificationMoniker Id="1386665f-f33c-4d63-88f6-31bbe7190016" LastKnownName="ExecutionOccurrenceSpecification3" />
