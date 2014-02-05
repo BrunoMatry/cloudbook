@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="94208107-703b-4bbf-9f51-c1243885138f"
   name="Modelisation CloudBook" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -187,6 +187,17 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
     <comment
       Id="3dbdb618-cc4d-4c32-951d-2e56e966b733">
       <body>Pas d'observateur car on ne veut pas que les vues se mettent à jour dynamiquement</body>
+    </comment>
+    <comment
+      Id="e068d1d0-3aa7-4e12-9ad8-b707fbf5b72e">
+      <body>Useful for polymorphism
+</body>
+      <annotatedElements>
+        <interfaceMoniker
+          Id="b178a2c3-28c3-45d3-9e0a-4b3b891f43fb"
+          LastKnownName="ComponentView"
+          LastKnownLocation="Modelisation CloudBook.uml" />
+      </annotatedElements>
     </comment>
   </ownedCommentsInternal>
   <packagedElements>
@@ -16525,7 +16536,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
         </generalsInternal>
         <targetEnds>
           <association
-            Id="630e3d4a-82d6-4e45-a125-3326e5764ec6"
+            Id="f7119e6d-24ca-4061-8d4b-e58bbefd22b0"
             isDerived="false"
             sourceEndRoleName="NodeView"
             targetEndRoleName="NodeComponentView"
@@ -16538,20 +16549,20 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="68ec3da7-207e-4082-a02b-db4e7f3832d6"
+                  Id="0c4e5bd9-938f-40d6-8dc9-2ac2eb0866fe"
                   name="NodeView"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
                   isDerived="false"
                   isDerivedUnion="false"
-                  aggregation="Composite"
+                  aggregation="None"
                   isComposite="false"
                   isNavigableOwned="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="ec3fbd89-f642-4893-9bcd-e310ddc9357f"
+                  Id="7019ade8-2d0b-41b3-bbd7-b83260f89b80"
                   name="NodeComponentView"
                   isLeaf="false"
                   isStatic="false"
@@ -16559,20 +16570,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="true">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="01e22f0d-b75b-46df-a0a7-9dae3328e4b2"
-                      name="Lower"
-                      value="*" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="075dd90d-9dd2-40ec-8c69-e1177eb92614"
-                      name="Upper"
-                      value="*" />
-                  </upperValueInternal>
-                </memberEnd>
+                  isComposite="false" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -16831,10 +16829,10 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
         </generalsInternal>
         <targetEnds>
           <association
-            Id="0e49a5fd-a483-4dd8-9076-29935dad20e8"
+            Id="d8a8dc46-fd60-4a7b-aa61-2bb00f4a84b1"
             isDerived="false"
             sourceEndRoleName="FriendManagerView"
-            targetEndRoleName="MemberView"
+            targetEndRoleName="NodeView"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -16844,28 +16842,28 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="7721d1a0-d0dc-433e-bad5-0f2ddc1a9780"
+                  Id="4b36af3e-acf3-426e-8b80-a876acf9a051"
                   name="FriendManagerView"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
                   isDerived="false"
                   isDerivedUnion="false"
-                  aggregation="Composite"
+                  aggregation="None"
                   isComposite="false"
                   isNavigableOwned="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="46ae3c98-ae02-4401-9098-949979ae05b8"
-                  name="MemberView"
+                  Id="0555c769-0b73-4c61-9980-9f79b52f79f5"
+                  name="NodeView"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="true" />
+                  isComposite="false" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
