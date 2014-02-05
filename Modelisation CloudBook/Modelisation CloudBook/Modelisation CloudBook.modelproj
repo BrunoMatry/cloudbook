@@ -155,6 +155,13 @@
       <SubType>Content</SubType>
       <DependentUpon>Bloc Traitement Requete\Requete.activitydiagram</DependentUpon>
     </Content>
+    <Content Include="IHM\IHM.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="IHM\IHM.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>IHM\IHM.classdiagram</DependentUpon>
+    </Content>
     <Content Include="ModelDefinition\Package1_1456.uml">
       <SubType>Content</SubType>
     </Content>
@@ -212,5 +219,6 @@
     <Folder Include="Bloc Gestion des amis" />
     <Folder Include="Bloc Moteur" />
     <Folder Include="Bloc Traitement Requete" />
+    <Folder Include="IHM" />
   </ItemGroup>
 </Project>
