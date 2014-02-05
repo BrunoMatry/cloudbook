@@ -1,7 +1,12 @@
 Vues
 	G enregistrer
 	B resultats/suggestions
-	G état du noeud (édition)
 	B gestion des amis (---> détail de chaque ami)
 
 Sérialisation => Abderrahmane
+
+Essayer d'unifier la mise en forme, en particulier :
+getters / setters
+constructeurs par défaut
+dans les vues, la référence vers le modèle
+les constructeurs d'initialisation
