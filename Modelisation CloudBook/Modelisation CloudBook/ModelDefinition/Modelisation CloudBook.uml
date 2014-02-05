@@ -184,6 +184,10 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
           LastKnownLocation="Modelisation CloudBook.uml" />
       </annotatedElements>
     </comment>
+    <comment
+      Id="3dbdb618-cc4d-4c32-951d-2e56e966b733">
+      <body>Pas d'observateur car on ne veut pas que les vues se mettent à jour dynamiquement</body>
+    </comment>
   </ownedCommentsInternal>
   <packagedElements>
     <packageHasNamedElement>
@@ -16691,6 +16695,27 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="a460e873-4586-4dfc-9820-1bd10c773eea"
+            name="model"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="678193de-9a2e-4644-9dea-11a5a88ef147"
+                LastKnownName="Node"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -16750,6 +16775,53 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="7e771a26-20eb-43bb-8fcf-6e9f155a0363"
+            name="model"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="42e92a9f-2f6e-44ac-bc72-8816ae9dd1b8"
+                LastKnownName="Friend"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="bf2a65f9-cd69-44c7-9f30-b6bfd9459b1a"
+            name="display"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="96606457-a1f8-48c0-ae6c-9c170b6ea154"
+            name="hide"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="29ee0f76-493a-4fe2-ac16-1bc0b5a3d8d3"
+            name="update"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -16809,6 +16881,53 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="bffa94f2-af3c-4dd0-b36d-00f3d071f98d"
+            name="model"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="a58f4666-20d6-4103-8c3c-fdc8281629cc"
+                LastKnownName="AppVector"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="de64ce22-4dcd-4824-b855-2ec66bedb125"
+            name="display"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="1b6426d2-bf09-41e6-a015-ce0876a47618"
+            name="hide"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="cda70590-625e-4c4e-b8fe-d243a825c4b9"
+            name="update"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -16869,6 +16988,37 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="475bae44-c17f-495a-83dd-f844eabcb1cd"
+            name="model"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="0b199594-23e9-4283-9be3-9043a7cf48aa"
+                LastKnownName="FriendManager"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="ce13aa43-eae1-475c-bf22-adf73177034d"
+            name="updateAll"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -16952,6 +17102,53 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="1601175b-c495-42e7-b2ef-70b69d12c5e5"
+            name="model"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="1f500c32-c327-482d-bccc-580e515f71bb"
+                LastKnownName="Mesure"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="72c7d5ea-2d32-46a8-9f11-4cfc48e7f299"
+            name="display"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="6338d305-5595-43ae-a316-2441e80b1ccc"
+            name="hide"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="130846d1-8a89-40b4-8f4b-66b930040916"
+            name="update"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -17006,11 +17203,45 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="true" />
+                  isComposite="true">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="0296b5c4-16fa-4332-ba69-4fa440e8688c"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="4e78e0f6-bc50-43ed-b52a-f9d086444a6c"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="80ea0b80-5d9c-4b76-afc7-6ef3ac0cbdb0"
+            name="model"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="2a0aeb62-81d3-432a-aff4-6194fc174c37"
+                LastKnownName="State"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -17070,6 +17301,53 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="641638e1-cc7e-435c-a81c-966b7cd695a2"
+            name="model"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="ec37915d-d3cb-45a1-9320-49568f18b32e"
+                LastKnownName="Message"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="415448a0-a09a-481e-91c7-9b338c52856f"
+            name="update"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="7bb1b014-f72d-49b6-b895-ebea780b0acb"
+            name="display"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="fb1debbd-fd7c-461c-96e6-1d939a45c73c"
+            name="hide"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -17079,6 +17357,15 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
         isAbstract="true"
         isLeaf="false"
         isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="c0766ae8-6249-4c69-b2fb-e4cd287c4e5e">
+            <interfaceMoniker
+              Id="b178a2c3-28c3-45d3-9e0a-4b3b891f43fb"
+              LastKnownName="ComponentView"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
         <targetEnds>
           <association
             Id="a79f0a39-4016-4b30-8a50-39aac7c6ba51"
@@ -17123,7 +17410,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
         <ownedOperationsInternal>
           <operation
             Id="a11f1a00-c137-47e4-af82-5a10e5dd188a"
-            name="getSummarizedView"
+            name="makeSummarizedView"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -17136,8 +17423,8 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
                   direction="Return"
                   isUnique="false">
                   <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="307fd778-db43-47ee-8d41-520fc050c27b"
+                    <classMoniker
+                      Id="97c9c18b-6f4a-4aee-a350-24b8cdbd8322"
                       LastKnownName="SummarizedView"
                       LastKnownLocation="Modelisation CloudBook.uml" />
                   </type_NamedElement>
@@ -17155,31 +17442,40 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="6ff8a624-e603-47bb-96b5-49ee85e38669">
+            <interfaceMoniker
+              Id="b178a2c3-28c3-45d3-9e0a-4b3b891f43fb"
+              LastKnownName="ComponentView"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
         <ownedOperationsInternal>
           <operation
-            Id="6584ca2f-f532-4a98-865e-4561a1f8b48e"
-            name="getComponent"
+            Id="05c59347-b91a-4121-8841-f78917f3a2eb"
+            name="display"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="c64efb42-4ebf-4c4e-a151-8405dfce5a72"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <classMoniker
-                      Id="953770f9-0ccd-4fb2-ab2d-4aa816458fc3"
-                      LastKnownName="NodeComponentView"
-                      LastKnownLocation="Modelisation CloudBook.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
+            isQuery="false" />
+          <operation
+            Id="59cf884c-167d-4e11-91b6-e36fb7263dcf"
+            name="hide"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="7deaa31d-11f1-4ccd-ae32-18a924f6ef0e"
+            name="update"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -17210,7 +17506,39 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
         name="CloudView"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="d825243b-db66-4e45-8ab9-ec0b06434388"
+            isSubstitutable="false">
+            <classMoniker
+              Id="4287e971-b22e-4a95-ae9b-bb1442a09db2"
+              LastKnownName="ImageView"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="b0b6103a-509f-497d-b95b-89508275c0ce"
+            name="model"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <enumerationMoniker
+                Id="059023d1-619d-4394-8df0-f090b9d173b2"
+                LastKnownName="Cloud"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
@@ -17380,6 +17708,273 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
         Id="0cc69dff-1c29-4769-a5b1-9c2d7e1c38cb"
         name="HMISuggestion"
         isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="249d0906-8195-40e0-acba-3ab5dcf1781a"
+        name="HMICloudbook"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="1bf480e1-0bb3-418f-a6b9-06bfb72b0fc2"
+            isDerived="false"
+            sourceEndRoleName="HMICloudbook"
+            targetEndRoleName="HMITabList"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="65786562-c9d2-40a9-b7d9-3a893b49df1a"
+              LastKnownName="HMITabList"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3f664258-ffe4-4da8-a62c-7852ecfdc070"
+                  name="HMICloudbook"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4aa3e8b6-1dd8-4e55-b7d2-506c1b774b56"
+                  name="HMITabList"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="65786562-c9d2-40a9-b7d9-3a893b49df1a"
+        name="HMITabList"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="44099c8b-bf74-4f21-820a-804079ce2e46"
+            isDerived="false"
+            sourceEndRoleName="HMITabList"
+            targetEndRoleName="HMIMainTab"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="727533e7-a834-486a-849e-f52d82883fcf"
+              LastKnownName="HMIMainTab"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2c53231f-975e-471f-86a5-1aef64179c8d"
+                  name="HMITabList"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="356e73b2-b497-49a3-bc47-24cf621b57d8"
+                  name="HMIMainTab"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="a7762c88-5b9c-4ffc-a785-c24828faa66a"
+            isDerived="false"
+            sourceEndRoleName="HMITabList"
+            targetEndRoleName="HMIResultTab"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="98d71f21-845b-4836-9a5d-22e1b7e65830"
+              LastKnownName="HMIResultTab"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="da6e5ef2-fc6b-4d47-a900-54c4dd64db90"
+                  name="HMITabList"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="956ef789-b51e-4218-be8e-5b39583299d6"
+                  name="HMIResultTab"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="3fe1c4b1-66b1-4b78-810c-69521e6b6507"
+            isDerived="false"
+            sourceEndRoleName="HMITabList"
+            targetEndRoleName="HMINodeStateTab"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="32758b0a-ec17-4773-9041-2d851433db0b"
+              LastKnownName="HMINodeStateTab"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="451c29ff-f61e-4b52-8447-7605ef7359fc"
+                  name="HMITabList"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1c766bcc-dbdd-4c13-9fb9-f1865041bef5"
+                  name="HMINodeStateTab"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="93fadffa-aac1-4bc0-a55c-4f7879032104"
+            isDerived="false"
+            sourceEndRoleName="HMITabList"
+            targetEndRoleName="HMIFriendTab"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="cf9a91e1-0846-4f7b-91b6-5dd7f2412352"
+              LastKnownName="HMIFriendTab"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a0afa7ab-8f87-4694-a59b-4e3d1894ab59"
+                  name="HMITabList"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b310c568-97e9-4cee-8b68-40af852e4be3"
+                  name="HMIFriendTab"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4287e971-b22e-4a95-ae9b-bb1442a09db2"
+        name="ImageView"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="b178a2c3-28c3-45d3-9e0a-4b3b891f43fb"
+        name="ComponentView"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="390d913b-4c6a-4c7e-aa83-f8091860b9d3"
+            name="display"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="8a443ab4-eec0-46bb-aba3-5ebd9e470e50"
+            name="hide"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="75276961-605b-4b04-887f-ea51b6333510"
+            name="update"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="ae0a42a7-d762-4a02-84ec-d86126f56b43"
+        name="Node"
+        isAbstract="true"
         isLeaf="false"
         isActiveClass="false" />
     </packageHasNamedElement>
