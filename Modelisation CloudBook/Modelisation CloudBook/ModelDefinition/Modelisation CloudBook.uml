@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="94208107-703b-4bbf-9f51-c1243885138f"
   name="Modelisation CloudBook" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -187,6 +187,17 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
     <comment
       Id="3dbdb618-cc4d-4c32-951d-2e56e966b733">
       <body>Pas d'observateur car on ne veut pas que les vues se mettent à jour dynamiquement</body>
+    </comment>
+    <comment
+      Id="e068d1d0-3aa7-4e12-9ad8-b707fbf5b72e">
+      <body>Useful for polymorphism
+</body>
+      <annotatedElements>
+        <interfaceMoniker
+          Id="b178a2c3-28c3-45d3-9e0a-4b3b891f43fb"
+          LastKnownName="ComponentView"
+          LastKnownLocation="Modelisation CloudBook.uml" />
+      </annotatedElements>
     </comment>
   </ownedCommentsInternal>
   <packagedElements>
@@ -14267,32 +14278,6 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
               LastKnownLocation="Modelisation CloudBook.uml" />
           </generalization>
         </generalsInternal>
-        <ownedOperationsInternal>
-          <operation
-            Id="01286b4d-4037-4dbb-9e8d-778edbe1493f"
-            name="getInformation"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="72e6fa1d-4e20-4b1b-88c2-b60a4932e472"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <classMoniker
-                      Id="bd25d984-dba7-4afe-83b3-8d28e88a775d"
-                      LastKnownName="Information"
-                      LastKnownLocation="Modelisation CloudBook.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -14312,32 +14297,6 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
               LastKnownLocation="Modelisation CloudBook.uml" />
           </generalization>
         </generalsInternal>
-        <ownedOperationsInternal>
-          <operation
-            Id="391bb2aa-995f-4e14-9a7b-77796db0f376"
-            name="getInformation"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="66221e05-d9d9-4f67-999e-ef246089ed0f"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <classMoniker
-                      Id="bd25d984-dba7-4afe-83b3-8d28e88a775d"
-                      LastKnownName="Information"
-                      LastKnownLocation="Modelisation CloudBook.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -14632,72 +14591,6 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
-        <ownedOperationsInternal>
-          <operation
-            Id="24d995a7-fa6b-43bc-9f9d-881f71bdca33"
-            name="getSender"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="6fc3a27c-c066-4d71-9f0d-e4d0f8ba25f1"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <classMoniker
-                      Id="1244b250-916e-4a88-b079-d99750255f3a"
-                      LastKnownName="Sender"
-                      LastKnownLocation="Modelisation CloudBook.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
-            Id="67920fd3-691c-458d-8df5-89f0db666c7e"
-            name="getRecipient"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="068072ad-1e9c-4eef-917b-bdf04c322729"
-            name="getDate"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="14d4f89a-641b-4b3d-80bd-88119a7df5b3"
-            name="getInformation"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="1743bb17-f94d-4bdf-86ad-ecb4fbccf4c4"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <classMoniker
-                      Id="bd25d984-dba7-4afe-83b3-8d28e88a775d"
-                      LastKnownName="Information"
-                      LastKnownLocation="Modelisation CloudBook.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -15936,6 +15829,158 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
+            Id="fee62ed8-90ed-4010-9b5d-8eed82b83d57"
+            name="getId"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="21e1ad1b-c373-4f19-9db7-0531e7a126bf"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="ce126c28-7853-4d05-adb7-0cd57e68c6e0"
+                      LastKnownName="int"
+                      LastKnownLocation="Modelisation CloudBook.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="70b52408-d50e-45c2-aada-dcdc71e0c5fb"
+            name="getVector"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="213c2f8b-edf3-4b40-a4cf-bc1f4f5fc502"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="a58f4666-20d6-4103-8c3c-fdc8281629cc"
+                      LastKnownName="AppVector"
+                      LastKnownLocation="Modelisation CloudBook.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="de031dc3-c70d-461b-b9d2-a498ea672748"
+            name="getFriends"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="06e67ae6-03f7-43ee-af9f-8699f7683dab"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="6f7ab102-c4e1-4e4e-9f66-5c8c8e9b902f"
+                      LastKnownName="Friend[]"
+                      LastKnownLocation="Modelisation CloudBook.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="2c3e480a-9464-45b4-a62b-77b5d15b53a4"
+            name="getMessages"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="03418400-1f35-4ee1-bda0-90e868a32fd0"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="6606ffdc-4805-47b7-92b6-f76b6c36284e"
+                      LastKnownName="Message[]"
+                      LastKnownLocation="Modelisation CloudBook.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="7046ff01-9194-4429-a14a-4d4d03123b61"
+            name="get"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="3a25cc86-85e2-41ad-9d92-e36c0dc8cb24"
+            name="getMesures"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="93f207a9-58a3-41a0-abcb-a3fabe2196e4"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="eca86f10-e9b8-4e15-8818-1da421fe2498"
+                      LastKnownName="Mesure[]"
+                      LastKnownLocation="Modelisation CloudBook.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="966f3538-983b-4588-914f-21a05d7a5dc9"
+            name="getHistory"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="838a352c-d3f8-4c9c-8e2f-31f6bcdf5941"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="8a647759-6761-4a06-a4b0-a1583d028d1e"
+                      LastKnownName="State[]"
+                      LastKnownLocation="Modelisation CloudBook.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
             Id="188179b9-c9a1-4185-b951-4c414d6f4be3"
             name="getInformation"
             isLeaf="false"
@@ -16501,7 +16546,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
         </generalsInternal>
         <targetEnds>
           <association
-            Id="630e3d4a-82d6-4e45-a125-3326e5764ec6"
+            Id="f7119e6d-24ca-4061-8d4b-e58bbefd22b0"
             isDerived="false"
             sourceEndRoleName="NodeView"
             targetEndRoleName="NodeComponentView"
@@ -16514,20 +16559,20 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="68ec3da7-207e-4082-a02b-db4e7f3832d6"
+                  Id="0c4e5bd9-938f-40d6-8dc9-2ac2eb0866fe"
                   name="NodeView"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
                   isDerived="false"
                   isDerivedUnion="false"
-                  aggregation="Composite"
+                  aggregation="None"
                   isComposite="false"
                   isNavigableOwned="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="ec3fbd89-f642-4893-9bcd-e310ddc9357f"
+                  Id="7019ade8-2d0b-41b3-bbd7-b83260f89b80"
                   name="NodeComponentView"
                   isLeaf="false"
                   isStatic="false"
@@ -16535,20 +16580,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="true">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="01e22f0d-b75b-46df-a0a7-9dae3328e4b2"
-                      name="Lower"
-                      value="*" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="075dd90d-9dd2-40ec-8c69-e1177eb92614"
-                      name="Upper"
-                      value="*" />
-                  </upperValueInternal>
-                </memberEnd>
+                  isComposite="false" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -16807,10 +16839,10 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
         </generalsInternal>
         <targetEnds>
           <association
-            Id="0e49a5fd-a483-4dd8-9076-29935dad20e8"
+            Id="d8a8dc46-fd60-4a7b-aa61-2bb00f4a84b1"
             isDerived="false"
             sourceEndRoleName="FriendManagerView"
-            targetEndRoleName="MemberView"
+            targetEndRoleName="NodeView"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -16820,28 +16852,28 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="7721d1a0-d0dc-433e-bad5-0f2ddc1a9780"
+                  Id="4b36af3e-acf3-426e-8b80-a876acf9a051"
                   name="FriendManagerView"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
                   isDerived="false"
                   isDerivedUnion="false"
-                  aggregation="Composite"
+                  aggregation="None"
                   isComposite="false"
                   isNavigableOwned="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="46ae3c98-ae02-4401-9098-949979ae05b8"
-                  name="MemberView"
+                  Id="0555c769-0b73-4c61-9980-9f79b52f79f5"
+                  name="NodeView"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="true" />
+                  isComposite="false" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -17616,6 +17648,45 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="652f3251-4db5-4b6f-964f-603b3a6e1104"
+            isDerived="false"
+            sourceEndRoleName="HMICloudbook"
+            targetEndRoleName="HMIMenuBar"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="7e0331b1-49a4-4e7c-bbe5-04c2cffaee7b"
+              LastKnownName="HMIMenuBar"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="58dc4e54-1ae5-4d19-8337-fb66737fb33b"
+                  name="HMICloudbook"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="32aeb865-6da4-4495-8d34-5693925a9a99"
+                  name="HMIMenuBar"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
       </class>
     </packageHasNamedElement>
@@ -17833,6 +17904,64 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
         Id="ae0a42a7-d762-4a02-84ec-d86126f56b43"
         name="Node"
         isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="7e0331b1-49a4-4e7c-bbe5-04c2cffaee7b"
+        name="HMIMenuBar"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="a110a185-dce4-4cce-979f-3d71f612b448"
+            isDerived="false"
+            sourceEndRoleName="HMIMenuBar"
+            targetEndRoleName="HMIExitButton"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="a46c445f-06dd-4508-9adf-a82e91567da7"
+              LastKnownName="HMIExitButton"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a030750e-7637-4177-af20-99013c22ac04"
+                  name="HMIMenuBar"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="25325bf5-0438-4e51-8776-fb443e1e7be1"
+                  name="HMIExitButton"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="a46c445f-06dd-4508-9adf-a82e91567da7"
+        name="HMIExitButton"
+        isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />
     </packageHasNamedElement>
