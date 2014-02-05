@@ -17606,6 +17606,45 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="652f3251-4db5-4b6f-964f-603b3a6e1104"
+            isDerived="false"
+            sourceEndRoleName="HMICloudbook"
+            targetEndRoleName="HMIMenuBar"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="7e0331b1-49a4-4e7c-bbe5-04c2cffaee7b"
+              LastKnownName="HMIMenuBar"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="58dc4e54-1ae5-4d19-8337-fb66737fb33b"
+                  name="HMICloudbook"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="32aeb865-6da4-4495-8d34-5693925a9a99"
+                  name="HMIMenuBar"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
       </class>
     </packageHasNamedElement>
@@ -17823,6 +17862,64 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
         Id="ae0a42a7-d762-4a02-84ec-d86126f56b43"
         name="Node"
         isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="7e0331b1-49a4-4e7c-bbe5-04c2cffaee7b"
+        name="HMIMenuBar"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="a110a185-dce4-4cce-979f-3d71f612b448"
+            isDerived="false"
+            sourceEndRoleName="HMIMenuBar"
+            targetEndRoleName="HMIExitButton"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="a46c445f-06dd-4508-9adf-a82e91567da7"
+              LastKnownName="HMIExitButton"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a030750e-7637-4177-af20-99013c22ac04"
+                  name="HMIMenuBar"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="25325bf5-0438-4e51-8776-fb443e1e7be1"
+                  name="HMIExitButton"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="a46c445f-06dd-4508-9adf-a82e91567da7"
+        name="HMIExitButton"
+        isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />
     </packageHasNamedElement>

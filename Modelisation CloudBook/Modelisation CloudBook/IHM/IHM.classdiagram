@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="5802e84a-839e-4b39-8741-7ab2856308e7" name="IHM" linkedPackageId="02a65572-460c-4f35-b144-511da65524d9" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="5802e84a-839e-4b39-8741-7ab2856308e7" name="IHM" linkedPackageId="02a65572-460c-4f35-b144-511da65524d9" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="467dd5da-62d3-44ce-bc3b-8cb70a8b3c4e" name="HMIFriendList" isAbstract="false" isLeaf="false" isActiveClass="false">
@@ -118,6 +118,22 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="1bf480e1-0bb3-418f-a6b9-06bfb72b0fc2" />
           </association>
+          <association Id="602008ac-3dad-455b-9752-54e31c735ba9" isDerived="false" sourceEndRoleName="HMICloudbook" targetEndRoleName="HMIMenuBar" isLeaf="false" isAbstract="false">
+            <classMoniker Id="85a75572-af08-4f2c-a4d4-fe8c04f4e57e" LastKnownName="HMIMenuBar" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="55a57cc5-267d-487c-ba7c-6873c03da588" name="HMICloudbook" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="58dc4e54-1ae5-4d19-8337-fb66737fb33b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b181da04-002b-4bec-8a88-43cad2225f57" name="HMIMenuBar" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="32aeb865-6da4-4495-8d34-5693925a9a99" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="652f3251-4db5-4b6f-964f-603b3a6e1104" />
+          </association>
         </targetEnds>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -190,6 +206,34 @@
             <elementDefinition Id="93fadffa-aac1-4bc0-a55c-4f7879032104" />
           </association>
         </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="85a75572-af08-4f2c-a4d4-fe8c04f4e57e" name="HMIMenuBar" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7e0331b1-49a4-4e7c-bbe5-04c2cffaee7b" />
+        <targetEnds>
+          <association Id="17170c54-2858-455d-9e72-b55a9b45fea0" isDerived="false" sourceEndRoleName="HMIMenuBar" targetEndRoleName="HMIExitButton" isLeaf="false" isAbstract="false">
+            <classMoniker Id="13e6b55d-ac2c-4aab-b824-a25e583a966d" LastKnownName="HMIExitButton" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2699826b-4231-49ef-ab56-db403de5c028" name="HMIMenuBar" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a030750e-7637-4177-af20-99013c22ac04" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c0f81fc1-a0b4-4057-8085-463cc51e2338" name="HMIExitButton" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="25325bf5-0438-4e51-8776-fb443e1e7be1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a110a185-dce4-4cce-979f-3d71f612b448" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="13e6b55d-ac2c-4aab-b824-a25e583a966d" name="HMIExitButton" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="a46c445f-06dd-4508-9adf-a82e91567da7" />
       </class>
     </logicalClassDesignerModelHasTypes>
   </packagedElements>
