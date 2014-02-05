@@ -162,6 +162,9 @@
       <SubType>Content</SubType>
       <DependentUpon>IHM\IHM.classdiagram</DependentUpon>
     </Content>
+    <Content Include="IHM\StructureIHM.dgml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ModelDefinition\Package1_1456.uml">
       <SubType>Content</SubType>
     </Content>
