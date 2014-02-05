@@ -86,6 +86,13 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
           </operation>
           <operation Id="d4b8684f-659e-4634-a0aa-56e31ec556a9" name="update" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="869f19b2-b051-449e-9fa6-4153fb1424ea" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="93496a52-71cd-43b7-8f42-1c2ac4c46493" name="int id" direction="In" isUnique="false">
+                  <elementDefinition Id="2ad1aa66-bfe0-4893-864a-bd0dbeffb73b" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>

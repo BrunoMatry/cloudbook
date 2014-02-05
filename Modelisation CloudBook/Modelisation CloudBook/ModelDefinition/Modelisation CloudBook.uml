@@ -15512,7 +15512,17 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2ad1aa66-bfe0-4893-864a-bd0dbeffb73b"
+                  name="int id"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
