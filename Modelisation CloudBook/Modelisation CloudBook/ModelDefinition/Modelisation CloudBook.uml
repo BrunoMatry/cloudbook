@@ -17367,6 +17367,22 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
         </generalsInternal>
       </class>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="c4646b04-1f84-4710-8003-eb50b15f4faa"
+        name="HMIResultBoard"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="0cc69dff-1c29-4769-a5b1-9c2d7e1c38cb"
+        name="HMISuggestion"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
   </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"

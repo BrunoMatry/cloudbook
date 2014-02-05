@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="Accueil" Category="Comment" Bounds="-139.090863189697,-102.122818450928,57.7066666666667,25.96" UseManualLocation="True" />
+    <Node Id="Amis" Bounds="152.557630602519,-107.765762786865,50,25.96" UseManualLocation="True" />
+    <Node Id="BarreTaches" Bounds="250.279578348796,-189.689718743297,83.7066666666667,25.96" UseManualLocation="True" />
+    <Node Id="BoutonQuitter" Bounds="233.83307292797,-108.835094909668,97.22,25.96" Label="Bouton quitter" UseManualLocation="True" />
+    <Node Id="ContenuAmis" Bounds="539.956406261303,-112.676239471436,127.403333333333,25.96" Label="ContenuOngletAmis" UseManualLocation="True" />
+    <Node Id="ContenuOngletResultat" Bounds="-85.9387336394205,-23.1206221478634,143.81,25.96" UseManualLocation="True" />
+    <Node Id="ContenuPageResultats" Bounds="361.05307292797,-111.20486114502,148.903333333333,25.96" Label="ContenuOngletResultats" UseManualLocation="True" />
+    <Node Id="EtatNoeud" Bounds="46.1924701436361,-107.818306427002,76.45,25.96" UseManualLocation="True" />
+    <Node Id="Onglets" Bounds="10.5745598093669,-188.386901519177,61.2466666666667,25.96" Label="Onglets" UseManualLocation="True" />
+    <Node Id="Page" Bounds="425.42727360332,-193.164960160778,91.3433333333334,25.96" Label="ContenuPage" UseManualLocation="True" />
+    <Node Id="Root" Bounds="125.379682846538,-258.189658988627,50,25.96" Label="root" UseManualLocation="True" />
+    <Node Id="Résultats" Bounds="-51.3841965230306,-103.606342773437,67.5766666666667,25.96" Label="Resultats" UseManualLocation="True" />
+  </Nodes>
+  <Links>
+    <Link Source="BarreTaches" Target="BoutonQuitter" Bounds="285.069552902087,-163.72972442627,5.50780026989963,45.9585718165864" />
+    <Link Source="Onglets" Target="Accueil" Bounds="-79.6488690760662,-162.426898498535,98.0573567116376,55.849832928679" />
+    <Link Source="Onglets" Target="Amis" Bounds="63.1518060540541,-162.426898498535,84.7046910634146,50.0806801248861" />
+    <Link Source="Onglets" Target="EtatNoeud" Bounds="48.1607814723618,-162.426898498535,25.039384985061,46.6776432018242" />
+    <Link Source="Onglets" Target="Résultats" Bounds="-3.48242857011875,-162.426898498535,35.6756830779131,51.4257578928544" />
+    <Link Source="Page" Target="ContenuAmis" Bounds="492.47607960504,-167.204951782227,82.1119438327357,49.8576381643338" />
+    <Link Source="Page" Target="ContenuPageResultats" Bounds="444.726881541828,-167.204951782227,20.7350245812503,47.7449652530189" />
+    <Link Source="Root" Target="BarreTaches" Bounds="174.773666591838,-233.421675031534,82.3950829753046,39.8160866850936" />
+    <Link Source="Root" Target="Onglets" Bounds="69.0832818246679,-232.229671020508,60.9937756656002,38.9949147850811" />
+    <Link Source="Root" Target="Page" Bounds="175.379684448242,-240.141008188499,241.227052608282,48.9079438252268" />
+  </Links>
+  <Categories>
+    <Category Id="Comment" Label="Commentaire" Description="Représente un commentaire défini par l'utilisateur sur le diagramme" CanBeDataDriven="True" IsProviderRoot="False" NavigationActionLabel="Commentaires " />
+  </Categories>
+  <Properties>
+    <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
+    <Property Id="Expression" DataType="System.String" />
+    <Property Id="GroupLabel" DataType="System.String" />
+    <Property Id="IsEnabled" DataType="System.Boolean" />
+    <Property Id="IsProviderRoot" Label="IsProviderRoot" Description="IsProviderRoot" DataType="System.Boolean" />
+    <Property Id="Label" Label="Étiquette" Description="Étiquette affichable d'un objet pouvant être annoté" DataType="System.String" />
+    <Property Id="NavigationActionLabel" Label="NavigationActionLabel" Description="NavigationActionLabel" DataType="System.String" />
+    <Property Id="TargetType" DataType="System.Type" />
+    <Property Id="UseManualLocation" DataType="System.Boolean" />
+    <Property Id="Value" DataType="System.String" />
+    <Property Id="ValueLabel" DataType="System.String" />
+  </Properties>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="Commentaire" ValueLabel="Possède un commentaire">
+      <Condition Expression="HasCategory('Comment')" />
+      <Setter Property="Background" Value="#FFFFFACD" />
+      <Setter Property="Stroke" Value="#FFE5C365" />
+      <Setter Property="StrokeThickness" Value="1" />
+      <Setter Property="NodeRadius" Value="2" />
+      <Setter Property="MaxWidth" Value="250" />
+    </Style>
+  </Styles>
+</DirectedGraph>

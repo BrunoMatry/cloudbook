@@ -88,6 +88,16 @@
         </generalsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f20d095c-563b-4b04-8385-26a6485b7e3b" name="HMIResultBoard" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c4646b04-1f84-4710-8003-eb50b15f4faa" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="ea256eb0-051a-4498-be17-053dd98a2a32" name="HMISuggestion" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="0cc69dff-1c29-4769-a5b1-9c2d7e1c38cb" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
   </packagedElements>
   <package Id="02a65572-460c-4f35-b144-511da65524d9" name="Modelisation CloudBook">
     <elementDefinition Id="94208107-703b-4bbf-9f51-c1243885138f" />
