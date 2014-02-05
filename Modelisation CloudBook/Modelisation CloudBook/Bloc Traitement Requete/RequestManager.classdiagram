@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="baed6060-a1c6-4831-8f97-dd7d6959cc99" name="RequestManager" linkedPackageId="81856cc7-c5db-4ea5-9418-6ac5191cd2fc" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="baed6060-a1c6-4831-8f97-dd7d6959cc99" name="RequestManager" linkedPackageId="81856cc7-c5db-4ea5-9418-6ac5191cd2fc" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <Interface Id="24141796-2888-4585-a157-6c356b6cb4b2" name="IRequestManager" isAbstract="false" isLeaf="false">
@@ -149,40 +149,6 @@
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
-        <ownedOperationsInternal>
-          <operation Id="7b6bdab5-f6d3-404f-a0ff-0032f902b14f" name="getSender" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="24d995a7-fa6b-43bc-9f9d-881f71bdca33" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="c4c1f413-382f-4860-b06d-d947744673e5" direction="Return" isUnique="false">
-                  <elementDefinition Id="6fc3a27c-c066-4d71-9f0d-e4d0f8ba25f1" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="3133d653-3da2-4e8e-8012-429f7b12b461" LastKnownName="Sender" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation Id="2593eec9-18fd-450e-9874-2ff929226c15" name="getRecipient" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="67920fd3-691c-458d-8df5-89f0db666c7e" />
-          </operation>
-          <operation Id="13bdfa07-ae12-4421-bc90-628d035dd34e" name="getDate" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="068072ad-1e9c-4eef-917b-bdf04c322729" />
-          </operation>
-          <operation Id="ed148adb-aeec-40d1-a6d6-cc68c605e03b" name="getInformation" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="14d4f89a-641b-4b3d-80bd-88119a7df5b3" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="ae1f7994-5186-4cc3-bdaa-42947c023605" direction="Return" isUnique="false">
-                  <elementDefinition Id="1743bb17-f94d-4bdf-86ad-ecb4fbccf4c4" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="0f631ea3-8ee8-4e50-9b7f-f124eb3ff2a4" LastKnownName="Information" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <packageHasNamedElement>
@@ -212,11 +178,6 @@
     <packageHasNamedElement>
       <referencedType Id="2b63ad92-dee8-4fc9-abf7-f6cecc92f5db" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
         <elementDefinition Id="ce126c28-7853-4d05-adb7-0cd57e68c6e0" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="3133d653-3da2-4e8e-8012-429f7b12b461" name="Sender" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::Sender">
-        <elementDefinition Id="1244b250-916e-4a88-b079-d99750255f3a" />
       </referencedType>
     </packageHasNamedElement>
     <logicalClassDesignerModelHasTypes>
