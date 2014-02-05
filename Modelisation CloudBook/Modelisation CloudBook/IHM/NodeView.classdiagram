@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="8acae003-4515-4eca-8f7e-c6ff36ddac31" name="UMLClassDiagram1" linkedPackageId="f6e63310-72d7-48e1-a4ec-11c4d38d777d" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="8acae003-4515-4eca-8f7e-c6ff36ddac31" name="UMLClassDiagram1" linkedPackageId="f6e63310-72d7-48e1-a4ec-11c4d38d777d" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <ownedCommentsInternal>
     <comment Id="96d059eb-e9b0-48bd-862c-6a4adea03a7a">
       <elementDefinition Id="8b99d86b-513b-476f-ae07-6ddba63e3ecd" />
@@ -15,6 +15,10 @@
       <annotatedElements>
         <classMoniker Id="267dfb77-0221-4717-a8cd-db8957531192" LastKnownName="FriendView" />
       </annotatedElements>
+    </comment>
+    <comment Id="bd569c0c-663b-4dc5-87cb-df9f4444e8d6">
+      <elementDefinition Id="3dbdb618-cc4d-4c32-951d-2e56e966b733" />
+      <body>Pas d'observateur car on ne veut pas que les vues se mettent à jour dynamiquement</body>
     </comment>
   </ownedCommentsInternal>
   <packagedElements>
@@ -55,6 +59,14 @@
             <elementDefinition Id="630e3d4a-82d6-4e45-a125-3326e5764ec6" />
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="28864123-f130-4054-a3d1-58e72079b88f" name="model" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a460e873-4586-4dfc-9820-1bd10c773eea" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="732e5ae6-382a-4de0-9506-f642e92e2b96" LastKnownName="Node" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -84,6 +96,25 @@
             <elementDefinition Id="9c1e283c-f3e7-4d44-8b7a-8b64f4ce72dc" />
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="06781f8d-4b9d-4505-b867-47af2a52074e" name="model" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="7e771a26-20eb-43bb-8fcf-6e9f155a0363" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="84ab32e0-651c-4895-9254-80bcfa67e0a9" LastKnownName="Friend" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="cd41b521-4c8b-44a1-8f98-14442ea2baf3" name="display" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="bf2a65f9-cd69-44c7-9f30-b6bfd9459b1a" />
+          </operation>
+          <operation Id="018be86b-a0e8-48e3-845d-fed11b04a9f1" name="hide" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="96606457-a1f8-48c0-ae6c-9c170b6ea154" />
+          </operation>
+          <operation Id="1f6330c7-58a4-4a70-b968-2d50530dbeab" name="update" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="29ee0f76-493a-4fe2-ac16-1bc0b5a3d8d3" />
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -113,6 +144,25 @@
             <elementDefinition Id="9d53dace-14bf-468f-a101-390184ea0123" />
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="9261de44-b0bb-4ccc-9b8c-8b870841e86f" name="model" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="bffa94f2-af3c-4dd0-b36d-00f3d071f98d" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="7db88a19-36bd-4412-a2e2-c1fa10400126" LastKnownName="AppVector" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="2df3bef5-e303-4467-8b20-d8d4b7f3350e" name="display" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="de64ce22-4dcd-4824-b855-2ec66bedb125" />
+          </operation>
+          <operation Id="1faf6c93-1d61-4e9c-94aa-ef64b59905e8" name="hide" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1b6426d2-bf09-41e6-a015-ce0876a47618" />
+          </operation>
+          <operation Id="fdbd3d25-0301-4a4b-8edf-4a4c858d23a0" name="update" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="cda70590-625e-4c4e-b8fe-d243a825c4b9" />
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -142,6 +192,19 @@
             <elementDefinition Id="0e49a5fd-a483-4dd8-9076-29935dad20e8" />
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="66ab014a-8d47-4660-9e47-20a1df98d43e" name="model" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="475bae44-c17f-495a-83dd-f844eabcb1cd" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="7cef5589-cf75-4520-9933-0afbf88cae55" LastKnownName="FriendManager" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="0a729853-cb83-4ce4-ad7c-e8f599d83e0c" name="updateAll" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ce13aa43-eae1-475c-bf22-adf73177034d" />
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -186,6 +249,25 @@
             <elementDefinition Id="fd30dd97-a835-4b5b-b0a0-dec9e8f253b2" />
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="0c1410bd-db5b-4f89-96e4-a0880f61cf0e" name="model" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="1601175b-c495-42e7-b2ef-70b69d12c5e5" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="2ae2b7a9-e61e-4a65-8d2d-d93df59e33f4" LastKnownName="Mesure" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="b24ee6a4-b725-4712-ac02-694d69a6c378" name="display" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="72c7d5ea-2d32-46a8-9f11-4cfc48e7f299" />
+          </operation>
+          <operation Id="e8f8effc-01a9-423b-a264-632a3a8d8f9a" name="hide" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6338d305-5595-43ae-a316-2441e80b1ccc" />
+          </operation>
+          <operation Id="f6acb3af-6941-4430-b9eb-416b4e8d3921" name="update" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="130846d1-8a89-40b4-8f4b-66b930040916" />
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -208,6 +290,16 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd Id="4b59b89a-1ccc-4b2a-9e7f-b7a2e343815d" name="CloudView" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <lowerValueInternal>
+                    <literalString Id="f3a638ba-9969-4b2e-8fd3-83131f69888e" name="Lower" value="*">
+                      <elementDefinition Id="0296b5c4-16fa-4332-ba69-4fa440e8688c" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="59f64f38-f850-484c-abe9-a3add3fd2855" name="Upper" value="*">
+                      <elementDefinition Id="4e78e0f6-bc50-43ed-b52a-f9d086444a6c" />
+                    </literalString>
+                  </upperValueInternal>
                   <elementDefinition Id="fbfe9559-d0d3-447d-9444-c0c4a315efdd" />
                 </memberEnd>
               </associationHasOwnedEnds>
@@ -215,6 +307,14 @@
             <elementDefinition Id="441ad1ba-f01f-4410-9cf3-039c22b15afc" />
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="d530424b-fa7a-4933-8806-977070b93b24" name="model" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="80ea0b80-5d9c-4b76-afc7-6ef3ac0cbdb0" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="f494566d-b3f9-4581-b815-6ebc33865d58" LastKnownName="State" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -244,11 +344,36 @@
             <elementDefinition Id="3132b800-1b18-48de-82ad-d6849969ae76" />
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="d63ca7a1-7c62-40a7-a244-ac8995feae19" name="model" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="641638e1-cc7e-435c-a81c-966b7cd695a2" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="a75df66f-cb5b-437b-8c3b-9ba5542477c0" LastKnownName="Message" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="a46718a9-398c-4789-96b7-358f8b583879" name="update" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="415448a0-a09a-481e-91c7-9b338c52856f" />
+          </operation>
+          <operation Id="1001b002-2c37-4eb3-a08a-7631b292787a" name="display" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7bb1b014-f72d-49b6-b895-ebea780b0acb" />
+          </operation>
+          <operation Id="c69664f5-856e-4615-a30e-8f8a86367b9e" name="hide" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fb1debbd-fd7c-461c-96e6-1d939a45c73c" />
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
       <class Id="61699f0c-bcd3-484f-95d7-a66d8792656c" name="NodeComponentView" isAbstract="true" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="953770f9-0ccd-4fb2-ab2d-4aa816458fc3" />
+        <suppliersInternal>
+          <interfaceRealization Id="ebb5a52f-27bb-4e44-89af-16f9b3cee095">
+            <interfaceMoniker Id="eaa0d5fa-f769-4af1-8b7a-70531d2c2c97" LastKnownName="ComponentView" />
+            <elementDefinition Id="c0766ae8-6249-4c69-b2fb-e4cd287c4e5e" />
+          </interfaceRealization>
+        </suppliersInternal>
         <targetEnds>
           <association Id="e5595749-f69d-4ab3-89fc-2de02685a06a" isDerived="false" sourceEndRoleName="component" targetEndRoleName="SummarizedView" isLeaf="false" isAbstract="false">
             <classMoniker Id="b29ea3e3-0da5-4f30-8c3a-32aa4b8b062d" LastKnownName="SummarizedView" />
@@ -268,14 +393,14 @@
           </association>
         </targetEnds>
         <ownedOperationsInternal>
-          <operation Id="55892da0-a01d-4433-b14c-316b159e91dc" name="getSummarizedView" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="55892da0-a01d-4433-b14c-316b159e91dc" name="makeSummarizedView" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="a11f1a00-c137-47e4-af82-5a10e5dd188a" />
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter Id="f9f7770d-5d13-4b73-8a4e-4b67f4390237" direction="Return" isUnique="false">
                   <elementDefinition Id="9b9b1367-38d1-4665-a99a-c7f4f6025f39" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="9fb38077-af97-4298-be54-ff04b1c94d74" LastKnownName="SummarizedView" />
+                    <referencedTypeMoniker Id="37188998-4fef-490b-a4ea-a42ac2e98fb4" LastKnownName="SummarizedView" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -287,33 +412,25 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="b29ea3e3-0da5-4f30-8c3a-32aa4b8b062d" name="SummarizedView" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="97c9c18b-6f4a-4aee-a350-24b8cdbd8322" />
+        <suppliersInternal>
+          <interfaceRealization Id="636238f1-e588-4765-9a17-4a1afd7af53a">
+            <interfaceMoniker Id="eaa0d5fa-f769-4af1-8b7a-70531d2c2c97" LastKnownName="ComponentView" />
+            <elementDefinition Id="6ff8a624-e603-47bb-96b5-49ee85e38669" />
+          </interfaceRealization>
+        </suppliersInternal>
         <ownedOperationsInternal>
-          <operation Id="afed4ec3-3e0a-4a3a-91e7-65e0718546f5" name="getComponent" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="6584ca2f-f532-4a98-865e-4561a1f8b48e" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="d61b164f-e462-49a0-ae42-9a8275470156" direction="Return" isUnique="false">
-                  <elementDefinition Id="c64efb42-4ebf-4c4e-a151-8405dfce5a72" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="521ba0db-c4fc-468b-be5f-d3e0a2fb25db" LastKnownName="NodeComponentView" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
+          <operation Id="eb723302-aa28-4ca9-8500-5fb2e7e989ee" name="display" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="05c59347-b91a-4121-8841-f78917f3a2eb" />
+          </operation>
+          <operation Id="0cbf1f35-151b-4d0d-b686-cc9e2b48e3dd" name="hide" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="59cf884c-167d-4e11-91b6-e36fb7263dcf" />
+          </operation>
+          <operation Id="7dbba591-797e-4efc-a25f-d5afaa515057" name="update" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7deaa31d-11f1-4ccd-ae32-18a924f6ef0e" />
           </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
-    <packageHasNamedElement>
-      <referencedType Id="9fb38077-af97-4298-be54-ff04b1c94d74" name="SummarizedView" isAbstract="false" isLeaf="false" cachedFullName="SummarizedView">
-        <elementDefinition Id="307fd778-db43-47ee-8d41-520fc050c27b" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="521ba0db-c4fc-468b-be5f-d3e0a2fb25db" name="NodeComponentView" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::NodeComponentView">
-        <elementDefinition Id="953770f9-0ccd-4fb2-ab2d-4aa816458fc3" />
-      </referencedType>
-    </packageHasNamedElement>
     <logicalClassDesignerModelHasTypes>
       <class Id="b574adea-5fbf-44b9-9940-e6dc4fb1e690" name="Text" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="5c9d8b00-08bf-4daa-b02f-66883e69f728" />
@@ -322,8 +439,88 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="9bf5b6fc-e851-4d7f-8e8b-64463d4fcd52" name="CloudView" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="94877660-b43d-4570-a2d6-2e3926532518" />
+        <generalsInternal>
+          <generalization Id="e351aa4d-bbfe-4ea9-82e3-5eb5138b7bb3" isSubstitutable="false">
+            <classMoniker Id="4ab75a1d-93bb-4dd3-9ed1-849129e175c2" LastKnownName="ImageView" />
+            <elementDefinition Id="d825243b-db66-4e45-8ab9-ec0b06434388" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="7bd650d1-2921-4453-a42b-071ac2a5edb4" name="model" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b0b6103a-509f-497d-b95b-89508275c0ce" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="2c890816-85e9-4e90-953d-45ab4a4476fc" LastKnownName="Cloud" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="4ab75a1d-93bb-4dd3-9ed1-849129e175c2" name="ImageView" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="4287e971-b22e-4a95-ae9b-bb1442a09db2" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="eaa0d5fa-f769-4af1-8b7a-70531d2c2c97" name="ComponentView" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b178a2c3-28c3-45d3-9e0a-4b3b891f43fb" />
+        <ownedOperations>
+          <operation Id="428cb53b-679d-463c-8482-67e7e5e81b21" name="display" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="390d913b-4c6a-4c7e-aa83-f8091860b9d3" />
+          </operation>
+          <operation Id="6c696ed9-e65d-4655-8dab-75328b50dbb6" name="hide" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8a443ab4-eec0-46bb-aba3-5ebd9e470e50" />
+          </operation>
+          <operation Id="558ad3d8-d958-4c2f-91dd-b6ac28e21a41" name="update" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="75276961-605b-4b04-887f-ea51b6333510" />
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="37188998-4fef-490b-a4ea-a42ac2e98fb4" name="SummarizedView" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::SummarizedView">
+        <elementDefinition Id="97c9c18b-6f4a-4aee-a350-24b8cdbd8322" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="732e5ae6-382a-4de0-9506-f642e92e2b96" name="Node" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::Node">
+        <elementDefinition Id="678193de-9a2e-4644-9dea-11a5a88ef147" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="7cef5589-cf75-4520-9933-0afbf88cae55" name="FriendManager" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::FriendManager">
+        <elementDefinition Id="0b199594-23e9-4283-9be3-9043a7cf48aa" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="2ae2b7a9-e61e-4a65-8d2d-d93df59e33f4" name="Mesure" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::Mesure">
+        <elementDefinition Id="1f500c32-c327-482d-bccc-580e515f71bb" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="7db88a19-36bd-4412-a2e2-c1fa10400126" name="AppVector" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::AppVector">
+        <elementDefinition Id="a58f4666-20d6-4103-8c3c-fdc8281629cc" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="a75df66f-cb5b-437b-8c3b-9ba5542477c0" name="Message" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::Message">
+        <elementDefinition Id="ec37915d-d3cb-45a1-9320-49568f18b32e" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="84ab32e0-651c-4895-9254-80bcfa67e0a9" name="Friend" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::Friend">
+        <elementDefinition Id="42e92a9f-2f6e-44ac-bc72-8816ae9dd1b8" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="f494566d-b3f9-4581-b815-6ebc33865d58" name="State" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::State">
+        <elementDefinition Id="2a0aeb62-81d3-432a-aff4-6194fc174c37" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="2c890816-85e9-4e90-953d-45ab4a4476fc" name="Cloud" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::Cloud">
+        <elementDefinition Id="059023d1-619d-4394-8df0-f090b9d173b2" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="f6e63310-72d7-48e1-a4ec-11c4d38d777d" name="Modelisation CloudBook">
     <elementDefinition Id="94208107-703b-4bbf-9f51-c1243885138f" />
