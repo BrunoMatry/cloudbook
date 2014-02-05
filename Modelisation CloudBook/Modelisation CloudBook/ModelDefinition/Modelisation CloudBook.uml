@@ -17215,10 +17215,157 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
     <packageHasNamedElement>
       <class
         Id="dbc21a87-671b-4fd9-b453-6f9f54208cda"
-        name="FriendsView"
+        name="HMIFriendList"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="21d7f83e-e345-4875-8e07-e70daede73e8"
+            isDerived="false"
+            sourceEndRoleName="FriendsView"
+            targetEndRoleName="FriendView"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="dc6b5778-dbbd-46a7-b9b6-28455e11acdb"
+              LastKnownName="HMIFriend"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e8d49cf8-9158-48b0-b7d6-af4d468f2e26"
+                  name="FriendsView"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="db7d33d6-e347-42f1-b663-90f2ba0d4c90"
+                  name="FriendView"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="9b776c5a-7e4f-4223-8058-6d73d750d997"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="e0429b25-4753-44c2-9956-32aa84e6f13f"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="dc6b5778-dbbd-46a7-b9b6-28455e11acdb"
+        name="HMIFriend"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="b5d206cf-39be-45c8-9e58-83b626957d6e"
+        name="HMITab"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="727533e7-a834-486a-849e-f52d82883fcf"
+        name="HMIMainTab"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="6cbb3f47-0813-40c2-b5e9-9859c6d13c01"
+            isSubstitutable="false">
+            <classMoniker
+              Id="b5d206cf-39be-45c8-9e58-83b626957d6e"
+              LastKnownName="HMITab"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="98d71f21-845b-4836-9a5d-22e1b7e65830"
+        name="HMIResultTab"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="235d3504-7244-4373-9483-3240d971f991"
+            isSubstitutable="false">
+            <classMoniker
+              Id="b5d206cf-39be-45c8-9e58-83b626957d6e"
+              LastKnownName="HMITab"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="32758b0a-ec17-4773-9041-2d851433db0b"
+        name="HMINodeStateTab"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="9fcd870d-84a2-40ad-b145-21e3bff14547"
+            isSubstitutable="false">
+            <classMoniker
+              Id="b5d206cf-39be-45c8-9e58-83b626957d6e"
+              LastKnownName="HMITab"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="cf9a91e1-0846-4f7b-91b6-5dd7f2412352"
+        name="HMIFriendTab"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="08b525c9-2279-415d-aae7-6e75ad747d0a"
+            isSubstitutable="false">
+            <classMoniker
+              Id="b5d206cf-39be-45c8-9e58-83b626957d6e"
+              LastKnownName="HMITab"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
