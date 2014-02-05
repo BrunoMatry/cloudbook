@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="5802e84a-839e-4b39-8741-7ab2856308e7" name="IHM" linkedPackageId="02a65572-460c-4f35-b144-511da65524d9" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="467dd5da-62d3-44ce-bc3b-8cb70a8b3c4e" name="HMIFriendList" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="dbc21a87-671b-4fd9-b453-6f9f54208cda" />
+        <targetEnds>
+          <association Id="ab1efa23-795c-45af-86ca-cc9146aa75cb" isDerived="false" sourceEndRoleName="FriendsView" targetEndRoleName="FriendView" isLeaf="false" isAbstract="false">
+            <classMoniker Id="c321a84b-194a-43b9-9548-94f2be523976" LastKnownName="HMIFriend" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="533e603a-ab19-4573-8580-b988155969f4" name="FriendsView" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e8d49cf8-9158-48b0-b7d6-af4d468f2e26" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="322a3c53-aa1f-4a74-bf89-44000d601c43" name="FriendView" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <lowerValueInternal>
+                    <literalString Id="4c984b50-8823-4b39-ae2a-f226e9135298" name="Lower" value="*">
+                      <elementDefinition Id="9b776c5a-7e4f-4223-8058-6d73d750d997" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="d1a7af81-425c-4bc0-aefa-5b52212b9f51" name="Upper" value="*">
+                      <elementDefinition Id="e0429b25-4753-44c2-9956-32aa84e6f13f" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="db7d33d6-e347-42f1-b663-90f2ba0d4c90" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="21d7f83e-e345-4875-8e07-e70daede73e8" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c321a84b-194a-43b9-9548-94f2be523976" name="HMIFriend" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="dc6b5778-dbbd-46a7-b9b6-28455e11acdb" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="cdef72ea-de36-4b03-82bf-97a18913d1a1" name="HMITab" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b5d206cf-39be-45c8-9e58-83b626957d6e" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="0426d3bd-1fb2-4fb9-a4b6-2bdfcd331c2d" name="HMIMainTab" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="727533e7-a834-486a-849e-f52d82883fcf" />
+        <generalsInternal>
+          <generalization Id="7b260e15-499c-4e0e-8b2a-4cc301e10232" isSubstitutable="false">
+            <classMoniker Id="cdef72ea-de36-4b03-82bf-97a18913d1a1" LastKnownName="HMITab" />
+            <elementDefinition Id="6cbb3f47-0813-40c2-b5e9-9859c6d13c01" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="2712fb57-6d58-4217-a978-b8bc5af0840c" name="HMIResultTab" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="98d71f21-845b-4836-9a5d-22e1b7e65830" />
+        <generalsInternal>
+          <generalization Id="c8a0c590-1537-4786-b155-aad7983c3cd4" isSubstitutable="false">
+            <classMoniker Id="cdef72ea-de36-4b03-82bf-97a18913d1a1" LastKnownName="HMITab" />
+            <elementDefinition Id="235d3504-7244-4373-9483-3240d971f991" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="76ba82fe-17c2-473e-9fe6-90c855bc62a7" name="HMINodeStateTab" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="32758b0a-ec17-4773-9041-2d851433db0b" />
+        <generalsInternal>
+          <generalization Id="661ef7c9-da86-47cd-b1ce-46be6ac66de6" isSubstitutable="false">
+            <classMoniker Id="cdef72ea-de36-4b03-82bf-97a18913d1a1" LastKnownName="HMITab" />
+            <elementDefinition Id="9fcd870d-84a2-40ad-b145-21e3bff14547" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b64bf30b-3787-4702-bda0-6739cfebef92" name="HMIFriendTab" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="cf9a91e1-0846-4f7b-91b6-5dd7f2412352" />
+        <generalsInternal>
+          <generalization Id="abaf1d2c-231d-4481-94e4-d04745f5e1ed" isSubstitutable="false">
+            <classMoniker Id="cdef72ea-de36-4b03-82bf-97a18913d1a1" LastKnownName="HMITab" />
+            <elementDefinition Id="08b525c9-2279-415d-aae7-6e75ad747d0a" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f20d095c-563b-4b04-8385-26a6485b7e3b" name="HMIResultBoard" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c4646b04-1f84-4710-8003-eb50b15f4faa" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="ea256eb0-051a-4498-be17-053dd98a2a32" name="HMISuggestion" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="0cc69dff-1c29-4769-a5b1-9c2d7e1c38cb" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="9e42f644-0565-4c33-8152-bc32425c51b1" name="HMICloudbook" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="249d0906-8195-40e0-acba-3ab5dcf1781a" />
+        <targetEnds>
+          <association Id="6cf27b6f-23f6-476c-bdd1-a9fcb141488a" isDerived="false" sourceEndRoleName="HMICloudbook" targetEndRoleName="HMITabList" isLeaf="false" isAbstract="false">
+            <classMoniker Id="1753acd2-1997-4b93-9d01-30abc9692047" LastKnownName="HMITabList" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2081c2e9-2148-4968-a371-03a571b8bb3c" name="HMICloudbook" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3f664258-ffe4-4da8-a62c-7852ecfdc070" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9a225ab8-1039-4c15-98d5-2e944c629161" name="HMITabList" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4aa3e8b6-1dd8-4e55-b7d2-506c1b774b56" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="1bf480e1-0bb3-418f-a6b9-06bfb72b0fc2" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="1753acd2-1997-4b93-9d01-30abc9692047" name="HMITabList" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="65786562-c9d2-40a9-b7d9-3a893b49df1a" />
+        <targetEnds>
+          <association Id="3150d624-8585-43d2-867d-41ad84ddd059" isDerived="false" sourceEndRoleName="HMITabList" targetEndRoleName="HMIMainTab" isLeaf="false" isAbstract="false">
+            <classMoniker Id="0426d3bd-1fb2-4fb9-a4b6-2bdfcd331c2d" LastKnownName="HMIMainTab" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="611c663c-8500-4ddb-9799-4d7574036505" name="HMITabList" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2c53231f-975e-471f-86a5-1aef64179c8d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7efa5fc5-053b-43f0-af58-06f3079b986e" name="HMIMainTab" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="356e73b2-b497-49a3-bc47-24cf621b57d8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="44099c8b-bf74-4f21-820a-804079ce2e46" />
+          </association>
+          <association Id="a597cafa-598d-4ace-ba48-5d2793387423" isDerived="false" sourceEndRoleName="HMITabList" targetEndRoleName="HMIResultTab" isLeaf="false" isAbstract="false">
+            <classMoniker Id="2712fb57-6d58-4217-a978-b8bc5af0840c" LastKnownName="HMIResultTab" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7e78f8f5-6105-4ea0-a93a-535ca0cac29a" name="HMITabList" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="da6e5ef2-fc6b-4d47-a900-54c4dd64db90" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c73ebadb-1367-4ca8-a312-a80d739fbe5f" name="HMIResultTab" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="956ef789-b51e-4218-be8e-5b39583299d6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a7762c88-5b9c-4ffc-a785-c24828faa66a" />
+          </association>
+          <association Id="df8342a6-5c5c-4e28-b396-41618d073689" isDerived="false" sourceEndRoleName="HMITabList" targetEndRoleName="HMINodeStateTab" isLeaf="false" isAbstract="false">
+            <classMoniker Id="76ba82fe-17c2-473e-9fe6-90c855bc62a7" LastKnownName="HMINodeStateTab" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d5ad4b68-0343-4e80-8c53-5aa00e73ef12" name="HMITabList" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="451c29ff-f61e-4b52-8447-7605ef7359fc" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="89ee3517-391f-4608-9a66-ba79ab17c7a9" name="HMINodeStateTab" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="1c766bcc-dbdd-4c13-9fb9-f1865041bef5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="3fe1c4b1-66b1-4b78-810c-69521e6b6507" />
+          </association>
+          <association Id="95fdd1d3-deb8-4f33-8819-fc29f259df70" isDerived="false" sourceEndRoleName="HMITabList" targetEndRoleName="HMIFriendTab" isLeaf="false" isAbstract="false">
+            <classMoniker Id="b64bf30b-3787-4702-bda0-6739cfebef92" LastKnownName="HMIFriendTab" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7ea5d47c-52aa-4e21-8334-a66f18cee3c8" name="HMITabList" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a0afa7ab-8f87-4694-a59b-4e3d1894ab59" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="caf8005e-148c-4980-975d-a87bc981a3ed" name="HMIFriendTab" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="b310c568-97e9-4cee-8b68-40af852e4be3" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="93fadffa-aac1-4bc0-a55c-4f7879032104" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="02a65572-460c-4f35-b144-511da65524d9" name="Modelisation CloudBook">
+    <elementDefinition Id="94208107-703b-4bbf-9f51-c1243885138f" />
+  </package>
+</logicalClassDesignerModel>

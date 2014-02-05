@@ -160,16 +160,16 @@
               <lifelineMoniker Id="2571fa2b-45e5-4a20-b9a2-fab562ad946d" LastKnownName=": engine" />
             </covered>
           </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="f244a1d6-04d6-408e-95f1-058c034c2645" name="MessageOccurrenceSpecification9">
-            <elementDefinition Id="679f540f-f523-4ca6-b4fe-8428487d4253" />
-            <covered>
-              <lifelineMoniker Id="0a69a467-f710-41cb-aad2-be97ba5c1040" LastKnownName=": friendManager" />
-            </covered>
-          </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="8c099971-45b8-4822-abce-cc210a104be6" name="MessageOccurrenceSpecification10">
             <elementDefinition Id="ebd78cb5-c755-4739-afe6-6bdfdbf42d50" />
             <covered>
               <lifelineMoniker Id="2571fa2b-45e5-4a20-b9a2-fab562ad946d" LastKnownName=": engine" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="f244a1d6-04d6-408e-95f1-058c034c2645" name="MessageOccurrenceSpecification9">
+            <elementDefinition Id="679f540f-f523-4ca6-b4fe-8428487d4253" />
+            <covered>
+              <lifelineMoniker Id="0a69a467-f710-41cb-aad2-be97ba5c1040" LastKnownName=": friendManager" />
             </covered>
           </messageOccurrenceSpecification>
           <executionOccurrenceSpecification Id="3f425e29-0732-49a6-9784-68e7d9799c64" name="ExecutionOccurrenceSpecification6">

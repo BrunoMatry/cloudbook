@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="f3fb65ab-81ac-469b-af19-83a8bf1725b3" name="UMLClassDiagram1" linkedPackageId="aaafe107-b29e-4b5a-a69b-0e7fca8d8411" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="f3fb65ab-81ac-469b-af19-83a8bf1725b3" name="UMLClassDiagram1" linkedPackageId="aaafe107-b29e-4b5a-a69b-0e7fca8d8411" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <ownedCommentsInternal>
     <comment Id="1baed3ef-0487-4425-a93c-af2cfee288e4">
       <elementDefinition Id="ea5775d5-b36d-43a7-9fa8-a147947f58e9" />
@@ -247,18 +247,28 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="f621e31a-622d-4297-b221-8c625f8c2f9e" />
           </association>
+          <association Id="aeb69114-56f9-4fda-96f4-c93576f2e707" isDerived="false" sourceEndRoleName="Node" targetEndRoleName="vector" isLeaf="false" isAbstract="false">
+            <classMoniker Id="154513d3-1069-44e6-8c17-702864c2d5a8" LastKnownName="AppVector" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5eb11ca4-a594-4809-a9d7-781f344b0f8a" name="Node" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5447823e-2b6d-4eab-9382-536e66750ce9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="cbd13874-14bd-4475-ba2b-9d552230bc2d" name="vector" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="17dc8fd0-df3c-428b-abe3-e8faaf02fb57" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="7b261dc2-a4ab-4d5a-b465-9366185f88ce" />
+          </association>
         </targetEnds>
         <ownedAttributesInternal>
           <property Id="14b8dea6-f9bb-45a9-a438-e740c625cee2" name="id" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="885eb355-0a58-49c6-8ada-6a0d49628bd4" />
             <type_NamedElement>
               <referencedTypeMoniker Id="fe63c760-fba5-4d81-907b-09e140e8338b" LastKnownName="int" />
-            </type_NamedElement>
-          </property>
-          <property Id="12a65953-7d9c-4137-a391-5ba6ccb3d12b" name="vector" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="97903d6a-3a40-4b24-be7c-ff68ff89e869" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="bb8492aa-f640-46e7-aa8a-b8426a1ac707" LastKnownName="AppVector" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
@@ -566,11 +576,6 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
     </packageHasNamedElement>
     <packageHasNamedElement>
       <referencedType Id="fe697fa4-bb7c-4f6b-b9e9-7c4f9c69d738" name="AppVector" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::AppVector">
-        <elementDefinition Id="a58f4666-20d6-4103-8c3c-fdc8281629cc" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="bb8492aa-f640-46e7-aa8a-b8426a1ac707" name="AppVector" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::AppVector">
         <elementDefinition Id="a58f4666-20d6-4103-8c3c-fdc8281629cc" />
       </referencedType>
     </packageHasNamedElement>

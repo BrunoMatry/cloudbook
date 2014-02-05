@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="Accueil" Category="Comment" Bounds="-139.090863189697,-102.122818450928,57.7066666666667,25.96" UseManualLocation="True" />
+    <Node Id="Ami" Bounds="277.157292104331,122.922483809896,50,25.96" UseManualLocation="True" />
+    <Node Id="Amis" Bounds="152.557630602519,-107.765762786865,50,25.96" UseManualLocation="True" />
+    <Node Id="BarreTaches" Bounds="250.279578348796,-189.689718743297,83.7066666666667,25.96" UseManualLocation="True" />
+    <Node Id="BoutonQuitter" Bounds="233.83307292797,-108.835094909668,97.22,25.96" Label="Bouton quitter" UseManualLocation="True" />
+    <Node Id="ContenuAmis" Bounds="539.956406261303,-112.676239471436,122.31,25.96" Label="ContenuOngletAmi" UseManualLocation="True" />
+    <Node Id="ContenuOngletAmis" Bounds="231.385857747396,-20.0982972895645,122.31,25.96" Label="ContenuOngletAmi" UseManualLocation="True" />
+    <Node Id="ContenuOngletResultat" Bounds="-71.9387371826172,-19.5593271575461,143.81,25.96" UseManualLocation="True" />
+    <Node Id="ContenuPageResultats" Bounds="361.05307292797,-111.20486114502,143.81,25.96" Label="ContenuOngletResultat" UseManualLocation="True" />
+    <Node Id="EtatNoeud" Bounds="46.1924701436361,-107.818306427002,76.45,25.96" UseManualLocation="True" />
+    <Node Id="ListeAmi" Bounds="266.385865381104,48.8618027104355,64.9766666666667,25.96" UseManualLocation="True" />
+    <Node Id="Onglets" Bounds="10.5745598093669,-188.386901519177,61.2466666666667,25.96" Label="Onglets" UseManualLocation="True" />
+    <Node Id="Page" Bounds="425.42727360332,-193.164960160778,91.3433333333334,25.96" Label="ContenuPage" UseManualLocation="True" />
+    <Node Id="Root" Bounds="125.379682846538,-258.189658988627,50,25.96" Label="root" UseManualLocation="True" />
+    <Node Id="Résultats" Bounds="-51.3841965230306,-103.606342773437,67.5766666666667,25.96" Label="Resultats" UseManualLocation="True" />
+    <Node Id="Suggestion" Bounds="23.6344382024696,55.5855580026347,79.46,25.96" UseManualLocation="True" />
+    <Node Id="TableauResultats" Bounds="-139.588008832428,58.4007728424539,109.103333333333,25.96" UseManualLocation="True" />
+  </Nodes>
+  <Links>
+    <Link Source="BarreTaches" Target="BoutonQuitter" Bounds="285.069553085627,-163.729718743297,5.5077999770254,45.9585661425069" />
+    <Link Source="ContenuOngletAmis" Target="ListeAmi" Bounds="293.732952357373,5.86170289993286,3.12604936418734,34.0378191947719" />
+    <Link Source="ContenuOngletResultat" Target="Suggestion" Bounds="10.9172185621649,6.40067241668701,35.6927100222056,42.3060221304408" />
+    <Link Source="ContenuOngletResultat" Target="TableauResultats" Bounds="-64.2510057180633,6.40067241668701,50.0647237509278,45.916838574354" />
+    <Link Source="ListeAmi" Target="Ami" Bounds="299.449592321813,74.8218045043945,1.73371731229054,39.109506660056" />
+    <Link Source="Onglets" Target="Accueil" Bounds="-79.6488695500642,-162.426901519177,98.0573580539482,55.8498358211768" />
+    <Link Source="Onglets" Target="Amis" Bounds="63.1620496034613,-162.426901519177,84.7468978020089,50.0822663249213" />
+    <Link Source="Onglets" Target="EtatNoeud" Bounds="48.1573641936691,-162.426901519177,25.0266313461871,46.6767765099455" />
+    <Link Source="Onglets" Target="Résultats" Bounds="-3.4824286460972,-162.426901519177,35.6756835462616,51.4257608088063" />
+    <Link Source="Page" Target="ContenuAmis" Bounds="492.0653787239,-167.204960160778,80.4273295513074,49.7913243525218" />
+    <Link Source="Page" Target="ContenuPageResultats" Bounds="442.795637134847,-167.204960160778,22.2629436914037,47.8403664229104" />
+    <Link Source="Root" Target="BarreTaches" Bounds="174.773665668347,-233.421663897682,82.3950809461915,39.8160815643173" />
+    <Link Source="Root" Target="Onglets" Bounds="69.0832863471215,-232.229658988627,60.9937654611504,38.9949004241643" />
+    <Link Source="Root" Target="Page" Bounds="175.379682846538,-240.140997119814,241.227054143806,48.9079348425909" />
+  </Links>
+  <Categories>
+    <Category Id="Comment" Label="Commentaire" Description="Représente un commentaire défini par l'utilisateur sur le diagramme" CanBeDataDriven="True" IsProviderRoot="False" NavigationActionLabel="Commentaires " />
+  </Categories>
+  <Properties>
+    <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
+    <Property Id="Expression" DataType="System.String" />
+    <Property Id="GroupLabel" DataType="System.String" />
+    <Property Id="IsEnabled" DataType="System.Boolean" />
+    <Property Id="IsProviderRoot" Label="IsProviderRoot" Description="IsProviderRoot" DataType="System.Boolean" />
+    <Property Id="Label" Label="Étiquette" Description="Étiquette affichable d'un objet pouvant être annoté" DataType="System.String" />
+    <Property Id="NavigationActionLabel" Label="NavigationActionLabel" Description="NavigationActionLabel" DataType="System.String" />
+    <Property Id="TargetType" DataType="System.Type" />
+    <Property Id="UseManualLocation" DataType="System.Boolean" />
+    <Property Id="Value" DataType="System.String" />
+    <Property Id="ValueLabel" DataType="System.String" />
+  </Properties>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="Commentaire" ValueLabel="Possède un commentaire">
+      <Condition Expression="HasCategory('Comment')" />
+      <Setter Property="Background" Value="#FFFFFACD" />
+      <Setter Property="Stroke" Value="#FFE5C365" />
+      <Setter Property="StrokeThickness" Value="1" />
+      <Setter Property="NodeRadius" Value="2" />
+      <Setter Property="MaxWidth" Value="250" />
+    </Style>
+  </Styles>
+</DirectedGraph>

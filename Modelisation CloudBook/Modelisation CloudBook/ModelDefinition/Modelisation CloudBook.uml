@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="94208107-703b-4bbf-9f51-c1243885138f"
   name="Modelisation CloudBook" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -165,6 +165,28 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
     <comment
       Id="54c427a1-5a33-4f6e-b8fa-79a217775805">
       <body>déjà amis ?</body>
+    </comment>
+    <comment
+      Id="8b99d86b-513b-476f-ae07-6ddba63e3ecd">
+      <body>Les informations d'un noeud ont toutes une version "cachée" et une version "visible"</body>
+    </comment>
+    <comment
+      Id="c93fc265-3c95-4451-b1b6-4aa4a8a8f56d">
+      <body>TODO : edition</body>
+    </comment>
+    <comment
+      Id="1baad2af-3ab2-4d52-8217-df92dc82524b">
+      <body>Détail : Bruno</body>
+      <annotatedElements>
+        <classMoniker
+          Id="37c70dee-23b7-44eb-9b42-68e96f627fa3"
+          LastKnownName="FriendView"
+          LastKnownLocation="Modelisation CloudBook.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="3dbdb618-cc4d-4c32-951d-2e56e966b733">
+      <body>Pas d'observateur car on ne veut pas que les vues se mettent à jour dynamiquement</body>
     </comment>
   </ownedCommentsInternal>
   <packagedElements>
@@ -13622,22 +13644,22 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="679f540f-f523-4ca6-b4fe-8428487d4253"
-            name="MessageOccurrenceSpecification9">
-            <covered>
-              <lifelineMoniker
-                Id="839bc23d-044b-44e8-af2c-5b9eacee302c"
-                LastKnownName=": friendManager"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="ebd78cb5-c755-4739-afe6-6bdfdbf42d50"
             name="MessageOccurrenceSpecification10">
             <covered>
               <lifelineMoniker
                 Id="b5417895-7354-4bf6-a998-1cf576738ec6"
                 LastKnownName=": engine"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="679f540f-f523-4ca6-b4fe-8428487d4253"
+            name="MessageOccurrenceSpecification9">
+            <covered>
+              <lifelineMoniker
+                Id="839bc23d-044b-44e8-af2c-5b9eacee302c"
+                LastKnownName=": friendManager"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -14734,6 +14756,14 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="8a534352-57c6-4de2-8cde-4d2e1a66d4ca"
+            name="save"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperations>
       </Interface>
     </packageHasNamedElement>
@@ -14829,6 +14859,14 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             Id="87689feb-dea1-4a36-8c09-a6531f8d6ba5"
             name="updateInformation"
             visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="bffad1a7-a981-45b3-ba4a-247a817e9cfa"
+            name="save"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -15825,6 +15863,45 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="7b261dc2-a4ab-4d5a-b465-9366185f88ce"
+            isDerived="false"
+            sourceEndRoleName="Node"
+            targetEndRoleName="vector"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="a58f4666-20d6-4103-8c3c-fdc8281629cc"
+              LastKnownName="AppVector"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5447823e-2b6d-4eab-9382-536e66750ce9"
+                  name="Node"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="17dc8fd0-df3c-428b-abe3-e8faaf02fb57"
+                  name="vector"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
         <ownedAttributesInternal>
           <property
@@ -15843,25 +15920,6 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
               <undefinedTypeMoniker
                 Id="ce126c28-7853-4d05-adb7-0cd57e68c6e0"
                 LastKnownName="int"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="97903d6a-3a40-4b24-be7c-ff68ff89e869"
-            name="vector"
-            visibility="Protected"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="a58f4666-20d6-4103-8c3c-fdc8281629cc"
-                LastKnownName="AppVector"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </type_NamedElement>
           </property>
@@ -16538,6 +16596,1387 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
         name="Serializable"
         isAbstract="false"
         isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="33190f82-7e92-43be-9bff-77d5ad713160"
+        name="MemberView"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="5e4efb37-845c-4169-8d27-61744eb40099"
+            isSubstitutable="false">
+            <classMoniker
+              Id="5dc59025-59d3-4619-96de-d1e9e791e939"
+              LastKnownName="Parent"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="d8bbd63b-5f90-4bcd-bc89-2ea935d43bb3"
+        name="NodeView"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="abdbfdba-ac1e-47ea-8718-1287db116fcf"
+            isSubstitutable="false">
+            <classMoniker
+              Id="33190f82-7e92-43be-9bff-77d5ad713160"
+              LastKnownName="MemberView"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </generalization>
+          <generalization
+            Id="ce742cee-341d-4c4a-91c1-7636423706b0"
+            isSubstitutable="false">
+            <classMoniker
+              Id="5dc59025-59d3-4619-96de-d1e9e791e939"
+              LastKnownName="Parent"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="630e3d4a-82d6-4e45-a125-3326e5764ec6"
+            isDerived="false"
+            sourceEndRoleName="NodeView"
+            targetEndRoleName="NodeComponentView"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="953770f9-0ccd-4fb2-ab2d-4aa816458fc3"
+              LastKnownName="NodeComponentView"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="68ec3da7-207e-4082-a02b-db4e7f3832d6"
+                  name="NodeView"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ec3fbd89-f642-4893-9bcd-e310ddc9357f"
+                  name="NodeComponentView"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="01e22f0d-b75b-46df-a0a7-9dae3328e4b2"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="075dd90d-9dd2-40ec-8c69-e1177eb92614"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="a460e873-4586-4dfc-9820-1bd10c773eea"
+            name="model"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="678193de-9a2e-4644-9dea-11a5a88ef147"
+                LastKnownName="Node"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="37c70dee-23b7-44eb-9b42-68e96f627fa3"
+        name="FriendView"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="a0795b8a-5da0-4442-ab12-58759117184e"
+            isSubstitutable="false">
+            <classMoniker
+              Id="953770f9-0ccd-4fb2-ab2d-4aa816458fc3"
+              LastKnownName="NodeComponentView"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="9c1e283c-f3e7-4d44-8b7a-8b64f4ce72dc"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName="vectorView"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="ec93605c-4593-43fe-a1c1-ffc919eca5f1"
+              LastKnownName="AppVectorView"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="80b40bb5-b2f9-4164-9851-97c18817d54b"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2f5326d8-8305-4fd0-9ba0-b263724a5355"
+                  name="vectorView"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="7e771a26-20eb-43bb-8fcf-6e9f155a0363"
+            name="model"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="42e92a9f-2f6e-44ac-bc72-8816ae9dd1b8"
+                LastKnownName="Friend"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="bf2a65f9-cd69-44c7-9f30-b6bfd9459b1a"
+            name="display"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="96606457-a1f8-48c0-ae6c-9c170b6ea154"
+            name="hide"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="29ee0f76-493a-4fe2-ac16-1bc0b5a3d8d3"
+            name="update"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="ec93605c-4593-43fe-a1c1-ffc919eca5f1"
+        name="AppVectorView"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="6d42f89c-c39d-4fd5-90c9-f2173701b2a1"
+            isSubstitutable="false">
+            <classMoniker
+              Id="953770f9-0ccd-4fb2-ab2d-4aa816458fc3"
+              LastKnownName="NodeComponentView"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="9d53dace-14bf-468f-a101-390184ea0123"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName="GridPane"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="e8fcffd4-a4f1-4ca8-99e2-4442fbbe5aa1"
+              LastKnownName="GridPane"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="bfe061ab-c97d-44ce-bc07-d8cd9970d944"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="705cd387-78df-403a-a981-6aa8e17bd8f4"
+                  name="GridPane"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="bffa94f2-af3c-4dd0-b36d-00f3d071f98d"
+            name="model"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="a58f4666-20d6-4103-8c3c-fdc8281629cc"
+                LastKnownName="AppVector"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="de64ce22-4dcd-4824-b855-2ec66bedb125"
+            name="display"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="1b6426d2-bf09-41e6-a015-ce0876a47618"
+            name="hide"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="cda70590-625e-4c4e-b8fe-d243a825c4b9"
+            name="update"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="c4b9f415-1c90-41a8-9604-ed0af5035ceb"
+        name="FriendManagerView"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="8f8bb501-b85e-4c71-b1ef-ac7198d8e11b"
+            isSubstitutable="false">
+            <classMoniker
+              Id="f4838851-d9de-40a7-afc2-cdbdd0adb65c"
+              LastKnownName="Stage"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="0e49a5fd-a483-4dd8-9076-29935dad20e8"
+            isDerived="false"
+            sourceEndRoleName="FriendManagerView"
+            targetEndRoleName="MemberView"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="d8bbd63b-5f90-4bcd-bc89-2ea935d43bb3"
+              LastKnownName="NodeView"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7721d1a0-d0dc-433e-bad5-0f2ddc1a9780"
+                  name="FriendManagerView"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="46ae3c98-ae02-4401-9098-949979ae05b8"
+                  name="MemberView"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="475bae44-c17f-495a-83dd-f844eabcb1cd"
+            name="model"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="0b199594-23e9-4283-9be3-9043a7cf48aa"
+                LastKnownName="FriendManager"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="ce13aa43-eae1-475c-bf22-adf73177034d"
+            name="updateAll"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="e8fcffd4-a4f1-4ca8-99e2-4442fbbe5aa1"
+        name="GridPane"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f4838851-d9de-40a7-afc2-cdbdd0adb65c"
+        name="Stage"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="5dc59025-59d3-4619-96de-d1e9e791e939"
+        name="Parent"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="06da5b90-bb74-4f5f-aa3a-4c4cb897e833"
+        name="MesureView"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="cb99686f-8d7c-43ec-94c7-0466866f638f"
+            isSubstitutable="false">
+            <classMoniker
+              Id="953770f9-0ccd-4fb2-ab2d-4aa816458fc3"
+              LastKnownName="NodeComponentView"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="fd30dd97-a835-4b5b-b0a0-dec9e8f253b2"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName="GridPane"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="e8fcffd4-a4f1-4ca8-99e2-4442fbbe5aa1"
+              LastKnownName="GridPane"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="126c6e8b-2155-402e-89a1-8ea4e8b43637"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e309f52b-5db4-45fd-b770-5ed4c36f8bb7"
+                  name="GridPane"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="1601175b-c495-42e7-b2ef-70b69d12c5e5"
+            name="model"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="1f500c32-c327-482d-bccc-580e515f71bb"
+                LastKnownName="Mesure"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="72c7d5ea-2d32-46a8-9f11-4cfc48e7f299"
+            name="display"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="6338d305-5595-43ae-a316-2441e80b1ccc"
+            name="hide"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="130846d1-8a89-40b4-8f4b-66b930040916"
+            name="update"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="cccb07b7-4deb-4e28-bf3d-7465582fb741"
+        name="StateView"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="6392b244-d490-49e7-885d-8e4cac307032"
+            isSubstitutable="false">
+            <classMoniker
+              Id="953770f9-0ccd-4fb2-ab2d-4aa816458fc3"
+              LastKnownName="NodeComponentView"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="441ad1ba-f01f-4410-9cf3-039c22b15afc"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName="CloudView"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="94877660-b43d-4570-a2d6-2e3926532518"
+              LastKnownName="CloudView"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ceec019e-63bc-4e4c-8c5a-080642fd447e"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fbfe9559-d0d3-447d-9444-c0c4a315efdd"
+                  name="CloudView"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="0296b5c4-16fa-4332-ba69-4fa440e8688c"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="4e78e0f6-bc50-43ed-b52a-f9d086444a6c"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="80ea0b80-5d9c-4b76-afc7-6ef3ac0cbdb0"
+            name="model"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="2a0aeb62-81d3-432a-aff4-6194fc174c37"
+                LastKnownName="State"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="af6c1f33-8ede-4385-ab16-bc872052ea82"
+        name="MessageView"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="bd3448af-b064-4c51-aa62-99aff9f9c128"
+            isSubstitutable="false">
+            <classMoniker
+              Id="953770f9-0ccd-4fb2-ab2d-4aa816458fc3"
+              LastKnownName="NodeComponentView"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="3132b800-1b18-48de-82ad-d6849969ae76"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName="Text"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="5c9d8b00-08bf-4daa-b02f-66883e69f728"
+              LastKnownName="Text"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c266e7ef-ab64-4bb8-9097-1af94325388b"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6b0350dc-0dd1-4cf9-9c80-d8d5f35bbb7c"
+                  name="Text"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="641638e1-cc7e-435c-a81c-966b7cd695a2"
+            name="model"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="ec37915d-d3cb-45a1-9320-49568f18b32e"
+                LastKnownName="Message"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="415448a0-a09a-481e-91c7-9b338c52856f"
+            name="update"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="7bb1b014-f72d-49b6-b895-ebea780b0acb"
+            name="display"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="fb1debbd-fd7c-461c-96e6-1d939a45c73c"
+            name="hide"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="953770f9-0ccd-4fb2-ab2d-4aa816458fc3"
+        name="NodeComponentView"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="c0766ae8-6249-4c69-b2fb-e4cd287c4e5e">
+            <interfaceMoniker
+              Id="b178a2c3-28c3-45d3-9e0a-4b3b891f43fb"
+              LastKnownName="ComponentView"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="a79f0a39-4016-4b30-8a50-39aac7c6ba51"
+            isDerived="false"
+            sourceEndRoleName="component"
+            targetEndRoleName="SummarizedView"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="97c9c18b-6f4a-4aee-a350-24b8cdbd8322"
+              LastKnownName="SummarizedView"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="dff5ead0-2977-48c9-a350-ddc1c640ba4b"
+                  name="component"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9958d998-5ee6-496a-81d0-8954ddc4353d"
+                  name="SummarizedView"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="a11f1a00-c137-47e4-af82-5a10e5dd188a"
+            name="makeSummarizedView"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9b9b1367-38d1-4665-a99a-c7f4f6025f39"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="97c9c18b-6f4a-4aee-a350-24b8cdbd8322"
+                      LastKnownName="SummarizedView"
+                      LastKnownLocation="Modelisation CloudBook.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="97c9c18b-6f4a-4aee-a350-24b8cdbd8322"
+        name="SummarizedView"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="6ff8a624-e603-47bb-96b5-49ee85e38669">
+            <interfaceMoniker
+              Id="b178a2c3-28c3-45d3-9e0a-4b3b891f43fb"
+              LastKnownName="ComponentView"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="05c59347-b91a-4121-8841-f78917f3a2eb"
+            name="display"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="59cf884c-167d-4e11-91b6-e36fb7263dcf"
+            name="hide"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="7deaa31d-11f1-4ccd-ae32-18a924f6ef0e"
+            name="update"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f7db8864-3e17-4c70-9936-0138a8c04ba7"
+        name="HiddenViewDecorator"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="307fd778-db43-47ee-8d41-520fc050c27b"
+        name="SummarizedView" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="5c9d8b00-08bf-4daa-b02f-66883e69f728"
+        name="Text"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="94877660-b43d-4570-a2d6-2e3926532518"
+        name="CloudView"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="d825243b-db66-4e45-8ab9-ec0b06434388"
+            isSubstitutable="false">
+            <classMoniker
+              Id="4287e971-b22e-4a95-ae9b-bb1442a09db2"
+              LastKnownName="ImageView"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="b0b6103a-509f-497d-b95b-89508275c0ce"
+            name="model"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <enumerationMoniker
+                Id="059023d1-619d-4394-8df0-f090b9d173b2"
+                LastKnownName="Cloud"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="dbc21a87-671b-4fd9-b453-6f9f54208cda"
+        name="HMIFriendList"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="21d7f83e-e345-4875-8e07-e70daede73e8"
+            isDerived="false"
+            sourceEndRoleName="FriendsView"
+            targetEndRoleName="FriendView"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="dc6b5778-dbbd-46a7-b9b6-28455e11acdb"
+              LastKnownName="HMIFriend"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e8d49cf8-9158-48b0-b7d6-af4d468f2e26"
+                  name="FriendsView"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="db7d33d6-e347-42f1-b663-90f2ba0d4c90"
+                  name="FriendView"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="9b776c5a-7e4f-4223-8058-6d73d750d997"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="e0429b25-4753-44c2-9956-32aa84e6f13f"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="dc6b5778-dbbd-46a7-b9b6-28455e11acdb"
+        name="HMIFriend"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="b5d206cf-39be-45c8-9e58-83b626957d6e"
+        name="HMITab"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="727533e7-a834-486a-849e-f52d82883fcf"
+        name="HMIMainTab"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="6cbb3f47-0813-40c2-b5e9-9859c6d13c01"
+            isSubstitutable="false">
+            <classMoniker
+              Id="b5d206cf-39be-45c8-9e58-83b626957d6e"
+              LastKnownName="HMITab"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="98d71f21-845b-4836-9a5d-22e1b7e65830"
+        name="HMIResultTab"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="235d3504-7244-4373-9483-3240d971f991"
+            isSubstitutable="false">
+            <classMoniker
+              Id="b5d206cf-39be-45c8-9e58-83b626957d6e"
+              LastKnownName="HMITab"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="32758b0a-ec17-4773-9041-2d851433db0b"
+        name="HMINodeStateTab"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="9fcd870d-84a2-40ad-b145-21e3bff14547"
+            isSubstitutable="false">
+            <classMoniker
+              Id="b5d206cf-39be-45c8-9e58-83b626957d6e"
+              LastKnownName="HMITab"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="cf9a91e1-0846-4f7b-91b6-5dd7f2412352"
+        name="HMIFriendTab"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="08b525c9-2279-415d-aae7-6e75ad747d0a"
+            isSubstitutable="false">
+            <classMoniker
+              Id="b5d206cf-39be-45c8-9e58-83b626957d6e"
+              LastKnownName="HMITab"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="c4646b04-1f84-4710-8003-eb50b15f4faa"
+        name="HMIResultBoard"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="0cc69dff-1c29-4769-a5b1-9c2d7e1c38cb"
+        name="HMISuggestion"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="249d0906-8195-40e0-acba-3ab5dcf1781a"
+        name="HMICloudbook"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="1bf480e1-0bb3-418f-a6b9-06bfb72b0fc2"
+            isDerived="false"
+            sourceEndRoleName="HMICloudbook"
+            targetEndRoleName="HMITabList"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="65786562-c9d2-40a9-b7d9-3a893b49df1a"
+              LastKnownName="HMITabList"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3f664258-ffe4-4da8-a62c-7852ecfdc070"
+                  name="HMICloudbook"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4aa3e8b6-1dd8-4e55-b7d2-506c1b774b56"
+                  name="HMITabList"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="65786562-c9d2-40a9-b7d9-3a893b49df1a"
+        name="HMITabList"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="44099c8b-bf74-4f21-820a-804079ce2e46"
+            isDerived="false"
+            sourceEndRoleName="HMITabList"
+            targetEndRoleName="HMIMainTab"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="727533e7-a834-486a-849e-f52d82883fcf"
+              LastKnownName="HMIMainTab"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2c53231f-975e-471f-86a5-1aef64179c8d"
+                  name="HMITabList"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="356e73b2-b497-49a3-bc47-24cf621b57d8"
+                  name="HMIMainTab"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="a7762c88-5b9c-4ffc-a785-c24828faa66a"
+            isDerived="false"
+            sourceEndRoleName="HMITabList"
+            targetEndRoleName="HMIResultTab"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="98d71f21-845b-4836-9a5d-22e1b7e65830"
+              LastKnownName="HMIResultTab"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="da6e5ef2-fc6b-4d47-a900-54c4dd64db90"
+                  name="HMITabList"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="956ef789-b51e-4218-be8e-5b39583299d6"
+                  name="HMIResultTab"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="3fe1c4b1-66b1-4b78-810c-69521e6b6507"
+            isDerived="false"
+            sourceEndRoleName="HMITabList"
+            targetEndRoleName="HMINodeStateTab"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="32758b0a-ec17-4773-9041-2d851433db0b"
+              LastKnownName="HMINodeStateTab"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="451c29ff-f61e-4b52-8447-7605ef7359fc"
+                  name="HMITabList"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1c766bcc-dbdd-4c13-9fb9-f1865041bef5"
+                  name="HMINodeStateTab"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="93fadffa-aac1-4bc0-a55c-4f7879032104"
+            isDerived="false"
+            sourceEndRoleName="HMITabList"
+            targetEndRoleName="HMIFriendTab"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="cf9a91e1-0846-4f7b-91b6-5dd7f2412352"
+              LastKnownName="HMIFriendTab"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a0afa7ab-8f87-4694-a59b-4e3d1894ab59"
+                  name="HMITabList"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b310c568-97e9-4cee-8b68-40af852e4be3"
+                  name="HMIFriendTab"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4287e971-b22e-4a95-ae9b-bb1442a09db2"
+        name="ImageView"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="b178a2c3-28c3-45d3-9e0a-4b3b891f43fb"
+        name="ComponentView"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="390d913b-4c6a-4c7e-aa83-f8091860b9d3"
+            name="display"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="8a443ab4-eec0-46bb-aba3-5ebd9e470e50"
+            name="hide"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="75276961-605b-4b04-887f-ea51b6333510"
+            name="update"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="ae0a42a7-d762-4a02-84ec-d86126f56b43"
+        name="Node"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
