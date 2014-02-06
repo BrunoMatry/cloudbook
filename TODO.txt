@@ -6,9 +6,7 @@ Vues
 Sérialisation => Abderrahmane
 
 Essayer d'unifier la mise en forme, en particulier :
-constructeurs par défaut
 dans les vues, la référence vers le modèle
-les constructeurs d'initialisation
 
 Revoir le patron de conception ActiveObject : le scheduler créé des threads et n'utilise pas de file à priori.
 

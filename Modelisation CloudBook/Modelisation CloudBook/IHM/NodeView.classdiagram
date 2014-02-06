@@ -16,10 +16,6 @@
         <classMoniker Id="267dfb77-0221-4717-a8cd-db8957531192" LastKnownName="FriendView" />
       </annotatedElements>
     </comment>
-    <comment Id="bd569c0c-663b-4dc5-87cb-df9f4444e8d6">
-      <elementDefinition Id="3dbdb618-cc4d-4c32-951d-2e56e966b733" />
-      <body>Pas d'observateur car on ne veut pas que les vues se mettent à jour dynamiquement</body>
-    </comment>
     <comment Id="170f06ef-c0f4-4ac2-8264-2789ce8ae9af">
       <elementDefinition Id="e068d1d0-3aa7-4e12-9ad8-b707fbf5b72e" />
       <body>Useful for polymorphism
