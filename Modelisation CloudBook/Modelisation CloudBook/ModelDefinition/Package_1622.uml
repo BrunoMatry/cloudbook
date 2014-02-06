@@ -115,7 +115,7 @@
           <association
             Id="e17a48b0-a9b1-49a7-a02e-feeba18f3b12"
             isDerived="false"
-            sourceEndRoleName="command"
+            sourceEndRoleName=""
             targetEndRoleName="FutureTask"
             isLeaf="false"
             isAbstract="false">
@@ -127,7 +127,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="a386d247-4bfd-4f64-8325-27309ba1afec"
-                  name="command"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -476,6 +475,14 @@
               LastKnownName="IScheduler"
               LastKnownLocation="Package_1622.uml" />
           </interfaceRealization>
+          <dependency
+            Id="c126eb8e-22dc-4f79-9efe-4e58a2b710c9">
+            <classMoniker
+              Id="53eecfb5-24c5-4a75-a949-5f3952199b98"
+              LastKnownName="Servant"
+              LastKnownLocation="Package_1622.uml" />
+            <description>&lt;&lt;create&gt;&gt;</description>
+          </dependency>
         </suppliersInternal>
         <generalsInternal>
           <generalization
@@ -488,45 +495,6 @@
           </generalization>
         </generalsInternal>
         <targetEnds>
-          <association
-            Id="14ee9c6c-2122-458c-957b-e3c2a298a99a"
-            isDerived="false"
-            sourceEndRoleName="Scheduler"
-            targetEndRoleName="Servant"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="53eecfb5-24c5-4a75-a949-5f3952199b98"
-              LastKnownName="Servant"
-              LastKnownLocation="Package_1622.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="5ecdb723-bb22-4c28-87b0-d8082254dd8e"
-                  name="Scheduler"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="1c4fb9b2-b7f4-4d41-9c5c-c4a65ae535fa"
-                  name="Servant"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
           <association
             Id="a798014d-ea31-4306-b722-9115d9c6ef34"
             isDerived="false"

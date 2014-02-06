@@ -2,10 +2,6 @@
 <logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 20.125, 10.625" name="ServerApp">
   <logicalClassDesignerModelMoniker Id="167e4883-d43c-4a5a-86c9-7c3745d0aa7b" />
   <nestedChildShapes>
-    <commentShape Id="ac722b9f-f39b-4cbe-bc8e-37b9256cb9a6" absoluteBounds="1.5, 0.75, 1.25, 1.125" customColor="251, 247, 200">
-      <commentMoniker Id="df6567eb-ccff-4b71-8f44-fe4543778288" />
-      <relativeChildShapes />
-    </commentShape>
     <packageShape Id="60799136-c7e0-4717-9375-2ed3ff846fa9" absoluteBounds="4.5, 1.375, 8.25, 1.75" customColor="255, 249, 230" hideQualifiedName="false">
       <packageMoniker Id="fb6f8736-de4f-4256-bab4-badae0a38111" LastKnownName="java.util.concurent" />
       <nestedChildShapes>
@@ -137,14 +133,6 @@
         <classShapeMoniker Id="f54ab51b-dabd-496d-ac65-acf6937abced" />
       </nodes>
     </commentConnector>
-    <associationConnector edgePoints="[(6.5 : 6.67208331346512); (3.46043882972427 : 6.67208331346512); (3.46043882972427 : 9.125)]" manuallyRouted="true" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="1" targetMultiplicity="1">
-      <associationMoniker Id="5e4d877d-4b83-4a2a-91fc-2b86ca8e241a" />
-      <relativeChildShapes />
-      <nodes>
-        <classShapeMoniker Id="578effae-f9ea-48ba-933e-4ca34381be26" />
-        <classShapeMoniker Id="e92d0ab0-fdda-47e9-8d85-72de64e2032b" />
-      </nodes>
-    </associationConnector>
     <associationConnector edgePoints="[(8.44764397946823 : 7.09765622516473); (8.44764397946823 : 9.125)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="1" targetMultiplicity="1">
       <associationMoniker Id="08cefdda-16a7-4af8-8f65-ffafc0ef7993" />
       <relativeChildShapes />
@@ -190,7 +178,7 @@
         <classShapeMoniker Id="57921806-bdcd-4a9f-b1f0-67458230e9a2" />
       </nodes>
     </commentConnector>
-    <realizationConnector edgePoints="[(3.5 : 9.125); (3.5 : 8.81249998013179); (5.875 : 8.81249998013179); (5.875 : 8.43749998013179)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" showAsLollipop="false">
+    <realizationConnector edgePoints="[(3.95100911511044 : 9.125); (3.95100911511044 : 8.81249998013179); (5.875 : 8.81249998013179); (5.875 : 8.43749998013179)]" fixedFrom="Caller" fixedTo="NotFixed" customColor="113, 111, 110" showAsLollipop="false">
       <interfaceRealizationMoniker Id="bcce13f5-0ab1-40a7-b1bc-854fd6ac4f9e" />
       <relativeChildShapes />
       <nodes>
@@ -222,5 +210,13 @@
         <interfaceShapeMoniker Id="14894012-27fd-4d8c-9a8d-e38e6e4e1388" />
       </nodes>
     </associationConnector>
+    <dependencyConnector edgePoints="[(6.5 : 6.48632811258237); (3.44891826924914 : 6.48632811258237); (3.44891826924914 : 9.125)]" fixedFrom="Algorithm" fixedTo="Caller" customColor="Black">
+      <dependencyMoniker Id="293da1a4-65a1-4ca9-a70e-2fb80b9bf606" />
+      <relativeChildShapes />
+      <nodes>
+        <classShapeMoniker Id="578effae-f9ea-48ba-933e-4ca34381be26" />
+        <classShapeMoniker Id="e92d0ab0-fdda-47e9-8d85-72de64e2032b" />
+      </nodes>
+    </dependencyConnector>
   </nestedChildShapes>
 </logicalClassDesignerDiagram>

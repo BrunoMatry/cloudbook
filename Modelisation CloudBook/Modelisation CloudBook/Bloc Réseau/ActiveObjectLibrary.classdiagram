@@ -1,15 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="167e4883-d43c-4a5a-86c9-7c3745d0aa7b" name="ServerApp" linkedPackageId="7fcc2720-be11-493a-b349-d88a63b710cc" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <ownedCommentsInternal>
-    <comment Id="df6567eb-ccff-4b71-8f44-fe4543778288">
-      <elementDefinition Id="500fe901-ab8a-4748-8aa2-c2458fa1768d" />
-      <body>Active Object - server side
-
-
-
-in fact, a library used by the Client app</body>
-    </comment>
-  </ownedCommentsInternal>
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="fb6f8736-de4f-4256-bab4-badae0a38111" name="java.util.concurent">
@@ -89,11 +79,11 @@ in fact, a library used by the Client app</body>
             <class Id="bd39286f-ad65-4aa5-969e-4387e46056e8" name="GetResult" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="20be7ea3-04b6-40c7-8408-bfaa058feb74" />
               <targetEnds>
-                <association Id="8abd5a09-bbfa-4f65-a28c-431aca07ee82" isDerived="false" sourceEndRoleName="command" targetEndRoleName="FutureTask" isLeaf="false" isAbstract="false">
+                <association Id="8abd5a09-bbfa-4f65-a28c-431aca07ee82" isDerived="false" sourceEndRoleName="" targetEndRoleName="FutureTask" isLeaf="false" isAbstract="false">
                   <classMoniker Id="b9041077-5ade-4e91-bb32-06c5a401f11a" LastKnownName="FutureTask" />
                   <relationshipOwnedElementsInternal>
                     <associationHasOwnedEnds>
-                      <memberEnd Id="e59da202-ede3-4ffa-863e-4780f0cc56f8" name="command" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                      <memberEnd Id="e59da202-ede3-4ffa-863e-4780f0cc56f8" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
                         <elementDefinition Id="a386d247-4bfd-4f64-8325-27309ba1afec" />
                       </memberEnd>
                     </associationHasOwnedEnds>
@@ -226,6 +216,11 @@ in fact, a library used by the Client app</body>
                   <interfaceMoniker Id="fc91672a-0f94-4e11-bc10-fa3f5fddb7a9" LastKnownName="IScheduler" />
                   <elementDefinition Id="944da8ad-a55a-4004-83b3-f779860e605e" />
                 </interfaceRealization>
+                <dependency Id="293da1a4-65a1-4ca9-a70e-2fb80b9bf606">
+                  <classMoniker Id="d1c22141-e4ba-4cc4-9c39-ee83a913dfae" LastKnownName="Servant" />
+                  <description>&lt;&lt;create&gt;&gt;</description>
+                  <elementDefinition Id="c126eb8e-22dc-4f79-9efe-4e58a2b710c9" />
+                </dependency>
               </suppliersInternal>
               <generalsInternal>
                 <generalization Id="c07e01fc-d406-425d-9fee-e306fed24216" isSubstitutable="false">
@@ -234,22 +229,6 @@ in fact, a library used by the Client app</body>
                 </generalization>
               </generalsInternal>
               <targetEnds>
-                <association Id="5e4d877d-4b83-4a2a-91fc-2b86ca8e241a" isDerived="false" sourceEndRoleName="Scheduler" targetEndRoleName="Servant" isLeaf="false" isAbstract="false">
-                  <classMoniker Id="d1c22141-e4ba-4cc4-9c39-ee83a913dfae" LastKnownName="Servant" />
-                  <relationshipOwnedElementsInternal>
-                    <associationHasOwnedEnds>
-                      <memberEnd Id="96c1e982-119d-439c-94b7-321f98e41e9b" name="Scheduler" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                        <elementDefinition Id="5ecdb723-bb22-4c28-87b0-d8082254dd8e" />
-                      </memberEnd>
-                    </associationHasOwnedEnds>
-                    <associationHasOwnedEnds>
-                      <memberEnd Id="21863cd4-2ce6-418b-aa2f-546cbf4c4855" name="Servant" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                        <elementDefinition Id="1c4fb9b2-b7f4-4d41-9c5c-c4a65ae535fa" />
-                      </memberEnd>
-                    </associationHasOwnedEnds>
-                  </relationshipOwnedElementsInternal>
-                  <elementDefinition Id="14ee9c6c-2122-458c-957b-e3c2a298a99a" />
-                </association>
                 <association Id="08cefdda-16a7-4af8-8f65-ffafc0ef7993" isDerived="false" sourceEndRoleName="Scheduler" targetEndRoleName="proxyClientService" isLeaf="false" isAbstract="false">
                   <classMoniker Id="f20f08fc-b810-4fd9-9ed0-ddc1b8d0e436" LastKnownName="ProxyClientService" />
                   <relationshipOwnedElementsInternal>
