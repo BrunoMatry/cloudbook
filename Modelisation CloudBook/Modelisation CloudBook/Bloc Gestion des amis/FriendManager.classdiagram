@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="f3fb65ab-81ac-469b-af19-83a8bf1725b3" name="UMLClassDiagram1" linkedPackageId="aaafe107-b29e-4b5a-a69b-0e7fca8d8411" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="f3fb65ab-81ac-469b-af19-83a8bf1725b3" name="UMLClassDiagram1" linkedPackageId="aaafe107-b29e-4b5a-a69b-0e7fca8d8411" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <ownedCommentsInternal>
     <comment Id="1baed3ef-0487-4425-a93c-af2cfee288e4">
       <elementDefinition Id="ea5775d5-b36d-43a7-9fa8-a147947f58e9" />
@@ -88,8 +88,26 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             <elementDefinition Id="869f19b2-b051-449e-9fa6-4153fb1424ea" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="93496a52-71cd-43b7-8f42-1c2ac4c46493" name="int id" direction="In" isUnique="false">
-                  <elementDefinition Id="2ad1aa66-bfe0-4893-864a-bd0dbeffb73b" />
+                <parameter Id="d7a5279d-e46d-497e-a7ae-8e644af5a232" name="Sender sender" direction="In" isUnique="false">
+                  <elementDefinition Id="8ffae005-a18c-4fa1-bbf8-c086eb478eea" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="8e3b9057-76e5-4003-a8ab-18b20e9c78e5" name="isFriend" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a4cf0bfc-94fa-47c6-ac91-5822882eb768" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b83ffb28-c637-446a-aa5d-f6c3cdfa77d7" name="int id" direction="In" isUnique="false">
+                  <elementDefinition Id="a7828e47-7fe4-4c8f-8a42-e233ae5f5e49" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b62281dc-730c-4dd5-bb0c-7a0c42623ed2" direction="Return" isUnique="false">
+                  <elementDefinition Id="f14cd5e5-0182-42e2-b45b-aee6a7db9e6e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="3ccdb6a1-9687-4fdb-a22c-4540de0a0fb4" LastKnownName="bool" />
+                  </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -254,21 +272,21 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="f621e31a-622d-4297-b221-8c625f8c2f9e" />
           </association>
-          <association Id="aeb69114-56f9-4fda-96f4-c93576f2e707" isDerived="false" sourceEndRoleName="Node" targetEndRoleName="vector" isLeaf="false" isAbstract="false">
+          <association Id="b2a1b429-d623-457d-aa9a-e75e3f538051" isDerived="false" sourceEndRoleName="node" targetEndRoleName="vector" isLeaf="false" isAbstract="false">
             <classMoniker Id="154513d3-1069-44e6-8c17-702864c2d5a8" LastKnownName="AppVector" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="5eb11ca4-a594-4809-a9d7-781f344b0f8a" name="Node" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="5447823e-2b6d-4eab-9382-536e66750ce9" />
+                <memberEnd Id="ad3265b3-e301-46f3-adda-bf17e003a087" name="node" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="84793056-a612-4c00-9aab-49763fcc35ad" />
                 </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
-                <memberEnd Id="cbd13874-14bd-4475-ba2b-9d552230bc2d" name="vector" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
-                  <elementDefinition Id="17dc8fd0-df3c-428b-abe3-e8faaf02fb57" />
+                <memberEnd Id="ff6b468c-3894-4c0b-a275-fbf208a6dca5" name="vector" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="6d69b313-9b62-4e63-b09f-679687073b07" />
                 </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
-            <elementDefinition Id="7b261dc2-a4ab-4d5a-b465-9366185f88ce" />
+            <elementDefinition Id="30c733bd-8d0c-4c93-b678-baf9cada5e06" />
           </association>
         </targetEnds>
         <ownedAttributesInternal>

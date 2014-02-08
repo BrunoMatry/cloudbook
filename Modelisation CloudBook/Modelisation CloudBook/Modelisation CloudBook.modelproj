@@ -43,6 +43,20 @@
       <SubType>Content</SubType>
       <DependentUpon>Bloc Gestion des amis\FriendManager.classdiagram</DependentUpon>
     </Content>
+    <Content Include="Bloc Gestion des amis\Ajout d'un ami.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Bloc Gestion des amis\Ajout d'un ami.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Bloc Gestion des amis\Ajout d'un ami.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Bloc Gestion des amis\Nettoyage de la liste d'amis.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Bloc Gestion des amis\Nettoyage de la liste d'amis.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Bloc Gestion des amis\Nettoyage de la liste d'amis.sequencediagram</DependentUpon>
+    </Content>
     <Content Include="Bloc Moteur\Engine.classdiagram">
       <SubType>Content</SubType>
     </Content>
@@ -141,13 +155,6 @@
       <SubType>Content</SubType>
       <DependentUpon>Bloc Traitement Requete\TraitementRequete.sequencediagram</DependentUpon>
     </Content>
-    <Content Include="Bloc Traitement Requete\Requete.activitydiagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Bloc Traitement Requete\Requete.activitydiagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>Bloc Traitement Requete\Requete.activitydiagram</DependentUpon>
-    </Content>
     <Content Include="IHM\IHM.classdiagram">
       <SubType>Content</SubType>
     </Content>
@@ -162,8 +169,22 @@
       <SubType>Content</SubType>
       <DependentUpon>IHM\NodeView.classdiagram</DependentUpon>
     </Content>
+    <Content Include="IHM\Requete.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="IHM\Requete.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>IHM\Requete.activitydiagram</DependentUpon>
+    </Content>
     <Content Include="IHM\StructureIHM.dgml">
       <SubType>Content</SubType>
+    </Content>
+    <Content Include="InteractionUse1.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="InteractionUse1.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>InteractionUse1.sequencediagram</DependentUpon>
     </Content>
     <Content Include="ModelDefinition\Package1_1456.uml">
       <SubType>Content</SubType>
