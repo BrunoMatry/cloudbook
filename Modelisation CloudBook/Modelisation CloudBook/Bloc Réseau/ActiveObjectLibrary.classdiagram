@@ -1,15 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="167e4883-d43c-4a5a-86c9-7c3745d0aa7b" name="ServerApp" linkedPackageId="7fcc2720-be11-493a-b349-d88a63b710cc" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <ownedCommentsInternal>
-    <comment Id="df6567eb-ccff-4b71-8f44-fe4543778288">
-      <elementDefinition Id="500fe901-ab8a-4748-8aa2-c2458fa1768d" />
-      <body>Active Object - server side
-
-
-
-in fact, a library used by the Client app</body>
-    </comment>
-  </ownedCommentsInternal>
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="fb6f8736-de4f-4256-bab4-badae0a38111" name="java.util.concurent">
@@ -42,29 +32,6 @@ in fact, a library used by the Client app</body>
                 </redefinableTemplateSignature>
               </ownedRedefinableTemplateSignatureInternal>
             </class>
-          </packageHasNamedElement>
-          <packageHasNamedElement>
-            <Interface Id="c23f1b1f-750c-4f4e-b5e4-7cb43e053f2a" name="Queue" isAbstract="false" isLeaf="false">
-              <elementDefinition Id="f5bd04c9-98af-4b03-9910-87ec9c82a0e2" />
-              <ownedRedefinableTemplateSignatureInternal>
-                <redefinableTemplateSignature Id="105375e9-be61-40c9-b669-1b2dd646b5a3" parameters="" isLeaf="false">
-                  <elementDefinition Id="a2e2c8a0-bf58-45b0-8fa6-af784b890d8a" />
-                  <ownedParameters>
-                    <classifierTemplateParameter Id="12806349-0127-4a57-a8c7-a47bcbdcf07e">
-                      <elementDefinition Id="0d1e7cad-3f7f-4a29-a0bb-57901c3db681" />
-                      <ownedParameterableElement>
-                        <class Id="beea3e4e-a65b-49cf-bf2d-536239df7445" name="T" isAbstract="false" isLeaf="false" isActiveClass="false">
-                          <elementDefinition Id="e45546d3-d6c2-4547-b89c-dc87d19b0466" />
-                        </class>
-                      </ownedParameterableElement>
-                      <constrainingClassifier>
-                        <referencedTypeMoniker Id="c5d9ce0d-b71c-4bdd-a8b6-e64e1fcf5b48" LastKnownName="GetResult" />
-                      </constrainingClassifier>
-                    </classifierTemplateParameter>
-                  </ownedParameters>
-                </redefinableTemplateSignature>
-              </ownedRedefinableTemplateSignatureInternal>
-            </Interface>
           </packageHasNamedElement>
         </packagedElements>
       </package>
@@ -112,11 +79,11 @@ in fact, a library used by the Client app</body>
             <class Id="bd39286f-ad65-4aa5-969e-4387e46056e8" name="GetResult" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="20be7ea3-04b6-40c7-8408-bfaa058feb74" />
               <targetEnds>
-                <association Id="8abd5a09-bbfa-4f65-a28c-431aca07ee82" isDerived="false" sourceEndRoleName="command" targetEndRoleName="FutureTask" isLeaf="false" isAbstract="false">
+                <association Id="8abd5a09-bbfa-4f65-a28c-431aca07ee82" isDerived="false" sourceEndRoleName="" targetEndRoleName="FutureTask" isLeaf="false" isAbstract="false">
                   <classMoniker Id="b9041077-5ade-4e91-bb32-06c5a401f11a" LastKnownName="FutureTask" />
                   <relationshipOwnedElementsInternal>
                     <associationHasOwnedEnds>
-                      <memberEnd Id="e59da202-ede3-4ffa-863e-4780f0cc56f8" name="command" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                      <memberEnd Id="e59da202-ede3-4ffa-863e-4780f0cc56f8" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
                         <elementDefinition Id="a386d247-4bfd-4f64-8325-27309ba1afec" />
                       </memberEnd>
                     </associationHasOwnedEnds>
@@ -128,31 +95,39 @@ in fact, a library used by the Client app</body>
                   </relationshipOwnedElementsInternal>
                   <elementDefinition Id="e17a48b0-a9b1-49a7-a02e-feeba18f3b12" />
                 </association>
+                <association Id="5a375491-f531-4256-85e8-ad0445e4b334" isDerived="false" sourceEndRoleName="" targetEndRoleName="Result" isLeaf="false" isAbstract="false">
+                  <interfaceMoniker Id="ea404084-ad7d-4801-954c-bb6f439d0579" LastKnownName="Result" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="f1ee4122-cafd-413e-8c75-e99b4826bc1c" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="70ac94b2-4c5c-4f18-9dab-7ffd4977cedb" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="8daa7529-1e2d-49f2-a6f8-b8b07272ae3a" name="Result" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                        <elementDefinition Id="81942aa8-4a6f-4a35-ac73-0584b4553613" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="b9a6dbb1-0710-4e2d-9a65-839a2d8efeb4" />
+                </association>
+                <association Id="77878980-3051-4432-a028-d604fa935439" isDerived="false" sourceEndRoleName="" targetEndRoleName="Sendable" isLeaf="false" isAbstract="false">
+                  <interfaceMoniker Id="be1e3676-85ac-4803-ad11-bd23cfcfab91" LastKnownName="Sendable" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="bd206142-0053-41c5-916b-6350ab64ef8b" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="11f4faad-4d95-43d3-937f-bd4ad7a17911" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="ed6ef2eb-c986-4497-9c27-fd2ca9dfdfc1" name="Sendable" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                        <elementDefinition Id="de334717-f855-455e-b9c4-7215e3796785" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="5a5f6e5f-5f4d-49b9-896e-12f411d30b1b" />
+                </association>
               </targetEnds>
-              <ownedAttributesInternal>
-                <property Id="9c758e90-5daa-495d-8dca-aace5a93e73a" name="result" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <lowerValueInternal>
-                    <literalString Id="5784dc14-b550-44c6-963c-c15909d58c8f" name="Lower" value="1">
-                      <elementDefinition Id="cb779559-6a90-4f1f-99b6-888fd5a12c37" />
-                    </literalString>
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString Id="8d70f7fd-16c8-4bc7-9d84-b33e98992d95" name="Upper" value="1">
-                      <elementDefinition Id="95337961-6834-4cce-a01e-3b4afb4c8a8a" />
-                    </literalString>
-                  </upperValueInternal>
-                  <elementDefinition Id="184616b2-7069-43d1-a14f-41c8fe21a9d8" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="17f0f46c-fb4b-439f-9797-227dfff4ba67" LastKnownName="Result" />
-                  </type_NamedElement>
-                </property>
-                <property Id="1e9a8649-0209-4836-974d-b14441777f3f" name="sendable" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="715b5f30-9bf0-425b-92cd-8152c93cd625" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="8944082c-0c70-42d4-8ebb-ee763f67582e" LastKnownName="Sendable" />
-                  </type_NamedElement>
-                </property>
-              </ownedAttributesInternal>
               <ownedOperationsInternal>
                 <operation Id="cae26cc4-e863-4b08-b113-6a66213c3337" name="guard" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="08fd1bb6-5df8-44d4-b025-807832263d62" />
@@ -241,6 +216,11 @@ in fact, a library used by the Client app</body>
                   <interfaceMoniker Id="fc91672a-0f94-4e11-bc10-fa3f5fddb7a9" LastKnownName="IScheduler" />
                   <elementDefinition Id="944da8ad-a55a-4004-83b3-f779860e605e" />
                 </interfaceRealization>
+                <dependency Id="293da1a4-65a1-4ca9-a70e-2fb80b9bf606">
+                  <classMoniker Id="d1c22141-e4ba-4cc4-9c39-ee83a913dfae" LastKnownName="Servant" />
+                  <description>&lt;&lt;create&gt;&gt;</description>
+                  <elementDefinition Id="c126eb8e-22dc-4f79-9efe-4e58a2b710c9" />
+                </dependency>
               </suppliersInternal>
               <generalsInternal>
                 <generalization Id="c07e01fc-d406-425d-9fee-e306fed24216" isSubstitutable="false">
@@ -249,22 +229,6 @@ in fact, a library used by the Client app</body>
                 </generalization>
               </generalsInternal>
               <targetEnds>
-                <association Id="5e4d877d-4b83-4a2a-91fc-2b86ca8e241a" isDerived="false" sourceEndRoleName="Scheduler" targetEndRoleName="Servant" isLeaf="false" isAbstract="false">
-                  <classMoniker Id="d1c22141-e4ba-4cc4-9c39-ee83a913dfae" LastKnownName="Servant" />
-                  <relationshipOwnedElementsInternal>
-                    <associationHasOwnedEnds>
-                      <memberEnd Id="96c1e982-119d-439c-94b7-321f98e41e9b" name="Scheduler" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                        <elementDefinition Id="5ecdb723-bb22-4c28-87b0-d8082254dd8e" />
-                      </memberEnd>
-                    </associationHasOwnedEnds>
-                    <associationHasOwnedEnds>
-                      <memberEnd Id="21863cd4-2ce6-418b-aa2f-546cbf4c4855" name="Servant" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                        <elementDefinition Id="1c4fb9b2-b7f4-4d41-9c5c-c4a65ae535fa" />
-                      </memberEnd>
-                    </associationHasOwnedEnds>
-                  </relationshipOwnedElementsInternal>
-                  <elementDefinition Id="14ee9c6c-2122-458c-957b-e3c2a298a99a" />
-                </association>
                 <association Id="08cefdda-16a7-4af8-8f65-ffafc0ef7993" isDerived="false" sourceEndRoleName="Scheduler" targetEndRoleName="proxyClientService" isLeaf="false" isAbstract="false">
                   <classMoniker Id="f20f08fc-b810-4fd9-9ed0-ddc1b8d0e436" LastKnownName="ProxyClientService" />
                   <relationshipOwnedElementsInternal>
@@ -280,22 +244,6 @@ in fact, a library used by the Client app</body>
                     </associationHasOwnedEnds>
                   </relationshipOwnedElementsInternal>
                   <elementDefinition Id="a798014d-ea31-4306-b722-9115d9c6ef34" />
-                </association>
-                <association Id="84172eed-4208-4581-acfb-5af1e4c280b1" isDerived="false" sourceEndRoleName="Scheduler" targetEndRoleName="Queue" isLeaf="false" isAbstract="false">
-                  <interfaceMoniker Id="c23f1b1f-750c-4f4e-b5e4-7cb43e053f2a" LastKnownName="Queue" />
-                  <relationshipOwnedElementsInternal>
-                    <associationHasOwnedEnds>
-                      <memberEnd Id="c8ac9892-d7ea-462c-ad8f-c88d2677be37" name="Scheduler" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                        <elementDefinition Id="87357412-e9fd-4e89-88ed-d8c32d5ff349" />
-                      </memberEnd>
-                    </associationHasOwnedEnds>
-                    <associationHasOwnedEnds>
-                      <memberEnd Id="f6ed6275-525c-4d03-9ba2-93b1b811b958" name="Queue" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                        <elementDefinition Id="aa0d9bf1-f72f-4469-8a0a-b60ca4b3de9a" />
-                      </memberEnd>
-                    </associationHasOwnedEnds>
-                  </relationshipOwnedElementsInternal>
-                  <elementDefinition Id="9fcd6e81-2b01-41d0-97ac-f666d567d71d" />
                 </association>
               </targetEnds>
               <ownedOperationsInternal>
@@ -501,11 +449,6 @@ in fact, a library used by the Client app</body>
     <packageHasNamedElement>
       <referencedType Id="c5d9ce0d-b71c-4bdd-a8b6-e64e1fcf5b48" name="GetResult" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::thecloudbook-active-object-library::GetResult">
         <elementDefinition Id="20be7ea3-04b6-40c7-8408-bfaa058feb74" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="17f0f46c-fb4b-439f-9797-227dfff4ba67" name="Result" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::thecloudbook-active-object-library::Result">
-        <elementDefinition Id="92952e69-8ce3-4b24-b16a-4050b8d63d62" />
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>

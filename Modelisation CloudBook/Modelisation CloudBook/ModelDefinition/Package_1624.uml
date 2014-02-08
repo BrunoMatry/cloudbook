@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
   dslVersion="1.0.0.0"
   Id="ec2467b8-21d9-4fa6-b0f9-054ce685f079"
   name="active-object-server-library" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -667,7 +667,7 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="721c55b7-462e-4304-b08b-8cf5ae55b7c6"
+                  Id="287843be-528f-4abc-8b72-feaead579df9"
                   name="snd"
                   direction="In"
                   isUnique="false">
@@ -676,6 +676,19 @@
                       Id="f1edc787-07c9-4c58-a06e-707ffe08cead"
                       LastKnownName="Sendable"
                       LastKnownLocation="Package_1622.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="01b462fd-548b-48c4-b57d-b11d71dbee2f"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="dfe5a493-a354-4de2-a21c-a54162e50c35"
+                      LastKnownName="Result"
+                      LastKnownLocation="Modelisation CloudBook.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -721,6 +734,19 @@
                       Id="f1edc787-07c9-4c58-a06e-707ffe08cead"
                       LastKnownName="Sendable"
                       LastKnownLocation="Package_1622.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="428b1953-5a6c-40fa-922c-d191a199ddeb"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="dfe5a493-a354-4de2-a21c-a54162e50c35"
+                      LastKnownName="Result"
+                      LastKnownLocation="Modelisation CloudBook.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>

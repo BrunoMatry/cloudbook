@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
   dslVersion="1.0.0.0"
   Id="3f3ad25f-7c05-494f-ac45-fc94658d36ab"
   name="thecloudbook-active-object-library" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -115,7 +115,7 @@
           <association
             Id="e17a48b0-a9b1-49a7-a02e-feeba18f3b12"
             isDerived="false"
-            sourceEndRoleName="command"
+            sourceEndRoleName=""
             targetEndRoleName="FutureTask"
             isLeaf="false"
             isAbstract="false">
@@ -127,7 +127,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="a386d247-4bfd-4f64-8325-27309ba1afec"
-                  name="command"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -151,59 +150,83 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="b9a6dbb1-0710-4e2d-9a65-839a2d8efeb4"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName="Result"
+            isLeaf="false"
+            isAbstract="false">
+            <interfaceMoniker
+              Id="92952e69-8ce3-4b24-b16a-4050b8d63d62"
+              LastKnownName="Result"
+              LastKnownLocation="Package_1622.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="70ac94b2-4c5c-4f18-9dab-7ffd4977cedb"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="81942aa8-4a6f-4a35-ac73-0584b4553613"
+                  name="Result"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="5a5f6e5f-5f4d-49b9-896e-12f411d30b1b"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName="Sendable"
+            isLeaf="false"
+            isAbstract="false">
+            <interfaceMoniker
+              Id="f1edc787-07c9-4c58-a06e-707ffe08cead"
+              LastKnownName="Sendable"
+              LastKnownLocation="Package_1622.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="11f4faad-4d95-43d3-937f-bd4ad7a17911"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="de334717-f855-455e-b9c4-7215e3796785"
+                  name="Sendable"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
-        <ownedAttributesInternal>
-          <property
-            Id="184616b2-7069-43d1-a14f-41c8fe21a9d8"
-            name="result"
-            visibility="Protected"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <lowerValueInternal>
-              <literalString
-                Id="cb779559-6a90-4f1f-99b6-888fd5a12c37"
-                name="Lower"
-                value="1" />
-            </lowerValueInternal>
-            <upperValueInternal>
-              <literalString
-                Id="95337961-6834-4cce-a01e-3b4afb4c8a8a"
-                name="Upper"
-                value="1" />
-            </upperValueInternal>
-            <type_NamedElement>
-              <interfaceMoniker
-                Id="92952e69-8ce3-4b24-b16a-4050b8d63d62"
-                LastKnownName="Result"
-                LastKnownLocation="Package_1622.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="715b5f30-9bf0-425b-92cd-8152c93cd625"
-            name="sendable"
-            visibility="Protected"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <interfaceMoniker
-                Id="f1edc787-07c9-4c58-a06e-707ffe08cead"
-                LastKnownName="Sendable"
-                LastKnownLocation="Package_1622.uml" />
-            </type_NamedElement>
-          </property>
-        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="08fd1bb6-5df8-44d4-b025-807832263d62"
@@ -452,6 +475,14 @@
               LastKnownName="IScheduler"
               LastKnownLocation="Package_1622.uml" />
           </interfaceRealization>
+          <dependency
+            Id="c126eb8e-22dc-4f79-9efe-4e58a2b710c9">
+            <classMoniker
+              Id="53eecfb5-24c5-4a75-a949-5f3952199b98"
+              LastKnownName="Servant"
+              LastKnownLocation="Package_1622.uml" />
+            <description>&lt;&lt;create&gt;&gt;</description>
+          </dependency>
         </suppliersInternal>
         <generalsInternal>
           <generalization
@@ -464,45 +495,6 @@
           </generalization>
         </generalsInternal>
         <targetEnds>
-          <association
-            Id="14ee9c6c-2122-458c-957b-e3c2a298a99a"
-            isDerived="false"
-            sourceEndRoleName="Scheduler"
-            targetEndRoleName="Servant"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="53eecfb5-24c5-4a75-a949-5f3952199b98"
-              LastKnownName="Servant"
-              LastKnownLocation="Package_1622.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="5ecdb723-bb22-4c28-87b0-d8082254dd8e"
-                  name="Scheduler"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="1c4fb9b2-b7f4-4d41-9c5c-c4a65ae535fa"
-                  name="Servant"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
           <association
             Id="a798014d-ea31-4306-b722-9115d9c6ef34"
             isDerived="false"
