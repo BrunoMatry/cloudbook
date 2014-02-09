@@ -165,14 +165,6 @@
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
-            Id="b176ffc7-73cf-4db6-a9be-e396ad9e05e3"
-            name="notifyOnReceived"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
             Id="fc560988-8c5f-4a57-afda-36a99f49ae88"
             name="getPartialInformation"
             isLeaf="false"
