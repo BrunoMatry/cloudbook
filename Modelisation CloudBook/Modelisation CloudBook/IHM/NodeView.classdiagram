@@ -1,21 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="8acae003-4515-4eca-8f7e-c6ff36ddac31" name="UMLClassDiagram1" linkedPackageId="f6e63310-72d7-48e1-a4ec-11c4d38d777d" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <ownedCommentsInternal>
-    <comment Id="96d059eb-e9b0-48bd-862c-6a4adea03a7a">
-      <elementDefinition Id="8b99d86b-513b-476f-ae07-6ddba63e3ecd" />
-      <body>Les informations d'un noeud ont toutes une version "cachée" et une version "visible"</body>
-    </comment>
-    <comment Id="eb0f8ff2-fe07-46b1-a746-0b460acf4629">
-      <elementDefinition Id="c93fc265-3c95-4451-b1b6-4aa4a8a8f56d" />
-      <body>TODO : edition</body>
-    </comment>
-    <comment Id="9451377a-6144-49e4-91c8-500390fbf590">
-      <elementDefinition Id="1baad2af-3ab2-4d52-8217-df92dc82524b" />
-      <body>Détail : Bruno</body>
-      <annotatedElements>
-        <classMoniker Id="267dfb77-0221-4717-a8cd-db8957531192" LastKnownName="FriendView" />
-      </annotatedElements>
-    </comment>
     <comment Id="170f06ef-c0f4-4ac2-8264-2789ce8ae9af">
       <elementDefinition Id="e068d1d0-3aa7-4e12-9ad8-b707fbf5b72e" />
       <body>Useful for polymorphism
@@ -36,16 +21,16 @@
           </generalization>
         </generalsInternal>
         <targetEnds>
-          <association Id="b1d8a619-9c17-4829-aa42-4e0e8ddf1400" isDerived="false" sourceEndRoleName="NodeView" targetEndRoleName="NodeComponentView" isLeaf="false" isAbstract="false">
+          <association Id="b1d8a619-9c17-4829-aa42-4e0e8ddf1400" isDerived="false" sourceEndRoleName="nodeView" targetEndRoleName="cmpnt" isLeaf="false" isAbstract="false">
             <classMoniker Id="61699f0c-bcd3-484f-95d7-a66d8792656c" LastKnownName="NodeComponentView" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="3addead6-4285-4f9a-a292-6dda8ee80e1b" name="NodeView" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                <memberEnd Id="3addead6-4285-4f9a-a292-6dda8ee80e1b" name="nodeView" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
                   <elementDefinition Id="0c4e5bd9-938f-40d6-8dc9-2ac2eb0866fe" />
                 </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
-                <memberEnd Id="465ceb3a-c809-47a6-8555-2402b435ba19" name="NodeComponentView" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                <memberEnd Id="465ceb3a-c809-47a6-8555-2402b435ba19" name="cmpnt" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <elementDefinition Id="7019ade8-2d0b-41b3-bbd7-b83260f89b80" />
                 </memberEnd>
               </associationHasOwnedEnds>
@@ -369,16 +354,16 @@
           </interfaceRealization>
         </suppliersInternal>
         <targetEnds>
-          <association Id="e5595749-f69d-4ab3-89fc-2de02685a06a" isDerived="false" sourceEndRoleName="component" targetEndRoleName="SummarizedView" isLeaf="false" isAbstract="false">
+          <association Id="e5595749-f69d-4ab3-89fc-2de02685a06a" isDerived="false" sourceEndRoleName="cmpnt" targetEndRoleName="smzd" isLeaf="false" isAbstract="false">
             <classMoniker Id="b29ea3e3-0da5-4f30-8c3a-32aa4b8b062d" LastKnownName="SummarizedView" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="a10e35d2-0ea7-439c-8fd5-50c4e51ccf34" name="component" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                <memberEnd Id="a10e35d2-0ea7-439c-8fd5-50c4e51ccf34" name="cmpnt" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
                   <elementDefinition Id="dff5ead0-2977-48c9-a350-ddc1c640ba4b" />
                 </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
-                <memberEnd Id="71e2fb55-bba1-4da6-935c-6001aec701f1" name="SummarizedView" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                <memberEnd Id="71e2fb55-bba1-4da6-935c-6001aec701f1" name="smzd" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <elementDefinition Id="9958d998-5ee6-496a-81d0-8954ddc4353d" />
                 </memberEnd>
               </associationHasOwnedEnds>

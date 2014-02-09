@@ -84,10 +84,10 @@
         </umlExecutionSpecificationShape>
       </relativeChildShapes>
     </lifelineShape>
-    <lifelineShape Id="1bb73e6b-4cbd-406d-81c1-f1cc887e7dd2" absoluteBounds="12.43125, 1, 0.15, 9.7000000000000028" visible="true" visualStyleMode="Modified">
+    <lifelineShape Id="1bb73e6b-4cbd-406d-81c1-f1cc887e7dd2" absoluteBounds="12.43125, 1, 0.15, 10.450000000000003" visible="true" visualStyleMode="Modified">
       <lifelineMoniker Id="e2365ae4-db8b-4fc6-8d9c-273ddb82be70" LastKnownName="s : ClientServant" />
       <relativeChildShapes>
-        <lifelineHoverShape Id="8805a16d-bf95-4d7f-80e8-069aa7c3ab58" absoluteBounds="12.43125, 1, 0, 9.75">
+        <lifelineHoverShape Id="8805a16d-bf95-4d7f-80e8-069aa7c3ab58" absoluteBounds="12.43125, 1, 0, 10.5">
           <lifelineMoniker Id="e2365ae4-db8b-4fc6-8d9c-273ddb82be70" LastKnownName="s : ClientServant" />
         </lifelineHoverShape>
         <umlLifelineHeadShape Id="b3dc04c5-c264-4fed-bf0b-83fa637355e2" absoluteBounds="11.909017319679261, 0.6, 1.1944653606414795, 0.4" customColor="White" visualStyleMode="Modified">
