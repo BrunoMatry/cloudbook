@@ -1,5 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="5802e84a-839e-4b39-8741-7ab2856308e7" name="IHM" linkedPackageId="02a65572-460c-4f35-b144-511da65524d9" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="5802e84a-839e-4b39-8741-7ab2856308e7" name="IHM" linkedPackageId="02a65572-460c-4f35-b144-511da65524d9" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="20c7a3ef-a1b1-452a-949b-058dbb866e37">
+      <elementDefinition Id="c3e65bcc-826c-4b2c-93b2-1bbea107256e" />
+      <body>Strategy</body>
+    </comment>
+  </ownedCommentsInternal>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="467dd5da-62d3-44ce-bc3b-8cb70a8b3c4e" name="HMIFriendList" isAbstract="false" isLeaf="false" isActiveClass="false">
@@ -134,6 +140,22 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="652f3251-4db5-4b6f-964f-603b3a6e1104" />
           </association>
+          <association Id="4449a33f-c608-43dc-8a47-893e1cbd900c" isDerived="false" sourceEndRoleName="HMICloudbook" targetEndRoleName="HMIContent" isLeaf="false" isAbstract="false">
+            <classMoniker Id="0ebfe965-485e-4b3d-920c-0389047dc013" LastKnownName="HMIContent" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4781fd12-249b-4cd7-8f0f-4e638828bd5d" name="HMICloudbook" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5dd6cfd7-c373-4f1c-8508-337fb8d886ef" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0f4518e8-6e26-4de3-a7ac-d1a725b76dcd" name="HMIContent" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f1eae8f6-f3dc-436d-bca7-f41aa91ad590" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="3eeeed7e-83f3-4b2e-8b0a-a7095aaf67ac" />
+          </association>
         </targetEnds>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -234,6 +256,85 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="13e6b55d-ac2c-4aab-b824-a25e583a966d" name="HMIExitButton" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="a46c445f-06dd-4508-9adf-a82e91567da7" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="0ebfe965-485e-4b3d-920c-0389047dc013" name="HMIContent" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d16af18b-8fc0-402e-b528-7bc2c710257c" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="385747a0-5ff3-4bf2-a5b9-a23be99c985b" name="HMIContentFriendTab" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="58e349c6-c12f-4243-b1c1-b31d7369d17c" />
+        <generalsInternal>
+          <generalization Id="134f7766-8084-4d37-8ac4-a091bfd3ff41" isSubstitutable="false">
+            <classMoniker Id="0ebfe965-485e-4b3d-920c-0389047dc013" LastKnownName="HMIContent" />
+            <elementDefinition Id="bd30636e-47a6-45c8-acfe-b01a28d8266d" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="25315ee7-ffc6-44aa-b0a0-69bcf760f2e0" isDerived="false" sourceEndRoleName="HMIContentFriendTab" targetEndRoleName="HMIFriendList" isLeaf="false" isAbstract="false">
+            <classMoniker Id="467dd5da-62d3-44ce-bc3b-8cb70a8b3c4e" LastKnownName="HMIFriendList" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="30124ac0-bfdc-4516-86c2-053fc426053e" name="HMIContentFriendTab" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b195ce4b-e458-48dd-acfd-10e5d4576601" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="480ec4c7-c64d-4fb9-825b-3182e3964d51" name="HMIFriendList" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="dd677469-2051-47a6-9116-b15e8fdacd1c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="f2e0fe79-0576-44ce-aef0-dac2b55482d7" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="fb0a4edb-9813-4641-88a6-a48a259cdc47" name="HMIContentResultTab" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="9a69b426-81b0-4696-9848-a192e6438333" />
+        <generalsInternal>
+          <generalization Id="9522bec8-0666-4c5d-bc49-0635b93f3e5d" isSubstitutable="false">
+            <classMoniker Id="0ebfe965-485e-4b3d-920c-0389047dc013" LastKnownName="HMIContent" />
+            <elementDefinition Id="7aa4aca8-66a1-4844-8573-78505dd0dc94" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="d695c1b3-5e33-4ec9-ab72-baabbc104243" isDerived="false" sourceEndRoleName="HMIContentResultTab" targetEndRoleName="HMISuggestion" isLeaf="false" isAbstract="false">
+            <classMoniker Id="ea256eb0-051a-4498-be17-053dd98a2a32" LastKnownName="HMISuggestion" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9cd2279b-7bf8-4f1a-b182-24eabd2f9fd0" name="HMIContentResultTab" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="07fb1dad-9f95-45fe-9d35-1a98956881fa" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1f8e4b37-1bc7-4228-85a0-78ebb37a3f60" name="HMISuggestion" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="a8ea8c8c-716e-48dc-a576-08f5ca794d3f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c31ab714-eb6d-4881-a58e-8d3204f1f5af" />
+          </association>
+          <association Id="6d356151-0558-42b0-b340-08f308f2851f" isDerived="false" sourceEndRoleName="HMIContentResultTab" targetEndRoleName="HMIResultBoard" isLeaf="false" isAbstract="false">
+            <classMoniker Id="f20d095c-563b-4b04-8385-26a6485b7e3b" LastKnownName="HMIResultBoard" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2fee1829-7e75-401b-8fca-5b3fba559491" name="HMIContentResultTab" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="35e87bf2-0f9f-4f0c-aebf-41a187a0f3c4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0fac5b24-c411-4491-99b0-954b2c0df7c8" name="HMIResultBoard" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="e8b24ac8-c890-4dae-9961-450766f761b2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="80d0cd01-4d74-4ad8-9d41-370383ede22d" />
+          </association>
+        </targetEnds>
       </class>
     </logicalClassDesignerModelHasTypes>
   </packagedElements>
