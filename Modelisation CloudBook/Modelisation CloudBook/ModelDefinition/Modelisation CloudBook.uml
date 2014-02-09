@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="94208107-703b-4bbf-9f51-c1243885138f"
   name="Modelisation CloudBook" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -164,6 +164,10 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
           LastKnownName="ComponentView"
           LastKnownLocation="Modelisation CloudBook.uml" />
       </annotatedElements>
+    </comment>
+    <comment
+      Id="1d46cf3e-484d-415b-9fdb-be3c758bcc3b">
+      <body>Strategy</body>
     </comment>
   </ownedCommentsInternal>
   <packagedElements>
@@ -8409,7 +8413,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
       <class
         Id="024a9346-66e8-4452-a927-b30edc9a1aeb"
         name="ServerServant"
-        isAbstract="false"
+        isAbstract="true"
         isLeaf="false"
         isActiveClass="false">
         <generalsInternal>
@@ -17358,6 +17362,45 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="8aaa68ff-2242-4dca-9add-692e8f9c4f13"
+            isDerived="false"
+            sourceEndRoleName="HMICloudbook"
+            targetEndRoleName="HMIContent"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="7f046351-2595-4509-91a6-1d5509255c4b"
+              LastKnownName="HMIContent"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f3024147-6127-4fc7-8f7b-cefc1f7941cc"
+                  name="HMICloudbook"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f394415e-a7e7-4f68-96b1-926c9f5d723b"
+                  name="HMIContent"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
       </class>
     </packageHasNamedElement>
@@ -21849,6 +21892,173 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
         Id="df157641-4837-4598-b876-e666509666d1"
         LastKnownName="javafx.*"
         LastKnownLocation="Package_1627.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="7f046351-2595-4509-91a6-1d5509255c4b"
+        name="HMIContent"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="a9a5c172-6886-4c68-b966-42e98d015995"
+        name="HMIContentFriendTab"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="6a96085c-eb49-4cac-9169-7cd13747c971"
+            isSubstitutable="false">
+            <classMoniker
+              Id="7f046351-2595-4509-91a6-1d5509255c4b"
+              LastKnownName="HMIContent"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="9b6180e2-a8e8-4f65-a012-5af65ca178d0"
+            isDerived="false"
+            sourceEndRoleName="HMIContentFriendTab"
+            targetEndRoleName="HMIFriendList"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="dbc21a87-671b-4fd9-b453-6f9f54208cda"
+              LastKnownName="HMIFriendList"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4a65d35e-157e-46a2-a539-8400cbdcdd2d"
+                  name="HMIContentFriendTab"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="68bef9af-ce82-45f8-868c-ed26be3077f5"
+                  name="HMIFriendList"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="79f0a2d3-c296-4d5d-9a9c-fa0cade00b57"
+        name="HMIContentResultTab"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="80c8da5c-e51b-4677-a000-547cccfe3f92"
+            isSubstitutable="false">
+            <classMoniker
+              Id="7f046351-2595-4509-91a6-1d5509255c4b"
+              LastKnownName="HMIContent"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="00908e08-aeff-433b-9bf7-f0cf7aa6c9b2"
+            isDerived="false"
+            sourceEndRoleName="HMIContentResultTab"
+            targetEndRoleName="HMISuggestion"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="0cc69dff-1c29-4769-a5b1-9c2d7e1c38cb"
+              LastKnownName="HMISuggestion"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="45ebdf48-e0d7-4f1c-a006-32db5c90e088"
+                  name="HMIContentResultTab"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f1cc9149-e029-42fd-bc2a-55778f0ac688"
+                  name="HMISuggestion"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="33a30fa1-1931-431f-a731-79350b3a3be2"
+            isDerived="false"
+            sourceEndRoleName="HMIContentResultTab"
+            targetEndRoleName="HMIResultBoard"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="c4646b04-1f84-4710-8003-eb50b15f4faa"
+              LastKnownName="HMIResultBoard"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="933148ca-1f60-4dae-a962-49c4bbf0b5e5"
+                  name="HMIContentResultTab"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8495bc78-16b2-4468-b0ef-3cc3d8896404"
+                  name="HMIResultBoard"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

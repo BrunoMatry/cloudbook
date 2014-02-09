@@ -169,13 +169,6 @@
       <SubType>Content</SubType>
       <DependentUpon>IHM\NodeView.classdiagram</DependentUpon>
     </Content>
-    <Content Include="IHM\Requete.activitydiagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="IHM\Requete.activitydiagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>IHM\Requete.activitydiagram</DependentUpon>
-    </Content>
     <Content Include="IHM\StructureIHM.dgml">
       <SubType>Content</SubType>
     </Content>
