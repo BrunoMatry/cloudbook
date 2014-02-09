@@ -44,13 +44,6 @@
     <logicalClassDesignerModelHasPackages>
       <package Id="0c1e4e36-b926-49e3-a08a-66094b1fd12a" name="thecloudbook-active-object-library">
         <ownedCommentsInternal>
-          <comment Id="b4dbfef2-630a-4322-81df-956c9fb11a69">
-            <elementDefinition Id="99e82aea-cbd8-46e0-ba16-20ac6e384634" />
-            <body>Active Object "proxy"</body>
-            <annotatedElements>
-              <classMoniker Id="f20f08fc-b810-4fd9-9ed0-ddc1b8d0e436" LastKnownName="ProxyClientService" />
-            </annotatedElements>
-          </comment>
           <comment Id="7cb6b695-9bb2-45a1-a6cd-85abd4395fed">
             <elementDefinition Id="a5bce68a-f6df-4e87-a216-cac72291f181" />
             <body>Each object that would be to send must implement this interface</body>
@@ -426,11 +419,6 @@
                   </ownedParameters>
                 </operation>
               </ownedOperations>
-            </Interface>
-          </packageHasNamedElement>
-          <packageHasNamedElement>
-            <Interface Id="d80f4b12-6c7f-456d-a7fd-6807acbef7ae" name="Information" isAbstract="false" isLeaf="false">
-              <elementDefinition Id="b5ca5e37-fc48-41a5-b35c-6b6082b0989e" />
             </Interface>
           </packageHasNamedElement>
         </packagedElements>

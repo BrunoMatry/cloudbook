@@ -5,16 +5,6 @@
   name="thecloudbook-active-object-library" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
   <ownedCommentsInternal>
     <comment
-      Id="99e82aea-cbd8-46e0-ba16-20ac6e384634">
-      <body>Active Object "proxy"</body>
-      <annotatedElements>
-        <classMoniker
-          Id="7550eae6-a348-4f73-8d23-ae1453a1feac"
-          LastKnownName="ProxyClientService"
-          LastKnownLocation="Package_1622.uml" />
-      </annotatedElements>
-    </comment>
-    <comment
       Id="a5bce68a-f6df-4e87-a216-cac72291f181">
       <body>Each object that would be to send must implement this interface</body>
       <annotatedElements>
