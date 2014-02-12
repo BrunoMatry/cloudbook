@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
   dslVersion="1.0.0.0"
   Id="94208107-703b-4bbf-9f51-c1243885138f"
   name="Modelisation CloudBook" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -168,6 +168,14 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
     <comment
       Id="1d46cf3e-484d-415b-9fdb-be3c758bcc3b">
       <body>Strategy</body>
+    </comment>
+    <comment
+      Id="3e43a5d0-6e1f-4118-9d7a-4ba63cd2d3d1">
+      <body>[digne de confiance]</body>
+    </comment>
+    <comment
+      Id="6489baa5-2a0c-4f97-a0ed-c415deedcee6">
+      <body>[non digne de confiance]</body>
     </comment>
   </ownedCommentsInternal>
   <packagedElements>
@@ -7849,22 +7857,22 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="56d26d21-15a4-4d55-8901-0d1cccadf72f"
-            name="MessageOccurrenceSpecification18">
-            <covered>
-              <lifelineMoniker
-                Id="1c62dae9-4ff0-4922-830d-0ccd2d76909f"
-                LastKnownName=": ClientScheduler"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="c29ae53f-4486-4df9-81a0-36b681ec014c"
             name="MessageOccurrenceSpecification17">
             <covered>
               <lifelineMoniker
                 Id="75e409b3-2f63-43fa-9215-d06eb3c9f071"
                 LastKnownName=": ServerForwarder"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="56d26d21-15a4-4d55-8901-0d1cccadf72f"
+            name="MessageOccurrenceSpecification18">
+            <covered>
+              <lifelineMoniker
+                Id="1c62dae9-4ff0-4922-830d-0ccd2d76909f"
+                LastKnownName=": ClientScheduler"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -8043,22 +8051,22 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="bda5bc14-de60-4478-9c84-98edc5015409"
-            name="MessageOccurrenceSpecification20">
-            <covered>
-              <lifelineMoniker
-                Id="a8aab4b2-098e-4cc3-8486-04e7c069886d"
-                LastKnownName="gtRes : GetResult"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="39c38037-a4f4-4314-8962-fa3a6d90e1b8"
             name="MessageOccurrenceSpecification19">
             <covered>
               <lifelineMoniker
                 Id="1c62dae9-4ff0-4922-830d-0ccd2d76909f"
                 LastKnownName=": ClientScheduler"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="bda5bc14-de60-4478-9c84-98edc5015409"
+            name="MessageOccurrenceSpecification20">
+            <covered>
+              <lifelineMoniker
+                Id="a8aab4b2-098e-4cc3-8486-04e7c069886d"
+                LastKnownName="gtRes : GetResult"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -8559,22 +8567,22 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="39392c44-63c0-4802-9d03-eebdbae45f9a"
-            name="MessageOccurrenceSpecification33">
-            <covered>
-              <lifelineMoniker
-                Id="fb6b4cef-9ebe-42dd-907c-abda4cf07757"
-                LastKnownName="s : ClientServant"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="a79a5039-28f8-4e8f-808f-d2c47bad8c07"
             name="MessageOccurrenceSpecification34">
             <covered>
               <lifelineMoniker
                 Id="a8aab4b2-098e-4cc3-8486-04e7c069886d"
                 LastKnownName="gtRes : GetResult"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="39392c44-63c0-4802-9d03-eebdbae45f9a"
+            name="MessageOccurrenceSpecification33">
+            <covered>
+              <lifelineMoniker
+                Id="fb6b4cef-9ebe-42dd-907c-abda4cf07757"
+                LastKnownName="s : ClientServant"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -8741,22 +8749,22 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="a97f9330-9fc9-460a-923e-e781f35c7f02"
-            name="MessageOccurrenceSpecification29">
-            <covered>
-              <lifelineMoniker
-                Id="a8aab4b2-098e-4cc3-8486-04e7c069886d"
-                LastKnownName="gtRes : GetResult"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="1e861b82-392d-4804-afc7-618bbfef95b7"
             name="MessageOccurrenceSpecification30">
             <covered>
               <lifelineMoniker
                 Id="1c62dae9-4ff0-4922-830d-0ccd2d76909f"
                 LastKnownName=": ClientScheduler"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="a97f9330-9fc9-460a-923e-e781f35c7f02"
+            name="MessageOccurrenceSpecification29">
+            <covered>
+              <lifelineMoniker
+                Id="a8aab4b2-098e-4cc3-8486-04e7c069886d"
+                LastKnownName="gtRes : GetResult"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -21490,6 +21498,178 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
       <executionEvent
         Id="2d3e3870-1256-4cbb-98a7-77e059d3de39"
         name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="607b4cce-aeb9-4ebe-aa3c-07574a0e926f"
+        name="Activity1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="0ee95477-8431-47eb-bdd4-6ac006aff69d"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="7f86c84a-8f48-42ea-b2b5-0a15194bf787"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="e4d7ba3b-bf8a-4846-84d7-d11a3ddeca78"
+                  LastKnownName="Choix du type d'information à partager"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="e4d7ba3b-bf8a-4846-84d7-d11a3ddeca78"
+            name="Choix du type d'information à partager"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="fed18fc1-7341-467e-bcd8-c5596f4b732e"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="c580cffa-3221-4e62-89a7-d79abcc674c5"
+                  LastKnownName="Classement des amis par indice de pertinence"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="c1c5c7f2-ed2f-469c-bf84-62b3f4ae7f34"
+            name="Selection de l'ami suivant"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b7f6b080-704c-4305-8a57-3cf85e911355"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="a4be98ca-aebc-44e6-886f-372ae56e79bf"
+                  LastKnownName="Lire indice de confiance"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="a4be98ca-aebc-44e6-886f-372ae56e79bf"
+            name="Lire indice de confiance"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="0f5d8830-5a80-44d5-8e89-a8a77f277ca7"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="1538af47-49e2-4cfb-aac3-dbed4ae14be0"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="1538af47-49e2-4cfb-aac3-dbed4ae14be0"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="510bd8fc-0c78-41ce-87c7-0d5c037cf78e"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="f618c448-6462-439a-9c19-8dd166fce71f"
+                  LastKnownName="Filtrer l'information"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="90c383f8-e428-4b28-92f1-335e9a49effb"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="ca13cb08-55cd-4741-94f8-4c5a7dc5e8c9"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="f618c448-6462-439a-9c19-8dd166fce71f"
+            name="Filtrer l'information"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="75d4ff59-5d71-4316-8367-ba24a78f53d8"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="ca13cb08-55cd-4741-94f8-4c5a7dc5e8c9"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="c580cffa-3221-4e62-89a7-d79abcc674c5"
+            name="Classement des amis par indice de pertinence"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="bf076e56-2597-4e01-82d6-778cc7601bd4"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="c1c5c7f2-ed2f-469c-bf84-62b3f4ae7f34"
+                  LastKnownName="Selection de l'ami suivant"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <mergeNode
+            Id="ca13cb08-55cd-4741-94f8-4c5a7dc5e8c9"
+            name="Merge1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="032a0b0c-2022-4051-9bfa-b564ef92faf8"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="0698dfb2-95aa-46b6-a7e5-e92a1981722b"
+                  LastKnownName="Construire la requête"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <opaqueAction
+            Id="0698dfb2-95aa-46b6-a7e5-e92a1981722b"
+            name="Construire la requête"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="cc5926a4-b396-492a-922a-210d5936161d"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="20ac3d09-0526-4813-9a31-a864796d9730"
+                  LastKnownName="Stocker la requête dans le buffer d'envoi"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="20ac3d09-0526-4813-9a31-a864796d9730"
+            name="Stocker la requête dans le buffer d'envoi"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="898168e8-9802-4045-9a94-3a05f511d561"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="c1c5c7f2-ed2f-469c-bf84-62b3f4ae7f34"
+                  LastKnownName="Selection de l'ami suivant"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

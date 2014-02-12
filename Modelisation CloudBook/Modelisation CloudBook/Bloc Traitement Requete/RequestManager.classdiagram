@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="baed6060-a1c6-4831-8f97-dd7d6959cc99" name="RequestManager" linkedPackageId="81856cc7-c5db-4ea5-9418-6ac5191cd2fc" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="baed6060-a1c6-4831-8f97-dd7d6959cc99" name="RequestManager" linkedPackageId="81856cc7-c5db-4ea5-9418-6ac5191cd2fc" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <Interface Id="24141796-2888-4585-a157-6c356b6cb4b2" name="IRequestManager" isAbstract="false" isLeaf="false">
@@ -78,10 +78,6 @@
       <class Id="fe96013a-f012-44d2-b7be-dd625ddf9cb9" name="Request" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="efc5f0d2-05b5-4b91-a92b-be20c814f7f1" />
         <suppliersInternal>
-          <interfaceRealization Id="406fd817-94cc-43a9-8d3e-84389792c279">
-            <interfaceMoniker Id="03ed2bb1-0e96-44d1-bced-bddd1c71a4e5" LastKnownName="Result" />
-            <elementDefinition Id="1d38129b-bf99-457f-84c6-f5d9ad434b5e" />
-          </interfaceRealization>
           <interfaceRealization Id="8e357e51-d1d9-425c-8ad2-ffd614099579">
             <interfaceMoniker Id="dc5366d8-2699-4492-96ef-03d4a65326ef" LastKnownName="Sendable" />
             <elementDefinition Id="15dd1aa1-6a71-43f9-bb8b-51a0dbb3e54b" />
@@ -180,11 +176,6 @@
         <elementDefinition Id="ce126c28-7853-4d05-adb7-0cd57e68c6e0" />
       </referencedType>
     </packageHasNamedElement>
-    <logicalClassDesignerModelHasTypes>
-      <Interface Id="03ed2bb1-0e96-44d1-bced-bddd1c71a4e5" name="Result" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="ee342dcd-ee6f-4145-aa40-d4dd53455054" />
-      </Interface>
-    </logicalClassDesignerModelHasTypes>
     <packageHasNamedElement>
       <referencedType Id="63b27956-9a47-4f2d-aef6-504ab5573855" name="Information" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::Information">
         <elementDefinition Id="9bd1fa75-070a-4642-a2cd-feaf931ca22b" />

@@ -141,6 +141,13 @@
       <SubType>Content</SubType>
       <DependentUpon>Bloc Réseau\Server.classdiagram</DependentUpon>
     </Content>
+    <Content Include="Bloc Traitement Requete\%28deprecated%29 Requete.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Bloc Traitement Requete\%28deprecated%29 Requete.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Bloc Traitement Requete\(deprecated) Requete.activitydiagram</DependentUpon>
+    </Content>
     <Content Include="Bloc Traitement Requete\RequestManager.classdiagram">
       <SubType>Content</SubType>
     </Content>
@@ -230,6 +237,13 @@
     <Content Include="Modules.classdiagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>Modules.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="EnvoiRequete.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="EnvoiRequete.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>EnvoiRequete.activitydiagram</DependentUpon>
     </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="ModelDefinition\Modelisation CloudBook.uml">
