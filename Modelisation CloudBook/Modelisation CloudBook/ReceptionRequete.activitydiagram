@@ -9,6 +9,37 @@
       <elementDefinition Id="2a1007d8-54e4-4d65-af23-1f5638b71e39" />
       <body>[présent]</body>
     </comment>
+    <comment Id="5ce58c9a-e0f5-4891-a222-82b126f6f358">
+      <elementDefinition Id="1ad3c970-e194-48fd-88e6-a5404860f996" />
+      <body>[proche]</body>
+    </comment>
+    <comment Id="6567e66e-113c-4dda-a6f2-fb7a2a5a9e4f">
+      <elementDefinition Id="38cf44fd-d2cf-4d30-9e65-d5301c257b60" />
+      <body>Utilisation du diagramme d'activité d'envoi de requête</body>
+      <annotatedElements>
+        <opaqueActionMoniker Id="946d4be9-1b80-41ee-a64e-9d5a310c4a2c" LastKnownName="Retransmettre" />
+      </annotatedElements>
+    </comment>
+    <comment Id="73708bd4-dfe4-42b8-a1dc-7cc260f89f3f">
+      <elementDefinition Id="4cee3b60-c47b-4360-99a4-5c01048f5010" />
+      <body>[rebounds &gt; 0]</body>
+    </comment>
+    <comment Id="95e5d382-dbe5-4302-b2f1-d91a2495da0f">
+      <elementDefinition Id="73abeb32-72bd-4bc3-9765-73f7160496e4" />
+      <body>[rebounds == 0]</body>
+    </comment>
+    <comment Id="c92d56f9-8aa7-4a0e-b2e5-9fcdb2f220b1">
+      <elementDefinition Id="404a4038-1e3c-485a-95f6-7c3f9da17c68" />
+      <body>[pas proche]</body>
+    </comment>
+    <comment Id="6b38e432-e535-45e5-aa87-1e5c2c69a2fc">
+      <elementDefinition Id="da7f2f76-1937-41bf-bff2-d0f9e1710f53" />
+      <body>[present]</body>
+    </comment>
+    <comment Id="7b9224d3-b1ff-4cfa-9b0d-b52fea126255">
+      <elementDefinition Id="feae20e2-c0a1-4fd2-837d-0be7627b68fd" />
+      <body>[absent]</body>
+    </comment>
   </ownedCommentsInternal>
   <packagedElements>
     <activityRootModelHasActivity>
@@ -57,10 +88,158 @@
           </decisionNode>
           <opaqueAction Id="4e5e4f1e-0bf4-4090-911c-9460f2f3914e" name="Ajout dans la liste" isLeaf="false">
             <elementDefinition Id="2c53dd9c-1b87-4849-afef-ca8485c5a6e7" />
+            <flowNodeTargets>
+              <controlFlow Id="b2793860-8012-42b1-8f49-0d0b56c56088" isLeaf="false">
+                <mergeNodeMoniker Id="eebf3b09-e88d-407d-be1c-f7efa6230c62" LastKnownName="Merge1" />
+                <elementDefinition Id="f3a1199a-5942-4ab6-9025-d8b77428ee5a" />
+              </controlFlow>
+            </flowNodeTargets>
           </opaqueAction>
           <opaqueAction Id="40871495-2e01-4185-b911-f9e4d6b30ce9" name="Mise à jour de ses informations" isLeaf="false">
             <elementDefinition Id="55d929c4-196e-4e34-bef7-ae2d92c80b34" />
+            <flowNodeTargets>
+              <controlFlow Id="3cffb106-26fc-46e5-85f6-fc3a2ff5d5b6" isLeaf="false">
+                <mergeNodeMoniker Id="eebf3b09-e88d-407d-be1c-f7efa6230c62" LastKnownName="Merge1" />
+                <elementDefinition Id="f22a21aa-474f-4a1d-9e89-c0fb3c3c5df9" />
+              </controlFlow>
+            </flowNodeTargets>
           </opaqueAction>
+          <mergeNode Id="eebf3b09-e88d-407d-be1c-f7efa6230c62" name="Merge1" isLeaf="false">
+            <elementDefinition Id="0985348e-9f3e-4c2d-8653-0bd549f1b148" />
+            <flowNodeTargets>
+              <controlFlow Id="88799247-cb22-4393-a774-e4f1cb723082" isLeaf="false">
+                <opaqueActionMoniker Id="8eafd965-bb15-4a98-9a85-4afa65fb7deb" LastKnownName="Calcul de la proximité" />
+                <elementDefinition Id="46c431ac-5ed2-4648-bf10-34e6727f2f41" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <opaqueAction Id="8eafd965-bb15-4a98-9a85-4afa65fb7deb" name="Calcul de la proximité" isLeaf="false">
+            <elementDefinition Id="a0ad4b1d-e806-40f3-b2f1-ecd772c36964" />
+            <flowNodeTargets>
+              <controlFlow Id="cb1e9d58-6c52-498b-b7cb-2d658a17ae9e" isLeaf="false">
+                <decisionNodeMoniker Id="8912e8f0-55bf-426d-bd9d-d55854fdb7e5" LastKnownName="Decision2" />
+                <elementDefinition Id="2e13d505-5460-44c2-9ddf-f25839630528" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="8912e8f0-55bf-426d-bd9d-d55854fdb7e5" name="Decision2" isLeaf="false">
+            <elementDefinition Id="f6c44f06-c0ca-4b50-9651-2e79fdc2522a" />
+            <flowNodeTargets>
+              <controlFlow Id="c83664bf-445c-4a3d-86ed-d13fc65fdde5" isLeaf="false">
+                <opaqueActionMoniker Id="7cde2b49-0cc0-415d-9ef1-e8928356d825" LastKnownName="Vérifier l'existence d'un historique dans les informations transmises" />
+                <elementDefinition Id="fbaf84bf-1898-4d7c-90ae-60e8652a092b" />
+              </controlFlow>
+              <controlFlow Id="4ba9e750-60ca-4f43-aebf-c7e5ccf6ace5" isLeaf="false">
+                <mergeNodeMoniker Id="6121fef0-c830-4095-916f-45be38f325f1" LastKnownName="Merge3" />
+                <elementDefinition Id="4c1d7828-69aa-4d54-b60b-e4661da2f64f" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="7cde2b49-0cc0-415d-9ef1-e8928356d825" name="Vérifier l'existence d'un historique dans les informations transmises" isLeaf="false">
+            <elementDefinition Id="3397132c-e567-4c9e-a2dd-ee0a5fdeb500" />
+            <flowNodeTargets>
+              <controlFlow Id="2c7ed636-ef88-4f0e-b972-4353a4f8437a" isLeaf="false">
+                <decisionNodeMoniker Id="010b164e-1338-4db5-b13f-3bac94aeac09" LastKnownName="Decision3" />
+                <elementDefinition Id="62165b7f-de07-4cc6-b518-83606d9eeb41" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="6b0812ea-ef75-44bf-be0c-4e4e66aa4a8c" name="(Re)calcul du classement des clouds" isLeaf="false">
+            <elementDefinition Id="4ee7a2b9-603e-4f0c-96a2-e05a5cbe7407" />
+            <flowNodeTargets>
+              <controlFlow Id="22e6860d-6aa3-44c2-aa32-c4132c87d31e" isLeaf="false">
+                <mergeNodeMoniker Id="6121fef0-c830-4095-916f-45be38f325f1" LastKnownName="Merge3" />
+                <elementDefinition Id="3d87563e-5f2c-4489-9245-3ca78515cbaa" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="010b164e-1338-4db5-b13f-3bac94aeac09" name="Decision3" isLeaf="false">
+            <elementDefinition Id="c6326ac2-c4f8-468e-9159-63f74aa9f1b2" />
+            <flowNodeTargets>
+              <controlFlow Id="59cfd872-6c1c-447b-96fe-e9b40f58f189" isLeaf="false">
+                <opaqueActionMoniker Id="6b0812ea-ef75-44bf-be0c-4e4e66aa4a8c" LastKnownName="(Re)calcul du classement des clouds" />
+                <elementDefinition Id="77ae5a39-fb95-4e6f-9e6b-839e39479c53" />
+              </controlFlow>
+              <controlFlow Id="dadd2354-bc08-465d-aeac-c08c20f9f654" isLeaf="false">
+                <forkNodeMoniker Id="855e0ee3-d7be-4089-bb35-573597837676" LastKnownName="Fork1" />
+                <elementDefinition Id="0fd16163-331d-4037-8a6d-8fc4a6b646d7" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <activityFinalNode Id="7dd70fa9-f4b5-495a-a6e4-1bcf063a0343" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="bd5a9721-34fa-4f81-9db3-512164de68d0" />
+          </activityFinalNode>
+          <opaqueAction Id="dab63c0e-0773-4395-9479-f0d6b01594f0" name="Vérifier le nombre de rebonds de la requête" isLeaf="false">
+            <elementDefinition Id="87e2f326-4cbe-48b4-8f2d-128c2076f9c2" />
+            <flowNodeTargets>
+              <controlFlow Id="d7c185b1-f496-4798-a15c-bc20ac8f5bcc" isLeaf="false">
+                <decisionNodeMoniker Id="cc50322e-c9f3-4ed1-bc45-bcbaba602525" LastKnownName="Decision4" />
+                <elementDefinition Id="fbe48aec-963d-4208-b575-12677dc7c936" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="cc50322e-c9f3-4ed1-bc45-bcbaba602525" name="Decision4" isLeaf="false">
+            <elementDefinition Id="866ddae3-58a2-4aef-a1b2-442e8c52f2cc" />
+            <flowNodeTargets>
+              <controlFlow Id="7fb3e43a-7f83-4321-a563-f21c4a50a8b0" isLeaf="false">
+                <opaqueActionMoniker Id="946d4be9-1b80-41ee-a64e-9d5a310c4a2c" LastKnownName="Retransmettre" />
+                <elementDefinition Id="8c63fd74-b583-4d76-bda9-091066f541e9" />
+              </controlFlow>
+              <controlFlow Id="1ce86b84-46c7-4666-9b26-811e33e491ad" isLeaf="false">
+                <mergeNodeMoniker Id="ac2025be-8cd9-4e34-9f08-0f668518fe1d" LastKnownName="Merge2" />
+                <elementDefinition Id="07dd2503-bb79-4386-ae7b-857c5ebd5912" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="946d4be9-1b80-41ee-a64e-9d5a310c4a2c" name="Retransmettre" isLeaf="false">
+            <elementDefinition Id="a27f765b-79d6-497a-ae3c-e502c03a1c50" />
+            <flowNodeTargets>
+              <controlFlow Id="9433b38b-bb7f-4831-b5f5-c0d4281ae879" isLeaf="false">
+                <mergeNodeMoniker Id="ac2025be-8cd9-4e34-9f08-0f668518fe1d" LastKnownName="Merge2" />
+                <elementDefinition Id="9c3f1340-5fde-4988-ab0c-847dd5fcde9e" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <mergeNode Id="ac2025be-8cd9-4e34-9f08-0f668518fe1d" name="Merge2" isLeaf="false">
+            <elementDefinition Id="ccea7672-864a-45be-aa73-dd3f75ae1cbc" />
+            <flowNodeTargets>
+              <controlFlow Id="6dbb8f2e-cf56-422a-857c-17d910d4e863" isLeaf="false">
+                <activityFinalNodeMoniker Id="7dd70fa9-f4b5-495a-a6e4-1bcf063a0343" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="7bd2a582-cdd9-4e46-a748-23473bf48c0e" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <mergeNode Id="6121fef0-c830-4095-916f-45be38f325f1" name="Merge3" isLeaf="false">
+            <elementDefinition Id="4b379927-0332-4ef4-9098-24b95aac3553" />
+            <flowNodeTargets>
+              <controlFlow Id="b0341abc-6c8e-4254-9113-c317edf89399" isLeaf="false">
+                <opaqueActionMoniker Id="dab63c0e-0773-4395-9479-f0d6b01594f0" LastKnownName="Vérifier le nombre de rebonds de la requête" />
+                <elementDefinition Id="a14eb46d-df9e-4571-b670-10b5aa175010" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <opaqueAction Id="51867833-8441-47c2-9b9e-35fb2081ea67" name="Envoi d'une requête  avec demande d'historique" isLeaf="false">
+            <elementDefinition Id="4ac6b02e-6724-4f9f-b4de-d9898c69db13" />
+            <flowNodeTargets>
+              <controlFlow Id="cdda5f5c-90c5-4537-8c38-dd56ddc7133c" isLeaf="false">
+                <mergeNodeMoniker Id="ac2025be-8cd9-4e34-9f08-0f668518fe1d" LastKnownName="Merge2" />
+                <elementDefinition Id="48b58aa3-79cc-4312-9f9c-93b05e329464" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <forkNode Id="855e0ee3-d7be-4089-bb35-573597837676" name="Fork1" isLeaf="false">
+            <elementDefinition Id="2081cb8e-8a35-49f3-b6a5-170244ba930d" />
+            <flowNodeTargets>
+              <controlFlow Id="20bc5ee3-abcf-4a62-b075-176c9df89c47" isLeaf="false">
+                <opaqueActionMoniker Id="51867833-8441-47c2-9b9e-35fb2081ea67" LastKnownName="Envoi d'une requête  avec demande d'historique" />
+                <elementDefinition Id="485980d8-6ce9-40be-8860-47b62a571de8" />
+              </controlFlow>
+              <controlFlow Id="a8ac374a-0f27-42c0-9a6b-2fe328bc6c24" isLeaf="false">
+                <mergeNodeMoniker Id="6121fef0-c830-4095-916f-45be38f325f1" LastKnownName="Merge3" />
+                <elementDefinition Id="9da268ff-ef3a-47e0-98a8-6e1788e9b1e8" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
         </nodes>
       </activity>
     </activityRootModelHasActivity>

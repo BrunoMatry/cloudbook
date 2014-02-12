@@ -193,6 +193,40 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
       Id="2a1007d8-54e4-4d65-af23-1f5638b71e39">
       <body>[présent]</body>
     </comment>
+    <comment
+      Id="1ad3c970-e194-48fd-88e6-a5404860f996">
+      <body>[proche]</body>
+    </comment>
+    <comment
+      Id="38cf44fd-d2cf-4d30-9e65-d5301c257b60">
+      <body>Utilisation du diagramme d'activité d'envoi de requête</body>
+      <annotatedElements>
+        <opaqueActionMoniker
+          Id="a27f765b-79d6-497a-ae3c-e502c03a1c50"
+          LastKnownName="Retransmettre"
+          LastKnownLocation="Modelisation CloudBook.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="4cee3b60-c47b-4360-99a4-5c01048f5010">
+      <body>[rebounds &gt; 0]</body>
+    </comment>
+    <comment
+      Id="73abeb32-72bd-4bc3-9765-73f7160496e4">
+      <body>[rebounds == 0]</body>
+    </comment>
+    <comment
+      Id="404a4038-1e3c-485a-95f6-7c3f9da17c68">
+      <body>[pas proche]</body>
+    </comment>
+    <comment
+      Id="da7f2f76-1937-41bf-bff2-d0f9e1710f53">
+      <body>[present]</body>
+    </comment>
+    <comment
+      Id="feae20e2-c0a1-4fd2-837d-0be7627b68fd">
+      <body>[absent]</body>
+    </comment>
   </ownedCommentsInternal>
   <packagedElements>
     <packageHasNamedElement>
@@ -21834,11 +21868,264 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
           <opaqueAction
             Id="2c53dd9c-1b87-4849-afef-ca8485c5a6e7"
             name="Ajout dans la liste"
-            isLeaf="false" />
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f3a1199a-5942-4ab6-9025-d8b77428ee5a"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="0985348e-9f3e-4c2d-8653-0bd549f1b148"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
           <opaqueAction
             Id="55d929c4-196e-4e34-bef7-ae2d92c80b34"
             name="Mise à jour de ses informations"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f22a21aa-474f-4a1d-9e89-c0fb3c3c5df9"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="0985348e-9f3e-4c2d-8653-0bd549f1b148"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <mergeNode
+            Id="0985348e-9f3e-4c2d-8653-0bd549f1b148"
+            name="Merge1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="46c431ac-5ed2-4648-bf10-34e6727f2f41"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="a0ad4b1d-e806-40f3-b2f1-ecd772c36964"
+                  LastKnownName="Calcul de la proximité"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <opaqueAction
+            Id="a0ad4b1d-e806-40f3-b2f1-ecd772c36964"
+            name="Calcul de la proximité"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="2e13d505-5460-44c2-9ddf-f25839630528"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="f6c44f06-c0ca-4b50-9651-2e79fdc2522a"
+                  LastKnownName="Decision2"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="f6c44f06-c0ca-4b50-9651-2e79fdc2522a"
+            name="Decision2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="fbaf84bf-1898-4d7c-90ae-60e8652a092b"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="3397132c-e567-4c9e-a2dd-ee0a5fdeb500"
+                  LastKnownName="Vérifier l'existence d'un historique dans les informations transmises"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="4c1d7828-69aa-4d54-b60b-e4661da2f64f"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="4b379927-0332-4ef4-9098-24b95aac3553"
+                  LastKnownName="Merge3"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="3397132c-e567-4c9e-a2dd-ee0a5fdeb500"
+            name="Vérifier l'existence d'un historique dans les informations transmises"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="62165b7f-de07-4cc6-b518-83606d9eeb41"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="c6326ac2-c4f8-468e-9159-63f74aa9f1b2"
+                  LastKnownName="Decision3"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="4ee7a2b9-603e-4f0c-96a2-e05a5cbe7407"
+            name="(Re)calcul du classement des clouds"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="3d87563e-5f2c-4489-9245-3ca78515cbaa"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="4b379927-0332-4ef4-9098-24b95aac3553"
+                  LastKnownName="Merge3"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="c6326ac2-c4f8-468e-9159-63f74aa9f1b2"
+            name="Decision3"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="77ae5a39-fb95-4e6f-9e6b-839e39479c53"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="4ee7a2b9-603e-4f0c-96a2-e05a5cbe7407"
+                  LastKnownName="(Re)calcul du classement des clouds"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="0fd16163-331d-4037-8a6d-8fc4a6b646d7"
+                isLeaf="false">
+                <forkNodeMoniker
+                  Id="2081cb8e-8a35-49f3-b6a5-170244ba930d"
+                  LastKnownName="Fork1"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <activityFinalNode
+            Id="bd5a9721-34fa-4f81-9db3-512164de68d0"
+            name="ActivityFinal1"
             isLeaf="false" />
+          <opaqueAction
+            Id="87e2f326-4cbe-48b4-8f2d-128c2076f9c2"
+            name="Vérifier le nombre de rebonds de la requête"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="fbe48aec-963d-4208-b575-12677dc7c936"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="866ddae3-58a2-4aef-a1b2-442e8c52f2cc"
+                  LastKnownName="Decision4"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="866ddae3-58a2-4aef-a1b2-442e8c52f2cc"
+            name="Decision4"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="8c63fd74-b583-4d76-bda9-091066f541e9"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="a27f765b-79d6-497a-ae3c-e502c03a1c50"
+                  LastKnownName="Retransmettre"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="07dd2503-bb79-4386-ae7b-857c5ebd5912"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="ccea7672-864a-45be-aa73-dd3f75ae1cbc"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="a27f765b-79d6-497a-ae3c-e502c03a1c50"
+            name="Retransmettre"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="9c3f1340-5fde-4988-ab0c-847dd5fcde9e"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="ccea7672-864a-45be-aa73-dd3f75ae1cbc"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <mergeNode
+            Id="ccea7672-864a-45be-aa73-dd3f75ae1cbc"
+            name="Merge2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="7bd2a582-cdd9-4e46-a748-23473bf48c0e"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="bd5a9721-34fa-4f81-9db3-512164de68d0"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <mergeNode
+            Id="4b379927-0332-4ef4-9098-24b95aac3553"
+            name="Merge3"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="a14eb46d-df9e-4571-b670-10b5aa175010"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="87e2f326-4cbe-48b4-8f2d-128c2076f9c2"
+                  LastKnownName="Vérifier le nombre de rebonds de la requête"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <opaqueAction
+            Id="4ac6b02e-6724-4f9f-b4de-d9898c69db13"
+            name="Envoi d'une requête  avec demande d'historique"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="48b58aa3-79cc-4312-9f9c-93b05e329464"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="ccea7672-864a-45be-aa73-dd3f75ae1cbc"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <forkNode
+            Id="2081cb8e-8a35-49f3-b6a5-170244ba930d"
+            name="Fork1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="485980d8-6ce9-40be-8860-47b62a571de8"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="4ac6b02e-6724-4f9f-b4de-d9898c69db13"
+                  LastKnownName="Envoi d'une requête  avec demande d'historique"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="9da268ff-ef3a-47e0-98a8-6e1788e9b1e8"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="4b379927-0332-4ef4-9098-24b95aac3553"
+                  LastKnownName="Merge3"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
         </nodes>
       </activity>
     </packageHasNamedElement>
