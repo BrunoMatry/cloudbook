@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
   dslVersion="1.0.0.0"
   Id="94208107-703b-4bbf-9f51-c1243885138f"
   name="Modelisation CloudBook" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -4011,7 +4011,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
           </operation>
           <operation
             Id="792848e2-bf22-4565-9c7f-14fb50fc58c3"
-            name="getResult"
+            name="send"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -4025,23 +4025,10 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
                   direction="In"
                   isUnique="false">
                   <type_NamedElement>
-                    <interfaceMoniker
-                      Id="f1edc787-07c9-4c58-a06e-707ffe08cead"
-                      LastKnownName="Sendable"
-                      LastKnownLocation="Package_1622.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="47ac8408-e575-416d-8233-f15f89f0bbfd"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="dfe5a493-a354-4de2-a21c-a54162e50c35"
-                      LastKnownName="Result"
-                      LastKnownLocation="Modelisation CloudBook.uml" />
+                      Id="da3a052d-eff7-4679-90f3-d416c3c9b6e9"
+                      LastKnownName="Sendable"
+                      LastKnownLocation="Package_1624.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -4193,18 +4180,6 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
         isAbstract="false"
         isLeaf="false"
         isReentrant="false">
-        <ownedCommentsInternal>
-          <comment
-            Id="153eddb4-d9c5-48a2-9d1c-70f46716aed0">
-            <body>Waiting for another Result</body>
-            <annotatedElements>
-              <behaviorExecutionSpecificationMoniker
-                Id="dec54f6d-44f7-49e2-a193-9b77488e5bef"
-                LastKnownName="BehaviorExecutionSpecification24"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </annotatedElements>
-          </comment>
-        </ownedCommentsInternal>
         <fragments>
           <behaviorExecutionSpecification
             Id="6aa63417-a913-4395-bf3f-52c6ff4b14fb"
@@ -4239,14 +4214,6 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
               <messageOccurrenceSpecificationMoniker
                 Id="4bf6c31e-01ac-47a0-9258-a39b02ccbc48"
                 LastKnownName="MessageOccurrenceSpecification12"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-              <messageOccurrenceSpecificationMoniker
-                Id="83b19be9-0093-47f1-958a-97f65a920cfe"
-                LastKnownName="MessageOccurrenceSpecification13"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-              <messageOccurrenceSpecificationMoniker
-                Id="06616a44-e776-4dce-8f7a-d328b10b3b8e"
-                LastKnownName="MessageOccurrenceSpecification16"
                 LastKnownLocation="Modelisation CloudBook.uml" />
               <messageOccurrenceSpecificationMoniker
                 Id="4785edc1-5513-4ee7-a035-25c825501c62"
@@ -4302,7 +4269,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             <coveredLifelines>
               <lifelineMoniker
                 Id="8e5f9cfe-f4d4-476c-9be0-0a16a9ff7ce8"
-                LastKnownName="gtRes : GetResult"
+                LastKnownName="sndCom : SendCommande"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </coveredLifelines>
             <finish>
@@ -4342,7 +4309,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             <covered>
               <lifelineMoniker
                 Id="8e5f9cfe-f4d4-476c-9be0-0a16a9ff7ce8"
-                LastKnownName="gtRes : GetResult"
+                LastKnownName="sndCom : SendCommande"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -4352,7 +4319,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             <covered>
               <lifelineMoniker
                 Id="8e5f9cfe-f4d4-476c-9be0-0a16a9ff7ce8"
-                LastKnownName="gtRes : GetResult"
+                LastKnownName="sndCom : SendCommande"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -4372,7 +4339,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             <covered>
               <lifelineMoniker
                 Id="8e5f9cfe-f4d4-476c-9be0-0a16a9ff7ce8"
-                LastKnownName="gtRes : GetResult"
+                LastKnownName="sndCom : SendCommande"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -4400,115 +4367,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             <covered>
               <lifelineMoniker
                 Id="8e5f9cfe-f4d4-476c-9be0-0a16a9ff7ce8"
-                LastKnownName="gtRes : GetResult"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </executionOccurrenceSpecification>
-          <behaviorExecutionSpecification
-            Id="84dd12bf-8664-4cca-814d-2119bec1905b"
-            name="BehaviorExecutionSpecification4">
-            <coveredLifelines>
-              <lifelineMoniker
-                Id="819b05a9-6c17-48aa-ade6-6d190280ce1e"
-                LastKnownName=": FuturTask&lt;Result&gt;"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </coveredLifelines>
-            <finish>
-              <executionOccurrenceSpecificationMoniker
-                Id="2ac2c04a-b3aa-4e09-8634-ac32561c14c1"
-                LastKnownName="ExecutionOccurrenceSpecification8"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </finish>
-            <start>
-              <executionOccurrenceSpecificationMoniker
-                Id="b0db57f7-fb30-4e44-893f-a3dea450be47"
-                LastKnownName="ExecutionOccurrenceSpecification7"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </start>
-            <nestedOccurrences>
-              <messageOccurrenceSpecificationMoniker
-                Id="57d71fbb-46bb-46ae-9d0d-ced9d83441b4"
-                LastKnownName="MessageOccurrenceSpecification14"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-              <messageOccurrenceSpecificationMoniker
-                Id="0fbbb352-0a1f-4cf8-9ec2-d35e1b34f12e"
-                LastKnownName="MessageOccurrenceSpecification15"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </nestedOccurrences>
-          </behaviorExecutionSpecification>
-          <executionOccurrenceSpecification
-            Id="b0db57f7-fb30-4e44-893f-a3dea450be47"
-            name="ExecutionOccurrenceSpecification7">
-            <event>
-              <executionOccurrenceSpecificationReferencesEvent>
-                <executionEventMoniker
-                  Id="8ef0604f-15cf-45ce-9366-7a7fdeeaee1d"
-                  LastKnownName="ExecutionEvent"
-                  LastKnownLocation="Modelisation CloudBook.uml" />
-              </executionOccurrenceSpecificationReferencesEvent>
-            </event>
-            <covered>
-              <lifelineMoniker
-                Id="819b05a9-6c17-48aa-ade6-6d190280ce1e"
-                LastKnownName=": FuturTask&lt;Result&gt;"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="83b19be9-0093-47f1-958a-97f65a920cfe"
-            name="MessageOccurrenceSpecification13">
-            <covered>
-              <lifelineMoniker
-                Id="20675779-a935-4206-8b03-9291588a48ba"
-                LastKnownName=": ClientServerSender"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="57d71fbb-46bb-46ae-9d0d-ced9d83441b4"
-            name="MessageOccurrenceSpecification14">
-            <covered>
-              <lifelineMoniker
-                Id="819b05a9-6c17-48aa-ade6-6d190280ce1e"
-                LastKnownName=": FuturTask&lt;Result&gt;"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="06616a44-e776-4dce-8f7a-d328b10b3b8e"
-            name="MessageOccurrenceSpecification16">
-            <covered>
-              <lifelineMoniker
-                Id="20675779-a935-4206-8b03-9291588a48ba"
-                LastKnownName=": ClientServerSender"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="0fbbb352-0a1f-4cf8-9ec2-d35e1b34f12e"
-            name="MessageOccurrenceSpecification15">
-            <covered>
-              <lifelineMoniker
-                Id="819b05a9-6c17-48aa-ade6-6d190280ce1e"
-                LastKnownName=": FuturTask&lt;Result&gt;"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <executionOccurrenceSpecification
-            Id="2ac2c04a-b3aa-4e09-8634-ac32561c14c1"
-            name="ExecutionOccurrenceSpecification8">
-            <event>
-              <executionOccurrenceSpecificationReferencesEvent>
-                <executionEventMoniker
-                  Id="f1b9128f-a0c4-4fa0-b02c-f0aa2c5cf07a"
-                  LastKnownName="ExecutionEvent"
-                  LastKnownLocation="Modelisation CloudBook.uml" />
-              </executionOccurrenceSpecificationReferencesEvent>
-            </event>
-            <covered>
-              <lifelineMoniker
-                Id="819b05a9-6c17-48aa-ade6-6d190280ce1e"
-                LastKnownName=": FuturTask&lt;Result&gt;"
+                LastKnownName="sndCom : SendCommande"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -4682,7 +4541,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             <coveredLifelines>
               <lifelineMoniker
                 Id="8e5f9cfe-f4d4-476c-9be0-0a16a9ff7ce8"
-                LastKnownName="gtRes : GetResult"
+                LastKnownName="sndCom : SendCommande"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </coveredLifelines>
             <finish>
@@ -4722,7 +4581,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             <covered>
               <lifelineMoniker
                 Id="8e5f9cfe-f4d4-476c-9be0-0a16a9ff7ce8"
-                LastKnownName="gtRes : GetResult"
+                LastKnownName="sndCom : SendCommande"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -4742,7 +4601,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             <covered>
               <lifelineMoniker
                 Id="8e5f9cfe-f4d4-476c-9be0-0a16a9ff7ce8"
-                LastKnownName="gtRes : GetResult"
+                LastKnownName="sndCom : SendCommande"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -4762,7 +4621,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             <covered>
               <lifelineMoniker
                 Id="8e5f9cfe-f4d4-476c-9be0-0a16a9ff7ce8"
-                LastKnownName="gtRes : GetResult"
+                LastKnownName="sndCom : SendCommande"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -4780,7 +4639,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             <covered>
               <lifelineMoniker
                 Id="8e5f9cfe-f4d4-476c-9be0-0a16a9ff7ce8"
-                LastKnownName="gtRes : GetResult"
+                LastKnownName="sndCom : SendCommande"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -4937,44 +4796,6 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="28db0c1f-d9b0-494e-b28c-293b3c61cfb7"
-            name="MessageOccurrenceSpecification8">
-            <covered>
-              <lifelineMoniker
-                Id="96f6e7e2-11ec-48cf-90ee-b90b9574da16"
-                LastKnownName=": Network"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="cb1c49cd-92ff-420f-af59-b1b38a930345"
-            name="MessageOccurrenceSpecification7">
-            <covered>
-              <lifelineMoniker
-                Id="20675779-a935-4206-8b03-9291588a48ba"
-                LastKnownName=": ClientServerSender"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <executionOccurrenceSpecification
-            Id="b714f90d-a018-40f0-9403-950213253fd8"
-            name="ExecutionOccurrenceSpecification4">
-            <event>
-              <executionOccurrenceSpecificationReferencesEvent>
-                <executionEventMoniker
-                  Id="5a0b00ce-fccd-4982-a811-75f2ae8b0282"
-                  LastKnownName="ExecutionEvent"
-                  LastKnownLocation="Modelisation CloudBook.uml" />
-              </executionOccurrenceSpecificationReferencesEvent>
-            </event>
-            <covered>
-              <lifelineMoniker
-                Id="20675779-a935-4206-8b03-9291588a48ba"
-                LastKnownName=": ClientServerSender"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="bd74f476-0cfe-43f0-93a9-d897a3ffefdf"
             name="MessageOccurrenceSpecification81">
             <covered>
@@ -5012,13 +4833,51 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="28db0c1f-d9b0-494e-b28c-293b3c61cfb7"
+            name="MessageOccurrenceSpecification8">
+            <covered>
+              <lifelineMoniker
+                Id="96f6e7e2-11ec-48cf-90ee-b90b9574da16"
+                LastKnownName=": Network"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="cb1c49cd-92ff-420f-af59-b1b38a930345"
+            name="MessageOccurrenceSpecification7">
+            <covered>
+              <lifelineMoniker
+                Id="20675779-a935-4206-8b03-9291588a48ba"
+                LastKnownName=": ClientServerSender"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="b714f90d-a018-40f0-9403-950213253fd8"
+            name="ExecutionOccurrenceSpecification4">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="5a0b00ce-fccd-4982-a811-75f2ae8b0282"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="20675779-a935-4206-8b03-9291588a48ba"
+                LastKnownName=": ClientServerSender"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
           <behaviorExecutionSpecification
             Id="9e9e94d0-09fa-419b-873c-6dd76a12da3c"
             name="BehaviorExecutionSpecification9">
             <coveredLifelines>
               <lifelineMoniker
                 Id="8e5f9cfe-f4d4-476c-9be0-0a16a9ff7ce8"
-                LastKnownName="gtRes : GetResult"
+                LastKnownName="sndCom : SendCommande"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </coveredLifelines>
             <finish>
@@ -5047,10 +4906,6 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
                 LastKnownName="MessageOccurrenceSpecification34"
                 LastKnownLocation="Modelisation CloudBook.uml" />
               <messageOccurrenceSpecificationMoniker
-                Id="3203d16b-93cf-47bd-ae0d-b494a4c9dcec"
-                LastKnownName="MessageOccurrenceSpecification59"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-              <messageOccurrenceSpecificationMoniker
                 Id="a4328f9f-9311-44c1-8355-46b315ced6f1"
                 LastKnownName="MessageOccurrenceSpecification29"
                 LastKnownLocation="Modelisation CloudBook.uml" />
@@ -5070,10 +4925,20 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             <covered>
               <lifelineMoniker
                 Id="8e5f9cfe-f4d4-476c-9be0-0a16a9ff7ce8"
-                LastKnownName="gtRes : GetResult"
+                LastKnownName="sndCom : SendCommande"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="0494cebe-e21c-4469-9f7a-616fc712da3c"
+            name="MessageOccurrenceSpecification28">
+            <covered>
+              <lifelineMoniker
+                Id="8e5f9cfe-f4d4-476c-9be0-0a16a9ff7ce8"
+                LastKnownName="sndCom : SendCommande"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
             Id="6c916e4e-bdf1-4535-84e0-cf0047bafaf4"
             name="MessageOccurrenceSpecification27">
@@ -5081,16 +4946,6 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
               <lifelineMoniker
                 Id="b65cd7c9-ddad-42ee-9e6a-7acdb2e1e5ef"
                 LastKnownName=": ServerScheduler"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="0494cebe-e21c-4469-9f7a-616fc712da3c"
-            name="MessageOccurrenceSpecification28">
-            <covered>
-              <lifelineMoniker
-                Id="8e5f9cfe-f4d4-476c-9be0-0a16a9ff7ce8"
-                LastKnownName="gtRes : GetResult"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -5120,25 +4975,9 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
                 Id="fbf96b81-0f81-4ee8-a0db-78a6a912ae64"
                 LastKnownName="MessageOccurrenceSpecification32"
                 LastKnownLocation="Modelisation CloudBook.uml" />
-              <operandOccurrenceSpecificationMoniker
-                Id="52be72db-c088-45bb-87ce-4b4ce183d96a"
-                LastKnownName="OperandOccurrenceSpecification3"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-              <messageOccurrenceSpecificationMoniker
-                Id="c80ac6d4-e0c3-495c-a603-dc3d200388cf"
-                LastKnownName="MessageOccurrenceSpecification75"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-              <messageOccurrenceSpecificationMoniker
-                Id="4ee534ce-71f1-44c1-8bfe-8e2736e40fdc"
-                LastKnownName="MessageOccurrenceSpecification78"
-                LastKnownLocation="Modelisation CloudBook.uml" />
               <interactionUseOccurrenceSpecificationMoniker
-                Id="c1e83fb6-eaec-4cd7-8b56-5fac74965ca5"
-                LastKnownName="InteractionUseOccurrenceSpecification2"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-              <operandOccurrenceSpecificationMoniker
-                Id="99fbfaca-33f3-4d2e-88ef-338d53b9d4ae"
-                LastKnownName="OperandOccurrenceSpecification4"
+                Id="021848c1-80e4-4612-9aa9-4f3e234a9853"
+                LastKnownName="InteractionUseOccurrenceSpecification1"
                 LastKnownLocation="Modelisation CloudBook.uml" />
               <messageOccurrenceSpecificationMoniker
                 Id="9667fc19-f674-4266-bf62-a69c97d6858b"
@@ -5170,7 +5009,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             <covered>
               <lifelineMoniker
                 Id="8e5f9cfe-f4d4-476c-9be0-0a16a9ff7ce8"
-                LastKnownName="gtRes : GetResult"
+                LastKnownName="sndCom : SendCommande"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -5184,202 +5023,9 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </messageOccurrenceSpecification>
-          <combinedFragment
-            Id="fb3713be-9f58-43c2-a619-a9f0b70bf815"
-            name="CombinedFragment1"
-            interactionOperator="Loop">
-            <coveredLifelines>
-              <lifelineMoniker
-                Id="e5c705ae-791b-4458-a1ab-7e7ce28778bf"
-                LastKnownName="s : ServerServant"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-              <lifelineMoniker
-                Id="8e427683-e1c1-4028-bd43-6eba787e19ae"
-                LastKnownName=": TargetedRequest"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </coveredLifelines>
-            <operands>
-              <interactionOperand
-                Id="a0f63d08-a534-4d27-9645-a7e1908dda72"
-                name="InteractionOperand1">
-                <coveredLifelines>
-                  <lifelineMoniker
-                    Id="e5c705ae-791b-4458-a1ab-7e7ce28778bf"
-                    LastKnownName="s : ServerServant"
-                    LastKnownLocation="Modelisation CloudBook.uml" />
-                  <lifelineMoniker
-                    Id="8e427683-e1c1-4028-bd43-6eba787e19ae"
-                    LastKnownName=": TargetedRequest"
-                    LastKnownLocation="Modelisation CloudBook.uml" />
-                </coveredLifelines>
-                <guard>
-                  <interactionConstraint
-                    Id="44538523-6c7d-45d1-b2c7-67fbcac3e672"
-                    guardText="For each IP in request.ips">
-                    <maxInt>
-                      <literalString
-                        Id="6aade5df-3abb-48f0-8014-66d978cefd9c"
-                        name="LiteralString1" />
-                    </maxInt>
-                    <minInt>
-                      <literalString
-                        Id="28f22409-5d10-424e-b943-decb20a6218a"
-                        name="LiteralString2" />
-                    </minInt>
-                  </interactionConstraint>
-                </guard>
-                <operandOccurrenceSpecifications>
-                  <operandOccurrenceSpecificationMoniker
-                    Id="a34dd621-f862-4e36-869c-12f60b8b9f3b"
-                    LastKnownName="OperandOccurrenceSpecification1"
-                    LastKnownLocation="Modelisation CloudBook.uml" />
-                  <operandOccurrenceSpecificationMoniker
-                    Id="f3436f2b-872c-44cb-ae1e-b0fc71df31f9"
-                    LastKnownName="OperandOccurrenceSpecification2"
-                    LastKnownLocation="Modelisation CloudBook.uml" />
-                  <operandOccurrenceSpecificationMoniker
-                    Id="52be72db-c088-45bb-87ce-4b4ce183d96a"
-                    LastKnownName="OperandOccurrenceSpecification3"
-                    LastKnownLocation="Modelisation CloudBook.uml" />
-                  <operandOccurrenceSpecificationMoniker
-                    Id="99fbfaca-33f3-4d2e-88ef-338d53b9d4ae"
-                    LastKnownName="OperandOccurrenceSpecification4"
-                    LastKnownLocation="Modelisation CloudBook.uml" />
-                </operandOccurrenceSpecifications>
-              </interactionOperand>
-            </operands>
-          </combinedFragment>
-          <operandOccurrenceSpecification
-            Id="52be72db-c088-45bb-87ce-4b4ce183d96a"
-            name="OperandOccurrenceSpecification3">
-            <covered>
-              <lifelineMoniker
-                Id="e5c705ae-791b-4458-a1ab-7e7ce28778bf"
-                LastKnownName="s : ServerServant"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
-            Id="a34dd621-f862-4e36-869c-12f60b8b9f3b"
-            name="OperandOccurrenceSpecification1">
-            <covered>
-              <lifelineMoniker
-                Id="8e427683-e1c1-4028-bd43-6eba787e19ae"
-                LastKnownName=": TargetedRequest"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <behaviorExecutionSpecification
-            Id="6a6a46f1-395b-48de-ac9c-fad69ce3baab"
-            name="BehaviorExecutionSpecification26">
-            <coveredLifelines>
-              <lifelineMoniker
-                Id="8e427683-e1c1-4028-bd43-6eba787e19ae"
-                LastKnownName=": TargetedRequest"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </coveredLifelines>
-            <finish>
-              <executionOccurrenceSpecificationMoniker
-                Id="65120b75-b3f6-440c-a167-60a1e3f6fa24"
-                LastKnownName="ExecutionOccurrenceSpecification52"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </finish>
-            <start>
-              <executionOccurrenceSpecificationMoniker
-                Id="92355926-ba48-41cc-b24b-d81da843b734"
-                LastKnownName="ExecutionOccurrenceSpecification51"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </start>
-            <nestedOccurrences>
-              <messageOccurrenceSpecificationMoniker
-                Id="d844f000-1e7d-4176-bfd1-d587c717914d"
-                LastKnownName="MessageOccurrenceSpecification76"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-              <messageOccurrenceSpecificationMoniker
-                Id="f9912fe8-8b2b-421f-bfa8-2d5ac9946d24"
-                LastKnownName="MessageOccurrenceSpecification77"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </nestedOccurrences>
-          </behaviorExecutionSpecification>
-          <executionOccurrenceSpecification
-            Id="92355926-ba48-41cc-b24b-d81da843b734"
-            name="ExecutionOccurrenceSpecification51">
-            <event>
-              <executionOccurrenceSpecificationReferencesEvent>
-                <executionEventMoniker
-                  Id="b94d977a-f031-482a-8f24-591e89b1c6ce"
-                  LastKnownName="ExecutionEvent"
-                  LastKnownLocation="Modelisation CloudBook.uml" />
-              </executionOccurrenceSpecificationReferencesEvent>
-            </event>
-            <covered>
-              <lifelineMoniker
-                Id="8e427683-e1c1-4028-bd43-6eba787e19ae"
-                LastKnownName=": TargetedRequest"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="c80ac6d4-e0c3-495c-a603-dc3d200388cf"
-            name="MessageOccurrenceSpecification75">
-            <covered>
-              <lifelineMoniker
-                Id="e5c705ae-791b-4458-a1ab-7e7ce28778bf"
-                LastKnownName="s : ServerServant"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="d844f000-1e7d-4176-bfd1-d587c717914d"
-            name="MessageOccurrenceSpecification76">
-            <covered>
-              <lifelineMoniker
-                Id="8e427683-e1c1-4028-bd43-6eba787e19ae"
-                LastKnownName=": TargetedRequest"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="f9912fe8-8b2b-421f-bfa8-2d5ac9946d24"
-            name="MessageOccurrenceSpecification77">
-            <covered>
-              <lifelineMoniker
-                Id="8e427683-e1c1-4028-bd43-6eba787e19ae"
-                LastKnownName=": TargetedRequest"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="4ee534ce-71f1-44c1-8bfe-8e2736e40fdc"
-            name="MessageOccurrenceSpecification78">
-            <covered>
-              <lifelineMoniker
-                Id="e5c705ae-791b-4458-a1ab-7e7ce28778bf"
-                LastKnownName="s : ServerServant"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <executionOccurrenceSpecification
-            Id="65120b75-b3f6-440c-a167-60a1e3f6fa24"
-            name="ExecutionOccurrenceSpecification52">
-            <event>
-              <executionOccurrenceSpecificationReferencesEvent>
-                <executionEventMoniker
-                  Id="63cd5e08-cfc9-4945-918a-aeb6a4da9adc"
-                  LastKnownName="ExecutionEvent"
-                  LastKnownLocation="Modelisation CloudBook.uml" />
-              </executionOccurrenceSpecificationReferencesEvent>
-            </event>
-            <covered>
-              <lifelineMoniker
-                Id="8e427683-e1c1-4028-bd43-6eba787e19ae"
-                LastKnownName=": TargetedRequest"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </executionOccurrenceSpecification>
           <interactionUse
-            Id="c7f5af9b-97f9-4963-abca-25b9cb7d0920"
-            name="ForwardRequestToClient">
+            Id="71566185-466a-47a1-9829-ba0c43f760f6"
+            name="Forward">
             <coveredLifelines>
               <lifelineMoniker
                 Id="e5c705ae-791b-4458-a1ab-7e7ce28778bf"
@@ -5392,18 +5038,28 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             </coveredLifelines>
             <interactionUseOccurrenceSpecifications>
               <interactionUseOccurrenceSpecificationMoniker
-                Id="c1e83fb6-eaec-4cd7-8b56-5fac74965ca5"
-                LastKnownName="InteractionUseOccurrenceSpecification2"
+                Id="021848c1-80e4-4612-9aa9-4f3e234a9853"
+                LastKnownName="InteractionUseOccurrenceSpecification1"
                 LastKnownLocation="Modelisation CloudBook.uml" />
               <interactionUseOccurrenceSpecificationMoniker
-                Id="68f6e708-32fd-419f-82dd-363564c1277a"
-                LastKnownName="InteractionUseOccurrenceSpecification3"
+                Id="b03fb2d8-269b-4d72-a08e-b68964fc70c3"
+                LastKnownName="InteractionUseOccurrenceSpecification2"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </interactionUseOccurrenceSpecifications>
           </interactionUse>
           <interactionUseOccurrenceSpecification
-            Id="68f6e708-32fd-419f-82dd-363564c1277a"
-            name="InteractionUseOccurrenceSpecification3">
+            Id="021848c1-80e4-4612-9aa9-4f3e234a9853"
+            name="InteractionUseOccurrenceSpecification1">
+            <covered>
+              <lifelineMoniker
+                Id="e5c705ae-791b-4458-a1ab-7e7ce28778bf"
+                LastKnownName="s : ServerServant"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </interactionUseOccurrenceSpecification>
+          <interactionUseOccurrenceSpecification
+            Id="b03fb2d8-269b-4d72-a08e-b68964fc70c3"
+            name="InteractionUseOccurrenceSpecification2">
             <covered>
               <lifelineMoniker
                 Id="6fe22f6c-7c46-44b5-9a0d-5d651519a9ed"
@@ -5411,36 +5067,6 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </interactionUseOccurrenceSpecification>
-          <interactionUseOccurrenceSpecification
-            Id="c1e83fb6-eaec-4cd7-8b56-5fac74965ca5"
-            name="InteractionUseOccurrenceSpecification2">
-            <covered>
-              <lifelineMoniker
-                Id="e5c705ae-791b-4458-a1ab-7e7ce28778bf"
-                LastKnownName="s : ServerServant"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </interactionUseOccurrenceSpecification>
-          <operandOccurrenceSpecification
-            Id="99fbfaca-33f3-4d2e-88ef-338d53b9d4ae"
-            name="OperandOccurrenceSpecification4">
-            <covered>
-              <lifelineMoniker
-                Id="e5c705ae-791b-4458-a1ab-7e7ce28778bf"
-                LastKnownName="s : ServerServant"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
-            Id="f3436f2b-872c-44cb-ae1e-b0fc71df31f9"
-            name="OperandOccurrenceSpecification2">
-            <covered>
-              <lifelineMoniker
-                Id="8e427683-e1c1-4028-bd43-6eba787e19ae"
-                LastKnownName=": TargetedRequest"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
           <messageOccurrenceSpecification
             Id="9667fc19-f674-4266-bf62-a69c97d6858b"
             name="MessageOccurrenceSpecification33">
@@ -5457,7 +5083,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             <covered>
               <lifelineMoniker
                 Id="8e5f9cfe-f4d4-476c-9be0-0a16a9ff7ce8"
-                LastKnownName="gtRes : GetResult"
+                LastKnownName="sndCom : SendCommande"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -5479,95 +5105,13 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </executionOccurrenceSpecification>
-          <behaviorExecutionSpecification
-            Id="753c2d2d-77c1-4897-a192-b2c9ac644235"
-            name="BehaviorExecutionSpecification20">
-            <coveredLifelines>
-              <lifelineMoniker
-                Id="20675779-a935-4206-8b03-9291588a48ba"
-                LastKnownName=": ClientServerSender"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </coveredLifelines>
-            <finish>
-              <executionOccurrenceSpecificationMoniker
-                Id="b96b56f2-e058-4c30-9c82-63dc44d0b9f0"
-                LastKnownName="ExecutionOccurrenceSpecification40"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </finish>
-            <start>
-              <executionOccurrenceSpecificationMoniker
-                Id="a04122d4-958e-4a02-8d5b-09e9747b128c"
-                LastKnownName="ExecutionOccurrenceSpecification39"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </start>
-            <nestedOccurrences>
-              <messageOccurrenceSpecificationMoniker
-                Id="32648867-479c-4ec2-9271-30ccf1da101e"
-                LastKnownName="MessageOccurrenceSpecification60"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-              <messageOccurrenceSpecificationMoniker
-                Id="46521c0f-1391-4477-94a8-69ca4788ae4b"
-                LastKnownName="MessageOccurrenceSpecification47"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-              <messageOccurrenceSpecificationMoniker
-                Id="ad4057e0-0125-45ad-8b8c-e3075f5874b3"
-                LastKnownName="MessageOccurrenceSpecification50"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-              <messageOccurrenceSpecificationMoniker
-                Id="05ac2b2b-b634-417a-918d-d728d84745db"
-                LastKnownName="MessageOccurrenceSpecification67"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-              <messageOccurrenceSpecificationMoniker
-                Id="1be8f082-8e3d-4e4c-9f47-05e624e66fce"
-                LastKnownName="MessageOccurrenceSpecification70"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </nestedOccurrences>
-          </behaviorExecutionSpecification>
-          <executionOccurrenceSpecification
-            Id="a04122d4-958e-4a02-8d5b-09e9747b128c"
-            name="ExecutionOccurrenceSpecification39">
-            <event>
-              <executionOccurrenceSpecificationReferencesEvent>
-                <executionEventMoniker
-                  Id="bdd2991e-56b7-4751-8339-829a8c54538e"
-                  LastKnownName="ExecutionEvent"
-                  LastKnownLocation="Modelisation CloudBook.uml" />
-              </executionOccurrenceSpecificationReferencesEvent>
-            </event>
-            <covered>
-              <lifelineMoniker
-                Id="20675779-a935-4206-8b03-9291588a48ba"
-                LastKnownName=": ClientServerSender"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="32648867-479c-4ec2-9271-30ccf1da101e"
-            name="MessageOccurrenceSpecification60">
-            <covered>
-              <lifelineMoniker
-                Id="20675779-a935-4206-8b03-9291588a48ba"
-                LastKnownName=": ClientServerSender"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="3203d16b-93cf-47bd-ae0d-b494a4c9dcec"
-            name="MessageOccurrenceSpecification59">
-            <covered>
-              <lifelineMoniker
-                Id="8e5f9cfe-f4d4-476c-9be0-0a16a9ff7ce8"
-                LastKnownName="gtRes : GetResult"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
             Id="a4328f9f-9311-44c1-8355-46b315ced6f1"
             name="MessageOccurrenceSpecification29">
             <covered>
               <lifelineMoniker
                 Id="8e5f9cfe-f4d4-476c-9be0-0a16a9ff7ce8"
-                LastKnownName="gtRes : GetResult"
+                LastKnownName="sndCom : SendCommande"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -5595,80 +5139,10 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             <covered>
               <lifelineMoniker
                 Id="8e5f9cfe-f4d4-476c-9be0-0a16a9ff7ce8"
-                LastKnownName="gtRes : GetResult"
+                LastKnownName="sndCom : SendCommande"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </executionOccurrenceSpecification>
-          <behaviorExecutionSpecification
-            Id="877e759a-5d4f-4923-afb8-fbb426558a38"
-            name="BehaviorExecutionSpecification16">
-            <coveredLifelines>
-              <lifelineMoniker
-                Id="819b05a9-6c17-48aa-ade6-6d190280ce1e"
-                LastKnownName=": FuturTask&lt;Result&gt;"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </coveredLifelines>
-            <finish>
-              <executionOccurrenceSpecificationMoniker
-                Id="5f359586-dc41-4fd2-8403-f2acdcca9cd0"
-                LastKnownName="ExecutionOccurrenceSpecification32"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </finish>
-            <start>
-              <executionOccurrenceSpecificationMoniker
-                Id="d0c8f2d1-9a2a-4f13-88cc-540876ef5f00"
-                LastKnownName="ExecutionOccurrenceSpecification31"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </start>
-            <nestedOccurrences>
-              <messageOccurrenceSpecificationMoniker
-                Id="2c742240-cdfd-40e9-9d23-3c3336b4a1c6"
-                LastKnownName="MessageOccurrenceSpecification48"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-              <messageOccurrenceSpecificationMoniker
-                Id="968a28ac-bc20-462a-af11-91d3f7223d37"
-                LastKnownName="MessageOccurrenceSpecification49"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </nestedOccurrences>
-          </behaviorExecutionSpecification>
-          <executionOccurrenceSpecification
-            Id="d0c8f2d1-9a2a-4f13-88cc-540876ef5f00"
-            name="ExecutionOccurrenceSpecification31">
-            <event>
-              <executionOccurrenceSpecificationReferencesEvent>
-                <executionEventMoniker
-                  Id="6e34c9f6-27b3-41ad-a2ad-f299d4bd561f"
-                  LastKnownName="ExecutionEvent"
-                  LastKnownLocation="Modelisation CloudBook.uml" />
-              </executionOccurrenceSpecificationReferencesEvent>
-            </event>
-            <covered>
-              <lifelineMoniker
-                Id="819b05a9-6c17-48aa-ade6-6d190280ce1e"
-                LastKnownName=": FuturTask&lt;Result&gt;"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="2c742240-cdfd-40e9-9d23-3c3336b4a1c6"
-            name="MessageOccurrenceSpecification48">
-            <covered>
-              <lifelineMoniker
-                Id="819b05a9-6c17-48aa-ade6-6d190280ce1e"
-                LastKnownName=": FuturTask&lt;Result&gt;"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="46521c0f-1391-4477-94a8-69ca4788ae4b"
-            name="MessageOccurrenceSpecification47">
-            <covered>
-              <lifelineMoniker
-                Id="20675779-a935-4206-8b03-9291588a48ba"
-                LastKnownName=": ClientServerSender"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
           <executionOccurrenceSpecification
             Id="893c86ce-f793-48ca-9c08-851607f5f6bc"
             name="ExecutionOccurrenceSpecification14">
@@ -5705,44 +5179,6 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="968a28ac-bc20-462a-af11-91d3f7223d37"
-            name="MessageOccurrenceSpecification49">
-            <covered>
-              <lifelineMoniker
-                Id="819b05a9-6c17-48aa-ade6-6d190280ce1e"
-                LastKnownName=": FuturTask&lt;Result&gt;"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="ad4057e0-0125-45ad-8b8c-e3075f5874b3"
-            name="MessageOccurrenceSpecification50">
-            <covered>
-              <lifelineMoniker
-                Id="20675779-a935-4206-8b03-9291588a48ba"
-                LastKnownName=": ClientServerSender"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <executionOccurrenceSpecification
-            Id="5f359586-dc41-4fd2-8403-f2acdcca9cd0"
-            name="ExecutionOccurrenceSpecification32">
-            <event>
-              <executionOccurrenceSpecificationReferencesEvent>
-                <executionEventMoniker
-                  Id="8ac4d2f0-0966-4f17-a078-fd723ab4537d"
-                  LastKnownName="ExecutionEvent"
-                  LastKnownLocation="Modelisation CloudBook.uml" />
-              </executionOccurrenceSpecificationReferencesEvent>
-            </event>
-            <covered>
-              <lifelineMoniker
-                Id="819b05a9-6c17-48aa-ade6-6d190280ce1e"
-                LastKnownName=": FuturTask&lt;Result&gt;"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </executionOccurrenceSpecification>
           <executionOccurrenceSpecification
             Id="41db6671-b467-4b68-ac34-3630a01d86f6"
             name="ExecutionOccurrenceSpecification10">
@@ -5758,132 +5194,6 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
               <lifelineMoniker
                 Id="b65cd7c9-ddad-42ee-9e6a-7acdb2e1e5ef"
                 LastKnownName=": ServerScheduler"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </executionOccurrenceSpecification>
-          <behaviorExecutionSpecification
-            Id="dec54f6d-44f7-49e2-a193-9b77488e5bef"
-            name="BehaviorExecutionSpecification24">
-            <coveredLifelines>
-              <lifelineMoniker
-                Id="f29bd6fa-3f7d-4b21-affa-de6a58e7f835"
-                LastKnownName=": FuturTask&lt;Result&gt;"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </coveredLifelines>
-            <finish>
-              <executionOccurrenceSpecificationMoniker
-                Id="d4f761d3-f0ad-4553-bbb4-f321b8c8560f"
-                LastKnownName="ExecutionOccurrenceSpecification48"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </finish>
-            <start>
-              <executionOccurrenceSpecificationMoniker
-                Id="42ecdcdc-87b8-47d8-959f-09cbe3f1fa91"
-                LastKnownName="ExecutionOccurrenceSpecification47"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </start>
-            <nestedOccurrences>
-              <messageOccurrenceSpecificationMoniker
-                Id="48967f43-d3c6-49db-b8b3-13a1201781fc"
-                LastKnownName="MessageOccurrenceSpecification68"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-              <messageOccurrenceSpecificationMoniker
-                Id="b7cb7c88-86b4-4fa5-9a96-1afe1680de3b"
-                LastKnownName="MessageOccurrenceSpecification69"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </nestedOccurrences>
-          </behaviorExecutionSpecification>
-          <executionOccurrenceSpecification
-            Id="42ecdcdc-87b8-47d8-959f-09cbe3f1fa91"
-            name="ExecutionOccurrenceSpecification47">
-            <event>
-              <executionOccurrenceSpecificationReferencesEvent>
-                <executionEventMoniker
-                  Id="b45d7b87-9139-4732-ba65-44d0053f1198"
-                  LastKnownName="ExecutionEvent"
-                  LastKnownLocation="Modelisation CloudBook.uml" />
-              </executionOccurrenceSpecificationReferencesEvent>
-            </event>
-            <covered>
-              <lifelineMoniker
-                Id="f29bd6fa-3f7d-4b21-affa-de6a58e7f835"
-                LastKnownName=": FuturTask&lt;Result&gt;"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="48967f43-d3c6-49db-b8b3-13a1201781fc"
-            name="MessageOccurrenceSpecification68">
-            <covered>
-              <lifelineMoniker
-                Id="f29bd6fa-3f7d-4b21-affa-de6a58e7f835"
-                LastKnownName=": FuturTask&lt;Result&gt;"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="05ac2b2b-b634-417a-918d-d728d84745db"
-            name="MessageOccurrenceSpecification67">
-            <covered>
-              <lifelineMoniker
-                Id="20675779-a935-4206-8b03-9291588a48ba"
-                LastKnownName=": ClientServerSender"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="b7cb7c88-86b4-4fa5-9a96-1afe1680de3b"
-            name="MessageOccurrenceSpecification69">
-            <covered>
-              <lifelineMoniker
-                Id="f29bd6fa-3f7d-4b21-affa-de6a58e7f835"
-                LastKnownName=": FuturTask&lt;Result&gt;"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="1be8f082-8e3d-4e4c-9f47-05e624e66fce"
-            name="MessageOccurrenceSpecification70">
-            <covered>
-              <lifelineMoniker
-                Id="20675779-a935-4206-8b03-9291588a48ba"
-                LastKnownName=": ClientServerSender"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <executionOccurrenceSpecification
-            Id="d4f761d3-f0ad-4553-bbb4-f321b8c8560f"
-            name="ExecutionOccurrenceSpecification48">
-            <event>
-              <executionOccurrenceSpecificationReferencesEvent>
-                <executionEventMoniker
-                  Id="ad466305-2431-4efb-be7c-661b5833635a"
-                  LastKnownName="ExecutionEvent"
-                  LastKnownLocation="Modelisation CloudBook.uml" />
-              </executionOccurrenceSpecificationReferencesEvent>
-            </event>
-            <covered>
-              <lifelineMoniker
-                Id="f29bd6fa-3f7d-4b21-affa-de6a58e7f835"
-                LastKnownName=": FuturTask&lt;Result&gt;"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </executionOccurrenceSpecification>
-          <executionOccurrenceSpecification
-            Id="b96b56f2-e058-4c30-9c82-63dc44d0b9f0"
-            name="ExecutionOccurrenceSpecification40">
-            <event>
-              <executionOccurrenceSpecificationReferencesEvent>
-                <executionEventMoniker
-                  Id="06c2a24c-251b-4ccc-bfd1-0e5fda7e850c"
-                  LastKnownName="ExecutionEvent"
-                  LastKnownLocation="Modelisation CloudBook.uml" />
-              </executionOccurrenceSpecificationReferencesEvent>
-            </event>
-            <covered>
-              <lifelineMoniker
-                Id="20675779-a935-4206-8b03-9291588a48ba"
-                LastKnownName=": ClientServerSender"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -5929,21 +5239,13 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
                 Id="b714f90d-a018-40f0-9403-950213253fd8"
                 LastKnownName="ExecutionOccurrenceSpecification4"
                 LastKnownLocation="Modelisation CloudBook.uml" />
-              <executionOccurrenceSpecificationMoniker
-                Id="a04122d4-958e-4a02-8d5b-09e9747b128c"
-                LastKnownName="ExecutionOccurrenceSpecification39"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-              <executionOccurrenceSpecificationMoniker
-                Id="b96b56f2-e058-4c30-9c82-63dc44d0b9f0"
-                LastKnownName="ExecutionOccurrenceSpecification40"
-                LastKnownLocation="Modelisation CloudBook.uml" />
             </topLevelOccurrences>
           </lifeline>
           <lifeline
             Id="8e5f9cfe-f4d4-476c-9be0-0a16a9ff7ce8"
-            name="gtRes : GetResult"
+            name="sndCom : SendCommande"
             isActor="false"
-            lifelineDisplayName="gtRes : GetResult">
+            lifelineDisplayName="sndCom : SendCommande">
             <topLevelOccurrences>
               <executionOccurrenceSpecificationMoniker
                 Id="62fbe5cb-3c6b-4f2c-bc38-03d9da856b4b"
@@ -5968,46 +5270,6 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
               <executionOccurrenceSpecificationMoniker
                 Id="f45484a0-3d07-43a3-99a6-273106655ce0"
                 LastKnownName="ExecutionOccurrenceSpecification18"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </topLevelOccurrences>
-          </lifeline>
-          <lifeline
-            Id="819b05a9-6c17-48aa-ade6-6d190280ce1e"
-            name=": FuturTask&lt;Result&gt;"
-            isActor="false"
-            lifelineDisplayName=": FuturTask&lt;Result&gt;">
-            <topLevelOccurrences>
-              <executionOccurrenceSpecificationMoniker
-                Id="b0db57f7-fb30-4e44-893f-a3dea450be47"
-                LastKnownName="ExecutionOccurrenceSpecification7"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-              <executionOccurrenceSpecificationMoniker
-                Id="2ac2c04a-b3aa-4e09-8634-ac32561c14c1"
-                LastKnownName="ExecutionOccurrenceSpecification8"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-              <executionOccurrenceSpecificationMoniker
-                Id="d0c8f2d1-9a2a-4f13-88cc-540876ef5f00"
-                LastKnownName="ExecutionOccurrenceSpecification31"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-              <executionOccurrenceSpecificationMoniker
-                Id="5f359586-dc41-4fd2-8403-f2acdcca9cd0"
-                LastKnownName="ExecutionOccurrenceSpecification32"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </topLevelOccurrences>
-          </lifeline>
-          <lifeline
-            Id="f29bd6fa-3f7d-4b21-affa-de6a58e7f835"
-            name=": FuturTask&lt;Result&gt;"
-            isActor="false"
-            lifelineDisplayName=": FuturTask&lt;Result&gt;">
-            <topLevelOccurrences>
-              <executionOccurrenceSpecificationMoniker
-                Id="42ecdcdc-87b8-47d8-959f-09cbe3f1fa91"
-                LastKnownName="ExecutionOccurrenceSpecification47"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-              <executionOccurrenceSpecificationMoniker
-                Id="d4f761d3-f0ad-4553-bbb4-f321b8c8560f"
-                LastKnownName="ExecutionOccurrenceSpecification48"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </topLevelOccurrences>
           </lifeline>
@@ -6068,32 +5330,8 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             </represents>
             <topLevelOccurrences>
               <interactionUseOccurrenceSpecificationMoniker
-                Id="68f6e708-32fd-419f-82dd-363564c1277a"
-                LastKnownName="InteractionUseOccurrenceSpecification3"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </topLevelOccurrences>
-          </lifeline>
-          <lifeline
-            Id="8e427683-e1c1-4028-bd43-6eba787e19ae"
-            name=": TargetedRequest"
-            isActor="false"
-            lifelineDisplayName=": TargetedRequest">
-            <topLevelOccurrences>
-              <operandOccurrenceSpecificationMoniker
-                Id="a34dd621-f862-4e36-869c-12f60b8b9f3b"
-                LastKnownName="OperandOccurrenceSpecification1"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-              <executionOccurrenceSpecificationMoniker
-                Id="92355926-ba48-41cc-b24b-d81da843b734"
-                LastKnownName="ExecutionOccurrenceSpecification51"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-              <executionOccurrenceSpecificationMoniker
-                Id="65120b75-b3f6-440c-a167-60a1e3f6fa24"
-                LastKnownName="ExecutionOccurrenceSpecification52"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-              <operandOccurrenceSpecificationMoniker
-                Id="f3436f2b-872c-44cb-ae1e-b0fc71df31f9"
-                LastKnownName="OperandOccurrenceSpecification2"
+                Id="b03fb2d8-269b-4d72-a08e-b68964fc70c3"
+                LastKnownName="InteractionUseOccurrenceSpecification2"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </topLevelOccurrences>
           </lifeline>
@@ -6101,7 +5339,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
         <messages>
           <message
             Id="63d59488-fd02-476c-9cea-e8cbcd4eba28"
-            name="getResult(request)"
+            name="send(request)"
             messageKind="Complete"
             messageSort="SynchCall"
             createSelfMessage="false">
@@ -6157,46 +5395,8 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             </receiveEvent>
           </message>
           <message
-            Id="33313f6f-2eb8-4f5c-9372-f6c620f34340"
-            name="&lt;&lt;create&gt;&gt;"
-            messageKind="Complete"
-            messageSort="CreateMessage"
-            createSelfMessage="false">
-            <sendEvent>
-              <messageOccurrenceSpecificationMoniker
-                Id="83b19be9-0093-47f1-958a-97f65a920cfe"
-                LastKnownName="MessageOccurrenceSpecification13"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </sendEvent>
-            <receiveEvent>
-              <messageOccurrenceSpecificationMoniker
-                Id="57d71fbb-46bb-46ae-9d0d-ced9d83441b4"
-                LastKnownName="MessageOccurrenceSpecification14"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </receiveEvent>
-          </message>
-          <message
-            Id="595b7324-8af2-4153-987f-f286fe1aae78"
-            name="&lt;&lt;return&gt;&gt;"
-            messageKind="Complete"
-            messageSort="Reply"
-            createSelfMessage="false">
-            <sendEvent>
-              <messageOccurrenceSpecificationMoniker
-                Id="0fbbb352-0a1f-4cf8-9ec2-d35e1b34f12e"
-                LastKnownName="MessageOccurrenceSpecification15"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </sendEvent>
-            <receiveEvent>
-              <messageOccurrenceSpecificationMoniker
-                Id="06616a44-e776-4dce-8f7a-d328b10b3b8e"
-                LastKnownName="MessageOccurrenceSpecification16"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </receiveEvent>
-          </message>
-          <message
             Id="ea7d7c79-1d2e-4c3a-a1da-d7ed653b8d7f"
-            name="sending of gtRes on the network to the server"
+            name="sending of sndCom on the network to the server"
             messageKind="Complete"
             messageSort="AsynchCall"
             createSelfMessage="false">
@@ -6215,7 +5415,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
           </message>
           <message
             Id="5e63b483-818c-472a-a625-396776d33a77"
-            name="onReceived(gtRes)"
+            name="onReceived(sndCom)"
             messageKind="Complete"
             messageSort="SynchCall"
             createSelfMessage="true">
@@ -6272,7 +5472,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
           </message>
           <message
             Id="cd7b6689-20dc-479c-9d23-1785bf0eaffb"
-            name="dispatch(gtRes)"
+            name="dispatch(sndCom)"
             messageKind="Complete"
             messageSort="SynchCall"
             createSelfMessage="true">
@@ -6309,25 +5509,6 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             </receiveEvent>
           </message>
           <message
-            Id="af4f07df-56d4-4aa0-9d84-a96b41444bef"
-            name="&lt;&lt;return&gt;&gt;"
-            messageKind="Complete"
-            messageSort="Reply"
-            createSelfMessage="false">
-            <sendEvent>
-              <messageOccurrenceSpecificationMoniker
-                Id="cb1c49cd-92ff-420f-af59-b1b38a930345"
-                LastKnownName="MessageOccurrenceSpecification7"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </sendEvent>
-            <receiveEvent>
-              <messageOccurrenceSpecificationMoniker
-                Id="28db0c1f-d9b0-494e-b28c-293b3c61cfb7"
-                LastKnownName="MessageOccurrenceSpecification8"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </receiveEvent>
-          </message>
-          <message
             Id="ea1ab928-c70b-4c3a-8648-4e24f9d8f79a"
             name="&lt;&lt;return&gt;&gt;"
             messageKind="Complete"
@@ -6343,6 +5524,25 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
               <messageOccurrenceSpecificationMoniker
                 Id="c00acab5-0819-41a2-a16b-83345c786310"
                 LastKnownName="MessageOccurrenceSpecification82"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="af4f07df-56d4-4aa0-9d84-a96b41444bef"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="cb1c49cd-92ff-420f-af59-b1b38a930345"
+                LastKnownName="MessageOccurrenceSpecification7"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="28db0c1f-d9b0-494e-b28c-293b3c61cfb7"
+                LastKnownName="MessageOccurrenceSpecification8"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </receiveEvent>
           </message>
@@ -6367,7 +5567,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
           </message>
           <message
             Id="67c11da1-3559-4f68-a262-3c50bbcf0411"
-            name="getResult(request)"
+            name="send(request)"
             messageKind="Complete"
             messageSort="SynchCall"
             createSelfMessage="false">
@@ -6385,46 +5585,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             </receiveEvent>
           </message>
           <message
-            Id="7f8e6a9c-c460-4b71-a326-2aaadf8ad36b"
-            name="&lt;&lt;create&gt;&gt;"
-            messageKind="Complete"
-            messageSort="CreateMessage"
-            createSelfMessage="false">
-            <sendEvent>
-              <messageOccurrenceSpecificationMoniker
-                Id="c80ac6d4-e0c3-495c-a603-dc3d200388cf"
-                LastKnownName="MessageOccurrenceSpecification75"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </sendEvent>
-            <receiveEvent>
-              <messageOccurrenceSpecificationMoniker
-                Id="d844f000-1e7d-4176-bfd1-d587c717914d"
-                LastKnownName="MessageOccurrenceSpecification76"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </receiveEvent>
-          </message>
-          <message
-            Id="76e7239a-fbc8-4930-a2a2-d65d9dd4f6de"
-            name="&lt;&lt;return&gt;&gt;"
-            messageKind="Complete"
-            messageSort="Reply"
-            createSelfMessage="false">
-            <sendEvent>
-              <messageOccurrenceSpecificationMoniker
-                Id="f9912fe8-8b2b-421f-bfa8-2d5ac9946d24"
-                LastKnownName="MessageOccurrenceSpecification77"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </sendEvent>
-            <receiveEvent>
-              <messageOccurrenceSpecificationMoniker
-                Id="4ee534ce-71f1-44c1-8bfe-8e2736e40fdc"
-                LastKnownName="MessageOccurrenceSpecification78"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </receiveEvent>
-          </message>
-          <message
             Id="4d87ddde-9287-47eb-8011-67bfcd95eda2"
-            name="return res"
             messageKind="Complete"
             messageSort="Reply"
             createSelfMessage="false">
@@ -6438,25 +5599,6 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
               <messageOccurrenceSpecificationMoniker
                 Id="1570f271-abd9-4f20-b089-679f372b918c"
                 LastKnownName="MessageOccurrenceSpecification34"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </receiveEvent>
-          </message>
-          <message
-            Id="900c2f5b-a91c-42f6-8f36-fa6f36b3a2fa"
-            name="sending back itself to the waiting thread"
-            messageKind="Complete"
-            messageSort="AsynchCall"
-            createSelfMessage="false">
-            <sendEvent>
-              <messageOccurrenceSpecificationMoniker
-                Id="3203d16b-93cf-47bd-ae0d-b494a4c9dcec"
-                LastKnownName="MessageOccurrenceSpecification59"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </sendEvent>
-            <receiveEvent>
-              <messageOccurrenceSpecificationMoniker
-                Id="32648867-479c-4ec2-9271-30ccf1da101e"
-                LastKnownName="MessageOccurrenceSpecification60"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </receiveEvent>
           </message>
@@ -6475,81 +5617,6 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
               <messageOccurrenceSpecificationMoniker
                 Id="d35fcce7-3b7a-47d2-a1de-1a403537310d"
                 LastKnownName="MessageOccurrenceSpecification30"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </receiveEvent>
-          </message>
-          <message
-            Id="03ae3456-d2da-4ee5-936c-a917a823cfd4"
-            name="set(res)"
-            messageKind="Complete"
-            messageSort="SynchCall"
-            createSelfMessage="false">
-            <sendEvent>
-              <messageOccurrenceSpecificationMoniker
-                Id="46521c0f-1391-4477-94a8-69ca4788ae4b"
-                LastKnownName="MessageOccurrenceSpecification47"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </sendEvent>
-            <receiveEvent>
-              <messageOccurrenceSpecificationMoniker
-                Id="2c742240-cdfd-40e9-9d23-3c3336b4a1c6"
-                LastKnownName="MessageOccurrenceSpecification48"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </receiveEvent>
-          </message>
-          <message
-            Id="eb7cf807-3ddd-4005-8839-03b5764f66ec"
-            messageKind="Complete"
-            messageSort="Reply"
-            createSelfMessage="false">
-            <sendEvent>
-              <messageOccurrenceSpecificationMoniker
-                Id="968a28ac-bc20-462a-af11-91d3f7223d37"
-                LastKnownName="MessageOccurrenceSpecification49"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </sendEvent>
-            <receiveEvent>
-              <messageOccurrenceSpecificationMoniker
-                Id="ad4057e0-0125-45ad-8b8c-e3075f5874b3"
-                LastKnownName="MessageOccurrenceSpecification50"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </receiveEvent>
-          </message>
-          <message
-            Id="fef5b20f-852a-4a8b-8462-e817326ab531"
-            name="&lt;&lt;create&gt;&gt;"
-            messageKind="Complete"
-            messageSort="CreateMessage"
-            createSelfMessage="false">
-            <sendEvent>
-              <messageOccurrenceSpecificationMoniker
-                Id="05ac2b2b-b634-417a-918d-d728d84745db"
-                LastKnownName="MessageOccurrenceSpecification67"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </sendEvent>
-            <receiveEvent>
-              <messageOccurrenceSpecificationMoniker
-                Id="48967f43-d3c6-49db-b8b3-13a1201781fc"
-                LastKnownName="MessageOccurrenceSpecification68"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </receiveEvent>
-          </message>
-          <message
-            Id="6ec8869d-84ff-48af-b7d8-6eb7f929a84c"
-            name="&lt;&lt;return&gt;&gt;"
-            messageKind="Complete"
-            messageSort="Reply"
-            createSelfMessage="false">
-            <sendEvent>
-              <messageOccurrenceSpecificationMoniker
-                Id="b7cb7c88-86b4-4fa5-9a96-1afe1680de3b"
-                LastKnownName="MessageOccurrenceSpecification69"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </sendEvent>
-            <receiveEvent>
-              <messageOccurrenceSpecificationMoniker
-                Id="1be8f082-8e3d-4e4c-9f47-05e624e66fce"
-                LastKnownName="MessageOccurrenceSpecification70"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </receiveEvent>
           </message>
@@ -7022,16 +6089,6 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
     <packageHasNamedElement>
       <executionEvent
         Id="5e142139-056c-4649-a994-f63275a7ff07"
-        name="ExecutionEvent" />
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <executionEvent
-        Id="8ef0604f-15cf-45ce-9366-7a7fdeeaee1d"
-        name="ExecutionEvent" />
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <executionEvent
-        Id="f1b9128f-a0c4-4fa0-b02c-f0aa2c5cf07a"
         name="ExecutionEvent" />
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -8112,7 +7169,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
         <ownedOperationsInternal>
           <operation
             Id="273a950d-e4f5-4da9-928d-80cd43c0c9d3"
-            name="getResult"
+            name="send"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -8126,23 +7183,10 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
                   direction="In"
                   isUnique="false">
                   <type_NamedElement>
-                    <interfaceMoniker
-                      Id="f1edc787-07c9-4c58-a06e-707ffe08cead"
-                      LastKnownName="Sendable"
-                      LastKnownLocation="Package_1622.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="7aa9ccb8-c92a-4dcb-9027-e9b531ee917b"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="dfe5a493-a354-4de2-a21c-a54162e50c35"
-                      LastKnownName="Result"
-                      LastKnownLocation="Modelisation CloudBook.uml" />
+                      Id="da3a052d-eff7-4679-90f3-d416c3c9b6e9"
+                      LastKnownName="Sendable"
+                      LastKnownLocation="Package_1624.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -8221,7 +7265,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
                   <type_NamedElement>
                     <classMoniker
                       Id="20be7ea3-04b6-40c7-8408-bfaa058feb74"
-                      LastKnownName="GetResult"
+                      LastKnownName="SendCommand"
                       LastKnownLocation="Package_1622.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -8246,7 +7290,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
                   <type_NamedElement>
                     <classMoniker
                       Id="20be7ea3-04b6-40c7-8408-bfaa058feb74"
-                      LastKnownName="GetResult"
+                      LastKnownName="SendCommand"
                       LastKnownLocation="Package_1622.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -8291,7 +7335,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
                   <type_NamedElement>
                     <classMoniker
                       Id="20be7ea3-04b6-40c7-8408-bfaa058feb74"
-                      LastKnownName="GetResult"
+                      LastKnownName="SendCommand"
                       LastKnownLocation="Package_1622.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -8316,7 +7360,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
                   <type_NamedElement>
                     <classMoniker
                       Id="20be7ea3-04b6-40c7-8408-bfaa058feb74"
-                      LastKnownName="GetResult"
+                      LastKnownName="SendCommand"
                       LastKnownLocation="Package_1622.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -8429,7 +7473,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
         <ownedOperationsInternal>
           <operation
             Id="9e76fe2f-a94b-46fa-94de-1f2dce18d7b3"
-            name="getResult"
+            name="send"
             isLeaf="false"
             isStatic="false"
             isAbstract="true"
@@ -8443,23 +7487,10 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
                   direction="In"
                   isUnique="false">
                   <type_NamedElement>
-                    <interfaceMoniker
-                      Id="f1edc787-07c9-4c58-a06e-707ffe08cead"
+                    <undefinedTypeMoniker
+                      Id="da3a052d-eff7-4679-90f3-d416c3c9b6e9"
                       LastKnownName="Sendable"
-                      LastKnownLocation="Package_1622.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="c6e60f7f-1b23-46a1-b324-1fd32ef4d567"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <interfaceMoniker
-                      Id="92952e69-8ce3-4b24-b16a-4050b8d63d62"
-                      LastKnownName="Result"
-                      LastKnownLocation="Package_1622.uml" />
+                      LastKnownLocation="Package_1624.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -8467,26 +7498,6 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
           </operation>
         </ownedOperationsInternal>
       </class>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <executionEvent
-        Id="bdd2991e-56b7-4751-8339-829a8c54538e"
-        name="ExecutionEvent" />
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <executionEvent
-        Id="06c2a24c-251b-4ccc-bfd1-0e5fda7e850c"
-        name="ExecutionEvent" />
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <executionEvent
-        Id="6e34c9f6-27b3-41ad-a2ad-f299d4bd561f"
-        name="ExecutionEvent" />
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <executionEvent
-        Id="8ac4d2f0-0966-4f17-a078-fd723ab4537d"
-        name="ExecutionEvent" />
     </packageHasNamedElement>
     <packageHasNamedElement>
       <interaction
@@ -8863,22 +7874,22 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="c29ae53f-4486-4df9-81a0-36b681ec014c"
-            name="MessageOccurrenceSpecification17">
-            <covered>
-              <lifelineMoniker
-                Id="75e409b3-2f63-43fa-9215-d06eb3c9f071"
-                LastKnownName=": ServerForwarder"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="56d26d21-15a4-4d55-8901-0d1cccadf72f"
             name="MessageOccurrenceSpecification18">
             <covered>
               <lifelineMoniker
                 Id="1c62dae9-4ff0-4922-830d-0ccd2d76909f"
                 LastKnownName=": ClientScheduler"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="c29ae53f-4486-4df9-81a0-36b681ec014c"
+            name="MessageOccurrenceSpecification17">
+            <covered>
+              <lifelineMoniker
+                Id="75e409b3-2f63-43fa-9215-d06eb3c9f071"
+                LastKnownName=": ServerForwarder"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -9057,22 +8068,22 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="39c38037-a4f4-4314-8962-fa3a6d90e1b8"
-            name="MessageOccurrenceSpecification19">
-            <covered>
-              <lifelineMoniker
-                Id="1c62dae9-4ff0-4922-830d-0ccd2d76909f"
-                LastKnownName=": ClientScheduler"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="bda5bc14-de60-4478-9c84-98edc5015409"
             name="MessageOccurrenceSpecification20">
             <covered>
               <lifelineMoniker
                 Id="a8aab4b2-098e-4cc3-8486-04e7c069886d"
                 LastKnownName="gtRes : GetResult"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="39c38037-a4f4-4314-8962-fa3a6d90e1b8"
+            name="MessageOccurrenceSpecification19">
+            <covered>
+              <lifelineMoniker
+                Id="1c62dae9-4ff0-4922-830d-0ccd2d76909f"
+                LastKnownName=": ClientScheduler"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -9573,22 +8584,22 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="a79a5039-28f8-4e8f-808f-d2c47bad8c07"
-            name="MessageOccurrenceSpecification34">
-            <covered>
-              <lifelineMoniker
-                Id="a8aab4b2-098e-4cc3-8486-04e7c069886d"
-                LastKnownName="gtRes : GetResult"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="39392c44-63c0-4802-9d03-eebdbae45f9a"
             name="MessageOccurrenceSpecification33">
             <covered>
               <lifelineMoniker
                 Id="fb6b4cef-9ebe-42dd-907c-abda4cf07757"
                 LastKnownName="s : ClientServant"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="a79a5039-28f8-4e8f-808f-d2c47bad8c07"
+            name="MessageOccurrenceSpecification34">
+            <covered>
+              <lifelineMoniker
+                Id="a8aab4b2-098e-4cc3-8486-04e7c069886d"
+                LastKnownName="gtRes : GetResult"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -9755,22 +8766,22 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="1e861b82-392d-4804-afc7-618bbfef95b7"
-            name="MessageOccurrenceSpecification30">
-            <covered>
-              <lifelineMoniker
-                Id="1c62dae9-4ff0-4922-830d-0ccd2d76909f"
-                LastKnownName=": ClientScheduler"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="a97f9330-9fc9-460a-923e-e781f35c7f02"
             name="MessageOccurrenceSpecification29">
             <covered>
               <lifelineMoniker
                 Id="a8aab4b2-098e-4cc3-8486-04e7c069886d"
                 LastKnownName="gtRes : GetResult"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="1e861b82-392d-4804-afc7-618bbfef95b7"
+            name="MessageOccurrenceSpecification30">
+            <covered>
+              <lifelineMoniker
+                Id="1c62dae9-4ff0-4922-830d-0ccd2d76909f"
+                LastKnownName=": ClientScheduler"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -10675,16 +9686,6 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
         name="ExecutionEvent" />
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <executionEvent
-        Id="b45d7b87-9139-4732-ba65-44d0053f1198"
-        name="ExecutionEvent" />
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <executionEvent
-        Id="ad466305-2431-4efb-be7c-661b5833635a"
-        name="ExecutionEvent" />
-    </packageHasNamedElement>
-    <packageHasNamedElement>
       <class
         Id="7d213e58-2dee-486a-b147-26c5ad5f014e"
         name="ServerForwarder"
@@ -10702,16 +9703,6 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
           </generalization>
         </generalsInternal>
       </class>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <executionEvent
-        Id="b94d977a-f031-482a-8f24-591e89b1c6ce"
-        name="ExecutionEvent" />
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <executionEvent
-        Id="63cd5e08-cfc9-4945-918a-aeb6a4da9adc"
-        name="ExecutionEvent" />
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
@@ -10733,7 +9724,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
         <ownedOperationsInternal>
           <operation
             Id="9ef9b18c-bd5c-4ae8-8085-c8829a581d58"
-            name="getResult"
+            name="send"
             isLeaf="false"
             isStatic="false"
             isAbstract="true"
@@ -10747,23 +9738,10 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
                   direction="In"
                   isUnique="false">
                   <type_NamedElement>
-                    <interfaceMoniker
-                      Id="f1edc787-07c9-4c58-a06e-707ffe08cead"
+                    <undefinedTypeMoniker
+                      Id="da3a052d-eff7-4679-90f3-d416c3c9b6e9"
                       LastKnownName="Sendable"
-                      LastKnownLocation="Package_1622.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="efd64375-ba70-400e-90e9-68679171f67f"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <interfaceMoniker
-                      Id="92952e69-8ce3-4b24-b16a-4050b8d63d62"
-                      LastKnownName="Result"
-                      LastKnownLocation="Package_1622.uml" />
+                      LastKnownLocation="Package_1624.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -14239,6 +13217,13 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             Id="98b34701-c494-4e78-9712-5f1e8b3581fc">
             <interfaceMoniker
               Id="0e51211a-1e8e-4650-8bec-c58cb58fda30"
+              LastKnownName="Sendable"
+              LastKnownLocation="Modelisation CloudBook.uml" />
+          </interfaceRealization>
+          <interfaceRealization
+            Id="15dd1aa1-6a71-43f9-bb8b-51a0dbb3e54b">
+            <interfaceMoniker
+              Id="d17a7027-666b-48b9-b454-4fcc752dcdd9"
               LastKnownName="Sendable"
               LastKnownLocation="Modelisation CloudBook.uml" />
           </interfaceRealization>
@@ -22059,6 +21044,13 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
           </association>
         </targetEnds>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="d17a7027-666b-48b9-b454-4fcc752dcdd9"
+        name="Sendable"
+        isAbstract="false"
+        isLeaf="false" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

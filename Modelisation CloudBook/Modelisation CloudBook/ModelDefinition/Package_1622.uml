@@ -30,7 +30,7 @@
       <annotatedElements>
         <classMoniker
           Id="20be7ea3-04b6-40c7-8408-bfaa058feb74"
-          LastKnownName="GetResult"
+          LastKnownName="SendCommand"
           LastKnownLocation="Package_1622.uml" />
       </annotatedElements>
     </comment>
@@ -49,7 +49,7 @@
     <packageHasNamedElement>
       <class
         Id="20be7ea3-04b6-40c7-8408-bfaa058feb74"
-        name="GetResult"
+        name="SendCommand"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -269,7 +269,7 @@
           </operation>
           <operation
             Id="d4e78ce4-dc19-42aa-b0e9-73fc6f1f8ce6"
-            name="GetResult"
+            name="SendCommand"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -278,7 +278,7 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="140d2783-1375-4a94-aeef-8be3535d924f"
+                  Id="c18b12bd-698a-489d-839a-ddfb9a310ea6"
                   name="sendable"
                   direction="In"
                   isUnique="false">
@@ -411,7 +411,7 @@
         <ownedOperationsInternal>
           <operation
             Id="e63d0477-ff4d-4afe-9573-1affc16f92aa"
-            name="getResult"
+            name="send"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -420,27 +420,14 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="e9471ce8-c4c7-4b80-baf2-d94214930ee3"
-                  name="members"
+                  Id="12cf06da-4b4f-4ed9-9e8a-29c1cb3510fb"
+                  name="snd"
                   direction="In"
                   isUnique="false">
                   <type_NamedElement>
                     <interfaceMoniker
                       Id="f1edc787-07c9-4c58-a06e-707ffe08cead"
                       LastKnownName="Sendable"
-                      LastKnownLocation="Package_1622.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="65f6c9d1-7e43-453c-b0cd-047400fa3efd"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <interfaceMoniker
-                      Id="92952e69-8ce3-4b24-b16a-4050b8d63d62"
-                      LastKnownName="Result"
                       LastKnownLocation="Package_1622.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -583,7 +570,7 @@
                   <type_NamedElement>
                     <classMoniker
                       Id="20be7ea3-04b6-40c7-8408-bfaa058feb74"
-                      LastKnownName="GetResult"
+                      LastKnownName="SendCommand"
                       LastKnownLocation="Package_1622.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -608,7 +595,7 @@
                   <type_NamedElement>
                     <classMoniker
                       Id="20be7ea3-04b6-40c7-8408-bfaa058feb74"
-                      LastKnownName="GetResult"
+                      LastKnownName="SendCommand"
                       LastKnownLocation="Package_1622.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -647,7 +634,7 @@
         <ownedOperationsInternal>
           <operation
             Id="4c685d52-4797-4776-83ca-e13770b328b4"
-            name="getResult"
+            name="send"
             isLeaf="false"
             isStatic="false"
             isAbstract="true"
@@ -664,19 +651,6 @@
                     <interfaceMoniker
                       Id="f1edc787-07c9-4c58-a06e-707ffe08cead"
                       LastKnownName="Sendable"
-                      LastKnownLocation="Package_1622.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="ea83e78a-a9fa-456a-a413-038e54c87006"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <interfaceMoniker
-                      Id="92952e69-8ce3-4b24-b16a-4050b8d63d62"
-                      LastKnownName="Result"
                       LastKnownLocation="Package_1622.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -808,7 +782,7 @@
         <ownedOperations>
           <operation
             Id="0b7eb34c-5f73-40bd-8ed2-38a498755b0d"
-            name="getResult"
+            name="send"
             isLeaf="false"
             isStatic="false"
             isAbstract="true"
@@ -817,7 +791,7 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="1d790c87-b32b-40ab-b2c4-b71b1851aa66"
+                  Id="4ce26e7a-ded3-4d9a-92ed-40bfed1de4b1"
                   name="snd"
                   direction="In"
                   isUnique="false">
@@ -825,19 +799,6 @@
                     <interfaceMoniker
                       Id="f1edc787-07c9-4c58-a06e-707ffe08cead"
                       LastKnownName="Sendable"
-                      LastKnownLocation="Package_1622.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="49c0a1cc-0907-4c68-94e6-7f693b5c4eb3"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <interfaceMoniker
-                      Id="92952e69-8ce3-4b24-b16a-4050b8d63d62"
-                      LastKnownName="Result"
                       LastKnownLocation="Package_1622.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -866,7 +827,7 @@
         <ownedOperationsInternal>
           <operation
             Id="322588a9-5ea0-46fd-b1d5-b776ddf78783"
-            name="getResult"
+            name="send"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -883,19 +844,6 @@
                     <interfaceMoniker
                       Id="f1edc787-07c9-4c58-a06e-707ffe08cead"
                       LastKnownName="Sendable"
-                      LastKnownLocation="Package_1622.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="f103a117-7097-410c-a3a4-ee6803dbe10c"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <interfaceMoniker
-                      Id="92952e69-8ce3-4b24-b16a-4050b8d63d62"
-                      LastKnownName="Result"
                       LastKnownLocation="Package_1622.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -1166,82 +1114,7 @@
         Id="f1edc787-07c9-4c58-a06e-707ffe08cead"
         name="Sendable"
         isAbstract="false"
-        isLeaf="false">
-        <ownedOperations>
-          <operation
-            Id="ae023a29-3710-4191-9277-f77776e3a130"
-            name="getDate"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="true"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="33e5e873-5cbd-49de-a337-22a945fb0500"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="0210aa2b-7f6c-44e6-85a6-ad491ed16f76"
-                      LastKnownName="Date"
-                      LastKnownLocation="Modelisation CloudBook.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
-            Id="69f4e402-372c-4623-8cd7-ea8d44bb5791"
-            name="getInformation"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="true"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="e96f7604-2686-49db-bb02-074d486d52ec"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="b6e140de-2b67-450e-9302-e4dcc51088fa"
-                      LastKnownName="Information"
-                      LastKnownLocation="Package_1622.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
-            Id="d15e10db-870f-4082-bac7-d57ac2bc1414"
-            name="getRecipient"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="true"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="03b78acf-6f55-4652-8d88-660f97492c19"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="ce126c28-7853-4d05-adb7-0cd57e68c6e0"
-                      LastKnownName="int"
-                      LastKnownLocation="Modelisation CloudBook.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-        </ownedOperations>
-      </Interface>
+        isLeaf="false" />
     </packageHasNamedElement>
     <packageHasNamedElement>
       <Interface
@@ -1275,7 +1148,7 @@
                   <type_NamedElement>
                     <classMoniker
                       Id="20be7ea3-04b6-40c7-8408-bfaa058feb74"
-                      LastKnownName="GetResult"
+                      LastKnownName="SendCommand"
                       LastKnownLocation="Package_1622.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -1300,7 +1173,7 @@
                   <type_NamedElement>
                     <classMoniker
                       Id="20be7ea3-04b6-40c7-8408-bfaa058feb74"
-                      LastKnownName="GetResult"
+                      LastKnownName="SendCommand"
                       LastKnownLocation="Package_1622.uml" />
                   </type_NamedElement>
                 </parameter>

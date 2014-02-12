@@ -140,22 +140,14 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
-          <operation Id="bf8d7baf-666c-4dce-8ac4-b2952a9bc5a2" name="getResult" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="bf8d7baf-666c-4dce-8ac4-b2952a9bc5a2" name="send" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="792848e2-bf22-4565-9c7f-14fb50fc58c3" />
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter Id="01054e9f-7939-49f5-b960-33406e228dc5" name="snd" direction="In" isUnique="false">
                   <elementDefinition Id="0e0e30ca-23e2-42b4-aa95-ee37b621c73c" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="0aa04a1b-b44a-481d-b717-bbe6f1b7e39a" LastKnownName="Sendable" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="301ad611-2998-468a-8e00-d968ba5f7a6d" direction="Return" isUnique="false">
-                  <elementDefinition Id="47ac8408-e575-416d-8233-f15f89f0bbfd" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="c6795d1f-ad09-4c3b-8db5-6cb6fbdaf2e8" LastKnownName="Result" />
+                    <referencedTypeMoniker Id="762029c0-8c8c-4a6c-b977-e2fb4cd6973c" LastKnownName="Sendable" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -183,22 +175,14 @@
             <Interface Id="bce58635-610f-4edd-a55b-7647e2b2725b" name="IClientService" isAbstract="false" isLeaf="false">
               <elementDefinition Id="8d3f7f52-8cff-46d2-b486-2737d9fee4aa" />
               <ownedOperations>
-                <operation Id="ed022a1b-db73-4d03-830e-4d0637b37c4e" name="getResult" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                <operation Id="ed022a1b-db73-4d03-830e-4d0637b37c4e" name="send" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="f15be09c-7561-453c-880d-d66b60e56b2e" />
                   <ownedParameters>
                     <operationHasOwnedParameters>
-                      <parameter Id="6396ab82-1526-4456-abe3-45480977af00" name="snd" direction="In" isUnique="false">
-                        <elementDefinition Id="287843be-528f-4abc-8b72-feaead579df9" />
+                      <parameter Id="2334c979-2ce8-48a9-b9b3-b2468f5c79b5" name="snd" direction="In" isUnique="false">
+                        <elementDefinition Id="1241c303-ca44-466f-b832-961760fec642" />
                         <type_NamedElement>
-                          <referencedTypeMoniker Id="0aa04a1b-b44a-481d-b717-bbe6f1b7e39a" LastKnownName="Sendable" />
-                        </type_NamedElement>
-                      </parameter>
-                    </operationHasOwnedParameters>
-                    <operationHasOwnedParameters>
-                      <parameter Id="1bf5cf9b-8ac5-4863-878a-71fe17344f19" direction="Return" isUnique="false">
-                        <elementDefinition Id="01b462fd-548b-48c4-b57d-b11d71dbee2f" />
-                        <type_NamedElement>
-                          <referencedTypeMoniker Id="c6795d1f-ad09-4c3b-8db5-6cb6fbdaf2e8" LastKnownName="Result" />
+                          <referencedTypeMoniker Id="762029c0-8c8c-4a6c-b977-e2fb4cd6973c" LastKnownName="Sendable" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
@@ -217,22 +201,14 @@
                 </interfaceRealization>
               </suppliersInternal>
               <ownedOperationsInternal>
-                <operation Id="f92ab5c0-391c-470f-b8db-6e8fd6ebff98" name="getResult" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                <operation Id="f92ab5c0-391c-470f-b8db-6e8fd6ebff98" name="send" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="f1d51c37-a38f-4c7e-aab9-19029ba29046" />
                   <ownedParameters>
                     <operationHasOwnedParameters>
                       <parameter Id="8355c8b1-a2c0-457b-a3a3-31673ae58bf6" name="members" direction="In" isUnique="false">
                         <elementDefinition Id="4362b6fa-a935-4ea7-9e35-650bb1ebd425" />
                         <type_NamedElement>
-                          <referencedTypeMoniker Id="0aa04a1b-b44a-481d-b717-bbe6f1b7e39a" LastKnownName="Sendable" />
-                        </type_NamedElement>
-                      </parameter>
-                    </operationHasOwnedParameters>
-                    <operationHasOwnedParameters>
-                      <parameter Id="4ebcbf60-1b25-484c-a037-0b3b41f27f79" direction="Return" isUnique="false">
-                        <elementDefinition Id="428b1953-5a6c-40fa-922c-d191a199ddeb" />
-                        <type_NamedElement>
-                          <referencedTypeMoniker Id="c6795d1f-ad09-4c3b-8db5-6cb6fbdaf2e8" LastKnownName="Result" />
+                          <referencedTypeMoniker Id="762029c0-8c8c-4a6c-b977-e2fb4cd6973c" LastKnownName="Sendable" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
@@ -252,7 +228,7 @@
                       <parameter Id="d168395b-28f3-4db7-8992-aa871725b310" name="command" direction="In" isUnique="false">
                         <elementDefinition Id="418dd951-d20a-4553-8662-c08924991d74" />
                         <type_NamedElement>
-                          <referencedTypeMoniker Id="51d4d23a-d0ab-4974-b468-5301b16b7296" LastKnownName="GetResult" />
+                          <referencedTypeMoniker Id="51d4d23a-d0ab-4974-b468-5301b16b7296" LastKnownName="SendCommand" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
@@ -265,7 +241,7 @@
                       <parameter Id="73d5637a-fdce-4881-bfa9-e49865856705" name="command" direction="In" isUnique="false">
                         <elementDefinition Id="e211bfde-98c8-4a52-98d2-ee4a47e2da7f" />
                         <type_NamedElement>
-                          <referencedTypeMoniker Id="b98479b3-08cc-4e06-a98c-1db73b00b83e" LastKnownName="GetResult" />
+                          <referencedTypeMoniker Id="b98479b3-08cc-4e06-a98c-1db73b00b83e" LastKnownName="SendCommand" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
@@ -291,7 +267,7 @@
                       <parameter Id="15eab4fb-a4ed-4950-b138-b0e82703fbb8" name="command" direction="In" isUnique="false">
                         <elementDefinition Id="ee457a48-35b2-4197-911a-46c487ecde4d" />
                         <type_NamedElement>
-                          <referencedTypeMoniker Id="bb2b2882-b5f2-4151-b7ed-9fc208bba687" LastKnownName="GetResult" />
+                          <referencedTypeMoniker Id="bb2b2882-b5f2-4151-b7ed-9fc208bba687" LastKnownName="SendCommand" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
@@ -304,7 +280,7 @@
                       <parameter Id="0f0875bd-7bf0-422f-b7d6-764f002336be" name="command" direction="In" isUnique="false">
                         <elementDefinition Id="f704b2f0-11a2-42a8-8c0c-07c8099d62d6" />
                         <type_NamedElement>
-                          <referencedTypeMoniker Id="bb2b2882-b5f2-4151-b7ed-9fc208bba687" LastKnownName="GetResult" />
+                          <referencedTypeMoniker Id="bb2b2882-b5f2-4151-b7ed-9fc208bba687" LastKnownName="SendCommand" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
@@ -317,22 +293,14 @@
             <class Id="0e226e1b-5910-4048-ad8a-9dd3e018e1ac" name="Servant" isAbstract="true" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="4595a556-76af-417a-a327-8b867a545927" />
               <ownedOperationsInternal>
-                <operation Id="c231a4e9-a449-4ac4-8b3d-f1423cfc505a" name="getResult" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                <operation Id="c231a4e9-a449-4ac4-8b3d-f1423cfc505a" name="send" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="ff8dcd5c-c946-4f18-9635-bdf99c0063ab" />
                   <ownedParameters>
                     <operationHasOwnedParameters>
-                      <parameter Id="a867f793-b0c3-4198-9d8f-887323d44ffc" name="snd" direction="In" isUnique="false">
-                        <elementDefinition Id="0955774c-1446-4547-b696-a0c73bc84b5d" />
+                      <parameter Id="489111ea-6e3f-4578-af7f-fa962183ce2a" name="snd" direction="In" isUnique="false">
+                        <elementDefinition Id="03f3285c-0b6a-4a14-86c8-2fdd653bf5e9" />
                         <type_NamedElement>
-                          <referencedTypeMoniker Id="2a730bf6-27f3-4449-93dd-e46cc670bef7" LastKnownName="Sendable" />
-                        </type_NamedElement>
-                      </parameter>
-                    </operationHasOwnedParameters>
-                    <operationHasOwnedParameters>
-                      <parameter Id="4baad38d-3853-49d3-a02c-fdb2e8f29cca" direction="Return" isUnique="false">
-                        <elementDefinition Id="e9f41454-250f-4407-a9fb-a30fad09e4fa" />
-                        <type_NamedElement>
-                          <referencedTypeMoniker Id="25347e51-f570-49bf-81b7-c70f2c6b16cf" LastKnownName="Result" />
+                          <referencedTypeMoniker Id="762029c0-8c8c-4a6c-b977-e2fb4cd6973c" LastKnownName="Sendable" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
@@ -370,22 +338,14 @@
           </generalization>
         </generalsInternal>
         <ownedOperationsInternal>
-          <operation Id="1fb1c2a7-d777-4802-9931-61732f5637c0" name="getResult" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="1fb1c2a7-d777-4802-9931-61732f5637c0" name="send" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="273a950d-e4f5-4da9-928d-80cd43c0c9d3" />
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter Id="0a5a3c48-a016-404f-94c6-5168276cf9dc" name="snd" direction="In" isUnique="false">
                   <elementDefinition Id="10e1d62d-77a8-4e28-acba-8760148957e9" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="0aa04a1b-b44a-481d-b717-bbe6f1b7e39a" LastKnownName="Sendable" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="7a62de88-576f-4800-8f7b-491a2068da0a" direction="Return" isUnique="false">
-                  <elementDefinition Id="7aa9ccb8-c92a-4dcb-9027-e9b531ee917b" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="c6795d1f-ad09-4c3b-8db5-6cb6fbdaf2e8" LastKnownName="Result" />
+                    <referencedTypeMoniker Id="762029c0-8c8c-4a6c-b977-e2fb4cd6973c" LastKnownName="Sendable" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -432,7 +392,7 @@
                 <parameter Id="3dbc3241-5e1d-4979-bfcf-312f67c0693c" name="command" direction="In" isUnique="false">
                   <elementDefinition Id="dc3f2e42-6a62-4bca-8250-ea5c764e4340" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="51d4d23a-d0ab-4974-b468-5301b16b7296" LastKnownName="GetResult" />
+                    <referencedTypeMoniker Id="51d4d23a-d0ab-4974-b468-5301b16b7296" LastKnownName="SendCommand" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -445,7 +405,7 @@
                 <parameter Id="51d8dd06-d95d-4ad1-9f73-c4968ed81762" name="command" direction="In" isUnique="false">
                   <elementDefinition Id="d9080f14-cbc2-447c-849a-3e0bec07fa38" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="51d4d23a-d0ab-4974-b468-5301b16b7296" LastKnownName="GetResult" />
+                    <referencedTypeMoniker Id="51d4d23a-d0ab-4974-b468-5301b16b7296" LastKnownName="SendCommand" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -471,7 +431,7 @@
                 <parameter Id="9d36d8a6-c5ab-4630-b917-5ded4fa96c26" name="command" direction="In" isUnique="false">
                   <elementDefinition Id="d5382d19-1098-48bd-9979-3bce4610fd06" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="51d4d23a-d0ab-4974-b468-5301b16b7296" LastKnownName="GetResult" />
+                    <referencedTypeMoniker Id="51d4d23a-d0ab-4974-b468-5301b16b7296" LastKnownName="SendCommand" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -484,7 +444,7 @@
                 <parameter Id="393efdac-cc6f-498a-9865-fafc03b2ee51" name="command" direction="In" isUnique="false">
                   <elementDefinition Id="92376a84-0c42-48bb-88eb-35cd8b68f4cc" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="51d4d23a-d0ab-4974-b468-5301b16b7296" LastKnownName="GetResult" />
+                    <referencedTypeMoniker Id="51d4d23a-d0ab-4974-b468-5301b16b7296" LastKnownName="SendCommand" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -494,22 +454,17 @@
       </class>
     </logicalClassDesignerModelHasTypes>
     <packageHasNamedElement>
-      <referencedType Id="0aa04a1b-b44a-481d-b717-bbe6f1b7e39a" name="Sendable" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::thecloudbook-active-object-library::Sendable">
-        <elementDefinition Id="f1edc787-07c9-4c58-a06e-707ffe08cead" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="51d4d23a-d0ab-4974-b468-5301b16b7296" name="GetResult" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::thecloudbook-active-object-library::GetResult">
+      <referencedType Id="51d4d23a-d0ab-4974-b468-5301b16b7296" name="SendCommand" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::thecloudbook-active-object-library::SendCommand">
         <elementDefinition Id="20be7ea3-04b6-40c7-8408-bfaa058feb74" />
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="b98479b3-08cc-4e06-a98c-1db73b00b83e" name="GetResult" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::thecloudbook-active-object-library::GetResult">
+      <referencedType Id="b98479b3-08cc-4e06-a98c-1db73b00b83e" name="SendCommand" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::thecloudbook-active-object-library::SendCommand">
         <elementDefinition Id="20be7ea3-04b6-40c7-8408-bfaa058feb74" />
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="bb2b2882-b5f2-4151-b7ed-9fc208bba687" name="GetResult" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::thecloudbook-active-object-library::GetResult">
+      <referencedType Id="bb2b2882-b5f2-4151-b7ed-9fc208bba687" name="SendCommand" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::thecloudbook-active-object-library::SendCommand">
         <elementDefinition Id="20be7ea3-04b6-40c7-8408-bfaa058feb74" />
       </referencedType>
     </packageHasNamedElement>
@@ -523,22 +478,14 @@
           </generalization>
         </generalsInternal>
         <ownedOperationsInternal>
-          <operation Id="d5714b3a-ea37-41b4-8432-08476d6824b4" name="getResult" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+          <operation Id="d5714b3a-ea37-41b4-8432-08476d6824b4" name="send" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="9ef9b18c-bd5c-4ae8-8085-c8829a581d58" />
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter Id="16421d64-1390-4ab3-b56c-da6d893bacca" name="snd" direction="In" isUnique="false">
                   <elementDefinition Id="0e01f635-ff06-4b23-b0bc-0023eeebc23c" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="b74d8e0b-6103-4564-b228-cafd95e635b2" LastKnownName="Sendable" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="22ffa296-5d2a-4900-846d-69ea55b68d37" direction="Return" isUnique="false">
-                  <elementDefinition Id="efd64375-ba70-400e-90e9-68679171f67f" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="8206ca92-e101-4272-b625-ca2b0a9b6834" LastKnownName="Result" />
+                    <referencedTypeMoniker Id="762029c0-8c8c-4a6c-b977-e2fb4cd6973c" LastKnownName="Sendable" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -547,26 +494,6 @@
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
-    <packageHasNamedElement>
-      <referencedType Id="2a730bf6-27f3-4449-93dd-e46cc670bef7" name="Sendable" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::thecloudbook-active-object-library::Sendable">
-        <elementDefinition Id="f1edc787-07c9-4c58-a06e-707ffe08cead" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="25347e51-f570-49bf-81b7-c70f2c6b16cf" name="Result" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::thecloudbook-active-object-library::Result">
-        <elementDefinition Id="92952e69-8ce3-4b24-b16a-4050b8d63d62" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="b74d8e0b-6103-4564-b228-cafd95e635b2" name="Sendable" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::thecloudbook-active-object-library::Sendable">
-        <elementDefinition Id="f1edc787-07c9-4c58-a06e-707ffe08cead" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="8206ca92-e101-4272-b625-ca2b0a9b6834" name="Result" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::thecloudbook-active-object-library::Result">
-        <elementDefinition Id="92952e69-8ce3-4b24-b16a-4050b8d63d62" />
-      </referencedType>
-    </packageHasNamedElement>
     <packageHasNamedElement>
       <referencedType Id="c6795d1f-ad09-4c3b-8db5-6cb6fbdaf2e8" name="Result" isAbstract="false" isLeaf="false" cachedFullName="Result">
         <elementDefinition Id="dfe5a493-a354-4de2-a21c-a54162e50c35" />
@@ -623,6 +550,11 @@
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="762029c0-8c8c-4a6c-b977-e2fb4cd6973c" name="Sendable" isAbstract="false" isLeaf="false" cachedFullName="Sendable">
+        <elementDefinition Id="da3a052d-eff7-4679-90f3-d416c3c9b6e9" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="ba59ba86-1753-4f49-9658-b1c15f3d252f" name="Modelisation CloudBook">
     <elementDefinition Id="94208107-703b-4bbf-9f51-c1243885138f" />

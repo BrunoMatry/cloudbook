@@ -2,7 +2,7 @@
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="d2e6b272-3e3f-4987-ba24-50e24a746fe1" name="UMLClassDiagram1" linkedPackageId="7d26d3d4-2927-4258-aa43-06e640d156ba" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <packageHasNamedElement>
-      <referencedType Id="e3e23105-39c7-497b-b960-dfc96236816c" name="GetResult" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::thecloudbook-active-object-library::GetResult">
+      <referencedType Id="e3e23105-39c7-497b-b960-dfc96236816c" name="SendCommand" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::thecloudbook-active-object-library::SendCommand">
         <elementDefinition Id="20be7ea3-04b6-40c7-8408-bfaa058feb74" />
       </referencedType>
     </packageHasNamedElement>
@@ -21,7 +21,7 @@
                       <parameter Id="bc1b698a-768c-47b2-ac41-0d272b92ae9c" name="command" direction="In" isUnique="false">
                         <elementDefinition Id="7f4edac3-abfa-4ccd-aa34-f8dba69535b7" />
                         <type_NamedElement>
-                          <referencedTypeMoniker Id="e3e23105-39c7-497b-b960-dfc96236816c" LastKnownName="GetResult" />
+                          <referencedTypeMoniker Id="e3e23105-39c7-497b-b960-dfc96236816c" LastKnownName="SendCommand" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
@@ -34,7 +34,7 @@
                       <parameter Id="16a22fa7-e827-432d-a737-b008c9d47140" name="command" direction="In" isUnique="false">
                         <elementDefinition Id="06d99c8e-1a0b-4365-9db1-72101e9c8633" />
                         <type_NamedElement>
-                          <referencedTypeMoniker Id="e3e23105-39c7-497b-b960-dfc96236816c" LastKnownName="GetResult" />
+                          <referencedTypeMoniker Id="e3e23105-39c7-497b-b960-dfc96236816c" LastKnownName="SendCommand" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
@@ -47,22 +47,14 @@
             <class Id="022a6bb1-167a-4772-a591-a48c03b0bac8" name="Servant" isAbstract="true" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="79a8f8f8-aefd-4e38-a5d8-97c3b462be54" />
               <ownedOperationsInternal>
-                <operation Id="2d0dc7db-a079-4e92-a269-61a1c27b143e" name="getResult" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                <operation Id="2d0dc7db-a079-4e92-a269-61a1c27b143e" name="send" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="1c47255b-d66b-404b-ae03-dad3e463e84a" />
                   <ownedParameters>
                     <operationHasOwnedParameters>
-                      <parameter Id="aa3e5c1a-28f0-429d-98b0-a8af7bbb0371" name="snd" direction="In" isUnique="false">
-                        <elementDefinition Id="63fdfe4f-7a3a-4335-b71c-c14bdc0117ff" />
+                      <parameter Id="6fcba7d3-56fd-4437-aee4-7b510d8baa5b" name="snd" direction="In" isUnique="false">
+                        <elementDefinition Id="2a97bbc9-f164-43b9-bdfb-fe7edcdfdf98" />
                         <type_NamedElement>
-                          <referencedTypeMoniker Id="6dc1b127-03e5-46ee-8e2f-7c03ee4069aa" LastKnownName="Sendable" />
-                        </type_NamedElement>
-                      </parameter>
-                    </operationHasOwnedParameters>
-                    <operationHasOwnedParameters>
-                      <parameter Id="83726bc7-aa2b-4828-a98f-9c276a241cba" direction="Return" isUnique="false">
-                        <elementDefinition Id="cb57fafc-c17e-4676-ad80-77a22066bccf" />
-                        <type_NamedElement>
-                          <referencedTypeMoniker Id="13104cc9-fa87-42d1-955e-4b809b5870f4" LastKnownName="Result" />
+                          <referencedTypeMoniker Id="8ec8bae7-689b-468c-a361-1b07abfff796" LastKnownName="Sendable" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
@@ -75,22 +67,14 @@
             <class Id="98bf2244-81e9-44a5-b001-6dbf4c2949e5" name="ProxyClientService" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="f8e01805-5b03-4f81-bc70-155ef4d60a72" />
               <ownedOperationsInternal>
-                <operation Id="773ba2b9-f76a-460a-96c9-054c611c69b2" name="getResult" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                <operation Id="773ba2b9-f76a-460a-96c9-054c611c69b2" name="send" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="1ab15574-7e24-4b96-a82c-c932d6752423" />
                   <ownedParameters>
                     <operationHasOwnedParameters>
-                      <parameter Id="d97120ef-9999-4d29-b27e-a960aa66a414" name="members" direction="In" isUnique="false">
-                        <elementDefinition Id="156f471b-1947-4907-b26c-066b4a0caf1e" />
+                      <parameter Id="15767b1f-0a89-49a9-b68d-0b90ca7159d7" name="snd" direction="In" isUnique="false">
+                        <elementDefinition Id="1df4808f-2773-4b39-9851-23c7459a3b42" />
                         <type_NamedElement>
-                          <referencedTypeMoniker Id="5c567ebd-c038-4687-b5cf-19cf05da2c70" LastKnownName="Sendable" />
-                        </type_NamedElement>
-                      </parameter>
-                    </operationHasOwnedParameters>
-                    <operationHasOwnedParameters>
-                      <parameter Id="55f23fcc-99a3-4c2c-823f-546a0a5d1260" direction="Return" isUnique="false">
-                        <elementDefinition Id="7fbde5af-973e-4d60-b507-08e3436cca61" />
-                        <type_NamedElement>
-                          <referencedTypeMoniker Id="d61a270e-8b70-4888-b0d3-a2c0f65913eb" LastKnownName="Result" />
+                          <referencedTypeMoniker Id="8ec8bae7-689b-468c-a361-1b07abfff796" LastKnownName="Sendable" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
@@ -113,18 +97,8 @@
         </generalsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
-    <packageHasNamedElement>
-      <referencedType Id="6dc1b127-03e5-46ee-8e2f-7c03ee4069aa" name="Sendable" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::thecloudbook-active-object-library::Sendable">
-        <elementDefinition Id="f1edc787-07c9-4c58-a06e-707ffe08cead" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="13104cc9-fa87-42d1-955e-4b809b5870f4" name="Result" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::thecloudbook-active-object-library::Result">
-        <elementDefinition Id="92952e69-8ce3-4b24-b16a-4050b8d63d62" />
-      </referencedType>
-    </packageHasNamedElement>
     <logicalClassDesignerModelHasTypes>
-      <class Id="35298ca7-5a98-4b4e-989d-65be58e3b929" name="ServerServant" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="35298ca7-5a98-4b4e-989d-65be58e3b929" name="ServerServant" isAbstract="true" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="024a9346-66e8-4452-a927-b30edc9a1aeb" />
         <generalsInternal>
           <generalization Id="aade4223-a916-41e4-8f41-b4a2844b59e9" isSubstitutable="false">
@@ -133,22 +107,14 @@
           </generalization>
         </generalsInternal>
         <ownedOperationsInternal>
-          <operation Id="7dd0f713-00db-4525-92f8-0c7ebb7f6082" name="getResult" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+          <operation Id="7dd0f713-00db-4525-92f8-0c7ebb7f6082" name="send" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="9e76fe2f-a94b-46fa-94de-1f2dce18d7b3" />
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter Id="16ae6a7b-ed8c-45af-b6f4-aee9e6dab1da" name="snd" direction="In" isUnique="false">
                   <elementDefinition Id="e3f18f9d-aed9-4340-bca3-a78cd537b93b" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="c227c8f8-4f15-4149-99e0-edf4649775c5" LastKnownName="Sendable" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="7ce5a434-e5f5-4ee5-b20f-1e9f7273f588" direction="Return" isUnique="false">
-                  <elementDefinition Id="c6e60f7f-1b23-46a1-b324-1fd32ef4d567" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="c1067a3d-4d1d-4e70-9527-e75cdd747fb9" LastKnownName="Result" />
+                    <referencedTypeMoniker Id="8ec8bae7-689b-468c-a361-1b07abfff796" LastKnownName="Sendable" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -157,26 +123,6 @@
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
-    <packageHasNamedElement>
-      <referencedType Id="c227c8f8-4f15-4149-99e0-edf4649775c5" name="Sendable" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::thecloudbook-active-object-library::Sendable">
-        <elementDefinition Id="f1edc787-07c9-4c58-a06e-707ffe08cead" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="c1067a3d-4d1d-4e70-9527-e75cdd747fb9" name="Result" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::thecloudbook-active-object-library::Result">
-        <elementDefinition Id="92952e69-8ce3-4b24-b16a-4050b8d63d62" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="5c567ebd-c038-4687-b5cf-19cf05da2c70" name="Sendable" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::thecloudbook-active-object-library::Sendable">
-        <elementDefinition Id="f1edc787-07c9-4c58-a06e-707ffe08cead" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="d61a270e-8b70-4888-b0d3-a2c0f65913eb" name="Result" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::thecloudbook-active-object-library::Result">
-        <elementDefinition Id="92952e69-8ce3-4b24-b16a-4050b8d63d62" />
-      </referencedType>
-    </packageHasNamedElement>
     <logicalClassDesignerModelHasTypes>
       <class Id="0a3fc43a-0a90-4827-a797-646305c73cde" name="ServerForwarder" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="7d213e58-2dee-486a-b147-26c5ad5f014e" />
@@ -188,6 +134,11 @@
         </generalsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="8ec8bae7-689b-468c-a361-1b07abfff796" name="Sendable" isAbstract="false" isLeaf="false" cachedFullName="Sendable">
+        <elementDefinition Id="da3a052d-eff7-4679-90f3-d416c3c9b6e9" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="7d26d3d4-2927-4258-aa43-06e640d156ba" name="Modelisation CloudBook">
     <elementDefinition Id="94208107-703b-4bbf-9f51-c1243885138f" />

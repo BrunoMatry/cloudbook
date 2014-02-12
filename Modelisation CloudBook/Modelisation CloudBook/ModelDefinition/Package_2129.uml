@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
   dslVersion="1.0.0.0"
   Id="ba7fa08d-0d0a-4412-be2c-40ec25142acb"
   name="thecloudbook-active-object-library" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -29,7 +29,7 @@
                   <type_NamedElement>
                     <classMoniker
                       Id="20be7ea3-04b6-40c7-8408-bfaa058feb74"
-                      LastKnownName="GetResult"
+                      LastKnownName="SendCommand"
                       LastKnownLocation="Package_1622.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -54,7 +54,7 @@
                   <type_NamedElement>
                     <classMoniker
                       Id="20be7ea3-04b6-40c7-8408-bfaa058feb74"
-                      LastKnownName="GetResult"
+                      LastKnownName="SendCommand"
                       LastKnownLocation="Package_1622.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -99,7 +99,7 @@
                   <type_NamedElement>
                     <classMoniker
                       Id="20be7ea3-04b6-40c7-8408-bfaa058feb74"
-                      LastKnownName="GetResult"
+                      LastKnownName="SendCommand"
                       LastKnownLocation="Package_1622.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -124,7 +124,7 @@
                   <type_NamedElement>
                     <classMoniker
                       Id="20be7ea3-04b6-40c7-8408-bfaa058feb74"
-                      LastKnownName="GetResult"
+                      LastKnownName="SendCommand"
                       LastKnownLocation="Package_1622.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -144,7 +144,7 @@
         <ownedOperationsInternal>
           <operation
             Id="1c47255b-d66b-404b-ae03-dad3e463e84a"
-            name="getResult"
+            name="send"
             isLeaf="false"
             isStatic="false"
             isAbstract="true"
@@ -153,28 +153,15 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="63fdfe4f-7a3a-4335-b71c-c14bdc0117ff"
+                  Id="2a97bbc9-f164-43b9-bdfb-fe7edcdfdf98"
                   name="snd"
                   direction="In"
                   isUnique="false">
                   <type_NamedElement>
-                    <interfaceMoniker
-                      Id="f1edc787-07c9-4c58-a06e-707ffe08cead"
+                    <undefinedTypeMoniker
+                      Id="da3a052d-eff7-4679-90f3-d416c3c9b6e9"
                       LastKnownName="Sendable"
-                      LastKnownLocation="Package_1622.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="cb57fafc-c17e-4676-ad80-77a22066bccf"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <interfaceMoniker
-                      Id="92952e69-8ce3-4b24-b16a-4050b8d63d62"
-                      LastKnownName="Result"
-                      LastKnownLocation="Package_1622.uml" />
+                      LastKnownLocation="Package_1624.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -193,7 +180,7 @@
         <ownedOperationsInternal>
           <operation
             Id="1ab15574-7e24-4b96-a82c-c932d6752423"
-            name="getResult"
+            name="send"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -202,28 +189,15 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="156f471b-1947-4907-b26c-066b4a0caf1e"
-                  name="members"
+                  Id="1df4808f-2773-4b39-9851-23c7459a3b42"
+                  name="snd"
                   direction="In"
                   isUnique="false">
                   <type_NamedElement>
-                    <interfaceMoniker
-                      Id="f1edc787-07c9-4c58-a06e-707ffe08cead"
+                    <undefinedTypeMoniker
+                      Id="da3a052d-eff7-4679-90f3-d416c3c9b6e9"
                       LastKnownName="Sendable"
-                      LastKnownLocation="Package_1622.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="7fbde5af-973e-4d60-b507-08e3436cca61"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <interfaceMoniker
-                      Id="92952e69-8ce3-4b24-b16a-4050b8d63d62"
-                      LastKnownName="Result"
-                      LastKnownLocation="Package_1622.uml" />
+                      LastKnownLocation="Package_1624.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>

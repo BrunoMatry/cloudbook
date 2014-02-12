@@ -191,7 +191,7 @@
           </operation>
           <operation
             Id="71f4f648-cc52-4cea-aea8-5e51b829a5e2"
-            name="getResult"
+            name="send"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -205,23 +205,10 @@
                   direction="In"
                   isUnique="false">
                   <type_NamedElement>
-                    <interfaceMoniker
-                      Id="f1edc787-07c9-4c58-a06e-707ffe08cead"
-                      LastKnownName="Sendable"
-                      LastKnownLocation="Package_1622.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="7baa0317-8da7-45d3-b461-d0db61a39b27"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="dfe5a493-a354-4de2-a21c-a54162e50c35"
-                      LastKnownName="Result"
-                      LastKnownLocation="Modelisation CloudBook.uml" />
+                      Id="da3a052d-eff7-4679-90f3-d416c3c9b6e9"
+                      LastKnownName="Sendable"
+                      LastKnownLocation="Package_1624.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
