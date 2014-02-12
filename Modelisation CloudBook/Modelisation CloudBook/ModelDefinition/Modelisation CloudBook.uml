@@ -22034,10 +22034,10 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
                   LastKnownLocation="Modelisation CloudBook.uml" />
               </controlFlow>
               <controlFlow
-                Id="07dd2503-bb79-4386-ae7b-857c5ebd5912"
+                Id="b925fbee-da53-44e1-bf38-db3da8124c33"
                 isLeaf="false">
                 <mergeNodeMoniker
-                  Id="ccea7672-864a-45be-aa73-dd3f75ae1cbc"
+                  Id="2be47770-dcf3-465c-8c3d-dc0386e46b00"
                   LastKnownName="Merge2"
                   LastKnownLocation="Modelisation CloudBook.uml" />
               </controlFlow>
@@ -22049,30 +22049,15 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
-                Id="9c3f1340-5fde-4988-ab0c-847dd5fcde9e"
+                Id="a62bd32e-ee32-47d6-ad5e-ad8e25532886"
                 isLeaf="false">
                 <mergeNodeMoniker
-                  Id="ccea7672-864a-45be-aa73-dd3f75ae1cbc"
+                  Id="2be47770-dcf3-465c-8c3d-dc0386e46b00"
                   LastKnownName="Merge2"
                   LastKnownLocation="Modelisation CloudBook.uml" />
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
-          <mergeNode
-            Id="ccea7672-864a-45be-aa73-dd3f75ae1cbc"
-            name="Merge2"
-            isLeaf="false">
-            <flowNodeTargets>
-              <controlFlow
-                Id="7bd2a582-cdd9-4e46-a748-23473bf48c0e"
-                isLeaf="false">
-                <activityFinalNodeMoniker
-                  Id="bd5a9721-34fa-4f81-9db3-512164de68d0"
-                  LastKnownName="ActivityFinal1"
-                  LastKnownLocation="Modelisation CloudBook.uml" />
-              </controlFlow>
-            </flowNodeTargets>
-          </mergeNode>
           <mergeNode
             Id="4b379927-0332-4ef4-9098-24b95aac3553"
             name="Merge3"
@@ -22094,11 +22079,11 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
-                Id="48b58aa3-79cc-4312-9f9c-93b05e329464"
+                Id="5ffeac68-5bdb-4d10-8b04-dbcec34ab16b"
                 isLeaf="false">
-                <mergeNodeMoniker
-                  Id="ccea7672-864a-45be-aa73-dd3f75ae1cbc"
-                  LastKnownName="Merge2"
+                <activityFinalNodeMoniker
+                  Id="bd5a9721-34fa-4f81-9db3-512164de68d0"
+                  LastKnownName="ActivityFinal1"
                   LastKnownLocation="Modelisation CloudBook.uml" />
               </controlFlow>
             </flowNodeTargets>
@@ -22126,6 +22111,36 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
               </controlFlow>
             </flowNodeTargets>
           </forkNode>
+          <opaqueAction
+            Id="69ec74a4-751b-4287-8f4b-f5272bf2808a"
+            name="Envoi d'une requête réponse à l'auteur avec le même type d'information"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="46e372eb-12d4-4a68-905d-ff3daa67e5e8"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="bd5a9721-34fa-4f81-9db3-512164de68d0"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <mergeNode
+            Id="2be47770-dcf3-465c-8c3d-dc0386e46b00"
+            name="Merge2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="d133e03b-a1cd-492e-847b-36c87ad06550"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="69ec74a4-751b-4287-8f4b-f5272bf2808a"
+                  LastKnownName="Envoi d'une requête réponse à l'auteur avec le même type d'information"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
         </nodes>
       </activity>
     </packageHasNamedElement>

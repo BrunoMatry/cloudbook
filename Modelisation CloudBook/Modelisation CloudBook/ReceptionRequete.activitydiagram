@@ -185,30 +185,21 @@
                 <opaqueActionMoniker Id="946d4be9-1b80-41ee-a64e-9d5a310c4a2c" LastKnownName="Retransmettre" />
                 <elementDefinition Id="8c63fd74-b583-4d76-bda9-091066f541e9" />
               </controlFlow>
-              <controlFlow Id="1ce86b84-46c7-4666-9b26-811e33e491ad" isLeaf="false">
-                <mergeNodeMoniker Id="ac2025be-8cd9-4e34-9f08-0f668518fe1d" LastKnownName="Merge2" />
-                <elementDefinition Id="07dd2503-bb79-4386-ae7b-857c5ebd5912" />
+              <controlFlow Id="80199329-3e66-46a0-81b4-8b79ed69ad80" isLeaf="false">
+                <mergeNodeMoniker Id="fdd8494c-2299-4840-acb9-d1cbec594793" LastKnownName="Merge2" />
+                <elementDefinition Id="b925fbee-da53-44e1-bf38-db3da8124c33" />
               </controlFlow>
             </flowNodeTargets>
           </decisionNode>
           <opaqueAction Id="946d4be9-1b80-41ee-a64e-9d5a310c4a2c" name="Retransmettre" isLeaf="false">
             <elementDefinition Id="a27f765b-79d6-497a-ae3c-e502c03a1c50" />
             <flowNodeTargets>
-              <controlFlow Id="9433b38b-bb7f-4831-b5f5-c0d4281ae879" isLeaf="false">
-                <mergeNodeMoniker Id="ac2025be-8cd9-4e34-9f08-0f668518fe1d" LastKnownName="Merge2" />
-                <elementDefinition Id="9c3f1340-5fde-4988-ab0c-847dd5fcde9e" />
+              <controlFlow Id="18422a26-23d4-447d-8ae6-50b7eb999e11" isLeaf="false">
+                <mergeNodeMoniker Id="fdd8494c-2299-4840-acb9-d1cbec594793" LastKnownName="Merge2" />
+                <elementDefinition Id="a62bd32e-ee32-47d6-ad5e-ad8e25532886" />
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
-          <mergeNode Id="ac2025be-8cd9-4e34-9f08-0f668518fe1d" name="Merge2" isLeaf="false">
-            <elementDefinition Id="ccea7672-864a-45be-aa73-dd3f75ae1cbc" />
-            <flowNodeTargets>
-              <controlFlow Id="6dbb8f2e-cf56-422a-857c-17d910d4e863" isLeaf="false">
-                <activityFinalNodeMoniker Id="7dd70fa9-f4b5-495a-a6e4-1bcf063a0343" LastKnownName="ActivityFinal1" />
-                <elementDefinition Id="7bd2a582-cdd9-4e46-a748-23473bf48c0e" />
-              </controlFlow>
-            </flowNodeTargets>
-          </mergeNode>
           <mergeNode Id="6121fef0-c830-4095-916f-45be38f325f1" name="Merge3" isLeaf="false">
             <elementDefinition Id="4b379927-0332-4ef4-9098-24b95aac3553" />
             <flowNodeTargets>
@@ -221,9 +212,9 @@
           <opaqueAction Id="51867833-8441-47c2-9b9e-35fb2081ea67" name="Envoi d'une requête  avec demande d'historique" isLeaf="false">
             <elementDefinition Id="4ac6b02e-6724-4f9f-b4de-d9898c69db13" />
             <flowNodeTargets>
-              <controlFlow Id="cdda5f5c-90c5-4537-8c38-dd56ddc7133c" isLeaf="false">
-                <mergeNodeMoniker Id="ac2025be-8cd9-4e34-9f08-0f668518fe1d" LastKnownName="Merge2" />
-                <elementDefinition Id="48b58aa3-79cc-4312-9f9c-93b05e329464" />
+              <controlFlow Id="d5a6725a-9fe3-46e0-a80c-dc7bfe7921db" isLeaf="false">
+                <activityFinalNodeMoniker Id="7dd70fa9-f4b5-495a-a6e4-1bcf063a0343" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="5ffeac68-5bdb-4d10-8b04-dbcec34ab16b" />
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
@@ -240,6 +231,24 @@
               </controlFlow>
             </flowNodeTargets>
           </forkNode>
+          <opaqueAction Id="fa9a8742-2d64-4f18-abbe-e0c0c3162f02" name="Envoi d'une requête réponse à l'auteur avec le même type d'information" isLeaf="false">
+            <elementDefinition Id="69ec74a4-751b-4287-8f4b-f5272bf2808a" />
+            <flowNodeTargets>
+              <controlFlow Id="f5ed926b-6e1f-4502-9f7c-ab4a3b4410c3" isLeaf="false">
+                <activityFinalNodeMoniker Id="7dd70fa9-f4b5-495a-a6e4-1bcf063a0343" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="46e372eb-12d4-4a68-905d-ff3daa67e5e8" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <mergeNode Id="fdd8494c-2299-4840-acb9-d1cbec594793" name="Merge2" isLeaf="false">
+            <elementDefinition Id="2be47770-dcf3-465c-8c3d-dc0386e46b00" />
+            <flowNodeTargets>
+              <controlFlow Id="57894d04-e31f-4474-9b59-952ca4f42b8f" isLeaf="false">
+                <opaqueActionMoniker Id="fa9a8742-2d64-4f18-abbe-e0c0c3162f02" LastKnownName="Envoi d'une requête réponse à l'auteur avec le même type d'information" />
+                <elementDefinition Id="d133e03b-a1cd-492e-847b-36c87ad06550" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
         </nodes>
       </activity>
     </activityRootModelHasActivity>
