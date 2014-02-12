@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm11="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="9d92eceb-3a6c-4af7-8a5c-c5342af7ba05" name="Activity1" linkedPackageId="1d30c840-4852-446e-a1a9-c99121b7c6cc" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="61767818-749b-471d-9f59-e40b757ed9d8">
+      <elementDefinition Id="c77ec9e6-cab2-4daa-b100-1423f753047c" />
+      <body>[absent]</body>
+    </comment>
+    <comment Id="12c21c03-3893-40c5-9bb9-fb1a4dc53ed8">
+      <elementDefinition Id="2a1007d8-54e4-4d65-af23-1f5638b71e39" />
+      <body>[présent]</body>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="1ce11e21-fb5d-4729-bdb4-24e834d9536b" name="Activity1" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="0bda9ef9-7f55-4acc-9302-a0b966107961" />
+        <nodes>
+          <initialNode Id="2045a93e-342f-4fd0-9bd8-9a8480e7ab67" name="Initial1" isLeaf="false">
+            <elementDefinition Id="063a469b-5cb9-45cc-8a6a-d39f6199c4f5" />
+            <flowNodeTargets>
+              <controlFlow Id="7d71b5ea-6bce-44f8-97f1-7ccf62bf1e48" isLeaf="false">
+                <opaqueActionMoniker Id="da8a7fbb-e119-4190-890e-2fbb25ba1acc" LastKnownName="Récupération de la requête" />
+                <elementDefinition Id="b3629edc-4b1f-46b5-bdee-f8d7e6fab887" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="da8a7fbb-e119-4190-890e-2fbb25ba1acc" name="Récupération de la requête" isLeaf="false">
+            <elementDefinition Id="84986288-11ed-4a1c-ac09-4d95ac6653b0" />
+            <flowNodeTargets>
+              <controlFlow Id="31b44e8a-664d-41c2-8eed-3154c1c3acbf" isLeaf="false">
+                <opaqueActionMoniker Id="9d2f6f9f-0f50-480d-8dd5-8844cce2ff61" LastKnownName="Recherche de  l'auteur dans la liste des connaissances" />
+                <elementDefinition Id="1abc537e-3a28-4363-92f1-61bd7dc35ab0" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="9d2f6f9f-0f50-480d-8dd5-8844cce2ff61" name="Recherche de  l'auteur dans la liste des connaissances" isLeaf="false">
+            <elementDefinition Id="2db9bbe7-d52b-4e31-844b-efdc58395fe4" />
+            <flowNodeTargets>
+              <controlFlow Id="a3acd393-f713-4b5f-ac79-f345adb0d366" isLeaf="false">
+                <decisionNodeMoniker Id="8dbd819b-d6e6-4ec8-bace-0048202c8f54" LastKnownName="Decision1" />
+                <elementDefinition Id="1f440125-ec73-43f4-9eaf-1e7062cda64a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="8dbd819b-d6e6-4ec8-bace-0048202c8f54" name="Decision1" isLeaf="false">
+            <elementDefinition Id="657887c7-5a08-4fd7-a2ca-4784f5cb10e6" />
+            <flowNodeTargets>
+              <controlFlow Id="03ccdf35-dcc6-488d-8130-08ec0bc775b2" isLeaf="false">
+                <opaqueActionMoniker Id="4e5e4f1e-0bf4-4090-911c-9460f2f3914e" LastKnownName="Ajout dans la liste" />
+                <elementDefinition Id="e1629b04-1aba-42ec-b9c6-aa0b1c3526cb" />
+              </controlFlow>
+              <controlFlow Id="21210b52-e01c-4a82-a972-b0abf47d4838" isLeaf="false">
+                <opaqueActionMoniker Id="40871495-2e01-4185-b911-f9e4d6b30ce9" LastKnownName="Mise à jour de ses informations" />
+                <elementDefinition Id="b15a4c4a-515c-46b7-aa7a-92d94404039b" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="4e5e4f1e-0bf4-4090-911c-9460f2f3914e" name="Ajout dans la liste" isLeaf="false">
+            <elementDefinition Id="2c53dd9c-1b87-4849-afef-ca8485c5a6e7" />
+          </opaqueAction>
+          <opaqueAction Id="40871495-2e01-4185-b911-f9e4d6b30ce9" name="Mise à jour de ses informations" isLeaf="false">
+            <elementDefinition Id="55d929c4-196e-4e34-bef7-ae2d92c80b34" />
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="1d30c840-4852-446e-a1a9-c99121b7c6cc" name="Modelisation CloudBook">
+    <elementDefinition Id="94208107-703b-4bbf-9f51-c1243885138f" />
+  </package>
+</activityRootModel>

@@ -245,6 +245,13 @@
       <SubType>Content</SubType>
       <DependentUpon>EnvoiRequete.activitydiagram</DependentUpon>
     </Content>
+    <Content Include="ReceptionRequete.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ReceptionRequete.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>ReceptionRequete.activitydiagram</DependentUpon>
+    </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="ModelDefinition\Modelisation CloudBook.uml">
       <SubType>Content</SubType>

@@ -185,6 +185,14 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
       Id="9786235d-168d-4bdc-b466-b3f7ee01ebe5">
       <body>[non]</body>
     </comment>
+    <comment
+      Id="c77ec9e6-cab2-4daa-b100-1423f753047c">
+      <body>[absent]</body>
+    </comment>
+    <comment
+      Id="2a1007d8-54e4-4d65-af23-1f5638b71e39">
+      <body>[présent]</body>
+    </comment>
   </ownedCommentsInternal>
   <packagedElements>
     <packageHasNamedElement>
@@ -12864,22 +12872,22 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="ebd78cb5-c755-4739-afe6-6bdfdbf42d50"
-            name="MessageOccurrenceSpecification10">
-            <covered>
-              <lifelineMoniker
-                Id="b5417895-7354-4bf6-a998-1cf576738ec6"
-                LastKnownName=": engine"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="679f540f-f523-4ca6-b4fe-8428487d4253"
             name="MessageOccurrenceSpecification9">
             <covered>
               <lifelineMoniker
                 Id="839bc23d-044b-44e8-af2c-5b9eacee302c"
                 LastKnownName=": friendManager"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="ebd78cb5-c755-4739-afe6-6bdfdbf42d50"
+            name="MessageOccurrenceSpecification10">
+            <covered>
+              <lifelineMoniker
+                Id="b5417895-7354-4bf6-a998-1cf576738ec6"
+                LastKnownName=": engine"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -21741,6 +21749,96 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
               </controlFlow>
             </flowNodeTargets>
           </mergeNode>
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="0bda9ef9-7f55-4acc-9302-a0b966107961"
+        name="Activity1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="063a469b-5cb9-45cc-8a6a-d39f6199c4f5"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b3629edc-4b1f-46b5-bdee-f8d7e6fab887"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="84986288-11ed-4a1c-ac09-4d95ac6653b0"
+                  LastKnownName="Récupération de la requête"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="84986288-11ed-4a1c-ac09-4d95ac6653b0"
+            name="Récupération de la requête"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="1abc537e-3a28-4363-92f1-61bd7dc35ab0"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="2db9bbe7-d52b-4e31-844b-efdc58395fe4"
+                  LastKnownName="Recherche de  l'auteur dans la liste des connaissances"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="2db9bbe7-d52b-4e31-844b-efdc58395fe4"
+            name="Recherche de  l'auteur dans la liste des connaissances"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="1f440125-ec73-43f4-9eaf-1e7062cda64a"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="657887c7-5a08-4fd7-a2ca-4784f5cb10e6"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="657887c7-5a08-4fd7-a2ca-4784f5cb10e6"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="e1629b04-1aba-42ec-b9c6-aa0b1c3526cb"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="2c53dd9c-1b87-4849-afef-ca8485c5a6e7"
+                  LastKnownName="Ajout dans la liste"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="b15a4c4a-515c-46b7-aa7a-92d94404039b"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="55d929c4-196e-4e34-bef7-ae2d92c80b34"
+                  LastKnownName="Mise à jour de ses informations"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="2c53dd9c-1b87-4849-afef-ca8485c5a6e7"
+            name="Ajout dans la liste"
+            isLeaf="false" />
+          <opaqueAction
+            Id="55d929c4-196e-4e34-bef7-ae2d92c80b34"
+            name="Mise à jour de ses informations"
+            isLeaf="false" />
         </nodes>
       </activity>
     </packageHasNamedElement>
