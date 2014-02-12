@@ -9708,7 +9708,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
       <class
         Id="128fad44-ba71-42b8-b2bd-a6b9b3c85dbf"
         name="ClientServant"
-        isAbstract="true"
+        isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
         <generalsInternal>
@@ -9727,7 +9727,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             name="send"
             isLeaf="false"
             isStatic="false"
-            isAbstract="true"
+            isAbstract="false"
             concurrency="Sequential"
             isQuery="false">
             <ownedParameters>

@@ -469,7 +469,7 @@
       </referencedType>
     </packageHasNamedElement>
     <logicalClassDesignerModelHasTypes>
-      <class Id="d4b63970-4682-4d13-8cba-b6a59eb69627" name="ClientServant" isAbstract="true" isLeaf="false" isActiveClass="false">
+      <class Id="d4b63970-4682-4d13-8cba-b6a59eb69627" name="ClientServant" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="128fad44-ba71-42b8-b2bd-a6b9b3c85dbf" />
         <generalsInternal>
           <generalization Id="22967c4e-4cb5-45e1-b606-54cc0590810f" isSubstitutable="false">
@@ -478,7 +478,7 @@
           </generalization>
         </generalsInternal>
         <ownedOperationsInternal>
-          <operation Id="d5714b3a-ea37-41b4-8432-08476d6824b4" name="send" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+          <operation Id="d5714b3a-ea37-41b4-8432-08476d6824b4" name="send" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="9ef9b18c-bd5c-4ae8-8085-c8829a581d58" />
             <ownedParameters>
               <operationHasOwnedParameters>

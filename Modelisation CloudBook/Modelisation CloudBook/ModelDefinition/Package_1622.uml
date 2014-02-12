@@ -15,16 +15,6 @@
       </annotatedElements>
     </comment>
     <comment
-      Id="bfd24b56-cefb-42c9-beef-a6f4d18b29b7">
-      <body>Each object that is considered as a result must implement this interface</body>
-      <annotatedElements>
-        <interfaceMoniker
-          Id="92952e69-8ce3-4b24-b16a-4050b8d63d62"
-          LastKnownName="Result"
-          LastKnownLocation="Package_1622.uml" />
-      </annotatedElements>
-    </comment>
-    <comment
       Id="ef51fd95-da83-4b0b-8480-b91c2c635003">
       <body>Command</body>
       <annotatedElements>

@@ -28,13 +28,6 @@
               <interfaceMoniker Id="be1e3676-85ac-4803-ad11-bd23cfcfab91" LastKnownName="Sendable" />
             </annotatedElements>
           </comment>
-          <comment Id="f798f85a-26de-43f4-99c5-908cf9295a2d">
-            <elementDefinition Id="bfd24b56-cefb-42c9-beef-a6f4d18b29b7" />
-            <body>Each object that is considered as a result must implement this interface</body>
-            <annotatedElements>
-              <interfaceMoniker Id="ea404084-ad7d-4801-954c-bb6f439d0579" LastKnownName="Result" />
-            </annotatedElements>
-          </comment>
           <comment Id="a4a4fcc2-86ea-459c-a232-8f95d6add839">
             <elementDefinition Id="ef51fd95-da83-4b0b-8480-b91c2c635003" />
             <body>Command</body>
@@ -49,22 +42,6 @@
             <class Id="bd39286f-ad65-4aa5-969e-4387e46056e8" name="SendCommand" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="20be7ea3-04b6-40c7-8408-bfaa058feb74" />
               <targetEnds>
-                <association Id="5a375491-f531-4256-85e8-ad0445e4b334" isDerived="false" sourceEndRoleName="" targetEndRoleName="Result" isLeaf="false" isAbstract="false">
-                  <interfaceMoniker Id="ea404084-ad7d-4801-954c-bb6f439d0579" LastKnownName="Result" />
-                  <relationshipOwnedElementsInternal>
-                    <associationHasOwnedEnds>
-                      <memberEnd Id="f1ee4122-cafd-413e-8c75-e99b4826bc1c" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
-                        <elementDefinition Id="70ac94b2-4c5c-4f18-9dab-7ffd4977cedb" />
-                      </memberEnd>
-                    </associationHasOwnedEnds>
-                    <associationHasOwnedEnds>
-                      <memberEnd Id="8daa7529-1e2d-49f2-a6f8-b8b07272ae3a" name="Result" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
-                        <elementDefinition Id="81942aa8-4a6f-4a35-ac73-0584b4553613" />
-                      </memberEnd>
-                    </associationHasOwnedEnds>
-                  </relationshipOwnedElementsInternal>
-                  <elementDefinition Id="b9a6dbb1-0710-4e2d-9a65-839a2d8efeb4" />
-                </association>
                 <association Id="77878980-3051-4432-a028-d604fa935439" isDerived="false" sourceEndRoleName="" targetEndRoleName="Sendable" isLeaf="false" isAbstract="false">
                   <interfaceMoniker Id="be1e3676-85ac-4803-ad11-bd23cfcfab91" LastKnownName="Sendable" />
                   <relationshipOwnedElementsInternal>
@@ -277,11 +254,6 @@
           <packageHasNamedElement>
             <Interface Id="be1e3676-85ac-4803-ad11-bd23cfcfab91" name="Sendable" isAbstract="false" isLeaf="false">
               <elementDefinition Id="f1edc787-07c9-4c58-a06e-707ffe08cead" />
-            </Interface>
-          </packageHasNamedElement>
-          <packageHasNamedElement>
-            <Interface Id="ea404084-ad7d-4801-954c-bb6f439d0579" name="Result" isAbstract="false" isLeaf="false">
-              <elementDefinition Id="92952e69-8ce3-4b24-b16a-4050b8d63d62" />
             </Interface>
           </packageHasNamedElement>
           <packageHasNamedElement>
