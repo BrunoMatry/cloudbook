@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="94208107-703b-4bbf-9f51-c1243885138f"
   name="Modelisation CloudBook" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -3903,7 +3903,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             isQuery="false" />
           <operation
             Id="78f81828-becb-4175-a023-355cc1092bfd"
-            name="getResult"
+            name="send"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -3912,8 +3912,8 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="21e6b6f4-5364-440f-957e-963954081716"
-                  name="req"
+                  Id="90d3c5c0-5eee-4ce7-932c-9f1c0584ede2"
+                  name="request"
                   direction="In"
                   isUnique="false">
                   <type_NamedElement>
@@ -3984,31 +3984,6 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
           </interfaceRealization>
         </suppliersInternal>
         <ownedOperationsInternal>
-          <operation
-            Id="87c59ec1-3fbf-4754-8d53-bf6338a8cf78"
-            name="getPartialInformation"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="d358ecd9-6eb5-40c2-a3b3-c706d501c1ec"
-                  name="request"
-                  direction="In"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <classMoniker
-                      Id="59486883-52e2-43f6-a198-4bc818a87414"
-                      LastKnownName="Request"
-                      LastKnownLocation="Modelisation CloudBook.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
           <operation
             Id="792848e2-bf22-4565-9c7f-14fb50fc58c3"
             name="send"
@@ -4430,22 +4405,22 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="dacae224-c4f9-415e-ab37-a4d15cd4ac0f"
-            name="MessageOccurrenceSpecification18">
-            <covered>
-              <lifelineMoniker
-                Id="b65cd7c9-ddad-42ee-9e6a-7acdb2e1e5ef"
-                LastKnownName=": ServerScheduler"
-                LastKnownLocation="Modelisation CloudBook.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="4785edc1-5513-4ee7-a035-25c825501c62"
             name="MessageOccurrenceSpecification17">
             <covered>
               <lifelineMoniker
                 Id="20675779-a935-4206-8b03-9291588a48ba"
                 LastKnownName=": ClientServerSender"
+                LastKnownLocation="Modelisation CloudBook.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="dacae224-c4f9-415e-ab37-a4d15cd4ac0f"
+            name="MessageOccurrenceSpecification18">
+            <covered>
+              <lifelineMoniker
+                Id="b65cd7c9-ddad-42ee-9e6a-7acdb2e1e5ef"
+                LastKnownName=": ServerScheduler"
                 LastKnownLocation="Modelisation CloudBook.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -9377,7 +9352,6 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
           </message>
           <message
             Id="80e10559-e769-45be-bffc-b3363b7fed98"
-            name="resturn res"
             messageKind="Complete"
             messageSort="Reply"
             createSelfMessage="false">
@@ -9396,7 +9370,6 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
           </message>
           <message
             Id="5daf5f98-cd92-4c49-b1a3-524e723a129b"
-            name="resturn res"
             messageKind="Complete"
             messageSort="Reply"
             createSelfMessage="false">

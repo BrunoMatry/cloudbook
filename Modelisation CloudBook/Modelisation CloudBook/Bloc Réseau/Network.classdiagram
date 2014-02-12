@@ -75,12 +75,12 @@
           <operation Id="3bac7f44-ba3f-4525-babd-014b94444fd9" name="Network" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="8a9dff1b-537f-475a-95a8-9639cc4d5ee1" />
           </operation>
-          <operation Id="7b8aa846-246b-4e74-bdc4-3d012d87f395" name="getResult" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="7b8aa846-246b-4e74-bdc4-3d012d87f395" name="send" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="78f81828-becb-4175-a023-355cc1092bfd" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="fc620319-c835-4f56-9e2e-0b907fd1c2a6" name="req" direction="In" isUnique="false">
-                  <elementDefinition Id="21e6b6f4-5364-440f-957e-963954081716" />
+                <parameter Id="11ed8e00-649d-4bc6-b99c-1f7990575fe7" name="request" direction="In" isUnique="false">
+                  <elementDefinition Id="90d3c5c0-5eee-4ce7-932c-9f1c0584ede2" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="ac7b708f-c044-47f1-b92a-1773dc4f6805" LastKnownName="Request" />
                   </type_NamedElement>
@@ -127,19 +127,6 @@
           </interfaceRealization>
         </suppliersInternal>
         <ownedOperationsInternal>
-          <operation Id="f01d7a50-b1d6-4ced-8eda-6a5d8d0895a3" name="getPartialInformation" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="87c59ec1-3fbf-4754-8d53-bf6338a8cf78" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="e295c9a8-a14b-44dd-aa46-2cd84fa5e565" name="request" direction="In" isUnique="false">
-                  <elementDefinition Id="d358ecd9-6eb5-40c2-a3b3-c706d501c1ec" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="abfdccdf-be7b-42e1-8efc-c1c1b7b3fc7c" LastKnownName="Request" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
           <operation Id="bf8d7baf-666c-4dce-8ac4-b2952a9bc5a2" name="send" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="792848e2-bf22-4565-9c7f-14fb50fc58c3" />
             <ownedParameters>
@@ -314,11 +301,6 @@
     </logicalClassDesignerModelHasPackages>
     <packageHasNamedElement>
       <referencedType Id="ac7b708f-c044-47f1-b92a-1773dc4f6805" name="Request" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::Request">
-        <elementDefinition Id="59486883-52e2-43f6-a198-4bc818a87414" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="abfdccdf-be7b-42e1-8efc-c1c1b7b3fc7c" name="Request" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::Request">
         <elementDefinition Id="59486883-52e2-43f6-a198-4bc818a87414" />
       </referencedType>
     </packageHasNamedElement>
