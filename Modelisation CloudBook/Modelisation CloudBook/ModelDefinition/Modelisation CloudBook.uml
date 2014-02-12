@@ -7490,7 +7490,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
       <class
         Id="024a9346-66e8-4452-a927-b30edc9a1aeb"
         name="ServerServant"
-        isAbstract="true"
+        isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
         <generalsInternal>
@@ -7509,7 +7509,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
             name="send"
             isLeaf="false"
             isStatic="false"
-            isAbstract="true"
+            isAbstract="false"
             concurrency="Sequential"
             isQuery="false">
             <ownedParameters>
@@ -9353,7 +9353,7 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
           </message>
           <message
             Id="4b4a724f-0012-4d98-aed0-4f7a719e127a"
-            name="getResult(request)"
+            name="send(request)"
             messageKind="Complete"
             messageSort="SynchCall"
             createSelfMessage="false">
