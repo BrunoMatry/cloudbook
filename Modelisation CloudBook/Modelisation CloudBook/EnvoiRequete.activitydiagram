@@ -9,6 +9,14 @@
       <elementDefinition Id="6489baa5-2a0c-4f97-a0ed-c415deedcee6" />
       <body>[non digne de confiance]</body>
     </comment>
+    <comment Id="fe8b09d1-115e-43e1-93f8-dd0f459aeced">
+      <elementDefinition Id="4052a7c4-cf2f-4459-8946-1548c9949d7a" />
+      <body>[oui]</body>
+    </comment>
+    <comment Id="f120fa65-7c8b-43ab-b805-24570aeecf43">
+      <elementDefinition Id="9786235d-168d-4bdc-b466-b3f7ee01ebe5" />
+      <body>[non]</body>
+    </comment>
   </ownedCommentsInternal>
   <packagedElements>
     <activityRootModelHasActivity>
@@ -95,20 +103,58 @@
             <elementDefinition Id="0698dfb2-95aa-46b6-a7e5-e92a1981722b" />
             <flowNodeTargets>
               <controlFlow Id="1a9d3d60-8c56-4495-ab56-72b72e918950" isLeaf="false">
-                <opaqueActionMoniker Id="10a622a0-e22a-4b3f-8303-9737a42837a8" LastKnownName="Stocker la requête dans le buffer d'envoi" />
+                <opaqueActionMoniker Id="10a622a0-e22a-4b3f-8303-9737a42837a8" LastKnownName="Envoi de la requête" />
                 <elementDefinition Id="cc5926a4-b396-492a-922a-210d5936161d" />
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
-          <opaqueAction Id="10a622a0-e22a-4b3f-8303-9737a42837a8" name="Stocker la requête dans le buffer d'envoi" isLeaf="false">
+          <opaqueAction Id="10a622a0-e22a-4b3f-8303-9737a42837a8" name="Envoi de la requête" isLeaf="false">
             <elementDefinition Id="20ac3d09-0526-4813-9a31-a864796d9730" />
             <flowNodeTargets>
-              <controlFlow Id="735829f7-dd44-4a9c-871d-3c090e06260b" isLeaf="false">
-                <opaqueActionMoniker Id="c1ebd537-8719-498a-b3b5-4f820920625b" LastKnownName="Selection de l'ami suivant" />
-                <elementDefinition Id="898168e8-9802-4045-9a94-3a05f511d561" />
+              <controlFlow Id="7848a872-4e0f-46d4-9a29-6ed554652683" isLeaf="false">
+                <opaqueActionMoniker Id="da7a0c44-59d4-40a8-9a23-60f591bda938" LastKnownName="Determiner s'il faut plus de destinataires" />
+                <elementDefinition Id="817aea2d-3cd5-49f2-8a6d-5fc31831f6bd" />
+              </controlFlow>
+              <controlFlow Id="50ba321b-7a03-4e2f-a56b-fd99ba3b808c" isLeaf="false">
+                <mergeNodeMoniker Id="40276527-cfed-4c6f-84f6-a3a9badbd655" LastKnownName="Merge2" />
+                <elementDefinition Id="13675c13-5231-410b-9730-bbbf4ad24d82" />
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
+          <opaqueAction Id="da7a0c44-59d4-40a8-9a23-60f591bda938" name="Determiner s'il faut plus de destinataires" isLeaf="false">
+            <elementDefinition Id="abc62b38-5380-4b74-aea7-348a331523f2" />
+            <flowNodeTargets>
+              <controlFlow Id="5322e3a7-3e74-434a-8d50-03eb36f9202b" isLeaf="false">
+                <decisionNodeMoniker Id="39d88a7b-1c64-41ac-b302-ba362e4f695e" LastKnownName="Decision2" />
+                <elementDefinition Id="d5c583da-952b-40e7-84d2-7543c1a79b96" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="39d88a7b-1c64-41ac-b302-ba362e4f695e" name="Decision2" isLeaf="false">
+            <elementDefinition Id="40f29308-e460-48a1-9647-8319695aab3e" />
+            <flowNodeTargets>
+              <controlFlow Id="42dea416-beff-4840-88a3-2369118d314d" isLeaf="false">
+                <opaqueActionMoniker Id="c1ebd537-8719-498a-b3b5-4f820920625b" LastKnownName="Selection de l'ami suivant" />
+                <elementDefinition Id="852db3d4-4102-43bf-88a8-8f0192e526b1" />
+              </controlFlow>
+              <controlFlow Id="4684d5bb-0004-4088-b06e-db435b88884b" isLeaf="false">
+                <mergeNodeMoniker Id="40276527-cfed-4c6f-84f6-a3a9badbd655" LastKnownName="Merge2" />
+                <elementDefinition Id="bf5ecfe1-13b8-4586-9463-b1956fc19c0a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <activityFinalNode Id="0e249864-29eb-4ab0-aa74-fb1bc18d00db" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="c7390439-5325-41bf-b9ee-5b895a15b7e9" />
+          </activityFinalNode>
+          <mergeNode Id="40276527-cfed-4c6f-84f6-a3a9badbd655" name="Merge2" isLeaf="false">
+            <elementDefinition Id="3ccc8609-eaf6-4dae-8d7a-090cca0d7e12" />
+            <flowNodeTargets>
+              <controlFlow Id="352976d8-d30e-4216-84e3-33cdf56d37e2" isLeaf="false">
+                <activityFinalNodeMoniker Id="0e249864-29eb-4ab0-aa74-fb1bc18d00db" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="2ddb578e-6d7f-4a76-bf0f-4e2df1c11ae5" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
         </nodes>
       </activity>
     </activityRootModelHasActivity>

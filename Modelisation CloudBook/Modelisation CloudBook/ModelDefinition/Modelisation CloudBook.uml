@@ -177,6 +177,14 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
       Id="6489baa5-2a0c-4f97-a0ed-c415deedcee6">
       <body>[non digne de confiance]</body>
     </comment>
+    <comment
+      Id="4052a7c4-cf2f-4459-8946-1548c9949d7a">
+      <body>[oui]</body>
+    </comment>
+    <comment
+      Id="9786235d-168d-4bdc-b466-b3f7ee01ebe5">
+      <body>[non]</body>
+    </comment>
   </ownedCommentsInternal>
   <packagedElements>
     <packageHasNamedElement>
@@ -21648,26 +21656,91 @@ Il faut un thread similaire pour faire le nétoyage dans les messages (dans le R
                 isLeaf="false">
                 <opaqueActionMoniker
                   Id="20ac3d09-0526-4813-9a31-a864796d9730"
-                  LastKnownName="Stocker la requête dans le buffer d'envoi"
+                  LastKnownName="Envoi de la requête"
                   LastKnownLocation="Modelisation CloudBook.uml" />
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
           <opaqueAction
             Id="20ac3d09-0526-4813-9a31-a864796d9730"
-            name="Stocker la requête dans le buffer d'envoi"
+            name="Envoi de la requête"
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
-                Id="898168e8-9802-4045-9a94-3a05f511d561"
+                Id="817aea2d-3cd5-49f2-8a6d-5fc31831f6bd"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="abc62b38-5380-4b74-aea7-348a331523f2"
+                  LastKnownName="Determiner s'il faut plus de destinataires"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="13675c13-5231-410b-9730-bbbf4ad24d82"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="3ccc8609-eaf6-4dae-8d7a-090cca0d7e12"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="abc62b38-5380-4b74-aea7-348a331523f2"
+            name="Determiner s'il faut plus de destinataires"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="d5c583da-952b-40e7-84d2-7543c1a79b96"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="40f29308-e460-48a1-9647-8319695aab3e"
+                  LastKnownName="Decision2"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="40f29308-e460-48a1-9647-8319695aab3e"
+            name="Decision2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="852db3d4-4102-43bf-88a8-8f0192e526b1"
                 isLeaf="false">
                 <opaqueActionMoniker
                   Id="c1c5c7f2-ed2f-469c-bf84-62b3f4ae7f34"
                   LastKnownName="Selection de l'ami suivant"
                   LastKnownLocation="Modelisation CloudBook.uml" />
               </controlFlow>
+              <controlFlow
+                Id="bf5ecfe1-13b8-4586-9463-b1956fc19c0a"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="3ccc8609-eaf6-4dae-8d7a-090cca0d7e12"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
             </flowNodeTargets>
-          </opaqueAction>
+          </decisionNode>
+          <activityFinalNode
+            Id="c7390439-5325-41bf-b9ee-5b895a15b7e9"
+            name="ActivityFinal1"
+            isLeaf="false" />
+          <mergeNode
+            Id="3ccc8609-eaf6-4dae-8d7a-090cca0d7e12"
+            name="Merge2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="2ddb578e-6d7f-4a76-bf0f-4e2df1c11ae5"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="c7390439-5325-41bf-b9ee-5b895a15b7e9"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="Modelisation CloudBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
         </nodes>
       </activity>
     </packageHasNamedElement>
