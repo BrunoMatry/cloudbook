@@ -6,11 +6,13 @@
 
 package hmi.content.result;
 
+import javafx.scene.Parent;
+
 /**
  *
  * @author Bruno
  */
-public class HMIResultBoard {
+public class HMIResultBoard extends Parent {
     
     public HMIResultBoard() {
         

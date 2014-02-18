@@ -16,5 +16,6 @@ public class HMIResultTab extends HMITab {
     
     public HMIResultTab(HMIContentResultTab c) {
         this.content = c;
+        this.getChildren().add(content);
     }
 }

@@ -22,6 +22,9 @@ public class HMITabList extends Parent {
     public HMITabList(List<HMITab> l) {
         this.list = l;
         this.currentTab.set(0);
+        for(HMITab tab : this.list) {
+            this.getChildren().add(tab);
+        }
     }
     
     public HMIContent getContent() {

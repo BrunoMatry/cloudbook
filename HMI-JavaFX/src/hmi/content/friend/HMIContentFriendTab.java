@@ -17,5 +17,6 @@ public class HMIContentFriendTab extends HMIContent {
     
     public HMIContentFriendTab() {
         this.friendList = new HMIContentFriendList();
+        this.getChildren().add(friendList);
     }
 }

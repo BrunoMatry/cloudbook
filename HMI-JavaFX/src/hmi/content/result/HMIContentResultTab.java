@@ -19,5 +19,7 @@ public class HMIContentResultTab extends HMIContent {
     public HMIContentResultTab() {
         this.suggestion = new HMISuggestion();
         this.board = new HMIResultBoard();
+        this.getChildren().add(suggestion);
+        this.getChildren().add(board);
     }
 }

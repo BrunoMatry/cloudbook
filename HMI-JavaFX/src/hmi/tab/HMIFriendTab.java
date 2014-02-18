@@ -16,5 +16,6 @@ public class HMIFriendTab extends HMITab {
     
     public HMIFriendTab(HMIContentFriendTab c){
         this.content = c;
+        this.getChildren().add(content);
     }
 }

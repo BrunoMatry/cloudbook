@@ -7,12 +7,13 @@
 package hmi.content.friend;
 
 import java.util.List;
+import javafx.scene.Parent;
 
 /**
  *
  * @author Bruno
  */
-public class HMIContentFriendList {
+public class HMIContentFriendList extends Parent {
     private List<HMIFriend> list;
     
     public HMIContentFriendList() {

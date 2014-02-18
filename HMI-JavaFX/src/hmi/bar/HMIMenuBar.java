@@ -14,8 +14,11 @@ import javafx.scene.Parent;
  * @author Bruno
  */
 public class HMIMenuBar extends Parent {
+    private HMIExitButton exitButton;
     
     public HMIMenuBar() {
-        HMIExitButton exitButton = new HMIExitButton();
+        this.exitButton = new HMIExitButton();
+        
+        this.getChildren().add(exitButton);
     }
 }
