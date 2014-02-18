@@ -4,14 +4,15 @@
  * and open the template in the editor.
  */
 
-package hmi.tab;
+package hmi.content.friend;
 
 /**
  *
  * @author Bruno
  */
-public class HMINodeStateTab extends HMITab {
-    public HMINodeStateTab() {
+public class HMIFriend {
+    // Possède un objet ami
+    public HMIFriend(){
         
     }
 }

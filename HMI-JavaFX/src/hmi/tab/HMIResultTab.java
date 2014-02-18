@@ -6,10 +6,15 @@
 
 package hmi.tab;
 
+import hmi.content.result.HMIContentResultTab;
+
 /**
  *
  * @author Bruno
  */
 public class HMIResultTab extends HMITab {
     
+    public HMIResultTab(HMIContentResultTab c) {
+        this.content = c;
+    }
 }

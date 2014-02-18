@@ -4,14 +4,14 @@
  * and open the template in the editor.
  */
 
-package hmi.tab;
+package hmi.button;
+
+import javafx.scene.Parent;
 
 /**
  *
  * @author Bruno
  */
-public class HMINodeStateTab extends HMITab {
-    public HMINodeStateTab() {
-        
-    }
+public class HMIExitButton extends Parent {
+    
 }

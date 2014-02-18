@@ -11,5 +11,7 @@ package hmi.tab;
  * @author Bruno
  */
 public class HMIMainTab extends HMITab {
-    
+    public HMIMainTab() {
+        
+    }
 }

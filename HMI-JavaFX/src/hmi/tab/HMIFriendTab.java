@@ -6,10 +6,15 @@
 
 package hmi.tab;
 
+import hmi.content.friend.HMIContentFriendTab;
+
 /**
  *
  * @author Bruno
  */
 public class HMIFriendTab extends HMITab {
     
+    public HMIFriendTab(HMIContentFriendTab c){
+        this.content = c;
+    }
 }

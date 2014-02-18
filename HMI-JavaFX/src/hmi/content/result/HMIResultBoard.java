@@ -4,14 +4,15 @@
  * and open the template in the editor.
  */
 
-package hmi.tab;
+package hmi.content.result;
 
 /**
  *
  * @author Bruno
  */
-public class HMINodeStateTab extends HMITab {
-    public HMINodeStateTab() {
+public class HMIResultBoard {
+    
+    public HMIResultBoard() {
         
     }
 }

@@ -4,19 +4,18 @@
  * and open the template in the editor.
  */
 
-package hmi.tab;
+package hmi.content.friend;
 
 import hmi.content.HMIContent;
-import javafx.scene.Parent;
 
 /**
  *
  * @author Bruno
  */
-public abstract class HMITab extends Parent {
-    protected HMIContent content;
+public class HMIContentFriendTab extends HMIContent {
+    private HMIContentFriendList friendList;
     
-    public HMIContent getContent(){
-        return content;
+    public HMIContentFriendTab() {
+        this.friendList = new HMIContentFriendList();
     }
 }
