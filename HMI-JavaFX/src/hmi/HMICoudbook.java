@@ -37,6 +37,8 @@ public class HMICoudbook extends Application {
         this.tabList = HMIMounter.getTabList();
         this.menuBar = new HMIMenuBar();
         fManagButton = new CloudBookButton("Friend management");
+        fManagButton.setLayoutX(250);
+        fManagButton.setLayoutY(250);
         
         Group root = new Group();
         root.getChildren().add(tabList);
