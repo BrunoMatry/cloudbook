@@ -17,10 +17,10 @@ public class HMIContentFriendList extends Parent {
     private List<HMIFriend> list;
     
     public HMIContentFriendList() {
-        list = this.getFriendList();
+        this.getFriendList();
     }
 
-    private List<HMIFriend> getFriendList() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void getFriendList() {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

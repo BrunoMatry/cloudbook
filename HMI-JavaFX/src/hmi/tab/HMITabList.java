@@ -9,6 +9,7 @@ package hmi.tab;
 import hmi.content.HMIContent;
 import java.util.List;
 import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.scene.Parent;
 
 /**
@@ -21,7 +22,8 @@ public class HMITabList extends Parent {
     
     public HMITabList(List<HMITab> l) {
         this.list = l;
-        this.currentTab.set(0);
+        this.currentTab = new SimpleIntegerProperty(0);
+
         for(HMITab tab : this.list) {
             this.getChildren().add(tab);
         }

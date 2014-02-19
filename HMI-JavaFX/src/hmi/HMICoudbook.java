@@ -12,6 +12,7 @@ import hmi.tab.HMITabList;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
@@ -37,8 +38,10 @@ public class HMICoudbook extends Application {
         Group root = new Group();
         root.getChildren().add(tabList);
         root.getChildren().add(menuBar);
+    
+        Scene scene = new Scene(root, 800, 600);
+        scene.setFill(Color.GREY);
         
-        Scene scene = new Scene(root, 300, 250);
         primaryStage.setTitle("Cloudbook");
         primaryStage.setScene(scene);
         primaryStage.show();
