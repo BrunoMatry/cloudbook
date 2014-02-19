@@ -40,7 +40,7 @@ public class HMICoudbook extends Application {
         root.getChildren().add(menuBar);
     
         Scene scene = new Scene(root, 800, 600);
-        scene.setFill(Color.GREY);
+        scene.setFill(Color.CORNFLOWERBLUE);
         
         primaryStage.setTitle("Cloudbook");
         primaryStage.setScene(scene);
