@@ -6,19 +6,31 @@
 
 package hmi.content.nodeview;
 
-import hmi.content.HMIContent;
 import java.util.ArrayList;
+import javafx.scene.Parent;
 import model.friendmanager.CloudBookNode;
 
 /**
  *
  * @author Gwendal
+ * 
+ * View of the current member
  */
-public class NodeView extends HMIContent {
+public class NodeView extends Parent {
     
-    //TODO : use 
-    //model representation of the current node view
+    //TODO : use observer tools of javafx
+    //model
     private CloudBookNode model;
     private ArrayList<NodeComponentView> components;
+    private FriendManagerView parent;
     
+    /**
+     * initialize the model and build all the children views
+     * @param model : model of the current view
+     */
+    public NodeView(CloudBookNode model) {
+        this.model = model;
+        components = new ArrayList<>();
+        //components.add();
+    }
 }
