@@ -14,14 +14,24 @@ import model.friendmanager.FriendManager;
  * @author Gwendal
  * 
  * panel showing the state of a member of The CloudBook
+ * singleton
  */
-public class FriendManagerView extends Stage {
+public final class FriendManagerView extends Stage {
+    
+    public static final FriendManagerView INSTANCE = new FriendManagerView();
     
     //model
     private FriendManager model;
     
     //representation of the current member
     private NodeView member;
+    
+    /**
+     * private constructor of singleton
+     */
+    private FriendManagerView() {
+        
+    }
     
     /**
      * update all the components of the panel

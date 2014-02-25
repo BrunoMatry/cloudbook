@@ -9,8 +9,11 @@ package hmi;
 
 import hmi.bar.HMIMenuBar;
 import hmi.button.CloudBookButton;
+import hmi.content.nodeview.FriendManagerView;
 import hmi.tab.HMITabList;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
@@ -20,7 +23,7 @@ import javafx.stage.Stage;
  *
  * @author Bruno
  */
-public class HMICoudbook extends Application {
+public class HMICloudbook extends Application {
     private HMIMenuBar menuBar;
     private HMITabList tabList;
     private CloudBookButton fManagButton;
@@ -36,9 +39,7 @@ public class HMICoudbook extends Application {
         /* Initialisation des attributs prives */
         this.tabList = HMIMounter.getTabList();
         this.menuBar = new HMIMenuBar();
-        fManagButton = new CloudBookButton("Friend management");
-        fManagButton.setLayoutX(250);
-        fManagButton.setLayoutY(250);
+        setUpFManagButton();
         
         Group root = new Group();
         root.getChildren().add(tabList);
@@ -51,6 +52,23 @@ public class HMICoudbook extends Application {
         primaryStage.setTitle("The CloudBook");
         primaryStage.setScene(scene);
         primaryStage.show();
+    }
+    
+    /**
+     * configure fManagButton
+     */
+    private void setUpFManagButton() {
+        fManagButton = new CloudBookButton("Friend management");
+        fManagButton.setLayoutX(250);
+        fManagButton.setLayoutY(250);
+        fManagButton.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent t) {
+                FriendManagerView.INSTANCE.show();
+            }
+            
+        });
     }
     
     /**
