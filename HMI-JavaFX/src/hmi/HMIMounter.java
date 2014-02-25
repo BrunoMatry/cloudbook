@@ -14,6 +14,9 @@ import hmi.tab.HMITab;
 import hmi.tab.HMITabList;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.paint.Color;
 
 /**
  *
@@ -36,5 +39,16 @@ public class HMIMounter {
         
         HMITabList result = new HMITabList(tabList);
         return result;
+    }
+    
+    /**
+     * 
+     * @param root : parent of the scene
+     * @return a scene which design matches the standards
+     */
+    public static Scene getStandardScene(Parent root) {
+        Scene scene = new Scene(root, 800, 600);
+        scene.setFill(Color.CORNFLOWERBLUE);
+        return scene;
     }
 }

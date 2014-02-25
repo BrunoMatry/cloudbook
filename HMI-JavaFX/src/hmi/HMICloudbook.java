@@ -46,8 +46,7 @@ public class HMICloudbook extends Application {
         root.getChildren().add(menuBar);
         root.getChildren().add(fManagButton);
     
-        Scene scene = new Scene(root, 800, 600);
-        scene.setFill(Color.CORNFLOWERBLUE);
+        Scene scene = HMIMounter.getStandardScene(root);
         
         primaryStage.setTitle("The CloudBook");
         primaryStage.setScene(scene);

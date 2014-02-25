@@ -6,6 +6,8 @@
 
 package hmi.content.nodeview;
 
+import hmi.HMIMounter;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 import model.friendmanager.FriendManager;
 
@@ -30,7 +32,9 @@ public final class FriendManagerView extends Stage {
      * private constructor of singleton
      */
     private FriendManagerView() {
-        
+        member = new NodeView();
+        Scene scene = HMIMounter.getStandardScene(member);
+        setScene(scene);
     }
     
     /**

@@ -22,15 +22,23 @@ public class NodeView extends Parent {
     //model
     private CloudBookNode model;
     private ArrayList<NodeComponentView> components;
-    private FriendManagerView parent;
+    
+    /**
+     * default constructor
+     */
+    public NodeView() {
+        super();
+    }
     
     /**
      * initialize the model and build all the children views
      * @param model : model of the current view
      */
     public NodeView(CloudBookNode model) {
+        super();
         this.model = model;
         components = new ArrayList<>();
         //components.add();
     }
+   
 }
