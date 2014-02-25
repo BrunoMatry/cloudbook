@@ -6,6 +6,8 @@
 
 package hmi.content.nodeview;
 
+import javafx.scene.Node;
+
 /**
  *
  * @author Gwendal
@@ -13,10 +15,10 @@ package hmi.content.nodeview;
 public abstract class NodeComponentView implements ComponentView {
 
     //container of the current component
-    private NodeView container;
+    protected NodeView container;
     
     //summarized version of the current view
-    private SummarizedView summarized;
+    protected SummarizedView summarized;
     
     @Override
     public void display() {
@@ -34,4 +36,10 @@ public abstract class NodeComponentView implements ComponentView {
     }
     
     public abstract SummarizedView makeSummarizedView();
+    
+    /**
+     * 
+     * @return : the node object representing the view
+     */
+    public abstract Node getNode();
 }

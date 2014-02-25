@@ -7,6 +7,7 @@
 package hmi.content.nodeview;
 
 import hmi.content.nodeview.component.MessageView;
+import hmi.content.nodeview.component.MesureView;
 import hmi.content.nodeview.component.StateView;
 import java.util.ArrayList;
 import javafx.scene.Parent;
@@ -32,8 +33,11 @@ public class NodeView extends Parent {
         super();
         components = new ArrayList<>();
         components.add(new StateView());
-        components.add(new MessageView());
-        components.add(new MesureView());
+        //components.add(new MessageView());
+        //components.add(new MesureView());
+        
+        for(NodeComponentView ncv : components)
+            getChildren().add(ncv.getNode());
     }
     
     /**

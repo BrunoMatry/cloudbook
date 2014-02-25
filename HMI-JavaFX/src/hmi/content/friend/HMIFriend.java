@@ -8,6 +8,7 @@ package hmi.content.friend;
 
 import hmi.content.nodeview.NodeComponentView;
 import hmi.content.nodeview.SummarizedView;
+import javafx.scene.Node;
 
 /**
  *
@@ -21,6 +22,11 @@ public class HMIFriend extends NodeComponentView {
 
     @Override
     public SummarizedView makeSummarizedView() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Node getNode() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

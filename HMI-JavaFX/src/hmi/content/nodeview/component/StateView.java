@@ -8,6 +8,7 @@ package hmi.content.nodeview.component;
 
 import hmi.content.nodeview.NodeComponentView;
 import hmi.content.nodeview.SummarizedView;
+import javafx.scene.Node;
 
 /**
  *
@@ -15,9 +16,23 @@ import hmi.content.nodeview.SummarizedView;
  */
 public class StateView extends NodeComponentView {
 
+    protected CloudView cloud;
+    
+    public StateView() {
+        super();
+        cloud = new CloudView();
+        cloud.setLayoutX(250);
+        cloud.setLayoutY(250);
+    }
+    
     @Override
     public SummarizedView makeSummarizedView() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Node getNode() {
+        return cloud;
     }
     
 }
