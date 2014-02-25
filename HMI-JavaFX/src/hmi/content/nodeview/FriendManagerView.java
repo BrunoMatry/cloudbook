@@ -32,6 +32,7 @@ public final class FriendManagerView extends Stage {
      * private constructor of singleton
      */
     private FriendManagerView() {
+        setTitle("Friend Manager");
         member = new NodeView();
         Scene scene = HMIMounter.getStandardScene(member);
         setScene(scene);

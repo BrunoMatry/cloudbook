@@ -4,23 +4,20 @@
  * and open the template in the editor.
  */
 
-package hmi.content.friend;
+package hmi.content.nodeview.component;
 
 import hmi.content.nodeview.NodeComponentView;
 import hmi.content.nodeview.SummarizedView;
 
 /**
  *
- * @author Bruno
+ * @author Gwendal
  */
-public class HMIFriend extends NodeComponentView {
-    // Possède un objet ami
-    public HMIFriend(){
-        
-    }
+public class MessageView extends NodeComponentView {
 
     @Override
     public SummarizedView makeSummarizedView() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
 }

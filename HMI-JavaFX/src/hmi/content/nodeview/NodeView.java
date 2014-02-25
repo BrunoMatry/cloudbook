@@ -6,6 +6,8 @@
 
 package hmi.content.nodeview;
 
+import hmi.content.nodeview.component.MessageView;
+import hmi.content.nodeview.component.StateView;
 import java.util.ArrayList;
 import javafx.scene.Parent;
 import model.friendmanager.CloudBookNode;
@@ -28,6 +30,10 @@ public class NodeView extends Parent {
      */
     public NodeView() {
         super();
+        components = new ArrayList<>();
+        components.add(new StateView());
+        components.add(new MessageView());
+        components.add(new MesureView());
     }
     
     /**
