@@ -6,7 +6,7 @@
 
 package hmi.tab;
 
-import hmi.content.result.HMIContentResultTab;
+import hmi.content.result.ContentResultTabView;
 
 /**
  *
@@ -14,7 +14,7 @@ import hmi.content.result.HMIContentResultTab;
  */
 public class HMIResultTab extends HMITab {
     
-    public HMIResultTab(HMIContentResultTab c) {
+    public HMIResultTab(ContentResultTabView c) {
         this.content = c;
         this.getChildren().add(content);
     }

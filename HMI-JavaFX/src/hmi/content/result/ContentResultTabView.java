@@ -12,11 +12,11 @@ import hmi.content.HMIContent;
  *
  * @author Bruno
  */
-public class HMIContentResultTab extends HMIContent {
+public class ContentResultTabView extends HMIContent {
     private HMISuggestion suggestion;
     private HMIResultBoard board;
     
-    public HMIContentResultTab() {
+    public ContentResultTabView() {
         this.suggestion = new HMISuggestion();
         this.board = new HMIResultBoard();
         this.getChildren().add(suggestion);

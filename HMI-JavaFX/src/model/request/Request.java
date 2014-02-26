@@ -4,18 +4,15 @@
  * and open the template in the editor.
  */
 
-package model.monitoring;
+package model.request;
+
+import model.request.Sendable;
+import model.request.Sender;
 
 /**
  *
  * @author Bruno
  */
-public interface IMonitoring {
-    /**
-     * Methode permettant la mise a jour du noeud courant avec les mesures du bloc mesure
-     */
-    void pushInformation();
-    
-            
-    
+public class Request implements Sendable {
+    private Sender sender;
 }

@@ -1,5 +1,7 @@
 package model.engine;
 
+import model.request.Request;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,7 +13,11 @@ package model.engine;
  * @author Bruno
  */
 public interface IEngine {
-    void handleRequest();
+    /**
+     * Methode permettant de saisir une requete qui est renvoyee par le bloc reseau
+     * @param req 
+     */
+    void handleRequest(Request req);
     void save();
     void setInformations();
 }

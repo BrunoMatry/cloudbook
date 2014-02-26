@@ -7,7 +7,7 @@
 package hmi;
 
 import hmi.content.friend.HMIContentFriendTab;
-import hmi.content.result.HMIContentResultTab;
+import hmi.content.result.ContentResultTabView;
 import hmi.tab.HMIFriendTab;
 import hmi.tab.HMIResultTab;
 import hmi.tab.HMITab;
@@ -33,7 +33,7 @@ public class HMIMounter {
         tabList.add(friendTab);
         
         /* Result Tab */
-        HMIContentResultTab contentResultTab = new HMIContentResultTab();
+        ContentResultTabView contentResultTab = new ContentResultTabView();
         HMIResultTab resultTab = new HMIResultTab(contentResultTab);
         tabList.add(resultTab);
         
