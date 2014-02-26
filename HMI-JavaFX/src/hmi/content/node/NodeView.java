@@ -4,11 +4,11 @@
  * and open the template in the editor.
  */
 
-package hmi.content.nodeview;
+package hmi.content.node;
 
-import hmi.content.nodeview.component.MessageView;
-import hmi.content.nodeview.component.MesureView;
-import hmi.content.nodeview.component.StateView;
+import hmi.content.node.component.MessageView;
+import hmi.content.node.component.MesureView;
+import hmi.content.node.component.StateView;
 import java.util.ArrayList;
 import javafx.scene.Parent;
 import model.friendmanager.CloudBookNode;

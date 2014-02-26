@@ -4,27 +4,18 @@
  * and open the template in the editor.
  */
 
-package hmi.content.nodeview.component;
+package hmi.content.node.component;
 
-import hmi.content.nodeview.NodeComponentView;
-import hmi.content.nodeview.SummarizedView;
+import hmi.content.node.NodeComponentView;
+import hmi.content.node.SummarizedView;
 import javafx.scene.Node;
 
 /**
  *
  * @author Gwendal
  */
-public class StateView extends NodeComponentView {
+public class MessageView extends NodeComponentView {
 
-    protected CloudView cloud;
-    
-    public StateView() {
-        super();
-        cloud = new CloudView();
-        cloud.setLayoutX(250);
-        cloud.setLayoutY(250);
-    }
-    
     @Override
     public SummarizedView makeSummarizedView() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -32,7 +23,7 @@ public class StateView extends NodeComponentView {
 
     @Override
     public Node getNode() {
-        return cloud;
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

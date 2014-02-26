@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package hmi.content.nodeview.component;
+package hmi.content.node.component;
 
 import javafx.scene.image.ImageView;
 

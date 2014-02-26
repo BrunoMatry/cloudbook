@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package hmi.content.friend;
+package hmi.content.node.component;
 
 import hmi.content.node.NodeComponentView;
 import hmi.content.node.SummarizedView;
@@ -12,14 +12,19 @@ import javafx.scene.Node;
 
 /**
  *
- * @author Bruno
+ * @author Gwendal
  */
-public class HMIFriend extends NodeComponentView {
-    // Possède un objet ami
-    public HMIFriend(){
-        
-    }
+public class StateView extends NodeComponentView {
 
+    protected CloudView cloud;
+    
+    public StateView() {
+        super();
+        cloud = new CloudView();
+        cloud.setLayoutX(250);
+        cloud.setLayoutY(250);
+    }
+    
     @Override
     public SummarizedView makeSummarizedView() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -27,6 +32,7 @@ public class HMIFriend extends NodeComponentView {
 
     @Override
     public Node getNode() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return cloud;
     }
+    
 }

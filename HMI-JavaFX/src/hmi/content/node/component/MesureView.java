@@ -4,17 +4,17 @@
  * and open the template in the editor.
  */
 
-package hmi.content.nodeview.component;
+package hmi.content.node.component;
 
-import hmi.content.nodeview.NodeComponentView;
-import hmi.content.nodeview.SummarizedView;
+import hmi.content.node.NodeComponentView;
+import hmi.content.node.SummarizedView;
 import javafx.scene.Node;
 
 /**
  *
  * @author Gwendal
  */
-public class MessageView extends NodeComponentView {
+public class MesureView extends NodeComponentView {
 
     @Override
     public SummarizedView makeSummarizedView() {

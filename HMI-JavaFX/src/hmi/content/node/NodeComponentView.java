@@ -4,16 +4,21 @@
  * and open the template in the editor.
  */
 
-package hmi.content.nodeview;
+package hmi.content.node;
+
+import javafx.scene.Node;
 
 /**
  *
  * @author Gwendal
  */
-public class SummarizedView implements ComponentView {
+public abstract class NodeComponentView implements ComponentView {
 
-    //full version of the current view
-    private NodeComponentView fullView;
+    //container of the current component
+    protected NodeView container;
+    
+    //summarized version of the current view
+    protected SummarizedView summarized;
     
     @Override
     public void display() {
@@ -30,4 +35,11 @@ public class SummarizedView implements ComponentView {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    public abstract SummarizedView makeSummarizedView();
+    
+    /**
+     * 
+     * @return : the node object representing the view
+     */
+    public abstract Node getNode();
 }

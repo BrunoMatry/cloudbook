@@ -22,7 +22,7 @@ import javafx.scene.paint.Color;
  *
  * @author Bruno
  */
-public class HMIMounter {
+public class Mounter {
     
     public static HMITabList getTabList() {
         List<HMITab> tabList = new ArrayList<>();

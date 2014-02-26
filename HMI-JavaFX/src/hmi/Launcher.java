@@ -9,21 +9,20 @@ package hmi;
 
 import hmi.bar.HMIMenuBar;
 import hmi.button.CloudBookButton;
-import hmi.content.nodeview.FriendManagerView;
+import hmi.content.node.FriendManagerView;
 import hmi.tab.HMITabList;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
  *
  * @author Bruno
  */
-public class HMICloudbook extends Application {
+public class Launcher extends Application {
     private HMIMenuBar menuBar;
     private HMITabList tabList;
     private CloudBookButton fManagButton;
@@ -37,7 +36,7 @@ public class HMICloudbook extends Application {
     public void start(Stage primaryStage) throws Exception {
         
         /* Initialisation des attributs prives */
-        this.tabList = HMIMounter.getTabList();
+        this.tabList = Mounter.getTabList();
         this.menuBar = new HMIMenuBar();
         setUpFManagButton();
         
@@ -46,7 +45,7 @@ public class HMICloudbook extends Application {
         root.getChildren().add(menuBar);
         root.getChildren().add(fManagButton);
     
-        Scene scene = HMIMounter.getStandardScene(root);
+        Scene scene = Mounter.getStandardScene(root);
         
         primaryStage.setTitle("The CloudBook");
         primaryStage.setScene(scene);

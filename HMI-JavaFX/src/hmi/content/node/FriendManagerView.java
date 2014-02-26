@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 
-package hmi.content.nodeview;
+package hmi.content.node;
 
-import hmi.HMIMounter;
+import hmi.Mounter;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import model.friendmanager.FriendManager;
@@ -34,7 +34,7 @@ public final class FriendManagerView extends Stage {
     private FriendManagerView() {
         setTitle("Friend Manager");
         member = new NodeView();
-        Scene scene = HMIMounter.getStandardScene(member);
+        Scene scene = Mounter.getStandardScene(member);
         setScene(scene);
     }
     
