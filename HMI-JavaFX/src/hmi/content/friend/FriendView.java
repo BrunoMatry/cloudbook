@@ -17,17 +17,17 @@ import javafx.scene.Node;
  */
 public class FriendView extends NodeComponentView {
     // Possède un objet ami
-    public FriendView(NodeView nv){
-        super(nv);
-    }
-
-    @Override
-    public SummarizedView makeSummarizedView() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public FriendView(){
+        super();
     }
 
     @Override
     public Node getNode() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public SummarizedView makeSummarized(NodeView parent) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

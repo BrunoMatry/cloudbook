@@ -7,6 +7,7 @@
 package hmi.content.node;
 
 import hmi.Mounter;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
@@ -14,20 +15,16 @@ import javafx.scene.Scene;
  *
  * @author Gwendal
  */
-public abstract class NodeComponentView implements ComponentView {
+public abstract class NodeComponentView extends Parent implements ComponentView {
 
-    //container of the current component
-    protected NodeView container;
+   //Scene based on this instance of Parent
+    protected Scene scene;
     
-    //summarized version of the current view
-    protected SummarizedView summarized;
+    //title to display when the view is displayed
+    protected String title;
     
-    public NodeComponentView(NodeView parent) {
-        container = parent;
-    }
-    
-    public NodeView getContainer() {
-        return container;
+    public NodeComponentView() {
+        scene = Mounter.getStandardScene(this);
     }
     
     @Override
@@ -45,6 +42,10 @@ public abstract class NodeComponentView implements ComponentView {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    public abstract SummarizedView makeSummarizedView();
+    public abstract SummarizedView makeSummarized(NodeView parent);
+    
+    public String getTitle() {
+        return title;
+    }
   
 }

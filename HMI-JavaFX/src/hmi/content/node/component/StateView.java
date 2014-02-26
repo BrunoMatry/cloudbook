@@ -22,22 +22,23 @@ public class StateView extends NodeComponentView {
     protected ArrayList<CloudView> clouds;
     protected TableView historyView;
     
-    public StateView(NodeView nv) {
-        super(nv);
+    public StateView() {
+        super();
         historyView = new TableView();
         clouds = new ArrayList<>();
         for(int i = 0 ; i < 3 ; i++)
             clouds.add(new CloudView());
-    }
-    
-    @Override
-    public SummarizedView makeSummarizedView() {
-        return new SummarizedView(this, clouds.get(0));
+        title = "History";
     }
 
     @Override
     public Node getNode() {
         return historyView;
+    }
+
+    @Override
+    public SummarizedView makeSummarized(NodeView parent) {
+        return new SummarizedView(parent, this, clouds.get(0));
     }
     
 }

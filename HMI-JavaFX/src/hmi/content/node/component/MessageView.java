@@ -17,17 +17,17 @@ import javafx.scene.Node;
  */
 public class MessageView extends NodeComponentView {
 
-    public MessageView(NodeView parent) {
-        super(parent);
-    }
-
-    @Override
-    public SummarizedView makeSummarizedView() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public MessageView() {
+        super();
     }
 
     @Override
     public Node getNode() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public SummarizedView makeSummarized(NodeView parent) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

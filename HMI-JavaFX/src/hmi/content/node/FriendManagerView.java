@@ -44,4 +44,10 @@ public final class FriendManagerView extends Stage {
     public void updateAll() {
         //TODO
     }
+    
+    public void buildAndShow(String title, Scene scene) {
+        setTitle(title);
+        setScene(scene);
+        show();
+    }
 }

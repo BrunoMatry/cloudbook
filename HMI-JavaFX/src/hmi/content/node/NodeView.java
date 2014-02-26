@@ -25,7 +25,7 @@ public class NodeView extends Parent {
     //TODO : use observer tools of javafx
     //model
     private CloudBookNode model;
-    private ArrayList<NodeComponentView> components;
+    private ArrayList<SummarizedView> components;
     
     /**
      * default constructor
@@ -33,13 +33,13 @@ public class NodeView extends Parent {
     public NodeView() {
         super();
         components = new ArrayList<>();
-        components.add(new StateView(this));
+        StateView sv = new StateView();
+        components.add(sv.makeSummarized(this));
         //components.add(new MessageView());
         //components.add(new MesureView());
         
         for(int i = 0 ; i < components.size() ; i++) {
-            SummarizedView sv = components.get(i).makeSummarizedView();
-            placeChild(sv.getNode(), (i+1)*100, (i+1)*100);
+            placeChild(components.get(i), (i+1)*100, (i+1)*100);
         }
     }
     // TODO : affichage de la vue entiere au clic sur la vue resumee
@@ -65,10 +65,11 @@ public class NodeView extends Parent {
         getChildren().add(node);
     }
     
-    public void onClicked(ComponentView source) {
-        for(NodeComponentView cmp : components)
+    public void onClicked(SummarizedView source) {
+        for(SummarizedView cmp : components)
             onHide(cmp);
-        // TODO : refresh the window
+        NodeComponentView ncv = source.getFullView();
+        FriendManagerView.INSTANCE.buildAndShow(ncv.getTitle(), ncv.getScene());
     }
     
     /**

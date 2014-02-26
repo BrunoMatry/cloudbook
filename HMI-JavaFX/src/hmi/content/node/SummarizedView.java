@@ -6,15 +6,21 @@
 
 package hmi.content.node;
 
+import com.sun.javafx.geom.BaseBounds;
+import com.sun.javafx.geom.transform.BaseTransform;
+import com.sun.javafx.jmx.MXNodeAlgorithm;
+import com.sun.javafx.jmx.MXNodeAlgorithmContext;
+import com.sun.javafx.sg.PGNode;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.input.MouseEvent;
 
 /**
  *
  * @author Gwendal
  */
-public class SummarizedView implements ComponentView {
+public class SummarizedView extends Parent implements ComponentView {
 
     //full version of the current view
     protected NodeComponentView fullView;
@@ -22,14 +28,21 @@ public class SummarizedView implements ComponentView {
     //javafx node corresponding to the actual view
     protected Node view;
     
-    public SummarizedView(NodeComponentView full, Node node) {
+    //Parent object of the view
+    protected NodeView container;
+    
+    public SummarizedView(NodeView parent, NodeComponentView full, Node node) {
+        container = parent;
         fullView = full;
         view = node;
-        view.setOnMouseClicked(new EventHandler<MouseEvent>() {
+        view.setLayoutX(0);
+        view.setLayoutY(0);
+        getChildren().add(view);
+        setOnMouseClicked(new EventHandler<MouseEvent>() {
 
             @Override
             public void handle(MouseEvent t) {
-                fullView.getContainer().onClicked(fullView);
+                container.onClicked((SummarizedView)t.getSource());
             }
         
         });
@@ -53,6 +66,10 @@ public class SummarizedView implements ComponentView {
     @Override
     public Node getNode() {
         return view;
+    }
+    
+    public NodeComponentView getFullView() {
+        return fullView;
     }
     
 }
