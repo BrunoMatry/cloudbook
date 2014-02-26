@@ -11,7 +11,7 @@ import hmi.content.node.component.MesureView;
 import hmi.content.node.component.StateView;
 import java.util.ArrayList;
 import javafx.scene.Parent;
-import model.friendmanager.CloudBookNode;
+import modele.node.CloudBookNode;
 
 /**
  *
