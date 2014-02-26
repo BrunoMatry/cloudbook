@@ -8,8 +8,8 @@ package model.friendmanager;
 
 /**
  *
- * @author Gwendal
+ * @author Bruno
  */
-public class FriendManager implements IFriendManager {
+public interface IFriendManager {
     
 }
