@@ -6,10 +6,9 @@
 
 package hmi.content.node;
 
-import hmi.content.node.component.MessageView;
-import hmi.content.node.component.MesureView;
 import hmi.content.node.component.StateView;
 import java.util.ArrayList;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import modele.node.CloudBookNode;
 
@@ -36,10 +35,12 @@ public class NodeView extends Parent {
         //components.add(new MessageView());
         //components.add(new MesureView());
         
-        for(NodeComponentView ncv : components)
-            getChildren().add(ncv.getNode());
+        for(int i = 0 ; i < components.size() ; i++) {
+            SummarizedView sv = components.get(i).makeSummarizedView();
+            placeChild(sv.getNode(), (i+1)*100, (i+1)*100);
+        }
     }
-    
+    // TODO : affichage de la vue entiere au clic sur la vue resumee
     /**
      * initialize the model and build all the children views
      * @param model : model of the current view
@@ -51,4 +52,15 @@ public class NodeView extends Parent {
         //components.add();
     }
    
+    /**
+     * Places the current view in its parent without refreshing it
+     * @param x : horizontal position
+     * @param y : vertical position
+     */
+    public void placeChild(Node node, int x, int y) {
+        node.setLayoutX(x);
+        node.setLayoutY(y);
+        getChildren().add(node);
+    }
+    
 }

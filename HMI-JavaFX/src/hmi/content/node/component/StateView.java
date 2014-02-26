@@ -8,7 +8,9 @@ package hmi.content.node.component;
 
 import hmi.content.node.NodeComponentView;
 import hmi.content.node.SummarizedView;
+import java.util.ArrayList;
 import javafx.scene.Node;
+import javafx.scene.control.TableView;
 
 /**
  *
@@ -16,23 +18,25 @@ import javafx.scene.Node;
  */
 public class StateView extends NodeComponentView {
 
-    protected CloudView cloud;
+    protected ArrayList<CloudView> clouds;
+    protected TableView historyView;
     
     public StateView() {
         super();
-        cloud = new CloudView();
-        cloud.setLayoutX(250);
-        cloud.setLayoutY(250);
+        historyView = new TableView();
+        clouds = new ArrayList<>();
+        for(int i = 0 ; i < 3 ; i++)
+            clouds.add(new CloudView());
     }
     
     @Override
     public SummarizedView makeSummarizedView() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return new SummarizedView(this, clouds.get(0));
     }
 
     @Override
     public Node getNode() {
-        return cloud;
+        return historyView;
     }
     
 }

@@ -6,6 +6,8 @@
 
 package hmi.content.node;
 
+import javafx.scene.Node;
+
 /**
  *
  * @author Gwendal
@@ -28,4 +30,10 @@ public interface ComponentView {
      * update the component
      */
     public void update();
+    
+    /**
+     * get the graphical contained object
+     * @return the node representing the view
+     */
+    public Node getNode();
 }

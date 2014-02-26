@@ -20,6 +20,10 @@ public abstract class NodeComponentView implements ComponentView {
     //summarized version of the current view
     protected SummarizedView summarized;
     
+    public NodeView getContainer() {
+        return container;
+    }
+    
     @Override
     public void display() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -36,10 +40,5 @@ public abstract class NodeComponentView implements ComponentView {
     }
     
     public abstract SummarizedView makeSummarizedView();
-    
-    /**
-     * 
-     * @return : the node object representing the view
-     */
-    public abstract Node getNode();
+  
 }

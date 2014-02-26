@@ -6,6 +6,8 @@
 
 package hmi.content.node;
 
+import javafx.scene.Node;
+
 /**
  *
  * @author Gwendal
@@ -14,6 +16,14 @@ public class SummarizedView implements ComponentView {
 
     //full version of the current view
     private NodeComponentView fullView;
+    
+    //javafx node corresponding to the actual view
+    protected Node view;
+    
+    public SummarizedView(NodeComponentView full, Node node) {
+        fullView = full;
+        view = node;
+    }
     
     @Override
     public void display() {
@@ -28,6 +38,11 @@ public class SummarizedView implements ComponentView {
     @Override
     public void update() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Node getNode() {
+        return view;
     }
     
 }
