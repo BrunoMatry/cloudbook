@@ -4,15 +4,19 @@
  * and open the template in the editor.
  */
 
-package model.request;
+package modele.node;
 
-import modele.node.AppVector;
+import java.util.Date;
 
 /**
  *
  * @author Bruno
  */
-public class Sender {
+public class Friend implements Information {
+    private int confidence;
     private int id;
+    private Date lastConnexion;
+    private boolean relevant;
     private AppVector vector;
+    
 }

@@ -4,19 +4,18 @@
  * and open the template in the editor.
  */
 
-package model.request;
+package modele.node;
 
 import java.util.Date;
-import modele.node.Information;
 
 /**
  *
  * @author Bruno
  */
-public class Request<Inf extends Information> implements Sendable {
-    private Sender sender;
+public class Message implements Information {
+    private Information content;
     private Date date;
-    private Inf info;
-    private int rebouds;
-    private int recipent;
+    private int idSender;
+    private boolean relevant;
+    private AppVector vector;
 }

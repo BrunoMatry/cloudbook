@@ -4,15 +4,16 @@
  * and open the template in the editor.
  */
 
-package model.request;
+package modele.node;
 
-import modele.node.Information;
+import java.util.Date;
 
 /**
  *
  * @author Bruno
  */
-public interface IRequestManager {
-    Request createRequest(int target, Information data);
-    void handleRequest(Request req);
+public class State implements Information {
+    private Cloud cloud;
+    private Date from;
+    private Date to;
 }

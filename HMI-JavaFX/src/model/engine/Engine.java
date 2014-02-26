@@ -43,4 +43,11 @@ public class Engine implements IEngine {
         requestManager.handleRequest(req);
     }
     
+    private void shareInformation(){
+        
+    }
+    
+    private void updateInformation(){
+        monitoring.pushInformation();
+    }
 }

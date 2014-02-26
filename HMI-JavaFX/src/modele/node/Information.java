@@ -4,15 +4,12 @@
  * and open the template in the editor.
  */
 
-package model.request;
-
-import modele.node.Information;
+package modele.node;
 
 /**
  *
  * @author Bruno
  */
-public interface IRequestManager {
-    Request createRequest(int target, Information data);
-    void handleRequest(Request req);
+public interface Information {
+    
 }

@@ -6,12 +6,20 @@
 
 package modele.node;
 
+import java.io.Serializable;
+import java.util.List;
+
 /**
  *
  * @author Gwendal
  * 
  * Representation of a node
  */
-public class CloudBookNode {
-    
+public class CloudBookNode implements Serializable {
+    private List<Friend> friends;
+    private List<Information> informations;
+    private List<Message> message;
+    private List<Mesure> mesure;
+    private List<State> state;
+    private AppVector vector;
 }
