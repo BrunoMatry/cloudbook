@@ -6,10 +6,13 @@
 
 package model.request;
 
+import modele.node.Information;
+
 /**
  *
  * @author Bruno
  */
 public interface IRequestManager {
+    Request createRequest(int target, Information data);
     void handleRequest(Request req);
 }

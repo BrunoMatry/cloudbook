@@ -6,13 +6,17 @@
 
 package model.request;
 
-import model.request.Sendable;
-import model.request.Sender;
+import java.util.Date;
+import modele.node.Information;
 
 /**
  *
  * @author Bruno
  */
-public class Request implements Sendable {
+public class Request<Inf extends Information> implements Sendable {
     private Sender sender;
+    private Date date;
+    private Inf info;
+    private int rebouds;
+    private int recipent;
 }
