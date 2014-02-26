@@ -6,7 +6,9 @@
 
 package hmi.content.node;
 
-import javafx.scene.Node;
+import hmi.Mounter;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 
 /**
  *
@@ -20,13 +22,17 @@ public abstract class NodeComponentView implements ComponentView {
     //summarized version of the current view
     protected SummarizedView summarized;
     
+    public NodeComponentView(NodeView parent) {
+        container = parent;
+    }
+    
     public NodeView getContainer() {
         return container;
     }
     
     @Override
     public void display() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override

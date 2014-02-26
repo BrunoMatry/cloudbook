@@ -7,6 +7,7 @@
 package hmi.content.node.component;
 
 import hmi.content.node.NodeComponentView;
+import hmi.content.node.NodeView;
 import hmi.content.node.SummarizedView;
 import java.util.ArrayList;
 import javafx.scene.Node;
@@ -21,8 +22,8 @@ public class StateView extends NodeComponentView {
     protected ArrayList<CloudView> clouds;
     protected TableView historyView;
     
-    public StateView() {
-        super();
+    public StateView(NodeView nv) {
+        super(nv);
         historyView = new TableView();
         clouds = new ArrayList<>();
         for(int i = 0 ; i < 3 ; i++)

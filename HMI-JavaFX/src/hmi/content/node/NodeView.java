@@ -6,10 +6,12 @@
 
 package hmi.content.node;
 
+import hmi.Mounter;
 import hmi.content.node.component.StateView;
 import java.util.ArrayList;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import modele.node.CloudBookNode;
 
 /**
@@ -31,7 +33,7 @@ public class NodeView extends Parent {
     public NodeView() {
         super();
         components = new ArrayList<>();
-        components.add(new StateView());
+        components.add(new StateView(this));
         //components.add(new MessageView());
         //components.add(new MesureView());
         
@@ -63,4 +65,33 @@ public class NodeView extends Parent {
         getChildren().add(node);
     }
     
+    public void onClicked(ComponentView source) {
+        for(NodeComponentView cmp : components)
+            onHide(cmp);
+        // TODO : refresh the window
+    }
+    
+    /**
+     * TODO
+     * @param source : component demanding to be displayed
+     */
+    public void onDisplay(ComponentView source) {
+        
+    }
+    
+    /**
+     * TODO
+     * @param source : component demanding to be updated
+     */
+    public void onUpdate(ComponentView source) {
+        
+    }
+    
+    /**
+     * TODO
+     * @param source : component demanding to be hidden
+     */
+    public void onHide(ComponentView source) {
+        getChildren().remove(source);
+    }
 }

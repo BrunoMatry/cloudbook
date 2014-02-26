@@ -7,6 +7,7 @@
 package hmi.content.node.component;
 
 import hmi.content.node.NodeComponentView;
+import hmi.content.node.NodeView;
 import hmi.content.node.SummarizedView;
 import javafx.scene.Node;
 
@@ -15,6 +16,10 @@ import javafx.scene.Node;
  * @author Gwendal
  */
 public class MesureView extends NodeComponentView {
+
+    public MesureView(NodeView parent) {
+        super(parent);
+    }
 
     @Override
     public SummarizedView makeSummarizedView() {

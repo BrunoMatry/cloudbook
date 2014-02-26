@@ -6,7 +6,9 @@
 
 package hmi.content.node;
 
+import javafx.event.EventHandler;
 import javafx.scene.Node;
+import javafx.scene.input.MouseEvent;
 
 /**
  *
@@ -15,7 +17,7 @@ import javafx.scene.Node;
 public class SummarizedView implements ComponentView {
 
     //full version of the current view
-    private NodeComponentView fullView;
+    protected NodeComponentView fullView;
     
     //javafx node corresponding to the actual view
     protected Node view;
@@ -23,6 +25,14 @@ public class SummarizedView implements ComponentView {
     public SummarizedView(NodeComponentView full, Node node) {
         fullView = full;
         view = node;
+        view.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+            @Override
+            public void handle(MouseEvent t) {
+                fullView.getContainer().onClicked(fullView);
+            }
+        
+        });
     }
     
     @Override
