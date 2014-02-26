@@ -9,7 +9,7 @@ package hmi;
 
 import hmi.bar.MenuBar;
 import hmi.button.CloudBookButton;
-import hmi.content.node.FriendManagerView;
+import hmi.content.node.NodeView;
 import hmi.tab.TabList;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -63,7 +63,7 @@ public class Launcher extends Application {
 
             @Override
             public void handle(ActionEvent t) {
-                FriendManagerView.INSTANCE.show();
+                NodeView.INSTANCE.launch();
             }
             
         });

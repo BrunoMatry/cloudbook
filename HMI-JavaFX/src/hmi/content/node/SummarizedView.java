@@ -42,7 +42,7 @@ public class SummarizedView extends Parent implements ComponentView {
 
             @Override
             public void handle(MouseEvent t) {
-                container.onClicked((SummarizedView)t.getSource());
+                fullView.launch();
             }
         
         });

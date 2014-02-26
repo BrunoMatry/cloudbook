@@ -7,7 +7,9 @@
 package hmi.content.node;
 
 import hmi.Mounter;
-import javafx.scene.Node;
+import hmi.button.BackButton;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
@@ -15,16 +17,24 @@ import javafx.scene.Scene;
  *
  * @author Gwendal
  */
-public abstract class NodeComponentView extends Parent implements ComponentView {
-
-   //Scene based on this instance of Parent
-    protected Scene scene;
+public abstract class NodeComponentView extends Activity implements ComponentView {
     
-    //title to display when the view is displayed
-    protected String title;
+    protected BackButton goBack;
     
     public NodeComponentView() {
-        scene = Mounter.getStandardScene(this);
+        super();
+        goBack = new BackButton();
+        goBack.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent t) {
+                NodeView.INSTANCE.launch();
+            }
+        
+        });
+        goBack.setLayoutX(0);
+        goBack.setLayoutY(0);
+        getChildren().add(goBack);
     }
     
     @Override
@@ -43,9 +53,5 @@ public abstract class NodeComponentView extends Parent implements ComponentView 
     }
     
     public abstract SummarizedView makeSummarized(NodeView parent);
-    
-    public String getTitle() {
-        return title;
-    }
   
 }

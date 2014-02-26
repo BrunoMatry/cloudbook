@@ -6,22 +6,20 @@
 
 package hmi.content.node;
 
-import hmi.Mounter;
 import hmi.content.node.component.StateView;
 import java.util.ArrayList;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import modele.node.CloudBookNode;
 
 /**
  *
  * @author Gwendal
- * 
+ * singleton
  * View of the current member
  */
-public class NodeView extends Parent {
+public final class NodeView extends Activity {
     
+    public static final NodeView INSTANCE = new NodeView();
     //TODO : use observer tools of javafx
     //model
     private CloudBookNode model;
@@ -30,8 +28,9 @@ public class NodeView extends Parent {
     /**
      * default constructor
      */
-    public NodeView() {
+    private NodeView() {
         super();
+        title = "Friend management";
         components = new ArrayList<>();
         StateView sv = new StateView();
         components.add(sv.makeSummarized(this));
@@ -63,13 +62,6 @@ public class NodeView extends Parent {
         node.setLayoutX(x);
         node.setLayoutY(y);
         getChildren().add(node);
-    }
-    
-    public void onClicked(SummarizedView source) {
-        for(SummarizedView cmp : components)
-            onHide(cmp);
-        NodeComponentView ncv = source.getFullView();
-        FriendManagerView.INSTANCE.buildAndShow(ncv.getTitle(), ncv.getScene());
     }
     
     /**

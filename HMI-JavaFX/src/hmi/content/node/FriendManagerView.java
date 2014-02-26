@@ -25,17 +25,11 @@ public final class FriendManagerView extends Stage {
     //model
     private FriendManager model;
     
-    //representation of the current member
-    private NodeView member;
-    
     /**
      * private constructor of singleton
      */
     private FriendManagerView() {
-        setTitle("Friend Manager");
-        member = new NodeView();
-        Scene scene = Mounter.getStandardScene(member);
-        setScene(scene);
+        
     }
     
     /**
@@ -45,9 +39,4 @@ public final class FriendManagerView extends Stage {
         //TODO
     }
     
-    public void buildAndShow(String title, Scene scene) {
-        setTitle(title);
-        setScene(scene);
-        show();
-    }
 }
