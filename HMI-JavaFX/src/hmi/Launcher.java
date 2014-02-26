@@ -10,7 +10,7 @@ package hmi;
 import hmi.bar.MenuBar;
 import hmi.button.CloudBookButton;
 import hmi.content.node.FriendManagerView;
-import hmi.tab.HMITabList;
+import hmi.tab.TabList;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -24,7 +24,7 @@ import javafx.stage.Stage;
  */
 public class Launcher extends Application {
     private MenuBar menuBar;
-    private HMITabList tabList;
+    private TabList tabList;
     private CloudBookButton fManagButton;
 
     /**

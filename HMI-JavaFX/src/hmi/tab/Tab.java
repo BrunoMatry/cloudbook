@@ -13,7 +13,7 @@ import javafx.scene.Parent;
  *
  * @author Bruno
  */
-public abstract class HMITab extends Parent {
+public abstract class Tab extends Parent {
     protected Content content;
     
     public Content getContent(){

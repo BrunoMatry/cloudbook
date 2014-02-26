@@ -10,8 +10,8 @@ package hmi.tab;
  *
  * @author Bruno
  */
-public class HMINodeStateTab extends HMITab {
-    public HMINodeStateTab() {
+public class MainTab extends Tab {
+    public MainTab() {
         
     }
 }

@@ -6,15 +6,15 @@
 
 package hmi.tab;
 
-import hmi.content.result.ContentResultTab;
+import hmi.content.friend.ContentFriendTab;
 
 /**
  *
  * @author Bruno
  */
-public class HMIResultTab extends HMITab {
+public class FriendTab extends Tab {
     
-    public HMIResultTab(ContentResultTab c) {
+    public FriendTab(ContentFriendTab c){
         this.content = c;
         this.getChildren().add(content);
     }

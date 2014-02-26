@@ -16,15 +16,15 @@ import javafx.scene.Parent;
  *
  * @author Bruno
  */
-public class HMITabList extends Parent {
-    private List<HMITab> list;
+public class TabList extends Parent {
+    private List<Tab> list;
     private IntegerProperty currentTab;
     
-    public HMITabList(List<HMITab> l) {
+    public TabList(List<Tab> l) {
         this.list = l;
         this.currentTab = new SimpleIntegerProperty(0);
 
-        for(HMITab tab : this.list) {
+        for(Tab tab : this.list) {
             this.getChildren().add(tab);
         }
     }

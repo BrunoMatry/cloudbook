@@ -8,10 +8,10 @@ package hmi;
 
 import hmi.content.friend.ContentFriendTab;
 import hmi.content.result.ContentResultTab;
-import hmi.tab.HMIFriendTab;
-import hmi.tab.HMIResultTab;
-import hmi.tab.HMITab;
-import hmi.tab.HMITabList;
+import hmi.tab.FriendTab;
+import hmi.tab.ResultTab;
+import hmi.tab.Tab;
+import hmi.tab.TabList;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.scene.Parent;
@@ -24,20 +24,20 @@ import javafx.scene.paint.Color;
  */
 public class Mounter {
     
-    public static HMITabList getTabList() {
-        List<HMITab> tabList = new ArrayList<>();
+    public static TabList getTabList() {
+        List<Tab> tabList = new ArrayList<>();
         
         /* Friend Tab */
         ContentFriendTab contentFriendTab = new ContentFriendTab();
-        HMIFriendTab friendTab = new HMIFriendTab(contentFriendTab);
+        FriendTab friendTab = new FriendTab(contentFriendTab);
         tabList.add(friendTab);
         
         /* Result Tab */
         ContentResultTab contentResultTab = new ContentResultTab();
-        HMIResultTab resultTab = new HMIResultTab(contentResultTab);
+        ResultTab resultTab = new ResultTab(contentResultTab);
         tabList.add(resultTab);
         
-        HMITabList result = new HMITabList(tabList);
+        TabList result = new TabList(tabList);
         return result;
     }
     
