@@ -7,7 +7,7 @@
 
 package hmi;
 
-import hmi.bar.HMIMenuBar;
+import hmi.bar.MenuBar;
 import hmi.button.CloudBookButton;
 import hmi.content.node.FriendManagerView;
 import hmi.tab.HMITabList;
@@ -23,7 +23,7 @@ import javafx.stage.Stage;
  * @author Bruno
  */
 public class Launcher extends Application {
-    private HMIMenuBar menuBar;
+    private MenuBar menuBar;
     private HMITabList tabList;
     private CloudBookButton fManagButton;
 
@@ -37,7 +37,7 @@ public class Launcher extends Application {
         
         /* Initialisation des attributs prives */
         this.tabList = Mounter.getTabList();
-        this.menuBar = new HMIMenuBar();
+        this.menuBar = new MenuBar();
         setUpFManagButton();
         
         Group root = new Group();

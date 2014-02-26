@@ -4,18 +4,14 @@
  * and open the template in the editor.
  */
 
-package hmi.tab;
+package hmi.content;
 
-import hmi.content.result.ContentResultTab;
+import javafx.scene.Parent;
 
 /**
  *
  * @author Bruno
  */
-public class HMIResultTab extends HMITab {
+public abstract class Content extends Parent {
     
-    public HMIResultTab(ContentResultTab c) {
-        this.content = c;
-        this.getChildren().add(content);
-    }
 }

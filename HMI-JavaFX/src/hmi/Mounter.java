@@ -6,8 +6,8 @@
 
 package hmi;
 
-import hmi.content.friend.HMIContentFriendTab;
-import hmi.content.result.ContentResultTabView;
+import hmi.content.friend.ContentFriendTab;
+import hmi.content.result.ContentResultTab;
 import hmi.tab.HMIFriendTab;
 import hmi.tab.HMIResultTab;
 import hmi.tab.HMITab;
@@ -28,12 +28,12 @@ public class Mounter {
         List<HMITab> tabList = new ArrayList<>();
         
         /* Friend Tab */
-        HMIContentFriendTab contentFriendTab = new HMIContentFriendTab();
+        ContentFriendTab contentFriendTab = new ContentFriendTab();
         HMIFriendTab friendTab = new HMIFriendTab(contentFriendTab);
         tabList.add(friendTab);
         
         /* Result Tab */
-        ContentResultTabView contentResultTab = new ContentResultTabView();
+        ContentResultTab contentResultTab = new ContentResultTab();
         HMIResultTab resultTab = new HMIResultTab(contentResultTab);
         tabList.add(resultTab);
         

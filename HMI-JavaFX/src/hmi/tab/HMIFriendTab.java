@@ -6,7 +6,7 @@
 
 package hmi.tab;
 
-import hmi.content.friend.HMIContentFriendTab;
+import hmi.content.friend.ContentFriendTab;
 
 /**
  *
@@ -14,7 +14,7 @@ import hmi.content.friend.HMIContentFriendTab;
  */
 public class HMIFriendTab extends HMITab {
     
-    public HMIFriendTab(HMIContentFriendTab c){
+    public HMIFriendTab(ContentFriendTab c){
         this.content = c;
         this.getChildren().add(content);
     }

@@ -6,19 +6,19 @@
 
 package hmi.content.result;
 
-import hmi.content.HMIContent;
+import hmi.content.Content;
 
 /**
  *
  * @author Bruno
  */
-public class ContentResultTabView extends HMIContent {
-    private HMISuggestion suggestion;
-    private HMIResultBoard board;
+public class ContentResultTab extends Content {
+    private SuggestionView suggestion;
+    private ResultBoardView board;
     
-    public ContentResultTabView() {
-        this.suggestion = new HMISuggestion();
-        this.board = new HMIResultBoard();
+    public ContentResultTab() {
+        this.suggestion = new SuggestionView();
+        this.board = new ResultBoardView();
         this.getChildren().add(suggestion);
         this.getChildren().add(board);
     }

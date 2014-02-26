@@ -12,9 +12,9 @@ import javafx.scene.Parent;
  *
  * @author Bruno
  */
-public class HMIResultBoard extends Parent {
+public class SuggestionView extends Parent {
     
-    public HMIResultBoard() {
+    public SuggestionView(){
         
     }
 }

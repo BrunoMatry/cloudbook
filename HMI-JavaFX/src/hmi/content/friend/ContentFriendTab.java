@@ -6,17 +6,17 @@
 
 package hmi.content.friend;
 
-import hmi.content.HMIContent;
+import hmi.content.Content;
 
 /**
  *
  * @author Bruno
  */
-public class HMIContentFriendTab extends HMIContent {
-    private HMIContentFriendList friendList;
+public class ContentFriendTab extends Content {
+    private ContentFriendListView friendList;
     
-    public HMIContentFriendTab() {
-        this.friendList = new HMIContentFriendList();
+    public ContentFriendTab() {
+        this.friendList = new ContentFriendListView();
         this.getChildren().add(friendList);
     }
 }

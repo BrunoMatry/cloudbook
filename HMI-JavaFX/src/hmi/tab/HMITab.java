@@ -6,7 +6,7 @@
 
 package hmi.tab;
 
-import hmi.content.HMIContent;
+import hmi.content.Content;
 import javafx.scene.Parent;
 
 /**
@@ -14,9 +14,9 @@ import javafx.scene.Parent;
  * @author Bruno
  */
 public abstract class HMITab extends Parent {
-    protected HMIContent content;
+    protected Content content;
     
-    public HMIContent getContent(){
+    public Content getContent(){
         return content;
     }
 }

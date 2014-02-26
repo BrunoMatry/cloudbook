@@ -6,7 +6,7 @@
 
 package hmi.tab;
 
-import hmi.content.HMIContent;
+import hmi.content.Content;
 import java.util.List;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
@@ -29,7 +29,7 @@ public class HMITabList extends Parent {
         }
     }
     
-    public HMIContent getContent() {
+    public Content getContent() {
         return list.get(this.currentTab.get()).getContent();
     }
 }

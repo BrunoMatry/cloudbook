@@ -4,14 +4,21 @@
  * and open the template in the editor.
  */
 
-package hmi.button;
+package hmi.bar;
 
+import hmi.button.ExitButton;
 import javafx.scene.Parent;
 
 /**
  *
  * @author Bruno
  */
-public class HMIExitButton extends Parent {
+public class MenuBar extends Parent {
+    private ExitButton exitButton;
     
+    public MenuBar() {
+        this.exitButton = new ExitButton();
+        
+        this.getChildren().add(exitButton);
+    }
 }

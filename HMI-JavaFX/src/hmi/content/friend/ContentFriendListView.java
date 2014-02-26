@@ -13,10 +13,10 @@ import javafx.scene.Parent;
  *
  * @author Bruno
  */
-public class HMIContentFriendList extends Parent {
-    private List<HMIFriend> list;
+public class ContentFriendListView extends Parent {
+    private List<FriendView> list;
     
-    public HMIContentFriendList() {
+    public ContentFriendListView() {
         this.getFriendList();
     }
 

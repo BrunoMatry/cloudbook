@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package hmi.content;
+package hmi.button;
 
 import javafx.scene.Parent;
 
@@ -12,6 +12,6 @@ import javafx.scene.Parent;
  *
  * @author Bruno
  */
-public abstract class HMIContent extends Parent {
+public class ExitButton extends Parent {
     
 }

@@ -14,9 +14,9 @@ import javafx.scene.Node;
  *
  * @author Bruno
  */
-public class HMIFriend extends NodeComponentView {
+public class FriendView extends NodeComponentView {
     // Possède un objet ami
-    public HMIFriend(){
+    public FriendView(){
         
     }
 
