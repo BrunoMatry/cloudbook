@@ -6,6 +6,8 @@
 
 package hmi.content.node;
 
+import hmi.content.node.component.MessageView;
+import hmi.content.node.component.MesureView;
 import hmi.content.node.component.StateView;
 import java.util.ArrayList;
 import javafx.scene.Node;
@@ -33,12 +35,20 @@ public final class NodeView extends Activity {
         title = "Friend management";
         components = new ArrayList<>();
         StateView sv = new StateView();
-        components.add(sv.makeSummarized(this));
-        //components.add(new MessageView());
-        //components.add(new MesureView());
+        MesureView mv = new MesureView();
+        MessageView msg = new MessageView();
+        components.add(sv.makeSummarized());
+        components.add(mv.makeSummarized());
+        components.add(msg.makeSummarized());
         
-        for(int i = 0 ; i < components.size() ; i++) {
-            placeChild(components.get(i), (i+1)*100, (i+1)*100);
+        int size = components.size();
+        for(int i = 0 ; i < size ; i++) {
+            SummarizedView cmp = components.get(i);
+            double x = (getScene().getWidth()/2) + 200*Math.cos(i*(2*Math.PI/size))
+                    - cmp.getBoundsInParent().getWidth()/2;
+            double y = (getScene().getHeight()/2) + 200*Math.sin(i*(2*Math.PI/size))
+                    - cmp.getBoundsInParent().getHeight()/2;
+            placeChild(cmp, (int)x, (int)y);
         }
     }
     // TODO : affichage de la vue entiere au clic sur la vue resumee

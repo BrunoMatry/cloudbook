@@ -7,9 +7,9 @@
 package hmi.content.node.component;
 
 import hmi.content.node.NodeComponentView;
-import hmi.content.node.NodeView;
 import hmi.content.node.SummarizedView;
 import javafx.scene.Node;
+import javafx.scene.text.Text;
 
 /**
  *
@@ -27,8 +27,9 @@ public class MesureView extends NodeComponentView {
     }
 
     @Override
-    public SummarizedView makeSummarized(NodeView parent) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public SummarizedView makeSummarized() {
+        SummarizedView res = new SummarizedView(this, new Text(getClass().getName()));
+        return res;
     }
     
 }

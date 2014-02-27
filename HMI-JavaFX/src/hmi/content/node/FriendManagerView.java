@@ -6,8 +6,6 @@
 
 package hmi.content.node;
 
-import hmi.Mounter;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 import model.friendmanager.FriendManager;
 

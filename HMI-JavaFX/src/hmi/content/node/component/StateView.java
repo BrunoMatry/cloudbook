@@ -41,8 +41,8 @@ public class StateView extends NodeComponentView {
     }
 
     @Override
-    public SummarizedView makeSummarized(NodeView parent) {
-        return new SummarizedView(parent, this, clouds.get(0));
+    public SummarizedView makeSummarized() {
+        return new SummarizedView(this, clouds.get(0));
     }
     
 }

@@ -27,7 +27,7 @@ public class FriendView extends NodeComponentView {
     }
 
     @Override
-    public SummarizedView makeSummarized(NodeView parent) {
+    public SummarizedView makeSummarized() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

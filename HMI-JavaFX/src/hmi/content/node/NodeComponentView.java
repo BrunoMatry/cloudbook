@@ -6,12 +6,9 @@
 
 package hmi.content.node;
 
-import hmi.Mounter;
 import hmi.button.BackButton;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 
 /**
  *
@@ -52,6 +49,6 @@ public abstract class NodeComponentView extends Activity implements ComponentVie
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    public abstract SummarizedView makeSummarized(NodeView parent);
+    public abstract SummarizedView makeSummarized();
   
 }

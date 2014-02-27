@@ -6,11 +6,6 @@
 
 package hmi.content.node;
 
-import com.sun.javafx.geom.BaseBounds;
-import com.sun.javafx.geom.transform.BaseTransform;
-import com.sun.javafx.jmx.MXNodeAlgorithm;
-import com.sun.javafx.jmx.MXNodeAlgorithmContext;
-import com.sun.javafx.sg.PGNode;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -28,11 +23,7 @@ public class SummarizedView extends Parent implements ComponentView {
     //javafx node corresponding to the actual view
     protected Node view;
     
-    //Parent object of the view
-    protected NodeView container;
-    
-    public SummarizedView(NodeView parent, NodeComponentView full, Node node) {
-        container = parent;
+    public SummarizedView(NodeComponentView full, Node node) {
         fullView = full;
         view = node;
         view.setLayoutX(0);
