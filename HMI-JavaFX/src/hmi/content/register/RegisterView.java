@@ -6,7 +6,9 @@
 
 package hmi.content.register;
 
+import hmi.content.AActivity;
 import hmi.content.Activity;
+import hmi.home.HomeView;
 
 /**
  * View letting the user register an application
@@ -14,10 +16,10 @@ import hmi.content.Activity;
  */
 public final class RegisterView extends Activity {
     
-    public static final RegisterView INSTANCE = new RegisterView();
+    public static final RegisterView INSTANCE = new RegisterView(HomeView.INSTANCE);
     
-    private RegisterView() {
-        super();
+    private RegisterView(AActivity p) {
+        super(p);
         title = "Register your application";
     }
 }

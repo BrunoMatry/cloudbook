@@ -6,10 +6,12 @@
 
 package hmi.content.node;
 
+import hmi.content.AActivity;
 import hmi.content.Activity;
 import hmi.content.node.component.MessageView;
 import hmi.content.node.component.MesureView;
 import hmi.content.node.component.StateView;
+import hmi.home.HomeView;
 import java.util.ArrayList;
 import javafx.scene.Node;
 import modele.node.CloudBookNode;
@@ -22,7 +24,7 @@ import modele.node.CloudBookNode;
  */
 public final class NodeView extends Activity {
     
-    public static final NodeView INSTANCE = new NodeView();
+    public static final NodeView INSTANCE = new NodeView(HomeView.INSTANCE);
     //TODO : use observer tools of javafx
     //model
     protected CloudBookNode model;
@@ -31,13 +33,13 @@ public final class NodeView extends Activity {
     /**
      * default constructor
      */
-    private NodeView() {
-        super();
+    private NodeView(AActivity p) {
+        super(p);
         title = "Friend management";
         components = new ArrayList<>();
-        StateView sv = new StateView();
-        MesureView mv = new MesureView();
-        MessageView msg = new MessageView();
+        StateView sv = new StateView(this);
+        MesureView mv = new MesureView(this);
+        MessageView msg = new MessageView(this);
         components.add(sv.makeSummarized());
         components.add(mv.makeSummarized());
         components.add(msg.makeSummarized());
@@ -57,13 +59,14 @@ public final class NodeView extends Activity {
      * initialize the model and build all the children views
      * @param model : model of the current view
      */
+    /*
     public NodeView(CloudBookNode model) {
         super();
         this.model = model;
         components = new ArrayList<>();
         //components.add();
     }
-   
+   */
     /**
      * Places the current view in its parent without refreshing it
      * @param x : horizontal position

@@ -6,10 +6,8 @@
 
 package hmi.content.node;
 
-import hmi.button.BackButton;
+import hmi.content.AActivity;
 import hmi.content.Activity;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.control.TableView;
 
 /**
@@ -18,27 +16,14 @@ import javafx.scene.control.TableView;
  */
 public abstract class NodeComponentView extends Activity implements ComponentView {
     
-    protected BackButton goBack;
     protected TableView table;
     
-    public NodeComponentView() {
-        super();
+    public NodeComponentView(AActivity p) {
+        super(p);
         table = new TableView();
         table.setLayoutX((getScene().getWidth()-table.getBoundsInParent().getWidth())/2);
         table.setLayoutY((getScene().getHeight()-table.getBoundsInParent().getHeight())/2);
         getChildren().add(table);
-        goBack = new BackButton();
-        goBack.setOnAction(new EventHandler<ActionEvent>() {
-
-            @Override
-            public void handle(ActionEvent t) {
-                NodeView.INSTANCE.launch();
-            }
-        
-        });
-        goBack.setLayoutX(0);
-        goBack.setLayoutY(0);
-        getChildren().add(goBack);
     }
     
     @Override

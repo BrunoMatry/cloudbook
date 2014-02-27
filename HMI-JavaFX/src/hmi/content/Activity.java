@@ -6,52 +6,35 @@
 
 package hmi.content;
 
-import hmi.Launcher;
-import hmi.Mounter;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import hmi.button.BackButton;
+import hmi.content.node.NodeView;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 
 /**
- * Parent is customized in order to make the changing of context easier
+ *
  * @author Gwendal
  */
-public class Activity extends Parent {
+public class Activity extends AActivity {
     
-    //title to display at the top of the window
-    protected String title;
+    protected BackButton goBack;
     
-    //standard scene corresponding to the activity
-    protected Scene scene;
+    //activity that must be launch if the back button is pressed
+    protected AActivity prec;
     
-    public Activity() {
-        super();
-        scene = Mounter.getStandardScene(this);
-    }
-    
-    /**
-     * Launch the activity in the main window
-     */
-    public void launch() {
-        Launcher.STAGE.setTitle(title);
-        Launcher.STAGE.setScene(scene);
-        Launcher.STAGE.show();
-    }
-    
-    /**
-     * set title attribute
-     * @param t : new title
-     */
-    public void setTitle(String t) {
-        title = t;
-    }
-    
-    /**
-     * Center a node in the corresponding pane
-     * @param node 
-     */
-    public void center(Node node) {
-        node.setLayoutX((getScene().getWidth()-node.getBoundsInParent().getWidth())/2);
-        node.setLayoutY((getScene().getHeight()-node.getBoundsInParent().getHeight())/2);
+    public Activity(AActivity p) {
+        prec = p;
+        goBack = new BackButton();
+        goBack.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent t) {
+                prec.launch();
+            }
+        
+        });
+        goBack.setLayoutX(0);
+        goBack.setLayoutY(0);
+        getChildren().add(goBack);
     }
 }

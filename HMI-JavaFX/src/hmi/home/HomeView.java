@@ -9,7 +9,7 @@ package hmi.home;
 import hmi.Mounter;
 import hmi.bar.MenuBar;
 import hmi.button.CloudBookButton;
-import hmi.content.Activity;
+import hmi.content.HomeActivity;
 import hmi.content.node.NodeView;
 import hmi.content.register.RegisterView;
 import hmi.tab.TabList;
@@ -17,15 +17,12 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
 /**
- * Activity launched when the application starts
- * singleton
- * TODO : use a builder ?
+ *AActivityy launched when the application starts* singleton
+ TODO : use a builder ?
  * TODO : add a home button to the standard activities
- * TODO : class HomeActivity
- * @author Gwendal
+ * DO : class HomeHomeAActivity@author Gwendal
  */
-public final class HomeView extends Activity {
-    
+public final class HomeView extends HomeActivity {   
     public static final HomeView INSTANCE = new HomeView();
     
     protected MenuBar menuBar;

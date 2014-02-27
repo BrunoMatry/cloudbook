@@ -8,17 +8,7 @@
 package hmi;
 
 import hmi.home.HomeView;
-import hmi.bar.MenuBar;
-import hmi.button.CloudBookButton;
-import hmi.content.node.NodeView;
-import hmi.content.register.RegisterView;
-import hmi.tab.TabList;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.Group;
-import javafx.scene.Scene;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**

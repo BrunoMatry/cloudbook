@@ -6,12 +6,11 @@
 
 package hmi.content.node.component;
 
+import hmi.content.AActivity;
 import hmi.content.node.NodeComponentView;
 import hmi.content.node.NodeView;
 import hmi.content.node.SummarizedView;
 import java.util.ArrayList;
-import javafx.scene.Node;
-import javafx.scene.control.TableView;
 
 /**
  *
@@ -22,8 +21,8 @@ public class StateView extends NodeComponentView {
     //all the clouds during the application existence
     protected ArrayList<CloudView> clouds;
     
-    public StateView() {
-        super();
+    public StateView(AActivity p) {
+        super(p);
         clouds = new ArrayList<>();
         for(int i = 0 ; i < 3 ; i++) {
             clouds.add(new CloudView());
