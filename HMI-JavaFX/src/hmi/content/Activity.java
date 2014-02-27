@@ -4,10 +4,11 @@
  * and open the template in the editor.
  */
 
-package hmi.content.node;
+package hmi.content;
 
+import hmi.Launcher;
 import hmi.Mounter;
-import static javafx.application.Application.launch;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
@@ -32,12 +33,25 @@ public class Activity extends Parent {
      * Launch the activity in the main window
      */
     public void launch() {
-        FriendManagerView.INSTANCE.setTitle(title);
-        FriendManagerView.INSTANCE.setScene(scene);
-        FriendManagerView.INSTANCE.show();
+        Launcher.STAGE.setTitle(title);
+        Launcher.STAGE.setScene(scene);
+        Launcher.STAGE.show();
     }
     
+    /**
+     * set title attribute
+     * @param t : new title
+     */
     public void setTitle(String t) {
         title = t;
+    }
+    
+    /**
+     * Center a node in the corresponding pane
+     * @param node 
+     */
+    public void center(Node node) {
+        node.setLayoutX((getScene().getWidth()-node.getBoundsInParent().getWidth())/2);
+        node.setLayoutY((getScene().getHeight()-node.getBoundsInParent().getHeight())/2);
     }
 }

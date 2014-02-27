@@ -7,6 +7,7 @@
 package hmi.content.node;
 
 import hmi.button.BackButton;
+import hmi.content.Activity;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.TableView;

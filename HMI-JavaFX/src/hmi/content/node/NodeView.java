@@ -6,6 +6,7 @@
 
 package hmi.content.node;
 
+import hmi.content.Activity;
 import hmi.content.node.component.MessageView;
 import hmi.content.node.component.MesureView;
 import hmi.content.node.component.StateView;
@@ -24,8 +25,8 @@ public final class NodeView extends Activity {
     public static final NodeView INSTANCE = new NodeView();
     //TODO : use observer tools of javafx
     //model
-    private CloudBookNode model;
-    private ArrayList<SummarizedView> components;
+    protected CloudBookNode model;
+    protected ArrayList<SummarizedView> components;
     
     /**
      * default constructor
