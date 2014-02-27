@@ -9,6 +9,7 @@ package hmi.content.node;
 import hmi.button.BackButton;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.control.TableView;
 
 /**
  *
@@ -17,9 +18,14 @@ import javafx.event.EventHandler;
 public abstract class NodeComponentView extends Activity implements ComponentView {
     
     protected BackButton goBack;
+    protected TableView table;
     
     public NodeComponentView() {
         super();
+        table = new TableView();
+        table.setLayoutX((getScene().getWidth()-table.getBoundsInParent().getWidth())/2);
+        table.setLayoutY((getScene().getHeight()-table.getBoundsInParent().getHeight())/2);
+        getChildren().add(table);
         goBack = new BackButton();
         goBack.setOnAction(new EventHandler<ActionEvent>() {
 

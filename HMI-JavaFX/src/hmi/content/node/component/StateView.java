@@ -19,25 +19,16 @@ import javafx.scene.control.TableView;
  */
 public class StateView extends NodeComponentView {
 
+    //all the clouds during the application existence
     protected ArrayList<CloudView> clouds;
-    protected TableView historyView;
     
     public StateView() {
         super();
-        historyView = new TableView();
-        historyView.setLayoutX(100);
-        historyView.setLayoutY(100);
-        getChildren().add(historyView);
         clouds = new ArrayList<>();
         for(int i = 0 ; i < 3 ; i++) {
             clouds.add(new CloudView());
         }
         title = "History";
-    }
-
-    @Override
-    public Node getNode() {
-        return historyView;
     }
 
     @Override

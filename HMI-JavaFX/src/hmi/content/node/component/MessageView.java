@@ -19,11 +19,7 @@ public class MessageView extends NodeComponentView {
 
     public MessageView() {
         super();
-    }
-
-    @Override
-    public Node getNode() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        title = "Messages";
     }
 
     @Override

@@ -53,11 +53,6 @@ public class SummarizedView extends Parent implements ComponentView {
     public void update() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    @Override
-    public Node getNode() {
-        return view;
-    }
     
     public NodeComponentView getFullView() {
         return fullView;

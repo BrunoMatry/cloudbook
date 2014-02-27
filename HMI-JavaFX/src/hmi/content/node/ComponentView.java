@@ -31,9 +31,4 @@ public interface ComponentView {
      */
     public void update();
     
-    /**
-     * get the graphical contained object
-     * @return the node representing the view
-     */
-    public Node getNode();
 }
