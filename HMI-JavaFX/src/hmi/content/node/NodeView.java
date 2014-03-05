@@ -23,7 +23,7 @@ import modele.node.CloudBookNode;
  * singleton
  * View of the current member
  */
-public final class NodeView extends Activity<Pane> {
+public final class NodeView extends Activity {
     
     public static final NodeView INSTANCE = new NodeView(HomeView.INSTANCE);
     //TODO : use observer tools of javafx
@@ -35,7 +35,7 @@ public final class NodeView extends Activity<Pane> {
      * default constructor
      */
     private NodeView(AActivity p) {
-        super(p, new Pane());
+        super(p);
         title = "Friend management";
         components = new ArrayList<>();
         StateView sv = new StateView(this);
@@ -48,9 +48,9 @@ public final class NodeView extends Activity<Pane> {
         int size = components.size();
         for(int i = 0 ; i < size ; i++) {
             SummarizedView cmp = components.get(i);
-            double x = (pane.getScene().getWidth()/2) + 200*Math.cos(i*(2*Math.PI/size))
+            double x = (getScene().getWidth()/2) + 200*Math.cos(i*(2*Math.PI/size))
                     - cmp.getBoundsInParent().getWidth()/2;
-            double y = (pane.getScene().getHeight()/2) + 200*Math.sin(i*(2*Math.PI/size))
+            double y = (getScene().getHeight()/2) + 200*Math.sin(i*(2*Math.PI/size))
                     - cmp.getBoundsInParent().getHeight()/2;
             placeChild(cmp, (int)x, (int)y);
         }

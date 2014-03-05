@@ -6,16 +6,10 @@
 
 package hmi.content;
 
-import javafx.scene.layout.Pane;
-
 /**
  *
  * @author Gwendal
  */
-public class HomeActivity extends AActivity<Pane> {
+public class HomeActivity extends AActivity {
 
-    public HomeActivity() {
-        super(new Pane());
-    }
-    
 }

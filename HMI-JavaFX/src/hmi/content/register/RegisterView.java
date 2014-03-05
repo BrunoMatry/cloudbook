@@ -37,19 +37,17 @@ import javafx.stage.FileChooser;
  * singleton
  * @author Gwendal
  */
-public final class RegisterView extends Activity<BorderPane> {
+public final class RegisterView extends Activity {
     
     public static final RegisterView INSTANCE = new RegisterView(HomeView.INSTANCE);
     
     private MyVBox vBox;
     
     private RegisterView(AActivity p) {
-        super(p, new BorderPane());
+        super(p);
         title = "Register your application";
-        this.pane.getChildren().remove(goBack);
-        pane.setTop(goBack);
         vBox = new MyVBox();
-        pane.setCenter(vBox);
+        setCenter(vBox);
     }
     
     /**

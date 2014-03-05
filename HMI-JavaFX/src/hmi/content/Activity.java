@@ -9,23 +9,20 @@ package hmi.content;
 import hmi.button.BackButton;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.geometry.Pos;
-import javafx.scene.layout.Pane;
 
 /**
  * specifies the basic content of a standard activity (i.e no-home activity)
  * @author Gwendal
- * @param <L> layout type
  */
-public class Activity<L extends Pane> extends AActivity<L> {
+public class Activity extends AActivity {
     
     protected BackButton goBack;
     
     //activity that must be launch if the back button is pressed
     protected AActivity prec;
     
-    public Activity(AActivity p, L pane) {
-        super(pane);
+    public Activity(AActivity p) {
+        super();
         prec = p;
         goBack = new BackButton();
         goBack.setOnAction(new EventHandler<ActionEvent>() {
@@ -36,7 +33,6 @@ public class Activity<L extends Pane> extends AActivity<L> {
             }
         
         });
-        goBack.setAlignment(Pos.TOP_LEFT);
-        this.pane.getChildren().add(goBack);
+        setTop(goBack);
     }
 }
