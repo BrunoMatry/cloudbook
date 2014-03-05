@@ -43,13 +43,11 @@ public final class RegisterView extends Activity<BorderPane> {
     
     private void initComponents() {
         logo = new ImageView(IconFlyWeight.INSTANCE.getDefaultLogo());
-        ImageView l2 = new ImageView(IconFlyWeight.INSTANCE.getDefaultLogo());
-        ImageView l3 = new ImageView(IconFlyWeight.INSTANCE.getDefaultLogo());
+        name = new TextField("App name");
+        clouds = new ChoiceBox();
         vBox = new VBox();
         vBox.setAlignment(Pos.CENTER);
-        vBox.getChildren().add(logo);
+        vBox.getChildren().addAll(logo, name, clouds);
         pane.setCenter(vBox);
-        pane.setLeft(l2);
-        pane.setRight(l3);
     }
 }
