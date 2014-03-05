@@ -15,13 +15,13 @@ import javafx.scene.image.ImageView;
  */
 public class CloudBookButton extends Button {
     
-    protected static final ImageView icon = new ImageView("file:res/cloud_picture.png");
-    
     /**
      * see Button()
      */
     public CloudBookButton() {
         super();
+        ImageView icon = new ImageView();
+        icon.setImage(IconFlyWeight.INSTANCE.getCloud());
         setGraphic(icon);
     }
     
@@ -31,6 +31,8 @@ public class CloudBookButton extends Button {
      */
     public CloudBookButton(String text) {
         super(text);
+        ImageView icon = new ImageView();
+        icon.setImage(IconFlyWeight.INSTANCE.getCloud());
         setGraphic(icon);
     }
 }

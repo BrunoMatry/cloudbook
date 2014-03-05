@@ -27,6 +27,7 @@ public final class IconFlyWeight {
     private Image backArrow;
     private Image cloud;
     private Image exit;
+    private Image defaultLogo;
    
     public Image getBackArrow() {
         if(backArrow == null)
@@ -38,6 +39,12 @@ public final class IconFlyWeight {
         if(cloud == null)
             cloud = new Image("file:res/cloud_picture.png");
         return cloud;
+    }
+    
+    public Image getDefaultLogo() {
+        if(defaultLogo == null)
+            defaultLogo = new Image("file:res/default_app.png");
+        return defaultLogo;
     }
 
     /*

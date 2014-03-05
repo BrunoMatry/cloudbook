@@ -9,20 +9,21 @@ package hmi.content.node;
 import hmi.content.AActivity;
 import hmi.content.Activity;
 import javafx.scene.control.TableView;
+import javafx.scene.layout.Pane;
 
 /**
  *
  * @author Gwendal
  */
-public abstract class NodeComponentView extends Activity implements ComponentView {
+public abstract class NodeComponentView extends Activity<Pane> implements ComponentView {
     
     protected TableView table;
     
     public NodeComponentView(AActivity p) {
-        super(p);
+        super(p, new Pane());
         table = new TableView();
-        table.setLayoutX((getScene().getWidth()-table.getBoundsInParent().getWidth())/2);
-        table.setLayoutY((getScene().getHeight()-table.getBoundsInParent().getHeight())/2);
+        table.setLayoutX((pane.getScene().getWidth()-table.getBoundsInParent().getWidth())/2);
+        table.setLayoutY((pane.getScene().getHeight()-table.getBoundsInParent().getHeight())/2);
         getChildren().add(table);
     }
     

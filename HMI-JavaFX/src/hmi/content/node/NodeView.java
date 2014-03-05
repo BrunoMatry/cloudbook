@@ -14,6 +14,7 @@ import hmi.content.node.component.StateView;
 import hmi.home.HomeView;
 import java.util.ArrayList;
 import javafx.scene.Node;
+import javafx.scene.layout.Pane;
 import modele.node.CloudBookNode;
 
 /**
@@ -22,7 +23,7 @@ import modele.node.CloudBookNode;
  * singleton
  * View of the current member
  */
-public final class NodeView extends Activity {
+public final class NodeView extends Activity<Pane> {
     
     public static final NodeView INSTANCE = new NodeView(HomeView.INSTANCE);
     //TODO : use observer tools of javafx
@@ -34,7 +35,7 @@ public final class NodeView extends Activity {
      * default constructor
      */
     private NodeView(AActivity p) {
-        super(p);
+        super(p, new Pane());
         title = "Friend management";
         components = new ArrayList<>();
         StateView sv = new StateView(this);
@@ -47,9 +48,9 @@ public final class NodeView extends Activity {
         int size = components.size();
         for(int i = 0 ; i < size ; i++) {
             SummarizedView cmp = components.get(i);
-            double x = (getScene().getWidth()/2) + 200*Math.cos(i*(2*Math.PI/size))
+            double x = (pane.getScene().getWidth()/2) + 200*Math.cos(i*(2*Math.PI/size))
                     - cmp.getBoundsInParent().getWidth()/2;
-            double y = (getScene().getHeight()/2) + 200*Math.sin(i*(2*Math.PI/size))
+            double y = (pane.getScene().getHeight()/2) + 200*Math.sin(i*(2*Math.PI/size))
                     - cmp.getBoundsInParent().getHeight()/2;
             placeChild(cmp, (int)x, (int)y);
         }
