@@ -19,9 +19,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.event.EventType;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableView;
@@ -86,6 +86,8 @@ public final class RegisterView extends Activity<BorderPane> {
             if(this.logo != null)
                 getChildren().remove(this.logo);
             this.logo = logo;
+            this.logo.setViewport(new Rectangle2D(0, 0, 80, 80));
+            this.logo.resize(50, 80);
             getChildren().add(0, this.logo);
         }
 
@@ -105,8 +107,8 @@ public final class RegisterView extends Activity<BorderPane> {
                 public void handle(ActionEvent t) {
                     FileInputStream fis = null;
                         try {
-                            FileChooser files = new FileChooser();
-                            File f = files.showOpenDialog(Launcher.STAGE);
+                            FileChooser fc = new FileChooser();
+                            File f = fc.showOpenDialog(Launcher.STAGE);
                             fis = new FileInputStream(f);
                             Image i = new Image(fis);
                             ImageView iv = new ImageView(i);
@@ -115,6 +117,8 @@ public final class RegisterView extends Activity<BorderPane> {
                             
                         } catch (FileNotFoundException ex) {
                             Logger.getLogger(RegisterView.class.getName()).log(Level.SEVERE, null, ex);
+                        } catch(NullPointerException ex) {
+                            
                         } finally {
                             try {
                                 fis.close();
