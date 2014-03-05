@@ -135,21 +135,13 @@ public final class RegisterView extends Activity {
                 browse.setOnAction(new EventHandler<ActionEvent>() {
 
                     @Override
-                public void handle(ActionEvent t) {
-                    FileInputStream fis = null;
+                    public void handle(ActionEvent t) {
+                        FileInputStream fis = null;
                         try {
-                            FileChooser fc = new FileChooser();
-                            File f = fc.showOpenDialog(Launcher.STAGE);
-                            fis = new FileInputStream(f);
-                            Image i = new Image(fis);
-                            ImageView iv = new ImageView(i);
-                            MyVBox parent = (MyVBox)browse.getParent();
-                            parent.setLogo(iv);
-                            
+                            fis = chooseFile();
                         } catch (FileNotFoundException ex) {
                             Logger.getLogger(RegisterView.class.getName()).log(Level.SEVERE, null, ex);
                         } catch(NullPointerException ex) {
-                            
                         } finally {
                             try {
                                 fis.close();
@@ -157,11 +149,30 @@ public final class RegisterView extends Activity {
                                 Logger.getLogger(RegisterView.class.getName()).log(Level.SEVERE, null, ex);
                             }
                         }
-                }
+                    }
                     
                 });
             }
             return browse;
+        }
+        
+        /**
+         * Open a file chooser dialog in order to choose a new logo
+         * @return the input stream corresponding to the image file
+         * @throws FileNotFoundException
+         * @throws NullPointerException 
+         */
+        private FileInputStream chooseFile()
+                throws FileNotFoundException, NullPointerException {
+            FileChooser fc = new FileChooser();
+            File f = fc.showOpenDialog(Launcher.STAGE);
+            if(f == null) throw new NullPointerException();
+            FileInputStream fis = new FileInputStream(f);
+            Image i = new Image(fis);
+            ImageView iv = new ImageView(i);
+            MyVBox parent = (MyVBox)browse.getParent();
+            parent.setLogo(iv);
+            return fis;
         }
 
         /**

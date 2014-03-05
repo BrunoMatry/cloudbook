@@ -30,8 +30,13 @@ public final class HomeView extends HomeActivity {
     protected MenuBar menuBar;
     protected TabList tabList;
     */
+    
+    //container of the launchers buttons
     private HomeVBox hVBox;
     
+    /**
+     * initialize the container
+     */
     private HomeView() {
         super();
         title = "The CloudBook - Home";
@@ -44,11 +49,20 @@ public final class HomeView extends HomeActivity {
         setCenter(hVBox);
     }
     
+    /**
+     * Class describing the content of the container
+     */
     public class HomeVBox extends VBox {
         
+        //friend management button
         private CloudBookButton fManagButton;
+        
+        //"register application" button
         private CloudBookButton registerButton;
         
+        /**
+         * initializes and add the components
+         */
         public HomeVBox() {
             super();
             setSpacing(10);
