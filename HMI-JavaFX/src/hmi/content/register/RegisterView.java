@@ -27,27 +27,34 @@ public final class RegisterView extends Activity<BorderPane> {
     
     public static final RegisterView INSTANCE = new RegisterView(HomeView.INSTANCE);
     
-    private VBox vBox;
-    private ImageView logo;
-    private TextField name;
-    private ChoiceBox clouds;
-    private TableView mesures;
+    private MyVBox vBox;
     
     private RegisterView(AActivity p) {
         super(p, new BorderPane());
         title = "Register your application";
         this.pane.getChildren().remove(goBack);
         pane.setTop(goBack);
-        initComponents();
-    }
-    
-    private void initComponents() {
-        logo = new ImageView(IconFlyWeight.INSTANCE.getDefaultLogo());
-        name = new TextField("App name");
-        clouds = new ChoiceBox();
-        vBox = new VBox();
-        vBox.setAlignment(Pos.CENTER);
-        vBox.getChildren().addAll(logo, name, clouds);
+        vBox = new MyVBox();
         pane.setCenter(vBox);
     }
-}
+    
+    /**
+     * VBox containing the components of necessary to the user for registering
+     */
+    public class MyVBox extends VBox {
+        
+        private ImageView logo;
+        private TextField name;
+        private ChoiceBox clouds;
+        private TableView mesures;
+        
+        public MyVBox() {
+            super();
+            setAlignment(Pos.CENTER);
+            logo = new ImageView(IconFlyWeight.INSTANCE.getDefaultLogo());
+            name = new TextField("App name");
+            clouds = new ChoiceBox();
+            getChildren().addAll(logo, name, clouds);
+        }
+    }
+ }
