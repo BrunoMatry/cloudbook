@@ -15,6 +15,7 @@ import hmi.content.register.RegisterView;
 import hmi.tab.TabList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Pos;
 import javafx.scene.layout.VBox;
 
 /**
@@ -41,7 +42,7 @@ public final class HomeView extends HomeActivity {
         this.menuBar = new MenuBar();
                 */
         hVBox = new HomeVBox();
-        getChildren().add(hVBox);
+        setCenter(hVBox);
     }
     
     public class HomeVBox extends VBox {
@@ -52,6 +53,7 @@ public final class HomeView extends HomeActivity {
         public HomeVBox() {
             super();
             setSpacing(10);
+            setAlignment(Pos.CENTER);
             getChildren().addAll(
                     getfManagButton(),
                     getRegisterButton()

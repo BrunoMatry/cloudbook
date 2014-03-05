@@ -22,9 +22,7 @@ public abstract class NodeComponentView extends Activity implements ComponentVie
     public NodeComponentView(AActivity p) {
         super(p);
         table = new TableView();
-        table.setLayoutX((getScene().getWidth()-table.getBoundsInParent().getWidth())/2);
-        table.setLayoutY((getScene().getHeight()-table.getBoundsInParent().getHeight())/2);
-        getChildren().add(table);
+        setCenter(table);
     }
     
     @Override

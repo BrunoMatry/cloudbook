@@ -102,4 +102,5 @@ public final class NodeView extends Activity {
     public void onHide(ComponentView source) {
         getChildren().remove(source);
     }
+    
 }

@@ -8,7 +8,6 @@ package hmi.content.node.component;
 
 import hmi.content.AActivity;
 import hmi.content.node.NodeComponentView;
-import hmi.content.node.NodeView;
 import hmi.content.node.SummarizedView;
 import java.util.ArrayList;
 
