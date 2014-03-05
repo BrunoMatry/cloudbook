@@ -28,22 +28,28 @@ public final class NodeView extends Activity {
     public static final NodeView INSTANCE = new NodeView(HomeView.INSTANCE);
     //TODO : use observer tools of javafx
     //model
-    protected CloudBookNode model;
-    protected ArrayList<SummarizedView> components;
+    private CloudBookNode model;
+    
+    //summary of the state of application
+    private SummarizedView state;
+    
+    //summary of the mesures
+    private SummarizedView mesures;
+    
+    //summary of the messages
+    private SummarizedView message;
     
     /**
-     * default constructor
+     * 
+     * @param p the previous Activity
      */
     private NodeView(AActivity p) {
         super(p);
         title = "Friend management";
-        components = new ArrayList<>();
-        StateView sv = new StateView(this);
-        MesureView mv = new MesureView(this);
-        MessageView msg = new MessageView(this);
-        components.add(sv.makeSummarized());
-        components.add(mv.makeSummarized());
-        components.add(msg.makeSummarized());
+        ArrayList<SummarizedView> components = new ArrayList<>();
+        components.add(getState());
+        components.add(getMesures());
+        components.add(getMessage());
         
         int size = components.size();
         for(int i = 0 ; i < size ; i++) {
@@ -55,7 +61,46 @@ public final class NodeView extends Activity {
             placeChild(cmp, (int)x, (int)y);
         }
     }
-    // TODO : affichage de la vue entiere au clic sur la vue resumee
+    
+    /**
+     * getter
+     * if state is null, it is initialized
+     * @return state attribute
+     */
+    public SummarizedView getState() {
+        if(state == null) {
+            StateView sv = new StateView(this);
+            state = sv.makeSummarized();
+        }
+        return state;
+    }
+
+    /**
+     * getter
+     * if mesures is null, it is initialized
+     * @return mesures attribute
+     */
+    public SummarizedView getMesures() {
+        if(mesures == null) {
+            MesureView mv = new MesureView(this);
+            mesures = mv.makeSummarized();
+        }
+        return mesures;
+    }
+
+    /**
+     * getter
+     * if message is null, it is initialized
+     * @return message attribute
+     */
+    public SummarizedView getMessage() {
+        if(message == null) {
+            MessageView mv = new MessageView(this);
+            message = mv.makeSummarized();
+        }
+        return message;
+    }
+    
     /**
      * initialize the model and build all the children views
      * @param model : model of the current view
@@ -70,8 +115,9 @@ public final class NodeView extends Activity {
    */
     /**
      * Places the current view in its parent without refreshing it
-     * @param x : horizontal position
-     * @param y : vertical position
+     * @param node child to place
+     * @param x horizontal position
+     * @param y vertical position
      */
     public void placeChild(Node node, int x, int y) {
         node.setLayoutX(x);

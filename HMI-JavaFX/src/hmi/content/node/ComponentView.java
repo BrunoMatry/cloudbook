@@ -6,8 +6,6 @@
 
 package hmi.content.node;
 
-import javafx.scene.Node;
-
 /**
  *
  * @author Gwendal

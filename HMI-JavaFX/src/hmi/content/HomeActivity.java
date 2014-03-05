@@ -7,7 +7,7 @@
 package hmi.content;
 
 /**
- *
+ * Defines the basic structure of a starting Activity
  * @author Gwendal
  */
 public class HomeActivity extends AActivity {

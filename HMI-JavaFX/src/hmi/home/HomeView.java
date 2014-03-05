@@ -19,10 +19,9 @@ import javafx.geometry.Pos;
 import javafx.scene.layout.VBox;
 
 /**
- *AActivityy launched when the application starts* singleton
- TODO : use a builder ?
- * TODO : add a home button to the standard activities
- * DO : class HomeHomeAActivity@author Gwendal
+ * Activity launched when the application starts
+ * singleton
+ * @author Gwendal
  */
 public final class HomeView extends HomeActivity {   
     public static final HomeView INSTANCE = new HomeView();
