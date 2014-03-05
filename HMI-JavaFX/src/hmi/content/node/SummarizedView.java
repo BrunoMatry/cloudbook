@@ -20,9 +20,15 @@ public class SummarizedView extends Parent implements ComponentView {
     //full version of the current view
     protected NodeComponentView fullView;
     
-    //javafx node corresponding to the actual view
+    //javafx node corresponding to the current view
     protected Node view;
     
+    /**
+     * Builds-up the summarized view
+     * A click on the view launches the full view
+     * @param full full version of the current view
+     * @param node javafx node corresponding to the current view
+     */
     public SummarizedView(NodeComponentView full, Node node) {
         fullView = full;
         view = node;

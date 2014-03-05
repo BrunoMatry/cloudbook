@@ -59,6 +59,11 @@ public final class HomeView extends HomeActivity {
             );
         }
 
+        /**
+         * getter
+         * if fManagButton is null, it is initialized
+         * @return fManagButton attribute 
+         */
         public final CloudBookButton getfManagButton() {
             if(fManagButton == null) {
                 fManagButton = new CloudBookButton("Friend management");
@@ -74,6 +79,11 @@ public final class HomeView extends HomeActivity {
             return fManagButton;
         }
 
+        /**
+         * getter
+         * if registerButton is null, it is initialized
+         * @return registerButton attribute 
+         */
         public final CloudBookButton getRegisterButton() {
             if(registerButton == null) {
                 registerButton = new CloudBookButton("Register an application");

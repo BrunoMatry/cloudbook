@@ -24,11 +24,9 @@ import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 
@@ -41,8 +39,13 @@ public final class RegisterView extends Activity {
     
     public static final RegisterView INSTANCE = new RegisterView(HomeView.INSTANCE);
     
+    //vertical box containing all the identificator components
     private MyVBox vBox;
     
+    /**
+     * initialize the vertical box
+     * @param p previous Activity
+     */
     private RegisterView(AActivity p) {
         super(p);
         title = "Register your application";
@@ -51,16 +54,26 @@ public final class RegisterView extends Activity {
     }
     
     /**
-     * VBox containing the components of necessary to the user for registering
+     * VBox containing the components necessary to the user for registration
      */
     public class MyVBox extends VBox {
         
+        //logo of the application
         private ImageView logo;
-        private Button browse;
-        private TextField name;
-        private ChoiceBox clouds;
-        private TableView mesures;
         
+        //"browse to choose a logo" button
+        private Button browse;
+        
+        //name of the application
+        private TextField name;
+        
+        //selector : current cloud platform of the application
+        private ChoiceBox clouds;
+        
+        /**
+         * initialize and places the components
+         * inside the current vertical box
+         */
         public MyVBox() {
             super();
             setAlignment(Pos.CENTER);
@@ -73,6 +86,11 @@ public final class RegisterView extends Activity {
             );
         }
         
+        /**
+         * getter
+         * if logo is null, it is initialized
+         * @return logo attribute 
+         */
         public final ImageView getLogo() {
             if(logo == null) {
                 logo = new ImageView(IconFlyWeight.INSTANCE.getDefaultLogo());
@@ -80,6 +98,11 @@ public final class RegisterView extends Activity {
             return logo;
         }
 
+        /**
+         * setter
+         * replaces the current logo by a new one
+         * @param logo the logo to replace with
+         */
         public void setLogo(ImageView logo) {
             if(this.logo != null)
                 getChildren().remove(this.logo);
@@ -89,6 +112,11 @@ public final class RegisterView extends Activity {
             getChildren().add(0, this.logo);
         }
 
+        /**
+         * getter
+         * if clouds is null, it is initialized
+         * @return clouds attribute 
+         */
         public final ChoiceBox getClouds() {
             if(clouds == null) {
                 clouds = new ChoiceBox();
@@ -96,6 +124,11 @@ public final class RegisterView extends Activity {
             return clouds;
         }
 
+        /**
+         * getter
+         * if browse is null, it is initialized
+         * @return browse attribute 
+         */
         public final Button getBrowse() {
             if(browse == null) {
                 browse = new Button("Browse...");
@@ -131,6 +164,11 @@ public final class RegisterView extends Activity {
             return browse;
         }
 
+        /**
+         * getter
+         * if name is null, it is initialized
+         * @return name attribute 
+         */
         public final TextField getName() {
             if(name == null) {
                 name = new TextField("App name");
