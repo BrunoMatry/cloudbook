@@ -8,12 +8,13 @@ package hmi.content;
 
 import hmi.Launcher;
 import hmi.Mounter;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 
 /**
- * Parent is customized in order to make the changing of context easier
+ * Defines the standard type of window of the application :
+ * all the elements are disposed in a BorderPane (super type)
+ * the background color is cornflower blue
  * @author Gwendal
  */
 public abstract class AActivity extends BorderPane {
@@ -29,7 +30,7 @@ public abstract class AActivity extends BorderPane {
     }
     
     /**
-     * Launch the activity in the main window
+     * Launch the current activity
      */
     public void launch() {
         Launcher.STAGE.setTitle(title);
@@ -43,15 +44,6 @@ public abstract class AActivity extends BorderPane {
      */
     public void setTitle(String t) {
         title = t;
-    }
-    
-    /**
-     * Center a node in the corresponding pane
-     * @param node 
-     */
-    public void center(Node node) {
-        node.setLayoutX((getScene().getWidth()-node.getBoundsInParent().getWidth())/2);
-        node.setLayoutY((getScene().getHeight()-node.getBoundsInParent().getHeight())/2);
-    }    
+    }   
     
 }

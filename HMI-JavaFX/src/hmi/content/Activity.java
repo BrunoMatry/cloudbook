@@ -11,20 +11,24 @@ import hmi.button.HomeButton;
 import hmi.home.HomeView;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 
 /**
- * specifies the basic content of a standard activity (i.e no-home activity)
+ * specifies the basic content of a standard activity (i.e not the starting activity)
  * @author Gwendal
  */
 public class Activity extends AActivity {
     
+    //horizontal container of the back and home buttons
     protected MenuHBox mHBox;
     
     //activity that must be launch if the back button is pressed
     protected AActivity prec;
     
+    /**
+     * initialize the menu box (filled with back and home buttons)
+     * @param p previous Activity
+     */
     public Activity(AActivity p) {
         super();
         prec = p;
@@ -32,14 +36,21 @@ public class Activity extends AActivity {
         setTop(mHBox);
     }
     
+    /**
+     * Defines the content of the menu box
+     */
     public class MenuHBox extends HBox {
         
-        //go to the previous page
+        //"go to the previous page" button
         private BackButton goBack;
         
-        //go to the home-page
+        //"go to the home-page" button
         private HomeButton goHome;
     
+        /**
+         * initialize and places the components
+         * inside the current horizontal box
+         */
         public MenuHBox() {
             super();
             getChildren().addAll(
@@ -48,6 +59,11 @@ public class Activity extends AActivity {
             );
         }
         
+        /**
+         * getter
+         * if goBack is null, it is initialized
+         * @return goBack attribute
+         */
         public final BackButton getGoBack() {
             if(goBack == null) {
                 goBack = new BackButton();
@@ -63,6 +79,11 @@ public class Activity extends AActivity {
             return goBack;
         }
         
+        /**
+         * getter
+         * if goHome is null, it is initialized
+         * @return goHome attribute
+         */
         public final HomeButton getGoHome() {
             if(goHome == null) {
                 goHome = new HomeButton();

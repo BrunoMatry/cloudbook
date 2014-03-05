@@ -10,13 +10,13 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 
 /**
- *
+ * button with a back arrow
  * @author Gwendal
  */
 public class BackButton extends Button {
     
     /**
-     * see Button()
+     * put a back arrow image on the button
      */
     public BackButton() {
         super();

@@ -16,7 +16,7 @@ import javafx.scene.image.ImageView;
 public class CloudBookButton extends Button {
     
     /**
-     * see Button()
+     * put a cloud image on the button
      */
     public CloudBookButton() {
         super();
@@ -26,7 +26,7 @@ public class CloudBookButton extends Button {
     }
     
     /**
-     * see Button(String text)
+     * same as default constructor but add a label to the button
      * @param text : label of the button
      */
     public CloudBookButton(String text) {
