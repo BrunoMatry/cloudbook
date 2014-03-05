@@ -15,13 +15,13 @@ import javafx.scene.image.ImageView;
  */
 public class BackButton extends Button {
     
-    protected static final ImageView icon = new ImageView("file:res/back_button.png");
-    
     /**
      * see Button()
      */
     public BackButton() {
         super();
+        ImageView icon = new ImageView();
+        icon.setImage(IconFlyWeight.INSTANCE.getBackArrow());
         setGraphic(icon);
     }
 }
