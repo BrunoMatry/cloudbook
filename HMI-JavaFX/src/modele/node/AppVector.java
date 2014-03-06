@@ -12,4 +12,10 @@ package modele.node;
  */
 public class AppVector {
     
+    
+    public AppVector copy(){
+        /* TODO !! */
+        return new AppVector();
+    }
+    
 }
