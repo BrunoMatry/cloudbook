@@ -6,11 +6,17 @@
 
 package model.engine;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import model.friendmanager.IFriendManager;
 import model.monitoring.IMonitoring;
 import model.request.IRequestManager;
 import model.request.Request;
-import model.request.RequestManager;
+import modele.node.CloudBookNode;
+import modele.node.Information;
 
 /**
  *
@@ -20,21 +26,34 @@ public class Engine implements IEngine {
     private IRequestManager requestManager;
     private IFriendManager friendManager;
     private IMonitoring monitoring;
-    // TODO Node
+    private CloudBookNode node;
 
     public Engine() {
         requestManager = AppMounter.mountRequestManager();
         friendManager = AppMounter.mountFriendManager();
         monitoring = AppMounter.mountMonitoring();
+        try {
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream("node_save.ser"));
+            this.node = (CloudBookNode) ois.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            this.node = new CloudBookNode();
+        }
     }
     
     @Override
     public void save() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("node_save.ser"));
+            oos.writeObject(this.node);
+            oos.flush();
+            oos.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
-    public void setInformations() {
+    public void setInformation(Information info) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

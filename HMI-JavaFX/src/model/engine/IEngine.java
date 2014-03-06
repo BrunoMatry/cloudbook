@@ -1,6 +1,7 @@
 package model.engine;
 
 import model.request.Request;
+import modele.node.Information;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -19,5 +20,5 @@ public interface IEngine {
      */
     void handleRequest(Request req);
     void save();
-    void setInformations();
+    void setInformation(Information info);
 }
