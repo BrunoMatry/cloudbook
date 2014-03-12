@@ -22,4 +22,8 @@ public class CloudBookNode implements Serializable {
     private List<Mesure> mesure;
     private List<State> state;
     private AppVector vector;
+    
+    public void addMesure(Mesure m) {
+        mesure.add(m);
+    }
 }
