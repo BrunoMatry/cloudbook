@@ -10,6 +10,8 @@ import hmi.content.AActivity;
 import hmi.content.node.NodeComponentView;
 import hmi.content.node.SummarizedView;
 import java.util.ArrayList;
+import modele.node.Cloud;
+import modele.node.State;
 
 /**
  *
@@ -20,11 +22,13 @@ public class StateView extends NodeComponentView {
     //all the clouds during the application existence
     protected ArrayList<CloudView> clouds;
     
+    //protected State model;
+    
     public StateView(AActivity p) {
         super(p);
         clouds = new ArrayList<>();
         for(int i = 0 ; i < 3 ; i++) {
-            clouds.add(new CloudView());
+            clouds.add(new CloudView(Cloud.DROPBOX));
         }
         title = "History";
     }

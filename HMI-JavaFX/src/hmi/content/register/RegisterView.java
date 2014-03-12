@@ -24,11 +24,13 @@ import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.SingleSelectionModel;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
+import modele.node.Cloud;
 
 /**
  * View letting the user register an application
@@ -52,6 +54,10 @@ public final class RegisterView extends Activity {
         vBox = new MyVBox();
         setCenter(vBox);
     }
+
+    public MyVBox getvBox() {
+        return vBox;
+    }
     
     /**
      * VBox containing the components necessary to the user for registration
@@ -68,7 +74,7 @@ public final class RegisterView extends Activity {
         private TextField name;
         
         //selector : current cloud platform of the application
-        private ChoiceBox clouds;
+        private ChoiceBox<Image> clouds;
         
         /**
          * initialize and places the components
@@ -119,7 +125,23 @@ public final class RegisterView extends Activity {
          */
         public final ChoiceBox getClouds() {
             if(clouds == null) {
-                clouds = new ChoiceBox();
+                clouds = new ChoiceBox<Image>();
+                clouds.setSelectionModel(new SingleSelectionModel<Image>(){
+
+                    @Override
+                    protected Image getModelItem(int i) {
+                        return Cloud.values()[i].getIcon().get();
+                    }
+
+                    @Override
+                    protected int getItemCount() {
+                        return Cloud.values().length;
+                    }
+                    
+                });
+                for(Cloud c : Cloud.values())
+                    clouds.getItems().add(c.getIcon().get());
+                clouds.setValue(Cloud.DROPBOX.getIcon().get());
             }
             return clouds;
         }

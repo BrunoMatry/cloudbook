@@ -7,6 +7,8 @@
 package modele.node;
 
 import java.util.Date;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 /**
  *
@@ -16,4 +18,8 @@ public class State implements Information {
     private Cloud cloud;
     private Date from;
     private Date to;
+    
+    public State() {
+        cloud = Cloud.DROPBOX;
+    }
 }
