@@ -11,7 +11,5 @@ public class Message implements Information {
     private Date date;
     private int idSender;
     private boolean relevant;
-    private AppVector vector;
-    
-    
+    private AppVector vector;  
 }

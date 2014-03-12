@@ -41,14 +41,10 @@ public class Engine implements IEngine {
     }
     
     @Override
-    public void save() {
-        try {
-            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("node_save.ser"));
+    public void save() throws IOException {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("node_save.ser"))) {
             oos.writeObject(this.node);
             oos.flush();
-            oos.close();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 
@@ -63,7 +59,7 @@ public class Engine implements IEngine {
     }
     
     private void shareInformation(){
-        
+        /* TODO */
     }
     
     private void updateInformation(){
