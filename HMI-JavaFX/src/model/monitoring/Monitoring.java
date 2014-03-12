@@ -19,6 +19,7 @@ import modele.node.Mesure;
 public class Monitoring extends Thread implements IMonitoring {
     
     protected List<Mesure> mesures;
+    private final static long TIME = 5000;
     
     public Monitoring() {
         this.mesures = new ArrayList<>();
@@ -33,7 +34,7 @@ public class Monitoring extends Thread implements IMonitoring {
     public void run() {
         this.mesures.add(genererMesure());
         try {
-            sleep(5000);
+            sleep(TIME);
         } catch (InterruptedException ex) {
             Logger.getLogger(Monitoring.class.getName()).log(Level.SEVERE, null, ex);
         }
