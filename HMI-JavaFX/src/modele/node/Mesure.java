@@ -7,6 +7,10 @@
 package modele.node;
 
 import java.util.Date;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 /**
  *
@@ -15,4 +19,24 @@ import java.util.Date;
 public class Mesure implements Information {
     //contenu
     private Date date;
+    private final StringProperty stringDate = new SimpleStringProperty();
+    private IntegerProperty mesure1 = new SimpleIntegerProperty();
+    private IntegerProperty mesure2 = new SimpleIntegerProperty();
+    private IntegerProperty mesure3 = new SimpleIntegerProperty();
+    private IntegerProperty mesure4 = new SimpleIntegerProperty();
+    private IntegerProperty mesure5 = new SimpleIntegerProperty();
+    
+    public Mesure(int mesure1, int mesure2, int mesure3, int mesure4, int mesure5) {
+        this.actualizeDate();
+        this.mesure1.set(mesure1);
+        this.mesure2.set(mesure2);
+        this.mesure3.set(mesure3);
+        this.mesure4.set(mesure4);
+        this.mesure5.set(mesure5);
+    }
+    
+    private void actualizeDate() {
+        this.date = new Date();
+        this.stringDate.set(this.date.toString());
+    }
 }

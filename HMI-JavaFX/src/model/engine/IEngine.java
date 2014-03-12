@@ -1,5 +1,6 @@
 package model.engine;
 
+import java.io.IOException;
 import model.request.Request;
 import modele.node.Information;
 
@@ -19,6 +20,6 @@ public interface IEngine {
      * @param req 
      */
     void handleRequest(Request req);
-    void save();
+    void save() throws IOException;
     void setInformation(Information info);
 }
