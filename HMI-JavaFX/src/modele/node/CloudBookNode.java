@@ -31,14 +31,40 @@ public class CloudBookNode implements Serializable {
         this.messages = new ArrayList<>();
         this.mesure = new ArrayList<>();
         this.state = new Stack<>();
-        this.vector = new AppVector(appType, performance, speed);
         
+        this.vector = new AppVector(appType, performance, speed);      
         this.state.push(new State(c));
+    }
+    
+    public void majCurrentState(Cloud c) {
+        State currentState = this.state.peek();
+        currentState.majEndDate();
+        if(!c.equals(currentState.getCloud()))
+            state.push(new State(c));
     }
     
     public void addMesure(Mesure m) {
         mesure.add(m);
-        State currentState = this.state.pop();
+        this.majCurrentStateDate();
+    }
+    
+    public void addMessage(Message m) {
+        messages.add(m);
+        this.majCurrentStateDate();
+    }
+    
+    public void addInformation(Information info) {
+        informations.add(info);
+        this.majCurrentStateDate();
+    }
+    
+    public void addFriend(Friend f) {
+        friends.add(f);
+        this.majCurrentStateDate();
+    }
+    
+    private void majCurrentStateDate() {
+        State currentState = this.state.peek();
         currentState.majEndDate();
     }
 }

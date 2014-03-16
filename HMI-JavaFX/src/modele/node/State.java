@@ -26,4 +26,8 @@ public class State implements Information {
     public void majEndDate() {
         this.to = new Date();
     }
+    
+    public Cloud getCloud() {
+        return cloud;
+    }
 }
