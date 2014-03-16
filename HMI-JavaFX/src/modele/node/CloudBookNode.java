@@ -95,12 +95,12 @@ public class CloudBookNode implements Serializable {
     
     /**
      * arg constructor
-     * @param image : 
-     * @param string
-     * @param cloud 
-     * @param appType 
-     * @param performance 
-     * @param speed 
+     * @param image logo
+     * @param string name
+     * @param cloud cloud-platform
+     * @param appType type of the application
+     * @param performance TODO
+     * @param speed TODO
      */
     public CloudBookNode(Image image, String string, Cloud cloud, int appType, int performance, int speed) {
         state = new Stack<>();
@@ -124,6 +124,10 @@ public class CloudBookNode implements Serializable {
         return friends;
     }
     
+    /**
+     * updates the cloud-platform of the current application
+     * @param c new cloud-platform
+     */
     public void majCurrentState(Cloud c) {
         State currentState = this.state.peek().get();
         if(!c.equals(currentState.getCloud())) {
