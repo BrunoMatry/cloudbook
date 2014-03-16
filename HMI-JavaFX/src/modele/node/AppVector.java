@@ -6,34 +6,31 @@
 
 package modele.node;
 
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-
 /**
  *
  * @author Bruno
  */
 public class AppVector {
     
-    private final IntegerProperty appType;
-    private final IntegerProperty performance;
-    private final IntegerProperty speed;
+    private int appType;
+    private int performance;
+    private int speed;
     
     public AppVector(int appType, int performance, int speed) {
-        this.appType = new SimpleIntegerProperty(appType);
-        this.performance = new SimpleIntegerProperty(performance);
-        this.speed = new SimpleIntegerProperty(speed);
+        this.appType = appType;
+        this.performance = performance;
+        this.speed = speed;
     }
             
     public AppVector copy(){
-        return new AppVector(this.appType.get(), this.performance.get(), this.speed.get());
+        return new AppVector(this.appType, this.performance, this.speed);
     }
     
-    public IntegerProperty getAppType() { return appType; }
-    public IntegerProperty getPerformance() { return performance; }
-    public IntegerProperty getSpeed() { return speed; }
+    public int getAppType() { return appType; }
+    public int getPerformance() { return performance; }
+    public int getSpeed() { return speed; }
     
-    public void setAppType(int appType) { this.appType.set(appType); }
-    public void setPerformance(int performance) { this.performance.set(performance); }
-    public void setSpeed(int speed) { this.speed.set(speed); }
+    public void setAppType(int appType) { this.appType = appType; }
+    public void setPerformance(int performance) { this.performance = performance; }
+    public void setSpeed(int speed) { this.speed = speed; }
 }
