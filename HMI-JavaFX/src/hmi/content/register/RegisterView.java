@@ -17,6 +17,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -59,6 +61,18 @@ public final class RegisterView extends Activity {
         return vBox;
     }
     
+    public ObjectProperty<Image> logoProperty() {
+        return vBox.logo.imageProperty();
+    }
+    
+    public StringProperty nameProperty() {
+        return vBox.name.textProperty();
+    }
+    
+    public ObjectProperty<Cloud> cloudProperty() {
+        return vBox.clouds.valueProperty();
+    }
+    
     /**
      * VBox containing the components necessary to the user for registration
      */
@@ -74,7 +88,7 @@ public final class RegisterView extends Activity {
         private TextField name;
         
         //selector : current cloud platform of the application
-        private ChoiceBox<Image> clouds;
+        private ChoiceBox<Cloud> clouds;
         
         /**
          * initialize and places the components
@@ -125,12 +139,12 @@ public final class RegisterView extends Activity {
          */
         public final ChoiceBox getClouds() {
             if(clouds == null) {
-                clouds = new ChoiceBox<Image>();
-                clouds.setSelectionModel(new SingleSelectionModel<Image>(){
+                clouds = new ChoiceBox<Cloud>();
+                clouds.setSelectionModel(new SingleSelectionModel<Cloud>(){
 
                     @Override
-                    protected Image getModelItem(int i) {
-                        return Cloud.values()[i].getIcon().get();
+                    protected Cloud getModelItem(int i) {
+                        return Cloud.values()[i];
                     }
 
                     @Override
@@ -140,8 +154,8 @@ public final class RegisterView extends Activity {
                     
                 });
                 for(Cloud c : Cloud.values())
-                    clouds.getItems().add(c.getIcon().get());
-                clouds.setValue(Cloud.DROPBOX.getIcon().get());
+                    clouds.getItems().add(c);
+                clouds.setValue(Cloud.DROPBOX);
             }
             return clouds;
         }

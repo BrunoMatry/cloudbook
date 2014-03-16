@@ -14,8 +14,8 @@ import hmi.content.node.component.StateView;
 import hmi.home.HomeView;
 import java.util.ArrayList;
 import javafx.scene.Node;
-import javafx.scene.layout.Pane;
-import modele.node.CloudBookNode;
+import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 
 /**
  *
@@ -26,18 +26,15 @@ import modele.node.CloudBookNode;
 public final class NodeView extends Activity {
     
     public static final NodeView INSTANCE = new NodeView(HomeView.INSTANCE);
-    //TODO : use observer tools of javafx
-    //model
-    private CloudBookNode model;
     
     //summary of the state of application
-    private SummarizedView state;
+    private SummarizedView<ImageView> state;
     
     //summary of the mesures
-    private SummarizedView mesures;
+    private SummarizedView<Text> mesures;
     
     //summary of the messages
-    private SummarizedView message;
+    private SummarizedView<Text> message;
     
     /**
      * 

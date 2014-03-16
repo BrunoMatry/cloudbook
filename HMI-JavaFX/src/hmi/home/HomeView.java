@@ -6,17 +6,22 @@
 
 package hmi.home;
 
-import hmi.Mounter;
-import hmi.bar.MenuBar;
 import hmi.button.CloudBookButton;
 import hmi.content.HomeActivity;
 import hmi.content.node.NodeView;
 import hmi.content.register.RegisterView;
-import hmi.tab.TabList;
+import javafx.beans.property.ObjectProperty;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import model.engine.Engine;
+import modele.node.Cloud;
+import modele.node.CloudBuilder;
+import modele.node.Message;
+import modele.node.Mesure;
 
 /**
  * Activity launched when the application starts
@@ -85,12 +90,35 @@ public final class HomeView extends HomeActivity {
 
                     @Override
                     public void handle(ActionEvent t) {
-                        NodeView.INSTANCE.launch();
+                        if(Engine.INSTANCE.getNode() != null) {
+                            bindMessage();
+                            bindMesure();
+                            bindState();
+                            NodeView.INSTANCE.launch();
+                        }
                     }
             
                 });
             }
             return fManagButton;
+        }
+        
+        public void bindMessage() {
+            Text txtMsg = (Text)NodeView.INSTANCE.getMessage().getView();
+            ObjectProperty<Message> msgp = Engine.INSTANCE.getNode().topMessageProperty();
+            txtMsg.textProperty().bind(msgp.get().descriptionProperty());
+        }
+        
+        public void bindMesure() {
+            Text txtM = (Text)NodeView.INSTANCE.getMesures().getView();
+            ObjectProperty<Mesure> mp = Engine.INSTANCE.getNode().topMesureProperty();
+            txtM.textProperty().bind(mp.get().descriptionProperty());
+        }
+        
+        public void bindState() {
+            ImageView iv = (ImageView)NodeView.INSTANCE.getState().getView();
+            ObjectProperty<Cloud> cloud = Engine.INSTANCE.getNode().platformProperty();
+            iv.imageProperty().bind(cloud.get().iconProperty());
         }
 
         /**
@@ -105,6 +133,10 @@ public final class HomeView extends HomeActivity {
 
                     @Override
                     public void handle(ActionEvent t) {
+                        CloudBuilder cb = new CloudBuilder();
+                        cb.logoProperty().bind(RegisterView.INSTANCE.logoProperty());
+                        cb.nameProperty().bind(RegisterView.INSTANCE.nameProperty());
+                        cb.platformProperty().bind(RegisterView.INSTANCE.cloudProperty());
                         RegisterView.INSTANCE.launch();
                     }
             

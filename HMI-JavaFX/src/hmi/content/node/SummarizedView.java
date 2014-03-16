@@ -14,14 +14,15 @@ import javafx.scene.input.MouseEvent;
 /**
  *
  * @author Gwendal
+ * @param <T> View type
  */
-public class SummarizedView extends Parent implements ComponentView {
+public class SummarizedView<T extends Node> extends Parent implements ComponentView {
 
     //full version of the current view
     protected NodeComponentView fullView;
     
     //javafx node corresponding to the current view
-    protected Node view;
+    protected T view;
     
     /**
      * Builds-up the summarized view
@@ -29,7 +30,7 @@ public class SummarizedView extends Parent implements ComponentView {
      * @param full full version of the current view
      * @param node javafx node corresponding to the current view
      */
-    public SummarizedView(NodeComponentView full, Node node) {
+    public SummarizedView(NodeComponentView full, T node) {
         fullView = full;
         view = node;
         view.setLayoutX(0);
@@ -62,6 +63,10 @@ public class SummarizedView extends Parent implements ComponentView {
     
     public NodeComponentView getFullView() {
         return fullView;
+    }
+
+    public T getView() {
+        return view;
     }
     
 }

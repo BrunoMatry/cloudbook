@@ -21,12 +21,25 @@ public class Mesure implements Information {
     private Date date;
     private final StringProperty stringDate = new SimpleStringProperty();
     private IntegerProperty mesure1 = new SimpleIntegerProperty();
+    public IntegerProperty mesure1Property() {
+        return mesure1;
+    }
     private IntegerProperty mesure2 = new SimpleIntegerProperty();
     private IntegerProperty mesure3 = new SimpleIntegerProperty();
     private IntegerProperty mesure4 = new SimpleIntegerProperty();
     private IntegerProperty mesure5 = new SimpleIntegerProperty();
     
+    protected StringProperty description;
+    public StringProperty descriptionProperty() {
+        return description;
+    }
+    
+    public Mesure() {
+        description = new SimpleStringProperty("Pas de mesure");
+    }
+    
     public Mesure(int mesure1, int mesure2, int mesure3, int mesure4, int mesure5) {
+        description = new SimpleStringProperty("" + mesure1);
         this.actualizeDate();
         this.mesure1.set(mesure1);
         this.mesure2.set(mesure2);

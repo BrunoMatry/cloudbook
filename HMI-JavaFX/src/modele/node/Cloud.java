@@ -13,9 +13,13 @@ import javafx.scene.image.Image;
 public enum Cloud {
     GDRIVE("file:res/google.png"),
     SKYDRIVE("file:res/skydrive.png"),
-    DROPBOX("file:res/dropbox.png");
+    DROPBOX("file:res/dropbox.png"),
+    DEFAULT("file:res/default_logo.png");
     
-    protected SimpleObjectProperty<Image> icon;
+    protected ObjectProperty<Image> icon;
+    public ObjectProperty<Image> iconProperty() {
+        return icon;
+    }
     
     Cloud(String path) {
         icon = new SimpleObjectProperty<>();

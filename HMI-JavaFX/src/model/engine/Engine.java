@@ -22,13 +22,16 @@ import modele.node.Information;
  *
  * @author Bruno
  */
-public class Engine implements IEngine {
+public final class Engine implements IEngine {
+    
+    public static final Engine INSTANCE = new Engine();
+    
     private IRequestManager requestManager;
     private IFriendManager friendManager;
     private IMonitoring monitoring;
     private CloudBookNode node;
 
-    public Engine() {
+    private Engine() {
         requestManager = AppMounter.mountRequestManager();
         friendManager = AppMounter.mountFriendManager();
         monitoring = AppMounter.mountMonitoring();
@@ -36,8 +39,12 @@ public class Engine implements IEngine {
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream("node_save.ser"));
             this.node = (CloudBookNode) ois.readObject();
         } catch (IOException | ClassNotFoundException e) {
-            this.node = new CloudBookNode();
+            
         }
+    }
+
+    public CloudBookNode getNode() {
+        return node;
     }
     
     @Override
@@ -64,5 +71,9 @@ public class Engine implements IEngine {
     
     private void updateInformation(){
         monitoring.pushInformation();
+    }
+
+    public void setNode(CloudBookNode node) {
+        this.node = node;
     }
 }

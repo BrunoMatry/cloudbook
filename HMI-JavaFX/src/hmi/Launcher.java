@@ -28,6 +28,7 @@ public class Launcher extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         STAGE = primaryStage;
+        
         HomeView.INSTANCE.launch();
     }
     
