@@ -16,14 +16,17 @@ public class State implements Information {
     private Cloud cloud;
     private Date from;
     private Date to;
+    private boolean current;
     
     public State(Cloud c) {
         this.cloud = c;
         this.from = new Date();
         this.to = new Date();
+        this.current = true;
     }
     
-    public void majEndDate() {
+    public void notCurrentAnymore() {
+        this.current = false;
         this.to = new Date();
     }
     
