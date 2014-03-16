@@ -12,10 +12,18 @@ package modele.node;
  */
 public class AppVector {
     
+    private int appType;
+    private int performance;
+    private int speed;
     
+    public AppVector(int appType, int performance, int speed) {
+        this.appType = appType;
+        this.performance = performance;
+        this.speed = speed;
+    }
+            
     public AppVector copy(){
-        /* TODO !! */
-        return new AppVector();
+        return new AppVector(this.appType, this.performance, this.speed);
     }
     
 }
