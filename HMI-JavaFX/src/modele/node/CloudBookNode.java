@@ -35,7 +35,7 @@ public class CloudBookNode implements Serializable {
         this.vector = new AppVector(appType, performance, speed);      
         this.state.push(new State(c));
     }
-    
+
     public void majCurrentState(Cloud c) {
         State currentState = this.state.peek();
         if(!c.equals(currentState.getCloud())) {
