@@ -9,10 +9,11 @@ package modele.node;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.scene.image.Image;
+import java.util.Stack;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
 
 /**
  *
@@ -21,10 +22,17 @@ import javafx.scene.image.Image;
  * Representation of a node
  */
 public class CloudBookNode implements Serializable {
+
+    public void addMesure(Mesure m) {
+        mesure.add(new SimpleObjectProperty<>(m));
+    }
+
+    public List<Friend> getFriends() {
+        return friends;
+    }
     
-    private List<Friend> friends;
-    private List<Information> informations;
-    
+    protected List<Friend> friends;
+    protected List<Information> informations;
     protected List<ObjectProperty<Message>> message;
     public ObjectProperty<Message> messageProperty(int i) {
         return message.get(i);
@@ -45,12 +53,12 @@ public class CloudBookNode implements Serializable {
         return topMesure;
     }
     
-    protected List<ObjectProperty<State>> state;
+    protected Stack<ObjectProperty<State>> state;
     public ObjectProperty<State> stateProperty(int i) {
         return state.get(i);
     }
     
-    private AppVector vector;
+    protected ObjectProperty<AppVector> vector;
     
     protected SimpleStringProperty name;
     public SimpleStringProperty nameProperty() {
@@ -68,9 +76,12 @@ public class CloudBookNode implements Serializable {
     }
     
     public CloudBookNode() {
-        state = new ArrayList<>();
+        friends = new ArrayList<>();
+        this.informations = new ArrayList<>();
+        state = new Stack<>();
         mesure = new ArrayList<>();
-        message = new ArrayList<>();
+        message = new ArrayList<>();    
+        this.vector = new SimpleObjectProperty<>();
         topMesure = new SimpleObjectProperty<>(new Mesure());
         topMessage = new SimpleObjectProperty<>(new Message());
         name = new SimpleStringProperty();
@@ -79,7 +90,7 @@ public class CloudBookNode implements Serializable {
     }
     
     public CloudBookNode(Image image, String string, Cloud cloud) {
-        state = new ArrayList<>();
+        state = new Stack<>();
         mesure = new ArrayList<>();
         message = new ArrayList<>();
         topMesure = new SimpleObjectProperty<>(new Mesure());
@@ -89,12 +100,33 @@ public class CloudBookNode implements Serializable {
         platform = new SimpleObjectProperty<>(cloud);
     }
     
-    public void addMesure(Mesure m) {
-        mesure.add(new SimpleObjectProperty<>(m));
+    public CloudBookNode(Cloud c, int appType, int performance, int speed) {
+        this.friends = new ArrayList<>();
+        this.informations = new ArrayList<>();
+        this.message = new ArrayList<>();
+        this.mesure = new ArrayList<>();
+        this.state = new Stack<>();    
+        this.vector = new SimpleObjectProperty<>();
+              
+        this.state.push(new SimpleObjectProperty<>(new State(c)));
+        this.vector.set(new AppVector(appType, performance, speed));
     }
 
-    public List<Friend> getFriends() {
-        return friends;
+    public void majCurrentState(Cloud c) {
+        State currentState = this.state.peek().get();
+        if(!c.equals(currentState.getCloud())) {
+            currentState.notCurrentAnymore();
+            state.push(new SimpleObjectProperty<>(new State(c)));
+        }    
+    }
+  
+    public void addMessage(Message m) { message.add(new SimpleObjectProperty<>(m)); } 
+    public void addInformation(Information info) { informations.add(info); }
+    public void addFriend(Friend f) { friends.add(f); }
+    
+    public ObjectProperty<AppVector> getVector() { return vector; }
+    public void setVector(int appType, int performance, int speed) { 
+        this.vector.set(new AppVector(appType, performance, speed));
     }
 
     public void setFriends(List<Friend> friends) {
@@ -109,11 +141,7 @@ public class CloudBookNode implements Serializable {
         this.informations = informations;
     }
 
-    public AppVector getVector() {
-        return vector;
-    }
-
-    public void setVector(AppVector vector) {
+    public void setVector(ObjectProperty<AppVector> vector) {
         this.vector = vector;
     }
 

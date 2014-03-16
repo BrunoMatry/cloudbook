@@ -23,4 +23,13 @@ public class Message implements Information {
     public Message() {
         description = new SimpleStringProperty("Pas de message");
     }
+    
+    public Message(Information content, int idSender, boolean relevant, AppVector vector) {
+        description = new SimpleStringProperty("Pas de message");
+        this.content = content;
+        this.idSender = idSender;
+        this.date = new Date();
+        this.relevant = relevant;
+        this.vector = vector;
+    }
 }
