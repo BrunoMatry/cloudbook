@@ -172,7 +172,7 @@ public final class RegisterView extends Activity {
                 });
                 for(Cloud c : Cloud.values())
                     clouds.getItems().add(c);
-                clouds.setValue(Cloud.DROPBOX);
+                clouds.setValue(Cloud.DEFAULT);
             }
             return clouds;
         }
@@ -250,7 +250,7 @@ public final class RegisterView extends Activity {
                     public void handle(ActionEvent t) {
                         try {
                             builder.build();
-                            Dialogs.showConfirmDialog(Launcher.STAGE, "Success build", "OK");
+                            Dialogs.showInformationDialog(Launcher.STAGE, "Success build", "OK");
                         } catch (IOException ex) {
                             ex.printStackTrace();
                             Dialogs.showErrorDialog(Launcher.STAGE, "Error while building", "Error");

@@ -6,6 +6,7 @@
 
 package hmi.home;
 
+import hmi.Launcher;
 import hmi.button.CloudBookButton;
 import hmi.content.HomeActivity;
 import hmi.content.node.NodeView;
@@ -14,6 +15,7 @@ import javafx.beans.property.ObjectProperty;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
+import javafx.scene.control.Dialogs;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -95,6 +97,11 @@ public final class HomeView extends HomeActivity {
                             bindMesure();
                             bindState();
                             NodeView.INSTANCE.launch();
+                        } else {
+                            Dialogs.showInformationDialog(Launcher.STAGE,
+                                    "There isn't a profile yet",
+                                    "Profile error",
+                                    "No Profile");
                         }
                     }
             

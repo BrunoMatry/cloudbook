@@ -44,7 +44,7 @@ public class CloudBuilder {
      * @throws IOException the state can't be saved
      */
     public void build() throws IOException {
-        Engine.INSTANCE.setNode(new CloudBookNode(logo.get(), name.get(), platform.get()));
+        Engine.INSTANCE.setNode(new CloudBookNode(logo.get(), name.get(), platform.get(), 0, 0, 0));
         //Engine.INSTANCE.save();
     }
     
