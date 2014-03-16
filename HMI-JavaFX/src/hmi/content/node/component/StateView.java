@@ -19,7 +19,7 @@ import javafx.scene.image.ImageView;
 public class StateView extends NodeComponentView {
 
     //all the clouds during the application existence
-    protected ArrayList<CloudView> clouds;
+    protected ArrayList<ImageView> clouds;
     
     public StateView(AActivity p) {
         super(p);
