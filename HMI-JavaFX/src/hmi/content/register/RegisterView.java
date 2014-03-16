@@ -26,6 +26,7 @@ import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Dialogs;
 import javafx.scene.control.SingleSelectionModel;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -33,6 +34,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import modele.node.Cloud;
+import modele.node.CloudBuilder;
 
 /**
  * View letting the user register an application
@@ -45,6 +47,17 @@ public final class RegisterView extends Activity {
     
     //vertical box containing all the identificator components
     private MyVBox vBox;
+    
+    //constructing object
+    private CloudBuilder builder;
+
+    public CloudBuilder getBuilder() {
+        return builder;
+    }
+
+    public void setBuilder(CloudBuilder builder) {
+        this.builder = builder;
+    }
     
     /**
      * initialize the vertical box
@@ -90,6 +103,9 @@ public final class RegisterView extends Activity {
         //selector : current cloud platform of the application
         private ChoiceBox<Cloud> clouds;
         
+        //ok button
+        private Button ok;
+        
         /**
          * initialize and places the components
          * inside the current vertical box
@@ -102,7 +118,8 @@ public final class RegisterView extends Activity {
                     getLogo(),
                     getBrowse(),
                     getName(),
-                    getClouds()
+                    getClouds(),
+                    getOk()
             );
         }
         
@@ -222,6 +239,26 @@ public final class RegisterView extends Activity {
                 setMargin(name, new Insets(0, 200, 0, 200));
             }
             return name;
+        }
+
+        public final Button getOk() {
+            if(ok == null) {
+                ok = new Button("Ok");
+                ok.setOnAction(new EventHandler<ActionEvent>() {
+
+                    @Override
+                    public void handle(ActionEvent t) {
+                        try {
+                            builder.build();
+                            Dialogs.showConfirmDialog(Launcher.STAGE, "Confirmation", "Success build");
+                        } catch (IOException ex) {
+                            Dialogs.showErrorDialog(Launcher.STAGE, "Error", "Error while building");
+                        }
+                    }
+                    
+                });
+            }
+            return ok;
         }
         
     }

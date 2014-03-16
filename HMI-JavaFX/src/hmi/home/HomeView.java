@@ -134,6 +134,7 @@ public final class HomeView extends HomeActivity {
                     @Override
                     public void handle(ActionEvent t) {
                         CloudBuilder cb = new CloudBuilder();
+                        RegisterView.INSTANCE.setBuilder(cb);
                         cb.logoProperty().bind(RegisterView.INSTANCE.logoProperty());
                         cb.nameProperty().bind(RegisterView.INSTANCE.nameProperty());
                         cb.platformProperty().bind(RegisterView.INSTANCE.cloudProperty());
