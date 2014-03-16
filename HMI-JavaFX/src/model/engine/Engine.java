@@ -36,7 +36,8 @@ public class Engine implements IEngine {
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream("node_save.ser"));
             this.node = (CloudBookNode) ois.readObject();
         } catch (IOException | ClassNotFoundException e) {
-            this.node = new CloudBookNode();
+            // TODO
+            // this.node = new CloudBookNode();
         }
     }
     
