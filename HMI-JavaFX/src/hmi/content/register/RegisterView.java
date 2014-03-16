@@ -250,9 +250,10 @@ public final class RegisterView extends Activity {
                     public void handle(ActionEvent t) {
                         try {
                             builder.build();
-                            Dialogs.showConfirmDialog(Launcher.STAGE, "Confirmation", "Success build");
+                            Dialogs.showConfirmDialog(Launcher.STAGE, "Success build", "OK");
                         } catch (IOException ex) {
-                            Dialogs.showErrorDialog(Launcher.STAGE, "Error", "Error while building");
+                            ex.printStackTrace();
+                            Dialogs.showErrorDialog(Launcher.STAGE, "Error while building", "Error");
                         }
                     }
                     

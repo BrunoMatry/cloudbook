@@ -10,7 +10,7 @@ import hmi.content.AActivity;
 import hmi.content.node.NodeComponentView;
 import hmi.content.node.SummarizedView;
 import java.util.ArrayList;
-import modele.node.Cloud;
+import javafx.scene.image.ImageView;
 
 /**
  *
@@ -24,15 +24,12 @@ public class StateView extends NodeComponentView {
     public StateView(AActivity p) {
         super(p);
         clouds = new ArrayList<>();
-        for(int i = 0 ; i < 3 ; i++) {
-            clouds.add(new CloudView(Cloud.DROPBOX));
-        }
         title = "History";
     }
 
     @Override
     public SummarizedView makeSummarized() {
-        return new SummarizedView(this, clouds.get(0));
+        return new SummarizedView(this, new ImageView());
     }
     
 }

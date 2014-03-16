@@ -18,7 +18,7 @@ import javafx.beans.property.SimpleObjectProperty;
 /**
  *
  * @author Gwendal
- * 
+ * TODO : gerer la serialisation
  * Representation of a node
  */
 public class CloudBookNode implements Serializable {

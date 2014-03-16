@@ -45,7 +45,7 @@ public class CloudBuilder {
      */
     public void build() throws IOException {
         Engine.INSTANCE.setNode(new CloudBookNode(logo.get(), name.get(), platform.get()));
-        Engine.INSTANCE.save();
+        //Engine.INSTANCE.save();
     }
     
 }
