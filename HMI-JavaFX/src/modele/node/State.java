@@ -33,4 +33,14 @@ public class State implements Information {
     public Cloud getCloud() {
         return cloud;
     }
+
+    @Override
+    public void saveProperties() {
+        
+    }
+
+    @Override
+    public void restoreProperties() {
+        
+    }
 }

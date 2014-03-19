@@ -36,8 +36,7 @@ public final class Engine implements IEngine {
         friendManager = AppMounter.mountFriendManager();
         monitoring = AppMounter.mountMonitoring();
         try {
-            ObjectInputStream ois = new ObjectInputStream(new FileInputStream("node_save.ser"));
-            this.node = (CloudBookNode) ois.readObject();
+            node = CloudBookNode.load();
         } catch (IOException | ClassNotFoundException e) {
             // TODO
             // this.node = new CloudBookNode();
@@ -50,10 +49,7 @@ public final class Engine implements IEngine {
     
     @Override
     public void save() throws IOException {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("node_save.ser"))) {
-            oos.writeObject(this.node);
-            oos.flush();
-        }
+        node.save();
     }
 
     @Override

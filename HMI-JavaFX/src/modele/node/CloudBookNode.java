@@ -6,6 +6,11 @@
 
 package modele.node;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -51,14 +56,19 @@ public class CloudBookNode implements Serializable {
     protected AppVector vector;
     
     //name of the application
-    protected MySimpleStringProperty name;
-    public SimpleStringProperty nameProperty() {
+    protected String _name;
+    protected transient StringProperty name;
+    public StringProperty nameProperty() {
         return name;
     }
     
     //logo of the application
-    protected MySimpleObjectProperty<Image> logo;
-    public SimpleObjectProperty<Image> logoProperty() {
+    /*TODO : retirer transient ; copier l'image dans le système de fichiers de
+    l'application quand elle est chargée et référencer  le chemin
+    */
+    protected transient Image _logo;
+    protected transient ObjectProperty<Image> logo;
+    public ObjectProperty<Image> logoProperty() {
         return logo;
     }
     
@@ -80,8 +90,8 @@ public class CloudBookNode implements Serializable {
         this.vector = new AppVector(0,0,0);
         topMesure = new Mesure();
         topMessage = new Message();
-        name = new MySimpleStringProperty();
-        logo = new MySimpleObjectProperty<>();
+        name = new SimpleStringProperty();
+        logo = new SimpleObjectProperty<>();
     }
     
     /**
@@ -95,12 +105,14 @@ public class CloudBookNode implements Serializable {
      */
     public CloudBookNode(Image image, String string, Cloud cloud, int appType, int performance, int speed) {
         state = new Stack<>();
+        friends = new ArrayList<>();
+        informations = new ArrayList<>();
         mesure = new ArrayList<>();
         message = new ArrayList<>();
         topMesure = new Mesure();
         topMessage = new Message();
-        logo = new MySimpleObjectProperty<>(image);
-        name = new MySimpleStringProperty(string);
+        logo = new SimpleObjectProperty<>(image);
+        name = new SimpleStringProperty(string);
         platform = cloud;
         this.state.push(new State(cloud));
         this.vector = new AppVector(appType, performance, speed);
@@ -150,13 +162,46 @@ public class CloudBookNode implements Serializable {
     public void setVector(AppVector vector) {
         this.vector = vector;
     }
-
-    public SimpleStringProperty getName() {
-        return name;
+    
+    public void save() throws IOException {
+        _name = name.get();
+        _logo = logo.get();
+        for(Friend f : friends)
+            f.saveProperties();
+        for(Information info : informations)
+            info.saveProperties();
+        for(Mesure mes : mesure)
+            mes.saveProperties();
+        for(Message msg : message)
+            msg.saveProperties();
+        for(State s : state)
+            s.saveProperties();
+        topMessage.saveProperties();
+        topMesure.saveProperties();
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("node_save.ser"))) {
+            oos.writeObject(this);
+            oos.flush();
+        }
     }
-
-    public SimpleObjectProperty<Image> getLogo() {
-        return logo;
+    
+    public static CloudBookNode load() throws IOException, ClassNotFoundException {
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream("node_save.ser"));
+        CloudBookNode res = (CloudBookNode) ois.readObject();
+        //res.logo.set(res._logo);
+        res.name = new SimpleStringProperty(res._name);
+        for(Friend f : res.friends)
+            f.restoreProperties();
+        for(Information info : res.informations)
+            info.restoreProperties();
+        for(Mesure mes : res.mesure)
+            mes.restoreProperties();
+        for(Message msg : res.message)
+            msg.restoreProperties();
+        for(State s : res.state)
+            s.restoreProperties();
+        res.topMessage.restoreProperties();
+        res.topMesure.restoreProperties();
+        return res;
     }
 
 }

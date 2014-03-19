@@ -13,5 +13,6 @@ import java.io.Serializable;
  * @author Bruno
  */
 public interface Information extends Serializable {
-    
+    public void saveProperties();
+    public void restoreProperties();
 }

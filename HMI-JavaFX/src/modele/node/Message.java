@@ -15,22 +15,33 @@ public class Message implements Information {
     private boolean relevant;
     private AppVector vector;
     
-    protected MySimpleStringProperty description;
+    protected String _description;
+    protected transient StringProperty description;
     public StringProperty descriptionProperty() {
         return description;
     }
     
     public Message() {
-        description = new MySimpleStringProperty();
+        description = new SimpleStringProperty();
         description.set("Pas de message");
     }
     
     public Message(Information content, int idSender, boolean relevant, AppVector vector) {
-        description = new MySimpleStringProperty("Pas de message");
+        description = new SimpleStringProperty("Pas de message");
         this.content = content;
         this.idSender = idSender;
         this.date = new Date();
         this.relevant = relevant;
         this.vector = vector;
+    }
+
+    @Override
+    public void saveProperties() {
+        _description = description.get();
+    }
+
+    @Override
+    public void restoreProperties() {
+        description = new SimpleStringProperty(_description);
     }
 }

@@ -17,13 +17,13 @@ public enum Cloud implements Serializable {
     DROPBOX("file:res/dropbox.png"),
     DEFAULT("file:res/default_logo.png");
     
-    protected MySimpleObjectProperty<Image> icon;
+    protected transient ObjectProperty<Image> icon;
     public ObjectProperty<Image> iconProperty() {
         return icon;
     }
     
     Cloud(String path) {
-        icon = new MySimpleObjectProperty<>();
+        icon = new SimpleObjectProperty<>();
         icon.set(new CloudImage(path, name()));
     }
 

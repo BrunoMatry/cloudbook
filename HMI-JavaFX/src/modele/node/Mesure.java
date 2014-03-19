@@ -19,28 +19,31 @@ import javafx.beans.property.StringProperty;
 public class Mesure implements Information {
     //contenu
     private Date date;
-    private final MySimpleStringProperty stringDate = new MySimpleStringProperty();
-    private MySimpleIntegerProperty mesure1 = new MySimpleIntegerProperty();
-    public MySimpleIntegerProperty mesure1Property() {
+    private transient final StringProperty stringDate = new SimpleStringProperty();
+    
+    protected int _mesure1;
+    private transient IntegerProperty mesure1 = new SimpleIntegerProperty();
+    public IntegerProperty mesure1Property() {
         return mesure1;
     }
-    private MySimpleIntegerProperty mesure2 = new MySimpleIntegerProperty();
-    private MySimpleIntegerProperty mesure3 = new MySimpleIntegerProperty();
-    private MySimpleIntegerProperty mesure4 = new MySimpleIntegerProperty();
-    private MySimpleIntegerProperty mesure5 = new MySimpleIntegerProperty();
+    private transient IntegerProperty mesure2 = new SimpleIntegerProperty();
+    private transient IntegerProperty mesure3 = new SimpleIntegerProperty();
+    private transient IntegerProperty mesure4 = new SimpleIntegerProperty();
+    private transient IntegerProperty mesure5 = new SimpleIntegerProperty();
     
-    protected MySimpleStringProperty description;
+    protected String _description;
+    protected transient StringProperty description;
     public StringProperty descriptionProperty() {
         return description;
     }
     
     public Mesure() {
-        description = new MySimpleStringProperty();
+        description = new SimpleStringProperty();
         description.set("Pas de mesure");
     }
     
     public Mesure(int mesure1, int mesure2, int mesure3, int mesure4, int mesure5) {
-        description = new MySimpleStringProperty("" + mesure1);
+        description = new SimpleStringProperty("" + mesure1);
         this.actualizeDate();
         this.mesure1.set(mesure1);
         this.mesure2.set(mesure2);
@@ -52,5 +55,17 @@ public class Mesure implements Information {
     private void actualizeDate() {
         this.date = new Date();
         this.stringDate.set(this.date.toString());
+    }
+
+    @Override
+    public void saveProperties() {
+        _description = description.get();
+        _mesure1 = mesure1.get();
+    }
+
+    @Override
+    public void restoreProperties() {
+        description = new SimpleStringProperty(_description);
+        mesure1 = new SimpleIntegerProperty(_mesure1);
     }
 }

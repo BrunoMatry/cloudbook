@@ -11,9 +11,15 @@ import javafx.beans.property.SimpleIntegerProperty;
  * @author Bruno
  */
 public class Friend implements Information {  
-    private MySimpleIntegerProperty id = new MySimpleIntegerProperty();
-    private MySimpleIntegerProperty confidence = new MySimpleIntegerProperty();
-    private MySimpleBooleanProperty relevant = new MySimpleBooleanProperty();
+    protected int _id;
+    private transient IntegerProperty id = new SimpleIntegerProperty();
+    
+    protected int _confidence;
+    private transient IntegerProperty confidence = new SimpleIntegerProperty();
+    
+    protected boolean _relevant;
+    private transient BooleanProperty relevant = new SimpleBooleanProperty();
+    
     private AppVector vector;
     private Date lastConnexion;
     
@@ -42,5 +48,19 @@ public class Friend implements Information {
             
     private void connexion() {
         this.lastConnexion = new Date();
+    }
+
+    @Override
+    public void saveProperties() {
+        _id = id.get();
+        _relevant = relevant.get();
+        _confidence = confidence.get();
+    }
+
+    @Override
+    public void restoreProperties() {
+        id = new SimpleIntegerProperty(_id);
+        relevant = new SimpleBooleanProperty(_relevant);
+        confidence = new SimpleIntegerProperty(_confidence);
     }
 }
