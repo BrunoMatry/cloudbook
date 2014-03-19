@@ -11,9 +11,9 @@ import javafx.beans.property.SimpleIntegerProperty;
  * @author Bruno
  */
 public class Friend implements Information {  
-    private IntegerProperty id = new SimpleIntegerProperty();
-    private IntegerProperty confidence = new SimpleIntegerProperty();
-    private BooleanProperty relevant = new SimpleBooleanProperty();
+    private MySimpleIntegerProperty id = new MySimpleIntegerProperty();
+    private MySimpleIntegerProperty confidence = new MySimpleIntegerProperty();
+    private MySimpleBooleanProperty relevant = new MySimpleBooleanProperty();
     private AppVector vector;
     private Date lastConnexion;
     

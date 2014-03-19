@@ -17,13 +17,12 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.control.Dialogs;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import model.engine.Engine;
-import modele.node.Cloud;
 import modele.node.CloudBuilder;
-import modele.node.Mesure;
 
 /**
  * Activity launched when the application starts
@@ -124,8 +123,8 @@ public final class HomeView extends HomeActivity {
         
         public void bindState() {
             ImageView iv = (ImageView)NodeView.INSTANCE.getState().getView();
-            ObjectProperty<Cloud> cloud = Engine.INSTANCE.getNode().platformProperty();
-            iv.imageProperty().bind(cloud.get().iconProperty());
+            ObjectProperty<Image> cloud = Engine.INSTANCE.getNode().platformProperty();
+            iv.imageProperty().bind(cloud);
         }
 
         /**

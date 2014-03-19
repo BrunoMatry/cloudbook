@@ -6,11 +6,13 @@
 
 package modele.node;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Bruno
  */
-public class AppVector {
+public class AppVector implements Serializable {
     
     private int appType;
     private int performance;

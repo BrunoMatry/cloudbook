@@ -19,27 +19,27 @@ import javafx.beans.property.StringProperty;
 public class Mesure implements Information {
     //contenu
     private Date date;
-    private final StringProperty stringDate = new SimpleStringProperty();
-    private IntegerProperty mesure1 = new SimpleIntegerProperty();
-    public IntegerProperty mesure1Property() {
+    private final MySimpleStringProperty stringDate = new MySimpleStringProperty();
+    private MySimpleIntegerProperty mesure1 = new MySimpleIntegerProperty();
+    public MySimpleIntegerProperty mesure1Property() {
         return mesure1;
     }
-    private IntegerProperty mesure2 = new SimpleIntegerProperty();
-    private IntegerProperty mesure3 = new SimpleIntegerProperty();
-    private IntegerProperty mesure4 = new SimpleIntegerProperty();
-    private IntegerProperty mesure5 = new SimpleIntegerProperty();
+    private MySimpleIntegerProperty mesure2 = new MySimpleIntegerProperty();
+    private MySimpleIntegerProperty mesure3 = new MySimpleIntegerProperty();
+    private MySimpleIntegerProperty mesure4 = new MySimpleIntegerProperty();
+    private MySimpleIntegerProperty mesure5 = new MySimpleIntegerProperty();
     
-    protected StringProperty description;
+    protected MySimpleStringProperty description;
     public StringProperty descriptionProperty() {
         return description;
     }
     
     public Mesure() {
-        description = new SimpleStringProperty("Pas de mesure");
+        description = new MySimpleStringProperty("Pas de mesure");
     }
     
     public Mesure(int mesure1, int mesure2, int mesure3, int mesure4, int mesure5) {
-        description = new SimpleStringProperty("" + mesure1);
+        description = new MySimpleStringProperty("" + mesure1);
         this.actualizeDate();
         this.mesure1.set(mesure1);
         this.mesure2.set(mesure2);

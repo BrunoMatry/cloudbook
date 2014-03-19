@@ -1,5 +1,6 @@
 package modele.node;
 
+import java.io.Serializable;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.scene.image.Image;
@@ -10,19 +11,19 @@ import javafx.scene.image.Image;
  * Note : cet enum sera bien evidement amene a etre complete 
  * voir a etre remplace par une autre forme de structure de donnees.
  */
-public enum Cloud {
+public enum Cloud implements Serializable {
     GDRIVE("file:res/google.png"),
     SKYDRIVE("file:res/skydrive.png"),
     DROPBOX("file:res/dropbox.png"),
     DEFAULT("file:res/default_logo.png");
     
-    protected ObjectProperty<Image> icon;
+    protected MySimpleObjectProperty<Image> icon;
     public ObjectProperty<Image> iconProperty() {
         return icon;
     }
     
     Cloud(String path) {
-        icon = new SimpleObjectProperty<>();
+        icon = new MySimpleObjectProperty<>();
         icon.set(new CloudImage(path, name()));
     }
 

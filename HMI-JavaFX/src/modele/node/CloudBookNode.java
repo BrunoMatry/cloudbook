@@ -12,6 +12,7 @@ import java.util.List;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.scene.image.Image;
 import java.util.Stack;
+import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.StringProperty;
 
@@ -50,21 +51,21 @@ public class CloudBookNode implements Serializable {
     protected AppVector vector;
     
     //name of the application
-    protected SimpleStringProperty name;
+    protected MySimpleStringProperty name;
     public SimpleStringProperty nameProperty() {
         return name;
     }
     
     //logo of the application
-    protected SimpleObjectProperty<Image> logo;
+    protected MySimpleObjectProperty<Image> logo;
     public SimpleObjectProperty<Image> logoProperty() {
         return logo;
     }
     
     //current platform of the application
-    protected SimpleObjectProperty<Cloud> platform;
-    public SimpleObjectProperty<Cloud> platformProperty() {
-        return platform;
+    protected Cloud platform;
+    public ObjectProperty<Image> platformProperty() {
+        return platform.iconProperty();
     }
     
     /**
@@ -79,9 +80,8 @@ public class CloudBookNode implements Serializable {
         this.vector = new AppVector(0,0,0);
         topMesure = new Mesure();
         topMessage = new Message();
-        name = new SimpleStringProperty();
-        logo = new SimpleObjectProperty<>();
-        platform = new SimpleObjectProperty<>();
+        name = new MySimpleStringProperty();
+        logo = new MySimpleObjectProperty<>();
     }
     
     /**
@@ -99,9 +99,9 @@ public class CloudBookNode implements Serializable {
         message = new ArrayList<>();
         topMesure = new Mesure();
         topMessage = new Message();
-        logo = new SimpleObjectProperty<>(image);
-        name = new SimpleStringProperty(string);
-        platform = new SimpleObjectProperty<>(cloud);
+        logo = new MySimpleObjectProperty<>(image);
+        name = new MySimpleStringProperty(string);
+        platform = cloud;
         this.state.push(new State(cloud));
         this.vector = new AppVector(appType, performance, speed);
     }
@@ -155,25 +155,8 @@ public class CloudBookNode implements Serializable {
         return name;
     }
 
-    public void setName(SimpleStringProperty name) {
-        this.name = name;
-    }
-
     public SimpleObjectProperty<Image> getLogo() {
         return logo;
     }
 
-    public void setLogo(SimpleObjectProperty<Image> logo) {
-        this.logo = logo;
-    }
-
-    public SimpleObjectProperty<Cloud> getPlatform() {
-        return platform;
-    }
-
-    public void setPlatform(SimpleObjectProperty<Cloud> platform) {
-        this.platform = platform;
-    }
-
-    
 }

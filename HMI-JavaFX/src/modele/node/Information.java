@@ -6,10 +6,12 @@
 
 package modele.node;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Bruno
  */
-public interface Information {
+public interface Information extends Serializable {
     
 }
