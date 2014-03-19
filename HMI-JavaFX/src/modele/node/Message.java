@@ -21,7 +21,8 @@ public class Message implements Information {
     }
     
     public Message() {
-        description = new MySimpleStringProperty("Pas de message");
+        description = new MySimpleStringProperty();
+        description.set("Pas de message");
     }
     
     public Message(Information content, int idSender, boolean relevant, AppVector vector) {

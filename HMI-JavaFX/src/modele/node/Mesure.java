@@ -35,7 +35,8 @@ public class Mesure implements Information {
     }
     
     public Mesure() {
-        description = new MySimpleStringProperty("Pas de mesure");
+        description = new MySimpleStringProperty();
+        description.set("Pas de mesure");
     }
     
     public Mesure(int mesure1, int mesure2, int mesure3, int mesure4, int mesure5) {
