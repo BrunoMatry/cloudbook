@@ -31,3 +31,56 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+/* Our CSS */
+html {
+	background: url(./clouds_large.png);
+}
+body {
+   max-width: 200mm;
+   margin: auto;
+   padding: 15px 25px 0px 25px;
+   font-family: Tahoma, Arial, sans-serif;
+   font-size: 1em;
+   line-height: 1.5em;
+   opacity: 0.7;
+   background: #000;
+   color: #FFF;
+   padding-bottom: 50px;
+}
+body p {
+	text-align: justify;
+}
+body header h1 {
+	font-size: 3em;
+	line-height: 1.0em;
+}
+body header h2 {
+	font-size: 0.98em;
+}
+body header {
+	text-align: center;
+	margin-bottom: 1em;
+}
+body .keywords {
+	margin-top: 1em;
+	text-align: center;
+}
+body .keywords h1 {
+	font-weight: bold;
+	margin-bottom: 0.8em;
+}
+body .keywords ul {
+	margin-left: 10%;
+	width: 80%;
+}
+body .keywords li {
+	color: #000;
+	display: inline-block;
+	margin: 0px 8px 8px 8px;
+	padding: 3px 7px 3px 7px;
+	background: #bcd4e6;
+	-webkit-border-radius: 5x;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
