@@ -12,6 +12,7 @@ import hmi.content.HomeActivity;
 import hmi.content.node.NodeView;
 import hmi.content.register.RegisterView;
 import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -22,7 +23,6 @@ import javafx.scene.text.Text;
 import model.engine.Engine;
 import modele.node.Cloud;
 import modele.node.CloudBuilder;
-import modele.node.Message;
 import modele.node.Mesure;
 
 /**
@@ -112,14 +112,14 @@ public final class HomeView extends HomeActivity {
         
         public void bindMessage() {
             Text txtMsg = (Text)NodeView.INSTANCE.getMessage().getView();
-            ObjectProperty<Message> msgp = Engine.INSTANCE.getNode().topMessageProperty();
-            txtMsg.textProperty().bind(msgp.get().descriptionProperty());
+            StringProperty msgp = Engine.INSTANCE.getNode().topMessageProperty();
+            txtMsg.textProperty().bind(msgp);
         }
         
         public void bindMesure() {
             Text txtM = (Text)NodeView.INSTANCE.getMesures().getView();
-            ObjectProperty<Mesure> mp = Engine.INSTANCE.getNode().topMesureProperty();
-            txtM.textProperty().bind(mp.get().descriptionProperty());
+            StringProperty mp = Engine.INSTANCE.getNode().topMesureProperty();
+            txtM.textProperty().bind(mp);
         }
         
         public void bindState() {
