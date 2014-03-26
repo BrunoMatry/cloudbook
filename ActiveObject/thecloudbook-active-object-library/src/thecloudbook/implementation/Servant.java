@@ -13,7 +13,7 @@ import thecloudbook.interfaces.Sendable;
  *
  * @author Gwendal
  */
-public class Servant extends Thread implements IClientService {
+public abstract class Servant extends Thread implements IClientService {
 
     protected Sendable request;
     

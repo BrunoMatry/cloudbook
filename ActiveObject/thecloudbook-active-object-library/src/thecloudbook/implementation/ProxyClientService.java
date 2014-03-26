@@ -7,6 +7,8 @@
 package thecloudbook.implementation;
 
 import thecloudbook.interfaces.IClientService;
+import thecloudbook.interfaces.IScheduler;
+import thecloudbook.interfaces.ISendCommand;
 import thecloudbook.interfaces.Sendable;
 
 /**
@@ -15,9 +17,17 @@ import thecloudbook.interfaces.Sendable;
  */
 public class ProxyClientService implements IClientService {
 
+    //distant scheduler, which must be called using RMI
+    protected IScheduler scheduler;
+    
+    public ProxyClientService(IScheduler sched) {
+        scheduler = sched;
+    }
+    
     @Override
     public void send(Sendable sendable) {
-        
+        ISendCommand command = new SendCommand();
+        scheduler.onReceived(command);
     }
     
 }

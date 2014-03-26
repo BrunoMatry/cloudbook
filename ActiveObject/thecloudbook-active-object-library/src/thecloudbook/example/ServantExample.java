@@ -4,14 +4,19 @@
  * and open the template in the editor.
  */
 
-package thecloudbook.interfaces;
+package thecloudbook.example;
+
+import thecloudbook.implementation.Servant;
 
 /**
  *
  * @author Gwendal
- * command object specification
  */
-public interface ISendCommand {
-    void call(IClientService servant);
-    boolean guard();
+public class ServantExample extends Servant {
+
+    @Override
+    public void run() {
+        System.out.println();
+    }
+
 }
