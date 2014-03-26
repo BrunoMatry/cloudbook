@@ -3,3 +3,4 @@
 /HMI-JavaFX/build/
 /HMI-JavaFX/dist/
 /HMI-JavaFX/*.ser
+/ActiveObject/thecloudbook-active-object-library/nbproject/private/
