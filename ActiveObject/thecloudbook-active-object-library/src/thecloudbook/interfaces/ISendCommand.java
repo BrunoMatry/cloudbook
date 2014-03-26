@@ -6,12 +6,14 @@
 
 package thecloudbook.interfaces;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Gwendal
  * command object specification
  */
-public interface ISendCommand {
+public interface ISendCommand extends Serializable {
     void call(IClientService servant);
     boolean guard();
 }

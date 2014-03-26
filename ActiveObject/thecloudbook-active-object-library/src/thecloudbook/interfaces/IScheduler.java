@@ -6,18 +6,22 @@
 
 package thecloudbook.interfaces;
 
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+
 /**
  *
  * @author Gwendal
  * receiving object specification
  */
-public interface IScheduler {
-    void dispatch(ISendCommand command);
+public interface IScheduler extends Remote {
+    void dispatch(ISendCommand command) throws RemoteException;
     
     /**
      * method which should be called with rmi
      * manages a received command
      * @param command command to manage
+     * @throws java.rmi.RemoteException necessary for the remote to 
      */
-    void onReceived(ISendCommand command);
+    void onReceived(ISendCommand command) throws RemoteException;
 }

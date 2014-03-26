@@ -6,10 +6,12 @@
 
 package thecloudbook.interfaces;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Gwendal
  */
-public interface Sendable {
+public interface Sendable extends Serializable {
     
 }

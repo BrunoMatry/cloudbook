@@ -17,7 +17,7 @@ public class ServantExampleFactory implements ServantFactory {
 
     @Override
     public IClientService makeServant() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return new ServantExample();
     }
     
 }

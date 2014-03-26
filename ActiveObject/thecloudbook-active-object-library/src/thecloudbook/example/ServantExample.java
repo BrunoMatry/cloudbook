@@ -16,7 +16,9 @@ public class ServantExample extends Servant {
 
     @Override
     public void run() {
-        System.out.println();
+        SendableExample se = (SendableExample)request;
+        System.out.println(se);
+        ServerExample.INSTANCE.setMessage(se.getValue());
     }
 
 }
