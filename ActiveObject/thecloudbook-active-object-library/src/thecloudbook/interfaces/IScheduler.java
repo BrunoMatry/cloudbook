@@ -13,4 +13,11 @@ package thecloudbook.interfaces;
  */
 public interface IScheduler {
     void dispatch(ISendCommand command);
+    
+    /**
+     * method which should be called with rmi
+     * manages a received command
+     * @param command command to manage
+     */
+    void onReceived(ISendCommand command);
 }

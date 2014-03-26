@@ -67,11 +67,11 @@
           <commentMoniker Id="a4a4fcc2-86ea-459c-a232-8f95d6add839" />
           <relativeChildShapes />
         </commentShape>
-        <interfaceShape Id="a94abe0d-4bd4-42cc-bfeb-9d580210ad9b" absoluteBounds="6.5, 4.25, 2.375, 1.2226562251647311" hideQualifiedName="false" increaseHeight="0" customColor="207, 223, 191">
+        <interfaceShape Id="a94abe0d-4bd4-42cc-bfeb-9d580210ad9b" absoluteBounds="6.5, 4.25, 2.625, 1.2226562251647311" hideQualifiedName="false" increaseHeight="0" customColor="207, 223, 191">
           <interfaceMoniker Id="fc91672a-0f94-4e11-bc10-fa3f5fddb7a9" LastKnownName="IScheduler" />
           <nestedChildShapes>
-            <AttributeElementListCompartment Id="0393cabd-ea31-410c-9fc8-5848becad406" absoluteBounds="6.5150000000000006, 4.64, 2.3449999999999998, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
-            <OperationElementListCompartment Id="031ebe25-7ac3-479b-8b34-f220e1a33ea7" absoluteBounds="6.5150000000000006, 4.85117186754942, 2.3449999999999998, 0.521484357615312" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+            <AttributeElementListCompartment Id="0393cabd-ea31-410c-9fc8-5848becad406" absoluteBounds="6.515, 4.64, 2.5949999999999998, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+            <OperationElementListCompartment Id="031ebe25-7ac3-479b-8b34-f220e1a33ea7" absoluteBounds="6.515, 4.85117186754942, 2.5949999999999998, 0.521484357615312" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
           </nestedChildShapes>
         </interfaceShape>
       </nestedChildShapes>
@@ -130,7 +130,7 @@
         <interfaceShapeMoniker Id="02f1b755-7052-496f-8427-b7b43bbcea0a" />
       </nodes>
     </realizationConnector>
-    <realizationConnector edgePoints="[(7.6875 : 6.125); (7.6875 : 5.47265622516473)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" showAsLollipop="false">
+    <realizationConnector edgePoints="[(7.6875 : 6.125); (7.6875 : 5.84765622516473); (7.8125 : 5.84765622516473); (7.8125 : 5.47265622516473)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" showAsLollipop="false">
       <interfaceRealizationMoniker Id="1acfc21b-be1e-4bf8-b70b-51491eca7ed6" />
       <relativeChildShapes />
       <nodes>
