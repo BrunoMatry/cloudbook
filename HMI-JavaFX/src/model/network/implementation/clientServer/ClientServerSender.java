@@ -6,14 +6,23 @@
 
 package model.network.implementation.clientServer;
 
+import java.net.MalformedURLException;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
 import model.network.interfaces.factory.RequestSender;
+import thecloudbook.implementation.ProxyClientService;
 import thecloudbook.interfaces.Sendable;
 
 /**
  *
  * @author Gwendal
  */
-public class ClientServerSender implements RequestSender {
+public class ClientServerSender extends ProxyClientService implements RequestSender {
+
+    public ClientServerSender(String serverUrl)
+            throws NotBoundException, MalformedURLException, RemoteException {
+        super(serverUrl);
+    }
 
     @Override
     public void send(Sendable sendable) {

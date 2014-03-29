@@ -6,6 +6,8 @@
 
 package model.network.implementation.clientServer;
 
+import model.network.implementation.Network;
+import model.request.Request;
 import thecloudbook.implementation.Servant;
 
 /**
@@ -13,5 +15,10 @@ import thecloudbook.implementation.Servant;
  * @author Gwendal
  */
 public class ClientServant extends Servant {
+
+    @Override
+    public void run() {
+        Network.INSTANCE.handleRequest((Request)request);
+    }
     
 }

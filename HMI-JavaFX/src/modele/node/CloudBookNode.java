@@ -6,6 +6,7 @@
 
 package modele.node;
 
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -20,6 +21,7 @@ import java.util.Stack;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.StringProperty;
+import model.friendmanager.Information;
 
 /**
  *

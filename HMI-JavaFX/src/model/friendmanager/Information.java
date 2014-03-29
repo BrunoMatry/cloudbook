@@ -4,12 +4,15 @@
  * and open the template in the editor.
  */
 
-package model.request;
+package model.friendmanager;
+
+import java.io.Serializable;
 
 /**
  *
  * @author Bruno
  */
-public interface Sendable {
-    
+public interface Information extends Serializable {
+    public void saveProperties();
+    public void restoreProperties();
 }

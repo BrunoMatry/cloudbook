@@ -6,10 +6,12 @@
 
 package model.network.implementation;
 
+import model.engine.Engine;
 import model.network.implementation.clientServer.ClientServerFactory;
 import model.network.interfaces.factory.NetworkFactory;
 import model.network.interfaces.factory.RequestHandler;
 import model.network.interfaces.factory.RequestSender;
+import model.request.Request;
 
 /**
  * 
@@ -33,5 +35,13 @@ public final class Network {
         factory = new ClientServerFactory();
         receiver = factory.makeRequestHandler();
         sender = factory.makeRequestSender();
+    }
+    
+    public void handleRequest(Request request) {
+        Engine.INSTANCE.handleRequest(request);
+    }
+    
+    public void send(Request request) {
+        sender.send(request);
     }
 }

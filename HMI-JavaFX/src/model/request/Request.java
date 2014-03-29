@@ -7,7 +7,8 @@
 package model.request;
 
 import java.util.Date;
-import modele.node.Information;
+import model.friendmanager.Information;
+import thecloudbook.interfaces.Sendable;
 
 /**
  *

@@ -4,15 +4,14 @@
  * and open the template in the editor.
  */
 
-package modele.node;
-
-import java.io.Serializable;
+package server;
 
 /**
  *
- * @author Bruno
+ * @author Gwendal
  */
-public interface Information extends Serializable {
-    public void saveProperties();
-    public void restoreProperties();
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello world !");
+    }
 }

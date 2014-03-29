@@ -7,6 +7,7 @@
 package modele.node;
 
 import java.util.Date;
+import model.friendmanager.Information;
 
 /**
  *

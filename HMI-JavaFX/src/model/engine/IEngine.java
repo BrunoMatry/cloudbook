@@ -1,8 +1,8 @@
 package model.engine;
 
 import java.io.IOException;
+import model.friendmanager.Information;
 import model.request.Request;
-import modele.node.Information;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
