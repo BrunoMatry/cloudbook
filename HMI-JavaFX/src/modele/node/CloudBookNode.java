@@ -1,6 +1,5 @@
 package modele.node;
 
-
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -199,5 +198,4 @@ public class CloudBookNode implements Serializable {
         res.topMesure.restoreProperties();
         return res;
     }
-
 }

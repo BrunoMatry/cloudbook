@@ -49,6 +49,5 @@ public enum Cloud implements Serializable {
         public String toString() {
             return name;
         }
-        
-    } 
+    }
 }
