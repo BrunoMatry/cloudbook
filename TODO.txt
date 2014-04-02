@@ -1,12 +1,3 @@
-Vues
-	G enregistrer
-	B resultats/suggestions
-	B gestion des amis (---> détail de chaque ami)
-
-Sérialisation => Abderrahmane
-
-dans les vues, la référence vers le modèle
-correction des etourderies dans les diagrammes
-
-Rapport :
-justifier les choix
+Gwendal
+Faire le test complet du network + server dans un test unitaire. Utiliser un thread par acteur (2 client + 1 server)
+et utiliser des joins pour terminer le test convenablement.
