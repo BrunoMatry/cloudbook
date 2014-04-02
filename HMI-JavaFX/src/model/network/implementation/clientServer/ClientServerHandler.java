@@ -20,19 +20,19 @@ import thecloudbook.interfaces.ServantFactory;
  */
 public class ClientServerHandler extends Scheduler implements RequestHandler {
 
+    /**
+     * Constructor
+     * @param sf factory to be used to instanciate servants
+     * @param address IP addrress
+     * @param port port on which the client listen
+     * @param name name of the application
+     * @throws RemoteException
+     * @throws AlreadyBoundException
+     * @throws MalformedURLException 
+     */
     public ClientServerHandler(ServantFactory sf, String address, int port, String name)
             throws RemoteException, AlreadyBoundException, MalformedURLException {
         super(sf, address, port, name);
     }
-
-    @Override
-    public void dispatch(ISendCommand command) throws RemoteException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void onReceived(ISendCommand command) throws RemoteException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+ 
 }

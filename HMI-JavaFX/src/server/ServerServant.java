@@ -29,6 +29,7 @@ public class ServerServant extends Servant {
                 ClientServerFactory.PORT + "/" + ClientServerFactory.NAME;
         try {
             ProxyClientService serverForwarder = new ProxyClientService(url);
+            serverForwarder.send(req);
         } catch (NotBoundException | MalformedURLException | RemoteException ex) {
             Logger.getLogger(ServerServant.class.getName()).log(Level.SEVERE, null, ex);
         }

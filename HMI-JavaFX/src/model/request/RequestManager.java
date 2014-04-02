@@ -7,9 +7,13 @@ import model.friendmanager.Information;
  */
 public class RequestManager implements IRequestManager {
 
+    /**
+     * TODO : add the relevant behaviour
+     * @param req request which has been received
+     */
     @Override
     public void handleRequest(Request req) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        System.out.println(req.getInfo());
     }
 
     @Override
