@@ -7,59 +7,63 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import model.friendmanager.Information;
 
-/**
- *
- * @author Bruno
- */
-public class Mesure implements Information {
-    //contenu
-    private Date date;
-    private transient final StringProperty stringDate = new SimpleStringProperty();
-    private int _mesure1;
-    private transient IntegerProperty mesure1 = new SimpleIntegerProperty();
-    public IntegerProperty mesure1Property() {
-        return mesure1;
-    }
-    private transient IntegerProperty mesure2 = new SimpleIntegerProperty();
-    private transient IntegerProperty mesure3 = new SimpleIntegerProperty();
-    private transient IntegerProperty mesure4 = new SimpleIntegerProperty();
-    private transient IntegerProperty mesure5 = new SimpleIntegerProperty();
+public final class Mesure implements Information {
     
-    protected String _description;
-    protected transient StringProperty description;
-    public StringProperty descriptionProperty() {
-        return description;
-    }
+    /* Attributs serialisables */
+    protected Date _date;
+    protected int _mesure1;
+    protected int _mesure2;
+    protected int _mesure3;
     
-    public Mesure() {
-        description = new SimpleStringProperty();
-        description.set("Pas de mesure");
+    /* Proprietes non serialisables */
+    protected transient StringProperty date;
+    protected transient IntegerProperty mesure1; 
+    protected transient IntegerProperty mesure2;
+    protected transient IntegerProperty mesure3;
+    
+    /**
+     * Contructeur
+     * Initialise les proprietes
+     */
+    protected Mesure() {
+        date = new SimpleStringProperty(_date.toString());
+        mesure1 = new SimpleIntegerProperty(_mesure1);
+        mesure2 = new SimpleIntegerProperty(_mesure2);
+        mesure3 = new SimpleIntegerProperty(_mesure3);
     }
     
-    public Mesure(int mesure1, int mesure2, int mesure3, int mesure4, int mesure5) {
-        description = new SimpleStringProperty("" + mesure1);
-        this.actualizeDate();
-        this.mesure1.set(mesure1);
-        this.mesure2.set(mesure2);
-        this.mesure3.set(mesure3);
-        this.mesure4.set(mesure4);
-        this.mesure5.set(mesure5);
+    public Mesure(int mes1, int mes2, int mes3) {
+        mesure1 = new SimpleIntegerProperty(mes1);
+        mesure2 = new SimpleIntegerProperty(mes2);
+        mesure3 = new SimpleIntegerProperty(mes3);
+        date = new SimpleStringProperty();
+        actualizeDate();
     }
     
     private void actualizeDate() {
-        this.date = new Date();
-        this.stringDate.set(this.date.toString());
+        _date = new Date();
+        date.set(_date.toString());
     }
 
     @Override
     public void saveProperties() {
-        _description = description.get();
         _mesure1 = mesure1.get();
+        _mesure2 = mesure2.get();
+        _mesure3 = mesure3.get();
+        // l'attribut _date est necessairement a jour avec cette implementation
     }
 
     @Override
     public void restoreProperties() {
-        description = new SimpleStringProperty(_description);
+        /* TODO Verifier la necessite de cette methode ou / et du constructeur vide */
         mesure1 = new SimpleIntegerProperty(_mesure1);
+        mesure2 = new SimpleIntegerProperty(_mesure2);
+        mesure3 = new SimpleIntegerProperty(_mesure3);
+        date = new SimpleStringProperty(_date.toString());
     }
+    
+    public IntegerProperty mesure1Property() { return mesure1; }
+    public IntegerProperty mesure2Property() { return mesure2; }
+    public IntegerProperty mesure3Property() { return mesure3; }
+    public StringProperty dateProperty() { return date; }
 }
