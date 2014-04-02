@@ -8,13 +8,15 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.scene.image.Image;
 import java.util.Stack;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.scene.image.Image;
 import model.friendmanager.Information;
+
+
 
 /**
  *
@@ -42,7 +44,7 @@ public class CloudBookNode implements Serializable {
     //mesure to be shown at the first place
     protected Mesure topMesure;
     public StringProperty topMesureProperty() {
-        return topMesure.descriptionProperty();
+        return topMesure.dateProperty();
     }
     
     //history of the cloud platforms
