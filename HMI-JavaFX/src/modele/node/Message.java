@@ -5,17 +5,15 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import model.friendmanager.Information;
 
-/**
- *
- * @author Bruno
- */
 public class Message implements Information {
-    private Information content;
-    private Date date;
-    private int idSender;
-    private boolean relevant;
-    private AppVector vector;
     
+    protected Information content;
+    protected Date date;
+    protected int idSender;
+    protected boolean relevant;
+    protected AppVector vector;
+    
+    /* TODO Verifier si l'utilisation des proprietes est necessaire */
     protected String _description;
     protected transient StringProperty description;
     public StringProperty descriptionProperty() {
@@ -27,13 +25,16 @@ public class Message implements Information {
         description.set("Pas de message");
     }
     
-    public Message(Information content, int idSender, boolean relevant, AppVector vector) {
-        description = new SimpleStringProperty("Pas de message");
-        this.content = content;
-        this.idSender = idSender;
-        this.date = new Date();
-        this.relevant = relevant;
-        this.vector = vector;
+    public Message(Information cntnt, int idSndr, boolean rlvnt, AppVector vctr) {
+  
+        content = cntnt;
+        idSender = idSndr;
+        date = new Date();
+        relevant = rlvnt;
+        vector = vctr;
+        
+        /* TODO changer cet affichage */
+        description = new SimpleStringProperty(idSender + ", " + date + ", " + relevant + ", " + vector);
     }
 
     @Override

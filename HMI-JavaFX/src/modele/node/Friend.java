@@ -7,48 +7,45 @@ import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import model.friendmanager.Information;
 
-/**
- *
- * @author Bruno
- */
 public class Friend implements Information {  
+    
+    /* Attributs serialisables */
     protected int _id;
-    private transient IntegerProperty id = new SimpleIntegerProperty();
-    
     protected int _confidence;
-    private transient IntegerProperty confidence = new SimpleIntegerProperty();
-    
     protected boolean _relevant;
-    private transient BooleanProperty relevant = new SimpleBooleanProperty();
+    protected AppVector _vector;
+    protected Date _lastConnexion;
     
-    private AppVector vector;
-    private Date lastConnexion;
+    /* Proprietes non serialisables */
+    protected transient IntegerProperty id = new SimpleIntegerProperty();
+    protected transient IntegerProperty confidence = new SimpleIntegerProperty();
+    protected transient BooleanProperty relevant;
     
-    public Friend(int id, int confidence, boolean relevant, AppVector vector) {
-        this.id.set(id);
-        this.confidence.set(confidence);
-        this.relevant.set(relevant);
-        this.vector = vector;
+    public Friend(int friendId, int cnfdnce, boolean rlvnt, AppVector vector) {
+        id = new SimpleIntegerProperty(friendId);
+        confidence = new SimpleIntegerProperty(cnfdnce);
+        relevant  = new SimpleBooleanProperty(rlvnt);
+        _vector = vector;
         this.connexion();
     }
     
-    public void setConfidence(int confidence) {
-        this.confidence.set(confidence);
-        this.connexion();
+    public void setConfidence(int cnfdnce) {
+        confidence.set(cnfdnce);
+        connexion();
     }
     
-    public void setRelevance(boolean relevant) {
-        this.relevant.set(relevant);
-        this.connexion();
+    public void setRelevance(boolean rlvnt) {
+        relevant.set(rlvnt);
+        connexion();
     }
     
     public void setVector(AppVector vector) {
-        this.vector = vector;
-        this.connexion();
+        _vector = vector;
+        connexion();
     }
             
     private void connexion() {
-        this.lastConnexion = new Date();
+        _lastConnexion = new Date();
     }
 
     @Override
