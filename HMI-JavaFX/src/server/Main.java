@@ -6,12 +6,16 @@
 
 package server;
 
+import java.net.InetAddress;
+import thecloudbook.example.ServantExampleFactory;
+
 /**
  *
  * @author Gwendal
  */
 public class Main {
+    
     public static void main(String[] args) {
-        System.out.println("Hello world !");
+       
     }
 }
