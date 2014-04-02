@@ -37,8 +37,6 @@ public class Monitoring extends Thread implements IMonitoring {
     protected Mesure genererMesure() {
         return new Mesure(  getRandomInteger(0, 100), 
                             getRandomInteger(0, 100), 
-                            getRandomInteger(0, 100),
-                            getRandomInteger(0, 100),
                             getRandomInteger(0, 100));
     }
     
