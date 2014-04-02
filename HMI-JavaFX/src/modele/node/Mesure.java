@@ -26,8 +26,7 @@ public final class Mesure implements Information {
      * Initialise les proprietes
      */
     protected Mesure() {
-        date = new SimpleStringProperty();
-        date.set(_date.toString());
+        date = new SimpleStringProperty(_date.toString());
         mesure1 = new SimpleIntegerProperty(_mesure1);
         mesure2 = new SimpleIntegerProperty(_mesure2);
         mesure3 = new SimpleIntegerProperty(_mesure3);
@@ -60,8 +59,7 @@ public final class Mesure implements Information {
         mesure1 = new SimpleIntegerProperty(_mesure1);
         mesure2 = new SimpleIntegerProperty(_mesure2);
         mesure3 = new SimpleIntegerProperty(_mesure3);
-        date = new SimpleStringProperty();
-        date.set(_date.toString());
+        date = new SimpleStringProperty(_date.toString());
     }
     
     public IntegerProperty mesure1Property() { return mesure1; }
