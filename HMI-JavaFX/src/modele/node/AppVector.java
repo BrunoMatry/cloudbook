@@ -1,31 +1,53 @@
 package modele.node;
 
-import java.io.Serializable;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import model.friendmanager.Information;
 
-/**
- * @author Bruno
- */
-public class AppVector implements Serializable {
+public class AppVector implements Information {
     
-    private int appType;
-    private int performance;
-    private int speed;
+    /* Attributs serialisables */
+    protected int _appType;
+    protected int _performance;
+    protected int _speed;
     
-    public AppVector(int appType, int performance, int speed) {
-        this.appType = appType;
-        this.performance = performance;
-        this.speed = speed;
+    /* Proprietes non serialisables */
+    protected transient IntegerProperty appType; 
+    protected transient IntegerProperty performance;
+    protected transient IntegerProperty speed;
+    
+    public AppVector() {
+        appType = new SimpleIntegerProperty(_appType);
+        performance = new SimpleIntegerProperty(_performance);
+        speed = new SimpleIntegerProperty(_speed);
+    }
+    
+    public AppVector(int appTyp, int perf, int spd) {
+        appType = new SimpleIntegerProperty(appTyp);
+        performance = new SimpleIntegerProperty(perf);
+        speed = new SimpleIntegerProperty(spd);
     }
             
     public AppVector copy(){
-        return new AppVector(this.appType, this.performance, this.speed);
+        return new AppVector(this.appType.get(), this.performance.get(), this.speed.get());
     }
     
-    public int getAppType() { return appType; }
-    public int getPerformance() { return performance; }
-    public int getSpeed() { return speed; }
-    
-    public void setAppType(int appType) { this.appType = appType; }
-    public void setPerformance(int performance) { this.performance = performance; }
-    public void setSpeed(int speed) { this.speed = speed; }
+    public IntegerProperty appTypeProperty() { return appType; }
+    public IntegerProperty performanceProperty() { return performance; }
+    public IntegerProperty speedProperty() { return speed; }
+
+    @Override
+    public void saveProperties() {
+        _appType = appType.get();
+        _performance = performance.get();
+        _speed = speed.get();
+    }
+
+    @Override
+    public void restoreProperties() {
+        /* TODO Verifier la necessite de cette methode ou / et du constructeur vide */
+        appType = new SimpleIntegerProperty(_appType);
+        performance = new SimpleIntegerProperty(_performance);
+        speed = new SimpleIntegerProperty(_speed);
+    }
 }
