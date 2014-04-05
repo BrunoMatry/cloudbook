@@ -38,7 +38,7 @@ public enum Cloud implements Serializable {
     
     public class CloudImage extends Image {
 
-        private String name;
+        private final String name;
         
         public CloudImage(String string, String name) {
             super(string);

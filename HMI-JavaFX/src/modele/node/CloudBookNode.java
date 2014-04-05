@@ -16,77 +16,51 @@ import javafx.beans.property.StringProperty;
 import javafx.scene.image.Image;
 import model.friendmanager.Information;
 
-
-
 /**
  *
- * @author Gwendal
- * TODO : gerer la serialisation
  * Representation of a node
  */
 public class CloudBookNode implements Serializable {
 
+    /************************************** ATTRIBUTS **************************************/
+    
+    /* Attributs serialisables */
+    protected String _name; //name of the application
+    /* TODO : retirer transient ; copier l'image dans le système de fichiers de
+    l'application quand elle est chargée et référencer  le chemin */
+    protected transient Image _logo; //logo of the application
+    /* Note Bruno : pourquoi ces trois variables ?? Ne faut-il changer les structures de donnees putlôt ? */
+    protected Message topMessage; //message to be shown at the first place
+    protected Mesure topMesure; //mesure to be shown at the first place
+    protected Cloud platform; //current platform of the application
+    
     protected List<Friend> friends;
     protected List<Information> informations;
-    
-    //list of the received messages
-    protected List<Message> message;
-    
-    //message to be shown at the first place
-    protected Message topMessage;
-    public StringProperty topMessageProperty() {
-        return topMessage.descriptionProperty();
-    }
-    
-    //list of all the mesures
-    protected List<Mesure> mesure;
-    
-    //mesure to be shown at the first place
-    protected Mesure topMesure;
-    public StringProperty topMesureProperty() {
-        return topMesure.dateProperty();
-    }
-    
-    //history of the cloud platforms
-    protected Stack<State> state;
-    
+    protected Stack<State> states; //history of the cloud platforms
+    protected List<Mesure> mesures; //list of all the mesures
+    protected List<Message> messages; //list of the received messages
     protected AppVector vector;
     
-    //name of the application
-    protected String _name;
+    /* Proprietes non serialisables */
     protected transient StringProperty name;
-    public StringProperty nameProperty() {
-        return name;
-    }
-    
-    //logo of the application
-    /*TODO : retirer transient ; copier l'image dans le système de fichiers de
-    l'application quand elle est chargée et référencer  le chemin
-    */
-    protected transient Image _logo;
     protected transient ObjectProperty<Image> logo;
-    public ObjectProperty<Image> logoProperty() {
-        return logo;
-    }
     
-    //current platform of the application
-    protected Cloud platform;
-    public ObjectProperty<Image> platformProperty() {
-        return platform.iconProperty();
-    }
+    /************************************ CONSTRUCTEURS ************************************/
     
     /**
      * default constructor
      */
-    public CloudBookNode() {
-        friends = new ArrayList<>();
-        informations = new ArrayList<>();
-        state = new Stack<>();
-        mesure = new ArrayList<>();
-        message = new ArrayList<>();    
-        vector = new AppVector(0,0,0);
+    protected CloudBookNode() {
         topMesure = new Mesure();
         topMessage = new Message();
+        
+        friends = new ArrayList<>();
+        informations = new ArrayList<>();
+        states = new Stack<>();
+        mesures = new ArrayList<>();
+        messages = new ArrayList<>();    
+        vector = new AppVector(0,0,0);
+        
         name = new SimpleStringProperty();
         logo = new SimpleObjectProperty<>();
     }
@@ -101,63 +75,64 @@ public class CloudBookNode implements Serializable {
      * @param speed TODO
      */
     public CloudBookNode(Image image, String string, Cloud cloud, int appType, int performance, int speed) {
-        state = new Stack<>();
+        
+        topMesure = new Mesure(); /* Ne pas utiliser ces constructeurs !!!!!! */
+        topMessage = new Message(); /* Ne pas utiliser ces constructeurs !!!!!! */
+        platform = cloud;
+        
         friends = new ArrayList<>();
         informations = new ArrayList<>();
-        mesure = new ArrayList<>();
-        message = new ArrayList<>();
-        topMesure = new Mesure();
-        topMessage = new Message();
-        logo = new SimpleObjectProperty<>(image);
+        states = new Stack<>();
+        mesures = new ArrayList<>();
+        messages = new ArrayList<>();
+        vector = new AppVector(appType, performance, speed);
+        
         name = new SimpleStringProperty(string);
-        platform = cloud;
-        this.state.push(new State(cloud));
-        this.vector = new AppVector(appType, performance, speed);
+        logo = new SimpleObjectProperty<>(image);
+        
+        states.push(new State(cloud));
     }
-
-    public void addMesure(Mesure m) {
-        mesure.add(m);
+    
+    /********************************** SETTERS / GETTERS **********************************/
+    
+    public void addMesure(Mesure m) { mesures.add(m); }
+    public void addMessage(Message m) { messages.add(m); } 
+    public void addInformation(Information info) { informations.add(info); }
+    public void addFriend(Friend f) { friends.add(f); }
+    
+    public List<Friend> getFriends() { return friends; }
+    public AppVector getVector() { return vector; }
+    public List<Information> getInformations() { return informations; }
+    
+    /* Attention !*/ 
+    public StringProperty topMessageProperty() { return topMessage.descriptionProperty(); }
+    public StringProperty topMesureProperty() { return topMesure.dateProperty(); }
+    public StringProperty nameProperty() { return name; }
+    public ObjectProperty<Image> logoProperty() { return logo; }
+    public ObjectProperty<Image> platformProperty() { return platform.iconProperty(); }
+    
+    
+    public void setVector(int appType, int performance, int speed) { 
+        vector = new AppVector(appType, performance, speed);
     }
-
-    public List<Friend> getFriends() {
-        return friends;
-    }
+    
+    /* ATTENTION ! Mauvaise pratique ! */
+    public void setFriends(List<Friend> friends) { this.friends = friends; }
+    public void setInformations(List<Information> informations) { this.informations = informations; }
+    public void setVector(AppVector vector) { this.vector = vector; }
+    
+    /*************************************** METHODES **************************************/
     
     /**
      * updates the cloud-platform of the current application
      * @param c new cloud-platform
      */
     public void majCurrentState(Cloud c) {
-        State currentState = this.state.peek();
+        State currentState = this.states.peek();
         if(!c.equals(currentState.getCloud())) {
             currentState.notCurrentAnymore();
-            state.push(new State(c));
+            states.push(new State(c));
         }    
-    }
-  
-    public void addMessage(Message m) { message.add(m); } 
-    public void addInformation(Information info) { informations.add(info); }
-    public void addFriend(Friend f) { friends.add(f); }
-    
-    public AppVector getVector() { return vector; }
-    public void setVector(int appType, int performance, int speed) { 
-        this.vector = new AppVector(appType, performance, speed);
-    }
-
-    public void setFriends(List<Friend> friends) {
-        this.friends = friends;
-    }
-
-    public List<Information> getInformations() {
-        return informations;
-    }
-
-    public void setInformations(List<Information> informations) {
-        this.informations = informations;
-    }
-
-    public void setVector(AppVector vector) {
-        this.vector = vector;
     }
     
     public void save() throws IOException {
@@ -167,11 +142,11 @@ public class CloudBookNode implements Serializable {
             f.saveProperties();
         for(Information info : informations)
             info.saveProperties();
-        for(Mesure mes : mesure)
+        for(Mesure mes : mesures)
             mes.saveProperties();
-        for(Message msg : message)
+        for(Message msg : messages)
             msg.saveProperties();
-        for(State s : state)
+        for(State s : states)
             s.saveProperties();
         topMessage.saveProperties();
         topMesure.saveProperties();
@@ -190,11 +165,11 @@ public class CloudBookNode implements Serializable {
             f.restoreProperties();
         for(Information info : res.informations)
             info.restoreProperties();
-        for(Mesure mes : res.mesure)
+        for(Mesure mes : res.mesures)
             mes.restoreProperties();
-        for(Message msg : res.message)
+        for(Message msg : res.messages)
             msg.restoreProperties();
-        for(State s : res.state)
+        for(State s : res.states)
             s.restoreProperties();
         res.topMessage.restoreProperties();
         res.topMesure.restoreProperties();
