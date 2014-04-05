@@ -16,7 +16,7 @@ public class AppVector implements Information {
     protected transient IntegerProperty performance;
     protected transient IntegerProperty speed;
     
-    public AppVector() {
+    protected AppVector() {
         appType = new SimpleIntegerProperty(_appType);
         performance = new SimpleIntegerProperty(_performance);
         speed = new SimpleIntegerProperty(_speed);
