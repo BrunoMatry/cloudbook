@@ -6,6 +6,10 @@ import model.friendmanager.Information;
  * @author Bruno
  */
 public class RequestManager implements IRequestManager {
+    
+    public RequestManager() {
+        
+    }
 
     /**
      * TODO : add the relevant behaviour

@@ -2,23 +2,22 @@ package model.engine;
 
 import model.friendmanager.IFriendManager;
 import model.monitoring.IMonitoring;
+import model.monitoring.Monitoring;
 import model.request.IRequestManager;
+import modele.node.CloudBookNode;
 
-/**
- *
- * @author Bruno
- */
 public class AppMounter {
 
     public static IFriendManager mountFriendManager() {
-        return null;
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     public static IMonitoring mountMonitoring() {
-        return null;
+        return new Monitoring();
     }
 
-    public static void mountNode() {
+    public static CloudBookNode mountNode() {
+        return null;
         
     }
     

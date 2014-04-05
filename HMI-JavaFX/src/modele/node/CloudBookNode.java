@@ -80,11 +80,11 @@ public class CloudBookNode implements Serializable {
      */
     public CloudBookNode() {
         friends = new ArrayList<>();
-        this.informations = new ArrayList<>();
+        informations = new ArrayList<>();
         state = new Stack<>();
         mesure = new ArrayList<>();
         message = new ArrayList<>();    
-        this.vector = new AppVector(0,0,0);
+        vector = new AppVector(0,0,0);
         topMesure = new Mesure();
         topMessage = new Message();
         name = new SimpleStringProperty();

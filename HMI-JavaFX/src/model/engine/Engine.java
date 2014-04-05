@@ -28,8 +28,8 @@ public final class Engine implements IEngine {
         try {
             node = CloudBookNode.load();
         } catch (IOException | ClassNotFoundException e) {
-            // TODO
-            // this.node = new CloudBookNode();
+            // Si on ne peut pas charger le noeud on en cree un nouveau
+            node = AppMounter.mountNode();
         }
     }
 
@@ -44,7 +44,8 @@ public final class Engine implements IEngine {
 
     @Override
     public void setInformation(Information info) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //TODO il faudra certainement encapsuler cette information
+        node.addInformation(info);
     }
 
     @Override
