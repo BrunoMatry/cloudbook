@@ -24,13 +24,13 @@ public class ServerForwarder extends ProxyClientService {
 
     /**
      * Constructor
-     * @param serverUrl url with which we must communicate
+     * @param receiverUrl url with which we must communicate
      * @throws NotBoundException the server at the server url can't be accessed
      * @throws MalformedURLException url is malformed
      * @throws RemoteException 
      */
-    public ServerForwarder(String serverUrl) throws NotBoundException, MalformedURLException, RemoteException {
-        super(serverUrl);
+    public ServerForwarder(String receiverUrl) throws NotBoundException, MalformedURLException, RemoteException {
+        super(receiverUrl);
     }
     
 }

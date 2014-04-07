@@ -17,11 +17,9 @@ import model.request.Request;
  * 
  * @author Gwendal
  * 
- * Network mannagement root
- * singleton
+ * Network management root
  */
 public final class Network {
-    public static final Network INSTANCE  = new Network();
     
     protected NetworkFactory factory;
     protected RequestHandler receiver;
@@ -31,8 +29,8 @@ public final class Network {
      * Default constructor
      * Change the first line in order to change the used implmentation
      */
-    private Network() {
-        factory = new ClientServerFactory();
+    public Network() {
+        factory = new ClientServerFactory(this);
         receiver = factory.makeRequestHandler();
         sender = factory.makeRequestSender();
     }

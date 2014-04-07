@@ -24,7 +24,7 @@ public final class ServerScheduler extends Scheduler {
 
     public static final ServerScheduler INSTANCE = makeServerScheduler();
     
-    public ServerScheduler(ServantFactory sf, String address, int port, String name) throws RemoteException, AlreadyBoundException, MalformedURLException {
+    private ServerScheduler(ServantFactory sf, String address, int port, String name) throws RemoteException, AlreadyBoundException, MalformedURLException {
         super(sf, address, port, name);
     }
     

@@ -16,9 +16,15 @@ import thecloudbook.implementation.Servant;
  */
 public class ClientServant extends Servant {
 
+    protected Network master;
+    
+    public ClientServant(Network network) {
+        master = network;
+    }
+    
     @Override
     public void run() {
-        Network.INSTANCE.handleRequest((Request)request);
+        master.handleRequest((Request)request);
     }
     
 }

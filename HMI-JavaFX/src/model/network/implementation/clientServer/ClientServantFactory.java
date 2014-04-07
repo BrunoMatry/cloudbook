@@ -6,6 +6,7 @@
 
 package model.network.implementation.clientServer;
 
+import model.network.implementation.Network;
 import thecloudbook.interfaces.IClientService;
 import thecloudbook.interfaces.ServantFactory;
 
@@ -15,9 +16,16 @@ import thecloudbook.interfaces.ServantFactory;
  */
 public class ClientServantFactory implements ServantFactory {
 
+    //the network responsible of the factory and its products
+    protected Network master;
+    
+    public ClientServantFactory(Network network) {
+        master = network;
+    }
+    
     @Override
     public IClientService makeServant() {
-        return new ClientServant();
+        return new ClientServant(master);
     }
     
 }
