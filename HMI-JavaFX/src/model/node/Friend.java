@@ -47,6 +47,15 @@ public class Friend implements Information {
         _lastConnexion = new Date();
     }
     
+    /**
+     * Calcul du nombre de jours écoulés depuis la dernière connection
+     * @return  nombre de jours écoulés depuis la dernière connection de l'ami
+     */
+    public int daysSinceLastConnection() {
+        //TODO : calcul du temps depuis la dernière connexion
+        return 0;
+    }
+    
     public IntegerProperty idProperty() { return id; }
 
     @Override

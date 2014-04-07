@@ -29,7 +29,12 @@ public class FriendManager implements IFriendManager {
     
     @Override
     public void clear() {
-        //TODO
+        List<Friend> friends = node.getFriends();
+        for(Friend friend : friends) {
+            if(friend.daysSinceLastConnection() > 10) //délai de 10 jours choisi arbitrairement, à modifier 
+                remove(friend.idProperty().get());
+            //TODO : A compléter
+        }   
     }
 
     @Override
