@@ -42,4 +42,20 @@ public final class Network {
     public void send(Request request) {
         sender.send(request);
     }
+
+    public RequestHandler getReceiver() {
+        return receiver;
+    }
+
+    public void setReceiver(RequestHandler receiver) {
+        this.receiver = receiver;
+    }
+
+    public RequestSender getSender() {
+        return sender;
+    }
+
+    public void setSender(RequestSender sender) {
+        this.sender = sender;
+    }
 }

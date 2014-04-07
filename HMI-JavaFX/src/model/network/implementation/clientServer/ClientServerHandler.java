@@ -8,10 +8,10 @@ package model.network.implementation.clientServer;
 
 import java.net.MalformedURLException;
 import java.rmi.AlreadyBoundException;
+import java.rmi.Naming;
 import java.rmi.RemoteException;
 import model.network.interfaces.factory.RequestHandler;
 import thecloudbook.implementation.Scheduler;
-import thecloudbook.interfaces.ISendCommand;
 import thecloudbook.interfaces.ServantFactory;
 
 /**
@@ -33,6 +33,7 @@ public class ClientServerHandler extends Scheduler implements RequestHandler {
     public ClientServerHandler(ServantFactory sf, String address, int port, String name)
             throws RemoteException, AlreadyBoundException, MalformedURLException {
         super(sf, address, port, name);
+        Naming.bind(getUrl(), this);
     }
  
 }

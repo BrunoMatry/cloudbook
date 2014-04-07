@@ -7,6 +7,7 @@
 package test.network;
 
 import model.network.implementation.Network;
+import modele.node.Message;
 import org.junit.Test;
 
 /**
@@ -15,16 +16,23 @@ import org.junit.Test;
  */
 public class NetworkTest {
     
-    private final Network alice;
-    private final Network bob;
+    private final Network me;
+    private final Message msg;
     
     public NetworkTest() {
-        alice = new Network();
-        bob = new Network();
+        me = new Network();
+        msg = new Message();
     }
 
     @Test
     public void mainTest() {
+        Thread alice = new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+                //TODO
+            }
         
+        });
     }
 }

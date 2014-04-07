@@ -10,6 +10,7 @@ import java.net.InetAddress;
 import java.net.MalformedURLException;
 import java.net.UnknownHostException;
 import java.rmi.AlreadyBoundException;
+import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -30,10 +31,11 @@ public final class ServerScheduler extends Scheduler {
     
     private static ServerScheduler makeServerScheduler() {
         try {
-            return new ServerScheduler(new ServerServantFactory(),
+            ServerScheduler res = new ServerScheduler(new ServerServantFactory(),
                     InetAddress.getLocalHost().getHostAddress(),
                     8888,
                     "myScheduler");
+            Naming.bind(res.getUrl(), res);
         } catch (RemoteException | AlreadyBoundException | MalformedURLException | UnknownHostException ex) {
             Logger.getLogger(ServerScheduler.class.getName()).log(Level.SEVERE, null, ex);
         }

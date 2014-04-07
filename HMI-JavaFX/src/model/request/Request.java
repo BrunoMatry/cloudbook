@@ -12,6 +12,11 @@ public class Request<Inf extends Information> implements Sendable {
     protected int rebounds;
     protected InetAddress recipent;
 
+    public Request(Inf inf, InetAddress address) {
+        info = inf;
+        recipent = address;
+    }
+    
     public Sender getSender() {
         return sender;
     }
