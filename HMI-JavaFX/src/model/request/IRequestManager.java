@@ -6,7 +6,7 @@
 
 package model.request;
 
-import model.friendmanager.Information;
+import model.node.Information;
 
 /**
  *

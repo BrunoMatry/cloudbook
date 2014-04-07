@@ -1,4 +1,4 @@
-package modele.node;
+package model.node;
 
 import java.io.IOException;
 import javafx.beans.property.SimpleObjectProperty;

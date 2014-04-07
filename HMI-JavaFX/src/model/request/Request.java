@@ -2,7 +2,7 @@ package model.request;
 
 import java.net.InetAddress;
 import java.util.Date;
-import model.friendmanager.Information;
+import model.node.Information;
 import thecloudbook.interfaces.Sendable;
 
 public class Request<Inf extends Information> implements Sendable {

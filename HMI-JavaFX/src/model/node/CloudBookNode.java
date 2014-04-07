@@ -1,4 +1,4 @@
-package modele.node;
+package model.node;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -14,7 +14,6 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.image.Image;
-import model.friendmanager.Information;
 
 /**
  *

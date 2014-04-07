@@ -4,7 +4,7 @@ import model.friendmanager.IFriendManager;
 import model.monitoring.IMonitoring;
 import model.monitoring.Monitoring;
 import model.request.IRequestManager;
-import modele.node.CloudBookNode;
+import model.node.CloudBookNode;
 
 public class AppMounter {
 

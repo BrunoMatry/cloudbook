@@ -1,4 +1,4 @@
-package modele.node;
+package model.node;
 
 import java.io.Serializable;
 import javafx.beans.property.ObjectProperty;

@@ -33,8 +33,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
-import modele.node.Cloud;
-import modele.node.CloudBuilder;
+import model.node.Cloud;
+import model.node.CloudBuilder;
 
 /**
  * View letting the user register an application

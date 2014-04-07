@@ -1,12 +1,17 @@
 package model.request;
 
-import modele.node.AppVector;
+import model.node.AppVector;
 
-/**
- *
- * @author Bruno
- */
+
 public class Sender {
-    private int id;
-    private AppVector vector;
+    private int _id;
+    private AppVector _vector;
+    
+    public int getId() {
+        return _id;
+    }
+    
+    public AppVector getVector() {
+        return _vector;
+    }
 }

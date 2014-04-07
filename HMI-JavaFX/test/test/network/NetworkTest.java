@@ -7,7 +7,7 @@
 package test.network;
 
 import model.network.implementation.Network;
-import modele.node.Message;
+import model.node.Message;
 import org.junit.Test;
 
 /**

@@ -1,8 +1,7 @@
-package modele.node;
+package model.node;
 
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
-import model.friendmanager.Information;
 
 public class AppVector implements Information {
     

@@ -1,7 +1,7 @@
 package model.engine;
 
 import java.io.IOException;
-import model.friendmanager.Information;
+import model.node.Information;
 import model.request.Request;
 /**
  *

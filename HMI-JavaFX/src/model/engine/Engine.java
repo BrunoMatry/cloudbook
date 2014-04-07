@@ -2,11 +2,11 @@ package model.engine;
 
 import java.io.IOException;
 import model.friendmanager.IFriendManager;
-import model.friendmanager.Information;
+import model.node.Information;
 import model.monitoring.IMonitoring;
 import model.request.IRequestManager;
 import model.request.Request;
-import modele.node.CloudBookNode;
+import model.node.CloudBookNode;
 
 /**
  *

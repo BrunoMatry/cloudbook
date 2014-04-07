@@ -22,7 +22,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import model.engine.Engine;
-import modele.node.CloudBuilder;
+import model.node.CloudBuilder;
 
 /**
  * Activity launched when the application starts
