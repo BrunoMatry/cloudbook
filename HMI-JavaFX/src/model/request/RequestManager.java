@@ -1,23 +1,24 @@
 package model.request;
 
+import model.friendmanager.FriendManager;
 import model.node.Information;
 
-/**
- * @author Bruno
- */
 public class RequestManager implements IRequestManager {
+    FriendManager friendManager;
     
-    public RequestManager() {
-        
+    public RequestManager(FriendManager friendManager) {
+        this.friendManager = friendManager;
     }
 
     /**
-     * TODO : add the relevant behaviour
-     * @param req request which has been received
+     * Traitement d'une requête reçue
+     * @param req   request which has been received
      */
     @Override
     public void handleRequest(Request req) {
-        System.out.println(req.getInfo());
+        friendManager.update(req.getSender());
+        //TODO : A compléter
+        System.out.println(req.getInfo()); //Pour les tests
     }
 
     @Override
