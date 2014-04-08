@@ -27,13 +27,14 @@ public class RequestManager implements IRequestManager {
      * @param req   request which has been received
      */
     @Override
-    public void handleRequest(Sendable req) {/*
+    public synchronized void handleRequest(Sendable req) {/*
         try {
             friendManager.update(req.getSender());
         } catch (RemoteException ex) {
             Logger.getLogger(RequestManager.class.getName()).log(Level.SEVERE, null, ex);
         }*/
         inbox.add(req);
+        notifyAll();
     }
 
     @Override

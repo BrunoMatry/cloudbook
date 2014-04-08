@@ -59,13 +59,20 @@ public class NetworkTest {
                 
                 @Override
                 public void run() {
+                    synchronized(rm) {
                         try {
                             me.connect(url);
                         } catch (RemoteException ex) {
                             Logger.getLogger(NetworkTest.class.getName()).log(Level.SEVERE, null, ex);
                         }
-                        while(rm.getInbox().isEmpty()){}
-                    
+                        while(rm.getInbox().isEmpty()) {
+                            try {
+                                rm.wait();
+                            } catch (InterruptedException ex) {
+                                Logger.getLogger(NetworkTest.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                    }
                 }
                 
             });
@@ -74,6 +81,9 @@ public class NetworkTest {
             bob.join();
             alice.join();
             Message received = (Message)rm.getInbox().get(0).getInfo();
+            received.restoreProperties();
+            System.out.println("Expected : " + coucou);
+            System.out.println("Got : " + received.descriptionProperty().get());
             Assert.assertEquals(coucou, received.descriptionProperty().get());
         } catch (InterruptedException | UnknownHostException | RemoteException ex) {
             Assert.fail("exception");

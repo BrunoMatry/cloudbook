@@ -48,6 +48,11 @@ public class Message implements Information {
 
     @Override
     public void restoreProperties() {
-        description = new SimpleStringProperty(_description);
+        description = new SimpleStringProperty();
+        if(_description != null)
+            description.set(_description);
+        else
+            description.set("Pas de message");
+        System.out.println("RESTORE");
     }
 }

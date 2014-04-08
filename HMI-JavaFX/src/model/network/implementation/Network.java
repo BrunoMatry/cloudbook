@@ -41,11 +41,13 @@ public class Network extends UnicastRemoteObject implements RemoteClient {
     
     @Override
     public void handleRequest(Sendable request) throws RemoteException {
+        request.getInfo().restoreProperties();
         Engine.INSTANCE.handleRequest(request);
     }
     
     @Override
     public void send(Sendable request, String receiver) throws RemoteException {
+        request.getInfo().saveProperties();
         stub.send(request, receiver);
     }
 
