@@ -64,4 +64,16 @@ public final class Engine implements IEngine {
     public void setNode(CloudBookNode node) {
         this.node = node;
     }
+
+    public IRequestManager getRequestManager() {
+        return requestManager;
+    }
+
+    public IFriendManager getFriendManager() {
+        return friendManager;
+    }
+
+    public IMonitoring getMonitoring() {
+        return monitoring;
+    }
 }

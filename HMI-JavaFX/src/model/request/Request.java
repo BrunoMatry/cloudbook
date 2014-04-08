@@ -1,7 +1,7 @@
 package model.request;
 
-import java.net.InetAddress;
 import java.util.Date;
+import model.network.interfaces.factory.RequestHandler;
 import model.node.Information;
 import thecloudbook.interfaces.Sendable;
 
@@ -10,11 +10,16 @@ public class Request<Inf extends Information> implements Sendable {
     protected Date date;
     protected Inf info;
     protected int rebounds;
-    protected InetAddress recipent;
+    protected RequestHandler recipent;
 
-    public Request(Inf inf, InetAddress address) {
+    /**
+     * Constructor
+     * @param inf information to send
+     * @param sched scheduler of the recipient
+     */
+    public Request(Inf inf, RequestHandler sched) {
         info = inf;
-        recipent = address;
+        recipent = sched;
     }
     
     public Sender getSender() {
@@ -33,7 +38,7 @@ public class Request<Inf extends Information> implements Sendable {
         return rebounds;
     }
 
-    public InetAddress getRecipent() {
+    public RequestHandler getRecipent() {
         return recipent;
     }
     

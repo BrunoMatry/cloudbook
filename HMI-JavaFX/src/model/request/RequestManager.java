@@ -1,24 +1,32 @@
 package model.request;
 
+import java.util.ArrayList;
+import java.util.List;
 import model.friendmanager.FriendManager;
 import model.node.Information;
 
 public class RequestManager implements IRequestManager {
-    FriendManager friendManager;
     
+    protected FriendManager friendManager;
+    protected List<Request> inbox;
+    
+    /**
+     * Constructor
+     * @param friendManager responsible of all the friends
+     */
     public RequestManager(FriendManager friendManager) {
         this.friendManager = friendManager;
+        inbox = new ArrayList<>();
     }
 
     /**
-     * Traitement d'une requête reçue
+     * Handling of a received request
      * @param req   request which has been received
      */
     @Override
     public void handleRequest(Request req) {
         friendManager.update(req.getSender());
-        //TODO : A compléter
-        System.out.println(req.getInfo()); //Pour les tests
+        inbox.add(req);
     }
 
     @Override
@@ -28,5 +36,13 @@ public class RequestManager implements IRequestManager {
     
     private int computeRelevance() {
         throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public FriendManager getFriendManager() {
+        return friendManager;
+    }
+
+    public List<Request> getInbox() {
+        return inbox;
     }
 }

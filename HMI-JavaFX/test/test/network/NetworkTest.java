@@ -6,8 +6,14 @@
 
 package test.network;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import junit.framework.Assert;
+import model.engine.Engine;
 import model.network.implementation.Network;
 import model.node.Message;
+import model.request.Request;
+import model.request.RequestManager;
 import org.junit.Test;
 
 /**
@@ -26,13 +32,45 @@ public class NetworkTest {
 
     @Test
     public void mainTest() {
-        Thread alice = new Thread(new Runnable() {
-
-            @Override
-            public void run() {
-                //TODO
-            }
-        
-        });
+        try {
+            final Object lock = new Object();
+            Thread alice = new Thread(new Runnable() {
+                
+                @Override
+                public void run() {
+                    synchronized(lock) {
+                        Request<Message> req = new Request(msg, me.getReceiver());
+                        me.send(req);
+                        lock.notify();
+                    }
+                }
+                
+            });
+            Thread bob = new Thread(new Runnable() {
+                
+                @Override
+                public void run() {
+                    synchronized(lock) {
+                        RequestManager rm = (RequestManager)Engine.INSTANCE.getRequestManager();
+                        while(rm.getInbox().isEmpty()) {
+                            try {
+                                lock.wait();
+                            } catch (InterruptedException ex) {
+                                Logger.getLogger(NetworkTest.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                    }
+                }
+                
+            });
+            bob.start();
+            alice.start();
+            bob.join();
+            alice.join();
+            //Assert.
+        } catch (InterruptedException ex) {
+            Assert.fail("exception");
+            Logger.getLogger(NetworkTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
