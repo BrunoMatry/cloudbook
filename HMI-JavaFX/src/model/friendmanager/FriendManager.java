@@ -32,7 +32,7 @@ public class FriendManager implements IFriendManager {
         List<Friend> friends = node.getFriends();
         for(Friend friend : friends) {
             if(friend.daysSinceLastConnection() > 10) //délai de 10 jours choisi arbitrairement, à modifier 
-                remove(friend.idProperty().get());
+                remove(friend.getId());
             //TODO : A compléter
         }   
     }
@@ -41,7 +41,7 @@ public class FriendManager implements IFriendManager {
     public boolean isFriend(int id) {
         List<Friend> friends = node.getFriends();
         for(Friend friend : friends) 
-            if(friend.idProperty().get() == id)
+            if(friend.getId() == id)
                 return true;
         return false;
     }
@@ -63,7 +63,7 @@ public class FriendManager implements IFriendManager {
     public void remove(int id) {
         List<Friend> friends = node.getFriends();
         for(int i = 0; i < friends.size(); i++) {
-            if(friends.get(i).idProperty().get() == id) {
+            if(friends.get(i).getId() == id) {
                 remove(i);
                 break;
             }  
@@ -83,7 +83,7 @@ public class FriendManager implements IFriendManager {
         List<Friend> friends = node.getFriends();
         for(Friend friend : friends) {
             int id = sender.getId();
-            if(friend.idProperty().get() == id) {
+            if(friend.getId() == id) {
                 AppVector vector = sender.getVector();
                 if(relevant(vector)) 
                     friend.setVector(vector);

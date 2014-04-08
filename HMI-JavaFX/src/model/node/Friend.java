@@ -16,12 +16,11 @@ public class Friend implements Information {
     protected Date _lastConnexion;
     
     /* Proprietes non serialisables */
-    protected transient IntegerProperty id = new SimpleIntegerProperty();
     protected transient IntegerProperty confidence = new SimpleIntegerProperty();
     protected transient BooleanProperty relevant; //RLV
     
     public Friend(int friendId, int cnfdnce, boolean rlvnt, AppVector vector) {
-        id = new SimpleIntegerProperty(friendId);
+        _id = friendId;
         confidence = new SimpleIntegerProperty(cnfdnce);
         relevant  = new SimpleBooleanProperty(rlvnt); //RLV
         _vector = vector;
@@ -56,18 +55,16 @@ public class Friend implements Information {
         return 0;
     }
     
-    public IntegerProperty idProperty() { return id; }
+    public int getId() { return _id; }
 
     @Override
     public void saveProperties() {
-        _id = id.get();
         _relevant = relevant.get(); //RLV
         _confidence = confidence.get();
     }
 
     @Override
     public void restoreProperties() {
-        id = new SimpleIntegerProperty(_id);
         relevant = new SimpleBooleanProperty(_relevant); //RLV
         confidence = new SimpleIntegerProperty(_confidence);
     }
