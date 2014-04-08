@@ -22,7 +22,7 @@ import thecloudbook.example.SendableExample;
 import thecloudbook.example.ServerExample;
 import thecloudbook.implementation.ProxyClientService;
 import thecloudbook.implementation.SchedulerProxy;
-import thecloudbook.interfaces.Sendable;
+import model.interfarequestle;
 
 /**
  *

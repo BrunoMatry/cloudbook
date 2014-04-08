@@ -14,5 +14,5 @@ import model.node.Information;
  */
 public interface IRequestManager {
     Request createRequest(int target, Information data);
-    void handleRequest(Request req);
+    void handleRequest(Sendable req);
 }

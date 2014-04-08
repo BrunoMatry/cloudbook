@@ -10,7 +10,7 @@ import java.rmi.RemoteException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import thecloudbook.implementation.Servant;
-import thecloudbook.interfaces.Sendable;
+import model.interfarequestle;
 
 /**
  *

@@ -6,15 +6,11 @@
 
 package model.network.implementation;
 
-import java.net.MalformedURLException;
-import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import model.network.implementation.clientServer.ClientServerFactory;
-import model.request.Request;
-import thecloudbook.implementation.ProxyClientService;
-import thecloudbook.interfaces.Sendable;
+import model.network.interfaces.RemoteClient;
+import model.request.Sendable;
 
 /**
  *
@@ -23,16 +19,22 @@ import thecloudbook.interfaces.Sendable;
 public class Servant extends Thread {
 
     protected Sendable request;
+    protected String receiver;
+    
+    public Servant(Sendable sendable, String string) {
+        request = sendable;
+        receiver = string;
+    }
     
     @Override
     public void run() {
-        Request req = (Request) request;
-        String url = "rmi://" + req.getRecipent() + ":" +
-                ClientServerFactory.PORT + "/" + ClientServerFactory.NAME;
         try {
-            ProxyClientService serverForwarder = new ProxyClientService(url);
-            serverForwarder.send(req);
-        } catch (NotBoundException | MalformedURLException | RemoteException ex) {
+            RemoteClient client = Server.INSTANCE.getClient(receiver);
+            if(client != null)
+                client.handleRequest(request);
+            else
+                System.out.println("A client tries to send a request to a not registered client");
+        } catch (RemoteException ex) {
             Logger.getLogger(Servant.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

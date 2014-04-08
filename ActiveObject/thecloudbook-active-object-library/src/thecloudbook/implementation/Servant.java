@@ -7,7 +7,7 @@
 package thecloudbook.implementation;
 
 import thecloudbook.interfaces.IServant;
-import thecloudbook.interfaces.Sendable;
+import model.request.Sendable;
 
 /**
  *

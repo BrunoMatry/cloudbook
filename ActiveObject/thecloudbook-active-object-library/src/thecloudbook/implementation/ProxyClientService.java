@@ -16,7 +16,7 @@ import java.util.List;
 import thecloudbook.interfaces.IProxyClientService;
 import thecloudbook.interfaces.ISchedulerProxy;
 import thecloudbook.interfaces.ISendCommand;
-import thecloudbook.interfaces.Sendable;
+import model.interfarequestle;
 
 /**
  *

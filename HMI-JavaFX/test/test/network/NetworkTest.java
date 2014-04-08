@@ -6,13 +6,17 @@
 
 package test.network;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.rmi.RemoteException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import junit.framework.Assert;
 import model.engine.Engine;
 import model.network.implementation.Network;
+import model.network.implementation.Server;
 import model.node.Message;
+import model.request.Request;
 import model.request.RequestManager;
 import org.junit.Test;
 
@@ -21,45 +25,47 @@ import org.junit.Test;
  * @author Gwendal
  */
 public class NetworkTest {
-    
-    private final Network me;
-    private final Message msg;
-    
-    public NetworkTest() throws RemoteException {
-        me = new Network();
-        msg = new Message();
-    }
 
     @Test
     public void mainTest() {
         try {
-            final Object lock = new Object();
+            //settings
+            String localhost = InetAddress.getLocalHost().getHostAddress();
+            final Network me = new Network(localhost);
+            String coucou = "Salut Bob, c'est Alice";
+            final Message msg = new Message(coucou);
+            final RequestManager rm = (RequestManager)Engine.INSTANCE.getRequestManager();
+            
+            //connecting
+            Server.INSTANCE.binding();
+            final String url = Server.INSTANCE.getUrl();
+            
             Thread alice = new Thread(new Runnable() {
                 
                 @Override
                 public void run() {
-                    synchronized(lock) {/*
-                        Request<Message> req = new Request(msg, me.getReceiver());
-                        me.send(req);
-                        lock.notify();*/
+                    try {
+                            me.connect(url);
+                            Request<Message> req = new Request(msg);
+                            me.send(req, me.getIp());
+                        } catch (RemoteException ex) {
+                            Logger.getLogger(NetworkTest.class.getName()).log(Level.SEVERE, null, ex);
+                        }
                     }
-                }
+                
                 
             });
             Thread bob = new Thread(new Runnable() {
                 
                 @Override
                 public void run() {
-                    synchronized(lock) {
-                        RequestManager rm = (RequestManager)Engine.INSTANCE.getRequestManager();
-                        while(rm.getInbox().isEmpty()) {
-                            try {
-                                lock.wait();
-                            } catch (InterruptedException ex) {
-                                Logger.getLogger(NetworkTest.class.getName()).log(Level.SEVERE, null, ex);
-                            }
+                        try {
+                            me.connect(url);
+                        } catch (RemoteException ex) {
+                            Logger.getLogger(NetworkTest.class.getName()).log(Level.SEVERE, null, ex);
                         }
-                    }
+                        while(rm.getInbox().isEmpty()){}
+                    
                 }
                 
             });
@@ -67,8 +73,9 @@ public class NetworkTest {
             alice.start();
             bob.join();
             alice.join();
-            //Assert.
-        } catch (InterruptedException ex) {
+            Message received = (Message)rm.getInbox().get(0).getInfo();
+            Assert.assertEquals(coucou, received.descriptionProperty().get());
+        } catch (InterruptedException | UnknownHostException | RemoteException ex) {
             Assert.fail("exception");
             Logger.getLogger(NetworkTest.class.getName()).log(Level.SEVERE, null, ex);
         }

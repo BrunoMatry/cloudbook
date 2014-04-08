@@ -24,6 +24,11 @@ public class Message implements Information {
         description.set("Pas de message");
     }
     
+    public Message(String msg) {
+        description = new SimpleStringProperty();
+        description.set(msg);
+    }
+    
     public Message(Information cntnt, int idSndr, boolean rlvnt, AppVector vctr) {
   
         content = cntnt;

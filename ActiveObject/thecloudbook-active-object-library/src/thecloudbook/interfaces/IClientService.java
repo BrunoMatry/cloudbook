@@ -6,6 +6,7 @@
 
 package thecloudbook.interfaces;
 
+import model.request.Sendable;
 import java.rmi.RemoteException;
 
 /**

@@ -2,7 +2,7 @@ package model.engine;
 
 import java.io.IOException;
 import model.node.Information;
-import thecloudbook.interfaces.Sendable;
+import model.request.Sendable;
 /**
  *
  * @author Bruno

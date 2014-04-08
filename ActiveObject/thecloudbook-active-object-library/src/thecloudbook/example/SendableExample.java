@@ -8,7 +8,7 @@ package thecloudbook.example;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import thecloudbook.interfaces.Sendable;
+import model.interfarequestle;
 
 /**
  *

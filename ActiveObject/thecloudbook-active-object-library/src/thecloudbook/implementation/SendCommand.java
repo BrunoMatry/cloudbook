@@ -11,7 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import thecloudbook.interfaces.ISendCommand;
 import thecloudbook.interfaces.IServant;
-import thecloudbook.interfaces.Sendable;
+import model.interfarequestle;
 
 /**
  *

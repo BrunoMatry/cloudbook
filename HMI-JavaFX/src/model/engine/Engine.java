@@ -1,12 +1,14 @@
 package model.engine;
 
 import java.io.IOException;
+import model.friendmanager.FriendManager;
 import model.friendmanager.IFriendManager;
 import model.node.Information;
 import model.monitoring.IMonitoring;
 import model.request.IRequestManager;
-import model.request.Request;
 import model.node.CloudBookNode;
+import model.request.RequestManager;
+import model.request.Sendable;
 
 /**
  *
@@ -22,8 +24,6 @@ public final class Engine implements IEngine {
     private CloudBookNode node;
 
     private Engine() {
-        requestManager = AppMounter.mountRequestManager();
-        friendManager = AppMounter.mountFriendManager();
         monitoring = AppMounter.mountMonitoring();
         try {
             node = CloudBookNode.load();
@@ -31,6 +31,8 @@ public final class Engine implements IEngine {
             // Si on ne peut pas charger le noeud on en cree un nouveau
             node = AppMounter.mountNode();
         }
+        friendManager = new FriendManager(node);
+        requestManager = new RequestManager(friendManager);
     }
 
     public CloudBookNode getNode() {
@@ -49,7 +51,7 @@ public final class Engine implements IEngine {
     }
 
     @Override
-    public void handleRequest(Request req) {
+    public void handleRequest(Sendable req) {
         requestManager.handleRequest(req);
     }
     

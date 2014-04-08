@@ -6,6 +6,8 @@
 
 package thecloudbook.interfaces;
 
+import model.request.Sendable;
+
 /**
  *
  * @author Gwendal
