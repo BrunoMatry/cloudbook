@@ -53,6 +53,5 @@ public class Message implements Information {
             description.set(_description);
         else
             description.set("Pas de message");
-        System.out.println("RESTORE");
     }
 }

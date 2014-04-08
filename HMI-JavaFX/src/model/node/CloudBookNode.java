@@ -102,6 +102,7 @@ public class CloudBookNode implements Serializable {
     public List<Friend> getFriends() { return friends; }
     public AppVector getVector() { return vector; }
     public List<Information> getInformations() { return informations; }
+    public Message getMessage(int i) { return messages.get(i); }
     
     /* Attention !*/ 
     public StringProperty topMessageProperty() { return topMessage.descriptionProperty(); }

@@ -80,8 +80,7 @@ public class NetworkTest {
             alice.start();
             bob.join();
             alice.join();
-            Message received = (Message)rm.getInbox().get(0).getInfo();
-            received.restoreProperties();
+            Message received = (Message)rm.getInbox(0);
             System.out.println("Expected : " + coucou);
             System.out.println("Got : " + received.descriptionProperty().get());
             Assert.assertEquals(coucou, received.descriptionProperty().get());

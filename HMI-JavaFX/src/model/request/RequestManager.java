@@ -7,11 +7,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.friendmanager.IFriendManager;
 import model.node.Information;
+import model.node.Message;
 
 public class RequestManager implements IRequestManager {
     
     protected IFriendManager friendManager;
-    protected List<Sendable> inbox;
+    protected List<Information> inbox;
     
     /**
      * Constructor
@@ -27,13 +28,23 @@ public class RequestManager implements IRequestManager {
      * @param req   request which has been received
      */
     @Override
-    public synchronized void handleRequest(Sendable req) {/*
+    public synchronized void handleRequest(Sendable req) {
+        /*
         try {
-            friendManager.update(req.getSender());
+        friendManager.update(req.getSender());
+        } catch (RemoteException ex) {
+        Logger.getLogger(RequestManager.class.getName()).log(Level.SEVERE, null, ex);
+        }*/
+        try {
+            Information info = req.getInfo();
+            if(info.getClass() == Message.class) {
+                Message msg = (Message)info;
+                msg.restoreProperties();
+                inbox.add(msg);
+            }
         } catch (RemoteException ex) {
             Logger.getLogger(RequestManager.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
-        inbox.add(req);
+        }
         notifyAll();
     }
 
@@ -50,7 +61,12 @@ public class RequestManager implements IRequestManager {
         return friendManager;
     }
 
-    public List<Sendable> getInbox() {
+    public List<Information> getInbox() {
         return inbox;
+    }
+    
+    public Information getInbox(int i) {
+        Information res = inbox.get(i);
+        return res;
     }
 }

@@ -1,6 +1,9 @@
 package model.engine;
 
 import java.io.IOException;
+import java.rmi.RemoteException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import model.friendmanager.FriendManager;
 import model.friendmanager.IFriendManager;
 import model.node.Information;
