@@ -33,13 +33,14 @@ public class ExampleTest {
     
     @Test
     public void testRMIActiveObject() {
-        Scheduler myScheduler = null;
+        SchedulerExample myScheduler = null;
         try {
-            myScheduler = new SchedulerExample(new ServantExampleFactory(),
+            Scheduler sched = new Scheduler(new ServantExampleFactory(),
                     InetAddress.getLocalHost().getHostAddress(),
                     8888,
                     "myScheduler");
-            String url = myScheduler.getUrl();
+            myScheduler = new SchedulerExample(sched);
+            String url = sched.getUrl();
             System.out.println(url);
             Naming.bind(url, myScheduler);
             ProxyClientService pcs = new ProxyClientService(url);

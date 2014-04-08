@@ -38,10 +38,10 @@ public class NetworkTest {
                 
                 @Override
                 public void run() {
-                    synchronized(lock) {
+                    synchronized(lock) {/*
                         Request<Message> req = new Request(msg, me.getReceiver());
                         me.send(req);
-                        lock.notify();
+                        lock.notify();*/
                     }
                 }
                 

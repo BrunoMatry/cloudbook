@@ -1,11 +1,13 @@
 package model.request;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.Date;
 import model.network.interfaces.factory.RequestHandler;
 import model.node.Information;
 import thecloudbook.interfaces.Sendable;
 
-public class Request<Inf extends Information> implements Sendable {
+public class Request<Inf extends Information> extends UnicastRemoteObject implements Sendable {
     protected Sender sender;
     protected Date date;
     protected Inf info;
@@ -16,8 +18,9 @@ public class Request<Inf extends Information> implements Sendable {
      * Constructor
      * @param inf information to send
      * @param sched scheduler of the recipient
+     * @throws java.rmi.RemoteException required for distant call
      */
-    public Request(Inf inf, RequestHandler sched) {
+    public Request(Inf inf, RequestHandler sched) throws RemoteException {
         info = inf;
         recipent = sched;
     }

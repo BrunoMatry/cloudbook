@@ -6,11 +6,14 @@
 
 package thecloudbook.interfaces;
 
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+
 /**
  *
  * @author Gwendal
  * service to be performed specificaction
  */
-public interface IClientService {
-    void send(Sendable sendable);
+public interface IClientService extends Remote {
+    void send(Sendable sendable) throws RemoteException;
 }

@@ -50,12 +50,6 @@ public class Scheduler extends UnicastRemoteObject implements IScheduler {
         IClientService s = sFactory.makeServant();
         command.call(s);
     }
-
-    @Override
-    public void onReceived(ISendCommand command) throws RemoteException {
-        if(command.guard())
-            dispatch(command);
-    }
     
     public void setAddress(String a) {
         address = a;
@@ -87,6 +81,13 @@ public class Scheduler extends UnicastRemoteObject implements IScheduler {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public void onReceived(ProxyClientService sender, int offset) throws RemoteException {
+        ISendCommand command = sender.getSent(offset);
+        if(command.guard())
+            dispatch(command);
     }
     
 }
