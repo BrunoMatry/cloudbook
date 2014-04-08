@@ -1,18 +1,12 @@
 package thecloudbook.example;
 
-import java.net.MalformedURLException;
-import java.rmi.AlreadyBoundException;
 import java.rmi.RemoteException;
-import java.rmi.server.UnicastRemoteObject;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import thecloudbook.implementation.ProxyClientService;
 import thecloudbook.implementation.Scheduler;
 import thecloudbook.implementation.Servant;
-import thecloudbook.interfaces.IClientService;
-import thecloudbook.interfaces.IScheduler;
 import thecloudbook.interfaces.ISendCommand;
-import thecloudbook.interfaces.ServantFactory;
+import thecloudbook.interfaces.IServant;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -24,28 +18,25 @@ import thecloudbook.interfaces.ServantFactory;
  *
  * @author Gwendal
  */
-public class SchedulerExample implements IScheduler {
+public class SchedulerExample extends Scheduler {
 
-    protected Scheduler guarded;
-    
-    public SchedulerExample(Scheduler sched) throws RemoteException, AlreadyBoundException, MalformedURLException {
-        guarded = sched;
+    /**
+     * Constructor
+     * constructs a scheduler based on a ServantExampleFactory
+     */
+    public SchedulerExample() {
+        super(new ServantExampleFactory());
     }
 
     @Override
     public void dispatch(ISendCommand command) throws RemoteException {
-        IClientService s = guarded.getsFactory().makeServant();
+        IServant s = sFactory.makeServant();
         command.call(s);
         try {
             ((Servant)s).join();
         } catch (InterruptedException ex) {
             Logger.getLogger(SchedulerExample.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
-
-    @Override
-    public void onReceived(ProxyClientService sender, int offset) throws RemoteException {
-        guarded.onReceived(sender, offset);
     }
     
 }

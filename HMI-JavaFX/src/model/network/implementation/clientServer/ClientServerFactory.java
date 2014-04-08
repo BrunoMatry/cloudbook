@@ -43,15 +43,10 @@ public class ClientServerFactory implements NetworkFactory {
     
     @Override
     public RequestHandler makeRequestHandler() {
-        try {
-            return new ClientServerHandler(new ClientServantFactory(master),
+        return new ClientServerHandler(new ClientServantFactory(master)/*,
                     InetAddress.getLocalHost().getHostAddress(),
                     PORT,
-                    NAME);
-        } catch (RemoteException | AlreadyBoundException | MalformedURLException | UnknownHostException ex) {
-            Logger.getLogger(ClientServerFactory.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return null;
+                    NAME*/);
     }
 
     @Override

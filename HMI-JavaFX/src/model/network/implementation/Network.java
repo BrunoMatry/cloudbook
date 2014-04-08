@@ -40,7 +40,7 @@ public final class Network {
     }
     
     public void send(Request request) {
-        sender.send(request);
+        //sender.send(request);
     }
 
     public RequestHandler getReceiver() {

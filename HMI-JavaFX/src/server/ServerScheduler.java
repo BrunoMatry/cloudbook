@@ -25,20 +25,15 @@ public final class ServerScheduler extends Scheduler {
 
     public static final ServerScheduler INSTANCE = makeServerScheduler();
     
-    private ServerScheduler(ServantFactory sf, String address, int port, String name) throws RemoteException, AlreadyBoundException, MalformedURLException {
-        super(sf, address, port, name);
+    private ServerScheduler(ServantFactory sf) {
+        super(sf);
     }
     
     private static ServerScheduler makeServerScheduler() {
-        try {
-            ServerScheduler res = new ServerScheduler(new ServerServantFactory(),
-                    InetAddress.getLocalHost().getHostAddress(),
-                    8888,
-                    "myScheduler");
-            Naming.bind(res.getUrl(), res);
-        } catch (RemoteException | AlreadyBoundException | MalformedURLException | UnknownHostException ex) {
-            Logger.getLogger(ServerScheduler.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return null;
+        
+            ServerScheduler res = new ServerScheduler(new ServerServantFactory());
+            //Naming.bind(res.getUrl(), res);
+            return res;
+        
     }
 }

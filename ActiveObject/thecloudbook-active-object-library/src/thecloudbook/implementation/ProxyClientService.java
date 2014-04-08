@@ -13,10 +13,8 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import thecloudbook.interfaces.IClientService;
-import thecloudbook.interfaces.IScheduler;
+import thecloudbook.interfaces.IProxyClientService;
+import thecloudbook.interfaces.ISchedulerProxy;
 import thecloudbook.interfaces.ISendCommand;
 import thecloudbook.interfaces.Sendable;
 
@@ -24,17 +22,17 @@ import thecloudbook.interfaces.Sendable;
  *
  * @author Gwendal
  */
-public class ProxyClientService extends UnicastRemoteObject implements IClientService {
+public class ProxyClientService extends UnicastRemoteObject implements IProxyClientService {
 
     //distant scheduler, which must be called using RMI
-    protected IScheduler scheduler;
+    protected ISchedulerProxy scheduler;
     
     protected List<ISendCommand> sent;
     
     public ProxyClientService(String serverUrl) throws NotBoundException,
             MalformedURLException,
             RemoteException {
-        scheduler = (IScheduler)Naming.lookup(serverUrl);
+        scheduler = (ISchedulerProxy)Naming.lookup(serverUrl);
         sent = new ArrayList<>();
     }
     
@@ -45,6 +43,7 @@ public class ProxyClientService extends UnicastRemoteObject implements IClientSe
         scheduler.onReceived(this, sent.indexOf(command));
     }
 
+    @Override
     public ISendCommand getSent(int i) {
         return sent.get(i);
     }

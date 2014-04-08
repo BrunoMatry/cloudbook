@@ -7,9 +7,10 @@
 package thecloudbook.implementation;
 
 import java.rmi.RemoteException;
-import java.rmi.server.UnicastRemoteObject;
-import thecloudbook.interfaces.IClientService;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import thecloudbook.interfaces.ISendCommand;
+import thecloudbook.interfaces.IServant;
 import thecloudbook.interfaces.Sendable;
 
 /**
@@ -25,7 +26,7 @@ public class SendCommand implements ISendCommand {
     }
     
     @Override
-    public void call(IClientService servant) {
+    public void call(IServant servant) {
         servant.send(request);
     }
 

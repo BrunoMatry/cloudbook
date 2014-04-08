@@ -19,10 +19,9 @@ import junit.framework.Assert;
 import org.junit.Test;
 import thecloudbook.example.SchedulerExample;
 import thecloudbook.example.SendableExample;
-import thecloudbook.example.ServantExampleFactory;
 import thecloudbook.example.ServerExample;
 import thecloudbook.implementation.ProxyClientService;
-import thecloudbook.implementation.Scheduler;
+import thecloudbook.implementation.SchedulerProxy;
 import thecloudbook.interfaces.Sendable;
 
 /**
@@ -33,16 +32,15 @@ public class ExampleTest {
     
     @Test
     public void testRMIActiveObject() {
-        SchedulerExample myScheduler = null;
         try {
-            Scheduler sched = new Scheduler(new ServantExampleFactory(),
+            SchedulerExample myScheduler = new SchedulerExample();
+            SchedulerProxy schedProxy = new SchedulerProxy(myScheduler,
                     InetAddress.getLocalHost().getHostAddress(),
                     8888,
                     "myScheduler");
-            myScheduler = new SchedulerExample(sched);
-            String url = sched.getUrl();
+            String url = schedProxy.getUrl();
             System.out.println(url);
-            Naming.bind(url, myScheduler);
+            Naming.bind(url, schedProxy);
             ProxyClientService pcs = new ProxyClientService(url);
             Sendable mySendable = new SendableExample(21111992);
             pcs.send(mySendable);

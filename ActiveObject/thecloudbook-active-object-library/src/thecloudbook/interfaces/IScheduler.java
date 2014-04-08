@@ -6,7 +6,6 @@
 
 package thecloudbook.interfaces;
 
-import java.rmi.Remote;
 import java.rmi.RemoteException;
 import thecloudbook.implementation.ProxyClientService;
 
@@ -15,7 +14,7 @@ import thecloudbook.implementation.ProxyClientService;
  * @author Gwendal
  * receiving object specification
  */
-public interface IScheduler extends Remote {
+public interface IScheduler {
     public void dispatch(ISendCommand command) throws RemoteException;
     
     /**
@@ -25,5 +24,5 @@ public interface IScheduler extends Remote {
      * @param offset index of the sent object
      * @throws java.rmi.RemoteException necessary for the remote to 
      */
-    public void onReceived(ProxyClientService sender, int offset) throws RemoteException;
+    public void onReceived(IClientService sender, int offset) throws RemoteException;
 }

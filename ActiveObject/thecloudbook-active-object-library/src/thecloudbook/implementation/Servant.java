@@ -6,14 +6,14 @@
 
 package thecloudbook.implementation;
 
-import thecloudbook.interfaces.IClientService;
+import thecloudbook.interfaces.IServant;
 import thecloudbook.interfaces.Sendable;
 
 /**
  *
  * @author Gwendal
  */
-public abstract class Servant extends Thread implements IClientService {
+public abstract class Servant extends Thread implements IServant {
 
     protected Sendable request;
     

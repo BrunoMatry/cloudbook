@@ -6,17 +6,19 @@
 
 package thecloudbook.example;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import thecloudbook.interfaces.Sendable;
 
 /**
  *
  * @author Gwendal
  */
-public class SendableExample implements Sendable {
+public class SendableExample extends UnicastRemoteObject implements Sendable {
 
     private int value;
     
-    public SendableExample(int val) {
+    public SendableExample(int val) throws RemoteException {
         value = val;
     }
     
@@ -25,7 +27,8 @@ public class SendableExample implements Sendable {
         return "SendableExample{" + value + '}';
     }
 
-    public int getValue() {
+    @Override
+    public int getId() throws RemoteException {
         return value;
     }
     

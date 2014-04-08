@@ -6,10 +6,13 @@
 
 package thecloudbook.interfaces;
 
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+
 /**
  *
  * @author Gwendal
  */
-public interface Sendable {
-    
+public interface Sendable extends Remote {
+    public int getId() throws RemoteException;
 }

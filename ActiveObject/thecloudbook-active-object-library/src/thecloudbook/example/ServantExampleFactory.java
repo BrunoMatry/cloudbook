@@ -6,7 +6,7 @@
 
 package thecloudbook.example;
 
-import thecloudbook.interfaces.IClientService;
+import thecloudbook.interfaces.IServant;
 import thecloudbook.interfaces.ServantFactory;
 
 /**
@@ -16,7 +16,7 @@ import thecloudbook.interfaces.ServantFactory;
 public class ServantExampleFactory implements ServantFactory {
 
     @Override
-    public IClientService makeServant() {
+    public IServant makeServant() {
         return new ServantExample();
     }
     

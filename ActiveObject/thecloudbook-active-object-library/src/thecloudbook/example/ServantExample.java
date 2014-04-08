@@ -6,7 +6,11 @@
 
 package thecloudbook.example;
 
+import java.rmi.RemoteException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import thecloudbook.implementation.Servant;
+import thecloudbook.interfaces.Sendable;
 
 /**
  *
@@ -16,9 +20,13 @@ public class ServantExample extends Servant {
 
     @Override
     public void run() {
-        SendableExample se = (SendableExample)request;
+        Sendable se = (Sendable)request;
         System.out.println(se);
-        ServerExample.INSTANCE.setMessage(se.getValue());
+        try {
+            ServerExample.INSTANCE.setMessage(se.getId());
+        } catch (RemoteException ex) {
+            Logger.getLogger(ServantExample.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 }

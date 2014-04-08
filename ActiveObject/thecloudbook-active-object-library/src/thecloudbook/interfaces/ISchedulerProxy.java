@@ -6,14 +6,12 @@
 
 package thecloudbook.interfaces;
 
-import java.io.Serializable;
+import java.rmi.Remote;
 
 /**
  *
  * @author Gwendal
- * command object specification
  */
-public interface ISendCommand extends Serializable {
-    void call(IServant servant);
-    boolean guard();
+public interface ISchedulerProxy extends Remote, IScheduler {
+    
 }

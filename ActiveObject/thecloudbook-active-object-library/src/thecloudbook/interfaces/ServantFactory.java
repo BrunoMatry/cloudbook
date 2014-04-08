@@ -11,5 +11,5 @@ package thecloudbook.interfaces;
  * @author Gwendal
  */
 public interface ServantFactory {
-    IClientService makeServant();
+    public IServant makeServant();
 }

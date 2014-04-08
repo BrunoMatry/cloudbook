@@ -44,6 +44,11 @@ public class Request<Inf extends Information> extends UnicastRemoteObject implem
     public RequestHandler getRecipent() {
         return recipent;
     }
+
+    @Override
+    public int getId() throws RemoteException {
+        return 0;
+    }
     
     
 }

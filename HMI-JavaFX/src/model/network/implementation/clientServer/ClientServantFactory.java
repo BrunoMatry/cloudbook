@@ -7,7 +7,7 @@
 package model.network.implementation.clientServer;
 
 import model.network.implementation.Network;
-import thecloudbook.interfaces.IClientService;
+import thecloudbook.implementation.Servant;
 import thecloudbook.interfaces.ServantFactory;
 
 /**
@@ -24,7 +24,7 @@ public class ClientServantFactory implements ServantFactory {
     }
     
     @Override
-    public IClientService makeServant() {
+    public Servant makeServant() {
         return new ClientServant(master);
     }
     
