@@ -6,13 +6,13 @@
 
 package test.network;
 
+import java.rmi.RemoteException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import junit.framework.Assert;
 import model.engine.Engine;
 import model.network.implementation.Network;
 import model.node.Message;
-import model.request.Request;
 import model.request.RequestManager;
 import org.junit.Test;
 
@@ -25,7 +25,7 @@ public class NetworkTest {
     private final Network me;
     private final Message msg;
     
-    public NetworkTest() {
+    public NetworkTest() throws RemoteException {
         me = new Network();
         msg = new Message();
     }

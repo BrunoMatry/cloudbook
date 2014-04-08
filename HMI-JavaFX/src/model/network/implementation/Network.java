@@ -6,12 +6,12 @@
 
 package model.network.implementation;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import model.engine.Engine;
-import model.network.implementation.clientServer.ClientServerFactory;
-import model.network.interfaces.factory.NetworkFactory;
-import model.network.interfaces.factory.RequestHandler;
-import model.network.interfaces.factory.RequestSender;
+import model.network.interfaces.RemoteOperations;
 import model.request.Request;
+import thecloudbook.interfaces.Sendable;
 
 /**
  * 
@@ -19,43 +19,23 @@ import model.request.Request;
  * 
  * Network management root
  */
-public final class Network {
-    
-    protected NetworkFactory factory;
-    protected RequestHandler receiver;
-    protected RequestSender sender;
+public class Network extends UnicastRemoteObject implements RemoteOperations {
     
     /**
-     * Default constructor
-     * Change the first line in order to change the used implmentation
+     * Constructor
+     * @throws RemoteException required by RMI
      */
-    public Network() {
-        factory = new ClientServerFactory(this);
-        receiver = factory.makeRequestHandler();
-        sender = factory.makeRequestSender();
+    public Network() throws RemoteException {
+        
     }
     
-    public void handleRequest(Request request) {
-        Engine.INSTANCE.handleRequest(request);
+    @Override
+    public void handleRequest(Sendable request) throws RemoteException {
+        Engine.INSTANCE.handleRequest((Request)request);
     }
     
-    public void send(Request request) {
+    @Override
+    public void send(Sendable request) throws RemoteException {
         //sender.send(request);
-    }
-
-    public RequestHandler getReceiver() {
-        return receiver;
-    }
-
-    public void setReceiver(RequestHandler receiver) {
-        this.receiver = receiver;
-    }
-
-    public RequestSender getSender() {
-        return sender;
-    }
-
-    public void setSender(RequestSender sender) {
-        this.sender = sender;
     }
 }

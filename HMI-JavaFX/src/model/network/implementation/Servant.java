@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package server;
+package model.network.implementation;
 
 import java.net.MalformedURLException;
 import java.rmi.NotBoundException;
@@ -14,14 +14,16 @@ import java.util.logging.Logger;
 import model.network.implementation.clientServer.ClientServerFactory;
 import model.request.Request;
 import thecloudbook.implementation.ProxyClientService;
-import thecloudbook.implementation.Servant;
+import thecloudbook.interfaces.Sendable;
 
 /**
  *
  * @author Gwendal
  */
-public class ServerServant extends Servant {
+public class Servant extends Thread {
 
+    protected Sendable request;
+    
     @Override
     public void run() {
         Request req = (Request) request;
@@ -31,7 +33,7 @@ public class ServerServant extends Servant {
             ProxyClientService serverForwarder = new ProxyClientService(url);
             serverForwarder.send(req);
         } catch (NotBoundException | MalformedURLException | RemoteException ex) {
-            Logger.getLogger(ServerServant.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Servant.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     

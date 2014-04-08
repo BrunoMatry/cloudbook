@@ -24,7 +24,7 @@ public class ClientServant extends Servant {
     
     @Override
     public void run() {
-        master.handleRequest((Request)request);
+       // master.handleRequest((Request)request);
     }
     
 }
