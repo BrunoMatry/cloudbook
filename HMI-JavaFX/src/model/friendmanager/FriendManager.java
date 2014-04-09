@@ -10,6 +10,9 @@ import model.request.Sender;
 
 
 public class FriendManager implements IFriendManager {
+    
+    protected static final double seuil = 1; //Distance en dessous de laquelle une noeud est considéré comme pertinent (valeure choisie arbitrairement, à modifier)
+    
     protected CloudBookNode node;
     
     public FriendManager(CloudBookNode node) {
@@ -47,7 +50,7 @@ public class FriendManager implements IFriendManager {
     }
 
     @Override
-    public boolean relevant(AppVector v) {
+    public double relevance(AppVector v) {
         AppVector vector = node.getVector();
         double xa = vector.appTypeProperty().get(); 
         double ya = vector.performanceProperty().get();
@@ -56,7 +59,12 @@ public class FriendManager implements IFriendManager {
         double yb = v.performanceProperty().get(); 
         double zb = v.speedProperty().get(); 
         double dist = sqrt(pow(xb-xa, 2)+pow(yb-ya, 2)+pow(zb-za, 2));
-        return dist < 1; //Pertinent si la distance est inférieure à 1 (valeure choisie arbitrairement, à modifier)
+        return dist;
+    }
+    
+    @Override
+    public boolean relevant(AppVector v) {
+        return relevance(v) < seuil;
     }
 
     @Override

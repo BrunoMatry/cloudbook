@@ -55,11 +55,12 @@ public class Member implements Information {
     @Override
     public void saveProperties() {
         _confidence = confidence.get();
+        _lastConnexion = lastConnexion.get();
     }
 
     @Override
     public void restoreProperties() {
         confidence = new SimpleIntegerProperty(_confidence);
+        lastConnexion = new SimpleObjectProperty<>(_lastConnexion);
     }
-    
 }

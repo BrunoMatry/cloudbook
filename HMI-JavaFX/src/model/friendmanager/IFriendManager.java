@@ -24,6 +24,13 @@ public interface IFriendManager {
     boolean isFriend(int id);
     
     /**
+     * Methode permettant de calculer la pertinence (la distance) du noeud dont le vecteur est passé en paramètre
+     * @param v     Vecteur du noeud dont on veut calculer la pertinence
+     * @return      La pertinence du noeud
+     */
+    double relevance(AppVector v);
+    
+    /**
      * Methode permettant de vérifier si le noeud dont l'AppVector est en paramètre est pertinent
      * @param v     Vecteur du noeud dont on veut savoir si il est pertinent
      * @return      Vrai si pertinent, faux sinon
