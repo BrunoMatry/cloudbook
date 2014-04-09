@@ -4,19 +4,18 @@
  * and open the template in the editor.
  */
 
-package model.request;
+package model.network.interfaces;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.Date;
-import model.node.Information;
 
 /**
  *
  * @author Gwendal
  */
 public interface Sendable extends Remote {
-    public Sender getSender() throws RemoteException;
+    public ISender getSender() throws RemoteException;
 
     public Date getDate() throws RemoteException;
 

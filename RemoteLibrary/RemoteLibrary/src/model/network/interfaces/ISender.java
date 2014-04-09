@@ -4,15 +4,11 @@
  * and open the template in the editor.
  */
 
-package model.node;
-
-import java.io.Serializable;
+package model.network.interfaces;
 
 /**
  *
- * @author Bruno
+ * @author Gwendal
  */
-public interface Information extends Serializable {
-    void saveProperties();
-    void restoreProperties();
+public interface ISender {
 }

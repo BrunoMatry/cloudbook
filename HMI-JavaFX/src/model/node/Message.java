@@ -1,5 +1,6 @@
 package model.node;
 
+import model.network.interfaces.Information;
 import java.util.Date;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;

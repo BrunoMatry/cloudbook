@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package model.network.implementation;
+package cloudbookserver;
 
 import java.rmi.RemoteException;
 import java.util.logging.Level;
@@ -13,22 +13,25 @@ import java.util.logging.Logger;
 /**
  *
  * @author Gwendal
- * Main programm at the server side
  */
-public class ServerMain {
-    
+public class CloudBookServer {
+
     /**
      * Main programm
-     * @param args [<address>] [<port>]
+     * @param args <port>
      */
     @SuppressWarnings("empty-statement")
     public static void main(String[] args) {
         try {
+            int port = Integer.parseInt(args[0]);
+            Server.INSTANCE.setPort(port);
             Server.INSTANCE.binding();
-            System.out.println("Server launched");
+            System.out.println("The server is running");
+            System.out.println("RMI address : " + Server.INSTANCE.getUrl());
             while(true);
         } catch (RemoteException ex) {
             Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
 }

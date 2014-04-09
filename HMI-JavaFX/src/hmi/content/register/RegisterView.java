@@ -33,7 +33,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
-import model.network.implementation.Server;
+import model.network.interfaces.RemoteServer;
 import model.node.Cloud;
 import model.node.CloudBuilder;
 
@@ -281,7 +281,7 @@ public final class RegisterView extends Activity {
 
         public final TextField getPort() {
             if(port == null) {
-                port = new TextField(""+Server.PORT);
+                port = new TextField(""+RemoteServer.PORT);
                 setMargin(host, new Insets(0, 200, 0, 200));
             }
             return port;

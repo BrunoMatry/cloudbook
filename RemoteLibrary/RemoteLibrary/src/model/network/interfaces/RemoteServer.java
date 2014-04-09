@@ -14,6 +14,10 @@ import java.rmi.RemoteException;
  * @author Gwendal
  */
 public interface RemoteServer extends Remote, RemoteOperations {
+    
+    public static final String NAME = "Server";
+    public static final int PORT = 50100;
+    
     void connect(RemoteClient rc) throws RemoteException;
     void disconnect(RemoteClient rc) throws RemoteException;
     RemoteClient getClient(String client) throws RemoteException;

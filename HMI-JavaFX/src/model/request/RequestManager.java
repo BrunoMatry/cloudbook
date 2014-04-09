@@ -1,12 +1,13 @@
 package model.request;
 
+import model.network.interfaces.Sendable;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.friendmanager.IFriendManager;
-import model.node.Information;
+import model.network.interfaces.Information;
 import model.node.Message;
 
 public class RequestManager implements IRequestManager {

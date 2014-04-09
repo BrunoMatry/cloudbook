@@ -1,8 +1,8 @@
 package model.engine;
 
 import java.io.IOException;
-import model.node.Information;
-import model.request.Sendable;
+import model.network.interfaces.Information;
+import model.network.interfaces.Sendable;
 /**
  *
  * @author Bruno

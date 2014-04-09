@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package model.network.implementation;
+package cloudbookserver;
 
 import java.net.InetAddress;
 import java.net.MalformedURLException;
@@ -20,7 +20,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.network.interfaces.RemoteClient;
 import model.network.interfaces.RemoteServer;
-import model.request.Sendable;
+import model.network.interfaces.Sendable;
 
 /**
  *
@@ -29,16 +29,18 @@ import model.request.Sendable;
 public final class Server extends UnicastRemoteObject implements RemoteServer {
 
     public static final Server INSTANCE = makeServerScheduler();
-    public static final String NAME = "Server";
-    public static final int PORT = 50100;
     
     private Map<String, RemoteClient> clients;
     private String ip;
+    
+    //port on which the server is running
+    private int port;
     private String url;
     
     private Server(String ip) throws RemoteException {
         clients = new HashMap<>();
         this.ip = ip;
+        port = PORT;
     }
     
     private static Server makeServerScheduler() {
@@ -85,7 +87,7 @@ public final class Server extends UnicastRemoteObject implements RemoteServer {
     @Override
     public void binding() throws RemoteException {
         try {
-            url = "rmi://" + ip + ":" + PORT + "/" + NAME;
+            url = "rmi://" + ip + ":" + port + "/" + NAME;
             LocateRegistry.createRegistry(50100);
             Naming.bind(url, this);
         } catch (AlreadyBoundException | MalformedURLException ex) {
@@ -96,6 +98,14 @@ public final class Server extends UnicastRemoteObject implements RemoteServer {
     @Override
     public String getUrl() throws RemoteException {
         return url;
+    }
+
+    /**
+     * setter
+     * @param port value
+     */
+    public void setPort(int port) {
+        this.port = port;
     }
     
 }

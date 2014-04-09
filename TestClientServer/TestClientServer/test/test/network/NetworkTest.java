@@ -6,6 +6,7 @@
 
 package test.network;
 
+import cloudbookserver.Server;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.rmi.RemoteException;
@@ -14,7 +15,6 @@ import java.util.logging.Logger;
 import junit.framework.Assert;
 import model.engine.Engine;
 import model.network.implementation.Network;
-import model.network.implementation.Server;
 import model.node.Message;
 import model.request.Request;
 import model.request.RequestManager;

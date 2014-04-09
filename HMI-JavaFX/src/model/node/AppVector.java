@@ -1,5 +1,6 @@
 package model.node;
 
+import model.network.interfaces.Information;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 

@@ -6,7 +6,8 @@
 
 package model.request;
 
-import model.node.Information;
+import model.network.interfaces.Sendable;
+import model.network.interfaces.Information;
 
 /**
  *

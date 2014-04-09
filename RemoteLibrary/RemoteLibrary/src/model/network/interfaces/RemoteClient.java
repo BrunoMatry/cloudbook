@@ -8,13 +8,13 @@ package model.network.interfaces;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
-import model.request.Sendable;
 
 /**
  *
  * @author Gwendal
  */
-public interface RemoteOperations extends Remote {
-    public void send(Sendable request, String receiver) throws RemoteException;
-    public String getIp() throws RemoteException;
+public interface RemoteClient extends Remote, RemoteOperations {
+    RemoteServer getStub() throws RemoteException;
+    void connect(String url) throws RemoteException;
+    public void handleRequest(Sendable request) throws RemoteException;
 }

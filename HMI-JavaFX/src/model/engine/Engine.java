@@ -1,16 +1,17 @@
 package model.engine;
 
 import java.io.IOException;
+import java.net.InetAddress;
 import model.friendmanager.FriendManager;
 import model.friendmanager.IFriendManager;
-import model.node.Information;
+import model.network.interfaces.Information;
 import model.monitoring.IMonitoring;
 import model.network.implementation.Network;
 import model.network.interfaces.RemoteClient;
 import model.request.IRequestManager;
 import model.node.CloudBookNode;
 import model.request.RequestManager;
-import model.request.Sendable;
+import model.network.interfaces.Sendable;
 
 /**
  *
@@ -24,14 +25,20 @@ public final class Engine implements IEngine {
     protected IFriendManager friendManager;
     protected IMonitoring monitoring;
     protected CloudBookNode node;
+    protected RemoteClient network;
 
+    /**
+     * Constructor
+     */
     protected Engine() {
         monitoring = AppMounter.mountMonitoring();
         try {
             node = CloudBookNode.load();
+            network = new Network(InetAddress.getLocalHost().getHostName());
         } catch (IOException | ClassNotFoundException e) {
             // Si on ne peut pas charger le noeud on en cree un nouveau
             node = AppMounter.mountNode();
+            network = null;
         }
         friendManager = new FriendManager(node);
         requestManager = new RequestManager(friendManager);
@@ -79,5 +86,13 @@ public final class Engine implements IEngine {
 
     public IMonitoring getMonitoring() {
         return monitoring;
+    }
+    
+    /**
+     * getter
+     * @return network attribute
+     */
+    public RemoteClient getNetwork() {
+        return network;
     }
 }

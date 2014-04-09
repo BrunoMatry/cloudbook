@@ -1,5 +1,6 @@
 package model.node;
 
+import model.network.interfaces.Information;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -14,6 +15,7 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.image.Image;
+import model.network.interfaces.RemoteServer;
 
 /**
  *
@@ -39,6 +41,12 @@ public class CloudBookNode implements Serializable {
     protected List<Mesure> mesures; //list of all the mesures
     protected List<Message> messages; //list of the received messages
     protected AppVector vector;
+    
+    //host of the server
+    protected String serverHost;
+    
+    //port of the server
+    protected int serverPort;
     
     /* Proprietes non serialisables */
     protected transient StringProperty name;
@@ -103,6 +111,12 @@ public class CloudBookNode implements Serializable {
     public AppVector getVector() { return vector; }
     public List<Information> getInformations() { return informations; }
     public Message getMessage(int i) { return messages.get(i); }
+    
+    /**
+     * getter of the server url. Computed from serverHost and serverPort
+     * @return url of the server
+     */
+    public String getServerUrl() { return "rmi://" + serverHost + ":" + serverPort + "/" + RemoteServer.NAME; }
     
     /* Attention !*/ 
     public StringProperty topMessageProperty() { return topMessage.descriptionProperty(); }

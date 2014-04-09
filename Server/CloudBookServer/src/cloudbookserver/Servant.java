@@ -4,13 +4,13 @@
  * and open the template in the editor.
  */
 
-package model.network.implementation;
+package cloudbookserver;
 
 import java.rmi.RemoteException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.network.interfaces.RemoteClient;
-import model.request.Sendable;
+import model.network.interfaces.Sendable;
 
 /**
  *
