@@ -52,10 +52,6 @@ public class RequestManager implements IRequestManager {
     public Request createRequest(int target, Information data) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
-    
-    private int computeRelevance() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
 
     public IFriendManager getFriendManager() {
         return friendManager;
