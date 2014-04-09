@@ -22,11 +22,9 @@ public class State implements Information {
     protected transient ObjectProperty<Date> to;
     protected transient BooleanProperty current;
     
-    public IntegerProperty cloudProperty() { return cloud; }
-    public ObjectProperty<Date> fromProperty() { return from; }
-    public ObjectProperty<Date> toProperty() { return to; }
-    public BooleanProperty currentProperty() { return current; }
-    
+    /**
+     * Empty constructor for serialization
+     */
     protected State() {
         cloud = new SimpleIntegerProperty(_cloud.ordinal());
         from = new SimpleObjectProperty<>(_from);
@@ -34,6 +32,10 @@ public class State implements Information {
         current = new SimpleBooleanProperty(_current);
     }
     
+    /**
+     * Main constructor
+     * @param c cloud associate to the node state
+     */
     public State(Cloud c) {
         cloud = new SimpleIntegerProperty(c.ordinal());
         from = new SimpleObjectProperty<>(new Date());
@@ -41,16 +43,29 @@ public class State implements Information {
         current = new SimpleBooleanProperty(true);
     }
     
+    /* Properties' getters */
+    public IntegerProperty cloudProperty() { return cloud; }
+    public ObjectProperty<Date> fromProperty() { return from; }
+    public ObjectProperty<Date> toProperty() { return to; }
+    public BooleanProperty currentProperty() { return current; }
+    
+    /**
+     * Method
+     * @return the Enum Cloud associate to the cloud property
+     */
+    public Cloud getCloud() {
+        return Cloud.values()[cloud.get()];
+    }
+
+    /**
+     * Modify the state of the instance
+     * Set the currente property to false
+     */
     public void notCurrentAnymore() {
         current.set(false);
         to.set(new Date());
     }
     
-    public Cloud getCloud() {
-        /* TODO verifier la validite de ce code */
-        return Cloud.values()[cloud.get()];
-    }
-
     @Override
     public void saveProperties() {
         _current = current.get();
