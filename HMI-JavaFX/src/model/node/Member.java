@@ -4,6 +4,7 @@ import java.util.Date;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleObjectProperty;
 
 public class Member implements Information {  
     
@@ -15,13 +16,14 @@ public class Member implements Information {
     
     /* Proprietes non serialisables */
     protected transient IntegerProperty confidence = new SimpleIntegerProperty();
-    protected transient ObjectProperty<Date> lastConnection;
+    protected transient ObjectProperty<Date> lastConnexion;
     
     public Member(int friendId, int cnfdnce, boolean rlvnt, AppVector vector) {
         _id = friendId;
-        confidence = new SimpleIntegerProperty(cnfdnce);
         _vector = vector;
-        this.connexion();
+        
+        confidence = new SimpleIntegerProperty(cnfdnce);
+        lastConnexion = new SimpleObjectProperty<>(new Date());
     }
     
     public void setConfidence(int cnfdnce) {
@@ -35,7 +37,7 @@ public class Member implements Information {
     }
             
     private void connexion() {
-        _lastConnexion = new Date();
+        lastConnexion.set(new Date());
     }
     
     /**
@@ -43,8 +45,9 @@ public class Member implements Information {
      * @return  nombre de jours écoulés depuis la dernière connection de l'ami
      */
     public int daysSinceLastConnection() {
-        //TODO : calcul du temps depuis la dernière connexion
-        return 0;
+        Date today = new Date();
+        long diff = today.getTime() - lastConnexion.get().getTime();
+        return (int) (diff / (1000*60*60*24));
     }
     
     public int getId() { return _id; }
