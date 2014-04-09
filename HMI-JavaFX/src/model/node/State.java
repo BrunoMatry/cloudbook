@@ -7,8 +7,6 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
 
 public class State implements Information {
     
@@ -23,6 +21,11 @@ public class State implements Information {
     protected transient ObjectProperty<Date> from;
     protected transient ObjectProperty<Date> to;
     protected transient BooleanProperty current;
+    
+    public IntegerProperty cloudProperty() { return cloud; }
+    public ObjectProperty<Date> fromProperty() { return from; }
+    public ObjectProperty<Date> toProperty() { return to; }
+    public BooleanProperty currentProperty() { return current; }
     
     protected State() {
         cloud = new SimpleIntegerProperty(_cloud.ordinal());
@@ -40,8 +43,7 @@ public class State implements Information {
     
     public void notCurrentAnymore() {
         current.set(false);
-        _to = new Date();
-        to = new SimpleObjectProperty<>(_to);
+        to.set(new Date());
     }
     
     public Cloud getCloud() {
@@ -53,15 +55,16 @@ public class State implements Information {
     public void saveProperties() {
         _current = current.get();
         _cloud = getCloud();
-        // les attributs _from et _to sont necessairement a jour avec cette implementation
+        _from = from.get();
+        _to = to.get();
     }
 
     @Override
     public void restoreProperties() {
         /* TODO Verifier la necessite de cette methode ou / et du constructeur vide */
         cloud = new SimpleIntegerProperty(_cloud.ordinal());
-        from = new SimpleStringProperty(_from.toString());
-        to = new SimpleStringProperty(_to.toString());
+        from = new SimpleObjectProperty<>(_from);
+        to = new SimpleObjectProperty<>(_to);
         current = new SimpleBooleanProperty(_current);
     }
 }
