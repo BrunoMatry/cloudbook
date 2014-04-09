@@ -3,8 +3,10 @@ package model.node;
 import java.util.Date;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -18,31 +20,28 @@ public class State implements Information {
     
     /* Proprietes non serialisables */
     protected transient IntegerProperty cloud;
-    protected transient StringProperty from;
-    protected transient StringProperty to;
+    protected transient ObjectProperty<Date> from;
+    protected transient ObjectProperty<Date> to;
     protected transient BooleanProperty current;
     
     protected State() {
         cloud = new SimpleIntegerProperty(_cloud.ordinal());
-        from = new SimpleStringProperty(_from.toString());
-        to = new SimpleStringProperty(_to.toString());
+        from = new SimpleObjectProperty<>(_from);
+        to = new SimpleObjectProperty<>(_to);
         current = new SimpleBooleanProperty(_current);
     }
     
     public State(Cloud c) {
-        _from = new Date();
-        _to = new Date();
-        
         cloud = new SimpleIntegerProperty(c.ordinal());
-        from = new SimpleStringProperty(_from.toString());
-        to = new SimpleStringProperty(_to.toString());
+        from = new SimpleObjectProperty<>(new Date());
+        to = new SimpleObjectProperty<>(new Date());
         current = new SimpleBooleanProperty(true);
     }
     
     public void notCurrentAnymore() {
         current.set(false);
         _to = new Date();
-        to = new SimpleStringProperty(_to.toString());
+        to = new SimpleObjectProperty<>(_to);
     }
     
     public Cloud getCloud() {
