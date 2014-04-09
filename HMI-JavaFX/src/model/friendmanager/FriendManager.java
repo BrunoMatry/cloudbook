@@ -12,6 +12,7 @@ import model.request.Sender;
 public class FriendManager implements IFriendManager {
     
     protected static final double seuil = 1; //Distance en dessous de laquelle une noeud est considéré comme pertinent (valeure choisie arbitrairement, à modifier)
+    protected static final int delay = 10; //Délai en jours après lequel on enlève un noeud de la liste d'amis si on a pas eu d'échange avec lui pendant cette période (valeure choisie arbitrairement, à modifier)
     
     protected CloudBookNode node;
     
@@ -24,7 +25,7 @@ public class FriendManager implements IFriendManager {
         AppVector vector = sender.getVector();
         int id = sender.getId();
         if(!isFriend(id) && relevant(vector)) {
-            node.addFriend(new Friend(id, 0, true, vector)); //indice de confiance initialiser à 0 lors de l'ajout d'un nouvel ami
+            node.addFriend(new Friend(id, 0, relevance(vector), vector)); //indice de confiance initialiser à 0 lors de l'ajout d'un nouvel ami
             return true;
         }
         return false;
@@ -34,7 +35,7 @@ public class FriendManager implements IFriendManager {
     public void clear() {
         List<Friend> friends = node.getFriends();
         for(Friend friend : friends) {
-            if(friend.daysSinceLastConnection() > 10) //délai de 10 jours choisi arbitrairement, à modifier 
+            if(friend.daysSinceLastConnection() > delay)
                 remove(friend.getId());
             //TODO : A compléter
         }   
@@ -93,9 +94,10 @@ public class FriendManager implements IFriendManager {
             int id = sender.getId();
             if(friend.getId() == id) {
                 AppVector vector = sender.getVector();
-                if(relevant(vector)) 
+                if(relevant(vector)) {
                     friend.setVector(vector);
-                else
+                    friend.setRelevance(relevance(vector));
+                } else
                     remove(id);
                 break;
             }  
