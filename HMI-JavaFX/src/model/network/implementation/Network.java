@@ -16,7 +16,6 @@ import java.util.logging.Logger;
 import model.engine.Engine;
 import model.network.interfaces.RemoteClient;
 import model.network.interfaces.RemoteServer;
-import model.request.Request;
 import model.request.Sendable;
 
 /**

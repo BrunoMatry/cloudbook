@@ -5,6 +5,8 @@ import model.friendmanager.FriendManager;
 import model.friendmanager.IFriendManager;
 import model.node.Information;
 import model.monitoring.IMonitoring;
+import model.network.implementation.Network;
+import model.network.interfaces.RemoteClient;
 import model.request.IRequestManager;
 import model.node.CloudBookNode;
 import model.request.RequestManager;

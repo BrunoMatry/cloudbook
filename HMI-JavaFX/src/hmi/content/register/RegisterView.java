@@ -33,6 +33,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
+import model.network.implementation.Server;
 import model.node.Cloud;
 import model.node.CloudBuilder;
 
@@ -100,6 +101,12 @@ public final class RegisterView extends Activity {
         //name of the application
         private TextField name;
         
+        //host of the server
+        private TextField host;
+        
+        //port of the server
+        private TextField port;
+        
         //selector : current cloud platform of the application
         private ChoiceBox<Cloud> clouds;
         
@@ -118,6 +125,8 @@ public final class RegisterView extends Activity {
                     getLogo(),
                     getBrowse(),
                     getName(),
+                    getHost(),
+                    getPort(),
                     getClouds(),
                     getOk()
             );
@@ -260,6 +269,22 @@ public final class RegisterView extends Activity {
                 });
             }
             return ok;
+        }
+
+        public final TextField getHost() {
+            if(host == null){
+                host = new TextField("host");
+                setMargin(host, new Insets(0, 200, 0, 200));
+            }
+            return host;
+        }
+
+        public final TextField getPort() {
+            if(port == null) {
+                port = new TextField(""+Server.PORT);
+                setMargin(host, new Insets(0, 200, 0, 200));
+            }
+            return port;
         }
         
     }

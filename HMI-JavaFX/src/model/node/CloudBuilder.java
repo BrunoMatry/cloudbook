@@ -1,8 +1,11 @@
 package model.node;
 
 import java.io.IOException;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.scene.image.Image;
 import model.engine.Engine;
 
@@ -27,10 +30,22 @@ public class CloudBuilder {
         return platform;
     }
     
+    protected StringProperty host;
+    public StringProperty hostProperty() {
+        return host;
+    }
+    
+    protected IntegerProperty port;
+    public IntegerProperty portProperty() {
+        return port;
+    }
+    
     public CloudBuilder() {
         logo = new SimpleObjectProperty<>();
         name = new SimpleStringProperty();
         platform = new SimpleObjectProperty<>();
+        host = new SimpleStringProperty();
+        port = new SimpleIntegerProperty();
     }
     
     /**

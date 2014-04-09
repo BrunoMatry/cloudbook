@@ -29,6 +29,8 @@ import model.request.Sendable;
 public final class Server extends UnicastRemoteObject implements RemoteServer {
 
     public static final Server INSTANCE = makeServerScheduler();
+    public static final String NAME = "Server";
+    public static final int PORT = 50100;
     
     private Map<String, RemoteClient> clients;
     private String ip;
@@ -83,7 +85,7 @@ public final class Server extends UnicastRemoteObject implements RemoteServer {
     @Override
     public void binding() throws RemoteException {
         try {
-            url = "rmi://" + ip + ":" + 50100 + "/Server";
+            url = "rmi://" + ip + ":" + PORT + "/" + NAME;
             LocateRegistry.createRegistry(50100);
             Naming.bind(url, this);
         } catch (AlreadyBoundException | MalformedURLException ex) {
