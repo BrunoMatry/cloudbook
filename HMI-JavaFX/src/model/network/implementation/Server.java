@@ -95,18 +95,5 @@ public final class Server extends UnicastRemoteObject implements RemoteServer {
     public String getUrl() throws RemoteException {
         return url;
     }
-
-    /**
-     * Main programm
-     * @param args [<address>] [<port>]
-     */
-    @SuppressWarnings("empty-statement")
-    public static void main(String[] args) {
-        try {
-            Server.INSTANCE.binding();
-            while(true);
-        } catch (RemoteException ex) {
-            Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+    
 }
