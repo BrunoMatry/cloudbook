@@ -8,7 +8,7 @@ import org.junit.Test;
 
 public class CloudTest {
     
-    public AppVectorTest() {
+    public CloudTest() {
     }
     
     @BeforeClass
