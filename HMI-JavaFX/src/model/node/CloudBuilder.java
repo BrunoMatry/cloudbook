@@ -8,6 +8,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.image.Image;
 import model.engine.Engine;
+import model.network.implementation.Network;
 
 /**
  * builder
@@ -35,8 +36,8 @@ public class CloudBuilder {
         return host;
     }
     
-    protected IntegerProperty port;
-    public IntegerProperty portProperty() {
+    protected StringProperty port;
+    public StringProperty portProperty() {
         return port;
     }
     
@@ -45,7 +46,7 @@ public class CloudBuilder {
         name = new SimpleStringProperty();
         platform = new SimpleObjectProperty<>();
         host = new SimpleStringProperty();
-        port = new SimpleIntegerProperty();
+        port = new SimpleStringProperty();
     }
     
     /**
@@ -53,9 +54,10 @@ public class CloudBuilder {
      * @throws IOException the state can't be saved
      */
     public void build() throws IOException {
-        Engine.INSTANCE.setNode(new CloudBookNode(logo.get(), name.get(), platform.get(), 0, 0, 0));
-        //Engine.INSTANCE.
+        Engine.INSTANCE.setNode(new CloudBookNode(logo.get(), name.get(), platform.get(), host.get(), Integer.parseInt(port.get()), 0, 0, 0));
+        Engine.INSTANCE.setNetwork(new Network(host.get(), Integer.parseInt(port.get())));
         Engine.INSTANCE.save();
+        Engine.INSTANCE.getNetwork().connect();
     }
     
 }

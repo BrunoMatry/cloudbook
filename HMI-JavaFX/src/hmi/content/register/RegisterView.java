@@ -83,6 +83,14 @@ public final class RegisterView extends Activity {
         return vBox.name.textProperty();
     }
     
+    public StringProperty hostProperty() {
+        return vBox.host.textProperty();
+    }
+    
+    public StringProperty portProperty() {
+        return vBox.port.textProperty();
+    }
+    
     public ObjectProperty<Cloud> cloudProperty() {
         return vBox.clouds.valueProperty();
     }

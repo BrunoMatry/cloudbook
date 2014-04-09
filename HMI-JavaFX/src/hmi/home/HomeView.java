@@ -144,6 +144,8 @@ public final class HomeView extends HomeActivity {
                         cb.logoProperty().bind(RegisterView.INSTANCE.logoProperty());
                         cb.nameProperty().bind(RegisterView.INSTANCE.nameProperty());
                         cb.platformProperty().bind(RegisterView.INSTANCE.cloudProperty());
+                        cb.hostProperty().bind(RegisterView.INSTANCE.hostProperty());
+                        cb.portProperty().bind(RegisterView.INSTANCE.portProperty());
                         RegisterView.INSTANCE.launch();
                     }
             

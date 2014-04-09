@@ -34,11 +34,10 @@ public final class Engine implements IEngine {
         monitoring = AppMounter.mountMonitoring();
         try {
             node = CloudBookNode.load();
-            network = new Network(InetAddress.getLocalHost().getHostName());
+            network = new Network(node.getServerHost(), node.getServerPort());
         } catch (IOException | ClassNotFoundException e) {
             // Si on ne peut pas charger le noeud on en cree un nouveau
             node = AppMounter.mountNode();
-            network = null;
         }
         friendManager = new FriendManager(node);
         requestManager = new RequestManager(friendManager);
@@ -95,4 +94,13 @@ public final class Engine implements IEngine {
     public RemoteClient getNetwork() {
         return network;
     }
+
+    /**
+     * setter
+     * @param network attribute
+     */
+    public void setNetwork(RemoteClient network) {
+        this.network = network;
+    }
+    
 }

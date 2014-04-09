@@ -62,8 +62,10 @@ public final class Server extends UnicastRemoteObject implements RemoteServer {
 
     @Override
     public void connect(RemoteClient rc) throws RemoteException {
-        if(!clients.containsValue(rc))
+        if(!clients.containsValue(rc)) {
             clients.put(rc.getIp(), rc);
+            System.out.println("Client added : " + rc.getIp());
+        }
     }
 
     @Override

@@ -27,15 +27,18 @@ import model.network.interfaces.Sendable;
 public class Network extends UnicastRemoteObject implements RemoteClient {
     
     private String ip;
+    protected int port;
     private RemoteServer stub;
     
     /**
      * Constructor
-     * @param ip ip of 
+     * @param ip ip of the server
+     * @param port port of the server
      * @throws RemoteException required by RMI
      */
-    public Network(String ip) throws RemoteException {
+    public Network(String ip, int port) throws RemoteException {
         this.ip = ip;
+        this.port = port;
     }
     
     @Override
@@ -63,6 +66,16 @@ public class Network extends UnicastRemoteObject implements RemoteClient {
     public void connect(String url) throws RemoteException {
         try {
             stub = (RemoteServer)Naming.lookup(url);
+            stub.connect(this);
+        } catch (NotBoundException | MalformedURLException ex) {
+            Logger.getLogger(Network.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @Override
+    public void connect() throws RemoteException {
+        try {
+            stub = (RemoteServer)Naming.lookup("rmi://" + ip + ":" + port + "/" + RemoteServer.NAME);
             stub.connect(this);
         } catch (NotBoundException | MalformedURLException ex) {
             Logger.getLogger(Network.class.getName()).log(Level.SEVERE, null, ex);

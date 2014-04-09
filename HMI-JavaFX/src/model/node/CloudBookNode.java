@@ -81,12 +81,13 @@ public class CloudBookNode implements Serializable {
      * @param performance TODO
      * @param speed TODO
      */
-    public CloudBookNode(Image image, String string, Cloud cloud, int appType, int performance, int speed) {
+    public CloudBookNode(Image image, String string, Cloud cloud, String host, int port, int appType, int performance, int speed) {
         
-        topMesure = new Mesure(); /* Ne pas utiliser ces constructeurs !!!!!! */
+        topMesure = new Mesure(0,0,0); /* Ne pas utiliser ces constructeurs !!!!!! */
         topMessage = new Message(); /* Ne pas utiliser ces constructeurs !!!!!! */
         platform = cloud;
-        
+        serverHost = host;
+        serverPort = port;
         friends = new ArrayList<>();
         informations = new ArrayList<>();
         states = new Stack<>();
@@ -117,6 +118,22 @@ public class CloudBookNode implements Serializable {
      * @return url of the server
      */
     public String getServerUrl() { return "rmi://" + serverHost + ":" + serverPort + "/" + RemoteServer.NAME; }
+
+    /**
+     * getter
+     * @return server Ip
+     */
+    public String getServerHost() {
+        return serverHost;
+    }
+
+    /**
+     * getter
+     * @return server port
+     */
+    public int getServerPort() {
+        return serverPort;
+    }
     
     /* Attention !*/ 
     public StringProperty topMessageProperty() { return topMessage.descriptionProperty(); }
