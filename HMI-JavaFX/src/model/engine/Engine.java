@@ -1,9 +1,6 @@
 package model.engine;
 
 import java.io.IOException;
-import java.rmi.RemoteException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import model.friendmanager.FriendManager;
 import model.friendmanager.IFriendManager;
 import model.node.Information;
@@ -21,12 +18,12 @@ public final class Engine implements IEngine {
     
     public static final Engine INSTANCE = new Engine();
     
-    private IRequestManager requestManager;
-    private IFriendManager friendManager;
-    private IMonitoring monitoring;
-    private CloudBookNode node;
+    protected IRequestManager requestManager;
+    protected IFriendManager friendManager;
+    protected IMonitoring monitoring;
+    protected CloudBookNode node;
 
-    private Engine() {
+    protected Engine() {
         monitoring = AppMounter.mountMonitoring();
         try {
             node = CloudBookNode.load();
@@ -58,11 +55,11 @@ public final class Engine implements IEngine {
         requestManager.handleRequest(req);
     }
     
-    private void shareInformation(){
+    protected void shareInformation(){
         /* TODO */
     }
     
-    private void updateInformation(){
+    protected void updateInformation(){
         monitoring.pushInformation();
     }
 
