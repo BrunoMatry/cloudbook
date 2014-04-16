@@ -33,7 +33,6 @@ public final class Server extends UnicastRemoteObject implements RemoteServer {
     public static final Server INSTANCE = makeServerScheduler();
     
     private Map<String, RemoteClient> clients;
-    private Map<String, List<Sendable>> box;
     private String ip;
     
     //port on which the server is running
@@ -42,7 +41,6 @@ public final class Server extends UnicastRemoteObject implements RemoteServer {
     
     private Server(String ip) throws RemoteException {
         clients = new HashMap<>();
-        box = new HashMap<>();
         this.ip = ip;
         port = PORT;
     }
@@ -60,9 +58,6 @@ public final class Server extends UnicastRemoteObject implements RemoteServer {
 
     @Override
     public void send(Sendable request, String receiver) throws RemoteException {
-        if(!box.containsKey(receiver))
-            box.put(receiver, new ArrayList<Sendable>());
-        box.get(receiver).add(request);
         Servant servant = new Servant(request, receiver);
         servant.start();
     }
@@ -115,18 +110,6 @@ public final class Server extends UnicastRemoteObject implements RemoteServer {
      */
     public void setPort(int port) {
         this.port = port;
-    }
-
-    /**
-     * Retrieves the list of all messages sent to the receiver
-     * @param receiver receiver to which were sent the wanted Sendables
-     * @return Sendables sent to the receiver
-     */
-    @Override
-    public List<Sendable> getSendable(String receiver) {
-        if(box.containsKey(receiver))
-            return box.get(receiver);
-        return null;
     }
     
 }

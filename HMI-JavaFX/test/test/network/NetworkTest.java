@@ -6,7 +6,6 @@
 
 package test.network;
 
-import static com.sun.corba.se.spi.presentation.rmi.StubAdapter.request;
 import java.net.InetAddress;
 import java.net.MalformedURLException;
 import java.net.UnknownHostException;
@@ -16,12 +15,14 @@ import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.network.implementation.Network;
+import model.network.interfaces.RemoteBufferedServer;
 import model.network.interfaces.RemoteClient;
 import model.network.interfaces.RemoteServer;
 import model.network.interfaces.Sendable;
@@ -91,10 +92,10 @@ public class NetworkTest {
         }
     }
     
-    private static class TestServer extends UnicastRemoteObject implements RemoteServer {
+    private static class TestServer extends UnicastRemoteObject implements RemoteBufferedServer {
 
         //Message box
-        private Map<String, Sendable> msgBox;
+        private Map<String, List<Sendable>> msgBox;
         
         //Client references
         private Map<String, RemoteClient> clients;
@@ -121,7 +122,7 @@ public class NetworkTest {
          */
         @Override
         public void connect(RemoteClient rc) throws RemoteException {
-            msgBox.put(rc.getIp(), null);
+            msgBox.put(rc.getIp(), new ArrayList<Sendable>());
             clients.put(rc.getIp(), rc);
         }
 
@@ -181,7 +182,7 @@ public class NetworkTest {
          */
         @Override
         public void send(Sendable request, String receiver) throws RemoteException {
-            msgBox.put(receiver, request);
+            msgBox.get(receiver).add(request);
         }
 
         /**
@@ -201,7 +202,7 @@ public class NetworkTest {
 
         @Override
         public List<Sendable> getSendable(String receiver) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            return msgBox.get(receiver);
         }
         
     }
