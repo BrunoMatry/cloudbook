@@ -24,7 +24,6 @@ import java.util.logging.Logger;
 import model.network.implementation.Network;
 import model.network.interfaces.RemoteBufferedServer;
 import model.network.interfaces.RemoteClient;
-import model.network.interfaces.RemoteServer;
 import model.network.interfaces.Sendable;
 import model.node.Message;
 import model.request.Request;
@@ -63,17 +62,15 @@ public class NetworkTest {
     @SuppressWarnings("empty-statement")
     public void setUp() {
         try {
-            RemoteBufferedServer distant = new TestServer();
-            distant.binding();
+            server = new TestServer();
+            server.binding();
             alice = new Network("alice", 888);
             me = new Network(InetAddress.getLocalHost().getHostAddress(), 777);
             bob = new Network("bob", 12345);
             msg = new Request(new Message("Hi guys !"));
-            while(!TestServer.READY);
-            server = (RemoteBufferedServer)Naming.lookup("rmi://" + InetAddress.getLocalHost().getHostAddress() + ":" + 500020 + "/TestServer");
-            server.connect(alice);
-            server.connect(me);
-        } catch (NotBoundException | MalformedURLException | RemoteException | UnknownHostException ex) {
+            alice.connect("rmi://" + InetAddress.getLocalHost().getHostAddress() + ":" + 50020 + "/TestServer");
+            me.connect("rmi://" + InetAddress.getLocalHost().getHostAddress() + ":" + 50020 + "/TestServer");
+        } catch (RemoteException | UnknownHostException ex) {
             Logger.getLogger(NetworkTest.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -85,9 +82,10 @@ public class NetworkTest {
     @Test
     public void testSend() {
         try {
-            me.send(msg, alice.getIp());
+            alice.send(msg, me.getIp());
             Sendable recvd = server.getSendable(me.getIp(), 0);
             Message msgRec = (Message)recvd.getInfo();
+            msgRec.restoreProperties();
             Assert.assertEquals("Hi guys !", msgRec.descriptionProperty().get());
         } catch (RemoteException ex) {
             fail(ex.getMessage());
@@ -102,9 +100,6 @@ public class NetworkTest {
         
         //Client references
         private Map<String, RemoteClient> clients;
-        
-        //Indicate if the server is connected
-        public static boolean READY = false;
         
         //rmi url
         private String url;
@@ -158,10 +153,9 @@ public class NetworkTest {
         @Override
         public void binding() throws RemoteException {
             try {
-                url = "rmi://" + InetAddress.getLocalHost().getHostAddress() + ":" + 500020 + "/TestServer";
-                LocateRegistry.createRegistry(50100);
+                url = "rmi://" + InetAddress.getLocalHost().getHostName() + ":" + 50020 + "/TestServer";
+                LocateRegistry.createRegistry(50020);
                 Naming.bind(url, this);
-                READY = true;
             } catch (AlreadyBoundException | MalformedURLException | UnknownHostException ex) {
                 Logger.getLogger(NetworkTest.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -184,9 +178,8 @@ public class NetworkTest {
          * @throws RemoteException  cannot get distant reference
          */
         @Override
-        public synchronized void send(Sendable request, String receiver) throws RemoteException {
+        public void send(Sendable request, String receiver) throws RemoteException {
             msgBox.get(receiver).add(request);
-            notifyAll();
         }
 
         /**
@@ -205,15 +198,10 @@ public class NetworkTest {
         }
 
         @Override
-        public synchronized Sendable getSendable(String receiver, int index) {
-            try {
-                while(msgBox.get(receiver).isEmpty())
-                    wait();
-                return msgBox.get(receiver).get(index);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(NetworkTest.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            return null;
+        @SuppressWarnings("empty-statement")
+        public Sendable getSendable(String receiver, int index) throws RemoteException {
+            while(msgBox.get(receiver).isEmpty());
+            return msgBox.get(receiver).get(index);
         }
         
     }

@@ -7,6 +7,7 @@
 package model.network.interfaces;
 
 import java.rmi.Remote;
+import java.rmi.RemoteException;
 
 /**
  *
@@ -15,5 +16,5 @@ import java.rmi.Remote;
  * producer/consumer
  */
 public interface RemoteBufferedServer extends RemoteServer, Remote {
-    Sendable getSendable(String receiver, int index);
+    Sendable getSendable(String receiver, int index) throws RemoteException;
 }
