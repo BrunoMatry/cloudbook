@@ -59,7 +59,7 @@ public class CloudBookNode implements Serializable {
      */
     protected CloudBookNode() {
         topMesure = new Mesure();
-        topMessage = new Message();
+        //topMessage = new Message();
         
         friends = new ArrayList<>();
         informations = new ArrayList<>();
@@ -84,7 +84,7 @@ public class CloudBookNode implements Serializable {
     public CloudBookNode(Image image, String string, Cloud cloud, String host, int port, int appType, int performance, int speed) {
         
         topMesure = new Mesure(0,0,0); /* Ne pas utiliser ces constructeurs !!!!!! */
-        topMessage = new Message(); /* Ne pas utiliser ces constructeurs !!!!!! */
+        //topMessage = new Message(); /* Ne pas utiliser ces constructeurs !!!!!! */
         platform = cloud;
         serverHost = host;
         serverPort = port;
@@ -136,7 +136,7 @@ public class CloudBookNode implements Serializable {
     }
     
     /* Attention !*/ 
-    public StringProperty topMessageProperty() { return topMessage.descriptionProperty(); }
+    //public StringProperty topMessageProperty() { return topMessage.descriptionProperty(); }
     public StringProperty topMesureProperty() { return topMesure.dateProperty(); }
     public StringProperty nameProperty() { return name; }
     public ObjectProperty<Image> logoProperty() { return logo; }
