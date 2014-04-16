@@ -8,6 +8,7 @@ package model.network.interfaces;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
+import java.util.List;
 
 /**
  *
@@ -23,4 +24,5 @@ public interface RemoteServer extends Remote, RemoteOperations {
     RemoteClient getClient(String client) throws RemoteException;
     void binding() throws RemoteException;
     String getUrl() throws RemoteException;
+    List<Sendable> getSendable(String receiver);
 }

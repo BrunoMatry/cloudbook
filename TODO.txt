@@ -1,3 +1,2 @@
 Gwendal
-Faire le test complet du network + server dans un test unitaire. Utiliser un thread par acteur (2 client + 1 server)
-et utiliser des joins pour terminer le test convenablement.
+server en version bufferisée

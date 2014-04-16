@@ -21,9 +21,9 @@ public class Servant extends Thread {
     protected Sendable request;
     protected String receiver;
     
-    public Servant(Sendable sendable, String string) {
+    public Servant(Sendable sendable, String target) {
         request = sendable;
-        receiver = string;
+        receiver = target;
     }
     
     @Override
