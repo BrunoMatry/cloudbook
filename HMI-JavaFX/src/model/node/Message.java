@@ -2,8 +2,6 @@ package model.node;
 
 import model.network.interfaces.Information;
 import java.util.Date;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
 
 public class Message implements Information {
     
@@ -21,6 +19,7 @@ public class Message implements Information {
         relevant = rlvnt;
     }
 
+    @Override
     public String toString() {
         return idSender + ", " + date + ", " + relevant + ", " + vector;
     }
