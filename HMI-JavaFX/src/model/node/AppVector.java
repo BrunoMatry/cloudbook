@@ -27,7 +27,18 @@ public class AppVector implements Information {
         performance = new SimpleIntegerProperty(perf);
         speed = new SimpleIntegerProperty(spd);
     }
-            
+    
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AppVector v = (AppVector) o;
+ 
+        return appType.equals(v.appType) 
+                && performance.equals(v.performance)
+                && speed.equals(v.speed);
+    }
+    
     public AppVector copy(){
         return new AppVector(this.appType.get(), this.performance.get(), this.speed.get());
     }
