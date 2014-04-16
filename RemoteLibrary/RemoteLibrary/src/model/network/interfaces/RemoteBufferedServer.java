@@ -7,7 +7,6 @@
 package model.network.interfaces;
 
 import java.rmi.Remote;
-import java.util.List;
 
 /**
  *
@@ -16,5 +15,5 @@ import java.util.List;
  * producer/consumer
  */
 public interface RemoteBufferedServer extends RemoteServer, Remote {
-    List<Sendable> getSendable(String receiver);
+    Sendable getSendable(String receiver, int index);
 }

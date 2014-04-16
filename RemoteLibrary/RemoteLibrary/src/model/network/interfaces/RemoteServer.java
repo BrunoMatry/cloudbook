@@ -24,5 +24,4 @@ public interface RemoteServer extends Remote, RemoteOperations {
     RemoteClient getClient(String client) throws RemoteException;
     void binding() throws RemoteException;
     String getUrl() throws RemoteException;
-    List<Sendable> getSendable(String receiver);
 }

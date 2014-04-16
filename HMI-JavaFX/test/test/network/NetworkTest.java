@@ -30,6 +30,7 @@ import model.node.Message;
 import model.request.Request;
 import org.junit.After;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import static org.junit.Assert.fail;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -41,7 +42,7 @@ import org.junit.Test;
  */
 public class NetworkTest {
     
-    private RemoteServer server;
+    private RemoteBufferedServer server;
     private Sendable msg;
     private Network alice;
     private Network me;
@@ -62,14 +63,14 @@ public class NetworkTest {
     @SuppressWarnings("empty-statement")
     public void setUp() {
         try {
-            RemoteServer distant = new TestServer();
+            RemoteBufferedServer distant = new TestServer();
             distant.binding();
             alice = new Network("alice", 888);
             me = new Network(InetAddress.getLocalHost().getHostAddress(), 777);
             bob = new Network("bob", 12345);
             msg = new Request(new Message("Hi guys !"));
             while(!TestServer.READY);
-            server = (RemoteServer)Naming.lookup("rmi://" + InetAddress.getLocalHost().getHostAddress() + ":" + 500020 + "/TestServer");
+            server = (RemoteBufferedServer)Naming.lookup("rmi://" + InetAddress.getLocalHost().getHostAddress() + ":" + 500020 + "/TestServer");
             server.connect(alice);
             server.connect(me);
         } catch (NotBoundException | MalformedURLException | RemoteException | UnknownHostException ex) {
@@ -85,7 +86,9 @@ public class NetworkTest {
     public void testSend() {
         try {
             me.send(msg, alice.getIp());
-            
+            Sendable recvd = server.getSendable(me.getIp(), 0);
+            Message msgRec = (Message)recvd.getInfo();
+            Assert.assertEquals("Hi guys !", msgRec.descriptionProperty().get());
         } catch (RemoteException ex) {
             fail(ex.getMessage());
             Logger.getLogger(NetworkTest.class.getName()).log(Level.SEVERE, null, ex);
@@ -181,8 +184,9 @@ public class NetworkTest {
          * @throws RemoteException  cannot get distant reference
          */
         @Override
-        public void send(Sendable request, String receiver) throws RemoteException {
+        public synchronized void send(Sendable request, String receiver) throws RemoteException {
             msgBox.get(receiver).add(request);
+            notifyAll();
         }
 
         /**
@@ -201,8 +205,15 @@ public class NetworkTest {
         }
 
         @Override
-        public List<Sendable> getSendable(String receiver) {
-            return msgBox.get(receiver);
+        public synchronized Sendable getSendable(String receiver, int index) {
+            try {
+                while(msgBox.get(receiver).isEmpty())
+                    wait();
+                return msgBox.get(receiver).get(index);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(NetworkTest.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            return null;
         }
         
     }
