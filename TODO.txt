@@ -1,2 +1,3 @@
 Gwendal
-server en version bufferisée
+test connect sans url
+corriger les equals sur les properties
