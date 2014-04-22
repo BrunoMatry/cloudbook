@@ -6,11 +6,10 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import model.node.AppVector;
 import org.junit.After;
 import org.junit.AfterClass;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.junit.Before;
@@ -59,6 +58,7 @@ public class AppVectorTest {
     @Test
     public void testSerialization() {
         try {
+            appVector.saveProperties();
             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("test.serial"));
             oos.writeObject(appVector);
             oos.flush();
@@ -66,6 +66,11 @@ public class AppVectorTest {
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream("test.serial"));
             appVector2 = (AppVector) ois.readObject();
             ois.close();
+            appVector2.restoreProperties();
+            assertFalse(appVector == null);
+            assertFalse(appVector2 == null);
+            assertFalse(appVector.performanceProperty() == null);
+            assertFalse(appVector2.performanceProperty() == null);
             assertTrue(appVector2.equals(appVector));
         } catch (FileNotFoundException ex) {
             fail();

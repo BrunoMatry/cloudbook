@@ -20,7 +20,6 @@ public class Message implements Information {
     public Message() {
        idSender = 0;
        content = new State();
-       vector = new AppVector();
        date = new Date();
        relevant = true;
     }
