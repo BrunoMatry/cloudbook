@@ -40,9 +40,9 @@ public class AppVector implements Information {
         if (o == null || getClass() != o.getClass()) return false;
         AppVector v = (AppVector) o;
  
-        return appType.equals(v.appType) 
-                && performance.equals(v.performance)
-                && speed.equals(v.speed);
+        return appType.get() == v.appType.get()
+                && performance.get() == v.performance.get()
+                && speed.get() == v.speed.get();
     }
     
     public AppVector copy(){

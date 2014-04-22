@@ -86,7 +86,6 @@ public class Message implements Information {
         }
         final Message other = (Message) obj;
         if (!this.content.equals(other.content)) {
-            System.out.println("content not equal");
             return false;
         }
         if (!this.date.equals(other.date)) {
@@ -98,7 +97,7 @@ public class Message implements Information {
         if (this.relevant != other.relevant) {
             return false;
         }
-        if (this.vector.equals(other.vector)) {
+        if (!this.vector.equals(other.vector)) {
             return false;
         }
         return true;
