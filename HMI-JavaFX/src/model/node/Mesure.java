@@ -22,17 +22,6 @@ public final class Mesure implements Information {
     protected transient IntegerProperty mesure2;
     protected transient IntegerProperty mesure3;
     
-    /**
-     * Contructeur
-     * Initialise les proprietes
-     */
-    protected Mesure() {
-        date = new SimpleStringProperty(_date.toString());
-        mesure1 = new SimpleIntegerProperty(_mesure1);
-        mesure2 = new SimpleIntegerProperty(_mesure2);
-        mesure3 = new SimpleIntegerProperty(_mesure3);
-    }
-    
     public Mesure(int mes1, int mes2, int mes3) {
         mesure1 = new SimpleIntegerProperty(mes1);
         mesure2 = new SimpleIntegerProperty(mes2);
@@ -56,7 +45,6 @@ public final class Mesure implements Information {
 
     @Override
     public void restoreProperties() {
-        /* TODO Verifier la necessite de cette methode ou / et du constructeur vide */
         mesure1 = new SimpleIntegerProperty(_mesure1);
         mesure2 = new SimpleIntegerProperty(_mesure2);
         mesure3 = new SimpleIntegerProperty(_mesure3);
@@ -75,7 +63,7 @@ public final class Mesure implements Information {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 47 * hash + Objects.hashCode(this.date);
+        hash = 47 * hash + Objects.hashCode(this._date);
         hash = 47 * hash + Objects.hashCode(this.mesure1);
         hash = 47 * hash + Objects.hashCode(this.mesure2);
         hash = 47 * hash + Objects.hashCode(this.mesure3);
@@ -95,8 +83,8 @@ public final class Mesure implements Information {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Mesure other = (Mesure) obj;
-        return date.equals(other.date)
+        Mesure other = (Mesure) obj;
+        return _date.equals(other._date)
                 && mesure1.equals(other.mesure1)
                 && mesure2.equals(other.mesure2)
                 && mesure3.equals(other.mesure3);

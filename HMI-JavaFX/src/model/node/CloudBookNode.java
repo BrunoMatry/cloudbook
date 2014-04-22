@@ -58,7 +58,6 @@ public class CloudBookNode implements Serializable {
      * default constructor
      */
     protected CloudBookNode() {
-        topMesure = new Mesure();
         //topMessage = new Message();
         
         friends = new ArrayList<>();

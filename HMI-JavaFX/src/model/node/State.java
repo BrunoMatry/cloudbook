@@ -68,7 +68,6 @@ public class State implements Information {
 
     @Override
     public void restoreProperties() {
-        /* TODO Verifier la necessite de cette methode ou / et du constructeur vide */
         cloud = new SimpleIntegerProperty(_cloud.ordinal());
         from = new SimpleObjectProperty<>(_from);
         to = new SimpleObjectProperty<>(_to);

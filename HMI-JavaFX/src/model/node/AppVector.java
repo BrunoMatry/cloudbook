@@ -56,7 +56,6 @@ public class AppVector implements Information {
 
     @Override
     public void restoreProperties() {
-        /* TODO Verifier la necessite de cette methode ou / et du constructeur vide */
         appType = new SimpleIntegerProperty(_appType);
         performance = new SimpleIntegerProperty(_performance);
         speed = new SimpleIntegerProperty(_speed);
