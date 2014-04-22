@@ -15,5 +15,5 @@ import java.rmi.RemoteException;
  */
 public interface RemoteOperations extends Remote {
     public void send(Sendable request, String receiver) throws RemoteException;
-    public String getIp() throws RemoteException;
+    public String getId() throws RemoteException;
 }

@@ -11,6 +11,7 @@ import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.engine.Engine;
@@ -26,9 +27,9 @@ import model.network.interfaces.Sendable;
  */
 public class Network extends UnicastRemoteObject implements RemoteClient {
     
-    private String ip;
+    protected String ip;
     protected int port;
-    private RemoteServer stub;
+    protected RemoteServer stub;
     
     /**
      * Constructor
@@ -50,11 +51,6 @@ public class Network extends UnicastRemoteObject implements RemoteClient {
     public void send(Sendable request, String receiver) throws RemoteException {
         request.getInfo().saveProperties();
         stub.send(request, receiver);
-    }
-
-    @Override
-    public String getIp() throws RemoteException {
-        return ip;
     }
 
     @Override
@@ -80,5 +76,15 @@ public class Network extends UnicastRemoteObject implements RemoteClient {
         } catch (NotBoundException | MalformedURLException ex) {
             Logger.getLogger(Network.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    /**
+     * gets the identifier
+     * @return identifier of the Network
+     * @throws RemoteException in case of problem of remote access
+     */
+    @Override
+    public String getId() throws RemoteException {
+        return ip + ":" + port;
     }
 }

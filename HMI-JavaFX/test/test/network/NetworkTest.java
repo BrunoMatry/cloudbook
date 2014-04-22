@@ -41,33 +41,24 @@ import org.junit.Test;
  */
 public class NetworkTest {
     
-    private RemoteBufferedServer server;
-    private Sendable msg;
-    private Network alice;
-    private Network me;
-    private Network bob;
-    private Message original;
+    private static RemoteBufferedServer server;
+    private static Sendable msg;
+    private static Network alice;
+    private static Network me;
+    private static Network bob;
+    private static Message original;
     
     public NetworkTest() {
     }
     
     @BeforeClass
     public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    @SuppressWarnings("empty-statement")
-    public void setUp() {
         try {
             server = new TestServer();
             server.binding();
             alice = new Network("alice", 888);
             me = new Network(InetAddress.getLocalHost().getHostAddress(), 777);
-            bob = new Network("bob", 12345);
+            bob = new Network("bob", 50010);
             original = new Message();
             msg = new Request(original);
             alice.connect("rmi://" + InetAddress.getLocalHost().getHostAddress() + ":" + 50020 + "/TestServer");
@@ -77,6 +68,16 @@ public class NetworkTest {
         }
     }
     
+    @AfterClass
+    public static void tearDownClass() {
+    }
+    
+    @Before
+    @SuppressWarnings("empty-statement")
+    public void setUp() {
+        
+    }
+    
     @After
     public void tearDown() {
     }
@@ -84,12 +85,27 @@ public class NetworkTest {
     @Test
     public void testSend() {
         try {
-            alice.send(msg, me.getIp());
-            Sendable recvd = server.getSendable(me.getIp(), 0);
+            alice.send(msg, me.getId());
+            Sendable recvd = server.getSendable(me.getId(), 0);
             Message msgRec = (Message)recvd.getInfo();
             msgRec.restoreProperties();
             Assert.assertEquals(original, msgRec);
         } catch (RemoteException ex) {
+            fail(ex.getMessage());
+            Logger.getLogger(NetworkTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    @Test
+    public void testConnectByUrl() {
+        try {
+            Assert.assertTrue(server.getClient("bob:50010") == null);
+            bob.connect("rmi://" + InetAddress.getLocalHost().getHostAddress() + ":" + 50020 + "/TestServer");
+            Assert.assertTrue(server.getClient("bob:50010") != null);
+        } catch (RemoteException ex) {
+            fail(ex.getMessage());
+            Logger.getLogger(NetworkTest.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnknownHostException ex) {
             fail(ex.getMessage());
             Logger.getLogger(NetworkTest.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -122,8 +138,8 @@ public class NetworkTest {
          */
         @Override
         public void connect(RemoteClient rc) throws RemoteException {
-            msgBox.put(rc.getIp(), new ArrayList<Sendable>());
-            clients.put(rc.getIp(), rc);
+            msgBox.put(rc.getId(), new ArrayList<Sendable>());
+            clients.put(rc.getId(), rc);
         }
 
         /**
@@ -133,8 +149,8 @@ public class NetworkTest {
          */
         @Override
         public void disconnect(RemoteClient rc) throws RemoteException {
-            msgBox.remove(rc.getIp());
-            clients.remove(rc.getIp());
+            msgBox.remove(rc.getId());
+            clients.remove(rc.getId());
         }
 
         /**
@@ -190,9 +206,9 @@ public class NetworkTest {
          * @throws RemoteException cannot get distant reference
          */
         @Override
-        public String getIp() throws RemoteException {
+        public String getId() throws RemoteException {
             try {
-                return InetAddress.getLocalHost().getHostAddress();
+                return InetAddress.getLocalHost().getHostAddress() + ":" + 50020;
             } catch (UnknownHostException ex) {
                 Logger.getLogger(NetworkTest.class.getName()).log(Level.SEVERE, null, ex);
             }
