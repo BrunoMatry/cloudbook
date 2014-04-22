@@ -25,16 +25,6 @@ public class State implements Information {
     protected transient BooleanProperty current;
     
     /**
-     * Empty constructor for serialization
-     */
-    protected State() {
-        cloud = new SimpleIntegerProperty(0);
-        from = new SimpleObjectProperty<>(new Date());
-        to = new SimpleObjectProperty<>(new Date());
-        current = new SimpleBooleanProperty(true);
-    }
-    
-    /**
      * Main constructor
      * @param c cloud associate to the node state
      */

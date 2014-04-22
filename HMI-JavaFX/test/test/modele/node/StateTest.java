@@ -1,10 +1,18 @@
 package test.modele.node;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import model.node.Cloud;
 import model.node.State;
 import org.junit.After;
 import org.junit.AfterClass;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -52,5 +60,27 @@ public class StateTest {
         assertTrue(s1.getCloud().equals(Cloud.DROPBOX));
         assertTrue(s2.getCloud().equals(Cloud.GDRIVE));
         assertTrue(s3.getCloud().equals(Cloud.SKYDRIVE));
+    }
+    
+    @Test
+    public void testSerialization() {
+        try {
+            s1.saveProperties();
+            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("test.serial"));
+            oos.writeObject(s1);
+            oos.flush();
+            oos.close();
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream("test.serial"));
+            State s4 = (State) ois.readObject();
+            ois.close();
+            s4.restoreProperties();
+            assertFalse(s1 == null);
+            assertFalse(s4 == null);
+            assertTrue(s1.equals(s4));
+        } catch (FileNotFoundException ex) {
+            fail();
+        } catch (IOException | ClassNotFoundException ex) {
+            fail();
+        }
     }
 }

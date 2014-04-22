@@ -19,7 +19,6 @@ public class Message implements Information {
      */
     public Message() {
        idSender = 0;
-       content = new State();
        date = new Date();
        relevant = true;
     }
