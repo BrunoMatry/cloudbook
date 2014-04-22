@@ -109,9 +109,13 @@ public class State implements Information {
             return false;
         }
         final State other = (State) obj;
-        return cloud.equals(other.cloud) 
-                && from.equals(other.from)
-                && to.equals(other.to)
-                && current.equals(other.current);
+        Date myFrom = (Date) from.get();
+        Date myTo = (Date) to.get();
+        Date otherFrom = (Date) other.from.get();
+        Date otherTo= (Date) other.to.get();
+        return cloud.get() == other.cloud.get()
+                && myFrom.equals(otherFrom)
+                && myTo.equals(otherTo)
+                && current.get() == other.current.get();
     }
 }
