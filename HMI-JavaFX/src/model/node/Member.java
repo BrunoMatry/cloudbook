@@ -2,6 +2,7 @@ package model.node;
 
 import model.network.interfaces.Information;
 import java.util.Date;
+import java.util.Objects;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ObjectProperty;
@@ -74,5 +75,37 @@ public class Member implements Information {
         relevance = new SimpleDoubleProperty(_relevance);
         confidence = new SimpleIntegerProperty(_confidence);
         lastConnexion = new SimpleObjectProperty<>(_lastConnexion);
+    }
+
+    /**
+     * hashCode
+     * @return hash code
+     */
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 17 * hash + Objects.hashCode(this.relevance);
+        hash = 17 * hash + Objects.hashCode(this.confidence);
+        hash = 17 * hash + Objects.hashCode(this.lastConnexion);
+        return hash;
+    }
+
+    /**
+     * equals
+     * @param obj object to be compared with
+     * @return true if the two objects have equals fields
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Member other = (Member) obj;
+        return this.relevance.equals(other.relevance)
+                && this.confidence.equals(other.confidence) 
+                && this.lastConnexion.equals(other.lastConnexion);
     }
 }

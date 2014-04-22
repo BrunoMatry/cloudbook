@@ -1,5 +1,6 @@
 package model.node;
 
+import java.util.Objects;
 import model.network.interfaces.Information;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
@@ -17,9 +18,9 @@ public class AppVector implements Information {
     protected transient IntegerProperty speed;
     
     protected AppVector() {
-        appType = new SimpleIntegerProperty(_appType);
-        performance = new SimpleIntegerProperty(_performance);
-        speed = new SimpleIntegerProperty(_speed);
+        appType = new SimpleIntegerProperty(0);
+        performance = new SimpleIntegerProperty(0);
+        speed = new SimpleIntegerProperty(0);
     }
     
     public AppVector(int appTyp, int perf, int spd) {
@@ -28,6 +29,11 @@ public class AppVector implements Information {
         speed = new SimpleIntegerProperty(spd);
     }
     
+    /**
+     * equals
+     * @param o object to be compared with
+     * @return true if the two objects are equivalents
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -60,5 +66,27 @@ public class AppVector implements Information {
         appType = new SimpleIntegerProperty(_appType);
         performance = new SimpleIntegerProperty(_performance);
         speed = new SimpleIntegerProperty(_speed);
+    }
+
+    /**
+     * hashCode
+     * @return hash code
+     */
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 19 * hash + Objects.hashCode(this.appType);
+        hash = 19 * hash + Objects.hashCode(this.performance);
+        hash = 19 * hash + Objects.hashCode(this.speed);
+        return hash;
+    }
+
+    /**
+     * toString
+     * @return string representation
+     */
+    @Override
+    public String toString() {
+        return "AppVector{" + "appType=" + appType + ", performance=" + performance + ", speed=" + speed + '}';
     }
 }

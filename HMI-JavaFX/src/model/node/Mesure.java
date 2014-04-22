@@ -2,6 +2,7 @@ package model.node;
 
 import model.network.interfaces.Information;
 import java.util.Date;
+import java.util.Objects;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -66,4 +67,38 @@ public final class Mesure implements Information {
     public IntegerProperty mesure2Property() { return mesure2; }
     public IntegerProperty mesure3Property() { return mesure3; }
     public StringProperty dateProperty() { return date; }
+
+    /**
+     * hashCode
+     * @return hash code
+     */
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 47 * hash + Objects.hashCode(this.date);
+        hash = 47 * hash + Objects.hashCode(this.mesure1);
+        hash = 47 * hash + Objects.hashCode(this.mesure2);
+        hash = 47 * hash + Objects.hashCode(this.mesure3);
+        return hash;
+    }
+
+    /**
+     * equals
+     * @param obj object to be compared with
+     * @return true if the two objects have equals fields
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Mesure other = (Mesure) obj;
+        return date.equals(other.date)
+                && mesure1.equals(other.mesure1)
+                && mesure2.equals(other.mesure2)
+                && mesure3.equals(other.mesure3);
+    }
 }

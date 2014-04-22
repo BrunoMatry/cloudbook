@@ -46,6 +46,7 @@ public class NetworkTest {
     private Network alice;
     private Network me;
     private Network bob;
+    private Message original;
     
     public NetworkTest() {
     }
@@ -67,7 +68,8 @@ public class NetworkTest {
             alice = new Network("alice", 888);
             me = new Network(InetAddress.getLocalHost().getHostAddress(), 777);
             bob = new Network("bob", 12345);
-            msg = new Request(new Message("Hi guys !"));
+            original = new Message();
+            msg = new Request(original);
             alice.connect("rmi://" + InetAddress.getLocalHost().getHostAddress() + ":" + 50020 + "/TestServer");
             me.connect("rmi://" + InetAddress.getLocalHost().getHostAddress() + ":" + 50020 + "/TestServer");
         } catch (RemoteException | UnknownHostException ex) {
@@ -86,7 +88,7 @@ public class NetworkTest {
             Sendable recvd = server.getSendable(me.getIp(), 0);
             Message msgRec = (Message)recvd.getInfo();
             msgRec.restoreProperties();
-            Assert.assertEquals("Hi guys !", msgRec.descriptionProperty().get());
+            Assert.assertEquals(original, msgRec);
         } catch (RemoteException ex) {
             fail(ex.getMessage());
             Logger.getLogger(NetworkTest.class.getName()).log(Level.SEVERE, null, ex);

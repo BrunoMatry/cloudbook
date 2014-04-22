@@ -2,6 +2,7 @@ package model.node;
 
 import model.network.interfaces.Information;
 import java.util.Date;
+import java.util.Objects;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ObjectProperty;
@@ -27,10 +28,10 @@ public class State implements Information {
      * Empty constructor for serialization
      */
     protected State() {
-        cloud = new SimpleIntegerProperty(_cloud.ordinal());
-        from = new SimpleObjectProperty<>(_from);
-        to = new SimpleObjectProperty<>(_to);
-        current = new SimpleBooleanProperty(_current);
+        cloud = new SimpleIntegerProperty(0);
+        from = new SimpleObjectProperty<>(new Date());
+        to = new SimpleObjectProperty<>(new Date());
+        current = new SimpleBooleanProperty(true);
     }
     
     /**
@@ -82,5 +83,35 @@ public class State implements Information {
         from = new SimpleObjectProperty<>(_from);
         to = new SimpleObjectProperty<>(_to);
         current = new SimpleBooleanProperty(_current);
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 53 * hash + Objects.hashCode(this.cloud);
+        hash = 53 * hash + Objects.hashCode(this.from);
+        hash = 53 * hash + Objects.hashCode(this.to);
+        hash = 53 * hash + Objects.hashCode(this.current);
+        return hash;
+    }
+
+    /**
+     * equals
+     * @param obj object to be compared with
+     * @return true if the two objects have equals fields
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final State other = (State) obj;
+        return cloud.equals(other.cloud) 
+                && from.equals(other.from)
+                && to.equals(other.to)
+                && current.equals(other.current);
     }
 }

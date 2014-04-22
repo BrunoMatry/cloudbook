@@ -111,7 +111,7 @@ public final class HomeView extends HomeActivity {
         
         public void bindMessage() {
             Text txtMsg = (Text)NodeView.INSTANCE.getMessage().getView();
-            StringProperty msgp = Engine.INSTANCE.getNode().topMessageProperty();
+            StringProperty msgp = Engine.INSTANCE.getNode().nameProperty();
             txtMsg.textProperty().bind(msgp);
         }
         
