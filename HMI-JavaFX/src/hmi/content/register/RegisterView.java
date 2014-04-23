@@ -33,7 +33,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
-import model.network.interfaces.RemoteServer;
 import model.node.Cloud;
 import model.node.CloudBuilder;
 
@@ -128,7 +127,7 @@ public final class RegisterView extends Activity {
         public MyVBox() {
             super();
             setAlignment(Pos.CENTER);
-            setSpacing(50);
+            setSpacing(10);
             getChildren().addAll(
                     getLogo(),
                     getBrowse(),

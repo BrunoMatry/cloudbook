@@ -31,7 +31,7 @@ public class CloudBookNode implements Serializable {
     l'application quand elle est chargée et référencer  le chemin */
     protected transient Image _logo; //logo of the application
     /* Note Bruno : pourquoi ces trois variables ?? Ne faut-il changer les structures de donnees putlôt ? */
-    protected Message topMessage; //message to be shown at the first place
+    //protected Message topMessage; //message to be shown at the first place
     protected Mesure topMesure; //mesure to be shown at the first place
     protected Cloud platform; //current platform of the application
     
@@ -180,7 +180,7 @@ public class CloudBookNode implements Serializable {
             msg.saveProperties();
         for(State s : states)
             s.saveProperties();
-        topMessage.saveProperties();
+        //topMessage.saveProperties();
         topMesure.saveProperties();
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("node_save.ser"))) {
             oos.writeObject(this);
@@ -191,7 +191,6 @@ public class CloudBookNode implements Serializable {
     public static CloudBookNode load() throws IOException, ClassNotFoundException {
         ObjectInputStream ois = new ObjectInputStream(new FileInputStream("node_save.ser"));
         CloudBookNode res = (CloudBookNode) ois.readObject();
-        //res.logo.set(res._logo);
         res.name = new SimpleStringProperty(res._name);
         for(Friend f : res.friends)
             f.restoreProperties();
@@ -203,7 +202,6 @@ public class CloudBookNode implements Serializable {
             msg.restoreProperties();
         for(State s : res.states)
             s.restoreProperties();
-        res.topMessage.restoreProperties();
         res.topMesure.restoreProperties();
         return res;
     }

@@ -11,6 +11,7 @@ import hmi.button.CloudBookButton;
 import hmi.content.HomeActivity;
 import hmi.content.node.NodeView;
 import hmi.content.register.RegisterView;
+import java.util.List;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
@@ -23,6 +24,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import model.engine.Engine;
 import model.node.CloudBuilder;
+import model.node.Message;
 
 /**
  * Activity launched when the application starts
