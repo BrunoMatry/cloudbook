@@ -1,7 +1,6 @@
 package model.engine;
 
 import java.io.IOException;
-import java.net.InetAddress;
 import model.friendmanager.FriendManager;
 import model.friendmanager.IFriendManager;
 import model.network.interfaces.Information;

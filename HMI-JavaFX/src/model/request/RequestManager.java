@@ -6,9 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import model.engine.Engine;
 import model.friendmanager.IFriendManager;
 import model.network.interfaces.Information;
 import model.node.Message;
+import model.node.Mesure;
 
 public class RequestManager implements IRequestManager {
     
@@ -41,7 +43,11 @@ public class RequestManager implements IRequestManager {
             if(info.getClass() == Message.class) {
                 Message msg = (Message)info;
                 msg.restoreProperties();
-                inbox.add(msg);
+                Engine.INSTANCE.getNode().addMessage(msg);
+            } else if(info.getClass() == Mesure.class) {
+                Mesure mes = (Mesure)info;
+                mes.restoreProperties();
+                Engine.INSTANCE.getNode().addMesure(mes);
             }
         } catch (RemoteException ex) {
             Logger.getLogger(RequestManager.class.getName()).log(Level.SEVERE, null, ex);
