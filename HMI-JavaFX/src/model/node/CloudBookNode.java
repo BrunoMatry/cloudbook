@@ -38,8 +38,8 @@ public class CloudBookNode implements Serializable {
     protected List<Friend> friends;
     protected List<Information> informations;
     protected Stack<State> states; //history of the cloud platforms
-    protected List<Mesure> mesures; //list of all the mesures
-    protected List<Message> messages; //list of the received messages
+    protected InformationBox<Mesure> mesures; //list of all the mesures
+    protected InformationBox<Message> messages; //list of the received messages
     protected AppVector vector;
     
     //host of the server
@@ -63,8 +63,8 @@ public class CloudBookNode implements Serializable {
         friends = new ArrayList<>();
         informations = new ArrayList<>();
         states = new Stack<>();
-        mesures = new ArrayList<>();
-        messages = new ArrayList<>();    
+        mesures = new InformationBox<>();
+        messages = new InformationBox<>();    
         vector = new AppVector(0,0,0);
         
         name = new SimpleStringProperty();
@@ -92,8 +92,8 @@ public class CloudBookNode implements Serializable {
         friends = new ArrayList<>();
         informations = new ArrayList<>();
         states = new Stack<>();
-        mesures = new ArrayList<>();
-        messages = new ArrayList<>();
+        mesures = new InformationBox<>();
+        messages = new InformationBox<>();
         vector = new AppVector(appType, performance, speed);
         
         name = new SimpleStringProperty(string);
@@ -104,8 +104,8 @@ public class CloudBookNode implements Serializable {
     
     /********************************** SETTERS / GETTERS **********************************/
     
-    public void addMesure(Mesure m) { mesures.add(m); }
-    public void addMessage(Message m) { messages.add(m); } 
+    public void addMesure(Mesure m) { mesures.push(m); }
+    public void addMessage(Message m) { messages.push(m); } 
     public void addInformation(Information info) { informations.add(info); }
     public void addFriend(Friend f) { friends.add(f); }
     
@@ -113,6 +113,8 @@ public class CloudBookNode implements Serializable {
     public AppVector getVector() { return vector; }
     public List<Information> getInformations() { return informations; }
     public Message getMessage(int i) { return messages.get(i); }
+    public InformationBox getMessages() { return messages; }
+    public InformationBox getMesures() { return mesures; }
     
     /**
      * getter of the server url. Computed from serverHost and serverPort
@@ -174,10 +176,8 @@ public class CloudBookNode implements Serializable {
             f.saveProperties();
         for(Information info : informations)
             info.saveProperties();
-        for(Mesure mes : mesures)
-            mes.saveProperties();
-        for(Message msg : messages)
-            msg.saveProperties();
+        mesures.saveProperties();
+        messages.saveProperties();
         for(State s : states)
             s.saveProperties();
         //topMessage.saveProperties();
@@ -196,10 +196,8 @@ public class CloudBookNode implements Serializable {
             f.restoreProperties();
         for(Information info : res.informations)
             info.restoreProperties();
-        for(Mesure mes : res.mesures)
-            mes.restoreProperties();
-        for(Message msg : res.messages)
-            msg.restoreProperties();
+        res.mesures.restoreProperties();
+        res.messages.restoreProperties();
         for(State s : res.states)
             s.restoreProperties();
         res.topMesure.restoreProperties();

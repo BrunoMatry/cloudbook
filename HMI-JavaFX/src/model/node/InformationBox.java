@@ -84,6 +84,15 @@ public class InformationBox<T extends Information> implements Information {
     }
     
     /**
+     * Returns element at the given position in this box
+     * @param index index of the element to return
+     * @return element at the given position in this box
+     */
+    public T get(int index) {
+        return box.get(index);
+    }
+    
+    /**
      * Saves all properties of contained informations
      */
     @Override

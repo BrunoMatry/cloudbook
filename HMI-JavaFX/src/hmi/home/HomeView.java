@@ -11,7 +11,6 @@ import hmi.button.CloudBookButton;
 import hmi.content.HomeActivity;
 import hmi.content.node.NodeView;
 import hmi.content.register.RegisterView;
-import java.util.List;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
@@ -24,7 +23,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import model.engine.Engine;
 import model.node.CloudBuilder;
-import model.node.Message;
 
 /**
  * Activity launched when the application starts
@@ -40,7 +38,7 @@ public final class HomeView extends HomeActivity {
     */
     
     //container of the launchers buttons
-    private HomeVBox hVBox;
+    private final HomeVBox hVBox;
     
     /**
      * initialize the container
@@ -113,13 +111,13 @@ public final class HomeView extends HomeActivity {
         
         public void bindMessage() {
             Text txtMsg = (Text)NodeView.INSTANCE.getMessage().getView();
-            StringProperty msgp = Engine.INSTANCE.getNode().nameProperty();
+            StringProperty msgp = Engine.INSTANCE.getNode().getMessages().descriptionProperty();
             txtMsg.textProperty().bind(msgp);
         }
         
         public void bindMesure() {
             Text txtM = (Text)NodeView.INSTANCE.getMesures().getView();
-            StringProperty mp = Engine.INSTANCE.getNode().topMesureProperty();
+            StringProperty mp = Engine.INSTANCE.getNode().getMesures().descriptionProperty();
             txtM.textProperty().bind(mp);
         }
         
