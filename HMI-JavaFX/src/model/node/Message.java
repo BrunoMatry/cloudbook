@@ -41,8 +41,10 @@ public class Message implements Information {
      */
     @Override
     public void saveProperties() {
-        content.saveProperties();
-        vector.saveProperties();
+        if(content != null)
+            content.saveProperties();
+        if(vector != null)
+            vector.saveProperties();
     }
 
     /**
@@ -50,8 +52,10 @@ public class Message implements Information {
      */
     @Override
     public void restoreProperties() {
-        content.restoreProperties();
-        vector.restoreProperties();
+        if(content != null)
+            content.restoreProperties();
+        if(vector != null)
+            vector.restoreProperties();
     }
 
     /**
@@ -83,7 +87,7 @@ public class Message implements Information {
             return false;
         }
         final Message other = (Message) obj;
-        if (!this.content.equals(other.content)) {
+        if (!Objects.equals(this.content, other.content)) {
             return false;
         }
         if (!this.date.equals(other.date)) {
@@ -95,7 +99,7 @@ public class Message implements Information {
         if (this.relevant != other.relevant) {
             return false;
         }
-        if (!this.vector.equals(other.vector)) {
+        if (!Objects.equals(this.vector, other.vector)) {
             return false;
         }
         return true;
