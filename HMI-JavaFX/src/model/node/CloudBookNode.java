@@ -76,6 +76,8 @@ public class CloudBookNode implements Serializable {
      * @param image logo
      * @param string name
      * @param cloud cloud-platform
+     * @param host host name of the server
+     * @param port port of the server
      * @param appType type of the application
      * @param performance TODO
      * @param speed TODO

@@ -11,7 +11,6 @@ import java.net.MalformedURLException;
 import java.net.UnknownHostException;
 import java.rmi.AlreadyBoundException;
 import java.rmi.Naming;
-import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.server.UnicastRemoteObject;
@@ -24,6 +23,7 @@ import java.util.logging.Logger;
 import model.network.implementation.Network;
 import model.network.interfaces.RemoteBufferedServer;
 import model.network.interfaces.RemoteClient;
+import model.network.interfaces.RemoteServer;
 import model.network.interfaces.Sendable;
 import model.node.Message;
 import model.request.Request;
@@ -61,8 +61,8 @@ public class NetworkTest {
             bob = new Network("bob", 50010);
             original = new Message();
             msg = new Request(original);
-            alice.connect("rmi://" + InetAddress.getLocalHost().getHostAddress() + ":" + 50020 + "/TestServer");
-            me.connect("rmi://" + InetAddress.getLocalHost().getHostAddress() + ":" + 50020 + "/TestServer");
+            alice.connect(InetAddress.getLocalHost().getHostName() + ":" + 50020);
+            me.connect(InetAddress.getLocalHost().getHostAddress() + ":" + 50020);
         } catch (RemoteException | UnknownHostException ex) {
             Logger.getLogger(NetworkTest.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -97,11 +97,28 @@ public class NetworkTest {
     }
     
     @Test
-    public void testConnectByUrl() {
+    public void testConnect() {
         try {
             Assert.assertTrue(server.getClient("bob:50010") == null);
-            bob.connect("rmi://" + InetAddress.getLocalHost().getHostAddress() + ":" + 50020 + "/TestServer");
+            bob.connect(InetAddress.getLocalHost().getHostName() + ":" + 50020);
             Assert.assertTrue(server.getClient("bob:50010") != null);
+            bob.disconnect();
+        } catch (RemoteException ex) {
+            fail(ex.getMessage());
+            Logger.getLogger(NetworkTest.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnknownHostException ex) {
+            fail(ex.getMessage());
+            Logger.getLogger(NetworkTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    @Test
+    public void testDisonnect() {
+        try {
+            bob.connect(InetAddress.getLocalHost().getHostName() + ":" + 50020);
+            Assert.assertTrue(server.getClient("bob:50010") != null);
+            bob.disconnect();
+            Assert.assertTrue(server.getClient("bob:50010") == null);
         } catch (RemoteException ex) {
             fail(ex.getMessage());
             Logger.getLogger(NetworkTest.class.getName()).log(Level.SEVERE, null, ex);
@@ -171,7 +188,7 @@ public class NetworkTest {
         @Override
         public void binding() throws RemoteException {
             try {
-                url = "rmi://" + InetAddress.getLocalHost().getHostName() + ":" + 50020 + "/TestServer";
+                url = "rmi://" + InetAddress.getLocalHost().getHostName() + ":" + 50020 + "/" + RemoteServer.NAME;
                 LocateRegistry.createRegistry(50020);
                 Naming.bind(url, this);
             } catch (AlreadyBoundException | MalformedURLException | UnknownHostException ex) {

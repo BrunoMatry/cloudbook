@@ -48,14 +48,15 @@ public class CloudBuilder {
     }
     
     /**
-     * set the current cloudbooknode as the registered one
+     * sets the current cloudbooknode as the registered one
      * @throws IOException the state can't be saved
      */
     public void build() throws IOException {
         Engine.INSTANCE.setNode(new CloudBookNode(logo.get(), name.get(), platform.get(), host.get(), Integer.parseInt(port.get()), 0, 0, 0));
         Engine.INSTANCE.setNetwork(new Network(host.get(), Integer.parseInt(port.get())));
         Engine.INSTANCE.save();
-        Engine.INSTANCE.getNetwork().connect();
+        CloudBookNode cbn = Engine.INSTANCE.getNode();
+        Engine.INSTANCE.getNetwork().connect("" + cbn.getServerHost() + ":" + cbn.getServerPort());
     }
     
 }

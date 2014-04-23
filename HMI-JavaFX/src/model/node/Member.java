@@ -104,8 +104,8 @@ public class Member implements Information {
             return false;
         }
         final Member other = (Member) obj;
-        return this.relevance.equals(other.relevance)
-                && this.confidence.equals(other.confidence) 
-                && this.lastConnexion.equals(other.lastConnexion);
+        return this.relevance.get() == other.relevance.get()
+                && this.confidence.get() == other.confidence.get() 
+                && this.lastConnexion.get() == other.lastConnexion.get();
     }
 }

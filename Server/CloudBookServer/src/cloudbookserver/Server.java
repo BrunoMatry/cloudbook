@@ -28,37 +28,36 @@ import model.network.interfaces.Sendable;
  *
  * @author Gwendal
  */
-public final class Server extends UnicastRemoteObject implements RemoteServer {
+public class Server extends UnicastRemoteObject implements RemoteServer {
 
-    public static final Server INSTANCE = makeServerScheduler();
-    
-    private Map<String, RemoteClient> clients;
-    private String ip;
+    protected Map<String, RemoteClient> clients;
+    protected String ip;
     
     //port on which the server is running
-    private int port;
-    private String url;
+    protected int port;
+    protected String url;
     
-    private Server(String ip) throws RemoteException {
+    /**
+     * Constructor
+     * @param ip inet address
+     * @param port port
+     * @throws RemoteException in case of remote access problem
+     */
+    public Server(String ip, int port) throws RemoteException {
         clients = new HashMap<>();
         this.ip = ip;
-        port = PORT;
-    }
-    
-    private static Server makeServerScheduler() {
-        try {
-            String ip = InetAddress.getLocalHost().getHostName();
-            Server res = new Server(ip);
-            return res;
-        } catch (UnknownHostException | RemoteException ex) {
-            Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return null;
+        this.port = port;
     }
 
+    /**
+     * delegates the execution to a servant
+     * @param request request to send
+     * @param receiver target of the request
+     * @throws RemoteException in case of remote access problem
+     */
     @Override
     public void send(Sendable request, String receiver) throws RemoteException {
-        Servant servant = new Servant(request, receiver);
+        Servant servant = new Servant(request, receiver, this);
         servant.start();
     }
 

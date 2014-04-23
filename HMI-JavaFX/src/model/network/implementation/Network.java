@@ -11,7 +11,6 @@ import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.engine.Engine;
@@ -58,20 +57,15 @@ public class Network extends UnicastRemoteObject implements RemoteClient {
         return stub;
     }
 
+    /**
+     * registers this Network client on the specified server
+     * @param serverId identifier of the server
+     * @throws RemoteException in case of remote access problem
+     */
     @Override
-    public void connect(String url) throws RemoteException {
+    public void connect(String serverId) throws RemoteException {
         try {
-            stub = (RemoteServer)Naming.lookup(url);
-            stub.connect(this);
-        } catch (NotBoundException | MalformedURLException ex) {
-            Logger.getLogger(Network.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
-    @Override
-    public void connect() throws RemoteException {
-        try {
-            stub = (RemoteServer)Naming.lookup("rmi://" + ip + ":" + port + "/" + RemoteServer.NAME);
+            stub = (RemoteServer)Naming.lookup("rmi://" + serverId + "/" + RemoteServer.NAME);
             stub.connect(this);
         } catch (NotBoundException | MalformedURLException ex) {
             Logger.getLogger(Network.class.getName()).log(Level.SEVERE, null, ex);
@@ -86,5 +80,16 @@ public class Network extends UnicastRemoteObject implements RemoteClient {
     @Override
     public String getId() throws RemoteException {
         return ip + ":" + port;
+    }
+
+    /**
+     * disconnects of the server
+     * stub is set to null
+     * @throws RemoteException in case of remote access problem
+     */
+    @Override
+    public void disconnect() throws RemoteException {
+        stub.disconnect(this);
+        stub = null;
     }
 }

@@ -15,7 +15,7 @@ import java.rmi.RemoteException;
  */
 public interface RemoteClient extends Remote, RemoteOperations {
     RemoteServer getStub() throws RemoteException;
-    void connect(String url) throws RemoteException;
-    void connect() throws RemoteException;
+    void connect(String serverId) throws RemoteException;
+    void disconnect() throws RemoteException;
     public void handleRequest(Sendable request) throws RemoteException;
 }

@@ -20,16 +20,18 @@ public class Servant extends Thread {
 
     protected Sendable request;
     protected String receiver;
+    protected Server server;
     
-    public Servant(Sendable sendable, String target) {
+    public Servant(Sendable sendable, String target, Server server) {
         request = sendable;
         receiver = target;
+        this.server = server;
     }
     
     @Override
     public void run() {
         try {
-            RemoteClient client = Server.INSTANCE.getClient(receiver);
+            RemoteClient client = this.server.getClient(receiver);
             if(client != null)
                 client.handleRequest(request);
             else

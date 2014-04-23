@@ -63,7 +63,7 @@ public final class Mesure implements Information {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 47 * hash + Objects.hashCode(this._date);
+        hash = 47 * hash + Objects.hashCode(this.date);
         hash = 47 * hash + Objects.hashCode(this.mesure1);
         hash = 47 * hash + Objects.hashCode(this.mesure2);
         hash = 47 * hash + Objects.hashCode(this.mesure3);
@@ -84,9 +84,9 @@ public final class Mesure implements Information {
             return false;
         }
         Mesure other = (Mesure) obj;
-        return _date.equals(other._date)
-                && mesure1.equals(other.mesure1)
-                && mesure2.equals(other.mesure2)
-                && mesure3.equals(other.mesure3);
+        return this.date.get().equals(other.date.get())
+                && mesure1.get() == other.mesure1.get()
+                && mesure2.get() == other.mesure2.get()
+                && mesure3.get() == other.mesure3.get();
     }
 }

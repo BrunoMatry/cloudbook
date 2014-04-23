@@ -8,7 +8,6 @@ package model.network.interfaces;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
-import java.util.List;
 
 /**
  *
@@ -17,7 +16,6 @@ import java.util.List;
 public interface RemoteServer extends Remote, RemoteOperations {
     
     public static final String NAME = "Server";
-    public static final int PORT = 50100;
     
     void connect(RemoteClient rc) throws RemoteException;
     void disconnect(RemoteClient rc) throws RemoteException;

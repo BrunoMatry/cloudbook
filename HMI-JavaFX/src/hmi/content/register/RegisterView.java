@@ -289,7 +289,7 @@ public final class RegisterView extends Activity {
 
         public final TextField getPort() {
             if(port == null) {
-                port = new TextField(""+RemoteServer.PORT);
+                port = new TextField("50100");
                 setMargin(host, new Insets(0, 200, 0, 200));
             }
             return port;
