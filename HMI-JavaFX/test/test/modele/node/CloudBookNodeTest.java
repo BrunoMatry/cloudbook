@@ -6,7 +6,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import model.node.AppVector;
+import javafx.scene.image.Image;
+import model.node.Cloud;
+import model.node.CloudBookNode;
 import model.node.Member;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -19,10 +21,10 @@ import org.junit.Test;
 
 
 
-public class MemberTest {
-    Member m1, m2;
+public class CloudBookNodeTest {
+    CloudBookNode n1;
     
-    public MemberTest() {
+    public CloudBookNodeTest() {
     }
     
     @BeforeClass
@@ -35,8 +37,7 @@ public class MemberTest {
     
     @Before
     public void setUp() {
-        m1 = new Member(1, 2, 1.5, new AppVector(1, 2, 3));
-        m2 = new Member(4, 3, 1.2, new AppVector(1, 5, 3));
+        // n1 = new CloudBookNode(new Image(), null, Cloud.GDRIVE, null, port, appType, performance, speed);
     }
     
     @After
@@ -46,22 +47,20 @@ public class MemberTest {
     @Test
     public void testSerialisation() {
         try {
-            m1.saveProperties();
             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("test.serial"));
-            oos.writeObject(m1);
+            oos.writeObject(n1);
             oos.flush();
             oos.close();
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream("test.serial"));
-            Member m3 = (Member) ois.readObject();
+            CloudBookNode n2 = (CloudBookNode) ois.readObject();
             ois.close();
-            m3.restoreProperties();
-            assertFalse(m1 == null);
-            assertTrue(m1.equals(m3));
-            assertFalse(m1.equals(m2));
+            assertFalse(n1 == null);
+            assertTrue(n2.equals(n2));
         } catch (FileNotFoundException ex) {
             fail();
         } catch (IOException | ClassNotFoundException ex) {
             fail();
         }
     }
+
 }
