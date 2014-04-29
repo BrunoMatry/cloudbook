@@ -59,7 +59,7 @@ public class NetworkTest {
             alice = new Network("alice", 888);
             me = new Network(InetAddress.getLocalHost().getHostAddress(), 777);
             bob = new Network("bob", 50010);
-            original = new Message();
+            //original = new Message(id, null, original, true);
             msg = new Request(original);
             alice.connect(InetAddress.getLocalHost().getHostName() + ":" + 50020);
             me.connect(InetAddress.getLocalHost().getHostAddress() + ":" + 50020);

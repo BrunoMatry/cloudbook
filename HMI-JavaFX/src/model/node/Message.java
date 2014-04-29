@@ -12,18 +12,9 @@ public class Message implements Information {
     protected boolean relevant;
     protected AppVector vector;
     
-    /**
-     * Constructor
-     * reminder : every class should define a default constructor
-     * It's very usefull for easy tests on the class
-     */
-    public Message() {
-       idSender = 0;
-       date = new Date();
-       relevant = true;
-    }
-    
-    public Message(int id, AppVector vect, Information ctnt, boolean rlvnt) {
+    public Message(int id, AppVector vect, Information ctnt, boolean rlvnt) throws NullPointerException {
+        if(ctnt == null || vect == null)
+            throw new NullPointerException();
         idSender = id;
         content = ctnt;
         vector = vect;
@@ -41,10 +32,8 @@ public class Message implements Information {
      */
     @Override
     public void saveProperties() {
-        if(content != null)
-            content.saveProperties();
-        if(vector != null)
-            vector.saveProperties();
+        content.saveProperties();
+        vector.saveProperties();
     }
 
     /**
@@ -52,10 +41,8 @@ public class Message implements Information {
      */
     @Override
     public void restoreProperties() {
-        if(content != null)
-            content.restoreProperties();
-        if(vector != null)
-            vector.restoreProperties();
+        content.restoreProperties();
+        vector.restoreProperties();
     }
 
     /**
@@ -90,10 +77,10 @@ public class Message implements Information {
         if (!Objects.equals(this.content, other.content)) {
             return false;
         }
-        if (!this.date.equals(other.date)) {
+        if (this.idSender != other.idSender) {
             return false;
         }
-        if (this.idSender != other.idSender) {
+        if (!this.date.equals(other.date)) {
             return false;
         }
         if (this.relevant != other.relevant) {
