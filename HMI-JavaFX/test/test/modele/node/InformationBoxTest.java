@@ -9,7 +9,6 @@ package test.modele.node;
 import junit.framework.Assert;
 import model.network.interfaces.Information;
 import model.node.InformationBox;
-import model.node.Message;
 import org.junit.BeforeClass;
 import org.junit.Test;
 

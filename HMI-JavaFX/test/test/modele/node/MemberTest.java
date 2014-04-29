@@ -6,7 +6,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import static java.lang.Thread.sleep;
 import model.node.AppVector;
 import model.node.Member;
 import org.junit.After;
@@ -45,7 +44,7 @@ public class MemberTest {
     }
 
     @Test
-    public void testSerialisation() throws InterruptedException {
+    public void testSerialisation() {
         try {
             m1.saveProperties();
             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("test.serial"));
