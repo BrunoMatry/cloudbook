@@ -27,6 +27,12 @@ public class Message implements Information {
         return idSender + ", " + date + ", " + relevant + ", " + vector;
     }
     
+    public int getIdSender() { return idSender; }
+    public Information getContent() { return content; }
+    public Date getDate() { return new Date(date.getTime()); }
+    public AppVector getVector() { return vector.copy(); }
+    public boolean getRelevance() { return relevant; }
+    
     /**
      * save each property of each contained object
      */

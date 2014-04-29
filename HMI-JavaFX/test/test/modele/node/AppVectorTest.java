@@ -18,7 +18,7 @@ import org.junit.Test;
 
 public class AppVectorTest {
     
-    AppVector appVector, appVector2;
+    AppVector appVector;
     
     public AppVectorTest() {
     }
@@ -49,10 +49,10 @@ public class AppVectorTest {
     
     @Test
     public void testCopy() {
-        appVector2 = appVector.copy();
+        AppVector appVectorCopied = appVector.copy();
         appVector.performanceProperty().set(3);
         assertTrue(appVector.performanceProperty().get() == 3);
-        assertTrue(appVector2.performanceProperty().get() == 2);
+        assertTrue(appVectorCopied.performanceProperty().get() == 2);
     }
     
     @Test
@@ -64,14 +64,14 @@ public class AppVectorTest {
             oos.flush();
             oos.close();
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream("test.serial"));
-            appVector2 = (AppVector) ois.readObject();
+            AppVector appVectorSerial = (AppVector) ois.readObject();
             ois.close();
-            appVector2.restoreProperties();
+            appVectorSerial.restoreProperties();
             assertFalse(appVector == null);
-            assertFalse(appVector2 == null);
+            assertFalse(appVectorSerial == null);
             assertFalse(appVector.performanceProperty() == null);
-            assertFalse(appVector2.performanceProperty() == null);
-            assertTrue(appVector2.equals(appVector));
+            assertFalse(appVectorSerial.performanceProperty() == null);
+            assertTrue(appVectorSerial.equals(appVector));
         } catch (FileNotFoundException ex) {
             fail();
         } catch (IOException | ClassNotFoundException ex) {

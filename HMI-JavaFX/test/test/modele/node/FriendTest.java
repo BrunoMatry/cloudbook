@@ -8,7 +8,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import model.node.AppVector;
 import model.node.Friend;
-import model.node.Member;
 import org.junit.After;
 import org.junit.AfterClass;
 import static org.junit.Assert.assertFalse;
@@ -19,7 +18,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class FriendTest {
-    Friend f;
+    Friend friend;
     
     public FriendTest() {
     }
@@ -34,7 +33,7 @@ public class FriendTest {
     
     @Before
     public void setUp() {
-        f = new Friend(1, 2, 1.5, new AppVector(1, 2, 3));
+        friend = new Friend(1, 2, 1.5, new AppVector(1, 2, 3));
     }
     
     @After
@@ -44,17 +43,17 @@ public class FriendTest {
     @Test
     public void testSerialisation() {
         try {
-            f.saveProperties();
+            friend.saveProperties();
             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("test.serial"));
-            oos.writeObject(f);
+            oos.writeObject(friend);
             oos.flush();
             oos.close();
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream("test.serial"));
-            Friend f1 = (Friend) ois.readObject();
+            Friend friendSerial = (Friend) ois.readObject();
             ois.close();
-            f1.restoreProperties();
-            assertFalse(f == null);
-            assertFalse(f.equals(f1));
+            friendSerial.restoreProperties();
+            assertFalse(friend == null);
+            assertTrue(friend.equals(friendSerial));
         } catch (FileNotFoundException ex) {
             fail();
         } catch (IOException | ClassNotFoundException ex) {

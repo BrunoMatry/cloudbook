@@ -64,6 +64,9 @@ public class Member implements Information {
     }
     
     public int getId() { return _id; }
+    public AppVector getAppVector() { return _vector; }
+    public DoubleProperty relevanceProperty() { return relevance; }
+    public IntegerProperty confidenceProperty() { return confidence; }
 
     @Override
     public void saveProperties() {

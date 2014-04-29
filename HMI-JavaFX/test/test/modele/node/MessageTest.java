@@ -20,7 +20,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class MessageTest {
-    Message m1, m2;
+    Message message;
     
     public MessageTest() {
     }
@@ -35,8 +35,7 @@ public class MessageTest {
     
     @Before
     public void setUp() {
-        m1 = new Message(1, new AppVector(1, 4, 3), new State(Cloud.GDRIVE), true);
-        m2 = new Message(2, new AppVector(1, 2, 3), new State(Cloud.GDRIVE), true);
+        message = new Message(1, new AppVector(1, 4, 3), new State(Cloud.GDRIVE), true);
     }
     
     @After
@@ -44,20 +43,26 @@ public class MessageTest {
     }
 
     @Test
+    public void testConstructor() {
+        assertTrue(message.getIdSender() == 1);
+        assertTrue(message.getContent().equals(new State(Cloud.GDRIVE)));
+        assertTrue(message.getVector().equals(new AppVector(1, 4, 3)));
+    }
+    
+    @Test
     public void testSerialisation() {
         try {
-            m1.saveProperties();
+            message.saveProperties();
             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("test.serial"));
-            oos.writeObject(m1);
+            oos.writeObject(message);
             oos.flush();
             oos.close();
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream("test.serial"));
-            Message m3 = (Message) ois.readObject();
+            Message messageSerial = (Message) ois.readObject();
             ois.close();
-            m3.restoreProperties();
-            assertFalse(m1 == null);
-            assertTrue(m1.equals(m3));
-            assertFalse(m1.equals(m2));
+            messageSerial.restoreProperties();
+            assertFalse(message == null);
+            assertTrue(message.equals(messageSerial));
         } catch (FileNotFoundException ex) {
             fail();
         } catch (IOException | ClassNotFoundException ex) {

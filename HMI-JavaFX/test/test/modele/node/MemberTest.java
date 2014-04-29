@@ -20,7 +20,7 @@ import org.junit.Test;
 
 
 public class MemberTest {
-    Member m1, m2;
+    Member member;
     
     public MemberTest() {
     }
@@ -35,29 +35,55 @@ public class MemberTest {
     
     @Before
     public void setUp() {
-        m1 = new Member(1, 2, 1.5, new AppVector(1, 2, 3));
-        m2 = new Member(4, 3, 1.2, new AppVector(1, 5, 3));
+        member = new Member(1, 2, 1.5, new AppVector(1, 2, 3));
     }
     
     @After
     public void tearDown() {
     }
+    
+    @Test
+    public void testConstructor() {
+        assertTrue(member.getId() == 1);
+        assertTrue(member.confidenceProperty().get() == 2);
+        assertTrue(member.relevanceProperty().get() == 1.5);
+        assertTrue(member.getAppVector().equals(new AppVector(1, 2, 3)));
+    }
+    
+    @Test
+    public void testDaySinceLastConnexion() {
+        assertTrue(member.daysSinceLastConnection() == 0);
+    }
+    
+    @Test
+    public void testSetters() {
+        Member member2 = new Member(4, 3, 1.2, new AppVector(1, 5, 3));
+        assertTrue(member2.getId() == 4);
+        assertTrue(member2.confidenceProperty().get() == 3);
+        member2.setConfidence(4);
+        assertTrue(member2.confidenceProperty().get() == 4);
+        assertTrue(member2.relevanceProperty().get() == 1.2);
+        member2.setRelevance(3.6);
+        assertTrue(member2.relevanceProperty().get() == 3.6);
+        assertTrue(member2.getAppVector().equals(new AppVector(1, 5, 3)));
+        member2.setVector(new AppVector(2, 4, 9));
+        assertTrue(member2.getAppVector().equals(new AppVector(2, 4, 9)));
+    }
 
     @Test
     public void testSerialisation() {
         try {
-            m1.saveProperties();
+            member.saveProperties();
             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("test.serial"));
-            oos.writeObject(m1);
+            oos.writeObject(member);
             oos.flush();
             oos.close();
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream("test.serial"));
-            Member m3 = (Member) ois.readObject();
+            Member memberSerial = (Member) ois.readObject();
             ois.close();
-            m3.restoreProperties();
-            assertFalse(m1 == null);
-            assertTrue(m1.equals(m3));
-            assertFalse(m1.equals(m2));
+            memberSerial.restoreProperties();
+            assertFalse(member == null);
+            assertTrue(member.equals(memberSerial));
         } catch (FileNotFoundException ex) {
             fail();
         } catch (IOException | ClassNotFoundException ex) {

@@ -18,7 +18,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class StateTest {
-    State s1, s2, s3;
+    State state1, state2, state3;
     
     public StateTest() {
     }
@@ -33,9 +33,9 @@ public class StateTest {
     
     @Before
     public void setUp() {
-        s1 = new State(Cloud.DROPBOX);
-        s2 = new State(Cloud.GDRIVE);
-        s3 = new State(Cloud.SKYDRIVE);
+        state1 = new State(Cloud.DROPBOX);
+        state2 = new State(Cloud.GDRIVE);
+        state3 = new State(Cloud.SKYDRIVE);
     }
     
     @After
@@ -44,39 +44,39 @@ public class StateTest {
 
     @Test
     public void testConstructeur() {
-        assertTrue(Cloud.values()[s1.cloudProperty().get()].equals(Cloud.DROPBOX));
-        assertTrue(s1.currentProperty().get() == true);
+        assertTrue(Cloud.values()[state1.cloudProperty().get()].equals(Cloud.DROPBOX));
+        assertTrue(state1.currentProperty().get());
     }
     
     @Test
     public void testNotCurrentAnymore() {
-        assertTrue(s1.currentProperty().get() == true);
-        s1.notCurrentAnymore();
-        assertTrue(s1.currentProperty().get() == false);
+        assertTrue(state1.currentProperty().get());
+        state1.notCurrentAnymore();
+        assertFalse(state1.currentProperty().get());
     }
     
     @Test
     public void testGetCloud() {
-        assertTrue(s1.getCloud().equals(Cloud.DROPBOX));
-        assertTrue(s2.getCloud().equals(Cloud.GDRIVE));
-        assertTrue(s3.getCloud().equals(Cloud.SKYDRIVE));
+        assertTrue(state1.getCloud().equals(Cloud.DROPBOX));
+        assertTrue(state2.getCloud().equals(Cloud.GDRIVE));
+        assertTrue(state3.getCloud().equals(Cloud.SKYDRIVE));
     }
     
     @Test
     public void testSerialization() {
         try {
-            s1.saveProperties();
+            state1.saveProperties();
             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("test.serial"));
-            oos.writeObject(s1);
+            oos.writeObject(state1);
             oos.flush();
             oos.close();
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream("test.serial"));
-            State s4 = (State) ois.readObject();
+            State stateSerial = (State) ois.readObject();
             ois.close();
-            s4.restoreProperties();
-            assertFalse(s1 == null);
-            assertFalse(s4 == null);
-            assertTrue(s1.equals(s4));
+            stateSerial.restoreProperties();
+            assertFalse(state1 == null);
+            assertFalse(stateSerial == null);
+            assertTrue(state1.equals(stateSerial));
         } catch (FileNotFoundException ex) {
             fail();
         } catch (IOException | ClassNotFoundException ex) {

@@ -17,7 +17,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class MesureTest {
-    Mesure m;
+    Mesure mesure;
     
     public MesureTest() {
     }
@@ -32,7 +32,7 @@ public class MesureTest {
     
     @Before
     public void setUp() {
-        m = new Mesure(1, 2, 3);
+        mesure = new Mesure(1, 2, 3);
     }
     
     @After
@@ -41,25 +41,25 @@ public class MesureTest {
 
     @Test
     public void testConstructeur() {
-        assertTrue(m.mesure1Property().get() == 1);
-        assertTrue(m.mesure2Property().get() == 2);
-        assertTrue(m.mesure3Property().get() == 3);
+        assertTrue(mesure.mesure1Property().get() == 1);
+        assertTrue(mesure.mesure2Property().get() == 2);
+        assertTrue(mesure.mesure3Property().get() == 3);
     }
     
     @Test
     public void testSerialization() {
         try {
-            m.saveProperties();
+            mesure.saveProperties();
             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("test.serial"));
-            oos.writeObject(m);
+            oos.writeObject(mesure);
             oos.flush();
             oos.close();
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream("test.serial"));
-            Mesure m1 = (Mesure) ois.readObject();
+            Mesure mesureSerial = (Mesure) ois.readObject();
             ois.close();
-            m1.restoreProperties();
-            assertFalse(m == null);
-            assertTrue(m1.equals(m));
+            mesureSerial.restoreProperties();
+            assertFalse(mesure == null);
+            assertTrue(mesureSerial.equals(mesure));
         } catch (FileNotFoundException ex) {
             fail();
         } catch (IOException | ClassNotFoundException ex) {
