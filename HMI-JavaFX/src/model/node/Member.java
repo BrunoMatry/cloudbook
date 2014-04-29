@@ -24,7 +24,9 @@ public class Member implements Information {
     protected transient IntegerProperty confidence = new SimpleIntegerProperty();
     protected transient ObjectProperty<Date> lastConnexion;
     
-    public Member(int friendId, int cnfdnce, double rlvnce, AppVector vector) {
+    public Member(int friendId, int cnfdnce, double rlvnce, AppVector vector) throws NullPointerException {
+        if(vector == null)
+            throw new NullPointerException();
         _id = friendId;
         _vector = vector;
         relevance = new SimpleDoubleProperty(rlvnce);
@@ -105,7 +107,6 @@ public class Member implements Information {
         }
         final Member other = (Member) obj;
         return this.relevance.get() == other.relevance.get()
-                && this.confidence.get() == other.confidence.get() 
-                && this.lastConnexion.get() == other.lastConnexion.get();
+                && this.confidence.get() == other.confidence.get();
     }
 }
