@@ -7,7 +7,7 @@
 
 package hmi;
 
-import hmi.home.HomeView;
+import hmi.home.MenuView;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -29,7 +29,7 @@ public class Launcher extends Application {
     public void start(Stage primaryStage) throws Exception {
         STAGE = primaryStage;
         
-        HomeView.INSTANCE.launch();
+        MenuView.INSTANCE.launch();
     }
     
     /**

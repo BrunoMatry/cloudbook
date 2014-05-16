@@ -1,5 +1,4 @@
 Gwendal
-mettre en place le monitoring complètement fonctionnel
-	régler l'affichage du champ des logs dans MonitorView
-mettre en place la possibilité d'avoir plusieurs clients sur la même machine (changer la sérialisation de CloudBookNode)
+mettre en place la possibilité d'avoir plusieurs clients sur la même machine
+	compléter NodeList, MenuList
 tester en local la communication de façon à voir au moins les mises à jours des summarizedView
