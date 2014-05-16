@@ -18,9 +18,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import model.network.implementation.Network;
+import model.network.interfaces.Information;
 import model.network.interfaces.RemoteBufferedServer;
 import model.network.interfaces.RemoteClient;
 import model.network.interfaces.RemoteServer;
@@ -46,7 +50,7 @@ public class NetworkTest {
     private static Network alice;
     private static Network me;
     private static Network bob;
-    private static Message original;
+    private static Information original;
     
     public NetworkTest() {
     }
@@ -59,7 +63,7 @@ public class NetworkTest {
             alice = new Network("alice", 888);
             me = new Network(InetAddress.getLocalHost().getHostAddress(), 777);
             bob = new Network("bob", 50010);
-            //original = new Message(id, null, original, true);
+            original = new TestInfo("Hello world !");
             msg = new Request(original);
             alice.connect(InetAddress.getLocalHost().getHostName() + ":" + 50020);
             me.connect(InetAddress.getLocalHost().getHostAddress() + ":" + 50020);
@@ -87,7 +91,7 @@ public class NetworkTest {
         try {
             alice.send(msg, me.getId());
             Sendable recvd = server.getSendable(me.getId(), 0);
-            Message msgRec = (Message)recvd.getInfo();
+            TestInfo msgRec = (TestInfo)recvd.getInfo();
             msgRec.restoreProperties();
             Assert.assertEquals(original, msgRec);
         } catch (RemoteException ex) {
@@ -126,6 +130,77 @@ public class NetworkTest {
             fail(ex.getMessage());
             Logger.getLogger(NetworkTest.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    private static class TestInfo implements Information {
+
+        private String _someInfo;
+        private transient StringProperty someInfo;
+        public final StringProperty someInfoProperty() {
+            return someInfo;
+        }
+        
+        /**
+         * Default constructor
+         * someInfo = "No information"
+         */
+        public TestInfo() {
+            someInfo = new SimpleStringProperty();
+        }
+        
+        /**
+         * Constructor
+         * @param info field someInfo
+         */
+        public TestInfo(String info) {
+            someInfo = new SimpleStringProperty(info);
+        }
+        
+        /**
+         * save someInfo content in field _someInfo
+         * use it before serialization
+         */
+        @Override
+        public void saveProperties() {
+            _someInfo = someInfo.get();
+        }
+
+        /**
+         * restore field value of _someInfo in someInfo
+         * use it after deserialization
+         */
+        @Override
+        public void restoreProperties() {
+            someInfo = new SimpleStringProperty(_someInfo);
+        }
+
+        @Override
+        public int hashCode() {
+            int hash = 3;
+            return hash;
+        }
+
+        /**
+         * equals
+         * @param obj object to be compared with
+         * @return true if the hold informations are sthe same
+         */
+        @Override
+        public boolean equals(Object obj) {
+            if (obj == null) {
+                return false;
+            }
+            if (getClass() != obj.getClass()) {
+                return false;
+            }
+            final TestInfo other = (TestInfo) obj;
+            if (!this.someInfo.get().equals(other.someInfo.get()))
+                return false;
+            return true;
+        }
+        
+        
+        
     }
     
     private static class TestServer extends UnicastRemoteObject implements RemoteBufferedServer {

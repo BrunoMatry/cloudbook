@@ -14,6 +14,7 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.engine.Engine;
+import model.network.interfaces.Information;
 import model.network.interfaces.RemoteClient;
 import model.network.interfaces.RemoteServer;
 import model.network.interfaces.Sendable;
@@ -48,7 +49,9 @@ public class Network extends UnicastRemoteObject implements RemoteClient {
     
     @Override
     public void send(Sendable request, String receiver) throws RemoteException {
-        request.getInfo().saveProperties();
+        Information info = request.getInfo();
+        if(info != null)
+            info.saveProperties();
         stub.send(request, receiver);
     }
 
