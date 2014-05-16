@@ -26,7 +26,7 @@ public class Monitoring extends Thread implements IMonitoring {
     
     public Monitoring() {
         this.mesures = new ArrayList<>();
-        this.logs = new SimpleStringProperty();
+        this.logs = new SimpleStringProperty("===== LOGS =====");
     }
 
     @Override
