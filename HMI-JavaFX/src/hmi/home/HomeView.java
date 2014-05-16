@@ -9,7 +9,7 @@ package hmi.home;
 import hmi.Launcher;
 import hmi.button.CloudBookButton;
 import hmi.content.HomeActivity;
-import hmi.content.engine.MonitorView;
+import hmi.content.monitor.MonitorView;
 import hmi.content.node.NodeView;
 import hmi.content.register.RegisterView;
 import javafx.beans.property.ObjectProperty;
@@ -169,7 +169,7 @@ public final class HomeView extends HomeActivity {
                     public void handle(ActionEvent t) {
                         Monitoring model = (Monitoring)Engine.INSTANCE.getMonitoring();
                         MonitorView view = MonitorView.INSTANCE;
-                        model.logsProperty().bind(view.logsTextProperty());
+                        view.logsTextProperty().bind(model.logsProperty());
                         view.launch();
                     }
                 
