@@ -106,5 +106,16 @@ public class Server extends UnicastRemoteObject implements RemoteServer {
     public void setPort(int port) {
         this.port = port;
     }
+
+    /**
+     * Sends a request to every registered client
+     * @param request request to send
+     * @throws RemoteException in case of remote problems
+     */
+    @Override
+    public void broadcast(Sendable request) throws RemoteException {
+        for(String client : clients.keySet())
+            send(request, client);
+    }
     
 }

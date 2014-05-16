@@ -95,4 +95,12 @@ public class Network extends UnicastRemoteObject implements RemoteClient {
         stub.disconnect(this);
         stub = null;
     }
+
+    @Override
+    public void broadcast(Sendable request) throws RemoteException {
+        Information info = request.getInfo();
+        if(info != null)
+            info.saveProperties();
+        stub.broadcast(request);
+    }
 }

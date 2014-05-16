@@ -132,6 +132,29 @@ public class NetworkTest {
         }
     }
     
+    @Test
+    public void testBroadcast() {
+        try {
+            bob.connect(InetAddress.getLocalHost().getHostName() + ":" + 50020);
+            alice.broadcast(msg);
+            Sendable myCopy = server.getSendable(me.getId(), 0);
+            Sendable bobCopy = server.getSendable(bob.getId(), 0);
+            TestInfo myMsg = (TestInfo)myCopy.getInfo();
+            TestInfo bobMsg = (TestInfo)bobCopy.getInfo();
+            myMsg.restoreProperties();
+            bobMsg.restoreProperties();
+            Assert.assertEquals(original, myMsg);
+            Assert.assertEquals(original, bobMsg);
+            bob.disconnect();
+        } catch (RemoteException ex) {
+            fail(ex.getMessage());
+            Logger.getLogger(NetworkTest.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnknownHostException ex) {
+            fail(ex.getMessage());
+            Logger.getLogger(NetworkTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     private static class TestInfo implements Information {
 
         private String _someInfo;
@@ -312,6 +335,12 @@ public class NetworkTest {
         public Sendable getSendable(String receiver, int index) throws RemoteException {
             while(msgBox.get(receiver).isEmpty());
             return msgBox.get(receiver).get(index);
+        }
+
+        @Override
+        public void broadcast(Sendable request) throws RemoteException {
+            for(String registered : msgBox.keySet())
+                send(request, registered);
         }
         
     }
