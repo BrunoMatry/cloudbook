@@ -6,9 +6,13 @@
 
 package hmi.home;
 
+import java.io.File;
+
 /**
  *
  * @author Gwendal
+ * command
+ * command dedecated to the destruction of a save file
  */
 public class DeleteNode extends NodeListAction {
 
@@ -25,7 +29,8 @@ public class DeleteNode extends NodeListAction {
      */
     @Override
     public void execute() {
-        
+        File saveFile = new File(node + ".ser");
+        saveFile.delete();
     }
     
 }

@@ -188,8 +188,8 @@ public class CloudBookNode implements Serializable {
         }
     }
     
-    public static CloudBookNode load() throws IOException, ClassNotFoundException {
-        ObjectInputStream ois = new ObjectInputStream(new FileInputStream("node_save.ser"));
+    public static CloudBookNode load(String fileName) throws IOException, ClassNotFoundException {
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileName));
         CloudBookNode res = (CloudBookNode) ois.readObject();
         res.name = new SimpleStringProperty(res._name);
         for(Friend f : res.friends)

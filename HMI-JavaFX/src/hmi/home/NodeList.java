@@ -12,6 +12,6 @@ package hmi.home;
  * singleton
  * Show the list of all the nodes registered on this computer
  */
-public class NodeList {
+public final class NodeList {
     
 }

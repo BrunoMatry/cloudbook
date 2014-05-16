@@ -1,6 +1,7 @@
 package model.engine;
 
 import java.io.IOException;
+import java.rmi.RemoteException;
 import model.friendmanager.FriendManager;
 import model.friendmanager.IFriendManager;
 import model.network.interfaces.Information;
@@ -30,15 +31,14 @@ public final class Engine implements IEngine {
     /**
      * Constructor
      */
-    protected Engine() {
+    private Engine() {
+        
+    }
+    
+    public void initialize(CloudBookNode node) throws RemoteException {
         monitoring = (Monitoring)AppMounter.mountMonitoring();
-        try {
-            node = CloudBookNode.load();
-            network = new Network(node.getServerHost(), node.getServerPort());
-        } catch (IOException | ClassNotFoundException e) {
-            // Si on ne peut pas charger le noeud on en cree un nouveau
-            node = AppMounter.mountNode();
-        }
+        this.node = node;
+        this.network = new Network(node.getServerHost(), node.getServerPort());
         friendManager = new FriendManager(node);
         requestManager = new RequestManager(friendManager);
         monitoring.start();
@@ -72,7 +72,12 @@ public final class Engine implements IEngine {
         monitoring.pushInformation();
     }
 
-    public void setNode(CloudBookNode node) {
+    /**
+     * Setter
+     * @param node new value of the node field
+     * @throws RemoteException in case of network problems
+     */
+    public void setNode(CloudBookNode node) throws RemoteException {
         this.node = node;
     }
 
