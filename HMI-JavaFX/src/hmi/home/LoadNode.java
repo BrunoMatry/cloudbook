@@ -31,7 +31,7 @@ public class LoadNode extends NodeListAction {
     @Override
     public void execute() {
         try {
-            Engine.INSTANCE.setNode(CloudBookNode.load(node + ".ser"));
+            Engine.INSTANCE.initialize(CloudBookNode.load(node + ".ser"));
         } catch (IOException | ClassNotFoundException ex) {
             Logger.getLogger(LoadNode.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -17,6 +17,13 @@ public abstract class NodeListAction {
     
     //command parameter : name of the node file
     protected String node;
+
+    /**
+     * Constructor
+     */
+    public NodeListAction() {
+        
+    }
     
     /**
      * Consructor
@@ -30,4 +37,21 @@ public abstract class NodeListAction {
      * performs an action on the selected node
      */
     public abstract void execute();
+    
+    /**
+     * Getter
+     * @return node field
+     */
+    public final String getNode() {
+        return node;
+    }
+
+    /**
+     * Setter
+     * @param node node field
+     */
+    public void setNode(String node) {
+        this.node = node;
+    }
+    
 }

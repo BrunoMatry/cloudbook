@@ -35,6 +35,11 @@ public final class Engine implements IEngine {
         
     }
     
+    /**
+     * Initializes all the modules of the application
+     * @param node current instance of CloudBookNode
+     * @throws RemoteException remote access problem
+     */
     public void initialize(CloudBookNode node) throws RemoteException {
         monitoring = (Monitoring)AppMounter.mountMonitoring();
         this.node = node;
