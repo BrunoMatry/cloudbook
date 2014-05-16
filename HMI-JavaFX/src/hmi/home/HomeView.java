@@ -66,6 +66,9 @@ public final class HomeView extends HomeActivity {
         //"register application" button
         private CloudBookButton registerButton;
         
+        //monitor logs button
+        private CloudBookButton logsButton;
+        
         /**
          * initializes and add the components
          */
@@ -152,6 +155,21 @@ public final class HomeView extends HomeActivity {
                 });
             }
             return registerButton;
+        }
+        
+        public final CloudBookButton getLogsButton() {
+            if(logsButton == null) {
+                logsButton = new CloudBookButton("Monitor logs");
+                logsButton.setOnAction(new EventHandler<ActionEvent>() {
+
+                    @Override
+                    public void handle(ActionEvent t) {
+                        
+                    }
+                
+                });
+            }
+            return logsButton;
         }
         
     }
