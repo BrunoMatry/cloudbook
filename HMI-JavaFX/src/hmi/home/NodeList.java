@@ -11,6 +11,7 @@ import hmi.content.Activity;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.geometry.Pos;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.VBox;
@@ -56,6 +57,8 @@ public class NodeList extends Activity {
          */
         public SaveGroup() {
             super();
+            setAlignment(Pos.CENTER);
+            setSpacing(10);
             this.radioGroup = new ToggleGroup();
             this.saveButtons = new ArrayList<>();
             scanSaveFiles();
@@ -66,7 +69,7 @@ public class NodeList extends Activity {
          * Fill the save files list
          */
         private void scanSaveFiles() {
-            File folder = new File("");
+            File folder = new File(".");
             File[] files = folder.listFiles();
             for (File file : files) {
                 String extName = file.getName();

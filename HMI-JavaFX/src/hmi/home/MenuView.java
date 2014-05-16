@@ -82,7 +82,9 @@ public final class MenuView extends HomeActivity {
 
                     @Override
                     public void handle(ActionEvent t) {
-                        //launch the node list activity
+                        NodeListAction action = new LoadNode();
+                        NodeList nodeList = new NodeList(MenuView.INSTANCE, action);
+                        nodeList.launch();
                     }
             
                 });
@@ -129,7 +131,9 @@ public final class MenuView extends HomeActivity {
 
                     @Override
                     public void handle(ActionEvent t) {
-                        //launch node list activity
+                        NodeListAction action = new DeleteNode();
+                        NodeList nodeList = new NodeList(MenuView.INSTANCE, action);
+                        nodeList.launch();
                     }
                 
                 });

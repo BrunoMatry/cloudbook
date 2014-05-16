@@ -17,6 +17,13 @@ import java.io.File;
 public class DeleteNode extends NodeListAction {
 
     /**
+     * Constructor
+     */
+    public DeleteNode() {
+        super();
+    }
+    
+    /**
      * Consructor
      * @param node node on which the action is to be performed
      */

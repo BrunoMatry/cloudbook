@@ -22,6 +22,13 @@ public class LoadNode extends NodeListAction {
 
     /**
      * Constructor
+     */
+    public LoadNode() {
+        
+    }
+    
+    /**
+     * Constructor
      * @param node save file to load 
      */
     public LoadNode(String node) {
