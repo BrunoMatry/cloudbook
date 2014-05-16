@@ -6,6 +6,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import model.network.interfaces.Information;
 import model.node.Mesure;
 
 /**
@@ -26,21 +27,41 @@ public class Monitoring extends Thread implements IMonitoring {
     
     public Monitoring() {
         this.mesures = new ArrayList<>();
-        this.logs = new SimpleStringProperty("===== LOGS =====");
+        this.logs = new SimpleStringProperty("===== LOGS =====\n\n");
     }
 
+    /**
+     * Sends generated information on the network.
+     * Completes the logs.
+     */
     @Override
     public synchronized void pushInformation() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        String content = logs.get();
+        content += "I sent " + this.mesures.size() + " informations to my friends :\n";
+        for(Information info : this.mesures) {
+            content += info + "\n"; 
+        }
+        content += '\n';
+        this.mesures.clear();
+        logs.set(content);
     }
     
+    /**
+     * Each 5s, generates new information.
+     * When there is enough information, it is sent on the network.
+     */
     @Override
     public void run() {
-        this.mesures.add(genererMesure());
-        try {
-            sleep(TIME);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(Monitoring.class.getName()).log(Level.SEVERE, null, ex);
+        while(true) {
+            this.mesures.add(genererMesure());
+            if(this.mesures.size() == 3) {
+                pushInformation();
+            }
+            try {
+                sleep(TIME);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Monitoring.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 

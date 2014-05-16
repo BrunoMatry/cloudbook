@@ -160,6 +160,11 @@ public final class HomeView extends HomeActivity {
             return registerButton;
         }
         
+        /**
+         * constructs the logs button if not defined yet.
+         * Otherwise, simply returns it.
+         * @return functional logs view button
+         */
         public final CloudBookButton getLogsButton() {
             if(logsButton == null) {
                 logsButton = new CloudBookButton("Monitor logs");

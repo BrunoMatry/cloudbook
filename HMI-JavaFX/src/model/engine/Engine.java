@@ -5,6 +5,7 @@ import model.friendmanager.FriendManager;
 import model.friendmanager.IFriendManager;
 import model.network.interfaces.Information;
 import model.monitoring.IMonitoring;
+import model.monitoring.Monitoring;
 import model.network.implementation.Network;
 import model.network.interfaces.RemoteClient;
 import model.request.IRequestManager;
@@ -22,7 +23,7 @@ public final class Engine implements IEngine {
     
     protected IRequestManager requestManager;
     protected IFriendManager friendManager;
-    protected IMonitoring monitoring;
+    protected Monitoring monitoring;
     protected CloudBookNode node;
     protected RemoteClient network;
 
@@ -30,7 +31,7 @@ public final class Engine implements IEngine {
      * Constructor
      */
     protected Engine() {
-        monitoring = AppMounter.mountMonitoring();
+        monitoring = (Monitoring)AppMounter.mountMonitoring();
         try {
             node = CloudBookNode.load();
             network = new Network(node.getServerHost(), node.getServerPort());
@@ -40,6 +41,7 @@ public final class Engine implements IEngine {
         }
         friendManager = new FriendManager(node);
         requestManager = new RequestManager(friendManager);
+        monitoring.start();
     }
 
     public CloudBookNode getNode() {
