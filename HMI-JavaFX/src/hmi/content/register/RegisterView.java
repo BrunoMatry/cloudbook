@@ -10,7 +10,6 @@ import hmi.Launcher;
 import hmi.button.IconFlyWeight;
 import hmi.content.AActivity;
 import hmi.content.Activity;
-import hmi.home.HomeView;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -31,7 +30,9 @@ import javafx.scene.control.SingleSelectionModel;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import model.node.Cloud;
 import model.node.CloudBuilder;
@@ -84,15 +85,15 @@ public class RegisterView extends Activity {
     }
     
     public StringProperty nameProperty() {
-        return vBox.name.textProperty();
+        return vBox.name.hint.textProperty();
     }
     
     public StringProperty hostProperty() {
-        return vBox.host.textProperty();
+        return vBox.host.hint.textProperty();
     }
     
     public StringProperty portProperty() {
-        return vBox.port.textProperty();
+        return vBox.port.hint.textProperty();
     }
     
     public ObjectProperty<Cloud> cloudProperty() {
@@ -104,6 +105,52 @@ public class RegisterView extends Activity {
      */
     public class MyVBox extends VBox {
         
+        /**
+         * Defines a field with provided information about it's purpose
+         */
+        public class Field extends HBox {
+            
+            //information about the purpose of the field
+            private Text information;
+            
+            //Text to be entered
+            private TextField hint;
+            
+            /**
+             * Constructor
+             * @param information information field content
+             * @param defaultHint hint field content
+             */
+            public Field(String information, String defaultHint) {
+                super();
+                this.information = new Text(information);
+                this.hint = new TextField(defaultHint);
+                setAlignment(Pos.CENTER);
+                setSpacing(10);
+                getChildren().addAll(
+                        this.information,
+                        this.hint
+                );
+            }
+
+            /**
+             * Getter
+             * @return information field 
+             */
+            public Text getInformation() {
+                return information;
+            }
+
+            /**
+             * Getter
+             * @return hint field
+             */
+            public TextField getHint() {
+                return hint;
+            }
+            
+        }
+        
         //logo of the application
         private ImageView logo;
         
@@ -111,15 +158,16 @@ public class RegisterView extends Activity {
         private Button browse;
         
         //name of the application
-        private TextField name;
+        private Field name;
         
         //host of the server
-        private TextField host;
+        private Field host;
         
         //port of the server
-        private TextField port;
+        private Field port;
         
         //selector : current cloud platform of the application
+        //TODO : transform in independant activity
         private ChoiceBox<Cloud> clouds;
         
         //ok button
@@ -132,7 +180,7 @@ public class RegisterView extends Activity {
         public MyVBox() {
             super();
             setAlignment(Pos.CENTER);
-            setSpacing(10);
+            setSpacing(30);
             getChildren().addAll(
                     getLogo(),
                     getBrowse(),
@@ -165,7 +213,7 @@ public class RegisterView extends Activity {
             if(this.logo != null)
                 getChildren().remove(this.logo);
             this.logo = logo;
-            this.logo.setViewport(new Rectangle2D(0, 0, 80, 80));
+            this.logo.setViewport(new Rectangle2D(0, 0, 160, 160));
             this.logo.resize(50, 80);
             getChildren().add(0, this.logo);
         }
@@ -254,9 +302,9 @@ public class RegisterView extends Activity {
          * if name is null, it is initialized
          * @return name attribute 
          */
-        public final TextField getName() {
+        public final Field getName() {
             if(name == null) {
-                name = new TextField("App name");
+                name = new Field("Enter the name of your application : ", "App name");
                 setMargin(name, new Insets(0, 200, 0, 200));
             }
             return name;
@@ -273,7 +321,6 @@ public class RegisterView extends Activity {
                             builder.build();
                             Dialogs.showInformationDialog(Launcher.STAGE, "Success build", "OK");
                         } catch (IOException ex) {
-                            ex.printStackTrace();
                             Dialogs.showErrorDialog(Launcher.STAGE, "Error while building", "Error");
                         }
                     }
@@ -283,17 +330,17 @@ public class RegisterView extends Activity {
             return ok;
         }
 
-        public final TextField getHost() {
+        public final Field getHost() {
             if(host == null){
-                host = new TextField("host");
+                host = new Field("Enter the host name : ", "host");
                 setMargin(host, new Insets(0, 200, 0, 200));
             }
             return host;
         }
 
-        public final TextField getPort() {
+        public final Field getPort() {
             if(port == null) {
-                port = new TextField("50100");
+                port = new Field("Enter the host port : ", "50100");
                 setMargin(host, new Insets(0, 200, 0, 200));
             }
             return port;
