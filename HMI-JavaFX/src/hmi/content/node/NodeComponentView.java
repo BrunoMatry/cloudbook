@@ -17,12 +17,8 @@ import javafx.scene.layout.Pane;
  */
 public abstract class NodeComponentView extends Activity implements ComponentView {
     
-    protected TableView table;
-    
     public NodeComponentView(AActivity p) {
         super(p);
-        table = new TableView();
-        setCenter(table);
     }
     
     @Override

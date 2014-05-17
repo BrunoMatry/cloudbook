@@ -1,8 +1,11 @@
 package model.node;
 
-import java.util.Stack;
+import java.util.ArrayList;
+import java.util.List;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import model.network.interfaces.Information;
 
 /**
@@ -15,7 +18,9 @@ public class InformationBox<T extends Information> implements Information {
     
     public static final String EMPTY_FLAG = "No information to display at this time";
     
-    protected Stack<T> box; //box containing information
+    protected List<T> _box; //box containing information
+    protected ObservableList<T> box; //box containing information
+    
     protected String _description; //description of the box
     
     protected transient StringProperty description; //description property
@@ -27,7 +32,7 @@ public class InformationBox<T extends Information> implements Information {
      * Constructor
      */
     public InformationBox() {
-        box = new Stack<>();
+        box = FXCollections.observableArrayList();
         description = new SimpleStringProperty(EMPTY_FLAG);
     }
     
@@ -36,7 +41,7 @@ public class InformationBox<T extends Information> implements Information {
      * @param info information to add
      */
     public void push(T info) {
-        box.push(info);
+        box.add(info);
         description.set(info.toString());
     }
     
@@ -45,11 +50,12 @@ public class InformationBox<T extends Information> implements Information {
      * @return top information
      */
     public T pop() {
-        T info = box.pop();
-        if(box.empty())
+        int lastIndex = box.size() - 1;
+        T info = box.remove(lastIndex);
+        if(box.isEmpty())
             description.set(EMPTY_FLAG);
         else
-            description.set(box.peek().toString());
+            description.set(box.get(lastIndex-1).toString());
         return info;
     }
     
@@ -59,7 +65,8 @@ public class InformationBox<T extends Information> implements Information {
      * @param info information to remove
      */
     public void remove(T info) {
-        if(info == box.peek())
+        int lastIndex = box.size() - 1;
+        if(info == box.get(lastIndex))
             this.pop();
         else {
             box.remove(info);
@@ -73,7 +80,7 @@ public class InformationBox<T extends Information> implements Information {
      * @return true if the box doesn't contains elements, false otherwise
      */
     public boolean empty() {
-        return box.empty();
+        return box.isEmpty();
     }
     
     /**
@@ -90,8 +97,11 @@ public class InformationBox<T extends Information> implements Information {
      */
     @Override
     public void saveProperties() {
-        for(Information info : box)
+        _box = new ArrayList<>();
+        for(Information info : box) {
             info.saveProperties();
+            _box.add((T)info);
+        }
         _description = description.get();
     }
 
@@ -100,8 +110,10 @@ public class InformationBox<T extends Information> implements Information {
      */
     @Override
     public void restoreProperties() {
-        for(Information info : box)
-            info.restoreProperties();
+        for(Information info : _box) {
+           info.restoreProperties();
+           box.add((T)info);
+        }  
         description = new SimpleStringProperty(_description);
     }
     

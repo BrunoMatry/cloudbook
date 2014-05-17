@@ -9,7 +9,7 @@ package hmi.content.node;
 import hmi.content.AActivity;
 import hmi.content.Activity;
 import hmi.content.node.component.MessageView;
-import hmi.content.node.component.MesureView;
+import hmi.content.node.component.MesurePane;
 import hmi.content.node.component.StateView;
 import hmi.home.HomeView;
 import java.util.ArrayList;
@@ -79,7 +79,7 @@ public final class NodeView extends Activity {
      */
     public SummarizedView getMesures() {
         if(mesures == null) {
-            MesureView mv = new MesureView(this);
+            MesurePane mv = new MesurePane(this);
             mesures = mv.makeSummarized();
         }
         return mesures;

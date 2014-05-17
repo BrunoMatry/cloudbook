@@ -9,17 +9,23 @@ package hmi.content.node.component;
 import hmi.content.AActivity;
 import hmi.content.node.NodeComponentView;
 import hmi.content.node.SummarizedView;
+import javafx.scene.control.TableView;
 import javafx.scene.text.Text;
+import model.node.Mesure;
 
 /**
  *
  * @author Gwendal
  */
-public class MesureView extends NodeComponentView {
+public class MesurePane extends NodeComponentView {
 
-    public MesureView(AActivity p) {
+    //table of mesures
+    protected TableView<Mesure> table;
+    
+    public MesurePane(AActivity p) {
         super(p);
         title = "Mesures";
+        table = new TableView<>();
     }
 
     @Override
