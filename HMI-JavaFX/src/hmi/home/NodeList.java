@@ -11,7 +11,10 @@ import hmi.content.Activity;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Pos;
+import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.VBox;
@@ -29,6 +32,9 @@ public class NodeList extends Activity {
     //list of save files
     protected SaveGroup sg;
     
+    //OK button
+    protected Button ok;
+    
     /**
      * Constructor
      * @param p parent activity
@@ -38,7 +44,22 @@ public class NodeList extends Activity {
         super(p);
         this.action = action;
         this.sg = new SaveGroup();
+        setUpOkButton();
         setCenter(sg);
+        setBottom(ok);
+    }
+    
+    private void setUpOkButton() {
+        this.ok = new Button("OK");
+        this.ok.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent t) {
+                action.execute();
+            }
+        
+        });
+        this.ok.setAlignment(Pos.BOTTOM_CENTER);
     }
     
     /**

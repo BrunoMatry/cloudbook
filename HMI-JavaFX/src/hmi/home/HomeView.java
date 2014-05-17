@@ -42,6 +42,9 @@ public final class HomeView extends HomeActivity {
     //container of the launchers buttons
     private final HomeVBox hVBox;
     
+    //child view : modify application settings
+    private final RegisterView rv;
+    
     /**
      * initialize the container
      */
@@ -53,6 +56,7 @@ public final class HomeView extends HomeActivity {
         this.tabList = Mounter.getTabList();
         this.menuBar = new MenuBar();
                 */
+        this.rv = new RegisterView(this);
         hVBox = new HomeVBox();
         setCenter(hVBox);
     }
@@ -146,13 +150,13 @@ public final class HomeView extends HomeActivity {
                     @Override
                     public void handle(ActionEvent t) {
                         CloudBuilder cb = new CloudBuilder();
-                        RegisterView.INSTANCE.setBuilder(cb);
-                        cb.logoProperty().bind(RegisterView.INSTANCE.logoProperty());
-                        cb.nameProperty().bind(RegisterView.INSTANCE.nameProperty());
-                        cb.platformProperty().bind(RegisterView.INSTANCE.cloudProperty());
-                        cb.hostProperty().bind(RegisterView.INSTANCE.hostProperty());
-                        cb.portProperty().bind(RegisterView.INSTANCE.portProperty());
-                        RegisterView.INSTANCE.launch();
+                        rv.setBuilder(cb);
+                        cb.logoProperty().bind(rv.logoProperty());
+                        cb.nameProperty().bind(rv.nameProperty());
+                        cb.platformProperty().bind(rv.cloudProperty());
+                        cb.hostProperty().bind(rv.hostProperty());
+                        cb.portProperty().bind(rv.portProperty());
+                        rv.launch();
                     }
             
                 });

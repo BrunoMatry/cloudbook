@@ -39,6 +39,7 @@ public class LoadNode extends NodeListAction {
     public void execute() {
         try {
             Engine.INSTANCE.initialize(CloudBookNode.load(node + ".ser"));
+            HomeView.INSTANCE.launch();
         } catch (IOException | ClassNotFoundException ex) {
             Logger.getLogger(LoadNode.class.getName()).log(Level.SEVERE, null, ex);
         }

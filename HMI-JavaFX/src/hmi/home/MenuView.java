@@ -27,6 +27,9 @@ public final class MenuView extends HomeActivity {
     //container of the buttons
     private final MenuVBox mVBox;
     
+    //child register view
+    private final RegisterView rv;
+    
     /**
      * Initializes the container
      */
@@ -38,6 +41,7 @@ public final class MenuView extends HomeActivity {
         this.tabList = Mounter.getTabList();
         this.menuBar = new MenuBar();
                 */
+        rv = new RegisterView(this);
         mVBox = new MenuVBox();
         setCenter(mVBox);
     }
@@ -105,13 +109,13 @@ public final class MenuView extends HomeActivity {
                     @Override
                     public void handle(ActionEvent t) {
                         CloudBuilder cb = new CloudBuilder();
-                        RegisterView.INSTANCE.setBuilder(cb);
-                        cb.logoProperty().bind(RegisterView.INSTANCE.logoProperty());
-                        cb.nameProperty().bind(RegisterView.INSTANCE.nameProperty());
-                        cb.platformProperty().bind(RegisterView.INSTANCE.cloudProperty());
-                        cb.hostProperty().bind(RegisterView.INSTANCE.hostProperty());
-                        cb.portProperty().bind(RegisterView.INSTANCE.portProperty());
-                        RegisterView.INSTANCE.launch();
+                        rv.setBuilder(cb);
+                        cb.logoProperty().bind(rv.logoProperty());
+                        cb.nameProperty().bind(rv.nameProperty());
+                        cb.platformProperty().bind(rv.cloudProperty());
+                        cb.hostProperty().bind(rv.hostProperty());
+                        cb.portProperty().bind(rv.portProperty());
+                        rv.launch();
                     }
             
                 });

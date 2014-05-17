@@ -38,23 +38,28 @@ import model.node.CloudBuilder;
 
 /**
  * View letting the user register an application
- * singleton
  * @author Gwendal
  */
-public final class RegisterView extends Activity {
-    
-    public static final RegisterView INSTANCE = new RegisterView(HomeView.INSTANCE);
+public class RegisterView extends Activity {
     
     //vertical box containing all the identificator components
-    private MyVBox vBox;
+    protected MyVBox vBox;
     
     //constructing object
-    private CloudBuilder builder;
+    protected CloudBuilder builder;
 
+    /**
+     * Getter
+     * @return builder field
+     */
     public CloudBuilder getBuilder() {
         return builder;
     }
 
+    /**
+     * Setter
+     * @param builder builder field
+     */
     public void setBuilder(CloudBuilder builder) {
         this.builder = builder;
     }
@@ -63,7 +68,7 @@ public final class RegisterView extends Activity {
      * initialize the vertical box
      * @param p previous Activity
      */
-    private RegisterView(AActivity p) {
+    public RegisterView(AActivity p) {
         super(p);
         title = "Register your application";
         vBox = new MyVBox();
