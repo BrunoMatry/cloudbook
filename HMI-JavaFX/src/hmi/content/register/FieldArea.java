@@ -6,10 +6,8 @@
 
 package hmi.content.register;
 
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.layout.VBox;
-import static javafx.scene.layout.VBox.setMargin;
 
 /**
  *
@@ -46,7 +44,6 @@ public class FieldArea extends VBox {
         public final Field getName() {
             if(name == null) {
                 name = new Field("Enter the name of your application : ", "App name");
-                setMargin(name, new Insets(0, 200, 0, 200));
             }
             return name;
         }
@@ -58,7 +55,6 @@ public class FieldArea extends VBox {
         public final Field getHost() {
             if(host == null){
                 host = new Field("Enter the host name : ", "host");
-                setMargin(host, new Insets(0, 200, 0, 200));
             }
             return host;
         }
@@ -70,7 +66,6 @@ public class FieldArea extends VBox {
         public final Field getPort() {
             if(port == null) {
                 port = new Field("Enter the host port : ", "50100");
-                setMargin(host, new Insets(0, 200, 0, 200));
             }
             return port;
         }

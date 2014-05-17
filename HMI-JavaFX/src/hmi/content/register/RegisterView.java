@@ -14,11 +14,11 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Dialogs;
 import javafx.scene.image.Image;
-import javafx.scene.layout.VBox;
 import model.node.Cloud;
 import model.node.CloudBuilder;
 
@@ -61,8 +61,8 @@ public class RegisterView extends Activity {
         super(p);
         title = "Register your application";
         settings = new SettingsArea();
+        setBottom(getOk());
         setCenter(settings);
-        setBottom(ok);
     }
     
     /**
@@ -72,6 +72,8 @@ public class RegisterView extends Activity {
     public final Button getOk() {
             if(ok == null) {
                 ok = new Button("Ok");
+                setAlignment(ok, Pos.CENTER);
+                setMargin(ok, new Insets(0, 0, 20, 0));
                 ok.setOnAction(new EventHandler<ActionEvent>() {
 
                     @Override

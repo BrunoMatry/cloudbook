@@ -16,12 +16,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.BorderPane;
+import static javafx.scene.layout.VBox.setMargin;
 import javafx.stage.FileChooser;
 
 /**
@@ -29,7 +31,7 @@ import javafx.stage.FileChooser;
  * @author Gwendal
  * icon and browse button to choose it
  */
-public class IconArea extends VBox {
+public class IconArea extends BorderPane {
     
         //logo of the application
         protected ImageView logo;
@@ -38,19 +40,16 @@ public class IconArea extends VBox {
         protected Button browse;
         
         //View port of the image
-        protected static final Rectangle2D viewPort = new Rectangle2D(0, 0, 160, 160);
+        protected static final Rectangle2D viewPort = new Rectangle2D(0, 0, 120, 120);
         
         /**
          * Constructor
          */
         public IconArea() {
             super();
-            setAlignment(Pos.CENTER);
-            setSpacing(30);
-            getChildren().addAll(
-                    getLogo(),
-                    getBrowse()
-            );
+            setCenter(getLogo());
+            setBottom(getBrowse());
+            setWidth(100);
         }
         
         /**
@@ -61,6 +60,8 @@ public class IconArea extends VBox {
         public final ImageView getLogo() {
             if(logo == null) {
                 logo = new ImageView(IconFlyWeight.INSTANCE.getDefaultLogo());
+                setMargin(this.logo, new Insets(10, 10, 10, 10));
+                setAlignment(logo, Pos.CENTER);
                 this.logo.setViewport(viewPort);
             }
             return logo;
@@ -75,9 +76,11 @@ public class IconArea extends VBox {
             if(this.logo != null)
                 getChildren().remove(this.logo);
             this.logo = logo;
-            this.logo.setViewport(viewPort);
-            this.logo.resize(50, 80);
-            getChildren().add(0, this.logo);
+            setMargin(this.logo, new Insets(10, 10, 10, 10));
+            this.logo.resize(128, 128);
+            this.logo.setViewport(new Rectangle2D(0, 0, this.logo.getImage().getHeight(),
+                    this.logo.getImage().getWidth()));
+            setCenter(this.logo);
         }
         
         /**
@@ -88,6 +91,8 @@ public class IconArea extends VBox {
         public final Button getBrowse() {
             if(browse == null) {
                 browse = new Button("Browse...");
+                setMargin(browse, new Insets(0, 0, 100, 0));
+                setAlignment(browse, Pos.CENTER);
                 browse.setOnAction(new EventHandler<ActionEvent>() {
 
                     @Override

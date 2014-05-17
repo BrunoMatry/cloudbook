@@ -33,7 +33,7 @@ public class SettingsArea extends HBox {
     public SettingsArea() {
         super();
         setAlignment(Pos.CENTER);
-        setSpacing(30);
+        setSpacing(50);
         this.iconArea = new IconArea();
         this.fieldArea = new FieldArea();
         getChildren().addAll(

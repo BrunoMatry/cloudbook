@@ -6,9 +6,8 @@
 
 package hmi.content.register;
 
-import javafx.geometry.Pos;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
 
 /**
@@ -16,7 +15,7 @@ import javafx.scene.text.Text;
  * @author Gwendal
  * Defines a field with provided information about it's purpose
  */
-public class Field extends HBox {
+public class Field extends BorderPane {
     
     //information about the purpose of the field
     private Text information;
@@ -33,12 +32,8 @@ public class Field extends HBox {
                 super();
                 this.information = new Text(information);
                 this.hint = new TextField(defaultHint);
-                setAlignment(Pos.CENTER);
-                setSpacing(10);
-                getChildren().addAll(
-                        this.information,
-                        this.hint
-                );
+                setLeft(this.information);
+                setRight(this.hint);
             }
 
             /**
