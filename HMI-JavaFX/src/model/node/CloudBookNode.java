@@ -182,7 +182,7 @@ public class CloudBookNode implements Serializable {
             s.saveProperties();
         //topMessage.saveProperties();
         topMesure.saveProperties();
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("node_save.ser"))) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(name.get() + ".ser"))) {
             oos.writeObject(this);
             oos.flush();
         }
