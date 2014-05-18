@@ -3,3 +3,4 @@ Affichage des tableaux
 Communication des messages et friends
 utiliser friendmanager pour cibler l'envoi (broadcast si pas d'amis)
 Améliorer l'interface graphique pour la sélection du noeud à contacter
+Gérer les suvegardes automatiques au moment de quitter l'application

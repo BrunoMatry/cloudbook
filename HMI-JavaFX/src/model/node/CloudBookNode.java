@@ -217,7 +217,6 @@ public class CloudBookNode implements Serializable {
         res.messages.restoreProperties();
         for(State s : res.states)
             s.restoreProperties();
-        res.topMesure.restoreProperties();
         return res;
     }
 }
