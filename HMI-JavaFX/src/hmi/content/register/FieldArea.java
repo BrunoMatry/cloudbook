@@ -23,16 +23,23 @@ public class FieldArea extends VBox {
         private Field host;
         
         //port of the server
-        private Field port;
+        private Field serverPort;
         
+        //port of the application
+        private Field nodePort;
+        
+        /**
+         * Constructor
+         */
         public FieldArea() {
             super();
             setAlignment(Pos.CENTER);
             setSpacing(30);
             getChildren().addAll(
                     getName(),
+                    getNodePort(),
                     getHost(),
-                    getPort()
+                    getServerPort()
             );
         }
         
@@ -61,12 +68,22 @@ public class FieldArea extends VBox {
 
         /**
          * Getter
-         * @return port field
+         * @return serverPort field
          */
-        public final Field getPort() {
-            if(port == null) {
-                port = new Field("Enter the host port : ", "50100");
+        public final Field getServerPort() {
+            if(serverPort == null) {
+                serverPort = new Field("Enter the host port : ", "50100");
             }
-            return port;
+            return serverPort;
+        }
+        
+        /**
+         * Getter
+         * @return nodePort field 
+         */
+        public final Field getNodePort() {
+            if(nodePort == null)
+                nodePort = new Field("Enter your port : ", "50200");
+            return nodePort;
         }
 }

@@ -48,6 +48,9 @@ public class CloudBookNode implements Serializable {
     //port of the server
     protected int serverPort;
     
+    //port of the application
+    protected int nodePort;
+    
     /* Proprietes non serialisables */
     protected transient StringProperty name;
     protected transient ObjectProperty<Image> logo;
@@ -77,18 +80,20 @@ public class CloudBookNode implements Serializable {
      * @param string name
      * @param cloud cloud-platform
      * @param host host name of the server
-     * @param port port of the server
+     * @param serverPort port of the server
+     * @param nodePort port of the current application
      * @param appType type of the application
      * @param performance TODO
      * @param speed TODO
      */
-    public CloudBookNode(Image image, String string, Cloud cloud, String host, int port, int appType, int performance, int speed) {
+    public CloudBookNode(Image image, String string, Cloud cloud, String host, int serverPort, int nodePort, int appType, int performance, int speed) {
         
         topMesure = new Mesure(0,0,0); /* Ne pas utiliser ces constructeurs !!!!!! */
         //topMessage = new Message(); /* Ne pas utiliser ces constructeurs !!!!!! */
         platform = cloud;
         serverHost = host;
-        serverPort = port;
+        this.serverPort = serverPort;
+        this.nodePort = nodePort;
         friends = new ArrayList<>();
         informations = new ArrayList<>();
         states = new Stack<>();
@@ -136,6 +141,14 @@ public class CloudBookNode implements Serializable {
      */
     public int getServerPort() {
         return serverPort;
+    }
+    
+    /**
+     * Getter
+     * @return nodePort field
+     */
+    public int getNodePort() {
+        return nodePort;
     }
     
     /* Attention !*/ 

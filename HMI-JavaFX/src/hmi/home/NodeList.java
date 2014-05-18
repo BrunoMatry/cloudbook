@@ -65,7 +65,7 @@ public class NodeList extends Activity {
     /**
      * save file selectors container
      */
-    private static final class SaveGroup extends VBox {
+    private class SaveGroup extends VBox {
         
         //radio group of save buttons
         private ToggleGroup radioGroup;
@@ -96,11 +96,27 @@ public class NodeList extends Activity {
                 String extName = file.getName();
                 if(extName.endsWith(".ser")) {
                     String name = extName.replaceFirst(".ser", "");
-                    RadioButton rb = new RadioButton(name);
-                    saveButtons.add(rb);
-                    rb.setToggleGroup(radioGroup);
+                    setUpRadioButton(name);
                 } 
             }
         }
+        
+        /**
+         * Add a radio button corresponding to the save of name name
+         * @param name name of the corresponding save file
+         */
+        private void setUpRadioButton(final String name) {
+            RadioButton rb = new RadioButton(name);
+            saveButtons.add(rb);
+            rb.setToggleGroup(radioGroup);
+            rb.setOnAction(new EventHandler<ActionEvent>() {
+
+                @Override
+                public void handle(ActionEvent t) {
+                    action.setNode(name);
+                }
+            });
+        }
+        
     }
 }

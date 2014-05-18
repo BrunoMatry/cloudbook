@@ -1,13 +1,17 @@
 package model.monitoring;
 
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import model.engine.Engine;
 import model.network.interfaces.Information;
+import model.network.interfaces.RemoteClient;
 import model.node.Mesure;
+import model.request.Request;
 
 /**
  *
@@ -37,9 +41,16 @@ public class Monitoring extends Thread implements IMonitoring {
     @Override
     public synchronized void pushInformation() {
         String content = logs.get();
+        RemoteClient network = Engine.INSTANCE.getNetwork();
         content += "I sent " + this.mesures.size() + " informations to my friends :\n";
         for(Information info : this.mesures) {
-            content += info + "\n"; 
+            try {
+                content += info + "\n";
+                Request req = new Request(info);
+                network.broadcast(req);
+            } catch (RemoteException ex) {
+                Logger.getLogger(Monitoring.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         content += '\n';
         this.mesures.clear();
@@ -53,13 +64,18 @@ public class Monitoring extends Thread implements IMonitoring {
     @Override
     public void run() {
         while(true) {
-            this.mesures.add(genererMesure());
-            if(this.mesures.size() == 3) {
-                pushInformation();
-            }
             try {
-                sleep(TIME);
-            } catch (InterruptedException ex) {
+                this.mesures.add(genererMesure());
+                RemoteClient network = Engine.INSTANCE.getNetwork();
+                if(this.mesures.size() >= 3 && network.getStub() != null) {
+                    pushInformation();
+                }
+                try {
+                    sleep(TIME);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Monitoring.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            } catch (RemoteException ex) {
                 Logger.getLogger(Monitoring.class.getName()).log(Level.SEVERE, null, ex);
             }
         }

@@ -155,7 +155,8 @@ public final class HomeView extends HomeActivity {
                         cb.nameProperty().bind(rv.nameProperty());
                         cb.platformProperty().bind(rv.cloudProperty());
                         cb.hostProperty().bind(rv.hostProperty());
-                        cb.portProperty().bind(rv.portProperty());
+                        cb.serverPortProperty().bind(rv.serverPortProperty());
+                        cb.nodePortProperty().bind(rv.nodePortProperty());
                         rv.launch();
                     }
             

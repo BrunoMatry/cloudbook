@@ -19,7 +19,10 @@ public class InformationBox<T extends Information> implements Information {
     public static final String EMPTY_FLAG = "No information to display at this time";
     
     protected List<T> _box; //box containing information
-    protected ObservableList<T> box; //box containing information
+    protected transient ObservableList<T> box; //box containing information
+    public final ObservableList<T> boxObservableList() {
+        return box;
+    }
     
     protected String _description; //description of the box
     
@@ -110,6 +113,7 @@ public class InformationBox<T extends Information> implements Information {
      */
     @Override
     public void restoreProperties() {
+        box = FXCollections.observableArrayList();
         for(Information info : _box) {
            info.restoreProperties();
            box.add((T)info);

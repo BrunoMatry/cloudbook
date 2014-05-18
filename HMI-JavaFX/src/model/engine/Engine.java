@@ -1,6 +1,8 @@
 package model.engine;
 
 import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.rmi.RemoteException;
 import model.friendmanager.FriendManager;
 import model.friendmanager.IFriendManager;
@@ -40,15 +42,25 @@ public final class Engine implements IEngine {
      * @param node current instance of CloudBookNode
      * @throws RemoteException remote access problem
      */
-    public void initialize(CloudBookNode node) throws RemoteException {
+    public void initialize(CloudBookNode node, String nodePort) throws RemoteException, UnknownHostException {
         monitoring = (Monitoring)AppMounter.mountMonitoring();
         this.node = node;
-        this.network = new Network(node.getServerHost(), node.getServerPort());
+        this.network = new Network(InetAddress.getLocalHost().getHostName() , Integer.parseInt(nodePort));
         friendManager = new FriendManager(node);
         requestManager = new RequestManager(friendManager);
-        monitoring.start();
     }
 
+    /**
+     * Starts the communication with the network
+     * @throws RemoteException connection problem
+     */
+    public void start() throws RemoteException {
+        if(monitoring != null && network != null) {
+            network.connect(node.getServerHost() + ":" + node.getServerPort());
+            monitoring.start();
+        }
+    }
+    
     public CloudBookNode getNode() {
         return node;
     }

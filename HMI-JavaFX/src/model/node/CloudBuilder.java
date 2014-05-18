@@ -1,6 +1,7 @@
 package model.node;
 
 import java.io.IOException;
+import java.net.InetAddress;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -24,6 +25,11 @@ public class CloudBuilder {
         return name;
     }
     
+    protected StringProperty nodePort;
+    public StringProperty nodePortProperty() {
+        return nodePort;
+    }
+    
     protected SimpleObjectProperty<Cloud> platform;
     public SimpleObjectProperty<Cloud> platformProperty() {
         return platform;
@@ -34,9 +40,9 @@ public class CloudBuilder {
         return host;
     }
     
-    protected StringProperty port;
-    public StringProperty portProperty() {
-        return port;
+    protected StringProperty serverPort;
+    public StringProperty serverPortProperty() {
+        return serverPort;
     }
     
     public CloudBuilder() {
@@ -44,7 +50,8 @@ public class CloudBuilder {
         name = new SimpleStringProperty();
         platform = new SimpleObjectProperty<>();
         host = new SimpleStringProperty();
-        port = new SimpleStringProperty();
+        serverPort = new SimpleStringProperty();
+        nodePort = new SimpleStringProperty();
     }
     
     /**
@@ -52,11 +59,14 @@ public class CloudBuilder {
      * @throws IOException the state can't be saved
      */
     public void build() throws IOException {
-        Engine.INSTANCE.setNode(new CloudBookNode(logo.get(), name.get(), platform.get(), host.get(), Integer.parseInt(port.get()), 0, 0, 0));
-        Engine.INSTANCE.setNetwork(new Network(host.get(), Integer.parseInt(port.get())));
-        Engine.INSTANCE.save();
-        CloudBookNode cbn = Engine.INSTANCE.getNode();
-        Engine.INSTANCE.getNetwork().connect("" + cbn.getServerHost() + ":" + cbn.getServerPort());
+        CloudBookNode cbn = new CloudBookNode(logo.get(),
+                name.get(),
+                platform.get(),
+                host.get(),
+                Integer.parseInt(serverPort.get()),
+                Integer.parseInt(nodePort.get()),
+                0, 0, 0);
+        Engine.INSTANCE.initialize(cbn, nodePort.get());
     }
     
 }
