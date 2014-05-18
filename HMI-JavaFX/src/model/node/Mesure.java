@@ -4,25 +4,43 @@ import model.network.interfaces.Information;
 import java.util.Date;
 import java.util.Objects;
 import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.scene.image.Image;
+import model.engine.Engine;
 
 public final class Mesure implements Information {
     
     /* Attributs serialisables */
+    protected String _applicationName;
+    protected Cloud cloud;
     protected Date _date;
     protected int _mesure1;
     protected int _mesure2;
     protected int _mesure3;
     
     /* Proprietes non serialisables */
+    protected transient StringProperty applicationName;
+    protected transient ObjectProperty<Image> platformLogo;
     protected transient StringProperty date;
     protected transient IntegerProperty mesure1; 
     protected transient IntegerProperty mesure2;
     protected transient IntegerProperty mesure3;
     
+    /**
+     * Constructor
+     * @param mes1 mesure1 property value
+     * @param mes2 mesure2 property value
+     * @param mes3 mesure3 property value
+     */
     public Mesure(int mes1, int mes2, int mes3) {
+        CloudBookNode application = Engine.INSTANCE.getNode();
+        String name = application.nameProperty().get();
+        applicationName = new SimpleStringProperty(name);
+        cloud = application.getPlatform();
+        platformLogo = cloud.iconProperty();
         mesure1 = new SimpleIntegerProperty(mes1);
         mesure2 = new SimpleIntegerProperty(mes2);
         mesure3 = new SimpleIntegerProperty(mes3);
@@ -37,6 +55,7 @@ public final class Mesure implements Information {
 
     @Override
     public void saveProperties() {
+        _applicationName = applicationName.get();
         _mesure1 = mesure1.get();
         _mesure2 = mesure2.get();
         _mesure3 = mesure3.get();
@@ -45,16 +64,22 @@ public final class Mesure implements Information {
 
     @Override
     public void restoreProperties() {
+        applicationName = new SimpleStringProperty(_applicationName);
         mesure1 = new SimpleIntegerProperty(_mesure1);
         mesure2 = new SimpleIntegerProperty(_mesure2);
         mesure3 = new SimpleIntegerProperty(_mesure3);
         date = new SimpleStringProperty(_date.toString());
+        platformLogo = cloud.iconProperty();
     }
     
     public IntegerProperty mesure1Property() { return mesure1; }
     public IntegerProperty mesure2Property() { return mesure2; }
     public IntegerProperty mesure3Property() { return mesure3; }
     public StringProperty dateProperty() { return date; }
+    public StringProperty applicationNameProperty() { return applicationName; }
+    public final ObjectProperty<Image> platformLogoProperty() {
+        return platformLogo;
+    }
 
     /**
      * hashCode

@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import model.node.CloudBookNode;
 import model.node.Mesure;
 import org.junit.After;
 import org.junit.AfterClass;
