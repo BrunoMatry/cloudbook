@@ -1,4 +1,5 @@
 Gwendal
-mettre en place la possibilité d'avoir plusieurs clients sur la même machine
-	compléter NodeList, MenuList
-tester en local la communication de façon à voir au moins les mises à jours des summarizedView
+Affichage des tableaux
+Communication des messages et friends
+utiliser friendmanager pour cibler l'envoi (broadcast si pas d'amis)
+Améliorer l'interface graphique pour la sélection du noeud à contacter
