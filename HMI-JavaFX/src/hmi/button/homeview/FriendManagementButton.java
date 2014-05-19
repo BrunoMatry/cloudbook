@@ -22,9 +22,9 @@ public class FriendManagementButton extends CloudBookButton {
             @Override
             public void handle(ActionEvent t) {
                 if(Engine.INSTANCE.getNode() != null) {
-                    homeView.homeVBox.bindMessage();
-                    homeView.homeVBox.bindMesure();
-                    homeView.homeVBox.bindState();
+                    homeView.getHomeVBox().bindMessage();
+                    homeView.getHomeVBox().bindMesure();
+                    homeView.getHomeVBox().bindState();
                     NodeView.INSTANCE.launch();
                 } else {
                     Dialogs.showInformationDialog(Launcher.STAGE, 

@@ -20,16 +20,15 @@ public class RegisterButton extends CloudBookButton {
             @Override
             public void handle(ActionEvent t) {
                 CloudBuilder cb = new CloudBuilder();
-                homeView.registerView.setBuilder(cb);
-                cb.logoProperty().bind(homeView.registerView.logoProperty());
-                cb.nameProperty().bind(homeView.registerView.nameProperty());
-                cb.platformProperty().bind(homeView.registerView.cloudProperty());
-                cb.hostProperty().bind(homeView.registerView.hostProperty());
-                cb.serverPortProperty().bind(homeView.registerView.serverPortProperty());
-                cb.nodePortProperty().bind(homeView.registerView.nodePortProperty());
-                homeView.registerView.launch();
+                homeView.getRegisterView().setBuilder(cb);
+                cb.logoProperty().bind(homeView.getRegisterView().logoProperty());
+                cb.nameProperty().bind(homeView.getRegisterView().nameProperty());
+                cb.platformProperty().bind(homeView.getRegisterView().cloudProperty());
+                cb.hostProperty().bind(homeView.getRegisterView().hostProperty());
+                cb.serverPortProperty().bind(homeView.getRegisterView().serverPortProperty());
+                cb.nodePortProperty().bind(homeView.getRegisterView().nodePortProperty());
+                homeView.getRegisterView().launch();
             }
         });
-    }
-    
+    }  
 }
