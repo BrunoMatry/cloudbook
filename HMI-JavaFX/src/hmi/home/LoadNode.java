@@ -7,6 +7,7 @@
 package hmi.home;
 
 import java.io.IOException;
+import java.rmi.RemoteException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.engine.Engine;
@@ -40,7 +41,11 @@ public class LoadNode extends NodeListAction {
         try {
             CloudBookNode cbn = CloudBookNode.load(node + ".ser");
             Engine.INSTANCE.initialize(cbn, ""+cbn.getNodePort());
-            Engine.INSTANCE.start();
+            try {
+                Engine.INSTANCE.start();
+            } catch (RemoteException | InterruptedException ex) {
+                Logger.getLogger(LoadNode.class.getName()).log(Level.SEVERE, null, ex);
+            }
             HomeView.INSTANCE.launch();
         } catch (IOException | ClassNotFoundException ex) {
             Logger.getLogger(LoadNode.class.getName()).log(Level.SEVERE, null, ex);

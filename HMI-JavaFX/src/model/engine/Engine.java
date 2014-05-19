@@ -5,6 +5,8 @@ import static java.lang.Thread.sleep;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.rmi.RemoteException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import model.friendmanager.FriendManager;
 import model.friendmanager.IFriendManager;
 import model.network.interfaces.Information;
@@ -24,6 +26,7 @@ import model.network.interfaces.Sendable;
 public final class Engine implements IEngine {
     
     public static final Engine INSTANCE = new Engine();
+    private final static long TIME = 3000;
     
     protected IRequestManager requestManager;
     protected IFriendManager friendManager;
@@ -31,7 +34,7 @@ public final class Engine implements IEngine {
     protected CloudBookNode node;
     protected RemoteClient network;
 
-    /* Setters and getters */
+    /* Getters and setters */
     public IFriendManager getFriendManager() { return friendManager; }
     public IMonitoring getMonitoring() { return monitoring; }
     public RemoteClient getNetwork() { return network; }
@@ -41,6 +44,9 @@ public final class Engine implements IEngine {
     public void setNetwork(RemoteClient network) { this.network = network; }
     public void setNode(CloudBookNode node) throws RemoteException { this.node = node; }
     
+    /**
+     * Empty constructor for unique instanciation
+     */
     public Engine() {}
     
     /**
@@ -51,26 +57,29 @@ public final class Engine implements IEngine {
      * @throws java.net.UnknownHostException
      */
     public void initialize(CloudBookNode node, String nodePort) throws RemoteException, UnknownHostException {
-        monitoring = (Monitoring)AppMounter.mountMonitoring();
+        monitoring = new Monitoring();
         this.node = node;
-        this.network = new Network(InetAddress.getLocalHost().getHostName(), Integer.parseInt(nodePort));
+        network = new Network(InetAddress.getLocalHost().getHostName(), Integer.parseInt(nodePort));
         friendManager = new FriendManager(node);
         requestManager = new RequestManager(friendManager);
     }
 
     /**
      * Starts the communication with the network
-     * @throws RemoteException connection problem
-     * @throws java.lang.InterruptedException
+     * @throws RemoteException connexion problem
      */
-    public void start() throws RemoteException, InterruptedException {
+    public void start() throws RemoteException {
         if(monitoring != null && network != null) {
             network.connect(node.getServerHost() + ":" + node.getServerPort());
             monitoring.start();
         }
         while(true) {
-            sleep(3000);
-            updateInformation();
+            try {
+                sleep(TIME);
+                updateInformation();
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Engine.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
     
@@ -81,7 +90,6 @@ public final class Engine implements IEngine {
 
     @Override
     public void setInformation(Information info) {
-        //TODO il faudra certainement encapsuler cette information
         node.addInformation(info);
     }
 
@@ -90,10 +98,9 @@ public final class Engine implements IEngine {
         requestManager.handleRequest(req);
     }
     
-    protected void shareInformation(){
-        /* TODO */
-    }
-    
+    /**
+     * Internal method - Update the current node with information from monitoring
+     */
     protected void updateInformation(){
         monitoring.pushInformation();
     }
