@@ -10,7 +10,6 @@ public class Launcher extends Application {
     public static Stage STAGE;
 
     /**
-     *
      * @param primaryStage
      * @throws Exception
      */

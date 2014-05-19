@@ -8,7 +8,6 @@ import model.node.CloudBookNode;
 import model.node.Friend;
 import model.request.Sender;
 
-
 public class FriendManager implements IFriendManager {
     
     protected static final double seuil = 1; //Distance en dessous de laquelle une noeud est considéré comme pertinent (valeure choisie arbitrairement, à modifier)
@@ -102,6 +101,5 @@ public class FriendManager implements IFriendManager {
                 break;
             }  
         }
-    }
-    
+    }   
 }

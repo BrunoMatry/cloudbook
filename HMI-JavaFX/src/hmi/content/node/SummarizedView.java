@@ -8,7 +8,7 @@ import javafx.scene.input.MouseEvent;
 /**
  * @param <T> View type
  */
-public class SummarizedView<T extends Node> extends Parent implements ComponentView {
+public class SummarizedView<T extends Node> extends Parent implements IComponentView {
 
     //full version of the current view
     protected NodeComponentView fullView;

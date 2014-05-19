@@ -10,8 +10,8 @@ import javafx.scene.layout.VBox;
 import model.node.CloudBuilder;
 
 /**
- * singleton
- * Menu in which the user can load an existing node, create or delete a new one 
+ * Menu in which the user can load an existing node, create or delete a new one
+ * Pattern : Singleton
  */
 public final class MenuView extends HomeActivity {
     public static final MenuView INSTANCE = new MenuView();
@@ -28,7 +28,7 @@ public final class MenuView extends HomeActivity {
     private MenuView() {
         super();
         title = "The CloudBook - Menu";
-        /* Initialisation des attributs prives */
+        /* Private attributes initialization */
         /*
         this.tabList = Mounter.getTabList();
         this.menuBar = new MenuBar();

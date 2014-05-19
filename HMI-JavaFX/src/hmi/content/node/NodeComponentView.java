@@ -3,7 +3,7 @@ package hmi.content.node;
 import hmi.content.AActivity;
 import hmi.content.Activity;
 
-public abstract class NodeComponentView extends Activity implements ComponentView {
+public abstract class NodeComponentView extends Activity implements IComponentView {
     
     public NodeComponentView(AActivity p) {
         super(p);
