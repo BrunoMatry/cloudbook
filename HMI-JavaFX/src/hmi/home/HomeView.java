@@ -2,6 +2,7 @@ package hmi.home;
 
 import hmi.Launcher;
 import hmi.button.CloudBookButton;
+import hmi.button.homeview.FriendManagementButton;
 import hmi.content.HomeActivity;
 import hmi.content.monitor.MonitorView;
 import hmi.content.node.NodeView;
@@ -30,7 +31,7 @@ public final class HomeView extends HomeActivity {
     public static final HomeView INSTANCE = new HomeView();
     
     protected CloudBookNode node; 
-    protected final HomeVBox homeVBox; //container of the launchers buttons
+    public final HomeVBox homeVBox; //container of the launchers buttons
     protected final RegisterView registerView; //child view : modify application settings
     
     /**
@@ -41,7 +42,7 @@ public final class HomeView extends HomeActivity {
         super();
         title = "The CloudBook - Home";
         registerView = new RegisterView(this);
-        homeVBox = new HomeVBox();
+        homeVBox = new HomeVBox(this);
         setCenter(homeVBox);
     }
     
@@ -49,51 +50,40 @@ public final class HomeView extends HomeActivity {
         this.node = node;
     }
     
+    public boolean hasNode() {
+        return node != null;
+    }
+    
     /**
      * Class describing the content of the container
      */
     public class HomeVBox extends VBox {
           
+        private HomeView homeView;
         private CloudBookButton friendManagButton; //friend management button
         private CloudBookButton registerButton; //"register application" button
         private CloudBookButton logsButton; //monitor logs button
         
         /**
          * Initializes and add the components
+         * @param hv
          */
-        public HomeVBox() {
+        public HomeVBox(HomeView hv) {
             super();
+            homeView = hv;
             setSpacing(10);
             setAlignment(Pos.CENTER);
-            getChildren().addAll(getfriendManagButton(), getRegisterButton(), getLogsButton());
+            
+            friendManagButton = new FriendManagementButton(homeView);
+            
+            getChildren().addAll(friendManagButton, getRegisterButton(), getLogsButton());
         }
 
         /**
          * Getter
-         * If friendManagButton is null, it is initialized
          * @return fManagButton attribute 
          */
         public final CloudBookButton getfriendManagButton() {
-            if(friendManagButton == null) {
-                friendManagButton = new CloudBookButton("Friend management");
-                friendManagButton.setOnAction(new EventHandler<ActionEvent>() {
-
-                    @Override
-                    public void handle(ActionEvent t) {
-                        if(Engine.INSTANCE.getNode() != null) {
-                            bindMessage();
-                            bindMesure();
-                            bindState();
-                            NodeView.INSTANCE.launch();
-                        } else {
-                            Dialogs.showInformationDialog(Launcher.STAGE,
-                                    "There isn't a profile yet",
-                                    "Profile error",
-                                    "No Profile");
-                        }
-                    }
-                });
-            }
             return friendManagButton;
         }
         
