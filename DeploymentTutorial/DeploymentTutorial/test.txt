@@ -1,0 +1,281 @@
+1982: Getting Started 	 
+
+    * Incorporated in February 1982, with four employees.
+
+    * First workstation introduced. It includes TCP/IP, now known as the Internet protocol suite.
+
+	
+Back to top
+1983: First Big Break 	 
+
+    * Sun and Computervision sign a $40 million OEM agreement.
+
+    * Operations begin in Europe.
+
+Back to top
+1984: The Big Idea 	 
+
+    * NFS technology introduced and licensed free to the industry. It's destined to become the industry standard for network file sharing.
+
+Back to top
+1985: Shining Brighter 	 
+
+      "While other companies are still shivering from the sudden cold snap, Sun Microsystems is shining brighter than ever."
+            - Computer Systems News
+    * Sun opens Canadian operations.
+
+Back to top
+1986: Extending the Enterprise 	 
+
+    * PC-NFS technology introduced. It brings the power of network computing to PC users, and opens a whole new market for Sun.
+
+    * Sun has a wildly successful initial public stock offering.
+
+    * Sun begins operations in Asia and Australia.
+
+Back to top
+1987: Big Business 	 
+
+    * Sun and AT&T lay the groundwork for business computing in the next decade with an alliance to develop UNIX(R) System V Release 4.
+    * Sun takes lead in workstation market.
+    * Sun connects to Internet. 
+
+Back to top
+1988: Getting Bigger 	 
+
+    * Sun reaches $1 billion in revenue--the fastest rise ever for a computer company with a direct sales force.
+
+      "Words fail to describe how successful Sun has been. For a company to grow at that rate is just incredible."
+            - Robert Herwick, Hambrecht & Quist 
+
+	
+Back to top
+1989: Welcome to the New World 	 
+
+    * SPARCstation 1 system introduced. Features are so tightly integrated it fits in a 3- by 16- by 16-inch enclosure--the first "pizza box."
+
+    * Sun's expanded alliances with Informix, Ingres, Oracle, and Sybase set the stage for our emergence as the number one database platform.
+
+    * Sun opens research and development center in France.
+
+    * Sun becomes an executive member of the independent, open standards organization, SPARC International, Inc.
+
+	
+Back to top
+1990: Making Power more Affordable 	 
+
+    * Sun follows up on the success of the SPARCstation 1 with four new models--including the first workstation for under $5,000.
+
+    * Manufacturing plant opens in Scotland.
+
+	
+Back to top
+1991: Setting New Standards 	 
+
+    * Sun's market share in RISC--the world's fastest, most powerful computing architecture--hits 63 percent.
+
+    * More than half a million systems shipped to date.
+
+    * Sun unveils Solaris 2 operating environment, specially tuned for symetric multiprocessing.
+
+    * Operations begin in Latin America.
+
+Back to top
+1992: Making a Name for Ourselves 	 
+
+    * Leading the desktop performance race, Sun introduces the SPARCstation 10 system, the first multiprocessing desktop computer.
+
+    * Sun's name appears on Standard & Poor's 500.
+
+    * Sun ships more multiprocessing UNIX servers in a single year than any other vendor shipped in its history.
+
+Back to top
+1993: One Million and Counting 	 
+
+    * In just over 10 years, Sun reaches an incredible milestone--one million systems shipped.
+
+    * Sun makes its debut on the Fortune 500.
+
+    * Years of leadership pay off: Sun, IBM, HP, and others unify UNIX system software.
+
+	
+Back to top
+1994: Enterprise Computing Comes of Age 	 
+
+    * Sun stages the Enterprise Computing Summit--a week-long multimedia event and conference showcasing our network computing expertise.
+
+    * Sun's external home page, www.sun.com, goes online.
+
+    * As the exclusive computer supplier for the 1994 World Cup, Sun enables hundreds of thousands of soccer fans to tap into the Internet for up-to-the-minute information.
+
+    * Revolutionary computerized retrofit of the Golden Gate Bridge in San Francisco uses structural analysis with 3-D animation on Sun workstations and servers to dramatically reduce costs while improving public safety.
+
+	
+Back to top
+1995: The Java Technology Revolution Begins 	 
+
+    * Sun introduces the first universal software platform, designed from the ground up for the Internet and corporate intranets. Java technology enables developers to write applications once to run on any computer.
+
+    * More than 100 Sun systems are used to render images for Disney's "Toy Story," the first all computer-generated feature film.
+
+    * Sun and third-party associates reach another milestone--10,000 solutions on the SPARC/Solaris platform.
+
+    * Sun offers downloadable try-and-buy software on the Internet.
+
+    * SunSolve Online provides technical support via the Internet.
+
+    * Sun receives ISO 9001 certification for quality in all major country service organizations, and ISO 9002 certification for all worldwide manufacturing operations.
+
+Back to top
+1996: At Home in Cyberspace 	 
+
+    * To stage "24 Hours in Cyberspace," the largest online event in history, Against All Odds Productions turns to the one company with more Internet and intranet experience than any other: Sun.
+
+    * Sun Ultra workstation family introduced. Features the 64-bit UltraSPARC processor with on-chip multimedia, graphics, and imaging technologies.
+
+    * Sun licenses Java technology to all major hardware and software companies.
+
+    * Sun and the House of Blues deliver interactive entertainment to Olympic spectators in Atlanta and around the world via the Internet.
+
+    * Sun engineer Jon Bosak leads World Wide Web Consortium team developing XML. The extensible markup language is destined to become the standard for business data.
+
+Back to top
+1997: Reaching New Heights 	 
+
+    * Using Java technology, NASA engineers develop an interactive application allowing anyone on the Internet to be a "virtual participant" in the space administration's groundbreaking mission to Mars.
+
+    * Sun's new server family introduced. Includes the 64-processor Sun Enterprise 10000 server with the processing power of four mainframes.
+
+    * Sun becomes the first systems company ever to demonstrate the best TPC-C performance on all four leading database platforms.
+
+    * Web-enhanced Solaris environment introduced. With more than 100 enhancements, this release substantially increases the software's Internet performance.
+
+    * Sun StorEdge A5000 system introduced. It is the industry's only second-generation fibre-channel disk array.
+
+    * Sun becomes the number one supplier of UNIX multiuser disk subsystems.
+
+	
+Back to top
+1998: New Generation of Java Technology 	 
+
+    * Sun redefines storage for the network age with an Intelligent Storage Network architecture that delivers mainframe-class reliability, virtually unlimited expandability, and cross-platform information sharing.
+
+    * Say hello to instant networking. Sun's latest breakthrough, Jini technology, enables all kinds of devices to connect to the network--instantly. Just plug it in, and it works.
+
+    * Solaris 7 operating environment raises the bar for network software. Advanced 64-bit technology delivers dramatic increases in performance, capacity, and scalability.
+
+    * America Online acquires Netscape; Sun and AOL to accelerate the growth of e-commerce and develop next-generation Internet devices in a historic three-year alliance.
+
+    * Next generation of Java technology introduced. Java 2 software delivers more speed, more flexibility, and a complete set of foundation classes.
+
+Back to top
+1999: Setting Rigorous Standards 	 
+
+    * SunTone Certification program sets rigorous standards for building a highly reliable, highly scalable service-delivery environment.
+
+    * Micro, Standard, and Enterprise Editions of the Java 2 Platform provide the tools to create innovative applications for everything from wireless phones to datacenter servers.
+
+    * The Jiro platform shows the way to open storage management.
+
+    * Netra t1 servers make their debut -- designed for service providers, by service providers.
+
+    * Sun makes StarOffice productivity suite available to all, free of charge.
+
+    * Sun Ray 1 enterprise appliances with Hot Desk technology provide an ideal solution for enterprise workgroups.
+
+    * Sun acquires Forte, an enterprise software company specializing in integration solutions, to round out its portfolio.
+
+    * Sun-Netscape Alliance unveils innovative messaging solutions for service providers, portals, and enterprises.
+
+Back to top
+2000: Emphasizing People, Processes, and Programs 	 
+
+    * Sun's iForce initiative brings together a community of leading consulting firms and best-of-breed technology vendors -- experts in developing and refining Net-based solutions.
+
+    * Solaris 8 Operating Environment introduced. The only operating environment that marries datacenter and dot-com requirements.
+
+    * Sun's innovative capacity-on-demand program gives customers the ability to instantly respond to unpredictable spikes in network traffic.
+
+    * Sun acquires Cobalt Networks. Popular server appliances extend product family.
+
+    * Sun Sigma, a company-wide initiative, takes on the most pressing challenge of the Net economy - quality.
+
+    * iPlanet E-Commerce Solutions, a Sun/Netscape Alliance, unveils industry's first full-up business-to-business commerce platform. Includes buying, selling, billing, market making, and trade facilitation software.
+
+    * iPlanet unveils industry's first intelligent communications platform. Extensible software platform enables rapid delivery of wireless and wireline services.
+
+Back to top
+2001: Nth Ready 	 
+
+    * With offices in 170 countries, Sun is a $18.25 billion global leader in network computing solutions that "Take it to the nth."
+
+    * Sun Open Net Environment, Sun ONE, provides an open software platform to create, assemble, and deploy smart, context-aware Web services.
+
+    * Sun's UltraSPARC III processor debuts in Sun Blade 1000 workstations and Sun Fire 280R workgroup servers.
+
+    * Sun Fire "midframe" computers introduced. Midrange servers combine mainframe-style capabilities with other enhancements.
+
+    * Sun acquires HighGround. Suite of Web-based management solutions support wide range of storage technologies and applications.
+
+    * More than 2.5 million programmers are developing innovative Java applications.
+
+    * SunTone program now includes 1300 service providers and application providers as members.
+
+    * iPlanet delivers first integrated wireless portal server for anytime, anywhere, any device access.
+
+Back to top
+2002: We Make the Net Work 	 
+
+    * Sun introduces N1, the first architecture to treat the network as a computer.
+
+    * Sun acquires Pirus Networks, a leader in intelligent storage services. Company's virtualization technology is perfect fit with Sun's N1 architecture.
+
+    * Sun acquires Terraspring, a pioneer in infrastructure automation software, further enhancing the N1 architecture.
+
+    * Sun LX50 server introduced. New general-purpose systems run Linux or Solaris operating systems, extend product line into 32-bit, x86 market.
+
+    * World's largest data warehouse created from Sun-tested framework.
+
+    * Sun acquires Afara Websystems, a company that develops next-generation SPARC processor-based technology. 
+
+Back to top
+2003: Reducing Cost and Complexity 	 
+
+    * Sun offers innovative per-employee annual subscription licenses for its software.
+
+    * Sun partners with AMD to deliver powerful, low-cost 64-bit systems based on the x86 architecture.
+
+    * Wireless Java products spur development of mobile data services and devices.
+
+    * Sun contributes source code for Sun Grid Engine software to development community.
+
+    * More than 1 million students and educators use Sun StarOffice desktop productivity software.
+
+    * Acquisition of Pixo adds to the capabilities of the Sun Content Delivery Server.
+
+	
+Back to top
+2004: Evolution of the Network Computer 	 
+
+    * Sun releases high-performance Java Platform 5.0, the most advanced Java platform in five years.
+
+    * Sun technology helps create world's largest data warehouse, topping one trillion rows.
+
+    * Sun unveils Solaris 10, the most advanced UNIX operating system on the planet.
+
+    * Sun Java technology is used in navigation controls for NASA's Mars Rover and in 1.5 billion mobile phones and other devices.
+
+    * Sun's Throughput Computing initiative results in dual-core UltraSPARC processors that nearly double system performance.
+
+    * Waveset acquisition enhances Sun's identity management capabilities.
+
+    * Project Looking Glass, Sun's 3-D desktop interface, enriches users' computing experience.
+
+	
+Back to top
+2005: The Emergence of Utility Computing 	 
+
+    * Sun becomes largest business contributor to the global open source community with donation of 1,600 patents.
+
+    * Sun offers pay-as-you-go compute and storage capacity through Sun Grid.
+
