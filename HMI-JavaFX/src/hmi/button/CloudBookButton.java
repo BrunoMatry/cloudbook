@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package hmi.button;
 
 import javafx.scene.control.Button;
@@ -11,12 +5,11 @@ import javafx.scene.image.ImageView;
 
 /**
  * Customized button with a cloud icon
- * @author Gwendal
  */
 public class CloudBookButton extends Button {
     
     /**
-     * put a cloud image on the button
+     * Put a cloud image on the button
      */
     public CloudBookButton() {
         super();
