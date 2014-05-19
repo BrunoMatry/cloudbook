@@ -6,8 +6,8 @@ import hmi.content.register.RegisterView;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.SimpleDoubleProperty;
+import java.util.Observable;
+import java.util.Observer;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -74,15 +74,23 @@ public final class NodeList extends HomeActivity {
     }
     
     /**
+     * Getter
+     * @return sg attribute
+     */
+    public SaveGroup getSG() {
+        return sg;
+    }
+    
+    /**
      * save file selectors container
      */
-    private class SaveGroup extends VBox {
+    public class SaveGroup extends VBox implements Observer {
         
         //radio button allowing the selection of a save file
         private List<BorderPane> registries;
         
-        //width of the vbox
-        private DoubleProperty width;
+        //files stored in the system
+        private ObservableFileList fileSystem;
         
         /**
          * Constructor
@@ -90,7 +98,6 @@ public final class NodeList extends HomeActivity {
         public SaveGroup() {
             super();
             setAlignment(Pos.CENTER_LEFT);
-            width = new SimpleDoubleProperty(0.0);
             setSpacing(10);
             this.registries = new ArrayList<>();
             scanSaveFiles();
@@ -103,7 +110,13 @@ public final class NodeList extends HomeActivity {
         private void scanSaveFiles() {
             File folder = new File(".");
             File[] files = folder.listFiles();
-            for (File file : files) {
+            fileSystem = new ObservableFileList(files);
+            fileSystem.addObserver(this);
+            buildRegistries();
+        }
+        
+        private void buildRegistries() {
+            for (File file : fileSystem.getFiles()) {
                 String extName = file.getName();
                 if(extName.endsWith(".ser")) {
                     String name = extName.replaceFirst(".ser", "");
@@ -128,6 +141,22 @@ public final class NodeList extends HomeActivity {
             registry.setRight(deleter);
             registry.setStyle("-fx-background-color: white;");
             registries.add(registry);
+        }
+
+        @Override
+        public void update(Observable o, Object o1) {
+            getChildren().removeAll(registries);
+            registries = new ArrayList<>();
+            buildRegistries();
+            getChildren().addAll(registries);
+        }
+
+        /**
+         * Getter
+         * @return fileSystem list
+         */
+        public final ObservableFileList getFileSystem() {
+            return fileSystem;
         }
         
     }

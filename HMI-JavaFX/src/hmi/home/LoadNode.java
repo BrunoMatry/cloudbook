@@ -34,9 +34,10 @@ public class LoadNode extends RegistryButton {
             CloudBookNode cbn = CloudBookNode.load(node + ".ser");
             Engine.INSTANCE.initialize(cbn, ""+cbn.getNodePort());
             Engine.INSTANCE.start();
-            HomeView.INSTANCE.launch();
         } catch (IOException | ClassNotFoundException ex) {
             Logger.getLogger(LoadNode.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            HomeView.INSTANCE.launch();
         }
     }
 
