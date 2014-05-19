@@ -40,12 +40,14 @@ public final class Engine implements IEngine {
     /**
      * Initializes all the modules of the application
      * @param node current instance of CloudBookNode
+     * @param nodePort port used by the current client
      * @throws RemoteException remote access problem
+     * @throws java.net.UnknownHostException host unknown
      */
     public void initialize(CloudBookNode node, String nodePort) throws RemoteException, UnknownHostException {
         monitoring = (Monitoring)AppMounter.mountMonitoring();
         this.node = node;
-        this.network = new Network(InetAddress.getLocalHost().getHostName() , Integer.parseInt(nodePort));
+        this.network = new Network(InetAddress.getLocalHost().getHostAddress() , Integer.parseInt(nodePort));
         friendManager = new FriendManager(node);
         requestManager = new RequestManager(friendManager);
     }

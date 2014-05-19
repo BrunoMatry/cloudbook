@@ -1,13 +1,11 @@
 package model.node;
 
 import java.io.IOException;
-import java.net.InetAddress;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.image.Image;
 import model.engine.Engine;
-import model.network.implementation.Network;
 
 /**
  * builder

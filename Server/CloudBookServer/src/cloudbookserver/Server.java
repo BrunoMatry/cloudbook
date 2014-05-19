@@ -40,6 +40,7 @@ public class Server extends UnicastRemoteObject implements RemoteServer {
      * @throws RemoteException in case of remote access problem
      */
     public Server(String ip, int port) throws RemoteException {
+        super(port);
         clients = new HashMap<>();
         this.ip = ip;
         this.port = port;
@@ -87,7 +88,7 @@ public class Server extends UnicastRemoteObject implements RemoteServer {
     public void binding() throws RemoteException {
         try {
             url = "rmi://" + ip + ":" + port + "/" + NAME;
-            LocateRegistry.createRegistry(50100);
+            LocateRegistry.createRegistry(port);
             Naming.bind(url, this);
         } catch (AlreadyBoundException | MalformedURLException ex) {
             Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
