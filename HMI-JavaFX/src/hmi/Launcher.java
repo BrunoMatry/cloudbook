@@ -1,6 +1,6 @@
 package hmi;
 
-import hmi.home.MenuView;
+import hmi.home.NodeList;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -17,7 +17,7 @@ public class Launcher extends Application {
     public void start(Stage primaryStage) throws Exception {
         STAGE = primaryStage;
         
-        MenuView.INSTANCE.launch();
+        NodeList.INSTANCE.launch();
     }
     
     /**

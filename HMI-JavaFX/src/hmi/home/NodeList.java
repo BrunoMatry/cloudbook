@@ -2,7 +2,7 @@ package hmi.home;
 
 import hmi.button.IconFlyWeight;
 import hmi.content.AActivity;
-import hmi.content.Activity;
+import hmi.content.HomeActivity;
 import hmi.content.register.RegisterView;
 import java.io.File;
 import java.util.ArrayList;
@@ -20,9 +20,12 @@ import model.node.CloudBuilder;
 
 /**
  * Show the list of all the nodes registered on this computer
+ * singleton
  */
-public class NodeList extends Activity {
+public final class NodeList extends HomeActivity {
 
+    public static final NodeList INSTANCE = new NodeList();
+    
     //list of save files
     protected SaveGroup sg;
     
@@ -34,10 +37,10 @@ public class NodeList extends Activity {
     
     /**
      * Constructor
-     * @param p parent activity
      */
-    public NodeList(AActivity p) {
-        super(p);
+    public NodeList() {
+        super();
+        title = "The CloudBook - Menu";
         this.sg = new SaveGroup();
         setUpAdderButton();
         setCenter(sg);
