@@ -6,10 +6,6 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.scene.Parent;
 
-/**
- *
- * @author Bruno
- */
 public class TabList extends Parent {
     private List<Tab> list;
     private IntegerProperty currentTab;

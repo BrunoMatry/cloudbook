@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package hmi.home;
 
 import hmi.content.AActivity;
@@ -20,8 +14,6 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.VBox;
 
 /**
- *
- * @author Gwendal
  * Show the list of all the nodes registered on this computer
  */
 public class NodeList extends Activity {

@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package hmi.home;
 
 import hmi.Launcher;
@@ -29,7 +23,6 @@ import model.node.CloudBuilder;
 /**
  * Activity launched when the application starts
  * singleton
- * @author Gwendal
  */
 public final class HomeView extends HomeActivity {   
     public static final HomeView INSTANCE = new HomeView();

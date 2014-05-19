@@ -1,16 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package hmi.home;
 
 import java.io.File;
 
 /**
- *
- * @author Gwendal
  * command
  * command dedecated to the destruction of a save file
  */

@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package hmi.content.register;
 
 import javafx.scene.control.TextField;
@@ -11,8 +5,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
 
 /**
- *
- * @author Gwendal
  * Defines a field with provided information about it's purpose
  */
 public class Field extends BorderPane {

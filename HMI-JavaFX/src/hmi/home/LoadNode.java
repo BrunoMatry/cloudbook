@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package hmi.home;
 
 import java.io.IOException;
@@ -14,8 +8,6 @@ import model.engine.Engine;
 import model.node.CloudBookNode;
 
 /**
- *
- * @author Gwendal
  * command
  * command dedecated to the loading of a node
  */

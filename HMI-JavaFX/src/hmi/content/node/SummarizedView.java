@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package hmi.content.node;
 
 import javafx.event.EventHandler;
@@ -12,8 +6,6 @@ import javafx.scene.Parent;
 import javafx.scene.input.MouseEvent;
 
 /**
- *
- * @author Gwendal
  * @param <T> View type
  */
 public class SummarizedView<T extends Node> extends Parent implements ComponentView {
