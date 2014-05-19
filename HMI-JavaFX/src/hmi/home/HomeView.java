@@ -1,26 +1,20 @@
 package hmi.home;
 
-import hmi.Launcher;
 import hmi.button.CloudBookButton;
 import hmi.button.homeview.FriendManagementButton;
+import hmi.button.homeview.RegisterButton;
 import hmi.content.HomeActivity;
-import hmi.content.monitor.MonitorView;
 import hmi.content.node.NodeView;
 import hmi.content.register.RegisterView;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.StringProperty;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Pos;
-import javafx.scene.control.Dialogs;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import model.engine.Engine;
-import model.monitoring.Monitoring;
 import model.node.CloudBookNode;
-import model.node.CloudBuilder;
 
 /**
  * Activity launched when the application starts
@@ -32,7 +26,7 @@ public final class HomeView extends HomeActivity {
     
     protected CloudBookNode node; 
     public final HomeVBox homeVBox; //container of the launchers buttons
-    protected final RegisterView registerView; //child view : modify application settings
+    public final RegisterView registerView; //child view : modify application settings
     
     /**
      * Empty constructor
@@ -59,9 +53,9 @@ public final class HomeView extends HomeActivity {
      */
     public class HomeVBox extends VBox {
           
-        private HomeView homeView;
-        private CloudBookButton friendManagButton; //friend management button
-        private CloudBookButton registerButton; //"register application" button
+        private final HomeView homeView;
+        private final CloudBookButton friendManagButton; //friend management button
+        private final CloudBookButton registerButton; //"register application" button
         private CloudBookButton logsButton; //monitor logs button
         
         /**
@@ -75,17 +69,11 @@ public final class HomeView extends HomeActivity {
             setAlignment(Pos.CENTER);
             
             friendManagButton = new FriendManagementButton(homeView);
+            registerButton = new RegisterButton(homeView);
             
-            getChildren().addAll(friendManagButton, getRegisterButton(), getLogsButton());
+            getChildren().addAll(friendManagButton, registerButton, getLogsButton());
         }
 
-        /**
-         * Getter
-         * @return fManagButton attribute 
-         */
-        public final CloudBookButton getfriendManagButton() {
-            return friendManagButton;
-        }
         
         public void bindMessage() {
             Text txtMsg = (Text)NodeView.INSTANCE.getMessage().getView();
@@ -106,51 +94,26 @@ public final class HomeView extends HomeActivity {
         }
 
         /**
-         * getter
-         * if registerButton is null, it is initialized
+         * Getter
+         * @return friendManagButton attribute 
+         */
+        public final CloudBookButton getfriendManagButton() {
+            return friendManagButton;
+        }
+        
+        /**
+         * Getter
          * @return registerButton attribute 
          */
         public final CloudBookButton getRegisterButton() {
-            if(registerButton == null) {
-                registerButton = new CloudBookButton("Register an application");
-                registerButton.setOnAction(new EventHandler<ActionEvent>() {
-
-                    @Override
-                    public void handle(ActionEvent t) {
-                        CloudBuilder cb = new CloudBuilder();
-                        registerView.setBuilder(cb);
-                        cb.logoProperty().bind(registerView.logoProperty());
-                        cb.nameProperty().bind(registerView.nameProperty());
-                        cb.platformProperty().bind(registerView.cloudProperty());
-                        cb.hostProperty().bind(registerView.hostProperty());
-                        cb.serverPortProperty().bind(registerView.serverPortProperty());
-                        cb.nodePortProperty().bind(registerView.nodePortProperty());
-                        registerView.launch();
-                    }
-                });
-            }
             return registerButton;
         }
         
         /**
-         * constructs the logs button if not defined yet.
-         * Otherwise, simply returns it.
-         * @return functional logs view button
+         * Getter
+         * @return logsButton attribute
          */
         public final CloudBookButton getLogsButton() {
-            if(logsButton == null) {
-                logsButton = new CloudBookButton("Monitor logs");
-                logsButton.setOnAction(new EventHandler<ActionEvent>() {
-
-                    @Override
-                    public void handle(ActionEvent t) {
-                        Monitoring model = (Monitoring)Engine.INSTANCE.getMonitoring();
-                        MonitorView view = MonitorView.INSTANCE;
-                        view.logsTextProperty().bind(model.logsProperty());
-                        view.launch();
-                    }
-                });
-            }
             return logsButton;
         }   
     }
