@@ -1,7 +1,6 @@
 package hmi.home;
 
 import hmi.button.IconFlyWeight;
-import hmi.content.AActivity;
 import hmi.content.HomeActivity;
 import hmi.content.register.RegisterView;
 import java.io.File;
@@ -41,6 +40,7 @@ public final class NodeList extends HomeActivity {
     public NodeList() {
         super();
         title = "The CloudBook - Menu";
+        rv = new RegisterView(this);
         this.sg = new SaveGroup();
         setUpAdderButton();
         setCenter(sg);
@@ -111,16 +111,15 @@ public final class NodeList extends HomeActivity {
          * @param name name of the corresponding save file
          */
         private void setUpRegistry(final String name) {
-            HBox registry = new HBox();
+            BorderPane registry = new BorderPane();
             Image led = IconFlyWeight.INSTANCE.getRedLed();
             ImageView connectionState = new ImageView(led);
             Button launcher = new LoadNode(name);
             Button deleter = new DeleteNode(name);
-            registry.getChildren().addAll(
-                    connectionState,
-                    launcher,
-                    deleter
-            );
+            registry.setLeft(connectionState);
+            registry.setCenter(launcher);
+            registry.setRight(deleter);
+            registries.add(registry);
         }
         
     }

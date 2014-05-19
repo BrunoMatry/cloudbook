@@ -25,6 +25,7 @@ public class LoadNode extends RegistryButton {
      */
     public LoadNode(String node) {
         super(node);
+        setText(node);
     }
 
     @Override
@@ -38,5 +39,18 @@ public class LoadNode extends RegistryButton {
             Logger.getLogger(LoadNode.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    /**
+     * Setter
+     * the label of the button is set to the parameter value
+     * @param node node attribute
+     */
+    @Override
+    public void setNode(String node) {
+        super.setNode(node);
+        setText(node);
+    }
+    
+    
     
 }
