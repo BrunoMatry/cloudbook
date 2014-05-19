@@ -1,27 +1,20 @@
 package hmi.home;
 
-import hmi.Launcher;
 import hmi.button.CloudBookButton;
 import hmi.button.homeview.FriendManagementButton;
 import hmi.button.homeview.RegisterButton;
 import hmi.content.HomeActivity;
-import hmi.content.monitor.MonitorView;
 import hmi.content.node.NodeView;
 import hmi.content.register.RegisterView;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.StringProperty;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Pos;
-import javafx.scene.control.Dialogs;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import model.engine.Engine;
-import model.monitoring.Monitoring;
 import model.node.CloudBookNode;
-import model.node.CloudBuilder;
 
 /**
  * Activity launched when the application starts
@@ -81,13 +74,6 @@ public final class HomeView extends HomeActivity {
             getChildren().addAll(friendManagButton, registerButton, getLogsButton());
         }
 
-        /**
-         * Getter
-         * @return fManagButton attribute 
-         */
-        public final CloudBookButton getfriendManagButton() {
-            return friendManagButton;
-        }
         
         public void bindMessage() {
             Text txtMsg = (Text)NodeView.INSTANCE.getMessage().getView();
@@ -108,7 +94,15 @@ public final class HomeView extends HomeActivity {
         }
 
         /**
-         * getter
+         * Getter
+         * @return friendManagButton attribute 
+         */
+        public final CloudBookButton getfriendManagButton() {
+            return friendManagButton;
+        }
+        
+        /**
+         * Getter
          * @return registerButton attribute 
          */
         public final CloudBookButton getRegisterButton() {
@@ -116,24 +110,10 @@ public final class HomeView extends HomeActivity {
         }
         
         /**
-         * constructs the logs button if not defined yet.
-         * Otherwise, simply returns it.
-         * @return functional logs view button
+         * Getter
+         * @return logsButton attribute
          */
         public final CloudBookButton getLogsButton() {
-            if(logsButton == null) {
-                logsButton = new CloudBookButton("Monitor logs");
-                logsButton.setOnAction(new EventHandler<ActionEvent>() {
-
-                    @Override
-                    public void handle(ActionEvent t) {
-                        Monitoring model = (Monitoring)Engine.INSTANCE.getMonitoring();
-                        MonitorView view = MonitorView.INSTANCE;
-                        view.logsTextProperty().bind(model.logsProperty());
-                        view.launch();
-                    }
-                });
-            }
             return logsButton;
         }   
     }
