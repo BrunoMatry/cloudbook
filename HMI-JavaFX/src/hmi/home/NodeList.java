@@ -6,6 +6,8 @@ import hmi.content.register.RegisterView;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -79,12 +81,16 @@ public final class NodeList extends HomeActivity {
         //radio button allowing the selection of a save file
         private List<BorderPane> registries;
         
+        //width of the vbox
+        private DoubleProperty width;
+        
         /**
          * Constructor
          */
         public SaveGroup() {
             super();
-            setAlignment(Pos.CENTER);
+            setAlignment(Pos.CENTER_LEFT);
+            width = new SimpleDoubleProperty(0.0);
             setSpacing(10);
             this.registries = new ArrayList<>();
             scanSaveFiles();
@@ -112,13 +118,15 @@ public final class NodeList extends HomeActivity {
          */
         private void setUpRegistry(final String name) {
             BorderPane registry = new BorderPane();
+            HBox box = new HBox();
             Image led = IconFlyWeight.INSTANCE.getRedLed();
             ImageView connectionState = new ImageView(led);
             Button launcher = new LoadNode(name);
+            box.getChildren().addAll(connectionState, launcher);
             Button deleter = new DeleteNode(name);
-            registry.setLeft(connectionState);
-            registry.setCenter(launcher);
+            registry.setLeft(box);
             registry.setRight(deleter);
+            registry.setStyle("-fx-background-color: white;");
             registries.add(registry);
         }
         
