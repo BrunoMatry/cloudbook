@@ -3,6 +3,7 @@ package hmi.home;
 import hmi.button.IconFlyWeight;
 import hmi.content.AActivity;
 import hmi.content.Activity;
+import hmi.content.register.RegisterView;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,9 +13,10 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import model.network.implementation.ConnectionState;
+import model.node.CloudBuilder;
 
 /**
  * Show the list of all the nodes registered on this computer
@@ -24,8 +26,11 @@ public class NodeList extends Activity {
     //list of save files
     protected SaveGroup sg;
     
-    //OK button
-    protected Button ok;
+    //button allowing to add a node
+    protected Button adder;
+    
+    //child view used to add nodes on this computer
+    protected RegisterView rv;
     
     /**
      * Constructor
@@ -34,22 +39,33 @@ public class NodeList extends Activity {
     public NodeList(AActivity p) {
         super(p);
         this.sg = new SaveGroup();
-        setUpOkButton();
+        setUpAdderButton();
         setCenter(sg);
-        setBottom(ok);
+        setBottom(adder);
     }
     
-    private void setUpOkButton() {
-        this.ok = new Button("OK");
-        this.ok.setOnAction(new EventHandler<ActionEvent>() {
+    private void setUpAdderButton() {
+        Image plus = IconFlyWeight.INSTANCE.getPlus();
+        ImageView iv = new ImageView(plus);
+        this.adder = new Button();
+        this.adder.setGraphic(iv);
+        this.adder.setOnAction(new EventHandler<ActionEvent>() {
 
             @Override
             public void handle(ActionEvent t) {
-                //action.execute();
+                CloudBuilder cb = new CloudBuilder();
+                rv.setBuilder(cb);
+                cb.logoProperty().bind(rv.logoProperty());
+                cb.nameProperty().bind(rv.nameProperty());
+                cb.platformProperty().bind(rv.cloudProperty());
+                cb.hostProperty().bind(rv.hostProperty());
+                cb.serverPortProperty().bind(rv.serverPortProperty());
+                cb.nodePortProperty().bind(rv.nodePortProperty());
+                rv.launch();
             }
         
         });
-        this.ok.setAlignment(Pos.BOTTOM_CENTER);
+        this.adder.setAlignment(Pos.BOTTOM_CENTER);
     }
     
     /**
@@ -58,7 +74,7 @@ public class NodeList extends Activity {
     private class SaveGroup extends VBox {
         
         //radio button allowing the selection of a save file
-        private List<HBox> registries;
+        private List<BorderPane> registries;
         
         /**
          * Constructor
@@ -95,16 +111,13 @@ public class NodeList extends Activity {
             HBox registry = new HBox();
             Image led = IconFlyWeight.INSTANCE.getRedLed();
             ImageView connectionState = new ImageView(led);
-            Button launcher = new Button(name);/*
-            .add(rb);
-            rb.setToggleGroup(radioGroup);
-            rb.setOnAction(new EventHandler<ActionEvent>() {
-
-                @Override
-                public void handle(ActionEvent t) {
-                    action.setNode(name);
-                }
-            });*/
+            Button launcher = new LoadNode(name);
+            Button deleter = new DeleteNode(name);
+            registry.getChildren().addAll(
+                    connectionState,
+                    launcher,
+                    deleter
+            );
         }
         
     }

@@ -24,6 +24,8 @@ public final class IconFlyWeight {
     private Image home;
     private Image greenLed;
     private Image redLed;
+    private Image trash;
+    private Image plus;
    
     public Image getBackArrow() {
         if(backArrow == null)
@@ -69,11 +71,23 @@ public final class IconFlyWeight {
         return redLed;
     }
     
-    /*
-    public Image getExit() {
-        if(exit == null)
-            exit = new Image();
-        return exit;
+    /**
+     * Getter
+     * @return trash attribute
+     */
+    public Image getTrash() {
+        if(trash == null)
+            trash = new Image("file:res/trash.png");
+        return trash;
     }
-    */
+    
+    /**
+     * Getter
+     * @return plus attribute
+     */
+    public Image getPlus() {
+        if(plus == null)
+            plus = new Image("file:res/adder.png");
+        return plus;
+    }
 }

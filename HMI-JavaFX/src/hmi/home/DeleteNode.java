@@ -1,6 +1,9 @@
 package hmi.home;
 
+import hmi.button.IconFlyWeight;
 import java.io.File;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 /**
  * command
@@ -13,6 +16,8 @@ public class DeleteNode extends RegistryButton {
      */
     public DeleteNode() {
         super();
+        Image trash = IconFlyWeight.INSTANCE.getTrash();
+        ImageView iv = new ImageView(trash);
     }
     
     /**
@@ -21,6 +26,9 @@ public class DeleteNode extends RegistryButton {
      */
     public DeleteNode(String node) {
         super(node);
+        Image trash = IconFlyWeight.INSTANCE.getTrash();
+        ImageView iv = new ImageView(trash);
+        setGraphic(iv);
     }
 
     /**
