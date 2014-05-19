@@ -11,7 +11,8 @@ public final class MonitorView extends Activity {
     //unique instance
     public static final MonitorView INSTANCE = new MonitorView(HomeView.INSTANCE);
     
-    private Text logs;
+    protected final Text logs;
+    
     public StringProperty logsTextProperty() {
         return logs.textProperty();
     }
