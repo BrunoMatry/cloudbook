@@ -71,6 +71,7 @@ public class Network extends UnicastRemoteObject implements RemoteClient {
         try {
             stub = (RemoteServer)Naming.lookup("rmi://" + serverId + "/" + RemoteServer.NAME);
             stub.connect(this);
+            connectionState.setConnected(true);
         } catch (NotBoundException | MalformedURLException ex) {
             Logger.getLogger(Network.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -95,6 +96,7 @@ public class Network extends UnicastRemoteObject implements RemoteClient {
     public void disconnect() throws RemoteException {
         stub.disconnect(this);
         stub = null;
+        connectionState.setConnected(false);
     }
 
     @Override

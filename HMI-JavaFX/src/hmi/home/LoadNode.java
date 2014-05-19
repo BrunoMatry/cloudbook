@@ -1,7 +1,6 @@
 package hmi.home;
 
 import java.io.IOException;
-import java.rmi.RemoteException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.engine.Engine;
@@ -11,13 +10,13 @@ import model.node.CloudBookNode;
  * command
  * command dedecated to the loading of a node
  */
-public class LoadNode extends NodeListAction {
+public class LoadNode extends RegistryButton {
 
     /**
      * Constructor
      */
     public LoadNode() {
-        
+        super();
     }
     
     /**
