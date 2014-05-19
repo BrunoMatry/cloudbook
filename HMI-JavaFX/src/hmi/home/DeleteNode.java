@@ -6,7 +6,7 @@ import java.io.File;
  * command
  * command dedecated to the destruction of a save file
  */
-public class DeleteNode extends NodeListAction {
+public class DeleteNode extends RegistryButton {
 
     /**
      * Constructor

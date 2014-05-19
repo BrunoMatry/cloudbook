@@ -77,10 +77,10 @@ public final class MenuView extends HomeActivity {
                 loadButton.setOnAction(new EventHandler<ActionEvent>() {
 
                     @Override
-                    public void handle(ActionEvent t) {
+                    public void handle(ActionEvent t) {/*
                         NodeListAction action = new LoadNode();
                         NodeList nodeList = new NodeList(MenuView.INSTANCE, action);
-                        nodeList.launch();
+                        nodeList.launch();*/
                     }
             
                 });
@@ -127,10 +127,10 @@ public final class MenuView extends HomeActivity {
                 deleteButton.setOnAction(new EventHandler<ActionEvent>() {
 
                     @Override
-                    public void handle(ActionEvent t) {
+                    public void handle(ActionEvent t) {/*
                         NodeListAction action = new DeleteNode();
                         NodeList nodeList = new NodeList(MenuView.INSTANCE, action);
-                        nodeList.launch();
+                        nodeList.launch();*/
                     }
                 
                 });

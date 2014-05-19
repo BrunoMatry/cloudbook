@@ -1,5 +1,6 @@
 package hmi.home;
 
+import hmi.button.IconFlyWeight;
 import hmi.content.AActivity;
 import hmi.content.Activity;
 import java.io.File;
@@ -9,19 +10,17 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import static sun.misc.ClassFileTransformer.add;
+import model.network.implementation.ConnectionState;
 
 /**
  * Show the list of all the nodes registered on this computer
  */
 public class NodeList extends Activity {
 
-    //action to be performed at click on the OK button
-    protected NodeListAction action;
-    
     //list of save files
     protected SaveGroup sg;
     
@@ -31,11 +30,9 @@ public class NodeList extends Activity {
     /**
      * Constructor
      * @param p parent activity
-     * @param action action to be performed at click on the OK button
      */
-    public NodeList(AActivity p, NodeListAction action) {
+    public NodeList(AActivity p) {
         super(p);
-        this.action = action;
         this.sg = new SaveGroup();
         setUpOkButton();
         setCenter(sg);
@@ -48,7 +45,7 @@ public class NodeList extends Activity {
 
             @Override
             public void handle(ActionEvent t) {
-                action.execute();
+                //action.execute();
             }
         
         });
@@ -96,8 +93,8 @@ public class NodeList extends Activity {
          */
         private void setUpRegistry(final String name) {
             HBox registry = new HBox();
-            ImageView connectionState = new ImageView();
-            
+            Image led = IconFlyWeight.INSTANCE.getRedLed();
+            ImageView connectionState = new ImageView(led);
             Button launcher = new Button(name);/*
             .add(rb);
             rb.setToggleGroup(radioGroup);
