@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package hmi.content;
 
 import hmi.button.BackButton;
@@ -15,7 +9,6 @@ import javafx.scene.layout.HBox;
 
 /**
  * specifies the basic content of a standard activity (i.e not the starting activity)
- * @author Gwendal
  */
 public class Activity extends AActivity {
     

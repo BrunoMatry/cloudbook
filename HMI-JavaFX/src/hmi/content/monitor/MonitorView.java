@@ -1,23 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package hmi.content.monitor;
 
 import hmi.content.AActivity;
 import hmi.content.Activity;
 import hmi.home.HomeView;
 import javafx.beans.property.StringProperty;
-import javafx.geometry.Pos;
 import javafx.scene.text.Text;
 
-/**
- *
- * @author Gwendal
- * singleton
- */
 public final class MonitorView extends Activity {
     
     //unique instance

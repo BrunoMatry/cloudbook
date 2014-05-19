@@ -13,10 +13,6 @@ import model.network.interfaces.RemoteClient;
 import model.node.Mesure;
 import model.request.Request;
 
-/**
- *
- * @author Bruno
- */
 public class Monitoring extends Thread implements IMonitoring {
     
     protected List<Mesure> mesures;

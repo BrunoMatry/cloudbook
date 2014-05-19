@@ -3,16 +3,24 @@ package model.engine;
 import java.io.IOException;
 import model.network.interfaces.Information;
 import model.network.interfaces.Sendable;
-/**
- *
- * @author Bruno
- */
+
 public interface IEngine {
+    
     /**
-     * Methode permettant de saisir une requete qui est renvoyee par le bloc reseau
-     * @param req 
+     * Capture a query that is returned by the network block
+     * @param req the query
      */
     void handleRequest(Sendable req);
+    
+    /**
+     * Save the current node in a file
+     * @throws IOException 
+     */
     void save() throws IOException;
+    
+    /**
+     * Deprecated - Set information manually
+     * @param info the information to add in the node
+     */
     void setInformation(Information info);
 }
