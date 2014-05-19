@@ -18,79 +18,65 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import model.engine.Engine;
 import model.monitoring.Monitoring;
+import model.node.CloudBookNode;
 import model.node.CloudBuilder;
 
 /**
  * Activity launched when the application starts
- * singleton
+ * Pattern : Singleton
  */
-public final class HomeView extends HomeActivity {   
+public final class HomeView extends HomeActivity {
+    
     public static final HomeView INSTANCE = new HomeView();
     
-    /*
-    protected MenuBar menuBar;
-    protected TabList tabList;
-    */
-    
-    //container of the launchers buttons
-    private final HomeVBox hVBox;
-    
-    //child view : modify application settings
-    private final RegisterView rv;
+    protected CloudBookNode node; 
+    protected final HomeVBox homeVBox; //container of the launchers buttons
+    protected final RegisterView registerView; //child view : modify application settings
     
     /**
-     * initialize the container
+     * Empty constructor
+     * Initialize the container
      */
     private HomeView() {
         super();
         title = "The CloudBook - Home";
-        /* Initialisation des attributs prives */
-        /*
-        this.tabList = Mounter.getTabList();
-        this.menuBar = new MenuBar();
-                */
-        this.rv = new RegisterView(this);
-        hVBox = new HomeVBox();
-        setCenter(hVBox);
+        registerView = new RegisterView(this);
+        homeVBox = new HomeVBox();
+        setCenter(homeVBox);
+    }
+    
+    public void loadNode(CloudBookNode node) {
+        this.node = node;
     }
     
     /**
      * Class describing the content of the container
      */
     public class HomeVBox extends VBox {
-        
-        //friend management button
-        private CloudBookButton fManagButton;
-        
-        //"register application" button
-        private CloudBookButton registerButton;
-        
-        //monitor logs button
-        private CloudBookButton logsButton;
+          
+        private CloudBookButton friendManagButton; //friend management button
+        private CloudBookButton registerButton; //"register application" button
+        private CloudBookButton logsButton; //monitor logs button
         
         /**
-         * initializes and add the components
+         * Initializes and add the components
          */
         public HomeVBox() {
             super();
             setSpacing(10);
             setAlignment(Pos.CENTER);
-            getChildren().addAll(
-                    getfManagButton(),
-                    getRegisterButton(),
-                    getLogsButton()
-            );
+            getChildren().addAll(getfriendManagButton(), getRegisterButton(), getLogsButton());
         }
 
         /**
-         * getter
-         * if fManagButton is null, it is initialized
+         * Getter
+         * If friendManagButton is null, it is initialized
          * @return fManagButton attribute 
          */
-        public final CloudBookButton getfManagButton() {
-            if(fManagButton == null) {
-                fManagButton = new CloudBookButton("Friend management");
-                fManagButton.setOnAction(new EventHandler<ActionEvent>() {
+        public final CloudBookButton getfriendManagButton() {
+            if(friendManagButton == null) {
+                friendManagButton = new CloudBookButton("Friend management");
+                friendManagButton.setOnAction(new EventHandler<ActionEvent>() {
 
                     @Override
                     public void handle(ActionEvent t) {
@@ -106,10 +92,9 @@ public final class HomeView extends HomeActivity {
                                     "No Profile");
                         }
                     }
-            
                 });
             }
-            return fManagButton;
+            return friendManagButton;
         }
         
         public void bindMessage() {
@@ -143,16 +128,15 @@ public final class HomeView extends HomeActivity {
                     @Override
                     public void handle(ActionEvent t) {
                         CloudBuilder cb = new CloudBuilder();
-                        rv.setBuilder(cb);
-                        cb.logoProperty().bind(rv.logoProperty());
-                        cb.nameProperty().bind(rv.nameProperty());
-                        cb.platformProperty().bind(rv.cloudProperty());
-                        cb.hostProperty().bind(rv.hostProperty());
-                        cb.serverPortProperty().bind(rv.serverPortProperty());
-                        cb.nodePortProperty().bind(rv.nodePortProperty());
-                        rv.launch();
+                        registerView.setBuilder(cb);
+                        cb.logoProperty().bind(registerView.logoProperty());
+                        cb.nameProperty().bind(registerView.nameProperty());
+                        cb.platformProperty().bind(registerView.cloudProperty());
+                        cb.hostProperty().bind(registerView.hostProperty());
+                        cb.serverPortProperty().bind(registerView.serverPortProperty());
+                        cb.nodePortProperty().bind(registerView.nodePortProperty());
+                        registerView.launch();
                     }
-            
                 });
             }
             return registerButton;
@@ -175,11 +159,9 @@ public final class HomeView extends HomeActivity {
                         view.logsTextProperty().bind(model.logsProperty());
                         view.launch();
                     }
-                
                 });
             }
             return logsButton;
-        }
-        
+        }   
     }
 }

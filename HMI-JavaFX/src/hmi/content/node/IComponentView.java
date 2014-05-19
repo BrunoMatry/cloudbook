@@ -3,7 +3,7 @@ package hmi.content.node;
 /**
  * methods shared by all customized graphical components
  */
-public interface ComponentView {
+public interface IComponentView {
     
     /**
      * display the component

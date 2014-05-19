@@ -132,7 +132,7 @@ public final class NodeView extends Activity {
      * TODO
      * @param source : component demanding to be displayed
      */
-    public void onDisplay(ComponentView source) {
+    public void onDisplay(IComponentView source) {
         
     }
     
@@ -140,7 +140,7 @@ public final class NodeView extends Activity {
      * TODO
      * @param source : component demanding to be updated
      */
-    public void onUpdate(ComponentView source) {
+    public void onUpdate(IComponentView source) {
         
     }
     
@@ -148,7 +148,7 @@ public final class NodeView extends Activity {
      * TODO
      * @param source : component demanding to be hidden
      */
-    public void onHide(ComponentView source) {
+    public void onHide(IComponentView source) {
         getChildren().remove(source);
     }
     
