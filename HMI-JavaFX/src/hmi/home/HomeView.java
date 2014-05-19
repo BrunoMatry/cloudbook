@@ -3,6 +3,7 @@ package hmi.home;
 import hmi.Launcher;
 import hmi.button.CloudBookButton;
 import hmi.button.homeview.FriendManagementButton;
+import hmi.button.homeview.RegisterButton;
 import hmi.content.HomeActivity;
 import hmi.content.monitor.MonitorView;
 import hmi.content.node.NodeView;
@@ -32,7 +33,7 @@ public final class HomeView extends HomeActivity {
     
     protected CloudBookNode node; 
     public final HomeVBox homeVBox; //container of the launchers buttons
-    protected final RegisterView registerView; //child view : modify application settings
+    public final RegisterView registerView; //child view : modify application settings
     
     /**
      * Empty constructor
@@ -59,9 +60,9 @@ public final class HomeView extends HomeActivity {
      */
     public class HomeVBox extends VBox {
           
-        private HomeView homeView;
-        private CloudBookButton friendManagButton; //friend management button
-        private CloudBookButton registerButton; //"register application" button
+        private final HomeView homeView;
+        private final CloudBookButton friendManagButton; //friend management button
+        private final CloudBookButton registerButton; //"register application" button
         private CloudBookButton logsButton; //monitor logs button
         
         /**
@@ -75,8 +76,9 @@ public final class HomeView extends HomeActivity {
             setAlignment(Pos.CENTER);
             
             friendManagButton = new FriendManagementButton(homeView);
+            registerButton = new RegisterButton(homeView);
             
-            getChildren().addAll(friendManagButton, getRegisterButton(), getLogsButton());
+            getChildren().addAll(friendManagButton, registerButton, getLogsButton());
         }
 
         /**
@@ -107,28 +109,9 @@ public final class HomeView extends HomeActivity {
 
         /**
          * getter
-         * if registerButton is null, it is initialized
          * @return registerButton attribute 
          */
         public final CloudBookButton getRegisterButton() {
-            if(registerButton == null) {
-                registerButton = new CloudBookButton("Register an application");
-                registerButton.setOnAction(new EventHandler<ActionEvent>() {
-
-                    @Override
-                    public void handle(ActionEvent t) {
-                        CloudBuilder cb = new CloudBuilder();
-                        registerView.setBuilder(cb);
-                        cb.logoProperty().bind(registerView.logoProperty());
-                        cb.nameProperty().bind(registerView.nameProperty());
-                        cb.platformProperty().bind(registerView.cloudProperty());
-                        cb.hostProperty().bind(registerView.hostProperty());
-                        cb.serverPortProperty().bind(registerView.serverPortProperty());
-                        cb.nodePortProperty().bind(registerView.nodePortProperty());
-                        registerView.launch();
-                    }
-                });
-            }
             return registerButton;
         }
         
