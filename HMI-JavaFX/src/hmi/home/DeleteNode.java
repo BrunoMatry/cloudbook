@@ -37,8 +37,7 @@ public class DeleteNode extends RegistryButton {
     @Override
     public void execute() {
         File saveFile = new File(node + ".ser");
-        ObservableFileList files = NodeList.INSTANCE.getSG().getFileSystem();
-        files.remove(saveFile);
+        ObservableFileList.INSTANCE.remove(saveFile);
     }
     
 }

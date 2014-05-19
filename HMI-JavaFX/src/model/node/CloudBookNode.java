@@ -1,5 +1,6 @@
 package model.node;
 
+import hmi.home.ObservableFileList;
 import model.network.interfaces.Information;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -199,10 +200,7 @@ public class CloudBookNode implements Serializable {
         messages.saveProperties();
         for(State s : states)
             s.saveProperties();
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(name.get() + ".ser"))) {
-            oos.writeObject(this);
-            oos.flush();
-        }
+        ObservableFileList.INSTANCE.add(this, name.get() + ".ser");
     }
     
     public static CloudBookNode load(String fileName) throws IOException, ClassNotFoundException {

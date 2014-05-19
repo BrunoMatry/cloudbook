@@ -89,9 +89,6 @@ public final class NodeList extends HomeActivity {
         //radio button allowing the selection of a save file
         private List<BorderPane> registries;
         
-        //files stored in the system
-        private ObservableFileList fileSystem;
-        
         /**
          * Constructor
          */
@@ -100,23 +97,16 @@ public final class NodeList extends HomeActivity {
             setAlignment(Pos.CENTER_LEFT);
             setSpacing(10);
             this.registries = new ArrayList<>();
-            scanSaveFiles();
+            ObservableFileList.INSTANCE.addObserver(this);
+            buildRegistries();
             getChildren().addAll(this.registries);
         }
         
         /**
-         * Fill the save files list
+         * Set up the save registries
          */
-        private void scanSaveFiles() {
-            File folder = new File(".");
-            File[] files = folder.listFiles();
-            fileSystem = new ObservableFileList(files);
-            fileSystem.addObserver(this);
-            buildRegistries();
-        }
-        
         private void buildRegistries() {
-            for (File file : fileSystem.getFiles()) {
+            for (File file : ObservableFileList.INSTANCE.getFiles()) {
                 String extName = file.getName();
                 if(extName.endsWith(".ser")) {
                     String name = extName.replaceFirst(".ser", "");
@@ -149,14 +139,6 @@ public final class NodeList extends HomeActivity {
             registries = new ArrayList<>();
             buildRegistries();
             getChildren().addAll(registries);
-        }
-
-        /**
-         * Getter
-         * @return fileSystem list
-         */
-        public final ObservableFileList getFileSystem() {
-            return fileSystem;
         }
         
     }
