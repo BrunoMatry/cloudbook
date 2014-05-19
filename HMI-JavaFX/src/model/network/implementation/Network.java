@@ -30,6 +30,7 @@ public class Network extends UnicastRemoteObject implements RemoteClient {
     protected String ip;
     protected int port;
     protected RemoteServer stub;
+    protected ConnectionState connectionState;
     
     /**
      * Constructor
@@ -103,4 +104,13 @@ public class Network extends UnicastRemoteObject implements RemoteClient {
             info.saveProperties();
         stub.broadcast(request);
     }
+
+    /**
+     * Getter
+     * @return connectionState field
+     */
+    public ConnectionState getConnectionState() {
+        return connectionState;
+    }
+    
 }

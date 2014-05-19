@@ -9,9 +9,10 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import static sun.misc.ClassFileTransformer.add;
 
 /**
  * Show the list of all the nodes registered on this computer
@@ -59,11 +60,8 @@ public class NodeList extends Activity {
      */
     private class SaveGroup extends VBox {
         
-        //radio group of save buttons
-        private ToggleGroup radioGroup;
-        
         //radio button allowing the selection of a save file
-        private List<RadioButton> saveButtons;
+        private List<HBox> registries;
         
         /**
          * Constructor
@@ -72,10 +70,9 @@ public class NodeList extends Activity {
             super();
             setAlignment(Pos.CENTER);
             setSpacing(10);
-            this.radioGroup = new ToggleGroup();
-            this.saveButtons = new ArrayList<>();
+            this.registries = new ArrayList<>();
             scanSaveFiles();
-            getChildren().addAll(this.saveButtons);
+            getChildren().addAll(this.registries);
         }
         
         /**
@@ -88,7 +85,7 @@ public class NodeList extends Activity {
                 String extName = file.getName();
                 if(extName.endsWith(".ser")) {
                     String name = extName.replaceFirst(".ser", "");
-                    setUpRadioButton(name);
+                    setUpRegistry(name);
                 } 
             }
         }
@@ -97,9 +94,12 @@ public class NodeList extends Activity {
          * Add a radio button corresponding to the save of name name
          * @param name name of the corresponding save file
          */
-        private void setUpRadioButton(final String name) {
-            RadioButton rb = new RadioButton(name);
-            saveButtons.add(rb);
+        private void setUpRegistry(final String name) {
+            HBox registry = new HBox();
+            ImageView connectionState = new ImageView();
+            
+            Button launcher = new Button(name);/*
+            .add(rb);
             rb.setToggleGroup(radioGroup);
             rb.setOnAction(new EventHandler<ActionEvent>() {
 
@@ -107,7 +107,7 @@ public class NodeList extends Activity {
                 public void handle(ActionEvent t) {
                     action.setNode(name);
                 }
-            });
+            });*/
         }
         
     }

@@ -33,11 +33,7 @@ public class LoadNode extends NodeListAction {
         try {
             CloudBookNode cbn = CloudBookNode.load(node + ".ser");
             Engine.INSTANCE.initialize(cbn, ""+cbn.getNodePort());
-            try {
-                Engine.INSTANCE.start();
-            } catch (RemoteException | InterruptedException ex) {
-                Logger.getLogger(LoadNode.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            Engine.INSTANCE.start();
             HomeView.INSTANCE.launch();
         } catch (IOException | ClassNotFoundException ex) {
             Logger.getLogger(LoadNode.class.getName()).log(Level.SEVERE, null, ex);

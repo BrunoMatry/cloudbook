@@ -22,6 +22,8 @@ public final class IconFlyWeight {
     private Image exit;
     private Image defaultLogo;
     private Image home;
+    private Image greenLed;
+    private Image redLed;
    
     public Image getBackArrow() {
         if(backArrow == null)
@@ -45,6 +47,26 @@ public final class IconFlyWeight {
         if(home == null)
             home = new Image("file:res/home.png");
         return home;
+    }
+    
+    /**
+     * Getter
+     * @return greenLed attribute 
+     */
+    public Image getGreenLed() {
+        if(greenLed == null)
+            greenLed = new Image("file:res/greenled.png");
+        return greenLed;
+    }
+    
+    /**
+     * Getter
+     * @return redLed attribute 
+     */
+    public Image getRedLed() {
+        if(redLed == null)
+            redLed = new Image("file:res/redled.png");
+        return redLed;
     }
     
     /*
