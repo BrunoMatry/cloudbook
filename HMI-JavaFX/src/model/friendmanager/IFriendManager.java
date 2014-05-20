@@ -1,7 +1,9 @@
 package model.friendmanager;
 
-import model.request.Sender;
+import java.util.List;
 import model.node.AppVector;
+import model.node.Friend;
+import model.request.Sender;
 
 public interface IFriendManager {
     /**
@@ -48,4 +50,22 @@ public interface IFriendManager {
      * @param sender    Emetteur d'une requête qu'on veut mettre à jour
      */
     void update(Sender sender);
+    
+    /**
+     * Methode permettant de récupérer les nb amis les plus pertinents
+     * @param nb    nombre d'amis à récupérer
+     */
+    List<Friend> getRelevantFriends(int nb);
+    
+    /**
+     * Methode permettant de récupérer les nb amis à qui on fait le plus confiance
+     * @param nb    nombre d'amis à récupérer
+     */
+    List<Friend> getTrustedFriends(int nb);
+    
+    /**
+     * Methode permettant de récupérer nb amis au hasard dans la liste d'amis
+     * @param nb    nombre d'amis à récupérer
+     */
+    List<Friend> getSomeFriends(int nb);
 }
