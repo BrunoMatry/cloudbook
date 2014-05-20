@@ -5,6 +5,7 @@ import static java.lang.Thread.sleep;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.friendmanager.FriendManager;
@@ -18,11 +19,8 @@ import model.request.IRequestManager;
 import model.node.CloudBookNode;
 import model.request.RequestManager;
 import model.network.interfaces.Sendable;
+import model.node.Mesure;
 
-/**
- *
- * @author Bruno
- */
 public final class Engine implements IEngine {
     
     public static final Engine INSTANCE = new Engine();
@@ -77,9 +75,11 @@ public final class Engine implements IEngine {
             try {
                 sleep(TIME);
                 updateInformation();
+                shareLastMesures(3);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Engine.class.getName()).log(Level.SEVERE, null, ex);
             }
+            
         }
     }
     
@@ -103,5 +103,14 @@ public final class Engine implements IEngine {
      */
     protected void updateInformation(){
         monitoring.pushInformation();
+    }
+
+    protected void shareLastMesures(int nb) {
+        // Get the last mesures from the node
+        ArrayList<Mesure> mesures = node.getMesures().getLastValues(nb);
+        // Recuperer les amis
+        // Creer une requête
+        // Envoi de la requête
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }

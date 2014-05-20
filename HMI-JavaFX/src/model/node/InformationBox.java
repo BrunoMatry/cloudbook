@@ -9,8 +9,6 @@ import javafx.collections.ObservableList;
 import model.network.interfaces.Information;
 
 /**
- *
- * @author Gwendal
  * box containing some informations with string property describing the box content
  * @param <T> type of information
  */
@@ -121,4 +119,16 @@ public class InformationBox<T extends Information> implements Information {
         description = new SimpleStringProperty(_description);
     }
     
+    /**
+     * Get the last nb values from the InformationBox
+     * @param nb number of values wanted
+     * @return List of nb values
+     */
+    public ArrayList<T> getLastValues(int nb) {
+        ArrayList<T> tab = new ArrayList<>();
+        for(int i = (box.size() - nb) ; i < box.size() ; i++) {
+            tab.add(box.get(i));
+        }
+        return tab;
+    }
 }
