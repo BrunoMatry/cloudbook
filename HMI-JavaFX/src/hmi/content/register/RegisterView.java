@@ -3,7 +3,7 @@ package hmi.content.register;
 import hmi.Launcher;
 import hmi.content.AActivity;
 import hmi.content.Activity;
-import hmi.home.HomeView;
+import hmi.home.NodeList;
 import java.io.IOException;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.StringProperty;
@@ -76,11 +76,9 @@ public class RegisterView extends Activity {
                     public void handle(ActionEvent t) {
                         try {
                             CloudBookNode node = builder.build();
-                            Engine engine = node.getEngine();
-                            engine.save();
-                            engine.start();
+                            node.save();
                             Dialogs.showInformationDialog(Launcher.STAGE, "Success build", "OK");
-                            HomeView.INSTANCE.launch();
+                            NodeList.INSTANCE.launch();
                         } catch (IOException ex) {
                             ex.printStackTrace();
                             Dialogs.showErrorDialog(Launcher.STAGE, "Error while building", "Error");

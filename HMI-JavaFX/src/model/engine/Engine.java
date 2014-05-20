@@ -25,7 +25,7 @@ import model.node.Mesure;
  *
  * @author Bruno
  */
-public class Engine implements IEngine {
+public class Engine extends Thread implements IEngine {
     
     private final static long TIME = 3000;
     
@@ -64,18 +64,22 @@ public class Engine implements IEngine {
 
     /**
      * Starts the communication with the network
-     * @throws RemoteException connexion problem
      */
-    public void start() throws RemoteException {
+    @Override
+    public void run() {
         if(monitoring != null && network != null) {
-            network.connect(node.getServerHost() + ":" + node.getServerPort());
+            try {
+                network.connect(node.getServerHost() + ":" + node.getServerPort());
+            } catch (RemoteException ex) {
+                Logger.getLogger(Engine.class.getName()).log(Level.SEVERE, null, ex);
+            }
             monitoring.start();
         }
         while(true) {
             try {
                 sleep(TIME);
                 updateInformation();
-                shareLastMesures(3);
+                //shareLastMesures(3);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Engine.class.getName()).log(Level.SEVERE, null, ex);
             }

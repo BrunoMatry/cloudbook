@@ -94,7 +94,6 @@ public class CloudBookNode implements Serializable {
      * @throws java.rmi.RemoteException
      */
     public CloudBookNode(Image image, String string, Cloud cloud, String host, int serverPort, int nodePort, int appType, int performance, int speed) throws UnknownHostException, RemoteException {
-        engine = new Engine(this);
         platform = cloud;
         serverHost = host;
         this.serverPort = serverPort;
@@ -110,6 +109,7 @@ public class CloudBookNode implements Serializable {
         logo = new SimpleObjectProperty<>(image);
         
         states.push(new State(cloud));
+        engine = new Engine(this);
     }
     
     /********************************** SETTERS / GETTERS **********************************/
@@ -230,6 +230,8 @@ public class CloudBookNode implements Serializable {
         res.messages.restoreProperties();
         for(State s : res.states)
             s.restoreProperties();
+        res.logo = new SimpleObjectProperty<>(res._logo);
+        res.engine = new Engine(res);
         return res;
     }
 }
