@@ -32,6 +32,7 @@ public class SummarizedView<T extends Node> extends Parent implements IComponent
 
             @Override
             public void handle(MouseEvent t) {
+                fullView.bindWithNode();
                 fullView.launch();
             }
         
