@@ -2,7 +2,7 @@ package hmi.content;
 
 import hmi.button.BackButton;
 import hmi.button.HomeButton;
-import hmi.home.HomeView;
+import hmi.home.NodeList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.layout.HBox;
@@ -84,7 +84,7 @@ public class Activity extends AActivity {
 
                     @Override
                     public void handle(ActionEvent t) {
-                        HomeView.INSTANCE.launch();
+                        NodeList.INSTANCE.launch();
                     }
         
                 });

@@ -13,7 +13,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-import model.engine.Engine;
+import model.node.ApplicationList;
+import model.node.CloudBookNode;
 
 public class HomeVBox extends VBox {
      private final HomeView homeView;
@@ -38,19 +39,22 @@ public class HomeVBox extends VBox {
 
    public void bindMessage() {
        Text txtMsg = (Text)NodeView.INSTANCE.getMessage().getView();
-       StringProperty msgp = Engine.INSTANCE.getNode().getMessages().descriptionProperty();
+       CloudBookNode node = ApplicationList.INSTANCE.getCurrentNode();
+       StringProperty msgp = node.getMessages().descriptionProperty();
        txtMsg.textProperty().bind(msgp);
    }
 
    public void bindMesure() {
        Text txtM = (Text)NodeView.INSTANCE.getMesures().getView();
-       StringProperty mp = Engine.INSTANCE.getNode().getMesures().descriptionProperty();
+       CloudBookNode node = ApplicationList.INSTANCE.getCurrentNode();
+       StringProperty mp = node.getMesures().descriptionProperty();
        txtM.textProperty().bind(mp);
    }
 
    public void bindState() {
        ImageView iv = (ImageView)NodeView.INSTANCE.getState().getView();
-       ObjectProperty<Image> cloud = Engine.INSTANCE.getNode().platformProperty();
+       CloudBookNode node = ApplicationList.INSTANCE.getCurrentNode();
+       ObjectProperty<Image> cloud = node.platformProperty();
        iv.imageProperty().bind(cloud);
    }
 

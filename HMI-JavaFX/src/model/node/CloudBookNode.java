@@ -3,11 +3,11 @@ package model.node;
 import hmi.home.ObservableFileList;
 import model.network.interfaces.Information;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.net.UnknownHostException;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
@@ -16,6 +16,7 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.image.Image;
+import model.engine.Engine;
 import model.network.interfaces.RemoteServer;
 
 /**
@@ -52,6 +53,9 @@ public class CloudBookNode implements Serializable {
     //port of the application
     protected int nodePort;
     
+    //engine which run the node
+    protected transient Engine engine;
+    
     /* Proprietes non serialisables */
     protected transient StringProperty name;
     protected transient ObjectProperty<Image> logo;
@@ -86,9 +90,11 @@ public class CloudBookNode implements Serializable {
      * @param appType type of the application
      * @param performance TODO
      * @param speed TODO
+     * @throws java.net.UnknownHostException
+     * @throws java.rmi.RemoteException
      */
-    public CloudBookNode(Image image, String string, Cloud cloud, String host, int serverPort, int nodePort, int appType, int performance, int speed) {
-        
+    public CloudBookNode(Image image, String string, Cloud cloud, String host, int serverPort, int nodePort, int appType, int performance, int speed) throws UnknownHostException, RemoteException {
+        engine = new Engine(this);
         platform = cloud;
         serverHost = host;
         this.serverPort = serverPort;
@@ -157,6 +163,15 @@ public class CloudBookNode implements Serializable {
     public final Cloud getPlatform() {
         return this.platform;
     }
+
+    /**
+     * Getter
+     * @return engine field
+     */
+    public final Engine getEngine() {
+        return engine;
+    }
+    
     
     /* Attention !*/ 
     //public StringProperty topMessageProperty() { return topMessage.descriptionProperty(); }

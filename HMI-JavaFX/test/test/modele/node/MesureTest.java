@@ -6,7 +6,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import model.node.CloudBookNode;
 import model.node.Mesure;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -25,6 +24,7 @@ public class MesureTest {
     
     @BeforeClass
     public static void setUpClass() {
+        
     }
     
     @AfterClass
@@ -33,7 +33,7 @@ public class MesureTest {
     
     @Before
     public void setUp() {
-        mesure = new Mesure(1, 2, 3);
+        mesure = new Mesure(null, 1, 2, 3);
     }
     
     @After

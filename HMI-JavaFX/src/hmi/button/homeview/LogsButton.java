@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import model.engine.Engine;
 import model.monitoring.Monitoring;
+import model.node.ApplicationList;
 
 public class LogsButton extends CloudBookButton{
     
@@ -18,7 +19,8 @@ public class LogsButton extends CloudBookButton{
             public void handle(ActionEvent t) {
                 /*TODO faire l'affichage d'autre chose !!!! */
                 // InformationBox mesures = Engine.INSTANCE.getNode().getMesures();
-                Monitoring model = (Monitoring)Engine.INSTANCE.getMonitoring();
+                Engine engine = ApplicationList.INSTANCE.getCurrentNode().getEngine();
+                Monitoring model = (Monitoring)engine.getMonitoring();
                 MonitorView view = MonitorView.INSTANCE;
                 view.logsTextProperty().bind(model.logsProperty());
                 view.launch();

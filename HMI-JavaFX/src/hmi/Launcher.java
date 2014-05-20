@@ -31,4 +31,11 @@ public class Launcher extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
+    @Override
+    public void stop() throws Exception {
+        //TODO save the node
+        super.stop();
+    }
+    
 }

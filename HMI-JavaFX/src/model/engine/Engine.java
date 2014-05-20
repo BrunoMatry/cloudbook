@@ -23,9 +23,8 @@ import model.network.interfaces.Sendable;
  *
  * @author Bruno
  */
-public final class Engine implements IEngine {
+public class Engine implements IEngine {
     
-    public static final Engine INSTANCE = new Engine();
     private final static long TIME = 3000;
     
     protected IRequestManager requestManager;
@@ -45,23 +44,20 @@ public final class Engine implements IEngine {
     public void setNode(CloudBookNode node) throws RemoteException { this.node = node; }
     
     /**
-     * Empty constructor for unique instanciation
-     */
-    public Engine() {}
-    
-    /**
+     * Constructor
      * Initializes all the modules of the application
      * @param node current instance of CloudBookNode
-     * @param nodePort port used by the current client
      * @throws RemoteException remote access problem
      * @throws java.net.UnknownHostException host unknown
      */
-    public void initialize(CloudBookNode node, String nodePort) throws RemoteException, UnknownHostException {
-        monitoring = new Monitoring();
+    public Engine(CloudBookNode node) throws UnknownHostException, RemoteException {
+        monitoring = new Monitoring(this);
         this.node = node;
-        this.network = new Network(InetAddress.getLocalHost().getHostAddress() , Integer.parseInt(nodePort));
+        this.network = new Network(InetAddress.getLocalHost().getHostAddress(),
+                node.getNodePort(),
+                this);
         friendManager = new FriendManager(node);
-        requestManager = new RequestManager(friendManager);
+        requestManager = new RequestManager(friendManager, this);
     }
 
     /**

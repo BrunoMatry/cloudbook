@@ -16,14 +16,17 @@ public class RequestManager implements IRequestManager {
     
     protected IFriendManager friendManager;
     protected List<Information> inbox;
+    protected Engine engine;
     
     /**
      * Constructor
      * @param friendManager responsible of all the friends
+     * @param engine engine which run this instance of FrienManager
      */
-    public RequestManager(IFriendManager friendManager) {
+    public RequestManager(IFriendManager friendManager, Engine engine) {
         this.friendManager = friendManager;
         inbox = new ArrayList<>();
+        this.engine = engine;
     }
 
     /**
@@ -43,11 +46,11 @@ public class RequestManager implements IRequestManager {
             if(info.getClass() == Message.class) {
                 Message msg = (Message)info;
                 msg.restoreProperties();
-                Engine.INSTANCE.getNode().addMessage(msg);
+                engine.getNode().addMessage(msg);
             } else if(info.getClass() == Mesure.class) {
                 Mesure mes = (Mesure)info;
                 mes.restoreProperties();
-                Engine.INSTANCE.getNode().addMesure(mes);
+                engine.getNode().addMesure(mes);
             }
         } catch (RemoteException ex) {
             Logger.getLogger(RequestManager.class.getName()).log(Level.SEVERE, null, ex);

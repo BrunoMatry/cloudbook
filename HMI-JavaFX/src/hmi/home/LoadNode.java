@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.engine.Engine;
+import model.node.ApplicationList;
 import model.node.CloudBookNode;
 
 /**
@@ -32,8 +33,9 @@ public class LoadNode extends RegistryButton {
     public void execute() {
         try {
             CloudBookNode cbn = CloudBookNode.load(node + ".ser");
-            Engine.INSTANCE.initialize(cbn, ""+cbn.getNodePort());
-            Engine.INSTANCE.start();
+            ApplicationList.INSTANCE.select(cbn);
+            Engine engine = cbn.getEngine();
+            engine.start();
         } catch (IOException | ClassNotFoundException ex) {
             Logger.getLogger(LoadNode.class.getName()).log(Level.SEVERE, null, ex);
         } finally {

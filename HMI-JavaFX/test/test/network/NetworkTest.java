@@ -58,9 +58,9 @@ public class NetworkTest {
         try {
             server = new TestServer();
             server.binding();
-            alice = new Network("alice", 888);
-            me = new Network(InetAddress.getLocalHost().getHostAddress(), 777);
-            bob = new Network("bob", 50010);
+            alice = new Network("alice", 888, null);
+            me = new Network(InetAddress.getLocalHost().getHostAddress(), 777, null);
+            bob = new Network("bob", 50010, null);
             original = new TestInfo("Hello world !");
             msg = new Request(original);
             alice.connect(InetAddress.getLocalHost().getHostName() + ":" + 50020);

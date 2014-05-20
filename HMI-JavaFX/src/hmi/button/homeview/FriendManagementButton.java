@@ -7,7 +7,7 @@ import hmi.home.HomeView;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Dialogs;
-import model.engine.Engine;
+import model.node.ApplicationList;
 
 public class FriendManagementButton extends CloudBookButton {
     
@@ -21,7 +21,7 @@ public class FriendManagementButton extends CloudBookButton {
 
             @Override
             public void handle(ActionEvent t) {
-                if(Engine.INSTANCE.getNode() != null) {
+                if(ApplicationList.INSTANCE.getCurrentNode() != null) {
                     homeView.getHomeVBox().bindMessage();
                     homeView.getHomeVBox().bindMesure();
                     homeView.getHomeVBox().bindState();

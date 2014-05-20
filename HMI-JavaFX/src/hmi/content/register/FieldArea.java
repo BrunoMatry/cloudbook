@@ -64,7 +64,7 @@ public class FieldArea extends VBox {
          */
         public final Field getServerPort() {
             if(serverPort == null) {
-                serverPort = new Field("Enter the host port : ", "50100");
+                serverPort = new Field("Enter the host port : ", "50000");
             }
             return serverPort;
         }

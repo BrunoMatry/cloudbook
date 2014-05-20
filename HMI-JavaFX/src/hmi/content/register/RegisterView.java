@@ -16,6 +16,7 @@ import javafx.scene.control.Dialogs;
 import javafx.scene.image.Image;
 import model.engine.Engine;
 import model.node.Cloud;
+import model.node.CloudBookNode;
 import model.node.CloudBuilder;
 
 /**
@@ -74,9 +75,10 @@ public class RegisterView extends Activity {
                     @Override
                     public void handle(ActionEvent t) {
                         try {
-                            builder.build();
-                            Engine.INSTANCE.save();
-                            Engine.INSTANCE.start();
+                            CloudBookNode node = builder.build();
+                            Engine engine = node.getEngine();
+                            engine.save();
+                            engine.start();
                             Dialogs.showInformationDialog(Launcher.STAGE, "Success build", "OK");
                             HomeView.INSTANCE.launch();
                         } catch (IOException ex) {

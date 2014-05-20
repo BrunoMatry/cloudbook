@@ -17,6 +17,8 @@ public class Monitoring extends Thread implements IMonitoring {
     
     protected List<Mesure> mesures;
     
+    protected Engine engine;
+    
     //logs containing information on sent objects
     protected StringProperty logs;
     public final StringProperty logsProperty() {
@@ -25,9 +27,10 @@ public class Monitoring extends Thread implements IMonitoring {
     
     private final static long TIME = 5000;
     
-    public Monitoring() {
+    public Monitoring(Engine engine) {
         this.mesures = new ArrayList<>();
         this.logs = new SimpleStringProperty("===== LOGS =====\n\n");
+        this.engine = engine;
     }
 
     /**
@@ -37,7 +40,7 @@ public class Monitoring extends Thread implements IMonitoring {
     @Override
     public synchronized void pushInformation() {
         String content = logs.get();
-        RemoteClient network = Engine.INSTANCE.getNetwork();
+        RemoteClient network = engine.getNetwork();
         content += "I sent " + this.mesures.size() + " informations to my friends :\n";
         for(Information info : this.mesures) {
             try {
@@ -62,7 +65,7 @@ public class Monitoring extends Thread implements IMonitoring {
         while(true) {
             try {
                 this.mesures.add(genererMesure());
-                RemoteClient network = Engine.INSTANCE.getNetwork();
+                RemoteClient network = engine.getNetwork();
                 if(this.mesures.size() >= 3 && network.getStub() != null) {
                     pushInformation();
                 }
@@ -82,7 +85,8 @@ public class Monitoring extends Thread implements IMonitoring {
      * @return Random generated mesure
      */
     protected Mesure genererMesure() {
-        return new Mesure(getRandomInteger(0, 100), 
+        return new Mesure(engine.getNode(),
+                getRandomInteger(0, 100),
                             getRandomInteger(0, 100), 
                             getRandomInteger(0, 100));
     }

@@ -31,21 +31,25 @@ public class Network extends UnicastRemoteObject implements RemoteClient {
     protected int port;
     protected RemoteServer stub;
     protected ConnectionState connectionState;
+    protected Engine engine;
     
     /**
      * Constructor
      * @param ip ip of the server
      * @param port port of the server
+     * @param engine engine running this Network instance
      * @throws RemoteException required by RMI
      */
-    public Network(String ip, int port) throws RemoteException {
+    public Network(String ip, int port, Engine engine) throws RemoteException {
         this.ip = ip;
         this.port = port;
+        this.engine = engine;
+        this.connectionState = new ConnectionState(false);
     }
     
     @Override
     public void handleRequest(Sendable request) throws RemoteException {
-        Engine.INSTANCE.handleRequest(request);
+        engine.handleRequest(request);
     }
     
     @Override

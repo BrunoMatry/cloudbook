@@ -5,7 +5,6 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.image.Image;
-import model.engine.Engine;
 
 /**
  * builder
@@ -53,10 +52,11 @@ public class CloudBuilder {
     }
     
     /**
-     * sets the current cloudbooknode as the registered one
+     * Build a node according to the parameters
+     * @return the built node
      * @throws IOException the state can't be saved
      */
-    public void build() throws IOException {
+    public CloudBookNode build() throws IOException {
         CloudBookNode cbn = new CloudBookNode(logo.get(),
                 name.get(),
                 platform.get(),
@@ -64,7 +64,8 @@ public class CloudBuilder {
                 Integer.parseInt(serverPort.get()),
                 Integer.parseInt(nodePort.get()),
                 0, 0, 0);
-        Engine.INSTANCE.initialize(cbn, nodePort.get());
+        ApplicationList.INSTANCE.add(cbn);
+        return cbn;
     }
     
 }

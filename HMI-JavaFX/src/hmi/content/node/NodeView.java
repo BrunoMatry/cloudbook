@@ -7,14 +7,12 @@ import hmi.content.node.component.MesurePane;
 import hmi.content.node.component.StateView;
 import hmi.home.HomeView;
 import java.util.ArrayList;
-import java.util.List;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.control.TableView;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
-import model.engine.Engine;
+import model.node.ApplicationList;
 import model.node.CloudBookNode;
 import model.node.Mesure;
 
@@ -83,7 +81,7 @@ public final class NodeView extends Activity {
         if(mesures == null) {
             mesurePane = new MesurePane(this);
             TableView<Mesure> table = mesurePane.getTable();
-            CloudBookNode node = Engine.INSTANCE.getNode();
+            CloudBookNode node = ApplicationList.INSTANCE.getCurrentNode();
             ObservableList<Mesure> mesureList = node.getMesures().boxObservableList();
             table.setItems(mesureList);
             mesures = mesurePane.makeSummarized();

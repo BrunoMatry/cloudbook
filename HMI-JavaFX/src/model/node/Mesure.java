@@ -9,7 +9,6 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.image.Image;
-import model.engine.Engine;
 
 public final class Mesure implements Information {
     
@@ -31,16 +30,22 @@ public final class Mesure implements Information {
     
     /**
      * Constructor
+     * @param application producer of the mesure
      * @param mes1 mesure1 property value
      * @param mes2 mesure2 property value
      * @param mes3 mesure3 property value
      */
-    public Mesure(int mes1, int mes2, int mes3) {
-        CloudBookNode application = Engine.INSTANCE.getNode();
-        String name = application.nameProperty().get();
-        applicationName = new SimpleStringProperty(name);
-        cloud = application.getPlatform();
-        platformLogo = cloud.iconProperty();
+    public Mesure(CloudBookNode application, int mes1, int mes2, int mes3) {
+        if(application != null) {
+            String name = application.nameProperty().get();
+            applicationName = new SimpleStringProperty(name);
+            cloud = application.getPlatform();
+            platformLogo = cloud.iconProperty();
+        } else {
+            applicationName = new SimpleStringProperty("void");
+            cloud = Cloud.DEFAULT;
+            platformLogo = cloud.iconProperty();
+        }
         mesure1 = new SimpleIntegerProperty(mes1);
         mesure2 = new SimpleIntegerProperty(mes2);
         mesure3 = new SimpleIntegerProperty(mes3);
