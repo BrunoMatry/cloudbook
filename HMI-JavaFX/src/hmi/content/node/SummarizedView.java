@@ -1,14 +1,14 @@
 package hmi.content.node;
 
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.control.Button;
 
 /**
  * @param <T> View type
  */
-public class SummarizedView<T extends Node> extends Parent implements IComponentView {
+public class SummarizedView<T extends Node> extends Button implements IComponentView {
 
     //full version of the current view
     protected NodeComponentView fullView;
@@ -23,15 +23,14 @@ public class SummarizedView<T extends Node> extends Parent implements IComponent
      * @param node javafx node corresponding to the current view
      */
     public SummarizedView(NodeComponentView full, T node) {
+        super();
         fullView = full;
         view = node;
-        view.setLayoutX(0);
-        view.setLayoutY(0);
-        getChildren().add(view);
-        setOnMouseClicked(new EventHandler<MouseEvent>() {
+        setGraphic(view);
+        setOnAction(new EventHandler<ActionEvent>() {
 
             @Override
-            public void handle(MouseEvent t) {
+            public void handle(ActionEvent t) {
                 fullView.bindWithNode();
                 fullView.launch();
             }

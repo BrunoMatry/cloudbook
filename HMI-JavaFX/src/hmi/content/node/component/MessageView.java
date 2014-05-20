@@ -14,7 +14,7 @@ public class MessageView extends NodeComponentView {
 
     @Override
     public SummarizedView makeSummarized() {
-        SummarizedView res = new SummarizedView(this, new Text(getClass().getName()));
+        SummarizedView res = new SummarizedView(this, new Text("Messages"));
         return res;
     }
     

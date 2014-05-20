@@ -160,11 +160,7 @@ public final class NodeView extends OneNodeActivity {
     public void bindWithNode() {
         super.bindWithNode();
         CloudBookNode node = ApplicationList.INSTANCE.getCurrentNode();
-        StringProperty mesuresView = mesures.getView().textProperty();
-        StringProperty messageView = message.getView().textProperty();
         ObjectProperty<Image> stateView = state.getView().imageProperty();
-        mesuresView.bind(node.getMesures().descriptionProperty());
-        messageView.bind(node.getMessages().descriptionProperty());
         stateView.bind(node.getPlatform().iconProperty());
     }
     
