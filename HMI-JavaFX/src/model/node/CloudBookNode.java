@@ -16,6 +16,7 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.image.Image;
+import javax.swing.ImageIcon;
 import model.engine.Engine;
 import model.network.interfaces.RemoteServer;
 

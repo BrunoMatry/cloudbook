@@ -1,9 +1,9 @@
 package hmi.content.node;
 
 import hmi.content.AActivity;
-import hmi.content.Activity;
+import hmi.content.OneNodeActivity;
 
-public abstract class NodeComponentView extends Activity implements IComponentView {
+public abstract class NodeComponentView extends OneNodeActivity implements IComponentView {
     
     public NodeComponentView(AActivity p) {
         super(p);

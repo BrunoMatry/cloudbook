@@ -1,15 +1,18 @@
 package hmi.content.node;
 
 import hmi.content.AActivity;
-import hmi.content.Activity;
+import hmi.content.OneNodeActivity;
 import hmi.content.node.component.MessageView;
 import hmi.content.node.component.MesurePane;
 import hmi.content.node.component.StateView;
-import hmi.home.HomeView;
+import hmi.home.NodeList;
 import java.util.ArrayList;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.StringProperty;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.control.TableView;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import model.node.ApplicationList;
@@ -20,9 +23,9 @@ import model.node.Mesure;
  * singleton
  * View of the current member
  */
-public final class NodeView extends Activity {
+public final class NodeView extends OneNodeActivity {
     
-    public static final NodeView INSTANCE = new NodeView(HomeView.INSTANCE);
+    public static final NodeView INSTANCE = new NodeView(NodeList.INSTANCE);
     
     //view contaigning all received mesures
     private MesurePane mesurePane;
@@ -148,6 +151,21 @@ public final class NodeView extends Activity {
      */
     public void onHide(IComponentView source) {
         getChildren().remove(source);
+    }
+    
+    /**
+     * Bind the view with the current node
+     */
+    @Override
+    public void bindWithNode() {
+        super.bindWithNode();
+        CloudBookNode node = ApplicationList.INSTANCE.getCurrentNode();
+        StringProperty mesuresView = mesures.getView().textProperty();
+        StringProperty messageView = message.getView().textProperty();
+        ObjectProperty<Image> stateView = state.getView().imageProperty();
+        mesuresView.bind(node.getMesures().descriptionProperty());
+        messageView.bind(node.getMessages().descriptionProperty());
+        stateView.bind(node.getPlatform().iconProperty());
     }
     
 }

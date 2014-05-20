@@ -1,9 +1,11 @@
 package hmi.home;
 
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import model.engine.Engine;
+import hmi.content.node.NodeView;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.StringProperty;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 import model.node.ApplicationList;
 import model.node.CloudBookNode;
 
@@ -31,16 +33,9 @@ public class LoadNode extends RegistryButton {
 
     @Override
     public void execute() {
-        try {
-            CloudBookNode cbn = CloudBookNode.load(node + ".ser");
-            ApplicationList.INSTANCE.select(cbn);
-            Engine engine = cbn.getEngine();
-            engine.start();
-        } catch (IOException | ClassNotFoundException ex) {
-            Logger.getLogger(LoadNode.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            HomeView.INSTANCE.launch();
-        }
+        ApplicationList.INSTANCE.select(node);
+        NodeView.INSTANCE.bindWithNode();
+        NodeView.INSTANCE.launch();
     }
 
     /**

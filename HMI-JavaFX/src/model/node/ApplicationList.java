@@ -30,13 +30,17 @@ public final class ApplicationList extends ArrayList<CloudBookNode> {
     
     /**
      * Selects the specified node as the current one
-     * The node is added to the list if necessary
-     * @param node node to be selected as the current one
+     * @param name name of the node to select
+     * @return selected node
      */
-    public void select(CloudBookNode node) {
-        if(!this.contains(node))
-            this.add(node);
-        currentNode = node;
+    public CloudBookNode select(String name) {
+        for(CloudBookNode node : this) {
+            if(node.nameProperty().get().equals(name)) {
+                currentNode = node;
+                break;
+            }
+        }
+        return currentNode;
     }
 
     /**

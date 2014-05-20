@@ -5,6 +5,7 @@ import hmi.button.HomeButton;
 import hmi.home.NodeList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 
 /**
@@ -18,6 +19,8 @@ public class Activity extends AActivity {
     //activity that must be launch if the back button is pressed
     protected AActivity prec;
     
+    protected BorderPane menuPane;
+    
     /**
      * initialize the menu box (filled with back and home buttons)
      * @param p previous Activity
@@ -26,7 +29,9 @@ public class Activity extends AActivity {
         super();
         prec = p;
         mHBox = new MenuHBox();
-        setTop(mHBox);
+        menuPane = new BorderPane();
+        menuPane.setLeft(mHBox);
+        setTop(menuPane);
     }
     
     /**
