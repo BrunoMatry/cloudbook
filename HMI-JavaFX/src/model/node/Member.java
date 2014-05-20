@@ -34,14 +34,22 @@ public class Member implements Information {
         lastConnexion = new SimpleObjectProperty<>(new Date());
     }
     
-     public void setRelevance(double rlvnce) {
+    public void setRelevance(double rlvnce) {
         relevance.set(rlvnce);
         connexion();
     }
-     
+    
+    public double getRelevance() {
+        return relevance.get();
+    }
+    
     public void setConfidence(int cnfdnce) {
         confidence.set(cnfdnce);
         connexion();
+    }
+    
+    public double getConfidence() {
+        return confidence.get();
     }
     
     public void setVector(AppVector vector) {
