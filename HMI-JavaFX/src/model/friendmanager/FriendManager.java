@@ -151,66 +151,60 @@ public class FriendManager implements IFriendManager {
     /**
      * Methode permettant de trier un liste d'amis par ordre de pertinence (les plus pertinent au début)
      * @param friends   liste d'amis à trier
-     * @param low       rang à partir duquel le tri doit être fait
-     * @param high      rang juqu'auquel le tri doit être fait
+     * @param left      rang à partir duquel le tri doit être fait
+     * @param right     rang juqu'auquel le tri doit être fait
      */
-    private void sortByRelevance(List<Friend> friends, int low, int high) {
+    private void sortByRelevance(List<Friend> friends, int left, int right) {
         //algorithme quicksort
-        int i = low, j = high;
-        Friend pivot = friends.get(low+(high-low)/2);
+        int i = left, j = right;
+        Friend tmp;
+        Friend pivot = friends.get(left+(right-left)/2);
         while(i <= j) {
             while(friends.get(i).getRelevance() > pivot.getRelevance())
                 i++;
             while(friends.get(j).getRelevance() < pivot.getRelevance())
                 j--;
             if (i <= j) {
-                exchange(friends, i, j);
+                tmp = friends.get(i);
+                friends.set(i, friends.get(j));
+                friends.set(j, tmp);
                 i++;
                 j--;
             }
         }
-        if (low < j)
-            sortByRelevance(friends, low, j);
-        if (i < high)
-            sortByRelevance(friends, i, high);
+        if (left < j)
+            sortByRelevance(friends, left, j);
+        if (i < right)
+            sortByRelevance(friends, i, right);
     }
     
     /**
      * Methode permettant de trier un liste d'amis par ordre de confiance (ceux à qui on fait le plus confiance au début)
      * @param friends   liste d'amis à trier
-     * @param low       rang à partir duquel le tri doit être fait
-     * @param high      rang juqu'auquel le tri doit être fait
+     * @param left      rang à partir duquel le tri doit être fait
+     * @param right     rang juqu'auquel le tri doit être fait
      */
-    private void sortByConfidence(List<Friend> friends, int low, int high) {
+    private void sortByConfidence(List<Friend> friends, int left, int right) {
         //algorithme quicksort
-        int i = low, j = high;
-        Friend pivot = friends.get(low+(high-low)/2);
+        int i = left, j = right;
+        Friend tmp;
+        Friend pivot = friends.get(left+(right-left)/2);
         while(i <= j) {
             while(friends.get(i).getConfidence() > pivot.getConfidence())
                 i++;
             while(friends.get(j).getConfidence() < pivot.getConfidence())
                 j--;
             if (i <= j) {
-                exchange(friends, i, j);
+                tmp = friends.get(i);
+                friends.set(i, friends.get(j));
+                friends.set(j, tmp);
                 i++;
                 j--;
             }
         }
-        if (low < j)
-            sortByConfidence(friends, low, j);
-        if (i < high)
-            sortByConfidence(friends, i, high);
-    }
-    
-    /**
-     * Methode permettant d'échanger la position de deux amis dans une liste d'amis
-     * @param friends   liste d'amis dans laquelle on veut échanger la position de deux éléments
-     * @param i         position du premier ami
-     * @param j         position du second ami
-     */
-    private void exchange(List<Friend> friends, int i, int j) {
-        Friend tmp = friends.get(i);
-        friends.set(i, friends.get(j));
-        friends.set(j, tmp);
+        if (left < j)
+            sortByConfidence(friends, left, j);
+        if (i < right)
+            sortByConfidence(friends, i, right);
     }
 }
