@@ -19,6 +19,8 @@ public class Monitoring extends Thread implements IMonitoring {
     
     protected Engine engine;
     
+    protected boolean stopFlag;
+    
     //logs containing information on sent objects
     protected StringProperty logs;
     public final StringProperty logsProperty() {
@@ -62,7 +64,7 @@ public class Monitoring extends Thread implements IMonitoring {
      */
     @Override
     public void run() {
-        while(true) {
+        while(!stopFlag) {
             try {
                 this.mesures.add(genererMesure());
                 RemoteClient network = engine.getNetwork();
@@ -93,5 +95,21 @@ public class Monitoring extends Thread implements IMonitoring {
     
     protected int getRandomInteger(int min, int max) {
         return (int) (min + Math.random() * (max - min + 1));
+    }
+    
+    /**
+     * Getter
+     * @return stopFlag field
+     */
+    public final boolean isStopFlag() {
+        return stopFlag;
+    }
+
+    /**
+     * Setter
+     * @param stopFlag stopFlag field
+     */
+    public void setStopFlag(boolean stopFlag) {
+        this.stopFlag = stopFlag;
     }
 }

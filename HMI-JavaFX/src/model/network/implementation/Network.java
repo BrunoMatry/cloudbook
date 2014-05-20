@@ -118,5 +118,13 @@ public class Network extends UnicastRemoteObject implements RemoteClient {
     public ConnectionState getConnectionState() {
         return connectionState;
     }
+
+    /**
+     * Getter
+     * @return engine field
+     */
+    public Engine getEngine() {
+        return engine;
+    }
     
 }

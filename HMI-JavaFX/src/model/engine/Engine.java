@@ -34,6 +34,7 @@ public class Engine extends Thread implements IEngine {
     protected Monitoring monitoring;
     protected CloudBookNode node;
     protected RemoteClient network;
+    protected boolean stopFlag;
 
     /* Getters and setters */
     public IFriendManager getFriendManager() { return friendManager; }
@@ -53,6 +54,7 @@ public class Engine extends Thread implements IEngine {
      * @throws java.net.UnknownHostException host unknown
      */
     public Engine(CloudBookNode node) throws UnknownHostException, RemoteException {
+        stopFlag = false;
         monitoring = new Monitoring(this);
         this.node = node;
         this.network = new Network(InetAddress.getLocalHost().getHostAddress(),
@@ -75,7 +77,7 @@ public class Engine extends Thread implements IEngine {
             }
             monitoring.start();
         }
-        while(true) {
+        while(!stopFlag) {
             try {
                 sleep(TIME);
                 updateInformation();
@@ -83,8 +85,14 @@ public class Engine extends Thread implements IEngine {
             } catch (InterruptedException ex) {
                 Logger.getLogger(Engine.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
         }
+        stopFlag = false;
+        try {
+            network.disconnect();
+        } catch (RemoteException ex) {
+            Logger.getLogger(Engine.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        monitoring.setStopFlag(true);
     }
     
     @Override
@@ -117,4 +125,21 @@ public class Engine extends Thread implements IEngine {
         // Envoi de la requête
         throw new UnsupportedOperationException("Not supported yet.");
     }
+
+    /**
+     * Getter
+     * @return stopFlag field
+     */
+    public final boolean isStopFlag() {
+        return stopFlag;
+    }
+
+    /**
+     * Setter
+     * @param stopFlag stopFlag field
+     */
+    public void setStopFlag(boolean stopFlag) {
+        this.stopFlag = stopFlag;
+    }
+    
 }
