@@ -8,9 +8,9 @@ import hmi.content.node.component.StateView;
 import hmi.home.NodeList;
 import java.util.ArrayList;
 import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.StringProperty;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -39,6 +39,10 @@ public final class NodeView extends OneNodeActivity {
     //summary of the messages
     private SummarizedView<Text> message;
     
+    private Button friends;
+    
+    private Button appVector;
+    
     /**
      * 
      * @param p the previous Activity
@@ -46,14 +50,20 @@ public final class NodeView extends OneNodeActivity {
     private NodeView(AActivity p) {
         super(p);
         title = "Friend management";
-        ArrayList<SummarizedView> components = new ArrayList<>();
+        friends = new Button();
+        friends.setGraphic(new Text("Friends"));
+        appVector = new Button();
+        appVector.setGraphic(new Text("Application characteristics"));
+        ArrayList<Button> components = new ArrayList<>();
         components.add(getState());
         components.add(getMesures());
         components.add(getMessage());
+        components.add(friends);
+        components.add(appVector);
         
         int size = components.size();
         for(int i = 0 ; i < size ; i++) {
-            SummarizedView cmp = components.get(i);
+            Button cmp = components.get(i);
             double x = (getScene().getWidth()/2) + 200*Math.cos(i*(2*Math.PI/size))
                     - cmp.getBoundsInParent().getWidth()/2;
             double y = (getScene().getHeight()/2) + 200*Math.sin(i*(2*Math.PI/size))

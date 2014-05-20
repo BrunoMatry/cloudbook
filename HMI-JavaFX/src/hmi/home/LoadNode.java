@@ -1,13 +1,7 @@
 package hmi.home;
 
 import hmi.content.node.NodeView;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.StringProperty;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.text.Text;
 import model.node.ApplicationList;
-import model.node.CloudBookNode;
 
 /**
  * command
