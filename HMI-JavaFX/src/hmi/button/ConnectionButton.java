@@ -19,7 +19,7 @@ import model.network.implementation.Network;
  *
  * @author Gwendal
  */
-public abstract class ConnectionButton extends Button {
+public class ConnectionButton extends Button {
     
     protected Network network;
     
