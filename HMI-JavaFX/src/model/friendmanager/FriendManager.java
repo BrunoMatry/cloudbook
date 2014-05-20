@@ -155,6 +155,7 @@ public class FriendManager implements IFriendManager {
      * @param high      rang juqu'auquel le tri doit être fait
      */
     private void sortByRelevance(List<Friend> friends, int low, int high) {
+        //algorithme quicksort
         int i = low, j = high;
         Friend pivot = friends.get(low+(high-low)/2);
         while(i <= j) {
@@ -181,7 +182,8 @@ public class FriendManager implements IFriendManager {
      * @param high      rang juqu'auquel le tri doit être fait
      */
     private void sortByConfidence(List<Friend> friends, int low, int high) {
-               int i = low, j = high;
+        //algorithme quicksort
+        int i = low, j = high;
         Friend pivot = friends.get(low+(high-low)/2);
         while(i <= j) {
             while(friends.get(i).getConfidence() > pivot.getConfidence())

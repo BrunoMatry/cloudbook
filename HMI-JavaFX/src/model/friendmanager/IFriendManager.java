@@ -54,18 +54,21 @@ public interface IFriendManager {
     /**
      * Methode permettant de récupérer les nb amis les plus pertinents
      * @param nb    nombre d'amis à récupérer
+     * @return      Liste contenant les nb amis les plus pertinents 
      */
     List<Friend> getRelevantFriends(int nb);
     
     /**
      * Methode permettant de récupérer les nb amis à qui on fait le plus confiance
      * @param nb    nombre d'amis à récupérer
+     * @return      Liste contenant les nb amis à qui on fait le plus confiance
      */
     List<Friend> getTrustedFriends(int nb);
     
     /**
      * Methode permettant de récupérer nb amis au hasard dans la liste d'amis
      * @param nb    nombre d'amis à récupérer
+     * @return      Liste contenant nb amis pris au hasard 
      */
     List<Friend> getSomeFriends(int nb);
 }
