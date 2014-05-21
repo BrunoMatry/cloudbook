@@ -17,7 +17,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
  * builder
  * A table view which allow to resize columns according to the number of columns in the table
  */
-public abstract class StandardizableTable<E> extends TableView<E> {
+public abstract class StandardizedTable<E> extends TableView<E> {
     
     /**
      * Set up the column with its specified name, bound property

@@ -8,14 +8,13 @@ package hmi.content.node.component.tableview;
 
 import java.util.Date;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.cell.PropertyValueFactory;
 import model.node.friend.Friend;
 
 /**
  *
  * @author Gwendal
  */
-public class FriendTableView extends StandardizableTable<Friend> {
+public class FriendTableView extends StandardizedTable<Friend> {
     
     //columns corresponding to the friend properties
     protected TableColumn<Friend, Integer> idCol;
@@ -29,7 +28,10 @@ public class FriendTableView extends StandardizableTable<Friend> {
     public FriendTableView() {
         super();
         idCol = buildColumn("Id", "id", 4);
-        
+        relevanceCol = buildColumn("Relevance", "relevance", 4);
+        confidenceCol = buildColumn("Confidence", "confidence", 4);
+        lastConnectionCol = buildColumn("Date of last connection", "lastConnection", 4);
+        getColumns().addAll(idCol, relevanceCol, confidenceCol, lastConnectionCol);
     }
     
 }
