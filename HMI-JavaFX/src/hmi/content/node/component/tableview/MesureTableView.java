@@ -1,4 +1,4 @@
-package hmi.content.node.component;
+package hmi.content.node.component.tableview;
 
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;

@@ -10,5 +10,5 @@ package model.network.interfaces;
  *
  * @author Gwendal
  */
-public interface ISender {
+public interface Sender {
 }

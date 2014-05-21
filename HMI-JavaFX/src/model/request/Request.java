@@ -5,6 +5,7 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.Date;
 import model.network.interfaces.Information;
+import model.network.interfaces.Sender;
 
 public class Request<Inf extends Information> extends UnicastRemoteObject implements Sendable {
     protected Sender sender;

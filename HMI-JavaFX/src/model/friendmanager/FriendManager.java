@@ -5,10 +5,11 @@ import static java.lang.Math.sqrt;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import model.network.interfaces.Sender;
 import model.node.AppVector;
 import model.node.CloudBookNode;
-import model.node.Friend;
-import model.request.Sender;
+import model.node.friend.Friend;
+import model.node.friend.Member;
 
 public class FriendManager implements IFriendManager {
     
@@ -22,7 +23,7 @@ public class FriendManager implements IFriendManager {
     }
 
     @Override
-    public boolean add(Sender sender) {
+    public boolean add(Member sender) {
         AppVector vector = sender.getVector();
         int id = sender.getId();
         if(!isFriend(id) && relevant(vector)) {
@@ -37,7 +38,7 @@ public class FriendManager implements IFriendManager {
         List<Friend> friends = node.getFriends();
         for(Friend friend : friends) {
             if(friend.daysSinceLastConnection() > delay)
-                remove(friend.getId());
+                remove(friend.idProperty().get());
             //TODO : A compléter
         }   
     }
@@ -81,7 +82,7 @@ public class FriendManager implements IFriendManager {
     }
 
     @Override
-    public void update(Sender sender) {
+    public void update(Member sender) {
         //On tente d'ajouter le sender à la liste d'amis
         if(add(sender))
             return;
@@ -97,7 +98,7 @@ public class FriendManager implements IFriendManager {
                 AppVector vector = sender.getVector();
                 if(relevant(vector)) {
                     friend.setVector(vector);
-                    friend.setRelevance(relevance(vector));
+                    friend.relevanceProperty().set(relevance(vector));
                 } else
                     remove(id);
                 break;
@@ -160,9 +161,9 @@ public class FriendManager implements IFriendManager {
         Friend tmp;
         Friend pivot = friends.get(left+(right-left)/2);
         while(i <= j) {
-            while(friends.get(i).getRelevance() > pivot.getRelevance())
+            while(friends.get(i).relevanceProperty().get() > pivot.relevanceProperty().get())
                 i++;
-            while(friends.get(j).getRelevance() < pivot.getRelevance())
+            while(friends.get(j).relevanceProperty().get() < pivot.relevanceProperty().get())
                 j--;
             if (i <= j) {
                 tmp = friends.get(i);
@@ -190,9 +191,9 @@ public class FriendManager implements IFriendManager {
         Friend tmp;
         Friend pivot = friends.get(left+(right-left)/2);
         while(i <= j) {
-            while(friends.get(i).getConfidence() > pivot.getConfidence())
+            while(friends.get(i).confidenceProperty().get() > pivot.confidenceProperty().get())
                 i++;
-            while(friends.get(j).getConfidence() < pivot.getConfidence())
+            while(friends.get(j).confidenceProperty().get() < pivot.confidenceProperty().get())
                 j--;
             if (i <= j) {
                 tmp = friends.get(i);

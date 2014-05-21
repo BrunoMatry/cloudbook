@@ -1,5 +1,6 @@
 package model.node;
 
+import model.node.friend.Friend;
 import hmi.home.ObservableFileList;
 import model.network.interfaces.Information;
 import java.io.FileInputStream;

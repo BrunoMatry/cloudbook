@@ -60,7 +60,9 @@ public class RequestManager implements IRequestManager {
 
     @Override
     public Request createRequest(int target, Information data) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        //Attention : la requête créée doit avoir dans son champ sender un objet de la classe Friend
+        //Cet objet doit être une instance qui correspond au noeud courant
+        return null;
     }
 
     public IFriendManager getFriendManager() {

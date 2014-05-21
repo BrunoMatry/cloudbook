@@ -1,4 +1,4 @@
-package model.node;
+package model.node.friend;
 
 import model.network.interfaces.Information;
 import java.util.Date;
@@ -6,58 +6,59 @@ import java.util.Objects;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import model.node.AppVector;
 
-public class Member implements Information {  
+public class Friend extends Member implements Information {  
     
     /* Attributs serialisables */
-    protected int _id;
     protected double _relevance;
     protected int _confidence;
-    protected AppVector _vector;
     protected Date _lastConnexion;
     
     /* Proprietes non serialisables */
-    protected transient DoubleProperty relevance = new SimpleDoubleProperty();
-    protected transient IntegerProperty confidence = new SimpleIntegerProperty();
+    protected transient IntegerProperty id;
+    protected transient DoubleProperty relevance;
+    protected transient IntegerProperty confidence;
     protected transient ObjectProperty<Date> lastConnexion;
     
-    public Member(int friendId, int cnfdnce, double rlvnce, AppVector vector) throws NullPointerException {
+    /**
+     * Constructor
+     * @param friendId identifier of the friend application
+     * @param cnfdnce confidence value
+     * @param rlvnce relevance value
+     * @param vector vector of characteriqtics of the member application
+     * @throws NullPointerException 
+     */
+    public Friend(int friendId, int cnfdnce, double rlvnce, AppVector vector) throws NullPointerException {
+        super(friendId, vector);
         if(vector == null)
             throw new NullPointerException();
-        _id = friendId;
-        _vector = vector;
-        relevance = new SimpleDoubleProperty(rlvnce);
-        confidence = new SimpleIntegerProperty(cnfdnce);
+        id = new SimpleIntegerProperty(friendId);
+        relevance = new RelevanceProperty(this, rlvnce);
+        confidence = new ConfidenceProperty(this, cnfdnce);
         lastConnexion = new SimpleObjectProperty<>(new Date());
     }
-    
-    public void setRelevance(double rlvnce) {
-        relevance.set(rlvnce);
-        connexion();
+
+    @Override
+    public int getId() {
+        return id.get();
     }
     
-    public double getRelevance() {
-        return relevance.get();
-    }
-    
-    public void setConfidence(int cnfdnce) {
-        confidence.set(cnfdnce);
-        connexion();
-    }
-    
-    public double getConfidence() {
-        return confidence.get();
-    }
-    
+    /**
+     * Setter
+     * @param vector vector attribute
+     */
     public void setVector(AppVector vector) {
-        _vector = vector;
-        connexion();
+        this.vector = vector;
+        updateLastConnectionDate();
     }
-            
-    private void connexion() {
+    
+    /**
+     * The las tconnection date is updated to the current one
+     */
+    void updateLastConnectionDate() {
         lastConnexion.set(new Date());
     }
     
@@ -71,13 +72,14 @@ public class Member implements Information {
         return (int) (diff / (1000*60*60*24));
     }
     
-    public int getId() { return _id; }
-    public AppVector getAppVector() { return _vector; }
-    public DoubleProperty relevanceProperty() { return relevance; }
-    public IntegerProperty confidenceProperty() { return confidence; }
+    public final IntegerProperty idProperty() { return id; }
+    public final AppVector getVector() { return vector; }
+    public final DoubleProperty relevanceProperty() { return relevance; }
+    public final IntegerProperty confidenceProperty() { return confidence; }
 
     @Override
     public void saveProperties() {
+        _id = id.get();
         _relevance =  relevance.get();
         _confidence = confidence.get();
         _lastConnexion = lastConnexion.get();
@@ -85,8 +87,9 @@ public class Member implements Information {
 
     @Override
     public void restoreProperties() {
-        relevance = new SimpleDoubleProperty(_relevance);
-        confidence = new SimpleIntegerProperty(_confidence);
+        id = new SimpleIntegerProperty(_id);
+        relevance = new RelevanceProperty(this, _relevance);
+        confidence = new ConfidenceProperty(this, _confidence);
         lastConnexion = new SimpleObjectProperty<>(_lastConnexion);
     }
 
@@ -116,7 +119,7 @@ public class Member implements Information {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Member other = (Member) obj;
+        final Friend other = (Friend) obj;
         return this.relevance.get() == other.relevance.get()
                 && this.confidence.get() == other.confidence.get();
     }

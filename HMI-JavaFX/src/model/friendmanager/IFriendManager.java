@@ -1,9 +1,10 @@
 package model.friendmanager;
 
 import java.util.List;
+import model.network.interfaces.Sender;
 import model.node.AppVector;
-import model.node.Friend;
-import model.request.Sender;
+import model.node.friend.Friend;
+import model.node.friend.Member;
 
 public interface IFriendManager {
     /**
@@ -11,7 +12,7 @@ public interface IFriendManager {
      * @param sender    Emetteur d'une requête qu'on veut ajouter à la liste d'amis
      * @return          Vrai si l'ajout est correctement effectué, faux sinon
      */
-    boolean add(Sender sender);
+    boolean add(Member sender);
     
     /**
      * Methode permettant de nettoyer la liste des amis

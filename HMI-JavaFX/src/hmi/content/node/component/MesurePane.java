@@ -1,5 +1,6 @@
 package hmi.content.node.component;
 
+import hmi.content.node.component.tableview.MesureTableView;
 import hmi.content.AActivity;
 import hmi.content.node.NodeComponentView;
 import hmi.content.node.SummarizedView;
