@@ -8,11 +8,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.text.Text;
 import model.node.Mesure;
 
-public class MesurePane extends NodeComponentView {
+public class MesurePane extends NodeComponentView<Mesure> {
 
-    //table of mesures
-    protected TableView<Mesure> table;
-    
     /**
      * Constructor
      * @param p parent activity
