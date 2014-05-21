@@ -141,6 +141,20 @@
       <SubType>Content</SubType>
       <DependentUpon>Bloc Réseau\Server.classdiagram</DependentUpon>
     </Content>
+    <Content Include="Bloc Réseau\RemoteLibrary.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Bloc Réseau\RemoteLibrary.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Bloc Réseau\RemoteLibrary.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="Bloc Réseau\NetworkCommunication.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Bloc Réseau\NetworkCommunication.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Bloc Réseau\NetworkCommunication.sequencediagram</DependentUpon>
+    </Content>
     <Content Include="Bloc Traitement Requete\%28deprecated%29 Requete.activitydiagram">
       <SubType>Content</SubType>
     </Content>
