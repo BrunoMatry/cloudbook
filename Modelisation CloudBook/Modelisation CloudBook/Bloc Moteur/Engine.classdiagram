@@ -1,62 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="b34819e6-d245-47ee-bbdd-824314ca14bc" name="Engine" linkedPackageId="964e705b-db58-4808-9a2c-6aea7f525705" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <ownedCommentsInternal>
-    <comment Id="a47eba17-9196-4787-b28e-3c6990a82e62">
-      <elementDefinition Id="789719ec-8019-4b52-8d87-d25a2734e1e8" />
-      <body>Mettre une methode sauvegarder dans le moteur qui sauvegarde les objets qui héritent de l'interface Serializable (pour nous seulement le Noeud et éventuélement une lite de voisin pour ne pas avoir à chercher de nouveau voisins à chaque connection ...)</body>
-    </comment>
-  </ownedCommentsInternal>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="b34819e6-d245-47ee-bbdd-824314ca14bc" name="Engine" linkedPackageId="964e705b-db58-4808-9a2c-6aea7f525705" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
-    <logicalClassDesignerModelHasTypes>
-      <Interface Id="7dba6114-a01c-4c24-aa9e-51bb09d630a5" name="IEngine" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="f1c41a76-65f2-44e0-bdd8-5fe297fb1476" />
-        <ownedOperations>
-          <operation Id="2627daec-c905-4569-8c27-218932623674" name="setInformation" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="a396f455-69a2-40d2-8d63-366ad55dd779" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="23ec8512-4e06-4640-a9d5-0e35d75cf0de" name="Information info" direction="In" isUnique="false">
-                  <elementDefinition Id="c7973f88-8796-4b06-b6aa-b5c0fa06b1b8" />
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation Id="baf69d5b-a20d-4e34-a5df-7bf16becb4dd" name="handleRequest" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="b95992e9-c9d3-497a-b13b-456390d2e968" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="2a0157c9-30e6-4623-bc86-bd4d3f1dfe62" name="request Request" direction="In" isUnique="false">
-                  <elementDefinition Id="400ed7ff-6ca5-4c6f-9348-8bbdcf6c6922" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="075ff88d-1251-4152-acab-b9657e5380c7" direction="Return" isUnique="false">
-                  <elementDefinition Id="95a41e34-ae9b-455a-b052-54b0237f394c" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="9218e750-043e-49f0-bdb0-ef66bc008c6d" LastKnownName="Result" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation Id="26d2caa4-3a13-468a-8666-41b654a828cc" name="save" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="8a534352-57c6-4de2-8cde-4d2e1a66d4ca" />
-          </operation>
-        </ownedOperations>
-      </Interface>
-    </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
       <class Id="cc2bcde7-8fec-47cc-9971-d5171b5b8982" name="Engine" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="a38a340d-ecdc-4fb2-8338-70d988e2e782" />
-        <suppliersInternal>
-          <interfaceRealization Id="277796d6-8290-49f5-ba7d-789ea584afad">
-            <interfaceMoniker Id="7dba6114-a01c-4c24-aa9e-51bb09d630a5" LastKnownName="IEngine" />
-            <elementDefinition Id="8e739927-2807-47f6-b20d-c55727ac5fda" />
-          </interfaceRealization>
-        </suppliersInternal>
+        <generalsInternal>
+          <generalization Id="04826af7-6bf9-49fe-a56c-24515e082597" isSubstitutable="false">
+            <classMoniker Id="e26a089f-cbb3-4219-930c-b535619f70c4" LastKnownName="Thread" />
+            <elementDefinition Id="6a06d22b-e89a-4051-9bcf-fefca68db223" />
+          </generalization>
+        </generalsInternal>
         <ownedAttributesInternal>
-          <property Id="96af38fd-f3d2-452d-9f6e-17566e3edfb6" name="INSTANCE" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="96af38fd-f3d2-452d-9f6e-17566e3edfb6" name="stopFlag" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="0608ecca-782d-4753-b9b9-093c6aecc78e" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="99e1e941-49ca-4136-ab0f-2ed1ba1b9795" LastKnownName="boolean" />
+            </type_NamedElement>
+          </property>
+          <property Id="be7e31cd-28e4-4cb4-880d-4b24177fd175" name="TIME" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0dd5dd1d-c927-497c-847f-e856348342fe" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="815faba2-2116-41ce-86b6-42b33885d31e" LastKnownName="static long" />
+            </type_NamedElement>
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
@@ -97,66 +62,52 @@
           <operation Id="ee7e539c-e225-44de-8776-4702b0437a1f" name="save" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="bffad1a7-a981-45b3-ba4a-247a817e9cfa" />
           </operation>
-        </ownedOperationsInternal>
-      </class>
-    </logicalClassDesignerModelHasTypes>
-    <logicalClassDesignerModelHasTypes>
-      <class Id="481e080e-2cbc-420e-b8d6-87b6aae56e44" name="AppMounter" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="5e18cd86-1b2a-4c1b-867d-e9a51cbad093" />
-        <suppliersInternal>
-          <interfaceRealization Id="a207ebee-ec6d-475e-8427-da21b5100b53">
-            <interfaceMoniker Id="44fcb0c3-0ca1-49f5-b246-c0b92ab4f0f9" LastKnownName="IAppMounter" />
-            <elementDefinition Id="d1681f5c-453e-4ccc-90bd-6d5e4b9e8635" />
-          </interfaceRealization>
-        </suppliersInternal>
-        <ownedOperationsInternal>
-          <operation Id="e84eb155-8247-4594-a27c-a9f03c389998" name="mountFriendManager" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="7b1f64ef-5a92-4db1-9d5a-f64841d09667" />
+          <operation Id="5047089b-1c1e-4104-bd19-2d5454d62826" name="Engine" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9a974a88-75ea-41d8-8f30-28248cc3a876" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="aebcc9de-81b2-4626-9ed7-c02a128a95a8" name="node" direction="In" isUnique="false">
+                  <elementDefinition Id="542e4784-c3e0-4ae2-9d3a-69e17e4c2b23" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="bed2cf46-37bd-4300-9c17-350cd19e566b" LastKnownName="CloudBookNode" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
-          <operation Id="860b1108-287a-4bb3-aa67-9a5b71c94132" name="mountNode" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="d86ce492-8488-461f-a270-9383ab69b85c" />
-          </operation>
-          <operation Id="1e1e641f-b76d-4a45-b150-67af3480146b" name="mountMonitoring" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="217dd496-ee60-436c-831e-84d7aef9e7a7" />
+          <operation Id="38889885-b787-4400-92f4-fe710aa11ecc" name="run" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b20beee9-5af9-45c6-a049-a418c51f4bd0" />
           </operation>
         </ownedOperationsInternal>
       </class>
-    </logicalClassDesignerModelHasTypes>
-    <logicalClassDesignerModelHasTypes>
-      <Interface Id="44fcb0c3-0ca1-49f5-b246-c0b92ab4f0f9" name="IAppMounter" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="8843169a-eede-4848-9b41-8d277eb9b52e" />
-        <ownedOperations>
-          <operation Id="187d19fd-686e-4f28-b124-f5bf462cc17a" name="mountFriendManager" isLeaf="false" isStatic="true" isAbstract="true" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="b97f4993-95ce-4085-9506-49787dbef39d" />
-          </operation>
-          <operation Id="192f5969-fa5e-4f73-b19d-b9b915ee06f3" name="mountNode" isLeaf="false" isStatic="true" isAbstract="true" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="3f4f17fe-3f65-48cf-8ef9-3ae399a75479" />
-          </operation>
-          <operation Id="386e57df-9457-4826-9c6f-612a5a6a25c7" name="mountMonitoring" isLeaf="false" isStatic="true" isAbstract="true" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="c442f15b-cb1e-4bb8-b6cd-e604c611e49d" />
-          </operation>
-        </ownedOperations>
-      </Interface>
-    </logicalClassDesignerModelHasTypes>
-    <logicalClassDesignerModelHasTypes>
-      <Interface Id="fd04390b-da19-473d-b955-949b045ac10c" name="IMonitoring" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="b2339966-8c69-4e11-a704-c4695996fc9f" />
-        <ownedOperations>
-          <operation Id="3680cf40-f4d7-4a73-9345-fc28f613abcb" name="pushInformation" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="70bd4cb3-a990-46b5-a35d-58620115da60" />
-          </operation>
-        </ownedOperations>
-      </Interface>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
       <class Id="61e078b0-008b-4dba-ace5-4e62631fb1a7" name="Monitoring" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="51cda176-a383-4462-ae58-5e81d93bdc93" />
-        <suppliersInternal>
-          <interfaceRealization Id="9860a4b4-15cb-43c5-973b-3aaeec2545cb">
-            <interfaceMoniker Id="fd04390b-da19-473d-b955-949b045ac10c" LastKnownName="IMonitoring" />
-            <elementDefinition Id="753bcff4-8011-472c-903c-2bb48b6c09e5" />
-          </interfaceRealization>
-        </suppliersInternal>
+        <generalsInternal>
+          <generalization Id="586847b6-a96d-4608-a768-e541208ce6ba" isSubstitutable="false">
+            <classMoniker Id="e26a089f-cbb3-4219-930c-b535619f70c4" LastKnownName="Thread" />
+            <elementDefinition Id="79ecbaf3-543d-4cab-85f1-2f66ad969a0d" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="e96d05db-54f3-4813-b6d4-3a962bae9752" isDerived="false" sourceEndRoleName="Monitoring" targetEndRoleName="Engine" isLeaf="false" isAbstract="false">
+            <classMoniker Id="cc2bcde7-8fec-47cc-9971-d5171b5b8982" LastKnownName="Engine" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="80bd8c51-9411-4995-b04b-7ad74f512c72" name="Monitoring" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3266c3d9-c944-4197-8efd-9d08cfdcdd3f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f59fb5aa-3744-4877-a07e-ac806fae5a12" name="Engine" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ffa182be-00cb-4635-8052-03c4935b2898" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="28379db5-c0c7-485e-b643-c950403fa282" />
+          </association>
+        </targetEnds>
         <ownedOperationsInternal>
           <operation Id="92e050db-47c4-4217-84bc-8de248d8ee95" name="pushInformation" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="29266b3a-0b8a-481c-aea3-e0813ab316f0" />
@@ -167,6 +118,26 @@
     <packageHasNamedElement>
       <referencedType Id="9218e750-043e-49f0-bdb0-ef66bc008c6d" name="Result" isAbstract="false" isLeaf="false" cachedFullName="Modelisation CloudBook::Result">
         <elementDefinition Id="61fec10c-a2dc-4fd4-a747-51106c957b05" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="e26a089f-cbb3-4219-930c-b535619f70c4" name="Thread" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3ed77e6a-71c4-4ece-8d21-3ef523bc6dc1" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="99e1e941-49ca-4136-ab0f-2ed1ba1b9795" name="boolean" isAbstract="false" isLeaf="false" cachedFullName="boolean">
+        <elementDefinition Id="5eda4cef-cbb7-40fb-8d19-c87fc5ba11aa" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="815faba2-2116-41ce-86b6-42b33885d31e" name="static long" isAbstract="false" isLeaf="false" cachedFullName="static long">
+        <elementDefinition Id="6a58da7c-bda4-4498-ad8c-696bb05ad3c3" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="bed2cf46-37bd-4300-9c17-350cd19e566b" name="CloudBookNode" isAbstract="false" isLeaf="false" cachedFullName="CloudBookNode">
+        <elementDefinition Id="1b6f4107-f4af-4c49-b4e6-d7b1c7b9a1fc" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>
