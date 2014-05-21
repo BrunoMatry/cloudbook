@@ -18,7 +18,6 @@ public class Launcher extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         STAGE = primaryStage;
-        
         NodeList.INSTANCE.launch();
     }
     
@@ -40,5 +39,4 @@ public class Launcher extends Application {
             node.save();
         super.stop();
     }
-    
 }

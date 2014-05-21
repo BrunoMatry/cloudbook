@@ -1,4 +1,4 @@
-package hmi.button.homeview;
+package hmi.button;
 
 import hmi.button.CloudBookButton;
 import hmi.content.monitor.MonitorView;
