@@ -1,7 +1,6 @@
 package model.friendmanager;
 
 import java.util.List;
-import model.network.interfaces.Sender;
 import model.node.AppVector;
 import model.node.friend.Friend;
 import model.node.friend.Member;
@@ -50,7 +49,7 @@ public interface IFriendManager {
      * Methode permettant de mettre à jour les informations du sender s'il est dans la liste des amis et de l'y ajouter s'il n'y est pas et qu'il est pertinent
      * @param sender    Emetteur d'une requête qu'on veut mettre à jour
      */
-    void update(Sender sender);
+    void update(Member sender);
     
     /**
      * Methode permettant de récupérer les nb amis les plus pertinents

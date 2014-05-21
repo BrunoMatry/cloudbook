@@ -15,7 +15,7 @@ import java.util.Date;
  * @author Gwendal
  */
 public interface Sendable extends Remote {
-    public ISender getSender() throws RemoteException;
+    public Sender getSender() throws RemoteException;
 
     public Date getDate() throws RemoteException;
 

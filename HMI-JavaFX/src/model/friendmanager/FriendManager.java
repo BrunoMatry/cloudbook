@@ -5,7 +5,6 @@ import static java.lang.Math.sqrt;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import model.network.interfaces.Sender;
 import model.node.AppVector;
 import model.node.CloudBookNode;
 import model.node.friend.Friend;
