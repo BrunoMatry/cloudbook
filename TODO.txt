@@ -1,9 +1,7 @@
 Gwendal
-Communication des messages et friends
+Problème d'affichage voyant de connexion la première fois. De plus les informations envoyées sont bien reçues mais pas affichées dan les tableaux
+Communication des messages et friends et autres
 utiliser friendmanager pour cibler l'envoi (broadcast si pas d'amis)
-Améliorer l'interface graphique pour la sélection du noeud à contacter
-Gérer les sauvegardes automatiques au moment de quitter l'application
-Refaire les vues résumées
 
 Bruno
 Peaufiner interface graphique
