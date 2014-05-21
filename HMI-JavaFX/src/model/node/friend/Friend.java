@@ -72,10 +72,11 @@ public class Friend extends Member implements Information {
         return (int) (diff / (1000*60*60*24));
     }
     
-    public final IntegerProperty idProperty() { return id; }
-    public final AppVector getVector() { return vector; }
-    public final DoubleProperty relevanceProperty() { return relevance; }
-    public final IntegerProperty confidenceProperty() { return confidence; }
+    public IntegerProperty idProperty() { return id; }
+    @Override
+    public AppVector getVector() { return vector; }
+    public DoubleProperty relevanceProperty() { return relevance; }
+    public IntegerProperty confidenceProperty() { return confidence; }
 
     @Override
     public void saveProperties() {
