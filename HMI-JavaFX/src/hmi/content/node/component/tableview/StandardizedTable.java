@@ -33,4 +33,5 @@ public abstract class StandardizedTable<E> extends TableView<E> {
         column.prefWidthProperty().bind(this.widthProperty().divide(columnCount));
         return column;
     }
+
 }

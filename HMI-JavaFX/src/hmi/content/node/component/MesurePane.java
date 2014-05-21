@@ -27,12 +27,4 @@ public class MesurePane extends NodeComponentView<Mesure> {
         return res;
     }
     
-    /**
-     * Getter
-     * @return table field
-     */
-    public final TableView<Mesure> getTable() {
-        return table;
-    }
-    
 }

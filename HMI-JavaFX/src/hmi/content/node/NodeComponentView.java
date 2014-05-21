@@ -3,7 +3,9 @@ package hmi.content.node;
 import hmi.content.AActivity;
 import hmi.content.OneNodeActivity;
 import hmi.content.node.component.tableview.StandardizedTable;
+import javafx.scene.control.TableView;
 import model.network.interfaces.Information;
+import model.node.Mesure;
 
 public abstract class NodeComponentView<I extends Information> extends OneNodeActivity implements IComponentView {
     
@@ -38,5 +40,13 @@ public abstract class NodeComponentView<I extends Information> extends OneNodeAc
      * @return the SummarizedView corresponding to the current view
      */
     public abstract SummarizedView makeSummarized();
+    
+    /**
+     * Getter
+     * @return table field
+     */
+    public TableView getTable() {
+        return table;
+    }
   
 }

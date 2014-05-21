@@ -10,6 +10,7 @@ import hmi.content.AActivity;
 import hmi.content.node.NodeComponentView;
 import hmi.content.node.SummarizedView;
 import hmi.content.node.component.tableview.FriendTableView;
+import javafx.scene.text.Text;
 import model.node.friend.Friend;
 
 /**
@@ -32,7 +33,7 @@ public class FriendPane extends NodeComponentView<Friend> {
 
     @Override
     public SummarizedView makeSummarized() {
-        return null;
+        return new SummarizedView<>(this, new Text("Friends"));
     }
     
 }

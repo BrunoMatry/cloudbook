@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Random;
 import model.node.AppVector;
 import model.node.CloudBookNode;
+import model.node.InformationBox;
 import model.node.friend.Friend;
 import model.node.friend.Member;
 
@@ -34,7 +35,7 @@ public class FriendManager implements IFriendManager {
     
     @Override
     public void clear() {
-        List<Friend> friends = node.getFriends();
+        InformationBox<Friend> friends = node.getFriends();
         for(Friend friend : friends) {
             if(friend.daysSinceLastConnection() > delay)
                 remove(friend.idProperty().get());
@@ -44,7 +45,7 @@ public class FriendManager implements IFriendManager {
 
     @Override
     public boolean isFriend(int id) {
-        List<Friend> friends = node.getFriends();
+        InformationBox<Friend> friends = node.getFriends();
         for(Friend friend : friends) 
             if(friend.getId() == id)
                 return true;
@@ -71,7 +72,7 @@ public class FriendManager implements IFriendManager {
 
     @Override
     public void remove(int id) {
-        List<Friend> friends = node.getFriends();
+        InformationBox<Friend> friends = node.getFriends();
         for(int i = 0; i < friends.size(); i++) {
             if(friends.get(i).getId() == id) {
                 remove(i);
@@ -90,7 +91,7 @@ public class FriendManager implements IFriendManager {
         On parcours donc la liste des amis et si on l'y trouve on vérifie si il est toujours pertinent
         si oui, on met à jour son vecteur sinon on le supprime de la liste d'amis
         */
-        List<Friend> friends = node.getFriends();
+        InformationBox<Friend> friends = node.getFriends();
         for(Friend friend : friends) {
             int id = sender.getId();
             if(friend.getId() == id) {
@@ -107,11 +108,11 @@ public class FriendManager implements IFriendManager {
     
     @Override
     public List<Friend> getRelevantFriends(int nb) {
-        List<Friend> allFriends = node.getFriends();
+        InformationBox<Friend> allFriends = node.getFriends();
         if(allFriends.size() <= nb)
-            return allFriends;
+            return allFriends.boxObservableList();
         List<Friend> friends = new ArrayList<>();
-        sortByRelevance(allFriends, 0, allFriends.size()-1);
+        sortByRelevance(allFriends.boxObservableList(), 0, allFriends.size()-1);
         for(int i = 0; i<nb; i++) {
             friends.add(allFriends.get(i));
         }
@@ -120,7 +121,7 @@ public class FriendManager implements IFriendManager {
     
     @Override
     public List<Friend> getTrustedFriends(int nb) {
-        List<Friend> allFriends = node.getFriends();
+        List<Friend> allFriends = node.getFriends().boxObservableList();
         if(allFriends.size() <= nb)
             return allFriends;
         List<Friend> friends = new ArrayList<>();
@@ -133,7 +134,7 @@ public class FriendManager implements IFriendManager {
     
     @Override
     public List<Friend> getSomeFriends(int nb) {
-        List<Friend> allFriends = node.getFriends();
+        List<Friend> allFriends = node.getFriends().boxObservableList();
         if(allFriends.size() <= nb)
             return allFriends;
         List<Friend> friends = new ArrayList<>();

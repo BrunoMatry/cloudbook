@@ -1,6 +1,7 @@
 package model.node;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -12,7 +13,7 @@ import model.network.interfaces.Information;
  * box containing some informations with string property describing the box content
  * @param <T> type of information
  */
-public class InformationBox<T extends Information> implements Information {
+public class InformationBox<T extends Information> implements Information, Iterable<T> {
     
     public static final String EMPTY_FLAG = "No information to display at this time";
     
@@ -131,4 +132,18 @@ public class InformationBox<T extends Information> implements Information {
         }
         return tab;
     }
+
+    @Override
+    public Iterator<T> iterator() {
+        return box.iterator();
+    }
+    
+    /**
+     * Computes the number of elements of the box
+     * @return the number of elements of the box
+     */
+    public int size() {
+        return box.size();
+    }
+
 }

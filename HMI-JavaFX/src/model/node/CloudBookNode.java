@@ -17,7 +17,6 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.image.Image;
-import javax.swing.ImageIcon;
 import model.engine.Engine;
 import model.network.interfaces.RemoteServer;
 
@@ -39,7 +38,7 @@ public class CloudBookNode implements Serializable {
     protected Mesure topMesure; //mesure to be shown at the first place
     protected Cloud platform; //current platform of the application
     
-    protected List<Friend> friends;
+    protected InformationBox<Friend> friends;
     protected List<Information> informations;
     protected Stack<State> states; //history of the cloud platforms
     protected InformationBox<Mesure> mesures; //list of all the mesures
@@ -70,7 +69,7 @@ public class CloudBookNode implements Serializable {
     protected CloudBookNode() {
         //topMessage = new Message();
         
-        friends = new ArrayList<>();
+        friends = new InformationBox<>();
         informations = new ArrayList<>();
         states = new Stack<>();
         mesures = new InformationBox<>();
@@ -100,7 +99,7 @@ public class CloudBookNode implements Serializable {
         serverHost = host;
         this.serverPort = serverPort;
         this.nodePort = nodePort;
-        friends = new ArrayList<>();
+        friends = new InformationBox<>();
         informations = new ArrayList<>();
         states = new Stack<>();
         mesures = new InformationBox<>();
@@ -119,9 +118,9 @@ public class CloudBookNode implements Serializable {
     public void addMesure(Mesure m) { mesures.push(m); }
     public void addMessage(Message m) { messages.push(m); } 
     public void addInformation(Information info) { informations.add(info); }
-    public void addFriend(Friend f) { friends.add(f); }
+    public void addFriend(Friend f) { friends.push(f); }
     
-    public List<Friend> getFriends() { return friends; }
+    public InformationBox getFriends() { return friends; }
     public AppVector getVector() { return vector; }
     public List<Information> getInformations() { return informations; }
     public Message getMessage(int i) { return messages.get(i); }
@@ -188,7 +187,6 @@ public class CloudBookNode implements Serializable {
     }
     
     /* ATTENTION ! Mauvaise pratique ! */
-    public void setFriends(List<Friend> friends) { this.friends = friends; }
     public void setInformations(List<Information> informations) { this.informations = informations; }
     public void setVector(AppVector vector) { this.vector = vector; }
     
@@ -209,8 +207,7 @@ public class CloudBookNode implements Serializable {
     public void save() throws IOException {
         _name = name.get();
         _logo = logo.get();
-        for(Friend f : friends)
-            f.saveProperties();
+        friends.saveProperties();
         for(Information info : informations)
             info.saveProperties();
         mesures.saveProperties();
@@ -224,8 +221,7 @@ public class CloudBookNode implements Serializable {
         ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileName));
         CloudBookNode res = (CloudBookNode) ois.readObject();
         res.name = new SimpleStringProperty(res._name);
-        for(Friend f : res.friends)
-            f.restoreProperties();
+        res.friends.restoreProperties();
         for(Information info : res.informations)
             info.restoreProperties();
         res.mesures.restoreProperties();

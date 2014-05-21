@@ -2,6 +2,7 @@ package hmi.content.node;
 
 import hmi.content.AActivity;
 import hmi.content.OneNodeActivity;
+import hmi.content.node.component.FriendPane;
 import hmi.content.node.component.MessageView;
 import hmi.content.node.component.MesurePane;
 import hmi.content.node.component.StateView;
@@ -18,6 +19,7 @@ import javafx.scene.text.Text;
 import model.node.ApplicationList;
 import model.node.CloudBookNode;
 import model.node.Mesure;
+import model.node.friend.Friend;
 
 /**
  * singleton
@@ -27,8 +29,11 @@ public final class NodeView extends OneNodeActivity {
     
     public static final NodeView INSTANCE = new NodeView(NodeList.INSTANCE);
     
-    //view contaigning all received mesures
+    //view contaigning all the generated mesures
     private MesurePane mesurePane;
+    
+    //view containing all the friends of the current node
+    private FriendPane friendPane;
     
     //summary of the state of application
     private SummarizedView<ImageView> state;
@@ -39,7 +44,7 @@ public final class NodeView extends OneNodeActivity {
     //summary of the messages
     private SummarizedView<Text> message;
     
-    private Button friends;
+    private SummarizedView<Text> friends;
     
     private Button appVector;
     
@@ -50,15 +55,13 @@ public final class NodeView extends OneNodeActivity {
     private NodeView(AActivity p) {
         super(p);
         title = "Friend management";
-        friends = new Button();
-        friends.setGraphic(new Text("Friends"));
         appVector = new Button();
         appVector.setGraphic(new Text("Application characteristics"));
         ArrayList<Button> components = new ArrayList<>();
         components.add(getState());
         components.add(getMesures());
         components.add(getMessage());
-        components.add(friends);
+        components.add(getFriend());
         components.add(appVector);
         
         int size = components.size();
@@ -86,7 +89,24 @@ public final class NodeView extends OneNodeActivity {
     }
 
     /**
-     * getter
+     * Getter
+     * if friends is null, it is initialized
+     * @return friends attribute
+     */
+    public SummarizedView getFriend() {
+        if(friends == null) {
+            friendPane = new FriendPane(this);
+            TableView<Friend> table = friendPane.getTable();
+            CloudBookNode node = ApplicationList.INSTANCE.getCurrentNode();
+            ObservableList<Friend> friendList = node.getFriends().boxObservableList();
+            table.setItems(friendList);
+            friends = friendPane.makeSummarized();
+        }
+        return friends;
+    }
+    
+    /**
+     * Getter
      * if mesures is null, it is initialized
      * @return mesures attribute
      */
