@@ -115,7 +115,10 @@ public class CloudBookNode implements Serializable {
     
     /********************************** SETTERS / GETTERS **********************************/
     
-    public void addMesure(Mesure m) { mesures.push(m); }
+    public void addMesure(Mesure m) { 
+        mesures.push(m);
+        vector.recalculateVector();
+    }
     public void addMessage(Message m) { messages.push(m); } 
     public void addInformation(Information info) { informations.add(info); }
     public void addFriend(Friend f) { friends.push(f); }

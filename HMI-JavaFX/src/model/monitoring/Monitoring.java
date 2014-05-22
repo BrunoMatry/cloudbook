@@ -8,7 +8,6 @@ import java.util.logging.Logger;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import model.engine.Engine;
-import model.network.interfaces.Information;
 import model.network.interfaces.RemoteClient;
 import model.node.Mesure;
 
@@ -37,9 +36,15 @@ public class Monitoring extends Thread implements IMonitoring {
     /**
      * Sends generated information on the network.
      * Completes the logs.
+     * !!!!!!! This method does not do that : it push information on the current node !
      */
     @Override
     public synchronized void pushInformation() {
+        // JE CROYAIS QUE LE MONITORING NE COMMUNIQUAIT PAS DIRECTEMENT AVEC LE NETWORK !!!!
+        
+        
+        
+        /*
         String content = logs.get();
         RemoteClient network = engine.getNetwork();
         content += "I sent " + this.mesures.size() + " informations to my friends :\n";
@@ -49,6 +54,7 @@ public class Monitoring extends Thread implements IMonitoring {
         content += '\n';
         this.mesures.clear();
         logs.set(content);
+        */
     }
     
     /**
@@ -62,7 +68,8 @@ public class Monitoring extends Thread implements IMonitoring {
                 this.mesures.add(genererMesure());
                 RemoteClient network = engine.getNetwork();
                 if(this.mesures.size() >= 3 && network.getStub() != null) {
-                    pushInformation();
+                    // CE N'EST PAS A CETTE METHODE DE PRENDRE SES DECISIONS TOUTE SEULE !!!!!!
+                    // pushInformation();
                 }
                 try {
                     sleep(TIME);

@@ -26,7 +26,7 @@ public class AppVector implements Information {
         appType = new SimpleIntegerProperty();
         performance = new SimpleIntegerProperty();
         speed = new SimpleIntegerProperty();
-        calculateVector();
+        recalculateVector();
     }
     
     /**
@@ -89,7 +89,7 @@ public class AppVector implements Information {
         return "AppVector{" + "appType=" + appType + ", performance=" + performance + ", speed=" + speed + '}';
     }
 
-    private void calculateVector() {
+    public void recalculateVector() {
         ArrayList<Mesure> lastMesures = mesures.getLastValues(nbMesuresForCalcul);
         int totalM1 = 0;
         int totalM2 = 0;
