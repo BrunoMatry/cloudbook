@@ -91,11 +91,16 @@ public class AppVector implements Information {
 
     private void calculateVector() {
         ArrayList<Mesure> lastMesures = mesures.getLastValues(nbMesuresForCalcul);
+        int totalM1 = 0;
+        int totalM2 = 0;
+        int totalM3 = 0;
         for(Mesure m : lastMesures) {
-
+            totalM1 += m.mesure1Property().get();
+            totalM2 += m.mesure2Property().get();
+            totalM3 += m.mesure3Property().get();
         }
-        appType.set(0);
-        performance.set(0);
-        speed.set(0);
+        appType.set((totalM1+totalM2+totalM3)/lastMesures.size());
+        performance.set(totalM2/lastMesures.size());
+        speed.set(totalM3/lastMesures.size());
     }
 }
