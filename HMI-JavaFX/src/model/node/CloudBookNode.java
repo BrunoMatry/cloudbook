@@ -113,7 +113,14 @@ public class CloudBookNode implements Serializable {
         engine = new Engine(this);
     }
     
-    
+    /**
+     * Add to the node a mesure
+     * @param m the mesure to add to the node
+     */
+    public void addMesure(Mesure m) {
+        this.mesures.push(m);
+        vector.recalculateVector();
+    }
     
     /**
      * Add to the node a list of mesures
