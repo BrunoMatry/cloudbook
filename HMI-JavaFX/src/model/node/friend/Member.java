@@ -16,7 +16,7 @@ import model.node.AppVector;
  */
 public class Member implements Sender {
     
-    protected int _id;
+    protected String _id;
     protected AppVector vector;
     
     /**
@@ -24,7 +24,7 @@ public class Member implements Sender {
      * @param _id identifier of the member
      * @param vector vector of characteristics of the application
      */
-    public Member(int _id, AppVector vector) {
+    public Member(String _id, AppVector vector) {
         this._id = _id;
         this.vector = vector;
     }
@@ -33,7 +33,7 @@ public class Member implements Sender {
      * Getter
      * @return _id field
      */
-    public int getId() {
+    public String getId() {
         return _id;
     }
     

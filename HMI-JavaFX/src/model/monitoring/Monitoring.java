@@ -11,7 +11,6 @@ import model.engine.Engine;
 import model.network.interfaces.Information;
 import model.network.interfaces.RemoteClient;
 import model.node.Mesure;
-import model.request.Request;
 
 public class Monitoring extends Thread implements IMonitoring {
     
@@ -45,13 +44,7 @@ public class Monitoring extends Thread implements IMonitoring {
         RemoteClient network = engine.getNetwork();
         content += "I sent " + this.mesures.size() + " informations to my friends :\n";
         for(Information info : this.mesures) {
-            try {
-                content += info + "\n";
-                Request req = new Request(info);
-                network.broadcast(req);
-            } catch (RemoteException ex) {
-                Logger.getLogger(Monitoring.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            content += info + "\n";
         }
         content += '\n';
         this.mesures.clear();

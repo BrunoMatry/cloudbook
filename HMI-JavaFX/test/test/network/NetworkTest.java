@@ -62,7 +62,9 @@ public class NetworkTest {
             me = new Network(InetAddress.getLocalHost().getHostAddress(), 777, null);
             bob = new Network("bob", 50010, null);
             original = new TestInfo("Hello world !");
-            msg = new Request(original);
+            msg = new Request();
+            Request req = (Request)msg;
+            req.setInfo(original);
             alice.connect(InetAddress.getLocalHost().getHostName() + ":" + 50020);
             me.connect(InetAddress.getLocalHost().getHostAddress() + ":" + 50020);
         } catch (RemoteException | UnknownHostException ex) {

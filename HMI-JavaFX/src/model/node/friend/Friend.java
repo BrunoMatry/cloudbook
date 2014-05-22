@@ -6,8 +6,9 @@ import java.util.Objects;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import model.node.AppVector;
 
 public class Friend extends Member implements Information {  
@@ -18,7 +19,7 @@ public class Friend extends Member implements Information {
     protected Date _lastConnexion;
     
     /* Proprietes non serialisables */
-    protected transient IntegerProperty id;
+    protected transient StringProperty id;
     protected transient DoubleProperty relevance;
     protected transient IntegerProperty confidence;
     protected transient ObjectProperty<Date> lastConnexion;
@@ -31,18 +32,18 @@ public class Friend extends Member implements Information {
      * @param vector vector of characteriqtics of the member application
      * @throws NullPointerException 
      */
-    public Friend(int friendId, int cnfdnce, double rlvnce, AppVector vector) throws NullPointerException {
+    public Friend(String friendId, int cnfdnce, double rlvnce, AppVector vector) throws NullPointerException {
         super(friendId, vector);
         if(vector == null)
             throw new NullPointerException();
-        id = new SimpleIntegerProperty(friendId);
+        id = new SimpleStringProperty(friendId);
         relevance = new RelevanceProperty(this, rlvnce);
         confidence = new ConfidenceProperty(this, cnfdnce);
         lastConnexion = new SimpleObjectProperty<>(new Date());
     }
 
     @Override
-    public int getId() {
+    public String getId() {
         return id.get();
     }
     
@@ -72,7 +73,7 @@ public class Friend extends Member implements Information {
         return (int) (diff / (1000*60*60*24));
     }
     
-    public IntegerProperty idProperty() { return id; }
+    public StringProperty idProperty() { return id; }
     @Override
     public AppVector getVector() { return vector; }
     public DoubleProperty relevanceProperty() { return relevance; }
@@ -88,7 +89,7 @@ public class Friend extends Member implements Information {
 
     @Override
     public void restoreProperties() {
-        id = new SimpleIntegerProperty(_id);
+        id = new SimpleStringProperty(_id);
         relevance = new RelevanceProperty(this, _relevance);
         confidence = new ConfidenceProperty(this, _confidence);
         lastConnexion = new SimpleObjectProperty<>(_lastConnexion);

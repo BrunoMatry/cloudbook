@@ -33,7 +33,7 @@ public class FriendTest {
     
     @Before
     public void setUp() {
-        friend = new Friend(1, 2, 1.5, new AppVector(1, 2, 3));
+        friend = new Friend("1", 2, 1.5, new AppVector(1, 2, 3));
     }
     
     @After
@@ -42,7 +42,7 @@ public class FriendTest {
 
     @Test
     public void testConstructor() {
-        assertTrue(friend.idProperty().get() == 1);
+        assertTrue(friend.idProperty().get().equals("1"));
         assertTrue(friend.confidenceProperty().get() == 2);
         assertTrue(friend.relevanceProperty().get() == 1.5);
         assertTrue(friend.getVector().equals(new AppVector(1, 2, 3)));
@@ -55,8 +55,8 @@ public class FriendTest {
     
     @Test
     public void testSetters() {
-        Friend member2 = new Friend(4, 3, 1.2, new AppVector(1, 5, 3));
-        assertTrue(member2.idProperty().get() == 4);
+        Friend member2 = new Friend("4", 3, 1.2, new AppVector(1, 5, 3));
+        assertTrue(member2.idProperty().get().equals("4"));
         assertTrue(member2.confidenceProperty().get() == 3);
         member2.confidenceProperty().set(4);
         assertTrue(member2.confidenceProperty().get() == 4);

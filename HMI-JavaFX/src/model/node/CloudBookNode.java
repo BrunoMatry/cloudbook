@@ -66,7 +66,7 @@ public class CloudBookNode implements Serializable {
     /**
      * default constructor
      */
-    protected CloudBookNode() {
+    public CloudBookNode() {
         //topMessage = new Message();
         
         friends = new InformationBox<>();

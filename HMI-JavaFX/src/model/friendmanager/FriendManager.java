@@ -18,6 +18,17 @@ public class FriendManager implements IFriendManager {
     
     protected CloudBookNode node;
     
+    /**
+     * Constructor
+     */
+    public FriendManager() {
+        node = new CloudBookNode();
+    }
+    
+    /**
+     * Constructor
+     * @param node current application
+     */
     public FriendManager(CloudBookNode node) {
         this.node = node;
     }
@@ -25,7 +36,7 @@ public class FriendManager implements IFriendManager {
     @Override
     public boolean add(Member sender) {
         AppVector vector = sender.getVector();
-        int id = sender.getId();
+        String id = sender.getId();
         if(!isFriend(id) && relevant(vector)) {
             node.addFriend(new Friend(id, 0, relevance(vector), vector)); //indice de confiance initialiser à 0 lors de l'ajout d'un nouvel ami
             return true;
@@ -44,10 +55,10 @@ public class FriendManager implements IFriendManager {
     }
 
     @Override
-    public boolean isFriend(int id) {
+    public boolean isFriend(String id) {
         InformationBox<Friend> friends = node.getFriends();
         for(Friend friend : friends) 
-            if(friend.getId() == id)
+            if(friend.getId().equals(id))
                 return true;
         return false;
     }
@@ -71,11 +82,11 @@ public class FriendManager implements IFriendManager {
     }
 
     @Override
-    public void remove(int id) {
+    public void remove(String id) {
         InformationBox<Friend> friends = node.getFriends();
         for(int i = 0; i < friends.size(); i++) {
-            if(friends.get(i).getId() == id) {
-                remove(i);
+            if(friends.get(i).getId().equals(id)) {
+                friends.remove(friends.get(i));
                 break;
             }  
         }
@@ -93,8 +104,8 @@ public class FriendManager implements IFriendManager {
         */
         InformationBox<Friend> friends = node.getFriends();
         for(Friend friend : friends) {
-            int id = sender.getId();
-            if(friend.getId() == id) {
+            String id = sender.getId();
+            if(friend.getId().equals(id)) {
                 AppVector vector = sender.getVector();
                 if(relevant(vector)) {
                     friend.setVector(vector);

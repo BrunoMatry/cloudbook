@@ -48,6 +48,13 @@ public class Engine extends Thread implements IEngine {
     
     /**
      * Constructor
+     */
+    public Engine() {
+        stopFlag = false;
+    }
+    
+    /**
+     * Constructor
      * Initializes all the modules of the application
      * @param node current instance of CloudBookNode
      * @throws RemoteException remote access problem

@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.engine.Engine;
+import model.friendmanager.FriendManager;
 import model.friendmanager.IFriendManager;
 import model.network.interfaces.Information;
 import model.node.Message;
@@ -17,6 +18,15 @@ public class RequestManager implements IRequestManager {
     protected IFriendManager friendManager;
     protected List<Information> inbox;
     protected Engine engine;
+    
+    /**
+     * Constructor
+     */
+    public RequestManager() {
+        friendManager = new FriendManager();
+        inbox = new ArrayList<>();
+        engine = new Engine();
+    }
     
     /**
      * Constructor
@@ -59,9 +69,8 @@ public class RequestManager implements IRequestManager {
     }
 
     @Override
-    public Request createRequest(int target, Information data) {
-        //Attention : la requête créée doit avoir dans son champ sender un objet de la classe Friend
-        //Cet objet doit être une instance qui correspond au noeud courant
+    public Request createRequest(String target, Information data) {
+        
         return null;
     }
 
@@ -77,4 +86,13 @@ public class RequestManager implements IRequestManager {
         Information res = inbox.get(i);
         return res;
     }
+
+    /**
+     * Getter
+     * @return engine field
+     */
+    public Engine getEngine() {
+        return engine;
+    }
+    
 }

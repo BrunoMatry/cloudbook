@@ -23,7 +23,7 @@ public interface IFriendManager {
      * @param id    Id du noeud dont on veut savoir s'il est dans la liste d'amis
      * @return      Vrai si ami, faux sinon
      */
-    boolean isFriend(int id);
+    boolean isFriend(String id);
     
     /**
      * Methode permettant de calculer la pertinence (la distance) du noeud dont le vecteur est passé en paramètre
@@ -43,7 +43,7 @@ public interface IFriendManager {
      * Methode permettant d'enlever le noeud identifier par l'id passé en paramètre de la liste d'amis
      * @param id    Id du noeud à supprimer de la liste d'amis
      */
-    void remove(int id);
+    void remove(String id);
     
     /**
      * Methode permettant de mettre à jour les informations du sender s'il est dans la liste des amis et de l'y ajouter s'il n'y est pas et qu'il est pertinent
