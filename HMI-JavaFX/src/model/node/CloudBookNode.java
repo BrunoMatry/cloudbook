@@ -113,12 +113,20 @@ public class CloudBookNode implements Serializable {
         engine = new Engine(this);
     }
     
-    /********************************** SETTERS / GETTERS **********************************/
     
-    public void addMesure(Mesure m) { 
-        mesures.push(m);
+    
+    /**
+     * Add to the node a list of mesures
+     * @param mesures the list of mesures to add to the node
+     */
+    public void addMesures(List<Mesure> mesures) {
+        for(Mesure m : mesures)
+            this.mesures.push(m);
         vector.recalculateVector();
     }
+    
+    /********************************** SETTERS / GETTERS **********************************/
+    
     public void addMessage(Message m) { messages.push(m); } 
     public void addInformation(Information info) { informations.add(info); }
     public void addFriend(Friend f) { friends.push(f); }
