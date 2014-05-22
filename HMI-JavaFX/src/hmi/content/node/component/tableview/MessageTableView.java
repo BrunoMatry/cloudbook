@@ -10,6 +10,7 @@ package hmi.content.node.component.tableview;
  *
  * @author Gwendal
  */
-public class MessageTableView {
+public class MessageTableView extends StandardizedTable {
     
+    //protected TableColumn<Message, >
 }

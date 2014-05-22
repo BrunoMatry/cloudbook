@@ -3,23 +3,70 @@ package model.node;
 import model.network.interfaces.Information;
 import java.util.Date;
 import java.util.Objects;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleObjectProperty;
 
 public class Message implements Information {
     
-    protected Information content;
-    protected Date date;
-    protected int idSender;
-    protected boolean relevant;
+    //private attributes which purpose is to save and restore properties values
+    private Information _content;
+    private Date _date;
+    private int _idSender;
+    private boolean _relevant;
+    
+    //vector of characteristics of the sender
     protected AppVector vector;
+    
+    
+    protected ObjectProperty<Information> content;
+    /**
+     * Information stored in the message.
+     * This information is one of the sender's
+     * @return Information property
+     */
+    public ObjectProperty<Information> contentProperty() {
+        return content;
+    }
+    
+    protected ObjectProperty<Date> date;
+    /**
+     * Date of generation of the message
+     * @return date property
+     */
+    public ObjectProperty<Date> dateProperty() {
+        return date;
+    }
+    
+    protected IntegerProperty idSender;
+    /**
+     * identifier of the sender
+     * @return identifier property
+     */
+    public IntegerProperty idSenderProperty() {
+        return idSender;
+    }
+    
+    protected BooleanProperty relevant;
+    /**
+     * indicates if the sender is relevant or not
+     * @return relevant property
+     */
+    public BooleanProperty relevantProperty() {
+        return relevant;
+    }
     
     public Message(int id, AppVector vect, Information ctnt, boolean rlvnt) throws NullPointerException {
         if(ctnt == null || vect == null)
             throw new NullPointerException();
-        idSender = id;
-        content = ctnt;
+        idSender = new SimpleIntegerProperty(id);
+        content = new SimpleObjectProperty<>(ctnt);
         vector = vect;
-        date = new Date();
-        relevant = rlvnt;
+        date = new SimpleObjectProperty<>(new Date());
+        relevant = new SimpleBooleanProperty(rlvnt);
     }
 
     @Override
@@ -27,18 +74,22 @@ public class Message implements Information {
         return idSender + ", " + date + ", " + relevant + ", " + vector;
     }
     
-    public int getIdSender() { return idSender; }
-    public Information getContent() { return content; }
-    public Date getDate() { return new Date(date.getTime()); }
+    public int getIdSender() { return idSender.get(); }
+    public Information getContent() { return content.get(); }
+    public Date getDate() { return new Date(date.get().getTime()); }
     public AppVector getVector() { return vector.copy(); }
-    public boolean getRelevance() { return relevant; }
+    public boolean getRelevance() { return relevant.get(); }
     
     /**
      * save each property of each contained object
      */
     @Override
     public void saveProperties() {
-        content.saveProperties();
+        _idSender = idSender.get();
+        _date = date.get();
+        _relevant = relevant.get();
+        _content = content.get();
+        _content.saveProperties();
         vector.saveProperties();
     }
 
@@ -47,23 +98,12 @@ public class Message implements Information {
      */
     @Override
     public void restoreProperties() {
-        content.restoreProperties();
+        idSender = new SimpleIntegerProperty(_idSender);
+        date = new SimpleObjectProperty<>(_date);
+        relevant = new SimpleBooleanProperty(_relevant);
+        _content.restoreProperties();
+        content = new SimpleObjectProperty<>(_content);
         vector.restoreProperties();
-    }
-
-    /**
-     * hashCode
-     * @return hash code
-     */
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 29 * hash + Objects.hashCode(this.content);
-        hash = 29 * hash + Objects.hashCode(this.date);
-        hash = 29 * hash + this.idSender;
-        hash = 29 * hash + (this.relevant ? 1 : 0);
-        hash = 29 * hash + Objects.hashCode(this.vector);
-        return hash;
     }
 
     /**
@@ -96,5 +136,16 @@ public class Message implements Information {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 79 * hash + Objects.hashCode(this.vector);
+        hash = 79 * hash + Objects.hashCode(this.content);
+        hash = 79 * hash + Objects.hashCode(this.date);
+        hash = 79 * hash + Objects.hashCode(this.idSender);
+        hash = 79 * hash + Objects.hashCode(this.relevant);
+        return hash;
     }
 }
