@@ -33,7 +33,7 @@ public class AppVectorTest {
     
     @Before
     public void setUp() {
-        appVector = new AppVector(1, 2, 3);
+        //appVector = new AppVector(1, 2, 3);
     }
     
     @After

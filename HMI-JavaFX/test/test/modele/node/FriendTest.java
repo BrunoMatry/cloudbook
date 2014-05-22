@@ -33,7 +33,7 @@ public class FriendTest {
     
     @Before
     public void setUp() {
-        friend = new Friend("1", 2, 1.5, new AppVector(1, 2, 3));
+        //friend = new Friend("1", 2, 1.5, new AppVector(1, 2, 3));
     }
     
     @After
@@ -45,7 +45,7 @@ public class FriendTest {
         assertTrue(friend.idProperty().get().equals("1"));
         assertTrue(friend.confidenceProperty().get() == 2);
         assertTrue(friend.relevanceProperty().get() == 1.5);
-        assertTrue(friend.getVector().equals(new AppVector(1, 2, 3)));
+       // assertTrue(friend.getVector().equals(new AppVector(1, 2, 3)));
     }
     
     @Test

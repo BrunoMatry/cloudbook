@@ -21,11 +21,16 @@ public class AppVector implements Information {
     protected transient IntegerProperty performance;
     protected transient IntegerProperty speed;
 
+    /**
+     * Constructor
+     * The type, performance and speed are generated randomly in this implementation
+     * @param mes mesures on which should be calculated the vector
+     */
     public AppVector(InformationBox<Mesure> mes) {     
-        mesures = mes;  
-        appType = new SimpleIntegerProperty();
-        performance = new SimpleIntegerProperty();
-        speed = new SimpleIntegerProperty();
+        mesures = mes;
+        appType = new SimpleIntegerProperty(0);
+        performance = new SimpleIntegerProperty(0);
+        speed = new SimpleIntegerProperty(0);
         recalculateVector();
     }
     
@@ -99,8 +104,14 @@ public class AppVector implements Information {
             totalM2 += m.mesure2Property().get();
             totalM3 += m.mesure3Property().get();
         }
-        appType.set((totalM1+totalM2+totalM3)/lastMesures.size());
-        performance.set(totalM2/lastMesures.size());
-        speed.set(totalM3/lastMesures.size());
+        if(lastMesures == null || lastMesures.isEmpty()) {
+            appType.set((totalM1+totalM2+totalM3));
+            performance.set(totalM2);
+            speed.set(totalM3);
+        } else {
+            appType.set((totalM1+totalM2+totalM3)/lastMesures.size());
+            performance.set(totalM2/lastMesures.size());
+            speed.set(totalM3/lastMesures.size());
+        }
     }
 }
