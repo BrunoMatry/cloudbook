@@ -44,4 +44,18 @@ public class Member implements Sender {
     public AppVector getVector() {
         return vector;
     }
+    
+    /**
+     * Saves vector properties
+     */
+    public void beforeSerialization() {
+        vector.saveProperties();
+    }
+    
+    /**
+     * Restores vector properties
+     */
+    public void afterDeserialization() {
+        vector.restoreProperties();
+    }
 }

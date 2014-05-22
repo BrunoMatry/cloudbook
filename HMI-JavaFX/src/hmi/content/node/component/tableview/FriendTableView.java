@@ -30,7 +30,7 @@ public class FriendTableView extends StandardizedTable<Friend> {
         idCol = buildColumn("Id", "id", 4);
         relevanceCol = buildColumn("Relevance", "relevance", 4);
         confidenceCol = buildColumn("Confidence", "confidence", 4);
-        lastConnectionCol = buildColumn("Date of last connection", "lastConnection", 4);
+        lastConnectionCol = buildColumnBasedOnToString("Date of last connection", "lastConnection", 4, Date.class);
         getColumns().addAll(idCol, relevanceCol, confidenceCol, lastConnectionCol);
     }
     

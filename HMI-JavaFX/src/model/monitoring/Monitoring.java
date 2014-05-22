@@ -32,9 +32,7 @@ public class Monitoring extends Thread implements IMonitoring {
     }
 
     /**
-     * Sends generated information on the network.
-     * Completes the logs.
-     * !!!!!!! This method does not do that : it push information on the current node !
+     * Pushes information on the current node
      */
     @Override
     public synchronized void pushInformation() {
@@ -42,18 +40,6 @@ public class Monitoring extends Thread implements IMonitoring {
         engine.getNode().addMesures(mesures);
         mesures.clear();
         
-        // JE CROYAIS QUE LE MONITORING NE COMMUNIQUAIT PAS DIRECTEMENT AVEC LE NETWORK !!!!
-        /*
-        String content = logs.get();
-        RemoteClient network = engine.getNetwork();
-        content += "I sent " + this.mesures.size() + " informations to my friends :\n";
-        for(Information info : this.mesures) {
-            content += info + "\n";
-        }
-        content += '\n';
-        this.mesures.clear();
-        logs.set(content);
-        */
     }
     
     /**

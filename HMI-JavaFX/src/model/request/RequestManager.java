@@ -12,7 +12,6 @@ import model.friendmanager.FriendManager;
 import model.friendmanager.IFriendManager;
 import model.network.interfaces.Information;
 import model.node.Message;
-import model.node.Mesure;
 import model.node.friend.Member;
 
 public class RequestManager implements IRequestManager {
@@ -50,7 +49,9 @@ public class RequestManager implements IRequestManager {
         
         //The friend manager must examine the sender to determine if it is a friend
         try {
-            friendManager.update((Member)req.getSender());
+            Member mem = (Member)req.getSender();
+            mem.afterDeserialization();
+            friendManager.update(mem);
         } catch (RemoteException ex) {
             Logger.getLogger(RequestManager.class.getName()).log(Level.SEVERE, null, ex);
         }

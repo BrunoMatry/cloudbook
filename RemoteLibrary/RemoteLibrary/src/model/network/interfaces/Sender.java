@@ -6,9 +6,11 @@
 
 package model.network.interfaces;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Gwendal
  */
-public interface Sender {
+public interface Sender extends Serializable {
 }

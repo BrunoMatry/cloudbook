@@ -44,9 +44,10 @@ public abstract class StandardizedTable<E> extends TableView<E> {
      * @param name label of the column
      * @param propertyName name of the property which is bound to the column
      * @param columnCount number of columns
+     * @param clazz class of the reference type P
      * @return a column of name name, bound with the property propertyName and with intelligent size
      */
-    protected <P> TableColumn buildColumnBasedOnToString(String name, String propertyName, int columnCount) {
+    protected <P> TableColumn buildColumnBasedOnToString(String name, String propertyName, int columnCount, Class<P> clazz) {
         TableColumn column = buildColumn(name, propertyName, columnCount);
         column.setCellFactory(new Callback<TableColumn<E, P>, TableCell<E, P>>() {
 

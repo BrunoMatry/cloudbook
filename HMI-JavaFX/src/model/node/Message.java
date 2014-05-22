@@ -22,7 +22,7 @@ public class Message implements Information {
     protected AppVector vector;
     
     
-    protected ObjectProperty<Information> content;
+    protected transient ObjectProperty<Information> content;
     /**
      * Information stored in the message.
      * This information is one of the sender's
@@ -32,7 +32,7 @@ public class Message implements Information {
         return content;
     }
     
-    protected ObjectProperty<Date> date;
+    protected transient ObjectProperty<Date> date;
     /**
      * Date of generation of the message
      * @return date property
@@ -41,7 +41,7 @@ public class Message implements Information {
         return date;
     }
     
-    protected StringProperty idSender;
+    protected transient StringProperty idSender;
     /**
      * identifier of the sender
      * @return identifier property
@@ -50,7 +50,7 @@ public class Message implements Information {
         return idSender;
     }
     
-    protected BooleanProperty relevant;
+    protected transient BooleanProperty relevant;
     /**
      * indicates if the sender is relevant or not
      * @return relevant property

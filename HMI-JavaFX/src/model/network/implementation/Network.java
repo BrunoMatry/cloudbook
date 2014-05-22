@@ -18,6 +18,7 @@ import model.network.interfaces.Information;
 import model.network.interfaces.RemoteClient;
 import model.network.interfaces.RemoteServer;
 import model.network.interfaces.Sendable;
+import model.node.friend.Member;
 
 /**
  * 
@@ -57,6 +58,8 @@ public class Network extends UnicastRemoteObject implements RemoteClient {
         Information info = request.getInfo();
         if(info != null)
             info.saveProperties();
+        Member mem = (Member)request.getSender();
+        mem.beforeSerialization();
         stub.send(request, receiver);
     }
 

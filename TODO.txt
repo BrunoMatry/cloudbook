@@ -1,8 +1,7 @@
 Gwendal
-Communication des messages et friends et autres
-	gérer la création et envoi des requêtes par l'engine
-	gérer reception et traitement des requêtes pour mettre à jour messages, friends et state
-utiliser friendmanager pour cibler l'envoi (broadcast si pas d'amis)
+finaliser (corrections des bugs restants, compléter l'affichage et le calcul)
+tests unitaires
+propreté du code
 
 Bruno
 Peaufiner interface graphique

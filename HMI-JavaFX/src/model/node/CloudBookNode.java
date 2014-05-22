@@ -237,6 +237,7 @@ public class CloudBookNode implements Serializable {
             info.saveProperties();
         mesures.saveProperties();
         messages.saveProperties();
+        vector.saveProperties();
         for(State s : states)
             s.saveProperties();
         ObservableFileList.INSTANCE.add(this, name.get() + ".ser");
@@ -254,6 +255,7 @@ public class CloudBookNode implements Serializable {
         for(State s : res.states)
             s.restoreProperties();
         res.logo = new SimpleObjectProperty<>(res._logo);
+        res.vector.restoreProperties();
         res.engine = new Engine(res);
         return res;
     }
