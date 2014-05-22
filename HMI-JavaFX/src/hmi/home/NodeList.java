@@ -123,7 +123,8 @@ public final class NodeList extends HomeActivity {
                 String extName = file.getName();
                 if(extName.endsWith(".ser")) {
                     CloudBookNode node = CloudBookNode.load(extName);
-                    ApplicationList.INSTANCE.add(node);
+                    if(!ApplicationList.INSTANCE.contains(node))
+                        ApplicationList.INSTANCE.add(node);
                     setUpRegistry(node);
                 } 
             }

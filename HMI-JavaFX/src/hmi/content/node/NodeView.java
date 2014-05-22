@@ -133,10 +133,12 @@ public final class NodeView extends OneNodeActivity {
      */
     public SummarizedView getMessage() {
         if(message == null) {
+            messagePane = new MessagePane(this);
             TableView<Message> table = messagePane.getTable();
             CloudBookNode node = ApplicationList.INSTANCE.getCurrentNode();
-            ObservableList<Message> messageList = node.getFriends().boxObservableList();
+            ObservableList<Message> messageList = node.getMessages().boxObservableList();
             table.setItems(messageList);
+            message = messagePane.makeSummarized();
         }
         return message;
     }

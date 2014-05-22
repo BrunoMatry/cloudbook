@@ -64,7 +64,6 @@ public class CloudBuilder {
                 Integer.parseInt(serverPort.get()),
                 Integer.parseInt(nodePort.get()),
                 0, 0, 0);
-        ApplicationList.INSTANCE.add(cbn);
         return cbn;
     }
     
