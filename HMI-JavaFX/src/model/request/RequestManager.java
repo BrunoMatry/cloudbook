@@ -1,5 +1,6 @@
 package model.request;
 
+import java.net.UnknownHostException;
 import model.network.interfaces.Sendable;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
@@ -69,9 +70,14 @@ public class RequestManager implements IRequestManager {
     }
 
     @Override
-    public Request createRequest(String target, Information data) {
-        
-        return null;
+    public Request createRequest(Information data) {
+        Request req = null;
+        try {
+            req = new Request(data, this);
+        } catch (RemoteException | UnknownHostException ex) {
+            Logger.getLogger(RequestManager.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return req;
     }
 
     public IFriendManager getFriendManager() {

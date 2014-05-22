@@ -14,6 +14,6 @@ import model.network.interfaces.Information;
  * @author Bruno
  */
 public interface IRequestManager {
-    Request createRequest(String target, Information data);
+    Request createRequest(Information data);
     void handleRequest(Sendable req);
 }

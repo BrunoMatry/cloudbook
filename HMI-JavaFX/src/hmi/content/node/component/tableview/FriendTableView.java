@@ -17,7 +17,7 @@ import model.node.friend.Friend;
 public class FriendTableView extends StandardizedTable<Friend> {
     
     //columns corresponding to the friend properties
-    protected TableColumn<Friend, Integer> idCol;
+    protected TableColumn<Friend, String> idCol;
     protected TableColumn<Friend, Double> relevanceCol;
     protected TableColumn<Friend, Integer> confidenceCol;
     protected TableColumn<Friend, Date> lastConnectionCol;
