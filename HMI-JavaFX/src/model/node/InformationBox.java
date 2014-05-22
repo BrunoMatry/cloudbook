@@ -127,7 +127,10 @@ public class InformationBox<T extends Information> implements Information, Itera
      */
     public ArrayList<T> getLastValues(int nb) {
         ArrayList<T> tab = new ArrayList<>();
-        for(int i = (box.size() - nb) ; i < box.size() ; i++) {
+        int start = box.size() - nb;
+        if(start < 0)
+            start = 0;
+        for(int i = start ; i < box.size() ; i++) {
             tab.add(box.get(i));
         }
         return tab;

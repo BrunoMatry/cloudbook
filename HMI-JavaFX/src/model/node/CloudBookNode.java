@@ -74,7 +74,7 @@ public class CloudBookNode implements Serializable {
         states = new Stack<>();
         mesures = new InformationBox<>();
         messages = new InformationBox<>();    
-        vector = new AppVector(0,0,0);
+        vector = new AppVector(mesures);
         
         name = new SimpleStringProperty();
         logo = new SimpleObjectProperty<>();
@@ -104,7 +104,7 @@ public class CloudBookNode implements Serializable {
         states = new Stack<>();
         mesures = new InformationBox<>();
         messages = new InformationBox<>();
-        vector = new AppVector(appType, performance, speed);
+        vector = new AppVector(mesures);
         
         name = new SimpleStringProperty(string);
         logo = new SimpleObjectProperty<>(image);
@@ -180,11 +180,6 @@ public class CloudBookNode implements Serializable {
     public StringProperty nameProperty() { return name; }
     public ObjectProperty<Image> logoProperty() { return logo; }
     public ObjectProperty<Image> platformProperty() { return platform.iconProperty(); }
-    
-    
-    public void setVector(int appType, int performance, int speed) { 
-        vector = new AppVector(appType, performance, speed);
-    }
     
     /* ATTENTION ! Mauvaise pratique ! */
     public void setInformations(List<Information> informations) { this.informations = informations; }

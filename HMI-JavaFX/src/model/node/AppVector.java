@@ -1,5 +1,6 @@
 package model.node;
 
+import java.util.ArrayList;
 import java.util.Objects;
 import model.network.interfaces.Information;
 import javafx.beans.property.IntegerProperty;
@@ -7,20 +8,25 @@ import javafx.beans.property.SimpleIntegerProperty;
 
 public class AppVector implements Information {
     
+    private final static int nbMesuresForCalcul = 20;
+    
     /* Attributs serialisables */
     protected int _appType;
     protected int _performance;
     protected int _speed;
+    protected InformationBox<Mesure> mesures;
     
     /* Proprietes non serialisables */
     protected transient IntegerProperty appType; 
     protected transient IntegerProperty performance;
     protected transient IntegerProperty speed;
-    
-    public AppVector(int appTyp, int perf, int spd) {
-        appType = new SimpleIntegerProperty(appTyp);
-        performance = new SimpleIntegerProperty(perf);
-        speed = new SimpleIntegerProperty(spd);
+
+    public AppVector(InformationBox<Mesure> mes) {     
+        mesures = mes;  
+        appType = new SimpleIntegerProperty();
+        performance = new SimpleIntegerProperty();
+        speed = new SimpleIntegerProperty();
+        calculateVector();
     }
     
     /**
@@ -40,7 +46,7 @@ public class AppVector implements Information {
     }
     
     public AppVector copy(){
-        return new AppVector(this.appType.get(), this.performance.get(), this.speed.get());
+        return new AppVector(mesures);
     }
     
     public IntegerProperty appTypeProperty() { return appType; }
@@ -81,5 +87,15 @@ public class AppVector implements Information {
     @Override
     public String toString() {
         return "AppVector{" + "appType=" + appType + ", performance=" + performance + ", speed=" + speed + '}';
+    }
+
+    private void calculateVector() {
+        ArrayList<Mesure> lastMesures = mesures.getLastValues(nbMesuresForCalcul);
+        for(Mesure m : lastMesures) {
+
+        }
+        appType.set(0);
+        performance.set(0);
+        speed.set(0);
     }
 }
