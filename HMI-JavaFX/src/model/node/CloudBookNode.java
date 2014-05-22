@@ -7,6 +7,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
+import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
@@ -215,6 +216,17 @@ public class CloudBookNode implements Serializable {
             currentState.notCurrentAnymore();
             states.push(new State(c));
         }    
+    }
+    
+    /**
+     * Computes the full identifier on the network
+     * @return identifier = "name@ip:port"
+     * @throws java.net.UnknownHostException
+     */
+    public String getMemberId() throws UnknownHostException {
+        return name.get() + "@"
+                + InetAddress.getLocalHost().getHostAddress().toString()
+                + ":" + nodePort;
     }
     
     public void save() throws IOException {

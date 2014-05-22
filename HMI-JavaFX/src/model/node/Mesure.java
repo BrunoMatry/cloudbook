@@ -6,6 +6,7 @@ import java.util.Objects;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.image.Image;
@@ -27,6 +28,18 @@ public final class Mesure implements Information {
     protected transient IntegerProperty mesure1; 
     protected transient IntegerProperty mesure2;
     protected transient IntegerProperty mesure3;
+    
+    /**
+     * Constructor
+     */
+    public Mesure() {
+        applicationName = new SimpleStringProperty();
+        platformLogo = new SimpleObjectProperty<>();
+        date = new SimpleStringProperty();
+        mesure1 = new SimpleIntegerProperty(0);
+        mesure2 = new SimpleIntegerProperty(0);
+        mesure3 = new SimpleIntegerProperty(0);
+    }
     
     /**
      * Constructor

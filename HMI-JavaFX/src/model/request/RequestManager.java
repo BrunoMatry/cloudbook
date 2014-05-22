@@ -81,7 +81,7 @@ public class RequestManager implements IRequestManager {
     }
     
     @Override
-    public List<Request> createRequests(List<Information> l) {
+    public <I extends Information> List<Request> createRequests(List<I> l) {
         ArrayList<Request> res = new ArrayList<>();
         for(Information i : l)
             res.add(createRequest(i));

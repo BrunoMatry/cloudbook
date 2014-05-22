@@ -20,6 +20,9 @@ import model.request.IRequestManager;
 import model.node.CloudBookNode;
 import model.request.RequestManager;
 import model.network.interfaces.Sendable;
+import model.node.AppVector;
+import model.node.Message;
+import model.node.friend.Friend;
 import model.request.Request;
 
 /**
@@ -90,7 +93,7 @@ public class Engine extends Thread implements IEngine {
                 sleep(TIME);
                 updateInformation();
                 shareLastMesures(3);
-            } catch (InterruptedException ex) {
+            } catch (    InterruptedException | UnknownHostException | RemoteException ex) {
                 Logger.getLogger(Engine.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
@@ -125,22 +128,67 @@ public class Engine extends Thread implements IEngine {
         monitoring.pushInformation();
     }
 
-    protected void shareLastMesures(int nb) {
+    protected void shareLastMesures(int nb) throws UnknownHostException, RemoteException {
         // Get the last mesures from the node
         ArrayList<Information> mesures = node.getMesures().getLastValues(nb);
         
-        // Creating requests
-        List<Request> requests = requestManager.createRequests(mesures);
+        //generation of corresponding messages
+        List<Message> messages = makeMessages(mesures);
         
-        try {
-            // Send requests            
-            for(Request r : requests)
-                network.broadcast(r);
-        } catch (RemoteException ex) {
-            Logger.getLogger(Engine.class.getName()).log(Level.SEVERE, null, ex);
+        // Creating requests
+        List<Request> requests = requestManager.createRequests(messages);
+        
+        //Retriving of all members to which the request is to be sent
+        List<Friend> friends = friendManager.getRelevantFriends(3);
+        
+        if(friends == null || friends.isEmpty())
+            broadcast(requests);
+        else
+            send(requests, friends);
+    }
+    
+    /**
+     * Generates a list of messages containing the specified information
+     * @param informationList list of information to be sent
+     * @return list of messages containing the specified information
+     * @throws java.net.UnknownHostException
+     */
+    public List<Message> makeMessages(List<Information> informationList) throws UnknownHostException {
+        List<Message> res = new ArrayList<>();
+        String id = node.getMemberId();
+        AppVector vector = node.getVector();
+        for(Information info : informationList) {
+            Message msg = new Message(id, vector, info, true);
+            res.add(msg);
         }
+        return res;
     }
 
+    /**
+     * Sends some requests to some friends
+     * @param requests requests to be sent
+     * @param friends friends to which the requests are to be sent
+     * @throws RemoteException required for RMI
+     */
+    public void send(List<Request> requests, List<Friend> friends) throws RemoteException {
+        for(Friend f : friends) {
+            String[] temp = f.getId().split("@");
+            String target = temp[1];
+            for(Request req : requests)
+                network.send(req, target);
+        }
+    }
+    
+    /**
+     * Sends a list of requests to all the members of the network
+     * @param requests list of requests to be broadcasted
+     * @throws RemoteException required for RMI
+     */
+    public void broadcast(List<Request> requests) throws RemoteException {
+        for(Request req : requests)
+            network.broadcast(req);
+    }
+    
     /**
      * Getter
      * @return stopFlag field

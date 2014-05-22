@@ -4,18 +4,18 @@ import model.network.interfaces.Information;
 import java.util.Date;
 import java.util.Objects;
 import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 public class Message implements Information {
     
     //private attributes which purpose is to save and restore properties values
     private Information _content;
     private Date _date;
-    private int _idSender;
+    private String _idSender;
     private boolean _relevant;
     
     //vector of characteristics of the sender
@@ -41,12 +41,12 @@ public class Message implements Information {
         return date;
     }
     
-    protected IntegerProperty idSender;
+    protected StringProperty idSender;
     /**
      * identifier of the sender
      * @return identifier property
      */
-    public IntegerProperty idSenderProperty() {
+    public StringProperty idSenderProperty() {
         return idSender;
     }
     
@@ -59,10 +59,10 @@ public class Message implements Information {
         return relevant;
     }
     
-    public Message(int id, AppVector vect, Information ctnt, boolean rlvnt) throws NullPointerException {
+    public Message(String id, AppVector vect, Information ctnt, boolean rlvnt) throws NullPointerException {
         if(ctnt == null || vect == null)
             throw new NullPointerException();
-        idSender = new SimpleIntegerProperty(id);
+        idSender = new SimpleStringProperty(id);
         content = new SimpleObjectProperty<>(ctnt);
         vector = vect;
         date = new SimpleObjectProperty<>(new Date());
@@ -74,7 +74,7 @@ public class Message implements Information {
         return idSender + ", " + date + ", " + relevant + ", " + vector;
     }
     
-    public int getIdSender() { return idSender.get(); }
+    public String getIdSender() { return idSender.get(); }
     public Information getContent() { return content.get(); }
     public Date getDate() { return new Date(date.get().getTime()); }
     public AppVector getVector() { return vector.copy(); }
@@ -98,7 +98,7 @@ public class Message implements Information {
      */
     @Override
     public void restoreProperties() {
-        idSender = new SimpleIntegerProperty(_idSender);
+        idSender = new SimpleStringProperty(_idSender);
         date = new SimpleObjectProperty<>(_date);
         relevant = new SimpleBooleanProperty(_relevant);
         _content.restoreProperties();
@@ -123,7 +123,7 @@ public class Message implements Information {
         if (!Objects.equals(this.content, other.content)) {
             return false;
         }
-        if (this.idSender != other.idSender) {
+        if (this.idSender.equals(other.idSender)) {
             return false;
         }
         if (!this.date.equals(other.date)) {

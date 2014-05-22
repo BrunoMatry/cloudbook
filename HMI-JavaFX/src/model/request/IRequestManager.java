@@ -7,6 +7,6 @@ import model.network.interfaces.Information;
 public interface IRequestManager {
     
     Request createRequest(Information data);
-    List<Request> createRequests(List<Information> l);
+    <I extends Information> List<Request> createRequests(List<I> l);
     void handleRequest(Sendable req);
 }
