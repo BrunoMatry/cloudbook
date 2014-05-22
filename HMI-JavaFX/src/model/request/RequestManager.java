@@ -13,6 +13,7 @@ import model.friendmanager.IFriendManager;
 import model.network.interfaces.Information;
 import model.node.Message;
 import model.node.Mesure;
+import model.node.friend.Member;
 
 public class RequestManager implements IRequestManager {
     
@@ -42,27 +43,24 @@ public class RequestManager implements IRequestManager {
 
     /**
      * Handling of a received request
-     * @param req   request which has been received
+     * @param req request which has been received
      */
     @Override
     public synchronized void handleRequest(Sendable req) {
-        /*
+        
+        //The friend manager must examine the sender to determine if it is a friend
         try {
-        friendManager.update(req.getSender());
+            friendManager.update((Member)req.getSender());
         } catch (RemoteException ex) {
-        Logger.getLogger(RequestManager.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
+            Logger.getLogger(RequestManager.class.getName()).log(Level.SEVERE, null, ex);
+        }
         try {
             Information info = req.getInfo();
             if(info.getClass() == Message.class) {
                 Message msg = (Message)info;
                 msg.restoreProperties();
                 engine.getNode().addMessage(msg);
-            } else if(info.getClass() == Mesure.class) {
-                Mesure mes = (Mesure)info;
-                mes.restoreProperties();
-                engine.getNode().addMesure(mes);
-            }
+            } //the request must contain a message. In the opposite case, the request is ignored
         } catch (RemoteException ex) {
             Logger.getLogger(RequestManager.class.getName()).log(Level.SEVERE, null, ex);
         }
