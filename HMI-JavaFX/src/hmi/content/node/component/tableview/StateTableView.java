@@ -6,6 +6,8 @@
 
 package hmi.content.node.component.tableview;
 
+import java.util.Date;
+import javafx.scene.control.TableColumn;
 import model.node.State;
 
 /**
@@ -14,4 +16,12 @@ import model.node.State;
  */
 public class StateTableView extends StandardizedTable<State> {
     
+    protected TableColumn<State, Integer> cloudCol;
+    protected TableColumn<State, Date> fromCol;
+    protected TableColumn<State, Date> toCol;
+    protected TableColumn<State, Boolean> currentCol;
+    
+    public StateTableView() {
+        currentCol = buildColumn("Current ?", "current", 4);
+    }
 }
