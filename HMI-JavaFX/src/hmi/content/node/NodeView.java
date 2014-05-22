@@ -3,7 +3,7 @@ package hmi.content.node;
 import hmi.content.AActivity;
 import hmi.content.OneNodeActivity;
 import hmi.content.node.component.FriendPane;
-import hmi.content.node.component.MessageView;
+import hmi.content.node.component.MessagePane;
 import hmi.content.node.component.MesurePane;
 import hmi.content.node.component.StateView;
 import hmi.home.NodeList;
@@ -18,6 +18,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import model.node.ApplicationList;
 import model.node.CloudBookNode;
+import model.node.Message;
 import model.node.Mesure;
 import model.node.friend.Friend;
 
@@ -34,6 +35,9 @@ public final class NodeView extends OneNodeActivity {
     
     //view containing all the friends of the current node
     private FriendPane friendPane;
+    
+    //view containing all the messages received by the current node
+    private MessagePane messagePane;
     
     //summary of the state of application
     private SummarizedView<ImageView> state;
@@ -129,10 +133,10 @@ public final class NodeView extends OneNodeActivity {
      */
     public SummarizedView getMessage() {
         if(message == null) {
-            //TableView<Friend> table = friendPane.getTable();
+            TableView<Message> table = messagePane.getTable();
             CloudBookNode node = ApplicationList.INSTANCE.getCurrentNode();
-            ObservableList<Friend> friendList = node.getFriends().boxObservableList();
-            //table.setItems(friendList);
+            ObservableList<Message> messageList = node.getFriends().boxObservableList();
+            table.setItems(messageList);
         }
         return message;
     }
