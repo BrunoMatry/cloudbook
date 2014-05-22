@@ -24,7 +24,7 @@ public class Request<Inf extends Information> extends UnicastRemoteObject implem
      * @throws java.rmi.RemoteException
      */
     public Request() throws RemoteException {
-        
+        // ??????????? Why ?
     }
     
     /**

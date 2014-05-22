@@ -69,20 +69,6 @@ public class Monitoring extends Thread implements IMonitoring {
             } catch (InterruptedException ex) {
                 Logger.getLogger(Monitoring.class.getName()).log(Level.SEVERE, null, ex);
             }
-            /*
-            try {
-                
-                RemoteClient network = engine.getNetwork();
-                if(this.mesures.size() >= 3 && network.getStub() != null) {
-                    CE N'EST PAS A CETTE METHODE DE PRENDRE SES DECISIONS TOUTE SEULE !!!!!!
-                    pushInformation();
-                }
-                
-                
-            } catch (RemoteException ex) {
-                Logger.getLogger(Monitoring.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            */
         }
     }
 

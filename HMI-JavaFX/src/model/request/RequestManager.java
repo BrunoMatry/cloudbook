@@ -79,6 +79,14 @@ public class RequestManager implements IRequestManager {
         }
         return req;
     }
+    
+    @Override
+    public List<Request> createRequests(List<Information> l) {
+        ArrayList<Request> res = new ArrayList<>();
+        for(Information i : l)
+            res.add(createRequest(i));
+        return res;
+    }
 
     public IFriendManager getFriendManager() {
         return friendManager;
@@ -99,6 +107,5 @@ public class RequestManager implements IRequestManager {
      */
     public Engine getEngine() {
         return engine;
-    }
-    
+    }  
 }
