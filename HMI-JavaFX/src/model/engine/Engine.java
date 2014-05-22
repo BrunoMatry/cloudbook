@@ -20,7 +20,6 @@ import model.request.IRequestManager;
 import model.node.CloudBookNode;
 import model.request.RequestManager;
 import model.network.interfaces.Sendable;
-import model.node.Mesure;
 import model.request.Request;
 
 /**
