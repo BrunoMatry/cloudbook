@@ -87,7 +87,17 @@ public final class IconFlyWeight {
      */
     public Image getPlus() {
         if(plus == null)
-            plus = new Image("file:res/adder.png");
+            plus = new Image("file:res/add_button.png");
         return plus;
+    }
+    
+    public Image imDef() {
+        return new Image("file:res/add_button.png");
+    }
+    public Image imHov() {
+        return new Image("file:res/add_button_hover.png");
+    }
+    public Image imOClk() {
+        return new Image("file:res/add_button_onclick.png");
     }
 }

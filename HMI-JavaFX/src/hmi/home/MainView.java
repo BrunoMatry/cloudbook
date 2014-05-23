@@ -2,6 +2,7 @@ package hmi.home;
 
 import hmi.button.ConnectionButton;
 import hmi.button.IconFlyWeight;
+import hmi.button.MyBeautifulButton;
 import hmi.content.HomeActivity;
 import hmi.content.register.RegisterView;
 import java.io.File;
@@ -12,8 +13,6 @@ import java.util.Observable;
 import java.util.Observer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -25,7 +24,6 @@ import model.engine.Engine;
 import model.network.implementation.Network;
 import model.node.ApplicationList;
 import model.node.MyNode;
-import model.node.NodeBuilder;
 
 /**
  * Show the list of all the nodes registered on this computer
@@ -36,7 +34,7 @@ public final class MainView extends HomeActivity {
     public static final MainView INSTANCE = new MainView();
     
     protected SaveGroup saveGroup; //list of saved files
-    protected Button addButton; //button allowing to add a node
+    protected MyBeautifulButton addButton; //button allowing to add a node
     protected RegisterView registerView; //child view used to add nodes on this computer
     
     /**
@@ -53,12 +51,17 @@ public final class MainView extends HomeActivity {
         }
         setUpAdderButton();
         setCenter(saveGroup);
-        setBottom(addButton);
+        //setBottom(addButton);
+        
     }
     
     private void setUpAdderButton() {
-        Image plus = IconFlyWeight.INSTANCE.getPlus();
-        ImageView iv = new ImageView(plus);
+        ImageView iv = new ImageView(IconFlyWeight.INSTANCE.getPlus());
+        
+        addButton = new MyBeautifulButton(IconFlyWeight.INSTANCE.imDef(),
+                                          IconFlyWeight.INSTANCE.imHov(),
+                                          IconFlyWeight.INSTANCE.imOClk());
+        /*
         this.addButton = new Button();
         this.addButton.setGraphic(iv);
         this.addButton.setOnAction(new EventHandler<ActionEvent>() {
@@ -77,7 +80,7 @@ public final class MainView extends HomeActivity {
             }
         
         });
-        this.addButton.setAlignment(Pos.BOTTOM_CENTER);
+        this.addButton.setAlignment(Pos.BOTTOM_CENTER);*/
     }
     
     /**
