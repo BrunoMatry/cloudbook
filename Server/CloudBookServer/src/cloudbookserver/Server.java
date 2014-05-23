@@ -60,16 +60,22 @@ public class Server extends UnicastRemoteObject implements RemoteServer {
 
     @Override
     public void connect(RemoteClient rc) throws RemoteException {
-        if(!clients.containsValue(rc)) {
-            clients.put(rc.getId(), rc);
-            System.out.println("Client added : " + rc.getId());
+        String key = rc.getId();
+        if(!clients.containsKey(key)) {
+            clients.put(key, rc);
+            System.out.println("Client added : " + key);
+        } else {
+            System.out.println("Received a connection request from a yet connected client : " + key);
         }
     }
 
     @Override
     public void disconnect(RemoteClient rc) throws RemoteException {
-        if(clients.containsValue(rc))
-            clients.remove(rc.getId());
+        String key = rc.getId();
+        if(clients.containsKey(key)) {
+            clients.remove(key);
+            System.out.println("Client disconnected : " + key);
+        }
     }
 
     @Override
@@ -115,9 +121,9 @@ public class Server extends UnicastRemoteObject implements RemoteServer {
      */
     @Override
     public void broadcast(Sendable request) throws RemoteException {
-        RemoteClient from = request.getClient();
+        String from = request.getClient().getId();
         for(String client : clients.keySet()) {
-            if(!clients.get(client).equals(from))
+            if(!client.equals(from))
                 send(request, client);
         }
     }

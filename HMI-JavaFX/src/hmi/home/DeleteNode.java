@@ -4,6 +4,7 @@ import hmi.button.IconFlyWeight;
 import java.io.File;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import model.node.ApplicationList;
 
 /**
  * command
@@ -18,6 +19,7 @@ public class DeleteNode extends RegistryButton {
         super();
         Image trash = IconFlyWeight.INSTANCE.getTrash();
         ImageView iv = new ImageView(trash);
+        setGraphic(iv);
     }
     
     /**
@@ -38,6 +40,7 @@ public class DeleteNode extends RegistryButton {
     public void execute() {
         File saveFile = new File(node + ".ser");
         ObservableFileList.INSTANCE.remove(saveFile);
+        ApplicationList.INSTANCE.removeByName(node);
     }
     
 }

@@ -57,9 +57,11 @@ public final class ObservableFileList extends Observable {
      * @throws IOException in case of problem with serialization
      */
     public void add(Object o, String fileName) throws IOException {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileName))) {
+        FileOutputStream fos = new FileOutputStream(fileName);
+        try (ObjectOutputStream oos = new ObjectOutputStream(fos)) {
             oos.writeObject(o);
             oos.flush();
+            oos.close();
         }
         File toBeAdded = new File(fileName);
         boolean found = false;
@@ -74,6 +76,8 @@ public final class ObservableFileList extends Observable {
             setChanged();
             notifyObservers();
         }
+        fos.flush();
+        fos.close();
     }
     
     /**

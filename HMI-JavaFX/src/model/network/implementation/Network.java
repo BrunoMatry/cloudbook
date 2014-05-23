@@ -112,6 +112,7 @@ public class Network extends UnicastRemoteObject implements RemoteClient {
         Information info = request.getInfo();
         if(info != null)
             info.saveProperties();
+        request.setClient(this);
         stub.broadcast(request);
     }
 
