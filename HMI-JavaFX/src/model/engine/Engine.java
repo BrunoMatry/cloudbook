@@ -110,7 +110,11 @@ public class Engine extends Thread implements IEngine {
     
     @Override
     public void save() throws IOException {
-        node.save();
+        try {
+            node.save();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Engine.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override

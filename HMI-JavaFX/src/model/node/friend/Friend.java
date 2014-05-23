@@ -23,6 +23,7 @@ public class Friend extends Member implements Information {
     protected transient DoubleProperty relevance;
     protected transient IntegerProperty confidence;
     protected transient ObjectProperty<Date> lastConnection;
+    protected transient ObjectProperty<AppVector> appVector;
     
     /**
      * Constructor
@@ -40,6 +41,7 @@ public class Friend extends Member implements Information {
         relevance = new RelevanceProperty(this, rlvnce);
         confidence = new ConfidenceProperty(this, cnfdnce);
         lastConnection = new SimpleObjectProperty<>(new Date());
+        appVector = new SimpleObjectProperty<>(vector);
     }
 
     @Override
@@ -52,7 +54,7 @@ public class Friend extends Member implements Information {
      * @param vector vector attribute
      */
     public void setVector(AppVector vector) {
-        this.vector = vector;
+        this.appVector.set(vector);
         updateLastConnectionDate();
     }
     
@@ -75,7 +77,7 @@ public class Friend extends Member implements Information {
     
     public StringProperty idProperty() { return id; }
     @Override
-    public AppVector getVector() { return vector; }
+    public AppVector getVector() { return appVector.get(); }
     public DoubleProperty relevanceProperty() { return relevance; }
     public IntegerProperty confidenceProperty() { return confidence; }
     public ObjectProperty lastConnectionProperty() { return lastConnection; }
@@ -86,6 +88,7 @@ public class Friend extends Member implements Information {
         _relevance =  relevance.get();
         _confidence = confidence.get();
         _lastConnection = lastConnection.get();
+        vector = appVector.get();
     }
 
     @Override
@@ -94,6 +97,7 @@ public class Friend extends Member implements Information {
         relevance = new RelevanceProperty(this, _relevance);
         confidence = new ConfidenceProperty(this, _confidence);
         lastConnection = new SimpleObjectProperty<>(_lastConnection);
+        appVector = new SimpleObjectProperty<>(vector);
     }
 
     /**
