@@ -43,5 +43,12 @@ public final class ApplicationList extends ArrayList<Engine> {
     public Engine getCurrentEngine() {
         return currentEngine;
     }
+
+    public boolean containsNode(MyNode node) {
+        for(Engine engine : this)
+            if(node.nameProperty().get().equals(engine.getNode().nameProperty().get()))
+                return true;
+        return false;
+    }
     
 }

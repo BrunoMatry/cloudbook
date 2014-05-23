@@ -21,6 +21,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import model.engine.Engine;
 import model.network.implementation.Network;
 import model.node.ApplicationList;
 import model.node.MyNode;
@@ -115,13 +116,17 @@ public final class MainView extends HomeActivity {
          * Set up the save registries
          */
         private void buildRegistries() throws IOException, ClassNotFoundException {
+            Engine tmpEngine;
+            MyNode node;
             for (File file : ObservableFileList.INSTANCE.getFiles()) {
                 String extName = file.getName();
                 if(extName.endsWith(".ser")) {
-                    MyNode node = MyNode.load(extName);
-                    if(!ApplicationList.INSTANCE.contains(node))
-                        ApplicationList.INSTANCE.add(node);
-                    setUpRegistry(node);
+                    node = MyNode.load(extName);
+                    tmpEngine = new Engine(node);
+                    if(!ApplicationList.INSTANCE.containsNode(node)) {
+                        ApplicationList.INSTANCE.add(tmpEngine);
+                    }
+                    setUpRegistry(tmpEngine);
                 } 
             }
         }
@@ -130,11 +135,11 @@ public final class MainView extends HomeActivity {
          * Add a radio button corresponding to the save of name name
          * @param name name of the corresponding save file
          */
-        private void setUpRegistry(final MyNode node) {
-            String name = node.nameProperty().get();
+        private void setUpRegistry(final Engine engine) {
+            String name = engine.getNode().nameProperty().get();
             BorderPane registry = new BorderPane();
             HBox box = new HBox();
-            Network network = (Network)node.getEngine().getNetwork();
+            Network network = (Network) engine.getNetwork();
             ConnectionButton connectionState = new ConnectionButton(network);
             Button launcher = new LoadNode(name);
             box.getChildren().addAll(connectionState, launcher);
