@@ -11,7 +11,6 @@ import java.net.UnknownHostException;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Stack;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -36,7 +35,7 @@ public class MyNode implements Serializable {
     
     protected InformationBox<Friend> friends;
     protected List<Information> informations;
-    protected Stack<State> states; //history of the cloud platforms
+    protected InformationBox<State> states; //history of the cloud platforms
     protected InformationBox<Mesure> mesures; //list of all the mesures
     protected InformationBox<Message> messages; //list of the received messages
     protected AppVector vector;
@@ -65,7 +64,7 @@ public class MyNode implements Serializable {
         
         friends = new InformationBox<>();
         informations = new ArrayList<>();
-        states = new Stack<>();
+        states = new InformationBox<>();
         mesures = new InformationBox<>();
         messages = new InformationBox<>();    
         vector = new AppVector(mesures);
@@ -95,7 +94,7 @@ public class MyNode implements Serializable {
         this.nodePort = nodePort;
         friends = new InformationBox<>();
         informations = new ArrayList<>();
-        states = new Stack<>();
+        states = new InformationBox<>();
         mesures = new InformationBox<>();
         messages = new InformationBox<>();
         vector = new AppVector(mesures);
@@ -194,10 +193,12 @@ public class MyNode implements Serializable {
      * @param c new cloud-platform
      */
     public void majCurrentState(Cloud c) {
-        State currentState = this.states.peek();
+        int lastIndex = this.states.size() - 1;
+        State currentState = this.states.get(lastIndex);
         if(!c.equals(currentState.getCloud())) {
             currentState.notCurrentAnymore();
             states.push(new State(c));
+            platform = c;
         }    
     }
     

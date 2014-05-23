@@ -5,6 +5,8 @@ import hmi.content.AbstractActivity;
 import hmi.content.Activity;
 import hmi.home.MainView;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
@@ -78,7 +80,7 @@ public class RegisterView extends Activity {
                             node.save();
                             Dialogs.showInformationDialog(Launcher.STAGE, "Success build", "OK");
                             MainView.INSTANCE.launch();
-                        } catch (IOException ex) {
+                        } catch (IOException | ClassNotFoundException ex) {
                             ex.printStackTrace();
                             Dialogs.showErrorDialog(Launcher.STAGE, "Error while building", "Error");
                         }
