@@ -55,8 +55,8 @@ public class NodeBuilder {
      * @return the built node
      * @throws IOException the state can't be saved
      */
-    public Node build() throws IOException {
-        Node cbn = new Node(logo.get(),
+    public MyNode build() throws IOException {
+        MyNode cbn = new MyNode(logo.get(),
                 name.get(),
                 platform.get(),
                 host.get(),

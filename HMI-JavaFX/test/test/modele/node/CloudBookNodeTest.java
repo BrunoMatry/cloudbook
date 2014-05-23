@@ -6,7 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import model.node.Node;
+import model.node.MyNode;
 import org.junit.After;
 import org.junit.AfterClass;
 import static org.junit.Assert.assertFalse;
@@ -19,7 +19,7 @@ import org.junit.Test;
 
 
 public class CloudBookNodeTest {
-    Node n1;
+    MyNode n1;
     
     public CloudBookNodeTest() {
     }
@@ -34,7 +34,7 @@ public class CloudBookNodeTest {
     
     @Before
     public void setUp() {
-        // n1 = new Node(new Image(), null, Cloud.GDRIVE, null, port, appType, performance, speed);
+        // n1 = new MyNode(new Image(), null, Cloud.GDRIVE, null, port, appType, performance, speed);
     }
     
     @After
@@ -49,7 +49,7 @@ public class CloudBookNodeTest {
             oos.flush();
             oos.close();
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream("test.serial"));
-            Node n2 = (Node) ois.readObject();
+            MyNode n2 = (MyNode) ois.readObject();
             ois.close();
             assertFalse(n1 == null);
             assertTrue(n2.equals(n2));

@@ -23,7 +23,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import model.network.implementation.Network;
 import model.node.ApplicationList;
-import model.node.Node;
+import model.node.MyNode;
 import model.node.NodeBuilder;
 
 /**
@@ -122,7 +122,7 @@ public final class NodeList extends HomeActivity {
             for (File file : ObservableFileList.INSTANCE.getFiles()) {
                 String extName = file.getName();
                 if(extName.endsWith(".ser")) {
-                    Node node = Node.load(extName);
+                    MyNode node = MyNode.load(extName);
                     if(!ApplicationList.INSTANCE.contains(node))
                         ApplicationList.INSTANCE.add(node);
                     setUpRegistry(node);
@@ -134,7 +134,7 @@ public final class NodeList extends HomeActivity {
          * Add a radio button corresponding to the save of name name
          * @param name name of the corresponding save file
          */
-        private void setUpRegistry(final Node node) {
+        private void setUpRegistry(final MyNode node) {
             String name = node.nameProperty().get();
             BorderPane registry = new BorderPane();
             HBox box = new HBox();

@@ -9,7 +9,7 @@ import java.util.Date;
 import model.network.interfaces.Information;
 import model.network.interfaces.Sender;
 import model.node.AppVector;
-import model.node.Node;
+import model.node.MyNode;
 import model.node.friend.Member;
 
 public class Request<Inf extends Information> extends UnicastRemoteObject implements Sendable {
@@ -37,7 +37,7 @@ public class Request<Inf extends Information> extends UnicastRemoteObject implem
     public Request(Inf inf, RequestManager manager) throws RemoteException, UnknownHostException {
         info = inf;
         date = new Date();
-        Node node = manager.getEngine().getNode();
+        MyNode node = manager.getEngine().getNode();
         AppVector senderVector = node.getVector();
         String id = node.nameProperty().get()
                 + "@" 

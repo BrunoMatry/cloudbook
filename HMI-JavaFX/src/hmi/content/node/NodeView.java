@@ -17,7 +17,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import model.node.ApplicationList;
-import model.node.Node;
+import model.node.MyNode;
 import model.node.Message;
 import model.node.Mesure;
 import model.node.friend.Friend;
@@ -101,7 +101,7 @@ public final class NodeView extends OneNodeActivity {
         if(friends == null) {
             friendPane = new FriendPane(this);
             TableView<Friend> table = friendPane.getTable();
-            Node node = ApplicationList.INSTANCE.getCurrentNode();
+            MyNode node = ApplicationList.INSTANCE.getCurrentNode();
             ObservableList<Friend> friendList = node.getFriends().boxObservableList();
             table.setItems(friendList);
             friends = friendPane.makeSummarized();
@@ -118,7 +118,7 @@ public final class NodeView extends OneNodeActivity {
         if(mesures == null) {
             mesurePane = new MesurePane(this);
             TableView<Mesure> table = mesurePane.getTable();
-            Node node = ApplicationList.INSTANCE.getCurrentNode();
+            MyNode node = ApplicationList.INSTANCE.getCurrentNode();
             ObservableList<Mesure> mesureList = node.getMesures().boxObservableList();
             table.setItems(mesureList);
             mesures = mesurePane.makeSummarized();
@@ -135,7 +135,7 @@ public final class NodeView extends OneNodeActivity {
         if(message == null) {
             messagePane = new MessagePane(this);
             TableView<Message> table = messagePane.getTable();
-            Node node = ApplicationList.INSTANCE.getCurrentNode();
+            MyNode node = ApplicationList.INSTANCE.getCurrentNode();
             ObservableList<Message> messageList = node.getMessages().boxObservableList();
             table.setItems(messageList);
             message = messagePane.makeSummarized();
@@ -148,7 +148,7 @@ public final class NodeView extends OneNodeActivity {
      * @param model : model of the current view
      */
     /*
-    public NodeView(Node model) {
+    public NodeView(MyNode model) {
         super();
         this.model = model;
         components = new ArrayList<>();
@@ -197,9 +197,8 @@ public final class NodeView extends OneNodeActivity {
     @Override
     public void bindWithNode() {
         super.bindWithNode();
-        Node node = ApplicationList.INSTANCE.getCurrentNode();
+        MyNode node = ApplicationList.INSTANCE.getCurrentNode();
         ObjectProperty<Image> stateView = state.getView().imageProperty();
         stateView.bind(node.getPlatform().iconProperty());
     }
-    
 }

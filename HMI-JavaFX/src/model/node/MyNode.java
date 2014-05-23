@@ -24,7 +24,7 @@ import model.network.interfaces.RemoteServer;
 /**
  * Representation of a node
  */
-public class Node implements Serializable {
+public class MyNode implements Serializable {
 
     /************************************** ATTRIBUTS **************************************/
     
@@ -65,7 +65,7 @@ public class Node implements Serializable {
     /**
      * default constructor
      */
-    public Node() {
+    public MyNode() {
         //topMessage = new Message();
         
         friends = new InformationBox<>();
@@ -93,7 +93,7 @@ public class Node implements Serializable {
      * @throws java.net.UnknownHostException
      * @throws java.rmi.RemoteException
      */
-    public Node(Image image, String string, Cloud cloud, String host, int serverPort, int nodePort, int appType, int performance, int speed) throws UnknownHostException, RemoteException {
+    public MyNode(Image image, String string, Cloud cloud, String host, int serverPort, int nodePort, int appType, int performance, int speed) throws UnknownHostException, RemoteException {
         platform = cloud;
         serverHost = host;
         this.serverPort = serverPort;
@@ -241,9 +241,9 @@ public class Node implements Serializable {
         ObservableFileList.INSTANCE.add(this, name.get() + ".ser");
     }
     
-    public static Node load(String fileName) throws IOException, ClassNotFoundException {
+    public static MyNode load(String fileName) throws IOException, ClassNotFoundException {
         ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileName));
-        Node res = (Node) ois.readObject();
+        MyNode res = (MyNode) ois.readObject();
         res.name = new SimpleStringProperty(res._name);
         res.friends.restoreProperties();
         for(Information info : res.informations)

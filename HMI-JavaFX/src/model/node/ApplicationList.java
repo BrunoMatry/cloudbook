@@ -6,12 +6,12 @@ import java.util.ArrayList;
  * Singleton
  * Contains all the engine which run in this JVM
  */
-public final class ApplicationList extends ArrayList<Node> {
+public final class ApplicationList extends ArrayList<MyNode> {
     
     public static final ApplicationList INSTANCE = new ApplicationList();
     
     //Current node selected by the user
-    private Node currentNode;
+    private MyNode currentNode;
     
     /**
      * Constructor
@@ -25,8 +25,8 @@ public final class ApplicationList extends ArrayList<Node> {
      * @param name name of the node to select
      * @return selected node
      */
-    public Node select(String name) {
-        for(Node node : this) {
+    public MyNode select(String name) {
+        for(MyNode node : this) {
             if(node.nameProperty().get().equals(name)) {
                 currentNode = node;
                 break;
@@ -39,7 +39,7 @@ public final class ApplicationList extends ArrayList<Node> {
      * Getter
      * @return get the current node
      */
-    public Node getCurrentNode() {
+    public MyNode getCurrentNode() {
         return currentNode;
     }
     

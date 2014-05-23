@@ -15,7 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Dialogs;
 import javafx.scene.image.Image;
 import model.node.Cloud;
-import model.node.Node;
+import model.node.MyNode;
 import model.node.NodeBuilder;
 
 /**
@@ -74,7 +74,7 @@ public class RegisterView extends Activity {
                     @Override
                     public void handle(ActionEvent t) {
                         try {
-                            Node node = builder.build();
+                            MyNode node = builder.build();
                             node.save();
                             Dialogs.showInformationDialog(Launcher.STAGE, "Success build", "OK");
                             NodeList.INSTANCE.launch();
