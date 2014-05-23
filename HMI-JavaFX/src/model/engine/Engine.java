@@ -27,7 +27,9 @@ import model.request.Request;
 
 public class Engine extends Thread implements IEngine {
     
-    private final static long TIME = 3000;
+    private final static long nbSecUpdate = 3;
+    private final static long nbSecSave = 20;
+    private final static long nbSecShare = 5;
     
     protected IRequestManager requestManager;
     protected IFriendManager friendManager;
@@ -79,13 +81,22 @@ public class Engine extends Thread implements IEngine {
             monitoring.start();
         }
         stopFlag = false;
+        int cpt = 0;
         while(!stopFlag) {
             try {
-                sleep(TIME);
-                updateInformation();
-                // Share 3 mesures with 3 friends
-                shareMesures(3, 3);
+                sleep(1000);
+                cpt++;
+                if(cpt % nbSecUpdate == 0)
+                    updateInformation();
+                if(cpt % nbSecShare == 0)
+                    shareMesures(3, 3);
+                if(cpt % nbSecSave == 0)
+                    save();
+                if(cpt >= Integer.MAX_VALUE)
+                    cpt = Integer.MIN_VALUE;
             } catch (InterruptedException | UnknownHostException | RemoteException ex) {
+                Logger.getLogger(Engine.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
                 Logger.getLogger(Engine.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
