@@ -16,7 +16,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
-import model.node.ApplicationList;
+import model.node.FileEngineRelation;
 import model.node.MyNode;
 import model.node.Message;
 import model.node.Mesure;
@@ -101,7 +101,7 @@ public final class NodeView extends OneNodeActivity {
         if(friends == null) {
             friendPane = new FriendPane(this);
             TableView<Friend> table = friendPane.getTable();
-            MyNode node = ApplicationList.INSTANCE.getCurrentEngine().getNode();
+            MyNode node = FileEngineRelation.INSTANCE.getCurrentEngine().getNode();
             ObservableList<Friend> friendList = node.getFriends().boxObservableList();
             table.setItems(friendList);
             friends = friendPane.makeSummarized();
@@ -118,7 +118,7 @@ public final class NodeView extends OneNodeActivity {
         if(mesures == null) {
             mesurePane = new MesurePane(this);
             TableView<Mesure> table = mesurePane.getTable();
-            MyNode node = ApplicationList.INSTANCE.getCurrentEngine().getNode();
+            MyNode node = FileEngineRelation.INSTANCE.getCurrentEngine().getNode();
             ObservableList<Mesure> mesureList = node.getMesures().boxObservableList();
             table.setItems(mesureList);
             mesures = mesurePane.makeSummarized();
@@ -135,7 +135,7 @@ public final class NodeView extends OneNodeActivity {
         if(message == null) {
             messagePane = new MessagePane(this);
             TableView<Message> table = messagePane.getTable();
-            MyNode node = ApplicationList.INSTANCE.getCurrentEngine().getNode();
+            MyNode node = FileEngineRelation.INSTANCE.getCurrentEngine().getNode();
             ObservableList<Message> messageList = node.getMessages().boxObservableList();
             table.setItems(messageList);
             message = messagePane.makeSummarized();
@@ -197,7 +197,7 @@ public final class NodeView extends OneNodeActivity {
     @Override
     public void bindWithNode() {
         super.bindWithNode();
-        MyNode node = ApplicationList.INSTANCE.getCurrentEngine().getNode();
+        MyNode node = FileEngineRelation.INSTANCE.getCurrentEngine().getNode();
         ObjectProperty<Image> stateView = state.getView().imageProperty();
         messagePane.bind(node);
         mesurePane.bind(node);

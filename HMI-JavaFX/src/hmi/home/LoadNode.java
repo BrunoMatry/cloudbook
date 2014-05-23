@@ -1,7 +1,7 @@
 package hmi.home;
 
 import hmi.content.node.NodeView;
-import model.node.ApplicationList;
+import model.node.FileEngineRelation;
 
 /**
  * command
@@ -27,7 +27,7 @@ public class LoadNode extends RegistryButton {
 
     @Override
     public void execute() {
-        ApplicationList.INSTANCE.select(node);
+        FileEngineRelation.INSTANCE.select(node);
         NodeView.INSTANCE.bindWithNode();
         NodeView.INSTANCE.launch();
     }

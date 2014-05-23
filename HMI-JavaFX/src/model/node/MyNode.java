@@ -1,7 +1,6 @@
 package model.node;
 
 import model.node.friend.Friend;
-import hmi.home.ObservableFileList;
 import model.network.interfaces.Information;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -51,9 +50,6 @@ public class MyNode implements Serializable {
     
     //port of the application
     protected int nodePort;
-    
-    //engine which run the node
-    //protected transient Engine engine;
     
     /* Proprietes non serialisables */
     protected transient StringProperty name;
@@ -216,7 +212,7 @@ public class MyNode implements Serializable {
                 + ":" + nodePort;
     }
     
-    public void save() throws IOException {
+    public void save() throws IOException, ClassNotFoundException {
         _name = name.get();
         _logo = logo.get();
         friends.saveProperties();
@@ -227,7 +223,7 @@ public class MyNode implements Serializable {
         vector.saveProperties();
         for(State s : states)
             s.saveProperties();
-        ObservableFileList.INSTANCE.add(this, name.get() + ".ser");
+        FileEngineRelation.INSTANCE.save(this, name.get() + ".ser");
     }
     
     public static MyNode load(String fileName) throws IOException, ClassNotFoundException {

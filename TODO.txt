@@ -1,5 +1,4 @@
 Gwendal
-problème du voyant
 Friends : affichage des vectors
 Server : à configurer une seule fois et à volonté => nouveau singleton dans l'application
 affichage vector aussi pour l'application courante
@@ -7,6 +6,7 @@ identifiants uniques pour le serveur
 problème du delete de fichiers
 tests unitaires
 propreté du code
+bug lors de la sauvegarde au clic sur la croix
 
 Bruno
 Peaufiner interface graphique

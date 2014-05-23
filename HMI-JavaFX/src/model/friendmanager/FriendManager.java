@@ -40,7 +40,6 @@ public class FriendManager implements IFriendManager {
         if(!isFriend(id) && relevant(vector)) {
             Friend friend = new Friend(id, 0, relevance(vector), vector);
             node.addFriend(friend); //indice de confiance initialiser à 0 lors de l'ajout d'un nouvel ami
-            System.out.println("Friend added : " + friend.toString());
             return true;
         }
         return false;

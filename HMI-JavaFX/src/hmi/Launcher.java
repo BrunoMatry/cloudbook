@@ -4,7 +4,7 @@ import hmi.home.MainView;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import model.engine.Engine;
-import model.node.ApplicationList;
+import model.node.FileEngineRelation;
 
 public class Launcher extends Application {
     
@@ -35,7 +35,7 @@ public class Launcher extends Application {
 
     @Override
     public void stop() throws Exception {
-        for(Engine engine : ApplicationList.INSTANCE)
+        for(Engine engine : FileEngineRelation.INSTANCE.values())
             engine.save();
         super.stop();
     }

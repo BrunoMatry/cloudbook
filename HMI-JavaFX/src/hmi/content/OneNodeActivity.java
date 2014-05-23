@@ -8,7 +8,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import model.engine.Engine;
 import model.network.implementation.Network;
-import model.node.ApplicationList;
+import model.node.FileEngineRelation;
 
 /**
  *
@@ -52,7 +52,7 @@ public class OneNodeActivity extends Activity {
      * Bind the view with the current node
      */
     public void bindWithNode() {
-        Engine engine = ApplicationList.INSTANCE.getCurrentEngine();
+        Engine engine = FileEngineRelation.INSTANCE.getCurrentEngine();
         name.textProperty().bind(engine.getNode().nameProperty());
         //logo.imageProperty().bind(node.logoProperty());
         Network network = (Network) engine.getNetwork();
