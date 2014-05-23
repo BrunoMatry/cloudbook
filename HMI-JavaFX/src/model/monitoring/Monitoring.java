@@ -11,6 +11,8 @@ import model.node.Mesure;
 
 public class Monitoring extends Thread implements IMonitoring {
     
+    private final static long TIME = 5000;
+    
     protected List<Mesure> mesures;
     protected Engine engine;
     protected boolean stopFlag;
@@ -20,8 +22,6 @@ public class Monitoring extends Thread implements IMonitoring {
     public final StringProperty logsProperty() {
         return logs;
     }
-    
-    private final static long TIME = 5000;
     
     public Monitoring(Engine engine) {
         this.mesures = new ArrayList<>();
@@ -34,10 +34,8 @@ public class Monitoring extends Thread implements IMonitoring {
      */
     @Override
     public synchronized void pushInformation() {
-        
         engine.getNode().addMesures(mesures);
-        mesures.clear();
-        
+        mesures.clear(); 
     }
     
     /**

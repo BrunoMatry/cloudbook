@@ -50,5 +50,4 @@ public final class ApplicationList extends ArrayList<Engine> {
                 return true;
         return false;
     }
-    
 }

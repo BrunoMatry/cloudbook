@@ -81,7 +81,7 @@ public class Engine extends Thread implements IEngine {
             monitoring.start();
         }
         stopFlag = false;
-        int cpt = 0;
+        int cpt = Integer.MIN_VALUE;
         while(!stopFlag) {
             try {
                 sleep(1000);
