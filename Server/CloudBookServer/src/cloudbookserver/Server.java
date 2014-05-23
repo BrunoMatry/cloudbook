@@ -115,10 +115,9 @@ public class Server extends UnicastRemoteObject implements RemoteServer {
      */
     @Override
     public void broadcast(Sendable request) throws RemoteException {
-        String[] temp = request.getSender().getId().split("@");
-        String id = temp[1];
+        RemoteClient from = request.getClient();
         for(String client : clients.keySet()) {
-            if(!client.equals(id))
+            if(!clients.get(client).equals(from))
                 send(request, client);
         }
     }
