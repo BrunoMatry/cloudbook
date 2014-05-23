@@ -3,8 +3,8 @@ package hmi;
 import hmi.home.NodeList;
 import javafx.application.Application;
 import javafx.stage.Stage;
+import model.engine.Engine;
 import model.node.ApplicationList;
-import model.node.MyNode;
 
 public class Launcher extends Application {
     
@@ -35,8 +35,8 @@ public class Launcher extends Application {
 
     @Override
     public void stop() throws Exception {
-        for(MyNode node : ApplicationList.INSTANCE)
-            node.save();
+        for(Engine engine : ApplicationList.INSTANCE)
+            engine.save();
         super.stop();
     }
 }

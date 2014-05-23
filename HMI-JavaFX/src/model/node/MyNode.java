@@ -54,7 +54,7 @@ public class MyNode implements Serializable {
     protected int nodePort;
     
     //engine which run the node
-    protected transient Engine engine;
+    //protected transient Engine engine;
     
     /* Proprietes non serialisables */
     protected transient StringProperty name;
@@ -109,7 +109,6 @@ public class MyNode implements Serializable {
         logo = new SimpleObjectProperty<>(image);
         
         states.push(new State(cloud));
-        engine = new Engine(this);
     }
     
     /**
@@ -181,16 +180,7 @@ public class MyNode implements Serializable {
     public final Cloud getPlatform() {
         return this.platform;
     }
-
-    /**
-     * Getter
-     * @return engine field
-     */
-    public final Engine getEngine() {
-        return engine;
-    }
-    
-    
+      
     /* Attention !*/ 
     //public StringProperty topMessageProperty() { return topMessage.descriptionProperty(); }
     public StringProperty topMesureProperty() { return topMesure.dateProperty(); }
@@ -254,7 +244,6 @@ public class MyNode implements Serializable {
             s.restoreProperties();
         res.logo = new SimpleObjectProperty<>(res._logo);
         res.vector.restoreProperties();
-        res.engine = new Engine(res);
         return res;
     }
 }

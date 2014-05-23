@@ -1,17 +1,18 @@
 package model.node;
 
 import java.util.ArrayList;
+import model.engine.Engine;
 
 /**
  * Singleton
  * Contains all the engine which run in this JVM
  */
-public final class ApplicationList extends ArrayList<MyNode> {
+public final class ApplicationList extends ArrayList<Engine> {
     
     public static final ApplicationList INSTANCE = new ApplicationList();
     
     //Current node selected by the user
-    private MyNode currentNode;
+    private Engine currentEngine;
     
     /**
      * Constructor
@@ -25,22 +26,22 @@ public final class ApplicationList extends ArrayList<MyNode> {
      * @param name name of the node to select
      * @return selected node
      */
-    public MyNode select(String name) {
-        for(MyNode node : this) {
-            if(node.nameProperty().get().equals(name)) {
-                currentNode = node;
+    public Engine select(String name) {
+        for(Engine engine : this) {
+            if(engine.getNode().nameProperty().get().equals(name)) {
+                currentEngine = engine;
                 break;
             }
         }
-        return currentNode;
+        return currentEngine;
     }
 
     /**
      * Getter
      * @return get the current node
      */
-    public MyNode getCurrentNode() {
-        return currentNode;
+    public Engine getCurrentEngine() {
+        return currentEngine;
     }
     
 }

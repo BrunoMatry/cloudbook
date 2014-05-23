@@ -101,7 +101,7 @@ public final class NodeView extends OneNodeActivity {
         if(friends == null) {
             friendPane = new FriendPane(this);
             TableView<Friend> table = friendPane.getTable();
-            MyNode node = ApplicationList.INSTANCE.getCurrentNode();
+            MyNode node = ApplicationList.INSTANCE.getCurrentEngine().getNode();
             ObservableList<Friend> friendList = node.getFriends().boxObservableList();
             table.setItems(friendList);
             friends = friendPane.makeSummarized();
@@ -118,7 +118,7 @@ public final class NodeView extends OneNodeActivity {
         if(mesures == null) {
             mesurePane = new MesurePane(this);
             TableView<Mesure> table = mesurePane.getTable();
-            MyNode node = ApplicationList.INSTANCE.getCurrentNode();
+            MyNode node = ApplicationList.INSTANCE.getCurrentEngine().getNode();
             ObservableList<Mesure> mesureList = node.getMesures().boxObservableList();
             table.setItems(mesureList);
             mesures = mesurePane.makeSummarized();
@@ -135,7 +135,7 @@ public final class NodeView extends OneNodeActivity {
         if(message == null) {
             messagePane = new MessagePane(this);
             TableView<Message> table = messagePane.getTable();
-            MyNode node = ApplicationList.INSTANCE.getCurrentNode();
+            MyNode node = ApplicationList.INSTANCE.getCurrentEngine().getNode();
             ObservableList<Message> messageList = node.getMessages().boxObservableList();
             table.setItems(messageList);
             message = messagePane.makeSummarized();
@@ -197,7 +197,7 @@ public final class NodeView extends OneNodeActivity {
     @Override
     public void bindWithNode() {
         super.bindWithNode();
-        MyNode node = ApplicationList.INSTANCE.getCurrentNode();
+        MyNode node = ApplicationList.INSTANCE.getCurrentEngine().getNode();
         ObjectProperty<Image> stateView = state.getView().imageProperty();
         stateView.bind(node.getPlatform().iconProperty());
     }

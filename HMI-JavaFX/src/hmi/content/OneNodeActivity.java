@@ -6,9 +6,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
+import model.engine.Engine;
 import model.network.implementation.Network;
 import model.node.ApplicationList;
-import model.node.MyNode;
 
 /**
  *
@@ -52,10 +52,10 @@ public class OneNodeActivity extends Activity {
      * Bind the view with the current node
      */
     public void bindWithNode() {
-        MyNode node = ApplicationList.INSTANCE.getCurrentNode();
-        name.textProperty().bind(node.nameProperty());
+        Engine engine = ApplicationList.INSTANCE.getCurrentEngine();
+        name.textProperty().bind(engine.getNode().nameProperty());
         //logo.imageProperty().bind(node.logoProperty());
-        Network network = (Network)node.getEngine().getNetwork();
+        Network network = (Network) engine.getNetwork();
         connectionState.imageProperty().bind(network.getConnectionState().ledProperty());
     }
     

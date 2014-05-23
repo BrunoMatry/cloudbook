@@ -19,7 +19,7 @@ public class LogsButton extends CloudBookButton{
             public void handle(ActionEvent t) {
                 /*TODO faire l'affichage d'autre chose !!!! */
                 // InformationBox mesures = Engine.INSTANCE.getNode().getMesures();
-                Engine engine = ApplicationList.INSTANCE.getCurrentNode().getEngine();
+                Engine engine = ApplicationList.INSTANCE.getCurrentEngine();
                 Monitoring model = (Monitoring)engine.getMonitoring();
                 MonitorView view = MonitorView.INSTANCE;
                 view.logsTextProperty().bind(model.logsProperty());
