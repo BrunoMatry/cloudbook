@@ -22,7 +22,6 @@ import model.engine.Engine;
 import model.network.interfaces.RemoteServer;
 
 /**
- *
  * Representation of a node
  */
 public class CloudBookNode implements Serializable {
@@ -34,8 +33,6 @@ public class CloudBookNode implements Serializable {
     /* TODO : retirer transient ; copier l'image dans le système de fichiers de
     l'application quand elle est chargée et référencer  le chemin */
     protected transient Image _logo; //logo of the application
-    /* Note Bruno : pourquoi ces trois variables ?? Ne faut-il changer les structures de donnees putlôt ? */
-    //protected Message topMessage; //message to be shown at the first place
     protected Mesure topMesure; //mesure to be shown at the first place
     protected Cloud platform; //current platform of the application
     

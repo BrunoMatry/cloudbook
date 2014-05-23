@@ -1,17 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package model.node;
 
 import java.util.ArrayList;
 
 /**
- *
- * @author Gwendal
- * singleton
+ * Singleton
  * Contains all the engine which run in this JVM
  */
 public final class ApplicationList extends ArrayList<CloudBookNode> {

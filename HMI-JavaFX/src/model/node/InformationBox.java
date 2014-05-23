@@ -10,7 +10,7 @@ import javafx.collections.ObservableList;
 import model.network.interfaces.Information;
 
 /**
- * box containing some informations with string property describing the box content
+ * Box containing some informations with string property describing the box content
  * @param <T> type of information
  */
 public class InformationBox<T extends Information> implements Information, Iterable<T> {

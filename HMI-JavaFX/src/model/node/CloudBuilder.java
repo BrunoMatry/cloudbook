@@ -7,8 +7,7 @@ import javafx.beans.property.StringProperty;
 import javafx.scene.image.Image;
 
 /**
- * builder
- * @author Gwendal
+ * Builder
  */
 public class CloudBuilder {
     
