@@ -43,6 +43,7 @@ public class Engine extends Thread implements IEngine {
     public CloudBookNode getNode() { return node; }
     public IRequestManager getRequestManager() { return requestManager; }
     
+    @Override
     public void setNetwork(RemoteClient network) { this.network = network; }
     
     /**
@@ -50,7 +51,7 @@ public class Engine extends Thread implements IEngine {
      * Initializes all the modules of the application
      * @param n current instance of CloudBookNode
      * @throws RemoteException remote access problem
-     * @throws java.net.UnknownHostException host unknown
+     * @throws UnknownHostException host unknown
      */
     public Engine(CloudBookNode n) throws UnknownHostException, RemoteException {
         stopFlag = false;
@@ -82,7 +83,8 @@ public class Engine extends Thread implements IEngine {
             try {
                 sleep(TIME);
                 updateInformation();
-                shareMesures(3);
+                // Share 3 mesures with 3 friends
+                shareMesures(3, 3);
             } catch (InterruptedException | UnknownHostException | RemoteException ex) {
                 Logger.getLogger(Engine.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -111,15 +113,22 @@ public class Engine extends Thread implements IEngine {
     }
     
     /**
-     * Internal method - Update the current node with information from monitoring
+     * Update the current node with information from monitoring
      */
     protected void updateInformation(){
         monitoring.pushInformation();
     }
 
-    protected void shareMesures(int nb) throws UnknownHostException, RemoteException {
+    /**
+     * Share mesure with friends
+     * @param nbMesures number of mesures to share
+     * @param nbFriends max number of friends to target
+     * @throws UnknownHostException unknown host
+     * @throws RemoteException remote access problem
+     */
+    protected void shareMesures(int nbMesures, int nbFriends) throws UnknownHostException, RemoteException {
         // Get the last mesures from the node (can be modified)
-        ArrayList<Information> mesures = node.getMesures().getLastValues(nb);
+        ArrayList<Information> mesures = node.getMesures().getLastValues(nbMesures);
         
         //generation of corresponding messages
         List<Message> messages = makeMessages(mesures);
@@ -128,7 +137,7 @@ public class Engine extends Thread implements IEngine {
         List<Request> requests = requestManager.createRequests(messages);
         
         //Retriving of all members to which the request is to be sent
-        List<Friend> friends = friendManager.getRelevantFriends(3);
+        List<Friend> friends = friendManager.getRelevantFriends(nbFriends);
         
         if(friends == null || friends.isEmpty())
             broadcast(requests);
@@ -140,9 +149,9 @@ public class Engine extends Thread implements IEngine {
      * Generates a list of messages containing the specified information
      * @param informationList list of information to be sent
      * @return list of messages containing the specified information
-     * @throws java.net.UnknownHostException
+     * @throws UnknownHostException
      */
-    public List<Message> makeMessages(List<Information> informationList) throws UnknownHostException {
+    protected List<Message> makeMessages(List<Information> informationList) throws UnknownHostException {
         List<Message> res = new ArrayList<>();
         String id = node.getMemberId();
         AppVector vector = node.getVector();
@@ -159,12 +168,11 @@ public class Engine extends Thread implements IEngine {
      * @param friends friends to which the requests are to be sent
      * @throws RemoteException required for RMI
      */
-    public void send(List<Request> requests, List<Friend> friends) throws RemoteException {
+    protected void send(List<Request> requests, List<Friend> friends) throws RemoteException {
         for(Friend f : friends) {
             String[] temp = f.getId().split("@");
-            String target = temp[1];
             for(Request req : requests)
-                network.send(req, target);
+                network.send(req, temp[1]);
         }
     }
     
@@ -173,7 +181,7 @@ public class Engine extends Thread implements IEngine {
      * @param requests list of requests to be broadcasted
      * @throws RemoteException required for RMI
      */
-    public void broadcast(List<Request> requests) throws RemoteException {
+    protected void broadcast(List<Request> requests) throws RemoteException {
         for(Request req : requests)
             network.broadcast(req);
     }
@@ -183,6 +191,7 @@ public class Engine extends Thread implements IEngine {
      * @return stopFlag field
      */
     public final boolean isStopFlag() {
+        // [Q] Ne serait-il pas plus judiscieux de faire une BooleanProperty ?
         return stopFlag;
     }
 

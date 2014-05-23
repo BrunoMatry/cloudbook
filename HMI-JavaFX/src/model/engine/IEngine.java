@@ -2,6 +2,7 @@ package model.engine;
 
 import java.io.IOException;
 import model.network.interfaces.Information;
+import model.network.interfaces.RemoteClient;
 import model.network.interfaces.Sendable;
 
 public interface IEngine {
@@ -23,4 +24,10 @@ public interface IEngine {
      * @param info the information to add in the node
      */
     void setInformation(Information info);
+    
+    /**
+     * Setter - modifiy the current network
+     * @param network new network
+     */
+    void setNetwork(RemoteClient network);
 }
