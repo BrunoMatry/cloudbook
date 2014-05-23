@@ -13,6 +13,7 @@ import model.node.MyNode;
 import model.node.friend.Member;
 
 public class Request<Inf extends Information> extends UnicastRemoteObject implements Sendable {
+    
     protected Sender sender;
     protected Date date;
     protected Inf info;
@@ -21,10 +22,14 @@ public class Request<Inf extends Information> extends UnicastRemoteObject implem
 
     /**
      * Constructor
-     * @throws java.rmi.RemoteException
+     * @throws RemoteException
      */
     public Request() throws RemoteException {
-        // ??????????? Why ?
+        sender = null;
+        date = new Date();
+        info = null;
+        rebounds = 0;
+        recipent = 0;
     }
     
     /**
@@ -94,8 +99,5 @@ public class Request<Inf extends Information> extends UnicastRemoteObject implem
 
     public void setRecipent(int recipent) {
         this.recipent = recipent;
-    }
-    
-    
-    
+    }  
 }
