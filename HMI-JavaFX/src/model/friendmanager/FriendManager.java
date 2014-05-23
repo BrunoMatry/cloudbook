@@ -13,7 +13,7 @@ import model.node.friend.Member;
 
 public class FriendManager implements IFriendManager {
     
-    protected static final double seuil = 1; //Distance en dessous de laquelle une noeud est considéré comme pertinent (valeure choisie arbitrairement, à modifier)
+    protected static final double seuil = 30; //Distance en dessous de laquelle une noeud est considéré comme pertinent (valeure choisie arbitrairement, à modifier)
     protected static final int delay = 10; //Délai en jours après lequel on enlève un noeud de la liste d'amis si on a pas eu d'échange avec lui pendant cette période (valeure choisie arbitrairement, à modifier)
     
     protected MyNode node;
@@ -78,6 +78,7 @@ public class FriendManager implements IFriendManager {
     
     @Override
     public boolean relevant(AppVector v) {
+        //System.out.println("(Vector, seuil) = " + relevance(v) + " " + seuil);
         return relevance(v) < seuil;
     }
 

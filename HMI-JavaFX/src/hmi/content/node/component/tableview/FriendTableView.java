@@ -8,13 +8,14 @@ package hmi.content.node.component.tableview;
 
 import java.util.Date;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import model.node.friend.Friend;
 
 /**
  *
  * @author Gwendal
  */
-public class FriendTableView extends StandardizedTable<Friend> {
+public class FriendTableView extends TableView<Friend> {
     
     //columns corresponding to the friend properties
     protected TableColumn<Friend, String> idCol;
@@ -27,10 +28,14 @@ public class FriendTableView extends StandardizedTable<Friend> {
      */
     public FriendTableView() {
         super();
-        idCol = buildColumn("Id", "id", 4);
-        relevanceCol = buildColumn("Relevance", "relevance", 4);
-        confidenceCol = buildColumn("Confidence", "confidence", 4);
-        lastConnectionCol = buildColumnBasedOnToString("Date of last connection", "lastConnection", 4, Date.class);
+        TableColumnBuilder idBuilder = new TableColumnBuilder<Friend, String>(this);
+        idCol = idBuilder.buildColumn("Id", "id", 4);
+        TableColumnBuilder rlvBuilder = new TableColumnBuilder<Friend, Double>(this);
+        relevanceCol = rlvBuilder.buildColumn("Relevance", "relevance", 4);
+        TableColumnBuilder confBuilder = new TableColumnBuilder<Friend, Integer>(this);
+        confidenceCol = confBuilder.buildColumn("Confidence", "confidence", 4);
+        TableColumnBuilder dateBuilder = new TableColumnBuilder<Friend, Date>(this);
+        lastConnectionCol = dateBuilder.buildColumnBasedOnToString("Date of last connection", "lastConnection", 4);
         getColumns().addAll(idCol, relevanceCol, confidenceCol, lastConnectionCol);
     }
     

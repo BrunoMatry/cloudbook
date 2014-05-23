@@ -16,11 +16,23 @@ import javafx.util.Callback;
 /**
  *
  * @author Gwendal
- * @param <E>
+ * @param <E> type of the object related to the table
+ * @param <C> type of the column
  * builder
  * A table view which allow to resize columns according to the number of columns in the table
  */
-public abstract class StandardizedTable<E> extends TableView<E> {
+public class TableColumnBuilder<E, C> {
+    
+    //table to which this column belongs
+    protected TableView<E> owner; 
+    
+    /**
+     * Constructor
+     * @param owner table to which this column belongs
+     */
+    public TableColumnBuilder(TableView<E> owner) {
+        this.owner = owner;
+    }
     
     /**
      * Set up the column with its specified name, bound property
@@ -30,33 +42,31 @@ public abstract class StandardizedTable<E> extends TableView<E> {
      * @param columnCount number of columns
      * @return a column of name name, bound with the property propertyName and with intelligent size
      */
-    protected TableColumn buildColumn(String name, String propertyName, int columnCount) {
+    public TableColumn buildColumn(String name, String propertyName, int columnCount) {
         TableColumn column = new TableColumn(name);
         column.setCellValueFactory(new PropertyValueFactory(propertyName));
-        column.prefWidthProperty().bind(this.widthProperty().divide(columnCount));
+        column.prefWidthProperty().bind(owner.widthProperty().divide(columnCount));
         return column;
     }
     
     /**
      * Build a column representing an instance of the Object class.
      * The object is represented by its toString result.
-     * @param <P> reference type of the column
      * @param name label of the column
      * @param propertyName name of the property which is bound to the column
      * @param columnCount number of columns
-     * @param clazz class of the reference type P
      * @return a column of name name, bound with the property propertyName and with intelligent size
      */
-    protected <P> TableColumn buildColumnBasedOnToString(String name, String propertyName, int columnCount, Class<P> clazz) {
+    public TableColumn buildColumnBasedOnToString(String name, String propertyName, int columnCount) {
         TableColumn column = buildColumn(name, propertyName, columnCount);
-        column.setCellFactory(new Callback<TableColumn<E, P>, TableCell<E, P>>() {
+        column.setCellFactory(new Callback<TableColumn<E, C>, TableCell<E, C>>() {
 
             @Override
-            public TableCell<E, P> call(TableColumn<E, P> p) {
-                TableCell<E, P> cell = new TableCell<E, P>() {
+            public TableCell<E, C> call(TableColumn<E, C> p) {
+                TableCell<E, C> cell = new TableCell<E, C>() {
 
                     @Override
-                    protected void updateItem(P t, boolean bln) {
+                    protected void updateItem(C t, boolean bln) {
                         if(t != null) {
                             Text text = new Text(t.toString());
                             setGraphic(text);

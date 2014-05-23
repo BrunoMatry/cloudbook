@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.engine.Engine;
-import model.friendmanager.FriendManager;
 import model.friendmanager.IFriendManager;
 import model.network.interfaces.Information;
 import model.node.Message;
