@@ -1,23 +1,16 @@
 package hmi.content.node;
 
+import model.node.MyNode;
+
 /**
  * methods shared by all customized graphical components
  */
 public interface IComponentView {
     
     /**
-     * display the component
+     * Updates the view component to be related to the specified node
+     * @param node node to be represented
      */
-    public void display();
-    
-    /**
-     * hide the component
-     */
-    public void hide();
-    
-    /**
-     * update the component
-     */
-    public void update();
+    void bind(MyNode node);
     
 }

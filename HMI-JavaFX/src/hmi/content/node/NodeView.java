@@ -199,6 +199,9 @@ public final class NodeView extends OneNodeActivity {
         super.bindWithNode();
         MyNode node = ApplicationList.INSTANCE.getCurrentEngine().getNode();
         ObjectProperty<Image> stateView = state.getView().imageProperty();
+        messagePane.bind(node);
+        mesurePane.bind(node);
+        friendPane.bind(node);
         stateView.bind(node.getPlatform().iconProperty());
     }
 }

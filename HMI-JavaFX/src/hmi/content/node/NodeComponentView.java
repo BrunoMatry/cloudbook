@@ -5,7 +5,6 @@ import hmi.content.OneNodeActivity;
 import hmi.content.node.component.tableview.StandardizedTable;
 import javafx.scene.control.TableView;
 import model.network.interfaces.Information;
-import model.node.Mesure;
 
 public abstract class NodeComponentView<I extends Information> extends OneNodeActivity implements IComponentView {
     
@@ -18,21 +17,6 @@ public abstract class NodeComponentView<I extends Information> extends OneNodeAc
      */
     public NodeComponentView(AbstractActivity p) {
         super(p);
-    }
-    
-    @Override
-    public void display() {
-        
-    }
-
-    @Override
-    public void hide() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void update() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     /**

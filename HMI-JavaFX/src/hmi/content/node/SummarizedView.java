@@ -4,11 +4,12 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import model.node.MyNode;
 
 /**
  * @param <T> View type
  */
-public class SummarizedView<T extends Node> extends Button implements IComponentView {
+public class SummarizedView<T extends Node> extends Button {
 
     //full version of the current view
     protected NodeComponentView fullView;
@@ -36,21 +37,6 @@ public class SummarizedView<T extends Node> extends Button implements IComponent
             }
         
         });
-    }
-    
-    @Override
-    public void display() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void hide() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void update() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     public NodeComponentView getFullView() {

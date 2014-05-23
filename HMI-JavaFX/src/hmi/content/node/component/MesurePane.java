@@ -4,9 +4,11 @@ import hmi.content.node.component.tableview.MesureTableView;
 import hmi.content.AbstractActivity;
 import hmi.content.node.NodeComponentView;
 import hmi.content.node.SummarizedView;
-import javafx.scene.control.TableView;
+import javafx.collections.ObservableList;
 import javafx.scene.text.Text;
+import model.node.Message;
 import model.node.Mesure;
+import model.node.MyNode;
 
 public class MesurePane extends NodeComponentView<Mesure> {
 
@@ -25,6 +27,16 @@ public class MesurePane extends NodeComponentView<Mesure> {
     public SummarizedView makeSummarized() {
         SummarizedView res = new SummarizedView(this, new Text("Mesures"));
         return res;
+    }
+
+    /**
+     * Sets the content of the table as the list of mesures of the specified node
+     * @param node node from which the mesures are to be displayed
+     */
+    @Override
+    public void bind(MyNode node) {
+        ObservableList<Mesure> mesureList = node.getMesures().boxObservableList();
+        table.setItems(mesureList);
     }
     
 }
