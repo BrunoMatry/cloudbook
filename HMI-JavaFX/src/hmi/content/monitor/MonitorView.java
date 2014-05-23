@@ -1,6 +1,6 @@
 package hmi.content.monitor;
 
-import hmi.content.AActivity;
+import hmi.content.AbstractActivity;
 import hmi.content.Activity;
 import hmi.home.NodeList;
 import javafx.beans.property.StringProperty;
@@ -21,7 +21,7 @@ public final class MonitorView extends Activity {
      * Constructor
      * @param p parent activity
      */
-    private MonitorView(AActivity p) {
+    private MonitorView(AbstractActivity p) {
         super(p);
         title = "Monitor logs";
         logs = new Text("MonitorView");

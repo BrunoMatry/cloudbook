@@ -1,6 +1,6 @@
 package hmi.content.node;
 
-import hmi.content.AActivity;
+import hmi.content.AbstractActivity;
 import hmi.content.OneNodeActivity;
 import hmi.content.node.component.FriendPane;
 import hmi.content.node.component.MessagePane;
@@ -56,7 +56,7 @@ public final class NodeView extends OneNodeActivity {
      * 
      * @param p the previous Activity
      */
-    private NodeView(AActivity p) {
+    private NodeView(AbstractActivity p) {
         super(p);
         title = "Friend management";
         appVector = new Button();

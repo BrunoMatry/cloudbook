@@ -1,7 +1,7 @@
 package hmi.content.register;
 
 import hmi.Launcher;
-import hmi.content.AActivity;
+import hmi.content.AbstractActivity;
 import hmi.content.Activity;
 import hmi.home.NodeList;
 import java.io.IOException;
@@ -52,7 +52,7 @@ public class RegisterView extends Activity {
      * initialize the vertical box
      * @param p previous Activity
      */
-    public RegisterView(AActivity p) {
+    public RegisterView(AbstractActivity p) {
         super(p);
         title = "Register your application";
         settings = new SettingsArea();

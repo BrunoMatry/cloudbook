@@ -25,10 +25,6 @@ import model.node.Message;
 import model.node.friend.Friend;
 import model.request.Request;
 
-/**
- *
- * @author Bruno
- */
 public class Engine extends Thread implements IEngine {
     
     private final static long TIME = 3000;
@@ -48,27 +44,19 @@ public class Engine extends Thread implements IEngine {
     public IRequestManager getRequestManager() { return requestManager; }
     
     public void setNetwork(RemoteClient network) { this.network = network; }
-    public void setNode(CloudBookNode node) throws RemoteException { this.node = node; }
-    
-    /**
-     * Constructor
-     */
-    public Engine() {
-        stopFlag = false;
-    }
     
     /**
      * Constructor
      * Initializes all the modules of the application
-     * @param node current instance of CloudBookNode
+     * @param n current instance of CloudBookNode
      * @throws RemoteException remote access problem
      * @throws java.net.UnknownHostException host unknown
      */
-    public Engine(CloudBookNode node) throws UnknownHostException, RemoteException {
+    public Engine(CloudBookNode n) throws UnknownHostException, RemoteException {
         stopFlag = false;
         monitoring = new Monitoring(this);
-        this.node = node;
-        this.network = new Network(InetAddress.getLocalHost().getHostAddress(),
+        node = n;
+        network = new Network(InetAddress.getLocalHost().getHostAddress(),
                 node.getNodePort(),
                 this);
         friendManager = new FriendManager(node);
@@ -80,6 +68,7 @@ public class Engine extends Thread implements IEngine {
      */
     @Override
     public void run() {
+        // [Q] Pourquoi ce test ?
         if(monitoring != null && network != null) {
             try {
                 network.connect(node.getServerHost() + ":" + node.getServerPort());
@@ -88,16 +77,16 @@ public class Engine extends Thread implements IEngine {
             }
             monitoring.start();
         }
+        stopFlag = false;
         while(!stopFlag) {
             try {
                 sleep(TIME);
                 updateInformation();
-                shareLastMesures(3);
-            } catch (    InterruptedException | UnknownHostException | RemoteException ex) {
+                shareMesures(3);
+            } catch (InterruptedException | UnknownHostException | RemoteException ex) {
                 Logger.getLogger(Engine.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        stopFlag = false;
         try {
             network.disconnect();
         } catch (RemoteException ex) {
@@ -128,8 +117,8 @@ public class Engine extends Thread implements IEngine {
         monitoring.pushInformation();
     }
 
-    protected void shareLastMesures(int nb) throws UnknownHostException, RemoteException {
-        // Get the last mesures from the node
+    protected void shareMesures(int nb) throws UnknownHostException, RemoteException {
+        // Get the last mesures from the node (can be modified)
         ArrayList<Information> mesures = node.getMesures().getLastValues(nb);
         
         //generation of corresponding messages
@@ -204,5 +193,4 @@ public class Engine extends Thread implements IEngine {
     public void setStopFlag(boolean stopFlag) {
         this.stopFlag = stopFlag;
     }
-    
 }

@@ -6,7 +6,7 @@
 
 package hmi.content.node.component;
 
-import hmi.content.AActivity;
+import hmi.content.AbstractActivity;
 import hmi.content.node.NodeComponentView;
 import hmi.content.node.SummarizedView;
 import hmi.content.node.component.tableview.MessageTableView;
@@ -21,7 +21,7 @@ public class MessagePane extends NodeComponentView {
      * Constructor
      * @param p parent activity
      */
-    public MessagePane(AActivity p) {
+    public MessagePane(AbstractActivity p) {
         super(p);
         title = "Messages";
         table = new MessageTableView();

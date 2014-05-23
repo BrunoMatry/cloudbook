@@ -1,6 +1,6 @@
 package hmi.content.node;
 
-import hmi.content.AActivity;
+import hmi.content.AbstractActivity;
 import hmi.content.OneNodeActivity;
 import hmi.content.node.component.tableview.StandardizedTable;
 import javafx.scene.control.TableView;
@@ -16,7 +16,7 @@ public abstract class NodeComponentView<I extends Information> extends OneNodeAc
      * Constructor
      * @param p parent activity
      */
-    public NodeComponentView(AActivity p) {
+    public NodeComponentView(AbstractActivity p) {
         super(p);
     }
     

@@ -6,7 +6,7 @@
 
 package hmi.content.node.component;
 
-import hmi.content.AActivity;
+import hmi.content.AbstractActivity;
 import hmi.content.node.NodeComponentView;
 import hmi.content.node.SummarizedView;
 import hmi.content.node.component.tableview.FriendTableView;
@@ -24,7 +24,7 @@ public class FriendPane extends NodeComponentView<Friend> {
      * Constructor
      * @param p parent activity
      */
-    public FriendPane(AActivity p) {
+    public FriendPane(AbstractActivity p) {
         super(p);
         title = "Friends";
         table = new FriendTableView();

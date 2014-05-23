@@ -38,7 +38,7 @@ public class OneNodeActivity extends Activity {
      * Constructor
      * @param p parent activity
      */
-    public OneNodeActivity(AActivity p) {
+    public OneNodeActivity(AbstractActivity p) {
         super(p);
         name = new Text();
         //logo = new ImageView();

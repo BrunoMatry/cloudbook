@@ -11,13 +11,13 @@ import javafx.scene.layout.HBox;
 /**
  * specifies the basic content of a standard activity (i.e not the starting activity)
  */
-public class Activity extends AActivity {
+public class Activity extends AbstractActivity {
     
     //horizontal container of the back and home buttons
     protected MenuHBox mHBox;
     
     //activity that must be launch if the back button is pressed
-    protected AActivity prec;
+    protected AbstractActivity prec;
     
     protected BorderPane menuPane;
     
@@ -25,7 +25,7 @@ public class Activity extends AActivity {
      * initialize the menu box (filled with back and home buttons)
      * @param p previous Activity
      */
-    public Activity(AActivity p) {
+    public Activity(AbstractActivity p) {
         super();
         prec = p;
         mHBox = new MenuHBox();

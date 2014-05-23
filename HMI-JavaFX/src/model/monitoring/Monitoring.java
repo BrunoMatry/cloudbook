@@ -12,9 +12,7 @@ import model.node.Mesure;
 public class Monitoring extends Thread implements IMonitoring {
     
     protected List<Mesure> mesures;
-    
     protected Engine engine;
-    
     protected boolean stopFlag;
     
     //logs containing information on sent objects

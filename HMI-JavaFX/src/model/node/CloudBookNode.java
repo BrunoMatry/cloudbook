@@ -46,6 +46,7 @@ public class CloudBookNode implements Serializable {
     protected InformationBox<Message> messages; //list of the received messages
     protected AppVector vector;
     
+    // [Q] Que font ces attributs dans le noeud ?
     //host of the server
     protected String serverHost;
     

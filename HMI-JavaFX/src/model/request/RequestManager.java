@@ -22,15 +22,6 @@ public class RequestManager implements IRequestManager {
     
     /**
      * Constructor
-     */
-    public RequestManager() {
-        friendManager = new FriendManager();
-        inbox = new ArrayList<>();
-        engine = new Engine();
-    }
-    
-    /**
-     * Constructor
      * @param friendManager responsible of all the friends
      * @param engine engine which run this instance of FrienManager
      */

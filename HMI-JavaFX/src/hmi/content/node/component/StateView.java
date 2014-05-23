@@ -1,6 +1,6 @@
 package hmi.content.node.component;
 
-import hmi.content.AActivity;
+import hmi.content.AbstractActivity;
 import hmi.content.node.NodeComponentView;
 import hmi.content.node.SummarizedView;
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ public class StateView extends NodeComponentView {
     //all the clouds during the application existence
     protected ArrayList<ImageView> clouds;
     
-    public StateView(AActivity p) {
+    public StateView(AbstractActivity p) {
         super(p);
         clouds = new ArrayList<>();
         title = "History";
