@@ -4,7 +4,7 @@ import hmi.home.NodeList;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import model.node.ApplicationList;
-import model.node.CloudBookNode;
+import model.node.Node;
 
 public class Launcher extends Application {
     
@@ -35,7 +35,7 @@ public class Launcher extends Application {
 
     @Override
     public void stop() throws Exception {
-        for(CloudBookNode node : ApplicationList.INSTANCE)
+        for(Node node : ApplicationList.INSTANCE)
             node.save();
         super.stop();
     }

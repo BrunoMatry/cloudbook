@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import model.node.AppVector;
-import model.node.CloudBookNode;
+import model.node.Node;
 import model.node.InformationBox;
 import model.node.friend.Friend;
 import model.node.friend.Member;
@@ -16,20 +16,20 @@ public class FriendManager implements IFriendManager {
     protected static final double seuil = 1; //Distance en dessous de laquelle une noeud est considéré comme pertinent (valeure choisie arbitrairement, à modifier)
     protected static final int delay = 10; //Délai en jours après lequel on enlève un noeud de la liste d'amis si on a pas eu d'échange avec lui pendant cette période (valeure choisie arbitrairement, à modifier)
     
-    protected CloudBookNode node;
+    protected Node node;
     
     /**
      * Constructor
      */
     public FriendManager() {
-        node = new CloudBookNode();
+        node = new Node();
     }
     
     /**
      * Constructor
      * @param node current application
      */
-    public FriendManager(CloudBookNode node) {
+    public FriendManager(Node node) {
         this.node = node;
     }
 

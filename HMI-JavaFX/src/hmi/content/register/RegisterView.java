@@ -15,8 +15,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Dialogs;
 import javafx.scene.image.Image;
 import model.node.Cloud;
-import model.node.CloudBookNode;
-import model.node.CloudBuilder;
+import model.node.Node;
+import model.node.NodeBuilder;
 
 /**
  * View letting the user register an application
@@ -30,13 +30,13 @@ public class RegisterView extends Activity {
     protected Button ok;
     
     //constructing object
-    protected CloudBuilder builder;
+    protected NodeBuilder builder;
 
     /**
      * Getter
      * @return builder field
      */
-    public CloudBuilder getBuilder() {
+    public NodeBuilder getBuilder() {
         return builder;
     }
 
@@ -44,7 +44,7 @@ public class RegisterView extends Activity {
      * Setter
      * @param builder builder field
      */
-    public void setBuilder(CloudBuilder builder) {
+    public void setBuilder(NodeBuilder builder) {
         this.builder = builder;
     }
     
@@ -74,7 +74,7 @@ public class RegisterView extends Activity {
                     @Override
                     public void handle(ActionEvent t) {
                         try {
-                            CloudBookNode node = builder.build();
+                            Node node = builder.build();
                             node.save();
                             Dialogs.showInformationDialog(Launcher.STAGE, "Success build", "OK");
                             NodeList.INSTANCE.launch();

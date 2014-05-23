@@ -9,7 +9,7 @@ import java.util.Date;
 import model.network.interfaces.Information;
 import model.network.interfaces.Sender;
 import model.node.AppVector;
-import model.node.CloudBookNode;
+import model.node.Node;
 import model.node.friend.Member;
 
 public class Request<Inf extends Information> extends UnicastRemoteObject implements Sendable {
@@ -37,7 +37,7 @@ public class Request<Inf extends Information> extends UnicastRemoteObject implem
     public Request(Inf inf, RequestManager manager) throws RemoteException, UnknownHostException {
         info = inf;
         date = new Date();
-        CloudBookNode node = manager.getEngine().getNode();
+        Node node = manager.getEngine().getNode();
         AppVector senderVector = node.getVector();
         String id = node.nameProperty().get()
                 + "@" 

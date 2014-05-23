@@ -23,8 +23,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import model.network.implementation.Network;
 import model.node.ApplicationList;
-import model.node.CloudBookNode;
-import model.node.CloudBuilder;
+import model.node.Node;
+import model.node.NodeBuilder;
 
 /**
  * Show the list of all the nodes registered on this computer
@@ -69,7 +69,7 @@ public final class NodeList extends HomeActivity {
 
             @Override
             public void handle(ActionEvent t) {
-                CloudBuilder cb = new CloudBuilder();
+                NodeBuilder cb = new NodeBuilder();
                 rv.setBuilder(cb);
                 cb.logoProperty().bind(rv.logoProperty());
                 cb.nameProperty().bind(rv.nameProperty());
@@ -122,7 +122,7 @@ public final class NodeList extends HomeActivity {
             for (File file : ObservableFileList.INSTANCE.getFiles()) {
                 String extName = file.getName();
                 if(extName.endsWith(".ser")) {
-                    CloudBookNode node = CloudBookNode.load(extName);
+                    Node node = Node.load(extName);
                     if(!ApplicationList.INSTANCE.contains(node))
                         ApplicationList.INSTANCE.add(node);
                     setUpRegistry(node);
@@ -134,7 +134,7 @@ public final class NodeList extends HomeActivity {
          * Add a radio button corresponding to the save of name name
          * @param name name of the corresponding save file
          */
-        private void setUpRegistry(final CloudBookNode node) {
+        private void setUpRegistry(final Node node) {
             String name = node.nameProperty().get();
             BorderPane registry = new BorderPane();
             HBox box = new HBox();

@@ -6,12 +6,12 @@ import java.util.ArrayList;
  * Singleton
  * Contains all the engine which run in this JVM
  */
-public final class ApplicationList extends ArrayList<CloudBookNode> {
+public final class ApplicationList extends ArrayList<Node> {
     
     public static final ApplicationList INSTANCE = new ApplicationList();
     
     //Current node selected by the user
-    private CloudBookNode currentNode;
+    private Node currentNode;
     
     /**
      * Constructor
@@ -25,8 +25,8 @@ public final class ApplicationList extends ArrayList<CloudBookNode> {
      * @param name name of the node to select
      * @return selected node
      */
-    public CloudBookNode select(String name) {
-        for(CloudBookNode node : this) {
+    public Node select(String name) {
+        for(Node node : this) {
             if(node.nameProperty().get().equals(name)) {
                 currentNode = node;
                 break;
@@ -39,7 +39,7 @@ public final class ApplicationList extends ArrayList<CloudBookNode> {
      * Getter
      * @return get the current node
      */
-    public CloudBookNode getCurrentNode() {
+    public Node getCurrentNode() {
         return currentNode;
     }
     

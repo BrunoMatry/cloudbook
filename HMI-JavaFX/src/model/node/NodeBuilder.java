@@ -9,7 +9,7 @@ import javafx.scene.image.Image;
 /**
  * Builder
  */
-public class CloudBuilder {
+public class NodeBuilder {
     
     protected SimpleObjectProperty<Image> logo;
     public SimpleObjectProperty<Image> logoProperty() {
@@ -41,7 +41,7 @@ public class CloudBuilder {
         return serverPort;
     }
     
-    public CloudBuilder() {
+    public NodeBuilder() {
         logo = new SimpleObjectProperty<>();
         name = new SimpleStringProperty();
         platform = new SimpleObjectProperty<>();
@@ -55,8 +55,8 @@ public class CloudBuilder {
      * @return the built node
      * @throws IOException the state can't be saved
      */
-    public CloudBookNode build() throws IOException {
-        CloudBookNode cbn = new CloudBookNode(logo.get(),
+    public Node build() throws IOException {
+        Node cbn = new Node(logo.get(),
                 name.get(),
                 platform.get(),
                 host.get(),

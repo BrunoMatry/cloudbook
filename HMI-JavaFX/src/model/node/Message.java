@@ -13,16 +13,19 @@ import javafx.beans.property.StringProperty;
 public class Message implements Information {
     
     //private attributes which purpose is to save and restore properties values
-    private Information _content;
-    private Date _date;
-    private String _idSender;
-    private boolean _relevant;
+    protected Information _content;
+    protected Date _date;
+    protected String _idSender;
+    protected boolean _relevant;
     
     //vector of characteristics of the sender
     protected AppVector vector;
     
-    
     protected transient ObjectProperty<Information> content;
+    protected transient ObjectProperty<Date> date;
+    protected transient StringProperty idSender;
+    protected transient BooleanProperty relevant;
+    
     /**
      * Information stored in the message.
      * This information is one of the sender's
@@ -30,9 +33,8 @@ public class Message implements Information {
      */
     public ObjectProperty<Information> contentProperty() {
         return content;
-    }
+    } 
     
-    protected transient ObjectProperty<Date> date;
     /**
      * Date of generation of the message
      * @return date property
@@ -41,7 +43,6 @@ public class Message implements Information {
         return date;
     }
     
-    protected transient StringProperty idSender;
     /**
      * identifier of the sender
      * @return identifier property
@@ -50,7 +51,6 @@ public class Message implements Information {
         return idSender;
     }
     
-    protected transient BooleanProperty relevant;
     /**
      * indicates if the sender is relevant or not
      * @return relevant property

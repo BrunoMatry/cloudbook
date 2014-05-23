@@ -17,7 +17,7 @@ import model.monitoring.Monitoring;
 import model.network.implementation.Network;
 import model.network.interfaces.RemoteClient;
 import model.request.IRequestManager;
-import model.node.CloudBookNode;
+import model.node.Node;
 import model.request.RequestManager;
 import model.network.interfaces.Sendable;
 import model.node.AppVector;
@@ -32,7 +32,7 @@ public class Engine extends Thread implements IEngine {
     protected IRequestManager requestManager;
     protected IFriendManager friendManager;
     protected Monitoring monitoring;
-    protected CloudBookNode node;
+    protected Node node;
     protected RemoteClient network;
     protected boolean stopFlag;
 
@@ -40,7 +40,7 @@ public class Engine extends Thread implements IEngine {
     public IFriendManager getFriendManager() { return friendManager; }
     public IMonitoring getMonitoring() { return monitoring; }
     public RemoteClient getNetwork() { return network; }
-    public CloudBookNode getNode() { return node; }
+    public Node getNode() { return node; }
     public IRequestManager getRequestManager() { return requestManager; }
     
     @Override
@@ -49,11 +49,11 @@ public class Engine extends Thread implements IEngine {
     /**
      * Constructor
      * Initializes all the modules of the application
-     * @param n current instance of CloudBookNode
+     * @param n current instance of Node
      * @throws RemoteException remote access problem
      * @throws UnknownHostException host unknown
      */
-    public Engine(CloudBookNode n) throws UnknownHostException, RemoteException {
+    public Engine(Node n) throws UnknownHostException, RemoteException {
         stopFlag = false;
         monitoring = new Monitoring(this);
         node = n;

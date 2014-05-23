@@ -8,7 +8,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import model.network.implementation.Network;
 import model.node.ApplicationList;
-import model.node.CloudBookNode;
+import model.node.Node;
 
 /**
  *
@@ -52,7 +52,7 @@ public class OneNodeActivity extends Activity {
      * Bind the view with the current node
      */
     public void bindWithNode() {
-        CloudBookNode node = ApplicationList.INSTANCE.getCurrentNode();
+        Node node = ApplicationList.INSTANCE.getCurrentNode();
         name.textProperty().bind(node.nameProperty());
         //logo.imageProperty().bind(node.logoProperty());
         Network network = (Network)node.getEngine().getNetwork();

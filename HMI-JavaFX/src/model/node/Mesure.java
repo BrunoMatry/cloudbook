@@ -48,7 +48,7 @@ public final class Mesure implements Information {
      * @param mes2 mesure2 property value
      * @param mes3 mesure3 property value
      */
-    public Mesure(CloudBookNode application, int mes1, int mes2, int mes3) {
+    public Mesure(Node application, int mes1, int mes2, int mes3) {
         if(application != null) {
             String name = application.nameProperty().get();
             applicationName = new SimpleStringProperty(name);
