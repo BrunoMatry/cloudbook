@@ -60,6 +60,7 @@ public class Network extends UnicastRemoteObject implements RemoteClient {
             info.saveProperties();
         Member mem = (Member)request.getSender();
         mem.beforeSerialization();
+        request.setClient(this);
         stub.send(request, receiver);
     }
 

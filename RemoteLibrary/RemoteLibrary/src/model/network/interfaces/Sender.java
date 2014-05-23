@@ -13,4 +13,10 @@ import java.io.Serializable;
  * @author Gwendal
  */
 public interface Sender extends Serializable {
+    
+    /**
+     * Getter
+     * @return identifier of the sender
+     */
+    String getId();
 }
