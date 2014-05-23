@@ -6,12 +6,12 @@ import javafx.scene.image.ImageView;
 /**
  * Customized button with a cloud icon
  */
-public class CloudBookButton extends Button {
+public class MyButton extends Button {
     
     /**
      * Put a cloud image on the button
      */
-    public CloudBookButton() {
+    public MyButton() {
         super();
         ImageView icon = new ImageView();
         icon.setImage(IconFlyWeight.INSTANCE.getCloud());
@@ -22,7 +22,7 @@ public class CloudBookButton extends Button {
      * same as default constructor but add a label to the button
      * @param text : label of the button
      */
-    public CloudBookButton(String text) {
+    public MyButton(String text) {
         super(text);
         ImageView icon = new ImageView();
         icon.setImage(IconFlyWeight.INSTANCE.getCloud());

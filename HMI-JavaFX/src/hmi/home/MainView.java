@@ -35,8 +35,7 @@ public final class MainView extends HomeActivity {
 
     public static final MainView INSTANCE = new MainView();
     
-    
-    protected SaveGroup saveGroup; //list of save files
+    protected SaveGroup saveGroup; //list of saved files
     protected Button adder; //button allowing to add a node
     protected RegisterView registerView; //child view used to add nodes on this computer
     
