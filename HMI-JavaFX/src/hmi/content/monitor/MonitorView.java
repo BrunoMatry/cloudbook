@@ -2,14 +2,14 @@ package hmi.content.monitor;
 
 import hmi.content.AbstractActivity;
 import hmi.content.Activity;
-import hmi.home.NodeList;
+import hmi.home.MainView;
 import javafx.beans.property.StringProperty;
 import javafx.scene.text.Text;
 
 public final class MonitorView extends Activity {
     
     //unique instance
-    public static final MonitorView INSTANCE = new MonitorView(NodeList.INSTANCE);
+    public static final MonitorView INSTANCE = new MonitorView(MainView.INSTANCE);
     
     protected final Text logs;
     

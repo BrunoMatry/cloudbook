@@ -2,7 +2,7 @@ package hmi.content;
 
 import hmi.button.BackButton;
 import hmi.button.HomeButton;
-import hmi.home.NodeList;
+import hmi.home.MainView;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.layout.BorderPane;
@@ -89,7 +89,7 @@ public class Activity extends AbstractActivity {
 
                     @Override
                     public void handle(ActionEvent t) {
-                        NodeList.INSTANCE.launch();
+                        MainView.INSTANCE.launch();
                     }
         
                 });

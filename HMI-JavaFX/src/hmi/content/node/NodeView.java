@@ -6,7 +6,7 @@ import hmi.content.node.component.FriendPane;
 import hmi.content.node.component.MessagePane;
 import hmi.content.node.component.MesurePane;
 import hmi.content.node.component.StateView;
-import hmi.home.NodeList;
+import hmi.home.MainView;
 import java.util.ArrayList;
 import javafx.beans.property.ObjectProperty;
 import javafx.collections.ObservableList;
@@ -28,7 +28,7 @@ import model.node.friend.Friend;
  */
 public final class NodeView extends OneNodeActivity {
     
-    public static final NodeView INSTANCE = new NodeView(NodeList.INSTANCE);
+    public static final NodeView INSTANCE = new NodeView(MainView.INSTANCE);
     
     //view contaigning all the generated mesures
     private MesurePane mesurePane;

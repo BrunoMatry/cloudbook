@@ -3,7 +3,7 @@ package hmi.content.register;
 import hmi.Launcher;
 import hmi.content.AbstractActivity;
 import hmi.content.Activity;
-import hmi.home.NodeList;
+import hmi.home.MainView;
 import java.io.IOException;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.StringProperty;
@@ -77,7 +77,7 @@ public class RegisterView extends Activity {
                             MyNode node = builder.build();
                             node.save();
                             Dialogs.showInformationDialog(Launcher.STAGE, "Success build", "OK");
-                            NodeList.INSTANCE.launch();
+                            MainView.INSTANCE.launch();
                         } catch (IOException ex) {
                             ex.printStackTrace();
                             Dialogs.showErrorDialog(Launcher.STAGE, "Error while building", "Error");

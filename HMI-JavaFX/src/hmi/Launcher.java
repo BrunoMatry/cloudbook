@@ -1,6 +1,6 @@
 package hmi;
 
-import hmi.home.NodeList;
+import hmi.home.MainView;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import model.engine.Engine;
@@ -18,7 +18,7 @@ public class Launcher extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         STAGE = primaryStage;
-        NodeList.INSTANCE.launch();
+        MainView.INSTANCE.launch();
     }
     
     /**

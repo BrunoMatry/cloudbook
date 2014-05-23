@@ -30,33 +30,29 @@ import model.node.NodeBuilder;
  * Show the list of all the nodes registered on this computer
  * singleton
  */
-public final class NodeList extends HomeActivity {
+public final class MainView extends HomeActivity {
 
-    public static final NodeList INSTANCE = new NodeList();
+    public static final MainView INSTANCE = new MainView();
     
-    //list of save files
-    protected SaveGroup sg;
     
-    //button allowing to add a node
-    protected Button adder;
-    
-    //child view used to add nodes on this computer
-    protected RegisterView rv;
+    protected SaveGroup saveGroup; //list of save files
+    protected Button adder; //button allowing to add a node
+    protected RegisterView registerView; //child view used to add nodes on this computer
     
     /**
      * Constructor
      */
-    public NodeList() {
+    public MainView() {
         super();
         title = "The CloudBook - Menu";
-        rv = new RegisterView(this);
+        registerView = new RegisterView(this);
         try {
-            this.sg = new SaveGroup();
+            saveGroup = new SaveGroup();
         } catch (IOException | ClassNotFoundException ex) {
-            Logger.getLogger(NodeList.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MainView.class.getName()).log(Level.SEVERE, null, ex);
         }
         setUpAdderButton();
-        setCenter(sg);
+        setCenter(saveGroup);
         setBottom(adder);
     }
     
@@ -70,14 +66,14 @@ public final class NodeList extends HomeActivity {
             @Override
             public void handle(ActionEvent t) {
                 NodeBuilder cb = new NodeBuilder();
-                rv.setBuilder(cb);
-                cb.logoProperty().bind(rv.logoProperty());
-                cb.nameProperty().bind(rv.nameProperty());
-                cb.platformProperty().bind(rv.cloudProperty());
-                cb.hostProperty().bind(rv.hostProperty());
-                cb.serverPortProperty().bind(rv.serverPortProperty());
-                cb.nodePortProperty().bind(rv.nodePortProperty());
-                rv.launch();
+                registerView.setBuilder(cb);
+                cb.logoProperty().bind(registerView.logoProperty());
+                cb.nameProperty().bind(registerView.nameProperty());
+                cb.platformProperty().bind(registerView.cloudProperty());
+                cb.hostProperty().bind(registerView.hostProperty());
+                cb.serverPortProperty().bind(registerView.serverPortProperty());
+                cb.nodePortProperty().bind(registerView.nodePortProperty());
+                registerView.launch();
             }
         
         });
@@ -88,8 +84,8 @@ public final class NodeList extends HomeActivity {
      * Getter
      * @return sg attribute
      */
-    public SaveGroup getSG() {
-        return sg;
+    public SaveGroup getSaveGroup() {
+        return saveGroup;
     }
     
     /**
@@ -156,7 +152,7 @@ public final class NodeList extends HomeActivity {
             try {
                 buildRegistries();
             } catch (    IOException | ClassNotFoundException ex) {
-                Logger.getLogger(NodeList.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(MainView.class.getName()).log(Level.SEVERE, null, ex);
             }
             getChildren().addAll(registries);
         }
