@@ -81,6 +81,7 @@ public class Friend extends Member implements Information {
     public DoubleProperty relevanceProperty() { return relevance; }
     public IntegerProperty confidenceProperty() { return confidence; }
     public ObjectProperty lastConnectionProperty() { return lastConnection; }
+    public ObjectProperty appVectorProperty() { return appVector; }
 
     @Override
     public void saveProperties() {

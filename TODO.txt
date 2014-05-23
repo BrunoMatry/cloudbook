@@ -1,5 +1,6 @@
 Gwendal
 Friends : affichage des vectors
+Mise à jour des states
 Server : à configurer une seule fois et à volonté => nouveau singleton dans l'application
 affichage vector aussi pour l'application courante
 identifiants uniques pour le serveur
