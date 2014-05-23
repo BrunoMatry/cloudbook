@@ -52,7 +52,7 @@ public final class MainView extends HomeActivity {
         setUpAdderButton();
         setCenter(saveGroup);
         //setBottom(addButton);
-        
+        this.getChildren().add(addButton);
     }
     
     private void setUpAdderButton() {

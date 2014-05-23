@@ -1,7 +1,11 @@
 package hmi;
 
-import hmi.home.MainView;
+import hmi.button.IconFlyWeight;
+import hmi.button.MyBeautifulButton;
 import javafx.application.Application;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import model.engine.Engine;
 import model.node.ApplicationList;
@@ -18,7 +22,18 @@ public class Launcher extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         STAGE = primaryStage;
-        MainView.INSTANCE.launch();
+        Group root = new Group();
+        Scene scene = new Scene(root, 500, 500, Color.WHITE);
+        
+        MyBeautifulButton addButton = new MyBeautifulButton(
+                                          IconFlyWeight.INSTANCE.imDef(),
+                                          IconFlyWeight.INSTANCE.imHov(),
+                                          IconFlyWeight.INSTANCE.imOClk());
+        
+        root.getChildren().add(addButton);
+        Launcher.STAGE.setScene(scene);
+        Launcher.STAGE.show();
+        //MainView.INSTANCE.launch();
     }
     
     /**

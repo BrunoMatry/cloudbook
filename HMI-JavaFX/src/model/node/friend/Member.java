@@ -33,7 +33,6 @@ public class Member implements Sender {
      * Getter
      * @return _id field
      */
-    @Override
     public String getId() {
         return _id;
     }
