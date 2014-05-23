@@ -16,13 +16,13 @@ public class Friend extends Member implements Information {
     /* Attributs serialisables */
     protected double _relevance;
     protected int _confidence;
-    protected Date _lastConnexion;
+    protected Date _lastConnection;
     
     /* Proprietes non serialisables */
     protected transient StringProperty id;
     protected transient DoubleProperty relevance;
     protected transient IntegerProperty confidence;
-    protected transient ObjectProperty<Date> lastConnexion;
+    protected transient ObjectProperty<Date> lastConnection;
     
     /**
      * Constructor
@@ -39,7 +39,7 @@ public class Friend extends Member implements Information {
         id = new SimpleStringProperty(friendId);
         relevance = new RelevanceProperty(this, rlvnce);
         confidence = new ConfidenceProperty(this, cnfdnce);
-        lastConnexion = new SimpleObjectProperty<>(new Date());
+        lastConnection = new SimpleObjectProperty<>(new Date());
     }
 
     @Override
@@ -60,7 +60,7 @@ public class Friend extends Member implements Information {
      * The las tconnection date is updated to the current one
      */
     void updateLastConnectionDate() {
-        lastConnexion.set(new Date());
+        lastConnection.set(new Date());
     }
     
     /**
@@ -69,7 +69,7 @@ public class Friend extends Member implements Information {
      */
     public int daysSinceLastConnection() {
         Date today = new Date();
-        long diff = today.getTime() - lastConnexion.get().getTime();
+        long diff = today.getTime() - lastConnection.get().getTime();
         return (int) (diff / (1000*60*60*24));
     }
     
@@ -78,13 +78,14 @@ public class Friend extends Member implements Information {
     public AppVector getVector() { return vector; }
     public DoubleProperty relevanceProperty() { return relevance; }
     public IntegerProperty confidenceProperty() { return confidence; }
+    public ObjectProperty lastConnectionProperty() { return lastConnection; }
 
     @Override
     public void saveProperties() {
         _id = id.get();
         _relevance =  relevance.get();
         _confidence = confidence.get();
-        _lastConnexion = lastConnexion.get();
+        _lastConnection = lastConnection.get();
     }
 
     @Override
@@ -92,7 +93,7 @@ public class Friend extends Member implements Information {
         id = new SimpleStringProperty(_id);
         relevance = new RelevanceProperty(this, _relevance);
         confidence = new ConfidenceProperty(this, _confidence);
-        lastConnexion = new SimpleObjectProperty<>(_lastConnexion);
+        lastConnection = new SimpleObjectProperty<>(_lastConnection);
     }
 
     /**
@@ -104,7 +105,7 @@ public class Friend extends Member implements Information {
         int hash = 5;
         hash = 17 * hash + Objects.hashCode(this.relevance);
         hash = 17 * hash + Objects.hashCode(this.confidence);
-        hash = 17 * hash + Objects.hashCode(this.lastConnexion);
+        hash = 17 * hash + Objects.hashCode(this.lastConnection);
         return hash;
     }
 
@@ -125,4 +126,11 @@ public class Friend extends Member implements Information {
         return this.relevance.get() == other.relevance.get()
                 && this.confidence.get() == other.confidence.get();
     }
+
+    @Override
+    public String toString() {
+        return "Friend{" + "id=" + id.get() + ", relevance=" + relevance.get() + ", confidence=" + confidence.get() + ", lastConnection=" + lastConnection.get()+ '}';
+    }
+    
+    
 }

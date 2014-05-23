@@ -1,7 +1,10 @@
 Gwendal
+problème du voyant
 Friends : affichage des vectors
+Server : à configurer une seule fois et à volonté => nouveau singleton dans l'application
 affichage vector aussi pour l'application courante
-finaliser (corrections des bugs restants, compléter l'affichage et le calcul)
+identifiants uniques pour le serveur
+problème du delete de fichiers
 tests unitaires
 propreté du code
 
