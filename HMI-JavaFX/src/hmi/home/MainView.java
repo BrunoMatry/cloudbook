@@ -35,9 +35,8 @@ public final class MainView extends HomeActivity {
 
     public static final MainView INSTANCE = new MainView();
     
-    
-    protected SaveGroup saveGroup; //list of save files
-    protected Button adder; //button allowing to add a node
+    protected SaveGroup saveGroup; //list of saved files
+    protected Button addButton; //button allowing to add a node
     protected RegisterView registerView; //child view used to add nodes on this computer
     
     /**
@@ -54,15 +53,15 @@ public final class MainView extends HomeActivity {
         }
         setUpAdderButton();
         setCenter(saveGroup);
-        setBottom(adder);
+        setBottom(addButton);
     }
     
     private void setUpAdderButton() {
         Image plus = IconFlyWeight.INSTANCE.getPlus();
         ImageView iv = new ImageView(plus);
-        this.adder = new Button();
-        this.adder.setGraphic(iv);
-        this.adder.setOnAction(new EventHandler<ActionEvent>() {
+        this.addButton = new Button();
+        this.addButton.setGraphic(iv);
+        this.addButton.setOnAction(new EventHandler<ActionEvent>() {
 
             @Override
             public void handle(ActionEvent t) {
@@ -78,7 +77,7 @@ public final class MainView extends HomeActivity {
             }
         
         });
-        this.adder.setAlignment(Pos.BOTTOM_CENTER);
+        this.addButton.setAlignment(Pos.BOTTOM_CENTER);
     }
     
     /**

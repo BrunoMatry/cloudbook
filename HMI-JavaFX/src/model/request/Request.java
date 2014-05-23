@@ -24,10 +24,14 @@ public class Request<Inf extends Information> extends UnicastRemoteObject implem
 
     /**
      * Constructor
-     * @throws java.rmi.RemoteException
+     * @throws RemoteException
      */
     public Request() throws RemoteException {
-        // ??????????? Why ?
+        sender = null;
+        date = new Date();
+        info = null;
+        rebounds = 0;
+        recipent = 0;
     }
     
     /**

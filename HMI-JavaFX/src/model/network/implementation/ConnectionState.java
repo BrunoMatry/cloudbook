@@ -58,5 +58,4 @@ public class ConnectionState {
         else
            led.set(IconFlyWeight.INSTANCE.getRedLed()); 
     }
-    
 }

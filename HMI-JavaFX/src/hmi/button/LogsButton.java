@@ -1,6 +1,6 @@
 package hmi.button;
 
-import hmi.button.CloudBookButton;
+import hmi.button.MyButton;
 import hmi.content.monitor.MonitorView;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -8,7 +8,7 @@ import model.engine.Engine;
 import model.monitoring.Monitoring;
 import model.node.ApplicationList;
 
-public class LogsButton extends CloudBookButton{
+public class LogsButton extends MyButton{
     
     public LogsButton() {
         super("Monitor logs");
