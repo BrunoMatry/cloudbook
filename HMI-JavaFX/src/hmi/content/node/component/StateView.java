@@ -23,7 +23,7 @@ public class StateView extends NodeComponentView {
 
     @Override
     public SummarizedView makeSummarized() {
-        return new SummarizedView(this, new ImageView());
+        return new SummarizedView(this, new CloudView());
     }
 
     /**
@@ -31,9 +31,9 @@ public class StateView extends NodeComponentView {
      * @param node node from which the state are to be displayed
      */
     @Override
-    public void bind(MyNode node) {
-        ObservableList<State> stateList = node.getMessages().boxObservableList();
-        table.setItems(stateList);
+    public void bind(MyNode node) {/*
+        ObservableList<State> stateList = node.getSs().boxObservableList();
+        table.setItems(stateList);*/
     }
     
 }

@@ -1,5 +1,6 @@
 package model.node;
 
+import controller.CloudProperty;
 import model.node.friend.Friend;
 import model.network.interfaces.Information;
 import java.io.FileInputStream;
@@ -31,7 +32,7 @@ public class MyNode implements Serializable {
     l'application quand elle est chargée et référencer  le chemin */
     protected transient Image _logo; //logo of the application
     protected Mesure topMesure; //mesure to be shown at the first place
-    protected Cloud platform; //current platform of the application
+    protected Cloud _platform; //current platform of the application
     
     protected InformationBox<Friend> friends;
     protected List<Information> informations;
@@ -53,6 +54,7 @@ public class MyNode implements Serializable {
     /* Proprietes non serialisables */
     protected transient StringProperty name;
     protected transient ObjectProperty<Image> logo;
+    private transient CloudProperty platform;
     
     /************************************ CONSTRUCTEURS ************************************/
     
@@ -71,6 +73,7 @@ public class MyNode implements Serializable {
         
         name = new SimpleStringProperty();
         logo = new SimpleObjectProperty<>();
+        platform = new CloudProperty();
     }
     
     /**
@@ -88,7 +91,7 @@ public class MyNode implements Serializable {
      * @throws java.rmi.RemoteException
      */
     public MyNode(Image image, String string, Cloud cloud, String host, int serverPort, int nodePort, int appType, int performance, int speed) throws UnknownHostException, RemoteException {
-        platform = cloud;
+        platform = new CloudProperty(cloud);
         serverHost = host;
         this.serverPort = serverPort;
         this.nodePort = nodePort;
@@ -172,15 +175,13 @@ public class MyNode implements Serializable {
      * @return platform field
      */
     public final Cloud getPlatform() {
-        return this.platform;
+        return this.platform.get();
     }
       
-    /* Attention !*/ 
-    //public StringProperty topMessageProperty() { return topMessage.descriptionProperty(); }
     public StringProperty topMesureProperty() { return topMesure.dateProperty(); }
     public StringProperty nameProperty() { return name; }
     public ObjectProperty<Image> logoProperty() { return logo; }
-    public ObjectProperty<Image> platformProperty() { return platform.iconProperty(); }
+    public CloudProperty platformProperty() { return platform; }
     
     /* ATTENTION ! Mauvaise pratique ! */
     public void setInformations(List<Information> informations) { this.informations = informations; }
@@ -198,7 +199,7 @@ public class MyNode implements Serializable {
         if(!c.equals(currentState.getCloud())) {
             currentState.notCurrentAnymore();
             states.push(new State(c));
-            platform = c;
+            platform.set(c);
         }    
     }
     
@@ -216,14 +217,14 @@ public class MyNode implements Serializable {
     public void save() throws IOException, ClassNotFoundException {
         _name = name.get();
         _logo = logo.get();
+        _platform = platform.get();
         friends.saveProperties();
         for(Information info : informations)
             info.saveProperties();
         mesures.saveProperties();
         messages.saveProperties();
         vector.saveProperties();
-        for(State s : states)
-            s.saveProperties();
+        states.saveProperties();
         FileEngineRelation.INSTANCE.save(this, name.get() + ".ser");
     }
     
@@ -236,9 +237,9 @@ public class MyNode implements Serializable {
             info.restoreProperties();
         res.mesures.restoreProperties();
         res.messages.restoreProperties();
-        for(State s : res.states)
-            s.restoreProperties();
+        res.states.restoreProperties();
         res.logo = new SimpleObjectProperty<>(res._logo);
+        res.platform = new CloudProperty(res._platform);
         res.vector.restoreProperties();
         return res;
     }
