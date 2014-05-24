@@ -178,5 +178,6 @@ public final class NodeView extends OneNodeActivity {
         messagePane.bind(node);
         mesurePane.bind(node);
         friendPane.bind(node);
+        statePane.bind(node);
     }
 }

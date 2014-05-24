@@ -130,7 +130,7 @@ public final class IconFlyWeight {
      */
     public Image getDefaultCloud() {
         if(defaultCloud == null)
-            defaultCloud = new Image("file:res/defaultCloud.png");
+            defaultCloud = new Image("file:res/default_logo.png");
         return defaultCloud;
     }
 }
