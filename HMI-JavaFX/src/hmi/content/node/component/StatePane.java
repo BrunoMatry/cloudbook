@@ -3,20 +3,20 @@ package hmi.content.node.component;
 import hmi.content.AbstractActivity;
 import hmi.content.node.NodeComponentView;
 import hmi.content.node.SummarizedView;
-import java.util.ArrayList;
+import hmi.content.node.component.tableview.StateTableView;
+import javafx.collections.ObservableList;
 import javafx.scene.image.ImageView;
 import model.node.MyNode;
+import model.node.State;
 
 
-public class StateView extends NodeComponentView {
+public class StatePane extends NodeComponentView<State> {
 
-    //all the clouds during the application existence
-    protected ArrayList<ImageView> clouds;
-    
-    public StateView(AbstractActivity p) {
+    public StatePane(AbstractActivity p) {
         super(p);
-        clouds = new ArrayList<>();
         title = "History";
+        table = new StateTableView();
+        setCenter(table);
     }
 
     @Override
@@ -29,9 +29,9 @@ public class StateView extends NodeComponentView {
      * @param node node from which the state are to be displayed
      */
     @Override
-    public void bind(MyNode node) {/*
-        ObservableList<State> stateList = node.getSs().boxObservableList();
-        table.setItems(stateList);*/
+    public void bind(MyNode node) {
+        ObservableList<State> stateList = node.getStates().boxObservableList();
+        table.setItems(stateList);
     }
     
 }

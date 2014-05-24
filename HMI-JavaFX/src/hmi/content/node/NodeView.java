@@ -6,7 +6,7 @@ import hmi.content.OneNodeActivity;
 import hmi.content.node.component.FriendPane;
 import hmi.content.node.component.MessagePane;
 import hmi.content.node.component.MesurePane;
-import hmi.content.node.component.StateView;
+import hmi.content.node.component.StatePane;
 import hmi.home.MainView;
 import java.util.ArrayList;
 import javafx.beans.property.ObjectProperty;
@@ -21,6 +21,7 @@ import model.node.FileEngineRelation;
 import model.node.MyNode;
 import model.node.Message;
 import model.node.Mesure;
+import model.node.State;
 import model.node.friend.Friend;
 
 /**
@@ -39,6 +40,9 @@ public final class NodeView extends OneNodeActivity {
     
     //view containing all the messages received by the current node
     private MessagePane messagePane;
+    
+    //ciew containing all the states in the history of the application
+    private StatePane statePane;
     
     //summary of the state of application
     private SummarizedView<ImageView> state;
@@ -87,8 +91,12 @@ public final class NodeView extends OneNodeActivity {
      */
     public SummarizedView getState() {
         if(state == null) {
-            StateView sv = new StateView(this);
-            state = sv.makeSummarized();
+            statePane = new StatePane(this);
+            TableView<State> table = statePane.getTable();
+            MyNode node = FileEngineRelation.INSTANCE.getCurrentEngine().getNode();
+            ObservableList<State> stateList = node.getStates().boxObservableList();
+            table.setItems(stateList);
+            state = statePane.makeSummarized();
         }
         return state;
     }
@@ -145,18 +153,6 @@ public final class NodeView extends OneNodeActivity {
     }
     
     /**
-     * initialize the model and build all the children views
-     * @param model : model of the current view
-     */
-    /*
-    public NodeView(MyNode model) {
-        super();
-        this.model = model;
-        components = new ArrayList<>();
-        //components.add();
-    }
-   */
-    /**
      * Places the current view in its parent without refreshing it
      * @param node child to place
      * @param x horizontal position
@@ -166,30 +162,6 @@ public final class NodeView extends OneNodeActivity {
         node.setLayoutX(x);
         node.setLayoutY(y);
         getChildren().add(node);
-    }
-    
-    /**
-     * TODO
-     * @param source : component demanding to be displayed
-     */
-    public void onDisplay(IComponentView source) {
-        
-    }
-    
-    /**
-     * TODO
-     * @param source : component demanding to be updated
-     */
-    public void onUpdate(IComponentView source) {
-        
-    }
-    
-    /**
-     * TODO
-     * @param source : component demanding to be hidden
-     */
-    public void onHide(IComponentView source) {
-        getChildren().remove(source);
     }
     
     /**
@@ -203,8 +175,6 @@ public final class NodeView extends OneNodeActivity {
         CloudImageRelation binder = new CloudImageRelation();
         binder.bind(node.platformProperty());
         binder.drive(stateImage);
-        System.out.println("Cloud : " + node.platformProperty().get());
-        System.out.println("Image : " + stateImage.get().toString());
         messagePane.bind(node);
         mesurePane.bind(node);
         friendPane.bind(node);

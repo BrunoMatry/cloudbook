@@ -93,7 +93,7 @@ public final class Mesure implements Information {
     public IntegerProperty mesure3Property() { return mesure3; }
     public StringProperty dateProperty() { return date; }
     public StringProperty applicationNameProperty() { return applicationName; }
-    public final ObjectProperty<Cloud> cloudProperty() {
+    public ObjectProperty<Cloud> cloudProperty() {
         return cloud;
     }
 

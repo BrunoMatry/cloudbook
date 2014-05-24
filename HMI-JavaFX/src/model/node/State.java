@@ -4,10 +4,8 @@ import model.network.interfaces.Information;
 import java.util.Date;
 import java.util.Objects;
 import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 
 public class State implements Information {
@@ -19,7 +17,7 @@ public class State implements Information {
     protected boolean _current;
     
     /* Proprietes non serialisables */
-    protected transient IntegerProperty cloud;
+    protected transient ObjectProperty<Cloud> cloud;
     protected transient ObjectProperty<Date> from;
     protected transient ObjectProperty<Date> to;
     protected transient BooleanProperty current;
@@ -29,14 +27,14 @@ public class State implements Information {
      * @param c cloud associate to the node state
      */
     public State(Cloud c) {
-        cloud = new SimpleIntegerProperty(c.ordinal());
+        cloud = new SimpleObjectProperty<>(c);
         from = new SimpleObjectProperty<>(new Date());
         to = new SimpleObjectProperty<>(new Date());
         current = new SimpleBooleanProperty(true);
     }
     
     /* Properties' getters */
-    public IntegerProperty cloudProperty() { return cloud; }
+    public ObjectProperty<Cloud> cloudProperty() { return cloud; }
     public ObjectProperty<Date> fromProperty() { return from; }
     public ObjectProperty<Date> toProperty() { return to; }
     public BooleanProperty currentProperty() { return current; }
@@ -46,7 +44,7 @@ public class State implements Information {
      * @return the Enum Cloud associate to the cloud property
      */
     public Cloud getCloud() {
-        return Cloud.values()[cloud.get()];
+        return cloud.get();
     }
 
     /**
@@ -68,7 +66,7 @@ public class State implements Information {
 
     @Override
     public void restoreProperties() {
-        cloud = new SimpleIntegerProperty(_cloud.ordinal());
+        cloud = new SimpleObjectProperty<>(_cloud);
         from = new SimpleObjectProperty<>(_from);
         to = new SimpleObjectProperty<>(_to);
         current = new SimpleBooleanProperty(_current);

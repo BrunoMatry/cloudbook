@@ -44,6 +44,7 @@ public class CloudImageRelation extends SimpleObjectProperty<Cloud> {
     public CloudImageRelation(Cloud t) {
         super(t);
         initialize();
+        this.image.set(this.relation.get(t));
     }
     
     /**

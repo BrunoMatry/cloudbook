@@ -138,6 +138,7 @@ public class MyNode implements Serializable {
     public Message getMessage(int i) { return messages.get(i); }
     public InformationBox getMessages() { return messages; }
     public InformationBox getMesures() { return mesures; }
+    public InformationBox getStates() { return states; }
     
     /**
      * getter of the server url. Computed from serverHost and serverPort
