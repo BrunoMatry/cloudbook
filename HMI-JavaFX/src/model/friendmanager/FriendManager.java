@@ -3,9 +3,12 @@ package model.friendmanager;
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 import model.node.AppVector;
+import model.node.Cloud;
 import model.node.MyNode;
 import model.node.InformationBox;
 import model.node.friend.Friend;
@@ -37,8 +40,9 @@ public class FriendManager implements IFriendManager {
     public boolean add(Member sender) {
         AppVector vector = sender.getVector();
         String id = sender.getId();
+        Cloud cloud = sender.getCloud();
         if(!isFriend(id) && relevant(vector)) {
-            Friend friend = new Friend(id, 0, relevance(vector), vector);
+            Friend friend = new Friend(id, 0, relevance(vector), vector, cloud);
             node.addFriend(friend); //indice de confiance initialiser à 0 lors de l'ajout d'un nouvel ami
             return true;
         }
@@ -101,7 +105,7 @@ public class FriendManager implements IFriendManager {
             return;
         /*
         Si l'ajout échoue, soit le sender n'est pas pertinent, soit il est déja dans la liste des amis
-        On parcours donc la liste des amis et si on l'y trouve on vérifie si il est toujours pertinent
+        On parcours donc la liste des amis et si on l'y trouve on vérifie s'il est toujours pertinent
         si oui, on met à jour son vecteur sinon on le supprime de la liste d'amis
         */
         InformationBox<Friend> friends = node.getFriends();
@@ -220,5 +224,51 @@ public class FriendManager implements IFriendManager {
             sortByConfidence(friends, left, j);
         if (i < right)
             sortByConfidence(friends, i, right);
+    }
+    
+    /**
+     * Finds out the best rated cloud for this application
+     * @return the best rated cloud for this application
+     */
+    public Cloud bestCloud() {
+        Map<Cloud, Double> scoreTable = scores();
+        Cloud res = null;
+        double max = 0.0;
+        for(Cloud c : scoreTable.keySet()) {
+            double d = scoreTable.get(c);
+            if(d >= max) {
+                max = d;
+                res = c;
+            }
+        }
+        return res;
+    }
+    
+    /**
+     * Computes the relavance sum for each existing cloud
+     * @return an association table containing all the scores
+     */
+    public Map<Cloud, Double> scores() {
+        Map<Cloud, Double> res = new HashMap<>();
+        for(Cloud c : Cloud.values()) {
+            double score = relevanceSum(c);
+            res.put(c, score);
+        }
+        return res;
+    }
+    
+    /**
+     * Computes the relevance sum over the friend list of friends who are on the specified cloud
+     * @param cloud cloud we look for to increment relevance
+     * @return the relevance sum over the friend list for the specified cloud
+     */
+    public double relevanceSum(Cloud cloud) {
+        InformationBox<Friend> friends = node.getFriends();
+        double res = 0.0;
+        for(Friend f : friends) {
+            if(f.cloudProperty().get() == cloud)
+                res += f.relevanceProperty().get();
+        }
+        return res;
     }
 }

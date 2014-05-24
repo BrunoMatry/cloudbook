@@ -15,7 +15,6 @@ import model.node.friend.Member;
 
 public class RequestManager implements IRequestManager {
     
-    protected IFriendManager friendManager;
     protected List<Information> inbox;
     protected Engine engine;
     
@@ -25,7 +24,6 @@ public class RequestManager implements IRequestManager {
      * @param engine engine which run this instance of FrienManager
      */
     public RequestManager(IFriendManager friendManager, Engine engine) {
-        this.friendManager = friendManager;
         inbox = new ArrayList<>();
         this.engine = engine;
     }
@@ -41,7 +39,7 @@ public class RequestManager implements IRequestManager {
         try {
             Member mem = (Member)req.getSender();
             mem.afterDeserialization();
-            friendManager.update(mem);
+            this.engine.update(mem);
         } catch (RemoteException ex) {
             Logger.getLogger(RequestManager.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -76,11 +74,7 @@ public class RequestManager implements IRequestManager {
             res.add(createRequest(i));
         return res;
     }
-
-    public IFriendManager getFriendManager() {
-        return friendManager;
-    }
-
+    
     public List<Information> getInbox() {
         return inbox;
     }

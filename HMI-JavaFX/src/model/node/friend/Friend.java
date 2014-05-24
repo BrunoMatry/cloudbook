@@ -10,6 +10,7 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import model.node.AppVector;
+import model.node.Cloud;
 
 public class Friend extends Member implements Information {  
     
@@ -24,6 +25,7 @@ public class Friend extends Member implements Information {
     protected transient IntegerProperty confidence;
     protected transient ObjectProperty<Date> lastConnection;
     protected transient ObjectProperty<AppVector> appVector;
+    private transient ObjectProperty<Cloud> cloud;
     
     /**
      * Constructor
@@ -31,10 +33,11 @@ public class Friend extends Member implements Information {
      * @param cnfdnce confidence value
      * @param rlvnce relevance value
      * @param vector vector of characteriqtics of the member application
+     * @param _cloud cloud on which this friend runs
      * @throws NullPointerException 
      */
-    public Friend(String friendId, int cnfdnce, double rlvnce, AppVector vector) throws NullPointerException {
-        super(friendId, vector);
+    public Friend(String friendId, int cnfdnce, double rlvnce, AppVector vector, Cloud _cloud) throws NullPointerException {
+        super(friendId, vector, _cloud);
         if(vector == null)
             throw new NullPointerException();
         id = new SimpleStringProperty(friendId);
@@ -42,11 +45,17 @@ public class Friend extends Member implements Information {
         confidence = new ConfidenceProperty(this, cnfdnce);
         lastConnection = new SimpleObjectProperty<>(new Date());
         appVector = new SimpleObjectProperty<>(vector);
+        cloud = new SimpleObjectProperty<>(_cloud);
     }
 
     @Override
     public String getId() {
         return id.get();
+    }
+
+    @Override
+    public Cloud getCloud() {
+        return cloud.get();
     }
     
     /**
@@ -82,6 +91,7 @@ public class Friend extends Member implements Information {
     public IntegerProperty confidenceProperty() { return confidence; }
     public ObjectProperty lastConnectionProperty() { return lastConnection; }
     public ObjectProperty appVectorProperty() { return appVector; }
+    public ObjectProperty<Cloud> cloudProperty() { return cloud; }
 
     @Override
     public void saveProperties() {
@@ -90,6 +100,7 @@ public class Friend extends Member implements Information {
         _confidence = confidence.get();
         _lastConnection = lastConnection.get();
         vector = appVector.get();
+        _cloud = cloud.get();
     }
 
     @Override
@@ -99,6 +110,7 @@ public class Friend extends Member implements Information {
         confidence = new ConfidenceProperty(this, _confidence);
         lastConnection = new SimpleObjectProperty<>(_lastConnection);
         appVector = new SimpleObjectProperty<>(vector);
+        cloud = new SimpleObjectProperty<>(_cloud);
     }
 
     /**

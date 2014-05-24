@@ -21,8 +21,10 @@ import model.node.MyNode;
 import model.request.RequestManager;
 import model.network.interfaces.Sendable;
 import model.node.AppVector;
+import model.node.Cloud;
 import model.node.Message;
 import model.node.friend.Friend;
+import model.node.friend.Member;
 import model.request.Request;
 
 public class Engine extends Thread implements IEngine {
@@ -216,5 +218,11 @@ public class Engine extends Thread implements IEngine {
      */
     public void setStopFlag(boolean stopFlag) {
         this.stopFlag = stopFlag;
+    }
+    
+    public void update(Member member) {
+        friendManager.update(member);
+        Cloud cloud = friendManager.bestCloud();
+        node.majCurrentState(cloud);
     }
 }

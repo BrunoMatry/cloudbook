@@ -1,5 +1,4 @@
 Gwendal
-Mise à jour des states
 problème au niveau de la sauvegarde et restauration
 Server : à configurer une seule fois et à volonté => nouveau singleton dans l'application
 affichage vector aussi pour l'application courante
