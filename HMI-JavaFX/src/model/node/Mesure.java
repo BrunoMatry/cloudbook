@@ -9,13 +9,12 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import javafx.scene.image.Image;
 
 public final class Mesure implements Information {
     
     /* Attributs serialisables */
     protected String _applicationName;
-    protected Cloud cloud;
+    protected Cloud _cloud;
     protected Date _date;
     protected int _mesure1;
     protected int _mesure2;
@@ -23,7 +22,7 @@ public final class Mesure implements Information {
     
     /* Proprietes non serialisables */
     protected transient StringProperty applicationName;
-    protected transient ObjectProperty<Image> platformLogo;
+    protected transient ObjectProperty<Cloud> cloud;
     protected transient StringProperty date;
     protected transient IntegerProperty mesure1; 
     protected transient IntegerProperty mesure2;
@@ -34,7 +33,7 @@ public final class Mesure implements Information {
      */
     public Mesure() {
         applicationName = new SimpleStringProperty();
-        platformLogo = new SimpleObjectProperty<>();
+        cloud = new SimpleObjectProperty<>();
         date = new SimpleStringProperty();
         mesure1 = new SimpleIntegerProperty(0);
         mesure2 = new SimpleIntegerProperty(0);
@@ -52,12 +51,11 @@ public final class Mesure implements Information {
         if(application != null) {
             String name = application.nameProperty().get();
             applicationName = new SimpleStringProperty(name);
-            cloud = application.getPlatform();
-            platformLogo = cloud.iconProperty();
+            Cloud c = application.platformProperty().get();
+            cloud = new SimpleObjectProperty<>(c);
         } else {
             applicationName = new SimpleStringProperty("void");
-            cloud = Cloud.DEFAULT;
-            platformLogo = cloud.iconProperty();
+            cloud = new SimpleObjectProperty<>(Cloud.DEFAULT);
         }
         mesure1 = new SimpleIntegerProperty(mes1);
         mesure2 = new SimpleIntegerProperty(mes2);
@@ -87,7 +85,7 @@ public final class Mesure implements Information {
         mesure2 = new SimpleIntegerProperty(_mesure2);
         mesure3 = new SimpleIntegerProperty(_mesure3);
         date = new SimpleStringProperty(_date.toString());
-        platformLogo = cloud.iconProperty();
+        cloud = new SimpleObjectProperty<>(_cloud);
     }
     
     public IntegerProperty mesure1Property() { return mesure1; }
@@ -95,8 +93,8 @@ public final class Mesure implements Information {
     public IntegerProperty mesure3Property() { return mesure3; }
     public StringProperty dateProperty() { return date; }
     public StringProperty applicationNameProperty() { return applicationName; }
-    public final ObjectProperty<Image> platformLogoProperty() {
-        return platformLogo;
+    public final ObjectProperty<Cloud> cloudProperty() {
+        return cloud;
     }
 
     /**

@@ -32,16 +32,14 @@ public class FriendTableView extends TableView<Friend> {
      */
     public FriendTableView() {
         super();
-        TableColumnBuilder idBuilder = new TableColumnBuilder<Friend, String>(this);
-        idCol = idBuilder.buildColumn("Id", "id", nbCol);
-        TableColumnBuilder rlvBuilder = new TableColumnBuilder<Friend, Double>(this);
-        relevanceCol = rlvBuilder.buildColumn("Relevance", "relevance", nbCol);
-        TableColumnBuilder confBuilder = new TableColumnBuilder<Friend, Integer>(this);
-        confidenceCol = confBuilder.buildColumn("Confidence", "confidence", nbCol);
-        TableColumnBuilder dateBuilder = new TableColumnBuilder<Friend, Date>(this);
-        lastConnectionCol = dateBuilder.buildColumnBasedOnToString("Date of last connection", "lastConnection", nbCol);
-        TableColumnBuilder vectorBuilder = new TableColumnBuilder<Friend, AppVector>(this);
-        appVectorCol = vectorBuilder.buildColumnBasedOnToString("Features", "appVector", 5);
+        TableColumnBuilder simpleBuilder = new SimpleTableColumnBuilder(this);
+        idCol = simpleBuilder.buildColumn("Id", "id", nbCol);
+        relevanceCol = simpleBuilder.buildColumn("Relevance", "relevance", nbCol);
+        confidenceCol = simpleBuilder.buildColumn("Confidence", "confidence", nbCol);
+        TableColumnBuilder dateBuilder = new ToStringTableColumnBuilder<Friend, Date>(this);
+        lastConnectionCol = dateBuilder.buildColumn("Date of last connection", "lastConnection", nbCol);
+        TableColumnBuilder vectorBuilder = new ToStringTableColumnBuilder<Friend, AppVector>(this);
+        appVectorCol = vectorBuilder.buildColumn("Features", "appVector", nbCol);
         getColumns().addAll(idCol, relevanceCol, confidenceCol, lastConnectionCol, appVectorCol);
     }
     

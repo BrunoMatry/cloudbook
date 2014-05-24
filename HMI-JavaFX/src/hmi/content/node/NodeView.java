@@ -1,19 +1,21 @@
 package hmi.content.node;
 
-import controller.CloudImageProperty;
+import controller.CloudImageRelation;
 import hmi.content.AbstractActivity;
 import hmi.content.OneNodeActivity;
-import hmi.content.node.component.CloudView;
 import hmi.content.node.component.FriendPane;
 import hmi.content.node.component.MessagePane;
 import hmi.content.node.component.MesurePane;
 import hmi.content.node.component.StateView;
 import hmi.home.MainView;
 import java.util.ArrayList;
+import javafx.beans.property.ObjectProperty;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import model.node.FileEngineRelation;
 import model.node.MyNode;
@@ -39,7 +41,7 @@ public final class NodeView extends OneNodeActivity {
     private MessagePane messagePane;
     
     //summary of the state of application
-    private SummarizedView<CloudView> state;
+    private SummarizedView<ImageView> state;
     
     //summary of the mesures
     private SummarizedView<Text> mesures;
@@ -197,10 +199,14 @@ public final class NodeView extends OneNodeActivity {
     public void bindWithNode() {
         super.bindWithNode();
         MyNode node = FileEngineRelation.INSTANCE.getCurrentEngine().getNode();
-        CloudImageProperty stateView = state.getView().cloudImageProperty();
+        ObjectProperty<Image> stateImage = state.getView().imageProperty();
+        CloudImageRelation binder = new CloudImageRelation();
+        binder.bind(node.platformProperty());
+        binder.drive(stateImage);
+        System.out.println("Cloud : " + node.platformProperty().get());
+        System.out.println("Image : " + stateImage.get().toString());
         messagePane.bind(node);
         mesurePane.bind(node);
         friendPane.bind(node);
-        stateView.bind(node.platformProperty());
     }
 }

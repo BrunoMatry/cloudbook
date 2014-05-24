@@ -1,6 +1,5 @@
 package model.node;
 
-import controller.CloudProperty;
 import model.node.friend.Friend;
 import model.network.interfaces.Information;
 import java.io.FileInputStream;
@@ -54,7 +53,7 @@ public class MyNode implements Serializable {
     /* Proprietes non serialisables */
     protected transient StringProperty name;
     protected transient ObjectProperty<Image> logo;
-    private transient CloudProperty platform;
+    private transient ObjectProperty<Cloud> platform;
     
     /************************************ CONSTRUCTEURS ************************************/
     
@@ -73,7 +72,7 @@ public class MyNode implements Serializable {
         
         name = new SimpleStringProperty();
         logo = new SimpleObjectProperty<>();
-        platform = new CloudProperty();
+        platform = new SimpleObjectProperty<>();
     }
     
     /**
@@ -91,7 +90,7 @@ public class MyNode implements Serializable {
      * @throws java.rmi.RemoteException
      */
     public MyNode(Image image, String string, Cloud cloud, String host, int serverPort, int nodePort, int appType, int performance, int speed) throws UnknownHostException, RemoteException {
-        platform = new CloudProperty(cloud);
+        platform = new SimpleObjectProperty<>(cloud);
         serverHost = host;
         this.serverPort = serverPort;
         this.nodePort = nodePort;
@@ -181,7 +180,7 @@ public class MyNode implements Serializable {
     public StringProperty topMesureProperty() { return topMesure.dateProperty(); }
     public StringProperty nameProperty() { return name; }
     public ObjectProperty<Image> logoProperty() { return logo; }
-    public CloudProperty platformProperty() { return platform; }
+    public ObjectProperty<Cloud> platformProperty() { return platform; }
     
     /* ATTENTION ! Mauvaise pratique ! */
     public void setInformations(List<Information> informations) { this.informations = informations; }
@@ -239,7 +238,7 @@ public class MyNode implements Serializable {
         res.messages.restoreProperties();
         res.states.restoreProperties();
         res.logo = new SimpleObjectProperty<>(res._logo);
-        res.platform = new CloudProperty(res._platform);
+        res.platform = new SimpleObjectProperty<>(res._platform);
         res.vector.restoreProperties();
         return res;
     }

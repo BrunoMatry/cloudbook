@@ -27,13 +27,12 @@ public class MessageTableView extends TableView<Message> {
      * Constructor
      */
     public MessageTableView() {
-        TableColumnBuilder idBuilder = new TableColumnBuilder<Message, String>(this);
-        idSenderCol = idBuilder.buildColumn("Id", "idSender", 4);
-        TableColumnBuilder rlvBuilder = new TableColumnBuilder<Message, Boolean>(this);
-        relevantCol = rlvBuilder.buildColumn("Relevant ?", "relevant", 4);
-        TableColumnBuilder dateBuilder = new TableColumnBuilder<Message, Date>(this);
-        dateCol = dateBuilder.buildColumnBasedOnToString("Date", "date", 4);
-        TableColumnBuilder infoBuilder = new TableColumnBuilder<Message, Information>(this);
+        TableColumnBuilder simpleBuilder = new SimpleTableColumnBuilder(this);
+        idSenderCol = simpleBuilder.buildColumn("Id", "idSender", 4);
+        relevantCol = simpleBuilder.buildColumn("Relevant ?", "relevant", 4);
+        TableColumnBuilder dateBuilder = new ToStringTableColumnBuilder<Message, Date>(this);
+        dateCol = dateBuilder.buildColumn("Date", "date", 4);
+        TableColumnBuilder infoBuilder = new ToStringTableColumnBuilder<Message, Information>(this);
         contentCol = infoBuilder.buildColumn("Content", "content", 4);
         getColumns().addAll(idSenderCol, relevantCol, dateCol, contentCol);
     }
