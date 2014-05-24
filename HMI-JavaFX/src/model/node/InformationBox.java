@@ -34,7 +34,8 @@ public class InformationBox<T extends Information> implements Information, Itera
      * Constructor
      */
     public InformationBox() {
-        box = FXCollections.observableArrayList();
+        ObservableList<T> bbox = FXCollections.observableArrayList();
+        box = FXCollections.synchronizedObservableList(bbox);
         description = new SimpleStringProperty(EMPTY_FLAG);
     }
     
