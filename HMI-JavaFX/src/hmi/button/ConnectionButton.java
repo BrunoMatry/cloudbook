@@ -6,6 +6,8 @@
 
 package hmi.button;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.beans.property.ObjectProperty;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -48,11 +50,15 @@ public class ConnectionButton extends Button {
 
            @Override
            public void handle(ActionEvent t) {
-               Engine engine = network.getEngine();
-               if(network.getConnectionState().isConnected())
-                   engine.setStopFlag(true);
-               else
-                   engine.start();
+               try {
+                   Engine engine = network.getEngine();
+                   if(network.getConnectionState().isConnected())
+                       engine.stop();
+                   else
+                       engine.start();
+               } catch (InterruptedException ex) {
+                   Logger.getLogger(ConnectionButton.class.getName()).log(Level.SEVERE, null, ex);
+               }
            }
        });
     }

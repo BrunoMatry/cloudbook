@@ -2,20 +2,18 @@ package model.monitoring;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import model.engine.Engine;
 import model.node.Mesure;
 
-public class Monitoring extends Thread implements IMonitoring {
-    
-    private final static long TIME = 5000;
+public class Monitoring implements IMonitoring {
     
     protected List<Mesure> mesures;
     protected Engine engine;
-    protected boolean stopFlag;
+    
+    //monitoring thread
+    private MonitoringThread thread;
     
     //logs containing information on sent objects
     protected StringProperty logs;
@@ -37,22 +35,6 @@ public class Monitoring extends Thread implements IMonitoring {
         engine.getNode().addMesures(mesures);
         mesures.clear(); 
     }
-    
-    /**
-     * Each 5s, generates new information.
-     * When there is enough information, it is sent on the network.
-     */
-    @Override
-    public void run() {
-        while(!stopFlag) {
-            this.mesures.add(genererMesure());
-            try {
-                sleep(TIME);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(Monitoring.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-    }
 
     /**
      * Generates a random mesure
@@ -70,18 +52,24 @@ public class Monitoring extends Thread implements IMonitoring {
     }
     
     /**
-     * Getter
-     * @return stopFlag field
+     * Starts the monitoring thread
+     * If the thread is running, it stops it befor creating and starting a new one
+     * @throws InterruptedException problem when stopping the thread
      */
-    public final boolean isStopFlag() {
-        return stopFlag;
+    public void start() throws InterruptedException {
+        if(thread != null)
+            stop();
+        thread = new MonitoringThread(this);
+        thread.start();
     }
-
+    
     /**
-     * Setter
-     * @param stopFlag stopFlag field
+     * Stops the monitoring thread
+     * @throws InterruptedException problem when waiting the thread ending
      */
-    public void setStopFlag(boolean stopFlag) {
-        this.stopFlag = stopFlag;
+    public void stop() throws InterruptedException {
+        thread.setStopFlag(true);
+        thread.join();
     }
+    
 }

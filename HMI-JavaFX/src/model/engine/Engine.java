@@ -1,7 +1,6 @@
 package model.engine;
 
 import java.io.IOException;
-import static java.lang.Thread.sleep;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.rmi.RemoteException;
@@ -27,18 +26,14 @@ import model.node.friend.Friend;
 import model.node.friend.Member;
 import model.request.Request;
 
-public class Engine extends Thread implements IEngine {
-    
-    private final static long nbSecUpdate = 3;
-    private final static long nbSecSave = 20;
-    private final static long nbSecShare = 5;
+public class Engine implements IEngine {
     
     protected IRequestManager requestManager;
     protected IFriendManager friendManager;
     protected Monitoring monitoring;
     protected MyNode node;
     protected RemoteClient network;
-    protected boolean stopFlag;
+    private EngineThread thread;
 
     /* Getters and setters */
     public IFriendManager getFriendManager() { return friendManager; }
@@ -58,7 +53,6 @@ public class Engine extends Thread implements IEngine {
      * @throws UnknownHostException host unknown
      */
     public Engine(MyNode n) throws UnknownHostException, RemoteException {
-        stopFlag = false;
         monitoring = new Monitoring(this);
         node = n;
         network = new Network(InetAddress.getLocalHost().getHostAddress(),
@@ -66,47 +60,6 @@ public class Engine extends Thread implements IEngine {
                 this);
         friendManager = new FriendManager(node);
         requestManager = new RequestManager(friendManager, this);
-    }
-
-    /**
-     * Starts the communication with the network
-     */
-    @Override
-    public void run() {
-        if(monitoring != null && network != null) {
-            try {
-                network.connect();
-            } catch (RemoteException ex) {
-                Logger.getLogger(Engine.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            monitoring.start();
-        }
-        stopFlag = false;
-        int cpt = Integer.MIN_VALUE;
-        while(!stopFlag) {
-            try {
-                sleep(1000);
-                cpt++;
-                if(cpt % nbSecUpdate == 0)
-                    updateInformation();
-                if(cpt % nbSecShare == 0)
-                    shareMesures(3, 3);
-                if(cpt % nbSecSave == 0)
-                    save();
-                if(cpt >= Integer.MAX_VALUE)
-                    cpt = Integer.MIN_VALUE;
-            } catch (InterruptedException | UnknownHostException | RemoteException ex) {
-                Logger.getLogger(Engine.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (IOException ex) {
-                Logger.getLogger(Engine.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        try {
-            network.disconnect();
-        } catch (RemoteException ex) {
-            Logger.getLogger(Engine.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        monitoring.setStopFlag(true);
     }
     
     @Override
@@ -126,39 +79,6 @@ public class Engine extends Thread implements IEngine {
     @Override
     public void handleRequest(Sendable req) {
         requestManager.handleRequest(req);
-    }
-    
-    /**
-     * Update the current node with information from monitoring
-     */
-    protected void updateInformation(){
-        monitoring.pushInformation();
-    }
-
-    /**
-     * Share mesure with friends
-     * @param nbMesures number of mesures to share
-     * @param nbFriends max number of friends to target
-     * @throws UnknownHostException unknown host
-     * @throws RemoteException remote access problem
-     */
-    protected void shareMesures(int nbMesures, int nbFriends) throws UnknownHostException, RemoteException {
-        // Get the last mesures from the node (can be modified)
-        ArrayList<Information> mesures = node.getMesures().getLastValues(nbMesures);
-        
-        //generation of corresponding messages
-        List<Message> messages = makeMessages(mesures);
-        
-        // Creating requests
-        List<Request> requests = requestManager.createRequests(messages);
-        
-        //Retriving of all members to which the request is to be sent
-        List<Friend> friends = friendManager.getRelevantFriends(nbFriends);
-        
-        if(friends == null || friends.isEmpty())
-            broadcast(requests);
-        else
-            send(requests, friends);
     }
     
     /**
@@ -202,23 +122,6 @@ public class Engine extends Thread implements IEngine {
             network.broadcast(req);
     }
     
-    /**
-     * Getter
-     * @return stopFlag field
-     */
-    public final boolean isStopFlag() {
-        // [Q] Ne serait-il pas plus judiscieux de faire une BooleanProperty ?
-        return stopFlag;
-    }
-
-    /**
-     * Setter
-     * @param stopFlag stopFlag field
-     */
-    public void setStopFlag(boolean stopFlag) {
-        this.stopFlag = stopFlag;
-    }
-    
     public void update(Member member) {
         friendManager.update(member);
     }
@@ -230,5 +133,26 @@ public class Engine extends Thread implements IEngine {
     public void updateState() {
         Cloud cloud = friendManager.bestCloud();
         node.majCurrentState(cloud);
+    }
+    
+    /**
+     * Starts the engine thread
+     * If the thread is running, it stops it befor creating and starting a new one
+     * @throws InterruptedException problem when stopping the thread
+     */
+    public void start() throws InterruptedException {
+        if(thread != null)
+            stop();
+        thread = new EngineThread(this);
+        thread.start();
+    }
+    
+    /**
+     * Stops the engine thread
+     * @throws InterruptedException problem when waiting the thread ending
+     */
+    public void stop() throws InterruptedException {
+        thread.setStopFlag(true);
+        thread.join();
     }
 }
