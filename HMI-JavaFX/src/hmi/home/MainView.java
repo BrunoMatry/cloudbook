@@ -68,8 +68,6 @@ public final class MainView extends HomeActivity {
                 cb.logoProperty().bind(registerView.logoProperty());
                 cb.nameProperty().bind(registerView.nameProperty());
                 cb.platformProperty().bind(registerView.cloudProperty());
-                cb.hostProperty().bind(registerView.hostProperty());
-                cb.serverPortProperty().bind(registerView.serverPortProperty());
                 cb.nodePortProperty().bind(registerView.nodePortProperty());
                 registerView.launch();
             }

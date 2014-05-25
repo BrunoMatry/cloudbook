@@ -73,10 +73,9 @@ public class Engine extends Thread implements IEngine {
      */
     @Override
     public void run() {
-        // [Q] Pourquoi ce test ?
         if(monitoring != null && network != null) {
             try {
-                network.connect(node.getServerHost() + ":" + node.getServerPort());
+                network.connect();
             } catch (RemoteException ex) {
                 Logger.getLogger(Engine.class.getName()).log(Level.SEVERE, null, ex);
             }

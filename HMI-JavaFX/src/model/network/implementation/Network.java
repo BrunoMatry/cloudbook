@@ -6,6 +6,11 @@
 
 package model.network.implementation;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
@@ -30,7 +35,7 @@ public class Network extends UnicastRemoteObject implements RemoteClient {
     
     protected String ip;
     protected int port;
-    protected RemoteServer stub;
+    public static final RemoteServer STUB = initializeServer();
     protected ConnectionState connectionState;
     protected Engine engine;
     
@@ -48,6 +53,36 @@ public class Network extends UnicastRemoteObject implements RemoteClient {
         this.connectionState = new ConnectionState(false);
     }
     
+    /**
+     * Retrieves the server address in the configuration file
+     * @return the server object
+     */
+    private static RemoteServer initializeServer() {
+        FileReader fr = null;
+        RemoteServer stub = null;
+        try {
+            File serverConfig = new File("./serverConfig.txt");
+            fr = new FileReader(serverConfig);
+            BufferedReader reader = new BufferedReader(fr);
+            String address = "";
+            while("".equals(address) && address != null)
+                address = reader.readLine();
+            stub = (RemoteServer) Naming.lookup(address);
+            return stub;
+        } catch (FileNotFoundException | NotBoundException | MalformedURLException | RemoteException ex) {
+            Logger.getLogger(Network.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Network.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                fr.close();
+            } catch (IOException ex) {
+                Logger.getLogger(Network.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return stub;
+    }
+    
     @Override
     public void handleRequest(Sendable request) throws RemoteException {
         engine.handleRequest(request);
@@ -61,28 +96,22 @@ public class Network extends UnicastRemoteObject implements RemoteClient {
         Member mem = (Member)request.getSender();
         mem.beforeSerialization();
         request.setClient(this);
-        stub.send(request, receiver);
+        STUB.send(request, receiver);
     }
 
     @Override
     public RemoteServer getStub() throws RemoteException {
-        return stub;
+        return STUB;
     }
 
     /**
      * registers this Network client on the specified server
-     * @param serverId identifier of the server
      * @throws RemoteException in case of remote access problem
      */
     @Override
-    public void connect(String serverId) throws RemoteException {
-        try {
-            stub = (RemoteServer)Naming.lookup("rmi://" + serverId + "/" + RemoteServer.NAME);
-            stub.connect(this);
-            connectionState.setConnected(true);
-        } catch (NotBoundException | MalformedURLException ex) {
-            Logger.getLogger(Network.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    public void connect() throws RemoteException {
+        STUB.connect(this);
+        connectionState.setConnected(true);
     }
 
     /**
@@ -102,8 +131,7 @@ public class Network extends UnicastRemoteObject implements RemoteClient {
      */
     @Override
     public void disconnect() throws RemoteException {
-        stub.disconnect(this);
-        stub = null;
+        STUB.disconnect(this);
         connectionState.setConnected(false);
     }
 
@@ -113,7 +141,7 @@ public class Network extends UnicastRemoteObject implements RemoteClient {
         if(info != null)
             info.saveProperties();
         request.setClient(this);
-        stub.broadcast(request);
+        STUB.broadcast(request);
     }
 
     /**

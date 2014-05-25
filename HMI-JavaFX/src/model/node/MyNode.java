@@ -16,7 +16,6 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.image.Image;
-import model.network.interfaces.RemoteServer;
 
 /**
  * Representation of a node
@@ -39,13 +38,6 @@ public class MyNode implements Serializable {
     protected InformationBox<Mesure> mesures; //list of all the mesures
     protected InformationBox<Message> messages; //list of the received messages
     protected AppVector vector;
-    
-    // [Q] Que font ces attributs dans le noeud ?
-    //host of the server
-    protected String serverHost;
-    
-    //port of the server
-    protected int serverPort;
     
     //port of the application
     protected int nodePort;
@@ -80,8 +72,6 @@ public class MyNode implements Serializable {
      * @param image logo
      * @param string name
      * @param cloud cloud-platform
-     * @param host host name of the server
-     * @param serverPort port of the server
      * @param nodePort port of the current application
      * @param appType type of the application
      * @param performance TODO
@@ -89,10 +79,8 @@ public class MyNode implements Serializable {
      * @throws java.net.UnknownHostException
      * @throws java.rmi.RemoteException
      */
-    public MyNode(Image image, String string, Cloud cloud, String host, int serverPort, int nodePort, int appType, int performance, int speed) throws UnknownHostException, RemoteException {
+    public MyNode(Image image, String string, Cloud cloud, int nodePort, int appType, int performance, int speed) throws UnknownHostException, RemoteException {
         platform = new SimpleObjectProperty<>(cloud);
-        serverHost = host;
-        this.serverPort = serverPort;
         this.nodePort = nodePort;
         friends = new InformationBox<>();
         informations = new ArrayList<>();
@@ -139,28 +127,6 @@ public class MyNode implements Serializable {
     public InformationBox getMessages() { return messages; }
     public InformationBox getMesures() { return mesures; }
     public InformationBox getStates() { return states; }
-    
-    /**
-     * getter of the server url. Computed from serverHost and serverPort
-     * @return url of the server
-     */
-    public String getServerUrl() { return "rmi://" + serverHost + ":" + serverPort + "/" + RemoteServer.NAME; }
-
-    /**
-     * getter
-     * @return server Ip
-     */
-    public String getServerHost() {
-        return serverHost;
-    }
-
-    /**
-     * getter
-     * @return server port
-     */
-    public int getServerPort() {
-        return serverPort;
-    }
     
     /**
      * Getter

@@ -111,14 +111,6 @@ public class RegisterView extends Activity {
         return settings.getFieldArea().getNodePort().getHint().textProperty();
     }
     
-    public StringProperty hostProperty() {
-        return settings.getFieldArea().getHost().getHint().textProperty();
-    }
-    
-    public StringProperty serverPortProperty() {
-        return settings.getFieldArea().getServerPort().getHint().textProperty();
-    }
-    
     public ObjectProperty<Cloud> cloudProperty() {
         return settings.clouds.valueProperty();
     }

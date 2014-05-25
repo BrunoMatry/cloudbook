@@ -11,12 +11,6 @@ public class FieldArea extends VBox {
         //name of the application
         private Field name;
         
-        //host of the server
-        private Field host;
-        
-        //port of the server
-        private Field serverPort;
-        
         //port of the application
         private Field nodePort;
         
@@ -29,9 +23,7 @@ public class FieldArea extends VBox {
             setSpacing(30);
             getChildren().addAll(
                     getName(),
-                    getNodePort(),
-                    getHost(),
-                    getServerPort()
+                    getNodePort()
             );
         }
         
@@ -45,28 +37,6 @@ public class FieldArea extends VBox {
                 name = new Field("Enter the name of your application : ", "App name");
             }
             return name;
-        }
-        
-        /**
-         * Getter
-         * @return host field
-         */
-        public final Field getHost() {
-            if(host == null){
-                host = new Field("Enter the host name : ", "host");
-            }
-            return host;
-        }
-
-        /**
-         * Getter
-         * @return serverPort field
-         */
-        public final Field getServerPort() {
-            if(serverPort == null) {
-                serverPort = new Field("Enter the host port : ", "50000");
-            }
-            return serverPort;
         }
         
         /**
