@@ -66,6 +66,7 @@ public class CloudImageRelation extends Relation<Cloud, Image> {
     public void bind(ObservableValue<? extends Cloud> ov) {
         super.bind(ov);
         Cloud cloud = ov.getValue();
+        System.out.println("Appel du setter de l'image property dans bind");
         this.image.set(this.relation.get(cloud));
     }
     
@@ -76,6 +77,14 @@ public class CloudImageRelation extends Relation<Cloud, Image> {
     @Override
     public void set(Cloud cloud) {
         super.set(cloud);
+        System.out.println("Appel du setter de l'image property dans set");
         this.image.set(this.relation.get(cloud));
+    }
+
+    @Override
+    public void setValue(Cloud t) {
+        super.setValue(t);
+        System.out.println("Appel du setter de l'image property dans setValue");
+        this.image.set(this.relation.get(t));
     }
 }

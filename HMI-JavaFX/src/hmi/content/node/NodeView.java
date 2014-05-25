@@ -58,6 +58,12 @@ public final class NodeView extends OneNodeActivity {
     
     private final Text appVector;
     
+    private CloudImageRelation binder;
+    
+    private AppVectorStringRelation vectorBinder;
+    
+    
+    
     /**
      * 
      * @param p the previous Activity
@@ -173,14 +179,14 @@ public final class NodeView extends OneNodeActivity {
         super.bindWithNode();
         MyNode node = FileEngineRelation.INSTANCE.getCurrentEngine().getNode();
         ObjectProperty<Image> stateImage = state.getView().imageProperty();
-        CloudImageRelation binder = new CloudImageRelation();
+        binder = new CloudImageRelation();
         binder.bind(node.platformProperty());
         binder.drive(stateImage);
         messagePane.bind(node);
         mesurePane.bind(node);
         friendPane.bind(node);
         statePane.bind(node);
-        AppVectorStringRelation vectorBinder = new AppVectorStringRelation();
+        vectorBinder = new AppVectorStringRelation();
         vectorBinder.bind(node.vectorProperty());
         vectorBinder.drive(appVector.textProperty());
     }

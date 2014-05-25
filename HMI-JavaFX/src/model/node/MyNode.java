@@ -169,6 +169,7 @@ public class MyNode implements Serializable {
         if(!c.equals(currentState.getCloud())) {
             currentState.notCurrentAnymore();
             states.push(new State(c));
+            System.out.println("Appel du setter de MyNode::platform");
             platform.set(c);
         }    
     }
