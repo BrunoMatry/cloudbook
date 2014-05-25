@@ -1,7 +1,8 @@
 Gwendal
 Changement de cloud commandé par l'utilisateur
-identifiants uniques pour le serveur
+image de l'application
 problème du delete de fichiers
+identifiants uniques pour le serveur
 tests unitaires
 propreté du code
 bug lors de la sauvegarde au clic sur la croix
