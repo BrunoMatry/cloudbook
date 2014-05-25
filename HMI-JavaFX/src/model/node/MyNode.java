@@ -31,13 +31,13 @@ public class MyNode implements Serializable {
     protected transient Image _logo; //logo of the application
     protected Mesure topMesure; //mesure to be shown at the first place
     protected Cloud _platform; //current platform of the application
+    private AppVector _vector;
     
     protected InformationBox<Friend> friends;
     protected List<Information> informations;
     protected InformationBox<State> states; //history of the cloud platforms
     protected InformationBox<Mesure> mesures; //list of all the mesures
     protected InformationBox<Message> messages; //list of the received messages
-    protected AppVector vector;
     
     //port of the application
     protected int nodePort;
@@ -46,6 +46,7 @@ public class MyNode implements Serializable {
     protected transient StringProperty name;
     protected transient ObjectProperty<Image> logo;
     private transient ObjectProperty<Cloud> platform;
+    private transient ObjectProperty<AppVector> vector;
     
     /************************************ CONSTRUCTEURS ************************************/
     
@@ -60,8 +61,8 @@ public class MyNode implements Serializable {
         states = new InformationBox<>();
         mesures = new InformationBox<>();
         messages = new InformationBox<>();    
-        vector = new AppVector(mesures);
-        
+        _vector = new AppVector(mesures);
+        vector = new SimpleObjectProperty<>(_vector);
         name = new SimpleStringProperty();
         logo = new SimpleObjectProperty<>();
         platform = new SimpleObjectProperty<>();
@@ -86,9 +87,9 @@ public class MyNode implements Serializable {
         informations = new ArrayList<>();
         states = new InformationBox<>();
         mesures = new InformationBox<>();
-        messages = new InformationBox<>();
-        vector = new AppVector(mesures);
-        
+        messages = new InformationBox<>();    
+        _vector = new AppVector(mesures);
+        vector = new SimpleObjectProperty<>(_vector);
         name = new SimpleStringProperty(string);
         logo = new SimpleObjectProperty<>(image);
         
@@ -101,7 +102,9 @@ public class MyNode implements Serializable {
      */
     public void addMesure(Mesure m) {
         this.mesures.push(m);
-        vector.recalculateVector();
+        AppVector changedValue = vector.get();
+        changedValue.recalculateVector();
+        vector.set(changedValue);
     }
     
     /**
@@ -111,7 +114,9 @@ public class MyNode implements Serializable {
     public void addMesures(List<Mesure> mesures) {
         for(Mesure m : mesures)
             this.mesures.push(m);
-        vector.recalculateVector();
+        AppVector changedValue = vector.get();
+        changedValue.recalculateVector();
+        vector.set(changedValue);
     }
     
     /********************************** SETTERS / GETTERS **********************************/
@@ -121,7 +126,7 @@ public class MyNode implements Serializable {
     public void addFriend(Friend f) { friends.push(f); }
     
     public InformationBox getFriends() { return friends; }
-    public AppVector getVector() { return vector; }
+    public AppVector getVector() { return vector.get(); }
     public List<Information> getInformations() { return informations; }
     public Message getMessage(int i) { return messages.get(i); }
     public InformationBox getMessages() { return messages; }
@@ -148,10 +153,11 @@ public class MyNode implements Serializable {
     public StringProperty nameProperty() { return name; }
     public ObjectProperty<Image> logoProperty() { return logo; }
     public ObjectProperty<Cloud> platformProperty() { return platform; }
+    public ObjectProperty<AppVector> vectorProperty() { return vector; }
     
     /* ATTENTION ! Mauvaise pratique ! */
     public void setInformations(List<Information> informations) { this.informations = informations; }
-    public void setVector(AppVector vector) { this.vector = vector; }
+    public void setVector(AppVector vector) { this.vector.set(vector); }
     
     /*************************************** METHODES **************************************/
     
@@ -184,12 +190,13 @@ public class MyNode implements Serializable {
         _name = name.get();
         _logo = logo.get();
         _platform = platform.get();
+        _vector = vector.get();
         friends.saveProperties();
         for(Information info : informations)
             info.saveProperties();
         mesures.saveProperties();
         messages.saveProperties();
-        vector.saveProperties();
+        _vector.saveProperties();
         states.saveProperties();
         FileEngineRelation.INSTANCE.save(this, name.get() + ".ser");
     }
@@ -206,7 +213,8 @@ public class MyNode implements Serializable {
         res.states.restoreProperties();
         res.logo = new SimpleObjectProperty<>(res._logo);
         res.platform = new SimpleObjectProperty<>(res._platform);
-        res.vector.restoreProperties();
+        res._vector.restoreProperties();
+        res.vector = new SimpleObjectProperty<>(res._vector);
         return res;
     }
 }

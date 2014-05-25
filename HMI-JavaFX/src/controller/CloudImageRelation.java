@@ -10,7 +10,6 @@ import hmi.button.IconFlyWeight;
 import java.util.HashMap;
 import java.util.Map;
 import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.image.Image;
 import model.node.Cloud;
@@ -21,13 +20,10 @@ import model.node.Cloud;
  * and the same instance bound to a cloud in order to make the link
  * @author Gwendal
  */
-public class CloudImageRelation extends SimpleObjectProperty<Cloud> {
+public class CloudImageRelation extends Relation<Cloud, Image> {
     
     //Associations cloud - image
     private Map<Cloud, Image> relation;
-    
-    //property to bind to the view
-    private ObjectProperty<Image> image;
     
     /**
      * Constructor
@@ -52,7 +48,6 @@ public class CloudImageRelation extends SimpleObjectProperty<Cloud> {
      */
     private void initialize() {
         this.relation = new HashMap<>();
-        this.image = new SimpleObjectProperty<>();
         Image google = IconFlyWeight.INSTANCE.getGoogle();
         Image amazon = IconFlyWeight.INSTANCE.getAmazon();
         Image windows = IconFlyWeight.INSTANCE.getWindows();
@@ -73,14 +68,6 @@ public class CloudImageRelation extends SimpleObjectProperty<Cloud> {
         Cloud cloud = ov.getValue();
         this.image.set(this.relation.get(cloud));
     }
-  
-    /**
-     * Makes a specified image property be bound to the image side of the relation
-     * @param imageProperty image Property to bind with
-     */
-    public void drive(ObjectProperty<Image> imageProperty) {
-        imageProperty.bind(image);
-    }
     
     /**
      * Sets the cloud value and the corresponding image to the image property as well
@@ -88,7 +75,7 @@ public class CloudImageRelation extends SimpleObjectProperty<Cloud> {
      */
     @Override
     public void set(Cloud cloud) {
-        this.set(cloud);
+        super.set(cloud);
         this.image.set(this.relation.get(cloud));
     }
 }

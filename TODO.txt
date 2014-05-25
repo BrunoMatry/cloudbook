@@ -1,6 +1,4 @@
 Gwendal
-To String pour chaque information
-affichage vector aussi pour l'application courante
 Changement de cloud commandé par l'utilisateur
 identifiants uniques pour le serveur
 problème du delete de fichiers

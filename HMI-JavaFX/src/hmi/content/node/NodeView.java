@@ -1,5 +1,6 @@
 package hmi.content.node;
 
+import controller.AppVectorStringRelation;
 import controller.CloudImageRelation;
 import hmi.content.AbstractActivity;
 import hmi.content.OneNodeActivity;
@@ -55,7 +56,7 @@ public final class NodeView extends OneNodeActivity {
     
     private SummarizedView<Text> friends;
     
-    private Button appVector;
+    private Text appVector;
     
     /**
      * 
@@ -64,14 +65,14 @@ public final class NodeView extends OneNodeActivity {
     private NodeView(AbstractActivity p) {
         super(p);
         title = "Friend management";
-        appVector = new Button();
-        appVector.setGraphic(new Text("Application characteristics"));
+        appVector = new Text();
         ArrayList<Button> components = new ArrayList<>();
         components.add(getState());
         components.add(getMesures());
         components.add(getMessage());
         components.add(getFriend());
-        components.add(appVector);
+        
+        setBottom(appVector);
         
         int size = components.size();
         for(int i = 0 ; i < size ; i++) {
@@ -179,5 +180,8 @@ public final class NodeView extends OneNodeActivity {
         mesurePane.bind(node);
         friendPane.bind(node);
         statePane.bind(node);
+        AppVectorStringRelation vectorBinder = new AppVectorStringRelation();
+        vectorBinder.bind(node.vectorProperty());
+        vectorBinder.drive(appVector.textProperty());
     }
 }
