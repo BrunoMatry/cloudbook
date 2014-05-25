@@ -1,5 +1,6 @@
 Gwendal
 Changement de cloud commandé par l'utilisateur
+Corriger bug : reconstruction de l'engine si le thread a terminé ---> l'engine ne doit pas être un thread mais il doit pouvoir en créer un et le lancer dans sa méthode start. Il faut alors vérifier que le précédent thread a terminé ou que c'est la première fois qu'un thread est créé
 image de l'application
 problème du delete de fichiers
 identifiants uniques pour le serveur

@@ -221,6 +221,13 @@ public class Engine extends Thread implements IEngine {
     
     public void update(Member member) {
         friendManager.update(member);
+    }
+    
+    /**
+     * Looks for the best platform.
+     * The choice is based on the current data.
+     */
+    public void updateState() {
         Cloud cloud = friendManager.bestCloud();
         node.majCurrentState(cloud);
     }
