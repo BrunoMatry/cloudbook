@@ -130,4 +130,10 @@ public final class Mesure implements Information {
                 && mesure2.get() == other.mesure2.get()
                 && mesure3.get() == other.mesure3.get();
     }
+
+    @Override
+    public String toString() {
+        return "Mesure{" + "mesure1=" + mesure1.get() + ", mesure2=" + mesure2.get() + ", mesure3=" + mesure3.get() + '}';
+    }
+    
 }
