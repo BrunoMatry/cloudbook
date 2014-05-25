@@ -1,18 +1,19 @@
 package model.node;
 
+import java.io.File;
 import java.io.IOException;
+import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import javafx.scene.image.Image;
 
 /**
  * Builder
  */
 public class NodeBuilder {
     
-    protected SimpleObjectProperty<Image> logo;
-    public SimpleObjectProperty<Image> logoProperty() {
+    protected ObjectProperty<File> logo;
+    public ObjectProperty<File> logoProperty() {
         return logo;
     }
     

@@ -56,7 +56,7 @@ public final class NodeView extends OneNodeActivity {
     
     private SummarizedView<Text> friends;
     
-    private Text appVector;
+    private final Text appVector;
     
     /**
      * 

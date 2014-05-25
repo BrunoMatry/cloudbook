@@ -1,5 +1,6 @@
 package model.node;
 
+import java.io.File;
 import model.node.friend.Friend;
 import model.network.interfaces.Information;
 import java.io.FileInputStream;
@@ -15,7 +16,6 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import javafx.scene.image.Image;
 
 /**
  * Representation of a node
@@ -26,9 +26,7 @@ public class MyNode implements Serializable {
     
     /* Attributs serialisables */
     protected String _name; //name of the application
-    /* TODO : retirer transient ; copier l'image dans le système de fichiers de
-    l'application quand elle est chargée et référencer  le chemin */
-    protected transient Image _logo; //logo of the application
+    private String _logo; //logo of the application
     protected Mesure topMesure; //mesure to be shown at the first place
     protected Cloud _platform; //current platform of the application
     private AppVector _vector;
@@ -44,7 +42,7 @@ public class MyNode implements Serializable {
     
     /* Proprietes non serialisables */
     protected transient StringProperty name;
-    protected transient ObjectProperty<Image> logo;
+    private transient StringProperty logo;
     private transient ObjectProperty<Cloud> platform;
     private transient ObjectProperty<AppVector> vector;
     
@@ -64,13 +62,13 @@ public class MyNode implements Serializable {
         _vector = new AppVector(mesures);
         vector = new SimpleObjectProperty<>(_vector);
         name = new SimpleStringProperty();
-        logo = new SimpleObjectProperty<>();
+        logo = new SimpleStringProperty();
         platform = new SimpleObjectProperty<>();
     }
     
     /**
      * arg constructor
-     * @param image logo
+     * @param logoFile File contaning the logo of the application
      * @param string name
      * @param cloud cloud-platform
      * @param nodePort port of the current application
@@ -80,7 +78,7 @@ public class MyNode implements Serializable {
      * @throws java.net.UnknownHostException
      * @throws java.rmi.RemoteException
      */
-    public MyNode(Image image, String string, Cloud cloud, int nodePort, int appType, int performance, int speed) throws UnknownHostException, RemoteException {
+    public MyNode(File logoFile, String string, Cloud cloud, int nodePort, int appType, int performance, int speed) throws UnknownHostException, RemoteException {
         platform = new SimpleObjectProperty<>(cloud);
         this.nodePort = nodePort;
         friends = new InformationBox<>();
@@ -91,7 +89,7 @@ public class MyNode implements Serializable {
         _vector = new AppVector(mesures);
         vector = new SimpleObjectProperty<>(_vector);
         name = new SimpleStringProperty(string);
-        logo = new SimpleObjectProperty<>(image);
+        logo = new SimpleStringProperty(logoFile.getName());
         
         states.push(new State(cloud));
     }
@@ -151,7 +149,7 @@ public class MyNode implements Serializable {
       
     public StringProperty topMesureProperty() { return topMesure.dateProperty(); }
     public StringProperty nameProperty() { return name; }
-    public ObjectProperty<Image> logoProperty() { return logo; }
+    public StringProperty logoProperty() { return logo; }
     public ObjectProperty<Cloud> platformProperty() { return platform; }
     public ObjectProperty<AppVector> vectorProperty() { return vector; }
     
@@ -211,7 +209,7 @@ public class MyNode implements Serializable {
         res.mesures.restoreProperties();
         res.messages.restoreProperties();
         res.states.restoreProperties();
-        res.logo = new SimpleObjectProperty<>(res._logo);
+        res.logo = new SimpleStringProperty(res._logo);
         res.platform = new SimpleObjectProperty<>(res._platform);
         res._vector.restoreProperties();
         res.vector = new SimpleObjectProperty<>(res._vector);

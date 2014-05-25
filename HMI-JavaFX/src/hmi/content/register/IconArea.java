@@ -8,6 +8,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -31,6 +33,9 @@ public class IconArea extends BorderPane {
         //"browse to choose a logo" button
         protected Button browse;
         
+        //File containing the chosen image
+        private final ObjectProperty<File> imageFile;
+        
         //View port of the image
         protected static final Rectangle2D viewPort = new Rectangle2D(0, 0, 120, 120);
         
@@ -39,6 +44,8 @@ public class IconArea extends BorderPane {
          */
         public IconArea() {
             super();
+            File f = new File("./res/default_app.png");
+            imageFile = new SimpleObjectProperty<>(f);
             setCenter(getLogo());
             setBottom(getBrowse());
             setWidth(100);
@@ -118,12 +125,21 @@ public class IconArea extends BorderPane {
         private FileInputStream chooseFile()
                 throws FileNotFoundException, NullPointerException {
             FileChooser fc = new FileChooser();
-            File f = fc.showOpenDialog(Launcher.STAGE);
-            if(f == null) throw new NullPointerException();
-            FileInputStream fis = new FileInputStream(f);
+            imageFile.set(fc.showOpenDialog(Launcher.STAGE));
+            if(imageFile == null) throw new NullPointerException();
+            FileInputStream fis = new FileInputStream(imageFile.get());
             Image i = new Image(fis);
             ImageView iv = new ImageView(i);
             setLogo(iv);
             return fis;
         }
+
+        /**
+         * Getter
+         * @return file contaning the chosen image
+         */
+    public ObjectProperty<File> imageFileProperty() {
+        return imageFile;
+    }
+        
 }

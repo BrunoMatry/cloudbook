@@ -1,5 +1,7 @@
 package hmi.button;
 
+import java.util.HashMap;
+import java.util.Map;
 import javafx.scene.image.Image;
 
 /**
@@ -14,7 +16,7 @@ public final class IconFlyWeight {
      * singleton constructor
      */
     private IconFlyWeight() {
-        
+        relation = new HashMap<>();
     }
     
     private Image backArrow;
@@ -29,6 +31,18 @@ public final class IconFlyWeight {
     private Image amazon;
     private Image windows;
     private Image defaultCloud;
+    
+    private final Map<String, Image> relation;
+    
+    public Image getByName(String name) {
+        if(relation.containsKey(name))
+            return relation.get(name);
+        else {
+            Image image = new Image("file:res/" + name);
+            relation.put(name, image);
+            return image;
+        }
+    }
    
     public Image getBackArrow() {
         if(backArrow == null)

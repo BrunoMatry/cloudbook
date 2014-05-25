@@ -65,7 +65,7 @@ public final class MainView extends HomeActivity {
             public void handle(ActionEvent t) {
                 NodeBuilder cb = new NodeBuilder();
                 registerView.setBuilder(cb);
-                cb.logoProperty().bind(registerView.logoProperty());
+                cb.logoProperty().bind(registerView.imageFileProperty());
                 cb.nameProperty().bind(registerView.nameProperty());
                 cb.platformProperty().bind(registerView.cloudProperty());
                 cb.nodePortProperty().bind(registerView.nodePortProperty());

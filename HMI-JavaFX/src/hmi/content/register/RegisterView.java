@@ -4,10 +4,12 @@ import hmi.Launcher;
 import hmi.content.AbstractActivity;
 import hmi.content.Activity;
 import hmi.home.MainView;
+import java.io.File;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -15,7 +17,6 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Dialogs;
-import javafx.scene.image.Image;
 import model.node.Cloud;
 import model.node.MyNode;
 import model.node.NodeBuilder;
@@ -33,6 +34,9 @@ public class RegisterView extends Activity {
     
     //constructing object
     protected NodeBuilder builder;
+    
+    //File containing the logo of the application
+    private final ObjectProperty<File> imageFile;
 
     /**
      * Getter
@@ -56,6 +60,7 @@ public class RegisterView extends Activity {
      */
     public RegisterView(AbstractActivity p) {
         super(p);
+        imageFile = new SimpleObjectProperty<>();
         title = "Register your application";
         settings = new SettingsArea();
         setBottom(getOk());
@@ -76,6 +81,10 @@ public class RegisterView extends Activity {
                     @Override
                     public void handle(ActionEvent t) {
                         try {
+                            File logo = settings.getIconArea().imageFileProperty().get();
+                            File target = new File("./res/" + logo.getName());
+                            Files.copy(logo.toPath(), target.toPath(), StandardCopyOption.REPLACE_EXISTING);
+                            imageFile.set(target);
                             MyNode node = builder.build();
                             node.save();
                             Dialogs.showInformationDialog(Launcher.STAGE, "Success build", "OK");
@@ -99,8 +108,8 @@ public class RegisterView extends Activity {
         return settings;
     }
     
-    public ObjectProperty<Image> logoProperty() {
-        return settings.getIconArea().getLogo().imageProperty();
+    public ObjectProperty<File> imageFileProperty() {
+        return imageFile;
     }
     
     public StringProperty nameProperty() {
