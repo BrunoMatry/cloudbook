@@ -18,7 +18,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
-import model.engine.Engine;
 import model.node.AppVector;
 import model.node.AppVectorBuilder;
 import model.node.FileEngineRelation;
@@ -181,7 +180,7 @@ public final class NodeView extends OneNodeActivity {
         MyNode node = FileEngineRelation.INSTANCE.getCurrentEngine().getNode();
         ObjectProperty<Image> stateImage = state.getView().imageProperty();
         binder = new CloudImageRelation();
-        binder.bind(node.platformProperty());
+        node.platformProperty().addObserver(binder);
         binder.drive(stateImage);
         messagePane.bind(node);
         mesurePane.bind(node);

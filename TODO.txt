@@ -1,5 +1,4 @@
 Gwendal
-Relations : ne doit pas hériter de Property. Appliquer un "design pattern" dynamic relation (à la base de données)
 Node buttons : de vrais buttons avec setTitle
 problème du delete de fichiers
 identifiants uniques pour le serveur

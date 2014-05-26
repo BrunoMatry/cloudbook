@@ -1,5 +1,6 @@
 package controller;
 
+import java.util.Observer;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 
@@ -8,7 +9,7 @@ import javafx.beans.property.SimpleObjectProperty;
  * @param <M> Model type
  * @param <V> View Type
  */
-public abstract class Relation<M, V> extends SimpleObjectProperty<M> {
+public abstract class Relation<M, V> implements Observer {
     
     //property to bind to the view
     protected ObjectProperty<V> image;
@@ -17,7 +18,6 @@ public abstract class Relation<M, V> extends SimpleObjectProperty<M> {
      * Constructor
      */
     public Relation() {
-        super();
         this.image = new SimpleObjectProperty<>();
     }
 
@@ -26,7 +26,6 @@ public abstract class Relation<M, V> extends SimpleObjectProperty<M> {
      * @param m initial value
      */
     public Relation(M m) {
-        super(m);
         this.image = new SimpleObjectProperty<>();
     }
   

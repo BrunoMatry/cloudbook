@@ -3,7 +3,7 @@ package controller;
 import hmi.button.IconFlyWeight;
 import java.util.HashMap;
 import java.util.Map;
-import javafx.beans.value.ObservableValue;
+import java.util.Observable;
 import javafx.scene.image.Image;
 import model.node.Cloud;
 
@@ -50,33 +50,9 @@ public class CloudImageRelation extends Relation<Cloud, Image> {
         this.relation.put(Cloud.DEFAULT, defaultCloud);
     }
 
-    /**
-     * Binds and sets the image value corresponding to the master property value
-     * @param ov master property
-     */
     @Override
-    public void bind(ObservableValue<? extends Cloud> ov) {
-        super.bind(ov);
-        Cloud cloud = ov.getValue();
-        System.out.println("Appel du setter de l'image property dans bind");
-        this.image.set(this.relation.get(cloud));
-    }
-    
-    /**
-     * Sets the cloud value and the corresponding image to the image property as well
-     * @param cloud cloud value
-     */
-    @Override
-    public void set(Cloud cloud) {
-        super.set(cloud);
-        System.out.println("Appel du setter de l'image property dans set");
-        this.image.set(this.relation.get(cloud));
-    }
-
-    @Override
-    public void setValue(Cloud t) {
-        super.setValue(t);
-        System.out.println("Appel du setter de l'image property dans setValue");
-        this.image.set(this.relation.get(t));
+    public void update(Observable o, Object o1) {
+        Cloud c = (Cloud)o1;
+        this.image.set(this.relation.get(c));
     }
 }
