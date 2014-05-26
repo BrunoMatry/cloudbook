@@ -81,6 +81,7 @@ public class EngineThread extends Thread {
         }
         stopFlag = false;
         int cpt = Integer.MIN_VALUE;
+        int type = 0;
         while(!stopFlag) {
             try {
                 sleep(1000);
@@ -88,7 +89,7 @@ public class EngineThread extends Thread {
                 if(cpt % nbSecUpdate == 0)
                     updateInformation();
                 if(cpt % nbSecShare == 0)
-                    shareMesures(3, 3);
+                    shareInformation(type, 3, 3);
                 if(cpt % nbSecSave == 0)
                     save();
                 if(cpt >= Integer.MAX_VALUE)
@@ -96,6 +97,7 @@ public class EngineThread extends Thread {
             } catch (InterruptedException | UnknownHostException | RemoteException ex) {
                 Logger.getLogger(Engine.class.getName()).log(Level.SEVERE, null, ex);
             }
+            type = (type + 1) % 3; 
         }
         try {
             network.disconnect();
@@ -113,20 +115,36 @@ public class EngineThread extends Thread {
     protected void updateInformation(){
         monitoring.pushInformation();
     }
-
+    
     /**
      * Share mesure with friends
+     * @param type type of information index
      * @param nbMesures number of mesures to share
      * @param nbFriends max number of friends to target
      * @throws UnknownHostException unknown host
      * @throws RemoteException remote access problem
      */
-    protected void shareMesures(int nbMesures, int nbFriends) throws UnknownHostException, RemoteException {
-        // Get the last mesures from the node (can be modified)
-        ArrayList<Information> mesures = node.getMesures().getLastValues(nbMesures);
+    protected void shareInformation(int type, int nbMesures, int nbFriends) throws UnknownHostException, RemoteException {
+        // Get the last information from the node (can be modified)
+        ArrayList<Information> information;
+        
+        switch(type) {
+            case 0:
+                information = node.getMesures().getLastValues(nbMesures);
+                break;
+            case 1:
+                information = node.getFriends().getLastValues(nbMesures);
+                break;
+            case 2:
+                information = node.getStates().getLastValues(nbMesures);
+                break;
+            default:
+                information = node.getMesures().getLastValues(nbMesures);
+                break;
+        }
         
         //generation of corresponding messages
-        List<Message> messages = owner.makeMessages(mesures);
+        List<Message> messages = owner.makeMessages(information);
         
         // Creating requests
         List<Request> requests = owner.requestManager.createRequests(messages);

@@ -105,4 +105,12 @@ public class State implements Information {
                 && myTo.equals(otherTo)
                 && current.get() == other.current.get();
     }
+
+    @Override
+    public String toString() {
+        return "State{" + "cloud=" + cloud.get() + ", from=" + from.get() + ", to=" + to.get() + ", current=" + current.get() + '}';
+    }
+    
+    
+    
 }
