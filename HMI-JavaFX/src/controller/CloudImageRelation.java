@@ -87,4 +87,10 @@ public class CloudImageRelation extends Relation<Cloud, Image> {
         System.out.println("Appel du setter de l'image property dans setValue");
         this.image.set(this.relation.get(t));
     }
+
+    @Override
+    protected void fireValueChangedEvent() {
+        super.fireValueChangedEvent();
+        
+    }
 }
