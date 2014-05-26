@@ -32,11 +32,29 @@ public class NodeBuilder {
         return platform;
     }
     
+    private final StringProperty appType;
+    public StringProperty appTypeProperty() {
+        return appType;
+    }
+    
+    private final StringProperty performance;
+    public StringProperty performanceProperty() {
+        return performance;
+    }
+    
+    private final StringProperty speed;
+    public StringProperty speedProperty() {
+        return speed;
+    }
+    
     public NodeBuilder() {
         logo = new SimpleObjectProperty<>();
         name = new SimpleStringProperty();
         platform = new SimpleObjectProperty<>();
         nodePort = new SimpleStringProperty();
+        appType = new SimpleStringProperty();
+        performance = new SimpleStringProperty();
+        speed = new SimpleStringProperty();
     }
     
     /**
@@ -49,7 +67,10 @@ public class NodeBuilder {
                 name.get(),
                 platform.get(),
                 Integer.parseInt(nodePort.get()),
-                0, 0, 0);
+                Integer.parseInt(appType.get()),
+                Integer.parseInt(performance.get()),
+                Integer.parseInt(speed.get())
+        );
         return cbn;
     }
     

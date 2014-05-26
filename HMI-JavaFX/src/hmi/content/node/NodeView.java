@@ -18,6 +18,9 @@ import javafx.scene.control.TableView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import model.engine.Engine;
+import model.node.AppVector;
+import model.node.AppVectorBuilder;
 import model.node.FileEngineRelation;
 import model.node.MyNode;
 import model.node.Message;
@@ -56,7 +59,7 @@ public final class NodeView extends OneNodeActivity {
     
     private SummarizedView<Text> friends;
     
-    private final Text appVector;
+    private AppVectorEditer appVector;
     
     private CloudImageRelation binder;
     
@@ -71,14 +74,12 @@ public final class NodeView extends OneNodeActivity {
     private NodeView(AbstractActivity p) {
         super(p);
         title = "Friend management";
-        appVector = new Text();
         ArrayList<Button> components = new ArrayList<>();
         components.add(getState());
         components.add(getMesures());
         components.add(getMessage());
         components.add(getFriend());
         
-        setBottom(appVector);
         
         int size = components.size();
         for(int i = 0 ; i < size ; i++) {
@@ -186,8 +187,15 @@ public final class NodeView extends OneNodeActivity {
         mesurePane.bind(node);
         friendPane.bind(node);
         statePane.bind(node);
-        vectorBinder = new AppVectorStringRelation();
-        vectorBinder.bind(node.vectorProperty());
-        vectorBinder.drive(appVector.textProperty());
+        
+        AppVector vector = node.getVector();
+        appVector = new AppVectorEditer(""+vector.getAppType(), ""+vector.getPerformanceNeed(), ""+vector.getSpeedNeed());
+        
+        AppVectorBuilder builder = new AppVectorBuilder();
+        appVector.setBuilder(builder);
+        builder.appTypeProperty().bind(appVector.typeProperty());
+        builder.perfProperty().bind(appVector.perfProperty());
+        builder.speedProperty().bind(appVector.speedProperty());
+        setBottom(appVector);
     }
 }

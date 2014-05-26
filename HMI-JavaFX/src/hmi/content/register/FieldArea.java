@@ -14,6 +14,15 @@ public class FieldArea extends VBox {
         //port of the application
         private Field nodePort;
         
+        //type of the application
+        private Field appType;
+        
+        //performance value (integer)
+        private Field performance;
+        
+        //speed value (integer)
+        private Field speed;
+        
         /**
          * Constructor
          */
@@ -23,7 +32,10 @@ public class FieldArea extends VBox {
             setSpacing(30);
             getChildren().addAll(
                     getName(),
-                    getNodePort()
+                    getNodePort(),
+                    getAppType(),
+                    getPerformance(),
+                    getSpeed()
             );
         }
         
@@ -47,5 +59,35 @@ public class FieldArea extends VBox {
             if(nodePort == null)
                 nodePort = new Field("Enter your port : ", "50200");
             return nodePort;
+        }
+        
+        /**
+         * Getter
+         * @return appType field 
+         */
+        public final Field getAppType() {
+            if(appType == null)
+                appType = new Field("Enter the application type : ", "0");
+            return appType;
+        }
+        
+        /**
+         * Getter
+         * @return performance field 
+         */
+        public final Field getPerformance() {
+            if(performance == null)
+                performance = new Field("Enter the performance constraint : ", "0");
+            return performance;
+        }
+        
+        /**
+         * Getter
+         * @return speed field 
+         */
+        public final Field getSpeed() {
+            if(speed == null)
+                speed = new Field("Enter the speed constraint : ", "0");
+            return speed;
         }
 }

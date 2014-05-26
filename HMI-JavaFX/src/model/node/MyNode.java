@@ -58,9 +58,7 @@ public class MyNode implements Serializable {
         informations = new ArrayList<>();
         states = new InformationBox<>();
         mesures = new InformationBox<>();
-        messages = new InformationBox<>();    
-        _vector = new AppVector(mesures);
-        vector = new SimpleObjectProperty<>(_vector);
+        messages = new InformationBox<>();
         name = new SimpleStringProperty();
         logo = new SimpleStringProperty();
         platform = new SimpleObjectProperty<>();
@@ -86,7 +84,7 @@ public class MyNode implements Serializable {
         states = new InformationBox<>();
         mesures = new InformationBox<>();
         messages = new InformationBox<>();    
-        _vector = new AppVector(mesures);
+        _vector = new AppVector(appType, performance, speed);
         vector = new SimpleObjectProperty<>(_vector);
         name = new SimpleStringProperty(string);
         logo = new SimpleStringProperty(logoFile.getName());
@@ -100,9 +98,6 @@ public class MyNode implements Serializable {
      */
     public void addMesure(Mesure m) {
         this.mesures.push(m);
-        AppVector changedValue = vector.get();
-        changedValue.recalculateVector();
-        vector.set(changedValue);
     }
     
     /**
@@ -113,7 +108,6 @@ public class MyNode implements Serializable {
         for(Mesure m : mesures)
             this.mesures.push(m);
         AppVector changedValue = vector.get();
-        changedValue.recalculateVector();
         vector.set(changedValue);
     }
     

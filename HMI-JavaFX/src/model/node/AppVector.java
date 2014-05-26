@@ -8,6 +8,7 @@ public class AppVector implements Information {
     protected int appType;
     protected int perfNeed;
     protected int spdNeed;
+    
 
     /**
      * Constructor

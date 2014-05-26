@@ -124,4 +124,16 @@ public class RegisterView extends Activity {
         return settings.clouds.valueProperty();
     }
     
+    public StringProperty appTypeProperty() {
+        return settings.getFieldArea().getAppType().getHint().textProperty();
+    }
+    
+    public StringProperty PerfromanceProperty() {
+        return settings.getFieldArea().getPerformance().getHint().textProperty();
+    }
+    
+    public StringProperty SpeedProperty() {
+        return settings.getFieldArea().getSpeed().getHint().textProperty();
+    }
+    
  }

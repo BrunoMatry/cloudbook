@@ -153,6 +153,5 @@ public class Engine implements IEngine {
      */
     public void stop() throws InterruptedException {
         thread.setStopFlag(true);
-        thread.join();
     }
 }

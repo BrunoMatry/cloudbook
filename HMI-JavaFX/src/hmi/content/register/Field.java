@@ -10,10 +10,10 @@ import javafx.scene.text.Text;
 public class Field extends BorderPane {
     
     //information about the purpose of the field
-    private Text information;
+    private final Text information;
             
     //Text to be entered
-    private TextField hint;
+    private final TextField hint;
             
             /**
              * Constructor

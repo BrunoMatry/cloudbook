@@ -69,7 +69,6 @@ public class Monitoring implements IMonitoring {
      */
     public void stop() throws InterruptedException {
         thread.setStopFlag(true);
-        thread.join();
     }
     
 }
