@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package controller;
 
 import hmi.button.IconFlyWeight;
@@ -13,10 +7,6 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.image.Image;
 
-/**
- *
- * @author Gwendal
- */
 public class StringImageRelation extends SimpleStringProperty {
     
     //property to bind to the view

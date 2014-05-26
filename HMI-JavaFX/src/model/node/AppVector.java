@@ -1,37 +1,25 @@
 package model.node;
 
-import java.util.ArrayList;
 import java.util.Objects;
 import model.network.interfaces.Information;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
 
 public class AppVector implements Information {
     
-    private final static int nbMesuresForCalcul = 20;
-    
-    /* Attributs serialisables */
-    protected int _appType;
-    protected int _performance;
-    protected int _speed;
-    protected InformationBox<Mesure> mesures;
-    
-    /* Proprietes non serialisables */
-    protected transient IntegerProperty appType; 
-    protected transient IntegerProperty performance;
-    protected transient IntegerProperty speed;
+    protected int appType;
+    protected int perfNeed;
+    protected int spdNeed;
 
     /**
      * Constructor
      * The type, performance and speed are generated randomly in this implementation
-     * @param mes mesures on which should be calculated the vector
+     * @param type the type of the application
+     * @param perf the performance need of the application
+     * @param spd the speed need of the application
      */
-    public AppVector(InformationBox<Mesure> mes) {     
-        mesures = mes;
-        appType = new SimpleIntegerProperty(0);
-        performance = new SimpleIntegerProperty(0);
-        speed = new SimpleIntegerProperty(0);
-        recalculateVector();
+    public AppVector(int type, int perf, int spd) {     
+        appType = type;
+        perfNeed = perf;
+        spdNeed = spd;
     }
     
     /**
@@ -45,32 +33,24 @@ public class AppVector implements Information {
         if (o == null || getClass() != o.getClass()) return false;
         AppVector v = (AppVector) o;
  
-        return appType.get() == v.appType.get()
-                && performance.get() == v.performance.get()
-                && speed.get() == v.speed.get();
+        return appType == v.appType
+                && perfNeed == v.perfNeed
+                && spdNeed == v.spdNeed;
     }
     
     public AppVector copy(){
-        return new AppVector(mesures);
+        return new AppVector(appType, perfNeed, spdNeed);
     }
     
-    public IntegerProperty appTypeProperty() { return appType; }
-    public IntegerProperty performanceProperty() { return performance; }
-    public IntegerProperty speedProperty() { return speed; }
+    public int getAppType() { return appType; }
+    public int getPerformanceNeed() { return perfNeed; }
+    public int getSpeedNeed() { return spdNeed; }
 
     @Override
-    public void saveProperties() {
-        _appType = appType.get();
-        _performance = performance.get();
-        _speed = speed.get();
-    }
+    public void saveProperties() {}
 
     @Override
-    public void restoreProperties() {
-        appType = new SimpleIntegerProperty(_appType);
-        performance = new SimpleIntegerProperty(_performance);
-        speed = new SimpleIntegerProperty(_speed);
-    }
+    public void restoreProperties() {}
 
     /**
      * hashCode
@@ -80,8 +60,8 @@ public class AppVector implements Information {
     public int hashCode() {
         int hash = 3;
         hash = 19 * hash + Objects.hashCode(this.appType);
-        hash = 19 * hash + Objects.hashCode(this.performance);
-        hash = 19 * hash + Objects.hashCode(this.speed);
+        hash = 19 * hash + Objects.hashCode(this.perfNeed);
+        hash = 19 * hash + Objects.hashCode(this.spdNeed);
         return hash;
     }
 
@@ -91,27 +71,6 @@ public class AppVector implements Information {
      */
     @Override
     public String toString() {
-        return "AppVector{" + "appType=" + appType.get() + ", performance=" + performance.get() + ", speed=" + speed.get() + '}';
-    }
-
-    public void recalculateVector() {
-        ArrayList<Mesure> lastMesures = mesures.getLastValues(nbMesuresForCalcul);
-        int totalM1 = 0;
-        int totalM2 = 0;
-        int totalM3 = 0;
-        for(Mesure m : lastMesures) {
-            totalM1 += m.mesure1Property().get();
-            totalM2 += m.mesure2Property().get();
-            totalM3 += m.mesure3Property().get();
-        }
-        if(lastMesures == null || lastMesures.isEmpty()) {
-            appType.set((totalM1+totalM2+totalM3));
-            performance.set(totalM2);
-            speed.set(totalM3);
-        } else {
-            appType.set((totalM1+totalM2+totalM3)/lastMesures.size());
-            performance.set(totalM2/lastMesures.size());
-            speed.set(totalM3/lastMesures.size());
-        }
+        return "AppVector{" + "appType=" + appType + ", performance=" + perfNeed + ", speed=" + spdNeed + '}';
     }
 }
