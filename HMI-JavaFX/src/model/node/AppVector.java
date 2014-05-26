@@ -45,6 +45,10 @@ public class AppVector implements Information {
     public int getAppType() { return appType; }
     public int getPerformanceNeed() { return perfNeed; }
     public int getSpeedNeed() { return spdNeed; }
+    
+    public void setAppType(int at) { appType = at; }
+    public void setPerformanceNeed(int p) { perfNeed = p; }
+    public void setSpeedNeed(int s) { spdNeed = s; }
 
     @Override
     public void saveProperties() {}
