@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import model.node.AppVector;
+import model.node.Cloud;
 import model.node.friend.Friend;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -33,7 +34,7 @@ public class FriendTest {
     
     @Before
     public void setUp() {
-        //friend = new Friend("1", 2, 1.5, new AppVector(1, 2, 3));
+        friend = new Friend("1", 2, 1.5, new AppVector(1, 2, 3), Cloud.AMAZON);
     }
     
     @After
@@ -45,7 +46,8 @@ public class FriendTest {
         assertTrue(friend.idProperty().get().equals("1"));
         assertTrue(friend.confidenceProperty().get() == 2);
         assertTrue(friend.relevanceProperty().get() == 1.5);
-       // assertTrue(friend.getVector().equals(new AppVector(1, 2, 3)));
+        assertTrue(friend.getVector().equals(new AppVector(1, 2, 3)));
+        assertTrue(friend.getCloud().equals(Cloud.AMAZON));
     }
     
     @Test

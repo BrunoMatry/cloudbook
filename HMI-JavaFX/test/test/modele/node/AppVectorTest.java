@@ -69,8 +69,8 @@ public class AppVectorTest {
             appVectorSerial.restoreProperties();
             assertFalse(appVector == null);
             assertFalse(appVectorSerial == null);
-            assertTrue(appVector.getPerformanceNeed() == 3);
-            assertTrue(appVectorSerial.getPerformanceNeed() == 3);
+            assertTrue(appVector.getPerformanceNeed() == 2);
+            assertTrue(appVectorSerial.getPerformanceNeed() == 2);
             assertTrue(appVectorSerial.equals(appVector));
         } catch (FileNotFoundException ex) {
             fail();

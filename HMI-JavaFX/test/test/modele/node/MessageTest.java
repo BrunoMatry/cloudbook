@@ -37,8 +37,8 @@ public class MessageTest {
     }
     
     @Before
-    public void setUp() {/*
-        message = new Message("1", new AppVector(1, 4, 3), new State(Cloud.GDRIVE), true);*/
+    public void setUp() {
+        message = new Message("1", new AppVector(1, 4, 3), new State(Cloud.GOOGLE), true);
     }
     
     @After
@@ -46,10 +46,10 @@ public class MessageTest {
     }
 
     @Test
-    public void testConstructor() {/*
-        assertTrue(message.getIdSender() == 1);
-        assertTrue(message.getContent().equals(new State(Cloud.GDRIVE)));
-        assertTrue(message.getVector().equals(new AppVector(1, 4, 3)));*/
+    public void testConstructor() {
+        assertTrue(message.getIdSender().equals("1"));
+        assertTrue(message.getContent().equals(new State(Cloud.GOOGLE)));
+        assertTrue(message.getVector().equals(new AppVector(1, 4, 3)));
     }
     
     @Test
@@ -65,7 +65,8 @@ public class MessageTest {
             ois.close();
             messageSerial.restoreProperties();
             assertFalse(message == null);
-            assertTrue(message.equals(messageSerial));
+            assertFalse(messageSerial == null);
+            assertTrue(messageSerial.equals(message));
         } catch (FileNotFoundException ex) {
             fail();
         } catch (IOException | ClassNotFoundException ex) {
