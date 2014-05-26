@@ -10,6 +10,7 @@ import model.network.interfaces.Information;
 import model.network.interfaces.RemoteClient;
 import model.network.interfaces.Sender;
 import model.node.AppVector;
+import model.node.Cloud;
 import model.node.MyNode;
 import model.node.friend.Member;
 
@@ -50,7 +51,8 @@ public class Request<Inf extends Information> extends UnicastRemoteObject implem
                 + "@" 
                 + InetAddress.getLocalHost().getHostAddress() + ":"
                 + node.getNodePort();
-        sender = new Member(id, senderVector);
+        Cloud cloud = node.platformProperty().get();
+        sender = new Member(id, senderVector, cloud);
     }
     
     @Override

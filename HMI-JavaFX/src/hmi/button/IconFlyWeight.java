@@ -1,5 +1,7 @@
 package hmi.button;
 
+import java.util.HashMap;
+import java.util.Map;
 import javafx.scene.image.Image;
 
 /**
@@ -14,18 +16,33 @@ public final class IconFlyWeight {
      * singleton constructor
      */
     private IconFlyWeight() {
-        
+        relation = new HashMap<>();
     }
     
     private Image backArrow;
     private Image cloud;
-    private Image exit;
     private Image defaultLogo;
     private Image home;
     private Image greenLed;
     private Image redLed;
     private Image trash;
     private Image plus;
+    private Image google;
+    private Image amazon;
+    private Image windows;
+    private Image defaultCloud;
+    
+    private final Map<String, Image> relation;
+    
+    public Image getByName(String name) {
+        if(relation.containsKey(name))
+            return relation.get(name);
+        else {
+            Image image = new Image("file:res/" + name);
+            relation.put(name, image);
+            return image;
+        }
+    }
    
     public Image getBackArrow() {
         if(backArrow == null)
@@ -89,5 +106,45 @@ public final class IconFlyWeight {
         if(plus == null)
             plus = new Image("file:res/adder.png");
         return plus;
+    }
+    
+    /**
+     * Getter
+     * @return google icon
+     */
+    public Image getGoogle() {
+        if(google == null)
+            google = new Image("file:res/google.png");
+        return google;
+    }
+    
+    /**
+     * Getter
+     * @return amazon icon
+     */
+    public Image getAmazon() {
+        if(amazon == null)
+            amazon = new Image("file:res/amazon.png");
+        return amazon;
+    }
+    
+    /**
+     * Getter
+     * @return windows icon
+     */
+    public Image getWindows() {
+        if(windows == null)
+            windows = new Image("file:res/windows.png");
+        return windows;
+    }
+    
+    /**
+     * Getter
+     * @return defaultCloud icon
+     */
+    public Image getDefaultCloud() {
+        if(defaultCloud == null)
+            defaultCloud = new Image("file:res/default_logo.png");
+        return defaultCloud;
     }
 }

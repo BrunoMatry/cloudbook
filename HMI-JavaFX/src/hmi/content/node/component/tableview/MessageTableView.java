@@ -7,10 +7,8 @@
 package hmi.content.node.component.tableview;
 
 import java.util.Date;
-import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
-import javafx.scene.text.Text;
-import javafx.util.Callback;
+import javafx.scene.control.TableView;
 import model.network.interfaces.Information;
 import model.node.Message;
 
@@ -18,9 +16,9 @@ import model.node.Message;
  *
  * @author Gwendal
  */
-public class MessageTableView extends StandardizedTable {
+public class MessageTableView extends TableView<Message> {
     
-    protected TableColumn<Message, Integer> idSenderCol;
+    protected TableColumn<Message, String> idSenderCol;
     protected TableColumn<Message, Boolean> relevantCol;
     protected TableColumn<Message, Date> dateCol;
     protected TableColumn<Message, Information> contentCol;
@@ -29,60 +27,14 @@ public class MessageTableView extends StandardizedTable {
      * Constructor
      */
     public MessageTableView() {
-        idSenderCol = buildColumn("Id", "idSender", 4);
-        relevantCol = buildColumn("Relevant ?", "relevant", 4);
-        setUpDateCol();
-        setUpContentCol();
+        TableColumnBuilder simpleBuilder = new SimpleTableColumnBuilder(this);
+        idSenderCol = simpleBuilder.buildColumn("Id", "idSender", 4);
+        relevantCol = simpleBuilder.buildColumn("Relevant ?", "relevant", 4);
+        TableColumnBuilder dateBuilder = new ToStringTableColumnBuilder<Message, Date>(this);
+        dateCol = dateBuilder.buildColumn("Date", "date", 4);
+        TableColumnBuilder infoBuilder = new ToStringTableColumnBuilder<Message, Information>(this);
+        contentCol = infoBuilder.buildColumn("Content", "content", 4);
         getColumns().addAll(idSenderCol, relevantCol, dateCol, contentCol);
     }
-    
-    /**
-     * Makes the content of the column be the string representation of the date
-     */
-    private void setUpDateCol() {
-        dateCol = buildColumn("Date", "date", 4);
-        dateCol.setCellFactory(new Callback<TableColumn<Message, Date>, TableCell<Message, Date>>() {
-
-            @Override
-            public TableCell<Message, Date> call(TableColumn<Message, Date> p) {
-                TableCell<Message, Date> cell = new TableCell<Message, Date>() {
-
-                    @Override
-                    protected void updateItem(Date t, boolean bln) {
-                        if(t != null) {
-                            Text text = new Text(t.toString());
-                            setGraphic(text);
-                        }
-                    }
-                    
-                };
-                return cell;
-            }
-        });
-    }
-    
-    /**
-     * Makes the content of the column be the string representation of the content
-     */
-    private void setUpContentCol() {
-        contentCol = buildColumn("Content", "content", 4);
-        contentCol.setCellFactory(new Callback<TableColumn<Message, Information>, TableCell<Message, Information>>() {
-
-            @Override
-            public TableCell<Message, Information> call(TableColumn<Message, Information> p) {
-                TableCell<Message, Information> cell = new TableCell<Message, Information>() {
-
-                    @Override
-                    protected void updateItem(Information t, boolean bln) {
-                        if(t != null) {
-                            Text text = new Text(t.toString());
-                            setGraphic(text);
-                        }
-                    }
-                    
-                };
-                return cell;
-            }
-        });
-    }
+   
 }

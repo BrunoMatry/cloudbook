@@ -6,7 +6,6 @@ import hmi.content.node.NodeComponentView;
 import hmi.content.node.SummarizedView;
 import javafx.collections.ObservableList;
 import javafx.scene.text.Text;
-import model.node.Message;
 import model.node.Mesure;
 import model.node.MyNode;
 

@@ -1,7 +1,11 @@
 package model.friendmanager;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import model.node.AppVector;
+import model.node.Cloud;
+import model.node.InformationBox;
 import model.node.friend.Friend;
 import model.node.friend.Member;
 
@@ -71,4 +75,23 @@ public interface IFriendManager {
      * @return      Liste contenant nb amis pris au hasard 
      */
     List<Friend> getSomeFriends(int nb);
+    
+    /**
+     * Finds out the best rated cloud for this application
+     * @return the best rated cloud for this application
+     */
+    public Cloud bestCloud();
+    
+    /**
+     * Computes the relavance sum for each existing cloud
+     * @return an association table containing all the scores
+     */
+    public Map<Cloud, Double> scores();
+    
+    /**
+     * Computes the relevance sum over the friend list of friends who are on the specified cloud
+     * @param cloud cloud we look for to increment relevance
+     * @return the relevance sum over the friend list for the specified cloud
+     */
+    public double relevanceSum(Cloud cloud);
 }

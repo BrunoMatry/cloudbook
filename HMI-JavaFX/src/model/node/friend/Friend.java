@@ -10,19 +10,22 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import model.node.AppVector;
+import model.node.Cloud;
 
 public class Friend extends Member implements Information {  
     
     /* Attributs serialisables */
     protected double _relevance;
     protected int _confidence;
-    protected Date _lastConnexion;
+    protected Date _lastConnection;
     
     /* Proprietes non serialisables */
     protected transient StringProperty id;
     protected transient DoubleProperty relevance;
     protected transient IntegerProperty confidence;
-    protected transient ObjectProperty<Date> lastConnexion;
+    protected transient ObjectProperty<Date> lastConnection;
+    protected transient ObjectProperty<AppVector> appVector;
+    private transient ObjectProperty<Cloud> cloud;
     
     /**
      * Constructor
@@ -30,21 +33,29 @@ public class Friend extends Member implements Information {
      * @param cnfdnce confidence value
      * @param rlvnce relevance value
      * @param vector vector of characteriqtics of the member application
+     * @param _cloud cloud on which this friend runs
      * @throws NullPointerException 
      */
-    public Friend(String friendId, int cnfdnce, double rlvnce, AppVector vector) throws NullPointerException {
-        super(friendId, vector);
+    public Friend(String friendId, int cnfdnce, double rlvnce, AppVector vector, Cloud _cloud) throws NullPointerException {
+        super(friendId, vector, _cloud);
         if(vector == null)
             throw new NullPointerException();
         id = new SimpleStringProperty(friendId);
         relevance = new RelevanceProperty(this, rlvnce);
         confidence = new ConfidenceProperty(this, cnfdnce);
-        lastConnexion = new SimpleObjectProperty<>(new Date());
+        lastConnection = new SimpleObjectProperty<>(new Date());
+        appVector = new SimpleObjectProperty<>(vector);
+        cloud = new SimpleObjectProperty<>(_cloud);
     }
 
     @Override
     public String getId() {
         return id.get();
+    }
+
+    @Override
+    public Cloud getCloud() {
+        return cloud.get();
     }
     
     /**
@@ -52,7 +63,7 @@ public class Friend extends Member implements Information {
      * @param vector vector attribute
      */
     public void setVector(AppVector vector) {
-        this.vector = vector;
+        this.appVector.set(vector);
         updateLastConnectionDate();
     }
     
@@ -60,7 +71,7 @@ public class Friend extends Member implements Information {
      * The las tconnection date is updated to the current one
      */
     void updateLastConnectionDate() {
-        lastConnexion.set(new Date());
+        lastConnection.set(new Date());
     }
     
     /**
@@ -69,22 +80,27 @@ public class Friend extends Member implements Information {
      */
     public int daysSinceLastConnection() {
         Date today = new Date();
-        long diff = today.getTime() - lastConnexion.get().getTime();
+        long diff = today.getTime() - lastConnection.get().getTime();
         return (int) (diff / (1000*60*60*24));
     }
     
     public StringProperty idProperty() { return id; }
     @Override
-    public AppVector getVector() { return vector; }
+    public AppVector getVector() { return appVector.get(); }
     public DoubleProperty relevanceProperty() { return relevance; }
     public IntegerProperty confidenceProperty() { return confidence; }
+    public ObjectProperty lastConnectionProperty() { return lastConnection; }
+    public ObjectProperty appVectorProperty() { return appVector; }
+    public ObjectProperty<Cloud> cloudProperty() { return cloud; }
 
     @Override
     public void saveProperties() {
         _id = id.get();
         _relevance =  relevance.get();
         _confidence = confidence.get();
-        _lastConnexion = lastConnexion.get();
+        _lastConnection = lastConnection.get();
+        vector = appVector.get();
+        _cloud = cloud.get();
     }
 
     @Override
@@ -92,7 +108,9 @@ public class Friend extends Member implements Information {
         id = new SimpleStringProperty(_id);
         relevance = new RelevanceProperty(this, _relevance);
         confidence = new ConfidenceProperty(this, _confidence);
-        lastConnexion = new SimpleObjectProperty<>(_lastConnexion);
+        lastConnection = new SimpleObjectProperty<>(_lastConnection);
+        appVector = new SimpleObjectProperty<>(vector);
+        cloud = new SimpleObjectProperty<>(_cloud);
     }
 
     /**
@@ -104,7 +122,7 @@ public class Friend extends Member implements Information {
         int hash = 5;
         hash = 17 * hash + Objects.hashCode(this.relevance);
         hash = 17 * hash + Objects.hashCode(this.confidence);
-        hash = 17 * hash + Objects.hashCode(this.lastConnexion);
+        hash = 17 * hash + Objects.hashCode(this.lastConnection);
         return hash;
     }
 
@@ -125,4 +143,11 @@ public class Friend extends Member implements Information {
         return this.relevance.get() == other.relevance.get()
                 && this.confidence.get() == other.confidence.get();
     }
+
+    @Override
+    public String toString() {
+        return "Friend{" + "id=" + id.get() + ", relevance=" + relevance.get() + ", confidence=" + confidence.get() + ", lastConnection=" + lastConnection.get()+ '}';
+    }
+    
+    
 }

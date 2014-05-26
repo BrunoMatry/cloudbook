@@ -1,10 +1,9 @@
 package hmi.home;
 
 import hmi.button.IconFlyWeight;
-import java.io.File;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import model.node.ApplicationList;
+import model.node.FileEngineRelation;
 
 /**
  * command
@@ -38,9 +37,7 @@ public class DeleteNode extends RegistryButton {
      */
     @Override
     public void execute() {
-        File saveFile = new File(node + ".ser");
-        ObservableFileList.INSTANCE.remove(saveFile);
-        ApplicationList.INSTANCE.removeByName(node);
+        FileEngineRelation.INSTANCE.removeByName(node + ".ser");
     }
     
 }

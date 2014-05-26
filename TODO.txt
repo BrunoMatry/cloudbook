@@ -1,7 +1,11 @@
 Gwendal
-finaliser (corrections des bugs restants, compléter l'affichage et le calcul)
+Relations : ne doit pas hériter de Property. Appliquer un "design pattern" dynamic relation (à la base de données)
+Node buttons : de vrais buttons avec setTitle
+problème du delete de fichiers
+identifiants uniques pour le serveur
 tests unitaires
 propreté du code
+bug lors de la sauvegarde au clic sur la croix
 
 Bruno
 Peaufiner interface graphique

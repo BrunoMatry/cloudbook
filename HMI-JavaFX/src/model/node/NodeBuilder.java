@@ -1,18 +1,19 @@
 package model.node;
 
+import java.io.File;
 import java.io.IOException;
+import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import javafx.scene.image.Image;
 
 /**
  * Builder
  */
 public class NodeBuilder {
     
-    protected SimpleObjectProperty<Image> logo;
-    public SimpleObjectProperty<Image> logoProperty() {
+    protected ObjectProperty<File> logo;
+    public ObjectProperty<File> logoProperty() {
         return logo;
     }
     
@@ -31,22 +32,10 @@ public class NodeBuilder {
         return platform;
     }
     
-    protected StringProperty host;
-    public StringProperty hostProperty() {
-        return host;
-    }
-    
-    protected StringProperty serverPort;
-    public StringProperty serverPortProperty() {
-        return serverPort;
-    }
-    
     public NodeBuilder() {
         logo = new SimpleObjectProperty<>();
         name = new SimpleStringProperty();
         platform = new SimpleObjectProperty<>();
-        host = new SimpleStringProperty();
-        serverPort = new SimpleStringProperty();
         nodePort = new SimpleStringProperty();
     }
     
@@ -59,8 +48,6 @@ public class NodeBuilder {
         MyNode cbn = new MyNode(logo.get(),
                 name.get(),
                 platform.get(),
-                host.get(),
-                Integer.parseInt(serverPort.get()),
                 Integer.parseInt(nodePort.get()),
                 0, 0, 0);
         return cbn;

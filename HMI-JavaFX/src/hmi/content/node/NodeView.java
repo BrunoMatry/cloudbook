@@ -1,11 +1,13 @@
 package hmi.content.node;
 
+import controller.AppVectorStringRelation;
+import controller.CloudImageRelation;
 import hmi.content.AbstractActivity;
 import hmi.content.OneNodeActivity;
 import hmi.content.node.component.FriendPane;
 import hmi.content.node.component.MessagePane;
 import hmi.content.node.component.MesurePane;
-import hmi.content.node.component.StateView;
+import hmi.content.node.component.StatePane;
 import hmi.home.MainView;
 import java.util.ArrayList;
 import javafx.beans.property.ObjectProperty;
@@ -16,10 +18,11 @@ import javafx.scene.control.TableView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
-import model.node.ApplicationList;
+import model.node.FileEngineRelation;
 import model.node.MyNode;
 import model.node.Message;
 import model.node.Mesure;
+import model.node.State;
 import model.node.friend.Friend;
 
 /**
@@ -39,6 +42,9 @@ public final class NodeView extends OneNodeActivity {
     //view containing all the messages received by the current node
     private MessagePane messagePane;
     
+    //ciew containing all the states in the history of the application
+    private StatePane statePane;
+    
     //summary of the state of application
     private SummarizedView<ImageView> state;
     
@@ -50,7 +56,13 @@ public final class NodeView extends OneNodeActivity {
     
     private SummarizedView<Text> friends;
     
-    private Button appVector;
+    private final Text appVector;
+    
+    private CloudImageRelation binder;
+    
+    private AppVectorStringRelation vectorBinder;
+    
+    
     
     /**
      * 
@@ -59,14 +71,14 @@ public final class NodeView extends OneNodeActivity {
     private NodeView(AbstractActivity p) {
         super(p);
         title = "Friend management";
-        appVector = new Button();
-        appVector.setGraphic(new Text("Application characteristics"));
+        appVector = new Text();
         ArrayList<Button> components = new ArrayList<>();
         components.add(getState());
         components.add(getMesures());
         components.add(getMessage());
         components.add(getFriend());
-        components.add(appVector);
+        
+        setBottom(appVector);
         
         int size = components.size();
         for(int i = 0 ; i < size ; i++) {
@@ -86,8 +98,12 @@ public final class NodeView extends OneNodeActivity {
      */
     public SummarizedView getState() {
         if(state == null) {
-            StateView sv = new StateView(this);
-            state = sv.makeSummarized();
+            statePane = new StatePane(this);
+            TableView<State> table = statePane.getTable();
+            MyNode node = FileEngineRelation.INSTANCE.getCurrentEngine().getNode();
+            ObservableList<State> stateList = node.getStates().boxObservableList();
+            table.setItems(stateList);
+            state = statePane.makeSummarized();
         }
         return state;
     }
@@ -101,7 +117,7 @@ public final class NodeView extends OneNodeActivity {
         if(friends == null) {
             friendPane = new FriendPane(this);
             TableView<Friend> table = friendPane.getTable();
-            MyNode node = ApplicationList.INSTANCE.getCurrentEngine().getNode();
+            MyNode node = FileEngineRelation.INSTANCE.getCurrentEngine().getNode();
             ObservableList<Friend> friendList = node.getFriends().boxObservableList();
             table.setItems(friendList);
             friends = friendPane.makeSummarized();
@@ -118,7 +134,7 @@ public final class NodeView extends OneNodeActivity {
         if(mesures == null) {
             mesurePane = new MesurePane(this);
             TableView<Mesure> table = mesurePane.getTable();
-            MyNode node = ApplicationList.INSTANCE.getCurrentEngine().getNode();
+            MyNode node = FileEngineRelation.INSTANCE.getCurrentEngine().getNode();
             ObservableList<Mesure> mesureList = node.getMesures().boxObservableList();
             table.setItems(mesureList);
             mesures = mesurePane.makeSummarized();
@@ -135,7 +151,7 @@ public final class NodeView extends OneNodeActivity {
         if(message == null) {
             messagePane = new MessagePane(this);
             TableView<Message> table = messagePane.getTable();
-            MyNode node = ApplicationList.INSTANCE.getCurrentEngine().getNode();
+            MyNode node = FileEngineRelation.INSTANCE.getCurrentEngine().getNode();
             ObservableList<Message> messageList = node.getMessages().boxObservableList();
             table.setItems(messageList);
             message = messagePane.makeSummarized();
@@ -143,18 +159,6 @@ public final class NodeView extends OneNodeActivity {
         return message;
     }
     
-    /**
-     * initialize the model and build all the children views
-     * @param model : model of the current view
-     */
-    /*
-    public NodeView(MyNode model) {
-        super();
-        this.model = model;
-        components = new ArrayList<>();
-        //components.add();
-    }
-   */
     /**
      * Places the current view in its parent without refreshing it
      * @param node child to place
@@ -168,40 +172,22 @@ public final class NodeView extends OneNodeActivity {
     }
     
     /**
-     * TODO
-     * @param source : component demanding to be displayed
-     */
-    public void onDisplay(IComponentView source) {
-        
-    }
-    
-    /**
-     * TODO
-     * @param source : component demanding to be updated
-     */
-    public void onUpdate(IComponentView source) {
-        
-    }
-    
-    /**
-     * TODO
-     * @param source : component demanding to be hidden
-     */
-    public void onHide(IComponentView source) {
-        getChildren().remove(source);
-    }
-    
-    /**
      * Bind the view with the current node
      */
     @Override
     public void bindWithNode() {
         super.bindWithNode();
-        MyNode node = ApplicationList.INSTANCE.getCurrentEngine().getNode();
-        ObjectProperty<Image> stateView = state.getView().imageProperty();
+        MyNode node = FileEngineRelation.INSTANCE.getCurrentEngine().getNode();
+        ObjectProperty<Image> stateImage = state.getView().imageProperty();
+        binder = new CloudImageRelation();
+        binder.bind(node.platformProperty());
+        binder.drive(stateImage);
         messagePane.bind(node);
         mesurePane.bind(node);
         friendPane.bind(node);
-        stateView.bind(node.getPlatform().iconProperty());
+        statePane.bind(node);
+        vectorBinder = new AppVectorStringRelation();
+        vectorBinder.bind(node.vectorProperty());
+        vectorBinder.drive(appVector.textProperty());
     }
 }

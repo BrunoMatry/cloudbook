@@ -4,7 +4,6 @@ import hmi.button.ConnectionButton;
 import hmi.button.IconFlyWeight;
 import hmi.content.HomeActivity;
 import hmi.content.register.RegisterView;
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,8 +22,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import model.engine.Engine;
 import model.network.implementation.Network;
-import model.node.ApplicationList;
-import model.node.MyNode;
+import model.node.FileEngineRelation;
 import model.node.NodeBuilder;
 
 /**
@@ -67,11 +65,9 @@ public final class MainView extends HomeActivity {
             public void handle(ActionEvent t) {
                 NodeBuilder cb = new NodeBuilder();
                 registerView.setBuilder(cb);
-                cb.logoProperty().bind(registerView.logoProperty());
+                cb.logoProperty().bind(registerView.imageFileProperty());
                 cb.nameProperty().bind(registerView.nameProperty());
                 cb.platformProperty().bind(registerView.cloudProperty());
-                cb.hostProperty().bind(registerView.hostProperty());
-                cb.serverPortProperty().bind(registerView.serverPortProperty());
                 cb.nodePortProperty().bind(registerView.nodePortProperty());
                 registerView.launch();
             }
@@ -106,7 +102,7 @@ public final class MainView extends HomeActivity {
             setAlignment(Pos.CENTER_LEFT);
             setSpacing(10);
             this.registries = new ArrayList<>();
-            ObservableFileList.INSTANCE.addObserver(this);
+            FileEngineRelation.INSTANCE.addObserver(this);
             buildRegistries();
             getChildren().addAll(this.registries);
         }
@@ -115,19 +111,8 @@ public final class MainView extends HomeActivity {
          * Set up the save registries
          */
         private void buildRegistries() throws IOException, ClassNotFoundException {
-            Engine tmpEngine;
-            MyNode node;
-            for (File file : ObservableFileList.INSTANCE.getFiles()) {
-                String extName = file.getName();
-                if(extName.endsWith(".ser")) {
-                    node = MyNode.load(extName);
-                    tmpEngine = new Engine(node);
-                    if(!ApplicationList.INSTANCE.containsNode(node)) {
-                        ApplicationList.INSTANCE.add(tmpEngine);
-                    }
-                    setUpRegistry(tmpEngine);
-                } 
-            }
+            for (Engine e : FileEngineRelation.INSTANCE.values())
+                setUpRegistry(e);
         }
         
         /**

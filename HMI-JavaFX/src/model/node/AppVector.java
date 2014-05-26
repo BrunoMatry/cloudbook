@@ -91,7 +91,7 @@ public class AppVector implements Information {
      */
     @Override
     public String toString() {
-        return "AppVector{" + "appType=" + appType + ", performance=" + performance + ", speed=" + speed + '}';
+        return "AppVector{" + "appType=" + appType.get() + ", performance=" + performance.get() + ", speed=" + speed.get() + '}';
     }
 
     public void recalculateVector() {
