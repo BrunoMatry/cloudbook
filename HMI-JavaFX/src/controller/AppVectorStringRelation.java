@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package controller;
 
 import javafx.beans.property.SimpleObjectProperty;
@@ -12,10 +6,6 @@ import javafx.beans.property.StringProperty;
 import javafx.beans.value.ObservableValue;
 import model.node.AppVector;
 
-/**
- *
- * @author Gwendal
- */
 public class AppVectorStringRelation extends SimpleObjectProperty<AppVector> {
 
     //view side of the relation
@@ -51,5 +41,4 @@ public class AppVectorStringRelation extends SimpleObjectProperty<AppVector> {
     public void drive(StringProperty textProperty) {
         textProperty.bind(text);
     }
-    
 }

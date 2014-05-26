@@ -1,15 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package controller;
 
 import hmi.button.IconFlyWeight;
 import java.util.HashMap;
 import java.util.Map;
-import javafx.beans.property.ObjectProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.image.Image;
 import model.node.Cloud;
@@ -18,7 +11,6 @@ import model.node.Cloud;
  * A relation associating a cloud and its corresponding image.
  * An image must be bound to an instance of this class,
  * and the same instance bound to a cloud in order to make the link
- * @author Gwendal
  */
 public class CloudImageRelation extends Relation<Cloud, Image> {
     
@@ -86,11 +78,5 @@ public class CloudImageRelation extends Relation<Cloud, Image> {
         super.setValue(t);
         System.out.println("Appel du setter de l'image property dans setValue");
         this.image.set(this.relation.get(t));
-    }
-
-    @Override
-    protected void fireValueChangedEvent() {
-        super.fireValueChangedEvent();
-        
     }
 }
