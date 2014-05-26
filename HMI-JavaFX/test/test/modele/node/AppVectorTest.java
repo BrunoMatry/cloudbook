@@ -33,7 +33,7 @@ public class AppVectorTest {
     
     @Before
     public void setUp() {
-        //appVector = new AppVector(1, 2, 3);
+        appVector = new AppVector(1, 2, 3);
     }
     
     @After
@@ -42,17 +42,17 @@ public class AppVectorTest {
 
     @Test
     public void testConstructeur() {
-        assertTrue(appVector.appTypeProperty().get() == 1);
-        assertTrue(appVector.performanceProperty().get() == 2);
-        assertTrue(appVector.speedProperty().get() == 3);
+        assertTrue(appVector.getAppType() == 1);
+        assertTrue(appVector.getPerformanceNeed() == 2);
+        assertTrue(appVector.getSpeedNeed() == 3);
     }
     
     @Test
     public void testCopy() {
         AppVector appVectorCopied = appVector.copy();
-        appVector.performanceProperty().set(3);
-        assertTrue(appVector.performanceProperty().get() == 3);
-        assertTrue(appVectorCopied.performanceProperty().get() == 2);
+        appVector.setPerformanceNeed(3);
+        assertTrue(appVector.getPerformanceNeed() == 3);
+        assertTrue(appVectorCopied.getPerformanceNeed() == 2);
     }
     
     @Test
@@ -69,8 +69,8 @@ public class AppVectorTest {
             appVectorSerial.restoreProperties();
             assertFalse(appVector == null);
             assertFalse(appVectorSerial == null);
-            assertFalse(appVector.performanceProperty() == null);
-            assertFalse(appVectorSerial.performanceProperty() == null);
+            assertTrue(appVector.getPerformanceNeed() == 2);
+            assertTrue(appVectorSerial.getPerformanceNeed() == 2);
             assertTrue(appVectorSerial.equals(appVector));
         } catch (FileNotFoundException ex) {
             fail();

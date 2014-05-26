@@ -1,16 +1,26 @@
 package test.modele.node;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.net.UnknownHostException;
+import java.rmi.RemoteException;
+import model.node.Cloud;
 import model.node.MyNode;
 import org.junit.After;
 import org.junit.AfterClass;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+import static org.junit.Assert.fail;
 import static org.junit.Assert.fail;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -33,8 +43,8 @@ public class CloudBookNodeTest {
     }
     
     @Before
-    public void setUp() {
-        // n1 = new MyNode(new Image(), null, Cloud.GDRIVE, null, port, appType, performance, speed);
+    public void setUp() throws UnknownHostException, RemoteException {
+        n1 = new MyNode(new File(""), "test", Cloud.GOOGLE, 50012, 1, 2, 3);
     }
     
     @After

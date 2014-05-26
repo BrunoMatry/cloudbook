@@ -107,8 +107,6 @@ public class MyNode implements Serializable {
     public void addMesures(List<Mesure> mesures) {
         for(Mesure m : mesures)
             this.mesures.push(m);
-        AppVector changedValue = vector.get();
-        vector.set(changedValue);
     }
     
     /********************************** SETTERS / GETTERS **********************************/

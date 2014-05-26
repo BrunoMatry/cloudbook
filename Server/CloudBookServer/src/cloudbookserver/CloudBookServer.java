@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package cloudbookserver;
 
 import java.net.InetAddress;
@@ -12,10 +6,6 @@ import java.rmi.RemoteException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author Gwendal
- */
 public class CloudBookServer {
 
     /**
@@ -25,7 +15,7 @@ public class CloudBookServer {
     @SuppressWarnings("empty-statement")
     public static void main(String[] args) {
         try {
-            int port = Integer.parseInt(args[0]);
+            int port = 50100;
             Server server = new Server(InetAddress.getLocalHost().getHostAddress() , port);
             server.binding();
             System.out.println("The server is running");

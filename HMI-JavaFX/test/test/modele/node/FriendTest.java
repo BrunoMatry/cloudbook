@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import model.node.AppVector;
+import model.node.Cloud;
 import model.node.friend.Friend;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -33,7 +34,7 @@ public class FriendTest {
     
     @Before
     public void setUp() {
-        //friend = new Friend("1", 2, 1.5, new AppVector(1, 2, 3));
+        friend = new Friend("1", 2, 1.5, new AppVector(1, 2, 3), Cloud.AMAZON);
     }
     
     @After
@@ -45,7 +46,8 @@ public class FriendTest {
         assertTrue(friend.idProperty().get().equals("1"));
         assertTrue(friend.confidenceProperty().get() == 2);
         assertTrue(friend.relevanceProperty().get() == 1.5);
-       // assertTrue(friend.getVector().equals(new AppVector(1, 2, 3)));
+        assertTrue(friend.getVector().equals(new AppVector(1, 2, 3)));
+        assertTrue(friend.getCloud().equals(Cloud.AMAZON));
     }
     
     @Test
@@ -55,7 +57,7 @@ public class FriendTest {
     
     @Test
     public void testSetters() {
-        Friend member2 = new Friend("4", 3, 1.2, new AppVector(1, 5, 3));
+        Friend member2 = new Friend("4", 3, 1.2, new AppVector(1, 5, 3), null);
         assertTrue(member2.idProperty().get().equals("4"));
         assertTrue(member2.confidenceProperty().get() == 3);
         member2.confidenceProperty().set(4);
@@ -67,6 +69,7 @@ public class FriendTest {
         member2.setVector(new AppVector(2, 4, 9));
         assertTrue(member2.getVector().equals(new AppVector(2, 4, 9)));
     }
+    
     
     @Test
     public void testSerialisation() {
