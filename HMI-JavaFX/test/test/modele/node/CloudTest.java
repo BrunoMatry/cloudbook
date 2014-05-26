@@ -24,9 +24,9 @@ public class CloudTest {
     
     @Before
     public void setUp() {
-        cloud = Cloud.DROPBOX;
-        cloud2 = Cloud.GDRIVE;
-        cloud3 = Cloud.SKYDRIVE;
+        cloud = Cloud.AMAZON;
+        cloud2 = Cloud.GOOGLE;
+        cloud3 = Cloud.WINDOWS;
     }
     
     @After
@@ -35,8 +35,8 @@ public class CloudTest {
 
     @Test
     public void testConstructeur() {
-        cloud.equals(Cloud.DROPBOX);
-        cloud2.equals(Cloud.GDRIVE);
-        cloud3.equals(Cloud.SKYDRIVE);
+        cloud.equals(Cloud.AMAZON);
+        cloud2.equals(Cloud.GOOGLE);
+        cloud3.equals(Cloud.WINDOWS);
     }
 }

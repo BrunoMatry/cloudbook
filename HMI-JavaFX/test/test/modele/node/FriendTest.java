@@ -55,7 +55,7 @@ public class FriendTest {
     
     @Test
     public void testSetters() {
-        Friend member2 = new Friend("4", 3, 1.2, new AppVector(1, 5, 3));
+        Friend member2 = new Friend("4", 3, 1.2, new AppVector(1, 5, 3), null);
         assertTrue(member2.idProperty().get().equals("4"));
         assertTrue(member2.confidenceProperty().get() == 3);
         member2.confidenceProperty().set(4);
@@ -67,6 +67,7 @@ public class FriendTest {
         member2.setVector(new AppVector(2, 4, 9));
         assertTrue(member2.getVector().equals(new AppVector(2, 4, 9)));
     }
+    
     
     @Test
     public void testSerialisation() {

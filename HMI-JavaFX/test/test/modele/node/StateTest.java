@@ -33,9 +33,9 @@ public class StateTest {
     
     @Before
     public void setUp() {
-        state1 = new State(Cloud.DROPBOX);
-        state2 = new State(Cloud.GDRIVE);
-        state3 = new State(Cloud.SKYDRIVE);
+        state1 = new State(Cloud.AMAZON);
+        state2 = new State(Cloud.GOOGLE);
+        state3 = new State(Cloud.WINDOWS);
     }
     
     @After
@@ -44,7 +44,7 @@ public class StateTest {
 
     @Test
     public void testConstructeur() {
-        assertTrue(Cloud.values()[state1.cloudProperty().get()].equals(Cloud.DROPBOX));
+        assertTrue(state1.cloudProperty().get().equals(Cloud.AMAZON));
         assertTrue(state1.currentProperty().get());
     }
     
@@ -57,9 +57,9 @@ public class StateTest {
     
     @Test
     public void testGetCloud() {
-        assertTrue(state1.getCloud().equals(Cloud.DROPBOX));
-        assertTrue(state2.getCloud().equals(Cloud.GDRIVE));
-        assertTrue(state3.getCloud().equals(Cloud.SKYDRIVE));
+        assertTrue(state1.getCloud().equals(Cloud.AMAZON));
+        assertTrue(state2.getCloud().equals(Cloud.GOOGLE));
+        assertTrue(state3.getCloud().equals(Cloud.WINDOWS));
     }
     
     @Test

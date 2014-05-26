@@ -65,8 +65,8 @@ public class NetworkTest {
             msg = new Request();
             Request req = (Request)msg;
             req.setInfo(original);
-            alice.connect(InetAddress.getLocalHost().getHostName() + ":" + 50020);
-            me.connect(InetAddress.getLocalHost().getHostAddress() + ":" + 50020);
+            alice.connect();
+            me.connect();
         } catch (RemoteException | UnknownHostException ex) {
             Logger.getLogger(NetworkTest.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -104,38 +104,32 @@ public class NetworkTest {
     public void testConnect() {
         try {
             Assert.assertTrue(server.getClient("bob:50010") == null);
-            bob.connect(InetAddress.getLocalHost().getHostName() + ":" + 50020);
+            bob.connect();
             Assert.assertTrue(server.getClient("bob:50010") != null);
             bob.disconnect();
         } catch (RemoteException ex) {
             fail(ex.getMessage());
             Logger.getLogger(NetworkTest.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (UnknownHostException ex) {
-            fail(ex.getMessage());
-            Logger.getLogger(NetworkTest.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } 
     }
     
     @Test
     public void testDisonnect() {
         try {
-            bob.connect(InetAddress.getLocalHost().getHostName() + ":" + 50020);
+            bob.connect();
             Assert.assertTrue(server.getClient("bob:50010") != null);
             bob.disconnect();
             Assert.assertTrue(server.getClient("bob:50010") == null);
         } catch (RemoteException ex) {
             fail(ex.getMessage());
             Logger.getLogger(NetworkTest.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (UnknownHostException ex) {
-            fail(ex.getMessage());
-            Logger.getLogger(NetworkTest.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } 
     }
     
     @Test
     public void testBroadcast() {
         try {
-            bob.connect(InetAddress.getLocalHost().getHostName() + ":" + 50020);
+            bob.connect();
             alice.broadcast(msg);
             Sendable myCopy = server.getSendable(me.getId(), 0);
             Sendable bobCopy = server.getSendable(bob.getId(), 0);
@@ -149,10 +143,7 @@ public class NetworkTest {
         } catch (RemoteException ex) {
             fail(ex.getMessage());
             Logger.getLogger(NetworkTest.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (UnknownHostException ex) {
-            fail(ex.getMessage());
-            Logger.getLogger(NetworkTest.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } 
     }
     
     private static class TestInfo implements Information {
