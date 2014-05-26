@@ -4,6 +4,7 @@ import hmi.content.node.component.tableview.MesureTableView;
 import hmi.content.AbstractActivity;
 import hmi.content.node.NodeComponentView;
 import hmi.content.node.SummarizedView;
+import hmi.content.node.component.tableview.MessageTableView;
 import javafx.collections.ObservableList;
 import javafx.scene.text.Text;
 import model.node.Mesure;
@@ -34,8 +35,11 @@ public class MesurePane extends NodeComponentView<Mesure> {
      */
     @Override
     public void bind(MyNode node) {
+        getChildren().remove(table);
+        table = new MesureTableView();
         ObservableList<Mesure> mesureList = node.getMesures().boxObservableList();
         table.setItems(mesureList);
+        setCenter(table);
     }
     
 }

@@ -230,13 +230,14 @@ public class FriendManager implements IFriendManager {
      * Finds out the best rated cloud for this application
      * @return the best rated cloud for this application
      */
+    @Override
     public Cloud bestCloud() {
         Map<Cloud, Double> scoreTable = scores();
         Cloud res = null;
         double max = 0.0;
         for(Cloud c : scoreTable.keySet()) {
             double d = scoreTable.get(c);
-            if(d >= max) {
+            if(d > max) {
                 max = d;
                 res = c;
             }
@@ -248,6 +249,7 @@ public class FriendManager implements IFriendManager {
      * Computes the relavance sum for each existing cloud
      * @return an association table containing all the scores
      */
+    @Override
     public Map<Cloud, Double> scores() {
         Map<Cloud, Double> res = new HashMap<>();
         for(Cloud c : Cloud.values()) {
@@ -262,6 +264,7 @@ public class FriendManager implements IFriendManager {
      * @param cloud cloud we look for to increment relevance
      * @return the relevance sum over the friend list for the specified cloud
      */
+    @Override
     public double relevanceSum(Cloud cloud) {
         InformationBox<Friend> friends = node.getFriends();
         double res = 0.0;

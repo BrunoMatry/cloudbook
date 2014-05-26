@@ -17,8 +17,8 @@ public class InformationBox<T extends Information> implements Information, Itera
     
     public static final String EMPTY_FLAG = "No information to display at this time";
     
-    protected List<T> _box; //box containing information
-    protected transient ObservableList<T> box; //box containing information
+    private List<T> _box; //box containing information
+    private transient ObservableList<T> box; //box containing information
     public final ObservableList<T> boxObservableList() {
         return box;
     }
@@ -44,8 +44,10 @@ public class InformationBox<T extends Information> implements Information, Itera
      * @param info information to add
      */
     public void push(T info) {
-        box.add(info);
-        description.set(info.toString());
+        if(info != null && box != null && description != null) {
+            box.add(info);
+            description.set(info.toString());
+        }
     }
     
     /**
@@ -113,7 +115,8 @@ public class InformationBox<T extends Information> implements Information, Itera
      */
     @Override
     public void restoreProperties() {
-        box = FXCollections.observableArrayList();
+        ObservableList<T> bbox = FXCollections.observableArrayList();
+        box = FXCollections.synchronizedObservableList(bbox);
         for(Information info : _box) {
            info.restoreProperties();
            box.add((T)info);

@@ -10,6 +10,9 @@ import hmi.content.AbstractActivity;
 import hmi.content.node.NodeComponentView;
 import hmi.content.node.SummarizedView;
 import hmi.content.node.component.tableview.FriendTableView;
+import java.net.UnknownHostException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.ObservableList;
 import javafx.scene.text.Text;
 import model.node.MyNode;
@@ -44,8 +47,11 @@ public class FriendPane extends NodeComponentView<Friend> {
      */
     @Override
     public void bind(MyNode node) {
+        getChildren().remove(table);
+        table = new FriendTableView();
         ObservableList<Friend> friendList = node.getFriends().boxObservableList();
         table.setItems(friendList);
+        setCenter(table);
     }
     
 }

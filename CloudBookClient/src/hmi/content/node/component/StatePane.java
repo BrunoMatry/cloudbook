@@ -55,8 +55,11 @@ public class StatePane extends NodeComponentView<State> {
      */
     @Override
     public void bind(MyNode node) {
+        getChildren().remove(table);
+        table = new StateTableView();
         ObservableList<State> stateList = node.getStates().boxObservableList();
         table.setItems(stateList);
+        setCenter(table);
     }
     
 }

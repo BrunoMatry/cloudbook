@@ -132,7 +132,8 @@ public class Engine implements IEngine {
      */
     public void updateState() {
         Cloud cloud = friendManager.bestCloud();
-        node.majCurrentState(cloud);
+        if(cloud != null)
+            node.majCurrentState(cloud);
     }
     
     /**

@@ -111,6 +111,4 @@ public class State implements Information {
         return "State{" + "cloud=" + cloud.get() + ", from=" + from.get() + ", to=" + to.get() + ", current=" + current.get() + '}';
     }
     
-    
-    
 }

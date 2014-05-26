@@ -42,7 +42,10 @@ public class MessagePane extends NodeComponentView {
      */
     @Override
     public void bind(MyNode node) {
+        getChildren().remove(table);
+        table = new MessageTableView();
         ObservableList<Message> messageList = node.getMessages().boxObservableList();
         table.setItems(messageList);
+        setCenter(table);
     }
 }
