@@ -15,7 +15,7 @@ public class CloudBookServer {
     @SuppressWarnings("empty-statement")
     public static void main(String[] args) {
         try {
-            int port = 50100;
+            int port = Integer.parseInt(args[0]);
             Server server = new Server(InetAddress.getLocalHost().getHostAddress() , port);
             server.binding();
             System.out.println("The server is running");

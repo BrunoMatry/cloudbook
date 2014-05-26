@@ -15,3 +15,8 @@
 /Server/CloudBookServer/dist/
 /Server/CloudBookServer/build/
 /TestClientServer/TestClientServer/dist/
+/CloudBookClient/nbproject/private/
+/CloudBookClient/dist/
+/CloudBookClient/build/
+HMI-JavaFX/serverConfig.txt
+HMI-JavaFX/serverConfig.txt
