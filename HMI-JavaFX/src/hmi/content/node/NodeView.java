@@ -1,6 +1,5 @@
 package hmi.content.node;
 
-import controller.AppVectorStringRelation;
 import controller.CloudImageRelation;
 import hmi.content.AbstractActivity;
 import hmi.content.OneNodeActivity;
@@ -61,8 +60,6 @@ public final class NodeView extends OneNodeActivity {
     private AppVectorEditer appVector;
     
     private CloudImageRelation binder;
-    
-    private AppVectorStringRelation vectorBinder;
     
     
     
