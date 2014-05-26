@@ -71,12 +71,12 @@ public class FriendManager implements IFriendManager {
     @Override
     public double relevance(AppVector v) {
         AppVector vector = node.getVector();
-        double xa = vector.appTypeProperty().get(); 
-        double ya = vector.performanceProperty().get();
-        double za = vector.speedProperty().get(); 
-        double xb = v.appTypeProperty().get(); 
-        double yb = v.performanceProperty().get(); 
-        double zb = v.speedProperty().get(); 
+        double xa = vector.getAppType(); 
+        double ya = vector.getPerformanceNeed();
+        double za = vector.getSpeedNeed(); 
+        double xb = v.getAppType(); 
+        double yb = v.getPerformanceNeed(); 
+        double zb = v.getSpeedNeed(); 
         double dist = sqrt(pow(xb-xa, 2)+pow(yb-ya, 2)+pow(zb-za, 2));
         return dist;
     }

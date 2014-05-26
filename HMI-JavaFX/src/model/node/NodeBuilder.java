@@ -48,8 +48,7 @@ public class NodeBuilder {
         MyNode cbn = new MyNode(logo.get(),
                 name.get(),
                 platform.get(),
-                Integer.parseInt(nodePort.get()),
-                0, 0, 0);
+                Integer.parseInt(nodePort.get()), 0, 0, 0);
         return cbn;
     }
     

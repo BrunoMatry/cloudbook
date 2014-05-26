@@ -59,7 +59,7 @@ public class MyNode implements Serializable {
         states = new InformationBox<>();
         mesures = new InformationBox<>();
         messages = new InformationBox<>();    
-        _vector = new AppVector(mesures);
+        _vector = new AppVector(0, 0, 0);
         vector = new SimpleObjectProperty<>(_vector);
         name = new SimpleStringProperty();
         logo = new SimpleStringProperty();
@@ -86,7 +86,7 @@ public class MyNode implements Serializable {
         states = new InformationBox<>();
         mesures = new InformationBox<>();
         messages = new InformationBox<>();    
-        _vector = new AppVector(mesures);
+        _vector = new AppVector(appType, performance, speed);
         vector = new SimpleObjectProperty<>(_vector);
         name = new SimpleStringProperty(string);
         logo = new SimpleStringProperty(logoFile.getName());
@@ -100,9 +100,7 @@ public class MyNode implements Serializable {
      */
     public void addMesure(Mesure m) {
         this.mesures.push(m);
-        AppVector changedValue = vector.get();
-        changedValue.recalculateVector();
-        vector.set(changedValue);
+        vector.set(vector.get());
     }
     
     /**
@@ -112,9 +110,7 @@ public class MyNode implements Serializable {
     public void addMesures(List<Mesure> mesures) {
         for(Mesure m : mesures)
             this.mesures.push(m);
-        AppVector changedValue = vector.get();
-        changedValue.recalculateVector();
-        vector.set(changedValue);
+        vector.set(vector.get());
     }
     
     /********************************** SETTERS / GETTERS **********************************/
