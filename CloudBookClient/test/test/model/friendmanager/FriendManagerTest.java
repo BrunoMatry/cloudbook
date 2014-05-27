@@ -66,7 +66,7 @@ public class FriendManagerTest {
         instance.update(f); //friend in friends and still relevant --> update
         assertTrue(instance.isFriend(id));
         f = new Friend(id, 5, 5, new AppVector(200,200,200), Cloud.GOOGLE);
-        instance.update(f); //friend in friends but not relevant anymore --> remove
+        instance.update(f); //friend in friends but not relevant anymore --> call remove
         assertFalse(instance.isFriend(id));
     }
 
@@ -78,7 +78,7 @@ public class FriendManagerTest {
         AppVector v = new AppVector(0,2,2);
         double expResult = 2.0;
         double result = instance.relevance(v);
-        assertEquals(expResult, result);
+        assertTrue(expResult == result);
     }
 
     /**
