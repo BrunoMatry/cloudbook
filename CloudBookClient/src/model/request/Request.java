@@ -98,7 +98,10 @@ public class Request<Inf extends Information> extends UnicastRemoteObject implem
     }
 
     public void setRebounds(int rebounds) {
-        this.rebounds = rebounds;
+        if(rebounds >= 0)
+            this.rebounds = rebounds;
+        else
+            this.rebounds = 0;
     }
 
     public void setRecipent(int recipent) {

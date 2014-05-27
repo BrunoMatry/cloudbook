@@ -58,21 +58,21 @@ public class RequestManager implements IRequestManager {
 
     @Override
     public Request createRequest(Information data) {
-<span class="nc" id="L61">        Request req = null;</span>
+<span class="fc" id="L61">        Request req = null;</span>
         try {
-<span class="nc" id="L63">            req = new Request(data, this);</span>
+<span class="fc" id="L63">            req = new Request(data, this);</span>
 <span class="nc" id="L64">        } catch (RemoteException | UnknownHostException ex) {</span>
 <span class="nc" id="L65">            Logger.getLogger(RequestManager.class.getName()).log(Level.SEVERE, null, ex);</span>
-<span class="nc" id="L66">        }</span>
-<span class="nc" id="L67">        return req;</span>
+<span class="fc" id="L66">        }</span>
+<span class="fc" id="L67">        return req;</span>
     }
     
     @Override
     public &lt;I extends Information&gt; List&lt;Request&gt; createRequests(List&lt;I&gt; l) {
-<span class="nc" id="L72">        ArrayList&lt;Request&gt; res = new ArrayList&lt;&gt;();</span>
-<span class="nc bnc" id="L73" title="All 2 branches missed.">        for(Information i : l)</span>
-<span class="nc" id="L74">            res.add(createRequest(i));</span>
-<span class="nc" id="L75">        return res;</span>
+<span class="fc" id="L72">        ArrayList&lt;Request&gt; res = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L73" title="All 2 branches covered.">        for(Information i : l)</span>
+<span class="fc" id="L74">            res.add(createRequest(i));</span>
+<span class="fc" id="L75">        return res;</span>
     }
     
     public List&lt;Information&gt; getInbox() {
