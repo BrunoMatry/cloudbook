@@ -1,4 +1,4 @@
-package test.modele.node;
+package test.model.node;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -6,13 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.util.ArrayList;
-import java.util.List;
 import model.node.AppVector;
-import model.node.Cloud;
-import model.node.Message;
-import model.node.Mesure;
-import model.node.State;
 import org.junit.After;
 import org.junit.AfterClass;
 import static org.junit.Assert.assertFalse;
@@ -22,10 +16,11 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class MessageTest {
-    Message message;
+public class AppVectorTest {
     
-    public MessageTest() {
+    AppVector appVector;
+    
+    public AppVectorTest() {
     }
     
     @BeforeClass
@@ -38,7 +33,7 @@ public class MessageTest {
     
     @Before
     public void setUp() {
-        message = new Message("1", new AppVector(1, 4, 3), new State(Cloud.GOOGLE), true);
+        appVector = new AppVector(1, 2, 3);
     }
     
     @After
@@ -46,32 +41,41 @@ public class MessageTest {
     }
 
     @Test
-    public void testConstructor() {
-        assertTrue(message.getIdSender().equals("1"));
-        assertTrue(message.getContent().equals(new State(Cloud.GOOGLE)));
-        assertTrue(message.getVector().equals(new AppVector(1, 4, 3)));
+    public void testConstructeur() {
+        assertTrue(appVector.getAppType() == 1);
+        assertTrue(appVector.getPerformanceNeed() == 2);
+        assertTrue(appVector.getSpeedNeed() == 3);
     }
     
     @Test
-    public void testSerialisation() {
+    public void testCopy() {
+        AppVector appVectorCopied = appVector.copy();
+        appVector.setPerformanceNeed(3);
+        assertTrue(appVector.getPerformanceNeed() == 3);
+        assertTrue(appVectorCopied.getPerformanceNeed() == 2);
+    }
+    
+    @Test
+    public void testSerialization() {
         try {
-            message.saveProperties();
+            appVector.saveProperties();
             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("test.serial"));
-            oos.writeObject(message);
+            oos.writeObject(appVector);
             oos.flush();
             oos.close();
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream("test.serial"));
-            Message messageSerial = (Message) ois.readObject();
+            AppVector appVectorSerial = (AppVector) ois.readObject();
             ois.close();
-            messageSerial.restoreProperties();
-            assertFalse(message == null);
-            assertFalse(messageSerial == null);
-            assertTrue(messageSerial.equals(message));
+            appVectorSerial.restoreProperties();
+            assertFalse(appVector == null);
+            assertFalse(appVectorSerial == null);
+            assertTrue(appVector.getPerformanceNeed() == 2);
+            assertTrue(appVectorSerial.getPerformanceNeed() == 2);
+            assertTrue(appVectorSerial.equals(appVector));
         } catch (FileNotFoundException ex) {
             fail();
         } catch (IOException | ClassNotFoundException ex) {
             fail();
         }
     }
-
 }

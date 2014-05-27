@@ -1,4 +1,4 @@
-package test.modele.node;
+package test.model.node;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -6,7 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import model.node.AppVector;
+import model.node.Mesure;
 import org.junit.After;
 import org.junit.AfterClass;
 import static org.junit.Assert.assertFalse;
@@ -16,15 +16,15 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class AppVectorTest {
+public class MesureTest {
+    Mesure mesure;
     
-    AppVector appVector;
-    
-    public AppVectorTest() {
+    public MesureTest() {
     }
     
     @BeforeClass
     public static void setUpClass() {
+        
     }
     
     @AfterClass
@@ -33,7 +33,7 @@ public class AppVectorTest {
     
     @Before
     public void setUp() {
-        appVector = new AppVector(1, 2, 3);
+        mesure = new Mesure(null, 1, 2, 3);
     }
     
     @After
@@ -42,36 +42,25 @@ public class AppVectorTest {
 
     @Test
     public void testConstructeur() {
-        assertTrue(appVector.getAppType() == 1);
-        assertTrue(appVector.getPerformanceNeed() == 2);
-        assertTrue(appVector.getSpeedNeed() == 3);
-    }
-    
-    @Test
-    public void testCopy() {
-        AppVector appVectorCopied = appVector.copy();
-        appVector.setPerformanceNeed(3);
-        assertTrue(appVector.getPerformanceNeed() == 3);
-        assertTrue(appVectorCopied.getPerformanceNeed() == 2);
+        assertTrue(mesure.mesure1Property().get() == 1);
+        assertTrue(mesure.mesure2Property().get() == 2);
+        assertTrue(mesure.mesure3Property().get() == 3);
     }
     
     @Test
     public void testSerialization() {
         try {
-            appVector.saveProperties();
+            mesure.saveProperties();
             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("test.serial"));
-            oos.writeObject(appVector);
+            oos.writeObject(mesure);
             oos.flush();
             oos.close();
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream("test.serial"));
-            AppVector appVectorSerial = (AppVector) ois.readObject();
+            Mesure mesureSerial = (Mesure) ois.readObject();
             ois.close();
-            appVectorSerial.restoreProperties();
-            assertFalse(appVector == null);
-            assertFalse(appVectorSerial == null);
-            assertTrue(appVector.getPerformanceNeed() == 2);
-            assertTrue(appVectorSerial.getPerformanceNeed() == 2);
-            assertTrue(appVectorSerial.equals(appVector));
+            mesureSerial.restoreProperties();
+            assertFalse(mesure == null);
+            assertTrue(mesureSerial.equals(mesure));
         } catch (FileNotFoundException ex) {
             fail();
         } catch (IOException | ClassNotFoundException ex) {

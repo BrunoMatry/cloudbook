@@ -1,4 +1,4 @@
-package test.modele.node;
+package test.model.node;
 
 import model.node.Cloud;
 import org.junit.After;

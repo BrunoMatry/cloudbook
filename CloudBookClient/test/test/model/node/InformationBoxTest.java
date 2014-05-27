@@ -1,4 +1,4 @@
-package test.modele.node;
+package test.model.node;
 
 import junit.framework.Assert;
 import model.network.interfaces.Information;

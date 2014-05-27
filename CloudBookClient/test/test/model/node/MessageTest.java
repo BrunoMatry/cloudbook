@@ -1,4 +1,4 @@
-package test.modele.node;
+package test.model.node;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -6,7 +6,13 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.List;
+import model.node.AppVector;
+import model.node.Cloud;
+import model.node.Message;
 import model.node.Mesure;
+import model.node.State;
 import org.junit.After;
 import org.junit.AfterClass;
 import static org.junit.Assert.assertFalse;
@@ -16,15 +22,14 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class MesureTest {
-    Mesure mesure;
+public class MessageTest {
+    Message message;
     
-    public MesureTest() {
+    public MessageTest() {
     }
     
     @BeforeClass
     public static void setUpClass() {
-        
     }
     
     @AfterClass
@@ -33,7 +38,7 @@ public class MesureTest {
     
     @Before
     public void setUp() {
-        mesure = new Mesure(null, 1, 2, 3);
+        message = new Message("1", new AppVector(1, 4, 3), new State(Cloud.GOOGLE), true);
     }
     
     @After
@@ -41,30 +46,32 @@ public class MesureTest {
     }
 
     @Test
-    public void testConstructeur() {
-        assertTrue(mesure.mesure1Property().get() == 1);
-        assertTrue(mesure.mesure2Property().get() == 2);
-        assertTrue(mesure.mesure3Property().get() == 3);
+    public void testConstructor() {
+        assertTrue(message.getIdSender().equals("1"));
+        assertTrue(message.getContent().equals(new State(Cloud.GOOGLE)));
+        assertTrue(message.getVector().equals(new AppVector(1, 4, 3)));
     }
     
     @Test
-    public void testSerialization() {
+    public void testSerialisation() {
         try {
-            mesure.saveProperties();
+            message.saveProperties();
             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("test.serial"));
-            oos.writeObject(mesure);
+            oos.writeObject(message);
             oos.flush();
             oos.close();
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream("test.serial"));
-            Mesure mesureSerial = (Mesure) ois.readObject();
+            Message messageSerial = (Message) ois.readObject();
             ois.close();
-            mesureSerial.restoreProperties();
-            assertFalse(mesure == null);
-            assertTrue(mesureSerial.equals(mesure));
+            messageSerial.restoreProperties();
+            assertFalse(message == null);
+            assertFalse(messageSerial == null);
+            assertTrue(messageSerial.equals(message));
         } catch (FileNotFoundException ex) {
             fail();
         } catch (IOException | ClassNotFoundException ex) {
             fail();
         }
     }
+
 }

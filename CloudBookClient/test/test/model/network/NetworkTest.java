@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package test.network;
+package test.model.network;
 
 import java.net.InetAddress;
 import java.net.MalformedURLException;
