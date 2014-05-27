@@ -42,18 +42,18 @@ public class Request&lt;Inf extends Information&gt; extends UnicastRemoteObject 
      * @throws java.rmi.RemoteException required for distant call
      * @throws java.net.UnknownHostException
      */
-<span class="nc" id="L45">    public Request(Inf inf, RequestManager manager) throws RemoteException, UnknownHostException {</span>
-<span class="nc" id="L46">        info = inf;</span>
-<span class="nc" id="L47">        date = new Date();</span>
-<span class="nc" id="L48">        MyNode node = manager.getEngine().getNode();</span>
-<span class="nc" id="L49">        AppVector senderVector = node.getVector();</span>
-<span class="nc" id="L50">        String id = node.nameProperty().get()</span>
+<span class="fc" id="L45">    public Request(Inf inf, RequestManager manager) throws RemoteException, UnknownHostException {</span>
+<span class="fc" id="L46">        info = inf;</span>
+<span class="fc" id="L47">        date = new Date();</span>
+<span class="fc" id="L48">        MyNode node = manager.getEngine().getNode();</span>
+<span class="fc" id="L49">        AppVector senderVector = node.getVector();</span>
+<span class="fc" id="L50">        String id = node.nameProperty().get()</span>
                 + &quot;@&quot; 
                 + InetAddress.getLocalHost().getHostAddress() + &quot;:&quot;
                 + node.getNodePort();
-<span class="nc" id="L54">        Cloud cloud = node.platformProperty().get();</span>
-<span class="nc" id="L55">        sender = new Member(id, senderVector, cloud);</span>
-<span class="nc" id="L56">    }</span>
+<span class="fc" id="L54">        Cloud cloud = node.platformProperty().get();</span>
+<span class="fc" id="L55">        sender = new Member(id, senderVector, cloud);</span>
+<span class="fc" id="L56">    }</span>
     
     @Override
     public Sender getSender() {
@@ -67,7 +67,7 @@ public class Request&lt;Inf extends Information&gt; extends UnicastRemoteObject 
 
     @Override
     public Inf getInfo() {
-<span class="nc" id="L70">        return info;</span>
+<span class="fc" id="L70">        return info;</span>
     }
 
     @Override
@@ -98,16 +98,19 @@ public class Request&lt;Inf extends Information&gt; extends UnicastRemoteObject 
 <span class="fc" id="L98">    }</span>
 
     public void setRebounds(int rebounds) {
-<span class="nc" id="L101">        this.rebounds = rebounds;</span>
-<span class="nc" id="L102">    }</span>
+<span class="nc bnc" id="L101" title="All 2 branches missed.">        if(rebounds &gt;= 0)</span>
+<span class="nc" id="L102">            this.rebounds = rebounds;</span>
+        else
+<span class="nc" id="L104">            this.rebounds = 0;</span>
+<span class="nc" id="L105">    }</span>
 
     public void setRecipent(int recipent) {
-<span class="nc" id="L105">        this.recipent = recipent;</span>
-<span class="nc" id="L106">    }</span>
+<span class="nc" id="L108">        this.recipent = recipent;</span>
+<span class="nc" id="L109">    }</span>
 
     @Override
     public RemoteClient getClient() throws RemoteException {
-<span class="nc" id="L110">        return this.client;</span>
+<span class="nc" id="L113">        return this.client;</span>
     }
 
     /**
@@ -116,8 +119,8 @@ public class Request&lt;Inf extends Information&gt; extends UnicastRemoteObject 
      */
     @Override
     public void setClient(RemoteClient client) {
-<span class="nc" id="L119">        this.client = client;</span>
-<span class="nc" id="L120">    }</span>
+<span class="nc" id="L122">        this.client = client;</span>
+<span class="nc" id="L123">    }</span>
     
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>
