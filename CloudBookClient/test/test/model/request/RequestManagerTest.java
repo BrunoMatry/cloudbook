@@ -11,7 +11,6 @@ import model.engine.Engine;
 import model.network.interfaces.Information;
 import model.node.AppVector;
 import model.node.Cloud;
-import model.node.Message;
 import model.node.Mesure;
 import model.node.MyNode;
 import model.request.Request;
@@ -25,6 +24,7 @@ import static org.junit.Assert.*;
 
 public class RequestManagerTest {
     private RequestManager instance;
+    private Engine engine;
     
     public RequestManagerTest() {
         
@@ -43,7 +43,8 @@ public class RequestManagerTest {
     public void setUp() {
         try {
             MyNode node = new MyNode(new File("name"), "test", Cloud.GOOGLE, 0, 2, 2, 2);
-            instance = new RequestManager(null, new Engine(node));
+            engine = new Engine(node);
+            instance = new RequestManager(null, engine);
         } catch (UnknownHostException | RemoteException ex) {
             Logger.getLogger(RequestManagerTest.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -89,13 +90,6 @@ public class RequestManagerTest {
      */
     @Test
     public void testGetEngine() {
-        System.out.println("getEngine");
-        RequestManager instance = null;
-        Engine expResult = null;
-        Engine result = instance.getEngine();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(engine, instance.getEngine());
     }
-    
 }
