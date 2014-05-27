@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>AppVector.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;CloudBookClient&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">model.node</a> &gt; <span class="el_source">AppVector.java</span></div><h1>AppVector.java</h1><pre class="source lang-java linenums">package model.node;
+
+import java.util.Objects;
+import model.network.interfaces.Information;
+
+public class AppVector implements Information {
+    
+    protected int appType;
+    protected int perfNeed;
+    protected int spdNeed;
+    
+
+    /**
+     * Constructor
+     * The type, performance and speed are generated randomly in this implementation
+     * @param type the type of the application
+     * @param perf the performance need of the application
+     * @param spd the speed need of the application
+     */
+<span class="fc" id="L20">    public AppVector(int type, int perf, int spd) {     </span>
+<span class="fc" id="L21">        appType = type;</span>
+<span class="fc" id="L22">        perfNeed = perf;</span>
+<span class="fc" id="L23">        spdNeed = spd;</span>
+<span class="fc" id="L24">    }</span>
+    
+    /**
+     * equals
+     * @param o object to be compared with
+     * @return true if the two objects are equivalents
+     */
+    @Override
+    public boolean equals(Object o) {
+<span class="pc bpc" id="L33" title="1 of 2 branches missed.">        if (this == o) return true;</span>
+<span class="pc bpc" id="L34" title="2 of 4 branches missed.">        if (o == null || getClass() != o.getClass()) return false;</span>
+<span class="fc" id="L35">        AppVector v = (AppVector) o;</span>
+ 
+<span class="pc bpc" id="L37" title="3 of 6 branches missed.">        return appType == v.appType</span>
+                &amp;&amp; perfNeed == v.perfNeed
+                &amp;&amp; spdNeed == v.spdNeed;
+    }
+    
+    public AppVector copy(){
+<span class="fc" id="L43">        return new AppVector(appType, perfNeed, spdNeed);</span>
+    }
+    
+<span class="fc" id="L46">    public int getAppType() { return appType; }</span>
+<span class="fc" id="L47">    public int getPerformanceNeed() { return perfNeed; }</span>
+<span class="fc" id="L48">    public int getSpeedNeed() { return spdNeed; }</span>
+    
+<span class="nc" id="L50">    public void setAppType(int at) { appType = at; }</span>
+<span class="fc" id="L51">    public void setPerformanceNeed(int p) { perfNeed = p; }</span>
+<span class="nc" id="L52">    public void setSpeedNeed(int s) { spdNeed = s; }</span>
+
+    @Override
+<span class="fc" id="L55">    public void saveProperties() {}</span>
+
+    @Override
+<span class="fc" id="L58">    public void restoreProperties() {}</span>
+
+    /**
+     * hashCode
+     * @return hash code
+     */
+    @Override
+    public int hashCode() {
+<span class="nc" id="L66">        int hash = 3;</span>
+<span class="nc" id="L67">        hash = 19 * hash + Objects.hashCode(this.appType);</span>
+<span class="nc" id="L68">        hash = 19 * hash + Objects.hashCode(this.perfNeed);</span>
+<span class="nc" id="L69">        hash = 19 * hash + Objects.hashCode(this.spdNeed);</span>
+<span class="nc" id="L70">        return hash;</span>
+    }
+
+    /**
+     * toString
+     * @return string representation
+     */
+    @Override
+    public String toString() {
+<span class="nc" id="L79">        return &quot;AppVector{&quot; + &quot;appType=&quot; + appType + &quot;, performance=&quot; + perfNeed + &quot;, speed=&quot; + spdNeed + '}';</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>

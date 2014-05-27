@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>NodeView.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;CloudBookClient&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">hmi.content.node</a> &gt; <span class="el_source">NodeView.java</span></div><h1>NodeView.java</h1><pre class="source lang-java linenums">package hmi.content.node;
+
+import controller.CloudImageRelation;
+import hmi.content.AbstractActivity;
+import hmi.content.OneNodeActivity;
+import hmi.content.node.component.FriendPane;
+import hmi.content.node.component.MessagePane;
+import hmi.content.node.component.MesurePane;
+import hmi.content.node.component.StatePane;
+import hmi.home.MainView;
+import java.util.ArrayList;
+import javafx.beans.property.ObjectProperty;
+import javafx.collections.ObservableList;
+import javafx.scene.Node;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
+import model.node.AppVector;
+import model.node.AppVectorBuilder;
+import model.node.FileEngineRelation;
+import model.node.MyNode;
+import model.node.Message;
+import model.node.Mesure;
+import model.node.State;
+import model.node.friend.Friend;
+
+/**
+ * singleton
+ * View of the current member
+ */
+public final class NodeView extends OneNodeActivity {
+    
+<span class="nc" id="L35">    public static final NodeView INSTANCE = new NodeView(MainView.INSTANCE);</span>
+    
+    //view contaigning all the generated mesures
+    private MesurePane mesurePane;
+    
+    //view containing all the friends of the current node
+    private FriendPane friendPane;
+    
+    //view containing all the messages received by the current node
+    private MessagePane messagePane;
+    
+    //ciew containing all the states in the history of the application
+    private StatePane statePane;
+    
+    //summary of the state of application
+    private SummarizedView&lt;ImageView&gt; state;
+    
+    //summary of the mesures
+    private SummarizedView&lt;Text&gt; mesures;
+    
+    //summary of the messages
+    private SummarizedView&lt;Text&gt; message;
+    
+    private SummarizedView&lt;Text&gt; friends;
+    
+    private AppVectorEditer appVector;
+    
+    private CloudImageRelation binder;
+    
+    
+    
+    /**
+     * 
+     * @param p the previous Activity
+     */
+    private NodeView(AbstractActivity p) {
+<span class="nc" id="L71">        super(p);</span>
+<span class="nc" id="L72">        title = &quot;Friend management&quot;;</span>
+<span class="nc" id="L73">        ArrayList&lt;Button&gt; components = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L74">        components.add(getState());</span>
+<span class="nc" id="L75">        components.add(getMesures());</span>
+<span class="nc" id="L76">        components.add(getMessage());</span>
+<span class="nc" id="L77">        components.add(getFriend());</span>
+        
+        
+<span class="nc" id="L80">        int size = components.size();</span>
+<span class="nc bnc" id="L81" title="All 2 branches missed.">        for(int i = 0 ; i &lt; size ; i++) {</span>
+<span class="nc" id="L82">            Button cmp = components.get(i);</span>
+<span class="nc" id="L83">            double x = (getScene().getWidth()/2) + 200*Math.cos(i*(2*Math.PI/size))</span>
+                    - cmp.getBoundsInParent().getWidth()/2;
+<span class="nc" id="L85">            double y = (getScene().getHeight()/2) + 200*Math.sin(i*(2*Math.PI/size))</span>
+                    - cmp.getBoundsInParent().getHeight()/2;
+<span class="nc" id="L87">            placeChild(cmp, (int)x, (int)y);</span>
+        }
+<span class="nc" id="L89">    }</span>
+    
+    /**
+     * getter
+     * if state is null, it is initialized
+     * @return state attribute
+     */
+    public SummarizedView getState() {
+<span class="nc bnc" id="L97" title="All 2 branches missed.">        if(state == null) {</span>
+<span class="nc" id="L98">            statePane = new StatePane(this);</span>
+<span class="nc" id="L99">            TableView&lt;State&gt; table = statePane.getTable();</span>
+<span class="nc" id="L100">            MyNode node = FileEngineRelation.INSTANCE.getCurrentEngine().getNode();</span>
+<span class="nc" id="L101">            ObservableList&lt;State&gt; stateList = node.getStates().boxObservableList();</span>
+<span class="nc" id="L102">            table.setItems(stateList);</span>
+<span class="nc" id="L103">            state = statePane.makeSummarized();</span>
+        }
+<span class="nc" id="L105">        return state;</span>
+    }
+
+    /**
+     * Getter
+     * if friends is null, it is initialized
+     * @return friends attribute
+     */
+    public SummarizedView getFriend() {
+<span class="nc bnc" id="L114" title="All 2 branches missed.">        if(friends == null) {</span>
+<span class="nc" id="L115">            friendPane = new FriendPane(this);</span>
+<span class="nc" id="L116">            TableView&lt;Friend&gt; table = friendPane.getTable();</span>
+<span class="nc" id="L117">            MyNode node = FileEngineRelation.INSTANCE.getCurrentEngine().getNode();</span>
+<span class="nc" id="L118">            ObservableList&lt;Friend&gt; friendList = node.getFriends().boxObservableList();</span>
+<span class="nc" id="L119">            table.setItems(friendList);</span>
+<span class="nc" id="L120">            friends = friendPane.makeSummarized();</span>
+        }
+<span class="nc" id="L122">        return friends;</span>
+    }
+    
+    /**
+     * Getter
+     * if mesures is null, it is initialized
+     * @return mesures attribute
+     */
+    public SummarizedView getMesures() {
+<span class="nc bnc" id="L131" title="All 2 branches missed.">        if(mesures == null) {</span>
+<span class="nc" id="L132">            mesurePane = new MesurePane(this);</span>
+<span class="nc" id="L133">            TableView&lt;Mesure&gt; table = mesurePane.getTable();</span>
+<span class="nc" id="L134">            MyNode node = FileEngineRelation.INSTANCE.getCurrentEngine().getNode();</span>
+<span class="nc" id="L135">            ObservableList&lt;Mesure&gt; mesureList = node.getMesures().boxObservableList();</span>
+<span class="nc" id="L136">            table.setItems(mesureList);</span>
+<span class="nc" id="L137">            mesures = mesurePane.makeSummarized();</span>
+        }
+<span class="nc" id="L139">        return mesures;</span>
+    }
+
+    /**
+     * getter
+     * if message is null, it is initialized
+     * @return message attribute
+     */
+    public SummarizedView getMessage() {
+<span class="nc bnc" id="L148" title="All 2 branches missed.">        if(message == null) {</span>
+<span class="nc" id="L149">            messagePane = new MessagePane(this);</span>
+<span class="nc" id="L150">            TableView&lt;Message&gt; table = messagePane.getTable();</span>
+<span class="nc" id="L151">            MyNode node = FileEngineRelation.INSTANCE.getCurrentEngine().getNode();</span>
+<span class="nc" id="L152">            ObservableList&lt;Message&gt; messageList = node.getMessages().boxObservableList();</span>
+<span class="nc" id="L153">            table.setItems(messageList);</span>
+<span class="nc" id="L154">            message = messagePane.makeSummarized();</span>
+        }
+<span class="nc" id="L156">        return message;</span>
+    }
+    
+    /**
+     * Places the current view in its parent without refreshing it
+     * @param node child to place
+     * @param x horizontal position
+     * @param y vertical position
+     */
+    public void placeChild(Node node, int x, int y) {
+<span class="nc" id="L166">        node.setLayoutX(x);</span>
+<span class="nc" id="L167">        node.setLayoutY(y);</span>
+<span class="nc" id="L168">        getChildren().add(node);</span>
+<span class="nc" id="L169">    }</span>
+    
+    /**
+     * Bind the view with the current node
+     */
+    @Override
+    public void bindWithNode() {
+<span class="nc" id="L176">        super.bindWithNode();</span>
+<span class="nc" id="L177">        MyNode node = FileEngineRelation.INSTANCE.getCurrentEngine().getNode();</span>
+<span class="nc" id="L178">        ObjectProperty&lt;Image&gt; stateImage = state.getView().imageProperty();</span>
+<span class="nc" id="L179">        binder = new CloudImageRelation();</span>
+<span class="nc" id="L180">        node.platformProperty().addObserver(binder);</span>
+<span class="nc" id="L181">        binder.drive(stateImage);</span>
+<span class="nc" id="L182">        messagePane.bind(node);</span>
+<span class="nc" id="L183">        mesurePane.bind(node);</span>
+<span class="nc" id="L184">        friendPane.bind(node);</span>
+<span class="nc" id="L185">        statePane.bind(node);</span>
+        
+<span class="nc" id="L187">        AppVector vector = node.getVector();</span>
+<span class="nc" id="L188">        appVector = new AppVectorEditer(&quot;&quot;+vector.getAppType(), &quot;&quot;+vector.getPerformanceNeed(), &quot;&quot;+vector.getSpeedNeed());</span>
+        
+<span class="nc" id="L190">        AppVectorBuilder builder = new AppVectorBuilder();</span>
+<span class="nc" id="L191">        appVector.setBuilder(builder);</span>
+<span class="nc" id="L192">        builder.appTypeProperty().bind(appVector.typeProperty());</span>
+<span class="nc" id="L193">        builder.perfProperty().bind(appVector.perfProperty());</span>
+<span class="nc" id="L194">        builder.speedProperty().bind(appVector.speedProperty());</span>
+<span class="nc" id="L195">        setBottom(appVector);</span>
+<span class="nc" id="L196">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>

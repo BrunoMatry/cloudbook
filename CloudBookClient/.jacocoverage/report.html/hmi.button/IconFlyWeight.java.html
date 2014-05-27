@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>IconFlyWeight.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;CloudBookClient&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">hmi.button</a> &gt; <span class="el_source">IconFlyWeight.java</span></div><h1>IconFlyWeight.java</h1><pre class="source lang-java linenums">package hmi.button;
+
+import java.util.HashMap;
+import java.util.Map;
+import javafx.scene.image.Image;
+
+/**
+ * fly-weight for images that are displayed in the application
+ * singleton
+ */
+public final class IconFlyWeight {
+    
+<span class="fc" id="L13">    public static final IconFlyWeight INSTANCE = new IconFlyWeight();</span>
+    
+    /**
+     * singleton constructor
+     */
+<span class="fc" id="L18">    private IconFlyWeight() {</span>
+<span class="fc" id="L19">        relation = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L20">    }</span>
+    
+    private Image backArrow;
+    private Image cloud;
+    private Image defaultLogo;
+    private Image home;
+    private Image greenLed;
+    private Image redLed;
+    private Image trash;
+    private Image plus;
+    private Image google;
+    private Image amazon;
+    private Image windows;
+    private Image defaultCloud;
+    
+    private final Map&lt;String, Image&gt; relation;
+    
+    public Image getByName(String name) {
+<span class="nc bnc" id="L38" title="All 2 branches missed.">        if(relation.containsKey(name))</span>
+<span class="nc" id="L39">            return relation.get(name);</span>
+        else {
+<span class="nc" id="L41">            Image image = new Image(&quot;file:res/&quot; + name);</span>
+<span class="nc" id="L42">            relation.put(name, image);</span>
+<span class="nc" id="L43">            return image;</span>
+        }
+    }
+   
+    public Image getBackArrow() {
+<span class="nc bnc" id="L48" title="All 2 branches missed.">        if(backArrow == null)</span>
+<span class="nc" id="L49">            backArrow = new Image(&quot;file:res/back_button.png&quot;);</span>
+<span class="nc" id="L50">        return backArrow;</span>
+    }
+
+    public Image getCloud() {
+<span class="nc bnc" id="L54" title="All 2 branches missed.">        if(cloud == null)</span>
+<span class="nc" id="L55">            cloud = new Image(&quot;file:res/cloud_picture.png&quot;);</span>
+<span class="nc" id="L56">        return cloud;</span>
+    }
+    
+    public Image getDefaultLogo() {
+<span class="nc bnc" id="L60" title="All 2 branches missed.">        if(defaultLogo == null)</span>
+<span class="nc" id="L61">            defaultLogo = new Image(&quot;file:res/default_app.png&quot;);</span>
+<span class="nc" id="L62">        return defaultLogo;</span>
+    }
+
+    public Image getHome() {
+<span class="nc bnc" id="L66" title="All 2 branches missed.">        if(home == null)</span>
+<span class="nc" id="L67">            home = new Image(&quot;file:res/home.png&quot;);</span>
+<span class="nc" id="L68">        return home;</span>
+    }
+    
+    /**
+     * Getter
+     * @return greenLed attribute 
+     */
+    public Image getGreenLed() {
+<span class="nc bnc" id="L76" title="All 2 branches missed.">        if(greenLed == null)</span>
+<span class="nc" id="L77">            greenLed = new Image(&quot;file:res/greenled.png&quot;);</span>
+<span class="nc" id="L78">        return greenLed;</span>
+    }
+    
+    /**
+     * Getter
+     * @return redLed attribute 
+     */
+    public Image getRedLed() {
+<span class="fc bfc" id="L86" title="All 2 branches covered.">        if(redLed == null)</span>
+<span class="fc" id="L87">            redLed = new Image(&quot;file:res/redled.png&quot;);</span>
+<span class="fc" id="L88">        return redLed;</span>
+    }
+    
+    /**
+     * Getter
+     * @return trash attribute
+     */
+    public Image getTrash() {
+<span class="nc bnc" id="L96" title="All 2 branches missed.">        if(trash == null)</span>
+<span class="nc" id="L97">            trash = new Image(&quot;file:res/trash.png&quot;);</span>
+<span class="nc" id="L98">        return trash;</span>
+    }
+    
+    /**
+     * Getter
+     * @return plus attribute
+     */
+    public Image getPlus() {
+<span class="nc bnc" id="L106" title="All 2 branches missed.">        if(plus == null)</span>
+<span class="nc" id="L107">            plus = new Image(&quot;file:res/adder.png&quot;);</span>
+<span class="nc" id="L108">        return plus;</span>
+    }
+    
+    /**
+     * Getter
+     * @return google icon
+     */
+    public Image getGoogle() {
+<span class="nc bnc" id="L116" title="All 2 branches missed.">        if(google == null)</span>
+<span class="nc" id="L117">            google = new Image(&quot;file:res/google.png&quot;);</span>
+<span class="nc" id="L118">        return google;</span>
+    }
+    
+    /**
+     * Getter
+     * @return amazon icon
+     */
+    public Image getAmazon() {
+<span class="nc bnc" id="L126" title="All 2 branches missed.">        if(amazon == null)</span>
+<span class="nc" id="L127">            amazon = new Image(&quot;file:res/amazon.png&quot;);</span>
+<span class="nc" id="L128">        return amazon;</span>
+    }
+    
+    /**
+     * Getter
+     * @return windows icon
+     */
+    public Image getWindows() {
+<span class="nc bnc" id="L136" title="All 2 branches missed.">        if(windows == null)</span>
+<span class="nc" id="L137">            windows = new Image(&quot;file:res/windows.png&quot;);</span>
+<span class="nc" id="L138">        return windows;</span>
+    }
+    
+    /**
+     * Getter
+     * @return defaultCloud icon
+     */
+    public Image getDefaultCloud() {
+<span class="nc bnc" id="L146" title="All 2 branches missed.">        if(defaultCloud == null)</span>
+<span class="nc" id="L147">            defaultCloud = new Image(&quot;file:res/default_logo.png&quot;);</span>
+<span class="nc" id="L148">        return defaultCloud;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>

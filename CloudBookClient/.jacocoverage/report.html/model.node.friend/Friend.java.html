@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Friend.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;CloudBookClient&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">model.node.friend</a> &gt; <span class="el_source">Friend.java</span></div><h1>Friend.java</h1><pre class="source lang-java linenums">package model.node.friend;
+
+import model.network.interfaces.Information;
+import java.util.Date;
+import java.util.Objects;
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+import model.node.AppVector;
+import model.node.Cloud;
+
+public class Friend extends Member implements Information {  
+    
+    /* Attributs serialisables */
+    protected double _relevance;
+    protected int _confidence;
+    protected Date _lastConnection;
+    
+    /* Proprietes non serialisables */
+    protected transient StringProperty id;
+    protected transient DoubleProperty relevance;
+    protected transient IntegerProperty confidence;
+    protected transient ObjectProperty&lt;Date&gt; lastConnection;
+    protected transient ObjectProperty&lt;AppVector&gt; appVector;
+    private transient ObjectProperty&lt;Cloud&gt; cloud;
+    
+    /**
+     * Constructor
+     * @param friendId identifier of the friend application
+     * @param cnfdnce confidence value
+     * @param rlvnce relevance value
+     * @param vector vector of characteriqtics of the member application
+     * @param _cloud cloud on which this friend runs
+     * @throws NullPointerException 
+     */
+    public Friend(String friendId, int cnfdnce, double rlvnce, AppVector vector, Cloud _cloud) throws NullPointerException {
+<span class="fc" id="L40">        super(friendId, vector, _cloud);</span>
+<span class="pc bpc" id="L41" title="1 of 2 branches missed.">        if(vector == null)</span>
+<span class="nc" id="L42">            throw new NullPointerException();</span>
+<span class="fc" id="L43">        id = new SimpleStringProperty(friendId);</span>
+<span class="fc" id="L44">        relevance = new RelevanceProperty(this, rlvnce);</span>
+<span class="fc" id="L45">        confidence = new ConfidenceProperty(this, cnfdnce);</span>
+<span class="fc" id="L46">        lastConnection = new SimpleObjectProperty&lt;&gt;(new Date());</span>
+<span class="fc" id="L47">        appVector = new SimpleObjectProperty&lt;&gt;(vector);</span>
+<span class="fc" id="L48">        cloud = new SimpleObjectProperty&lt;&gt;(_cloud);</span>
+<span class="fc" id="L49">    }</span>
+
+    @Override
+    public String getId() {
+<span class="nc" id="L53">        return id.get();</span>
+    }
+
+    @Override
+    public Cloud getCloud() {
+<span class="fc" id="L58">        return cloud.get();</span>
+    }
+    
+    /**
+     * Setter
+     * @param vector vector attribute
+     */
+    public void setVector(AppVector vector) {
+<span class="fc" id="L66">        this.appVector.set(vector);</span>
+<span class="fc" id="L67">        updateLastConnectionDate();</span>
+<span class="fc" id="L68">    }</span>
+    
+    /**
+     * The las tconnection date is updated to the current one
+     */
+    void updateLastConnectionDate() {
+<span class="fc" id="L74">        lastConnection.set(new Date());</span>
+<span class="fc" id="L75">    }</span>
+    
+    /**
+     * Calcul du nombre de jours écoulés depuis la dernière connection
+     * @return  nombre de jours écoulés depuis la dernière connection de l'ami
+     */
+    public int daysSinceLastConnection() {
+<span class="fc" id="L82">        Date today = new Date();</span>
+<span class="fc" id="L83">        long diff = today.getTime() - lastConnection.get().getTime();</span>
+<span class="fc" id="L84">        return (int) (diff / (1000*60*60*24));</span>
+    }
+    
+<span class="fc" id="L87">    public StringProperty idProperty() { return id; }</span>
+    @Override
+<span class="fc" id="L89">    public AppVector getVector() { return appVector.get(); }</span>
+<span class="fc" id="L90">    public DoubleProperty relevanceProperty() { return relevance; }</span>
+<span class="fc" id="L91">    public IntegerProperty confidenceProperty() { return confidence; }</span>
+<span class="nc" id="L92">    public ObjectProperty lastConnectionProperty() { return lastConnection; }</span>
+<span class="nc" id="L93">    public ObjectProperty appVectorProperty() { return appVector; }</span>
+<span class="nc" id="L94">    public ObjectProperty&lt;Cloud&gt; cloudProperty() { return cloud; }</span>
+
+    @Override
+    public void saveProperties() {
+<span class="fc" id="L98">        _id = id.get();</span>
+<span class="fc" id="L99">        _relevance =  relevance.get();</span>
+<span class="fc" id="L100">        _confidence = confidence.get();</span>
+<span class="fc" id="L101">        _lastConnection = lastConnection.get();</span>
+<span class="fc" id="L102">        vector = appVector.get();</span>
+<span class="fc" id="L103">        _cloud = cloud.get();</span>
+<span class="fc" id="L104">    }</span>
+
+    @Override
+    public void restoreProperties() {
+<span class="fc" id="L108">        id = new SimpleStringProperty(_id);</span>
+<span class="fc" id="L109">        relevance = new RelevanceProperty(this, _relevance);</span>
+<span class="fc" id="L110">        confidence = new ConfidenceProperty(this, _confidence);</span>
+<span class="fc" id="L111">        lastConnection = new SimpleObjectProperty&lt;&gt;(_lastConnection);</span>
+<span class="fc" id="L112">        appVector = new SimpleObjectProperty&lt;&gt;(vector);</span>
+<span class="fc" id="L113">        cloud = new SimpleObjectProperty&lt;&gt;(_cloud);</span>
+<span class="fc" id="L114">    }</span>
+
+    /**
+     * hashCode
+     * @return hash code
+     */
+    @Override
+    public int hashCode() {
+<span class="nc" id="L122">        int hash = 5;</span>
+<span class="nc" id="L123">        hash = 17 * hash + Objects.hashCode(this.relevance);</span>
+<span class="nc" id="L124">        hash = 17 * hash + Objects.hashCode(this.confidence);</span>
+<span class="nc" id="L125">        hash = 17 * hash + Objects.hashCode(this.lastConnection);</span>
+<span class="nc" id="L126">        return hash;</span>
+    }
+
+    /**
+     * equals
+     * @param obj object to be compared with
+     * @return true if the two objects have equals fields
+     */
+    @Override
+    public boolean equals(Object obj) {
+<span class="pc bpc" id="L136" title="1 of 2 branches missed.">        if (obj == null) {</span>
+<span class="nc" id="L137">            return false;</span>
+        }
+<span class="pc bpc" id="L139" title="1 of 2 branches missed.">        if (getClass() != obj.getClass()) {</span>
+<span class="nc" id="L140">            return false;</span>
+        }
+<span class="fc" id="L142">        final Friend other = (Friend) obj;</span>
+<span class="pc bpc" id="L143" title="2 of 4 branches missed.">        return this.relevance.get() == other.relevance.get()</span>
+                &amp;&amp; this.confidence.get() == other.confidence.get();
+    }
+
+    @Override
+    public String toString() {
+<span class="nc" id="L149">        return &quot;Friend{&quot; + &quot;id=&quot; + id.get() + &quot;, relevance=&quot; + relevance.get() + &quot;, confidence=&quot; + confidence.get() + &quot;, lastConnection=&quot; + lastConnection.get()+ '}';</span>
+    }
+    
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>
