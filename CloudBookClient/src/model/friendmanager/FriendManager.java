@@ -178,9 +178,9 @@ public class FriendManager implements IFriendManager {
         Friend tmp;
         Friend pivot = friends.get(left+(right-left)/2);
         while(i <= j) {
-            while(friends.get(i).relevanceProperty().get() > pivot.relevanceProperty().get())
+            while(friends.get(i).relevanceProperty().get() < pivot.relevanceProperty().get())
                 i++;
-            while(friends.get(j).relevanceProperty().get() < pivot.relevanceProperty().get())
+            while(friends.get(j).relevanceProperty().get() > pivot.relevanceProperty().get())
                 j--;
             if (i <= j) {
                 tmp = friends.get(i);
