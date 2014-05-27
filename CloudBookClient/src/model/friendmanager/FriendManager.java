@@ -252,7 +252,10 @@ public class FriendManager implements IFriendManager {
     public Map<Cloud, Double> scores() {
         Map<Cloud, Double> res = new HashMap<>();
         for(Cloud c : Cloud.values()) {
-            double score = relevanceSum(c);
+            double rlv = relevanceSum(c);
+            if(rlv == 0)
+                rlv++;
+            double score = 1 / (rlv+1);
             res.put(c, score);
         }
         return res;
