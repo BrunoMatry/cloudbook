@@ -42,8 +42,8 @@ public class FriendManager implements IFriendManager {
         String id = sender.getId();
         Cloud cloud = sender.getCloud();
         if(!isFriend(id) && relevant(vector)) {
-            Friend friend = new Friend(id, 0, relevance(vector), vector, cloud);
-            node.addFriend(friend); //indice de confiance initialiser à 0 lors de l'ajout d'un nouvel ami
+            Friend friend = new Friend(id, 0, relevance(vector), vector, cloud);//indice de confiance initialiser à 0 lors de l'ajout d'un nouvel ami
+            node.addFriend(friend); 
             return true;
         }
         return false;
