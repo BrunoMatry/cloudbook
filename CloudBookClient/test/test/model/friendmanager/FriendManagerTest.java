@@ -48,11 +48,8 @@ public class FriendManagerTest {
      */
     @Test
     public void testClear() {
-        System.out.println("clear");
-        FriendManager instance = new FriendManager();
         instance.clear();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //Untestable method        
     }
 
     /**
@@ -63,8 +60,14 @@ public class FriendManagerTest {
         String id = "totototo";
         Friend f = new Friend(id, 5, 5, new AppVector(2,2,2), Cloud.GOOGLE);
         assertFalse(instance.isFriend(id));
-        instance.add(f);
+        instance.update(f); //friend relevant and not in friends --> call add
         assertTrue(instance.isFriend(id));
+        f = new Friend(id, 5, 5, new AppVector(0,2,2), Cloud.GOOGLE);
+        instance.update(f); //friend in friends and still relevant --> update
+        assertTrue(instance.isFriend(id));
+        f = new Friend(id, 5, 5, new AppVector(200,200,200), Cloud.GOOGLE);
+        instance.update(f); //friend in friends but not relevant anymore --> remove
+        assertFalse(instance.isFriend(id));
     }
 
     /**
@@ -72,55 +75,10 @@ public class FriendManagerTest {
      */
     @Test
     public void testRelevance() {
-        System.out.println("relevance");
-        AppVector v = null;
-        FriendManager instance = new FriendManager();
-        double expResult = 0.0;
+        AppVector v = new AppVector(0,2,2);
+        double expResult = 2.0;
         double result = instance.relevance(v);
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of relevant method, of class FriendManager.
-     */
-    @Test
-    public void testRelevant() {
-        System.out.println("relevant");
-        AppVector v = null;
-        FriendManager instance = new FriendManager();
-        boolean expResult = false;
-        boolean result = instance.relevant(v);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of remove method, of class FriendManager.
-     */
-    @Test
-    public void testRemove() {
-        System.out.println("remove");
-        String id = "";
-        FriendManager instance = new FriendManager();
-        instance.remove(id);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of update method, of class FriendManager.
-     */
-    @Test
-    public void testUpdate() {
-        System.out.println("update");
-        Member sender = null;
-        FriendManager instance = new FriendManager();
-        instance.update(sender);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
