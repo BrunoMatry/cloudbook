@@ -8,10 +8,6 @@ package model.network.interfaces;
 
 import java.io.Serializable;
 
-/**
- *
- * @author Bruno
- */
 public interface Information extends Serializable {
     void saveProperties();
     void restoreProperties();
