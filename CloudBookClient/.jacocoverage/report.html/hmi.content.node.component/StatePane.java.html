@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>StatePane.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;CloudBookClient&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">hmi.content.node.component</a> &gt; <span class="el_source">StatePane.java</span></div><h1>StatePane.java</h1><pre class="source lang-java linenums">package hmi.content.node.component;
+
+import hmi.content.AbstractActivity;
+import hmi.content.node.NodeComponentView;
+import hmi.content.node.SummarizedView;
+import hmi.content.node.component.tableview.StateTableView;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
+import model.engine.Engine;
+import model.node.FileEngineRelation;
+import model.node.MyNode;
+import model.node.State;
+
+
+public class StatePane extends NodeComponentView&lt;State&gt; {
+
+    //Look for the best platform, according to the current data
+    private Button update;
+    
+    public StatePane(AbstractActivity p) {
+<span class="nc" id="L24">        super(p);</span>
+<span class="nc" id="L25">        title = &quot;History&quot;;</span>
+<span class="nc" id="L26">        table = new StateTableView();</span>
+<span class="nc" id="L27">        setUpUpdateButton();</span>
+<span class="nc" id="L28">        setCenter(table);</span>
+<span class="nc" id="L29">        setBottom(update);</span>
+<span class="nc" id="L30">    }</span>
+    
+    /**
+     * Sets up the button command and label
+     */
+    private void setUpUpdateButton() {
+<span class="nc" id="L36">        update = new Button(&quot;Look for the best cloud platform&quot;);</span>
+<span class="nc" id="L37">        update.setOnAction(new EventHandler&lt;ActionEvent&gt;() {</span>
+
+            @Override
+            public void handle(ActionEvent t) {
+<span class="nc" id="L41">                Engine engine = FileEngineRelation.INSTANCE.getCurrentEngine();</span>
+<span class="nc" id="L42">                engine.updateState();</span>
+<span class="nc" id="L43">            }</span>
+        });
+<span class="nc" id="L45">    }</span>
+
+    @Override
+    public SummarizedView makeSummarized() {
+<span class="nc" id="L49">        return new SummarizedView(this, new ImageView());</span>
+    }
+
+    /**
+     * Sets the content of the table as the list of state of the specified node
+     * @param node node from which the state are to be displayed
+     */
+    @Override
+    public void bind(MyNode node) {
+<span class="nc" id="L58">        getChildren().remove(table);</span>
+<span class="nc" id="L59">        table = new StateTableView();</span>
+<span class="nc" id="L60">        ObservableList&lt;State&gt; stateList = node.getStates().boxObservableList();</span>
+<span class="nc" id="L61">        table.setItems(stateList);</span>
+<span class="nc" id="L62">        setCenter(table);</span>
+<span class="nc" id="L63">    }</span>
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>State.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;CloudBookClient&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">model.node</a> &gt; <span class="el_source">State.java</span></div><h1>State.java</h1><pre class="source lang-java linenums">package model.node;
+
+import model.network.interfaces.Information;
+import java.util.Date;
+import java.util.Objects;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleObjectProperty;
+
+public class State implements Information {
+    
+    /* Attributs serialisables */
+    protected Cloud _cloud;
+    protected Date _from;
+    protected Date _to;
+    protected boolean _current;
+    
+    /* Proprietes non serialisables */
+    protected transient ObjectProperty&lt;Cloud&gt; cloud;
+    protected transient ObjectProperty&lt;Date&gt; from;
+    protected transient ObjectProperty&lt;Date&gt; to;
+    protected transient BooleanProperty current;
+    
+    /**
+     * Main constructor
+     * @param c cloud associate to the node state
+     */
+<span class="fc" id="L29">    public State(Cloud c) {</span>
+<span class="fc" id="L30">        cloud = new SimpleObjectProperty&lt;&gt;(c);</span>
+<span class="fc" id="L31">        from = new SimpleObjectProperty&lt;&gt;(new Date());</span>
+<span class="fc" id="L32">        to = new SimpleObjectProperty&lt;&gt;(new Date());</span>
+<span class="fc" id="L33">        current = new SimpleBooleanProperty(true);</span>
+<span class="fc" id="L34">    }</span>
+    
+    /* Properties' getters */
+<span class="fc" id="L37">    public ObjectProperty&lt;Cloud&gt; cloudProperty() { return cloud; }</span>
+<span class="nc" id="L38">    public ObjectProperty&lt;Date&gt; fromProperty() { return from; }</span>
+<span class="nc" id="L39">    public ObjectProperty&lt;Date&gt; toProperty() { return to; }</span>
+<span class="fc" id="L40">    public BooleanProperty currentProperty() { return current; }</span>
+    
+    /**
+     * Method
+     * @return the Enum Cloud associate to the cloud property
+     */
+    public Cloud getCloud() {
+<span class="fc" id="L47">        return cloud.get();</span>
+    }
+
+    /**
+     * Modify the state of the instance
+     * Set the currente property to false
+     */
+    public void notCurrentAnymore() {
+<span class="fc" id="L55">        current.set(false);</span>
+<span class="fc" id="L56">        to.set(new Date());</span>
+<span class="fc" id="L57">    }</span>
+    
+    @Override
+    public void saveProperties() {
+<span class="fc" id="L61">        _current = current.get();</span>
+<span class="fc" id="L62">        _cloud = getCloud();</span>
+<span class="fc" id="L63">        _from = from.get();</span>
+<span class="fc" id="L64">        _to = to.get();</span>
+<span class="fc" id="L65">    }</span>
+
+    @Override
+    public void restoreProperties() {
+<span class="fc" id="L69">        cloud = new SimpleObjectProperty&lt;&gt;(_cloud);</span>
+<span class="fc" id="L70">        from = new SimpleObjectProperty&lt;&gt;(_from);</span>
+<span class="fc" id="L71">        to = new SimpleObjectProperty&lt;&gt;(_to);</span>
+<span class="fc" id="L72">        current = new SimpleBooleanProperty(_current);</span>
+<span class="fc" id="L73">    }</span>
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L77">        int hash = 7;</span>
+<span class="nc" id="L78">        hash = 53 * hash + Objects.hashCode(this.cloud);</span>
+<span class="nc" id="L79">        hash = 53 * hash + Objects.hashCode(this.from);</span>
+<span class="nc" id="L80">        hash = 53 * hash + Objects.hashCode(this.to);</span>
+<span class="nc" id="L81">        hash = 53 * hash + Objects.hashCode(this.current);</span>
+<span class="nc" id="L82">        return hash;</span>
+    }
+
+    /**
+     * equals
+     * @param obj object to be compared with
+     * @return true if the two objects have equals fields
+     */
+    @Override
+    public boolean equals(Object obj) {
+<span class="pc bpc" id="L92" title="1 of 2 branches missed.">        if (obj == null) {</span>
+<span class="nc" id="L93">            return false;</span>
+        }
+<span class="pc bpc" id="L95" title="1 of 2 branches missed.">        if (getClass() != obj.getClass()) {</span>
+<span class="nc" id="L96">            return false;</span>
+        }
+<span class="fc" id="L98">        final State other = (State) obj;</span>
+<span class="fc" id="L99">        Date myFrom = (Date) from.get();</span>
+<span class="fc" id="L100">        Date myTo = (Date) to.get();</span>
+<span class="fc" id="L101">        Date otherFrom = (Date) other.from.get();</span>
+<span class="fc" id="L102">        Date otherTo= (Date) other.to.get();</span>
+<span class="pc bpc" id="L103" title="4 of 8 branches missed.">        return cloud.get() == other.cloud.get()</span>
+                &amp;&amp; myFrom.equals(otherFrom)
+                &amp;&amp; myTo.equals(otherTo)
+                &amp;&amp; current.get() == other.current.get();
+    }
+
+    @Override
+    public String toString() {
+<span class="fc" id="L111">        return &quot;State{&quot; + &quot;cloud=&quot; + cloud.get() + &quot;, from=&quot; + from.get() + &quot;, to=&quot; + to.get() + &quot;, current=&quot; + current.get() + '}';</span>
+    }
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>

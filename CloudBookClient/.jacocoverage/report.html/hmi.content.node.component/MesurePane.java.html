@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>MesurePane.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;CloudBookClient&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">hmi.content.node.component</a> &gt; <span class="el_source">MesurePane.java</span></div><h1>MesurePane.java</h1><pre class="source lang-java linenums">package hmi.content.node.component;
+
+import hmi.content.node.component.tableview.MesureTableView;
+import hmi.content.AbstractActivity;
+import hmi.content.node.NodeComponentView;
+import hmi.content.node.SummarizedView;
+import hmi.content.node.component.tableview.MessageTableView;
+import javafx.collections.ObservableList;
+import javafx.scene.text.Text;
+import model.node.Mesure;
+import model.node.MyNode;
+
+public class MesurePane extends NodeComponentView&lt;Mesure&gt; {
+
+    /**
+     * Constructor
+     * @param p parent activity
+     */
+    public MesurePane(AbstractActivity p) {
+<span class="nc" id="L20">        super(p);</span>
+<span class="nc" id="L21">        title = &quot;Mesures&quot;;</span>
+<span class="nc" id="L22">        table = new MesureTableView();</span>
+<span class="nc" id="L23">        setCenter(table);</span>
+<span class="nc" id="L24">    }</span>
+
+    @Override
+    public SummarizedView makeSummarized() {
+<span class="nc" id="L28">        SummarizedView res = new SummarizedView(this, new Text(&quot;Mesures&quot;));</span>
+<span class="nc" id="L29">        return res;</span>
+    }
+
+    /**
+     * Sets the content of the table as the list of mesures of the specified node
+     * @param node node from which the mesures are to be displayed
+     */
+    @Override
+    public void bind(MyNode node) {
+<span class="nc" id="L38">        getChildren().remove(table);</span>
+<span class="nc" id="L39">        table = new MesureTableView();</span>
+<span class="nc" id="L40">        ObservableList&lt;Mesure&gt; mesureList = node.getMesures().boxObservableList();</span>
+<span class="nc" id="L41">        table.setItems(mesureList);</span>
+<span class="nc" id="L42">        setCenter(table);</span>
+<span class="nc" id="L43">    }</span>
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>

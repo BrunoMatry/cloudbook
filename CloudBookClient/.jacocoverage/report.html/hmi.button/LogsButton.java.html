@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>LogsButton.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;CloudBookClient&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">hmi.button</a> &gt; <span class="el_source">LogsButton.java</span></div><h1>LogsButton.java</h1><pre class="source lang-java linenums">package hmi.button;
+
+import hmi.content.monitor.MonitorView;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import model.engine.Engine;
+import model.monitoring.Monitoring;
+import model.node.FileEngineRelation;
+
+public class LogsButton extends MyButton{
+    
+    public LogsButton() {
+<span class="nc" id="L13">        super(&quot;Monitor logs&quot;);</span>
+        
+<span class="nc" id="L15">        this.setOnAction(new EventHandler&lt;ActionEvent&gt;() {</span>
+
+            @Override
+            public void handle(ActionEvent t) {
+                /*TODO faire l'affichage d'autre chose !!!! */
+                // InformationBox mesures = Engine.INSTANCE.getNode().getMesures();
+<span class="nc" id="L21">                Engine engine = FileEngineRelation.INSTANCE.getCurrentEngine();</span>
+<span class="nc" id="L22">                Monitoring model = (Monitoring)engine.getMonitoring();</span>
+<span class="nc" id="L23">                MonitorView view = MonitorView.INSTANCE;</span>
+<span class="nc" id="L24">                view.logsTextProperty().bind(model.logsProperty());</span>
+<span class="nc" id="L25">                view.launch();</span>
+<span class="nc" id="L26">            }</span>
+        });
+<span class="nc" id="L28">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>

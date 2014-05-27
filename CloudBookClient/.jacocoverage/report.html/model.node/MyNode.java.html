@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>MyNode.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;CloudBookClient&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">model.node</a> &gt; <span class="el_source">MyNode.java</span></div><h1>MyNode.java</h1><pre class="source lang-java linenums">package model.node;
+
+import java.io.File;
+import model.node.friend.Friend;
+import model.network.interfaces.Information;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.Serializable;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.rmi.RemoteException;
+import java.util.ArrayList;
+import java.util.List;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
+/**
+ * Representation of a node
+ */
+public class MyNode implements Serializable {
+
+    /************************************** ATTRIBUTS **************************************/
+    
+    /* Attributs serialisables */
+    protected String _name; //name of the application
+    private String _logo; //logo of the application
+    protected Mesure topMesure; //mesure to be shown at the first place
+    protected Cloud _platform; //current platform of the application
+    private AppVector _vector;
+    
+    protected InformationBox&lt;Friend&gt; friends;
+    protected List&lt;Information&gt; informations;
+    protected InformationBox&lt;State&gt; states; //history of the cloud platforms
+    protected InformationBox&lt;Mesure&gt; mesures; //list of all the mesures
+    protected InformationBox&lt;Message&gt; messages; //list of the received messages
+    
+    //port of the application
+    protected int nodePort;
+    
+    /* Proprietes non serialisables */
+    protected transient StringProperty name;
+    private transient StringProperty logo;
+    private transient CloudProperty platform;
+    private transient ObjectProperty&lt;AppVector&gt; vector;
+    
+    /************************************ CONSTRUCTEURS ************************************/
+    
+    /**
+     * default constructor
+     */
+<span class="fc" id="L54">    public MyNode() {</span>
+        //topMessage = new Message();
+        
+<span class="fc" id="L57">        friends = new InformationBox&lt;&gt;();</span>
+<span class="fc" id="L58">        informations = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L59">        states = new InformationBox&lt;&gt;();</span>
+<span class="fc" id="L60">        mesures = new InformationBox&lt;&gt;();</span>
+<span class="fc" id="L61">        messages = new InformationBox&lt;&gt;();</span>
+<span class="fc" id="L62">        name = new SimpleStringProperty();</span>
+<span class="fc" id="L63">        logo = new SimpleStringProperty();</span>
+<span class="fc" id="L64">        platform = new CloudProperty();</span>
+<span class="fc" id="L65">    }</span>
+    
+    /**
+     * arg constructor
+     * @param logoFile File contaning the logo of the application
+     * @param string name
+     * @param cloud cloud-platform
+     * @param nodePort port of the current application
+     * @param appType type of the application
+     * @param performance TODO
+     * @param speed TODO
+     * @throws java.net.UnknownHostException
+     * @throws java.rmi.RemoteException
+     */
+<span class="fc" id="L79">    public MyNode(File logoFile, String string, Cloud cloud, int nodePort, int appType, int performance, int speed) throws UnknownHostException, RemoteException {</span>
+<span class="fc" id="L80">        platform = new CloudProperty(cloud);</span>
+<span class="fc" id="L81">        this.nodePort = nodePort;</span>
+<span class="fc" id="L82">        friends = new InformationBox&lt;&gt;();</span>
+<span class="fc" id="L83">        informations = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L84">        states = new InformationBox&lt;&gt;();</span>
+<span class="fc" id="L85">        mesures = new InformationBox&lt;&gt;();</span>
+<span class="fc" id="L86">        messages = new InformationBox&lt;&gt;();    </span>
+<span class="fc" id="L87">        _vector = new AppVector(appType, performance, speed);</span>
+<span class="fc" id="L88">        vector = new SimpleObjectProperty&lt;&gt;(_vector);</span>
+<span class="fc" id="L89">        name = new SimpleStringProperty(string);</span>
+<span class="fc" id="L90">        logo = new SimpleStringProperty(logoFile.getName());</span>
+        
+<span class="fc" id="L92">        states.push(new State(cloud));</span>
+<span class="fc" id="L93">    }</span>
+    
+    /**
+     * Add to the node a mesure
+     * @param m the mesure to add to the node
+     */
+    public void addMesure(Mesure m) {
+<span class="nc" id="L100">        this.mesures.push(m);</span>
+<span class="nc" id="L101">    }</span>
+    
+    /**
+     * Add to the node a list of mesures
+     * @param mesures the list of mesures to add to the node
+     */
+    public void addMesures(List&lt;Mesure&gt; mesures) {
+<span class="nc bnc" id="L108" title="All 2 branches missed.">        for(Mesure m : mesures)</span>
+<span class="nc" id="L109">            this.mesures.push(m);</span>
+<span class="nc" id="L110">    }</span>
+    
+    /********************************** SETTERS / GETTERS **********************************/
+    
+<span class="nc" id="L114">    public void addMessage(Message m) { messages.push(m); } </span>
+<span class="nc" id="L115">    public void addInformation(Information info) { informations.add(info); }</span>
+<span class="nc" id="L116">    public void addFriend(Friend f) { friends.push(f); }</span>
+    
+<span class="nc" id="L118">    public InformationBox getFriends() { return friends; }</span>
+<span class="nc" id="L119">    public AppVector getVector() { return vector.get(); }</span>
+<span class="nc" id="L120">    public List&lt;Information&gt; getInformations() { return informations; }</span>
+<span class="nc" id="L121">    public Message getMessage(int i) { return messages.get(i); }</span>
+<span class="nc" id="L122">    public InformationBox getMessages() { return messages; }</span>
+<span class="nc" id="L123">    public InformationBox getMesures() { return mesures; }</span>
+<span class="nc" id="L124">    public InformationBox getStates() { return states; }</span>
+    
+    /**
+     * Getter
+     * @return nodePort field
+     */
+    public int getNodePort() {
+<span class="fc" id="L131">        return nodePort;</span>
+    }
+    
+    /**
+     * Getter
+     * @return platform field
+     */
+    public final Cloud getPlatform() {
+<span class="nc" id="L139">        return this.platform.get();</span>
+    }
+      
+<span class="nc" id="L142">    public StringProperty topMesureProperty() { return topMesure.dateProperty(); }</span>
+<span class="nc" id="L143">    public StringProperty nameProperty() { return name; }</span>
+<span class="nc" id="L144">    public StringProperty logoProperty() { return logo; }</span>
+<span class="nc" id="L145">    public CloudProperty platformProperty() { return platform; }</span>
+<span class="nc" id="L146">    public ObjectProperty&lt;AppVector&gt; vectorProperty() { return vector; }</span>
+    
+    /* ATTENTION ! Mauvaise pratique ! */
+<span class="nc" id="L149">    public void setInformations(List&lt;Information&gt; informations) { this.informations = informations; }</span>
+<span class="nc" id="L150">    public void setVector(AppVector vector) { this.vector.set(vector); }</span>
+    
+    /*************************************** METHODES **************************************/
+    
+    /**
+     * updates the cloud-platform of the current application
+     * @param c new cloud-platform
+     */
+    public void majCurrentState(Cloud c) {
+<span class="nc" id="L159">        int lastIndex = this.states.size() - 1;</span>
+<span class="nc" id="L160">        State currentState = this.states.get(lastIndex);</span>
+<span class="nc bnc" id="L161" title="All 2 branches missed.">        if(!c.equals(currentState.getCloud())) {</span>
+<span class="nc" id="L162">            currentState.notCurrentAnymore();</span>
+<span class="nc" id="L163">            states.push(new State(c));</span>
+<span class="nc" id="L164">            System.out.println(&quot;Appel du setter de MyNode::platform&quot;);</span>
+<span class="nc" id="L165">            platform.set(c);</span>
+        }    
+<span class="nc" id="L167">    }</span>
+    
+    /**
+     * Computes the full identifier on the network
+     * @return identifier = &quot;name@ip:port&quot;
+     * @throws java.net.UnknownHostException
+     */
+    public String getMemberId() throws UnknownHostException {
+<span class="nc" id="L175">        return name.get() + &quot;@&quot;</span>
+                + InetAddress.getLocalHost().getHostAddress().toString()
+                + &quot;:&quot; + nodePort;
+    }
+    
+    public void save() throws IOException, ClassNotFoundException {
+<span class="nc" id="L181">        _name = name.get();</span>
+<span class="nc" id="L182">        _logo = logo.get();</span>
+<span class="nc" id="L183">        _platform = platform.get();</span>
+<span class="nc" id="L184">        _vector = vector.get();</span>
+<span class="nc" id="L185">        friends.saveProperties();</span>
+<span class="nc bnc" id="L186" title="All 2 branches missed.">        for(Information info : informations)</span>
+<span class="nc" id="L187">            info.saveProperties();</span>
+<span class="nc" id="L188">        mesures.saveProperties();</span>
+<span class="nc" id="L189">        messages.saveProperties();</span>
+<span class="nc" id="L190">        _vector.saveProperties();</span>
+<span class="nc" id="L191">        states.saveProperties();</span>
+<span class="nc" id="L192">        FileEngineRelation.INSTANCE.save(this, name.get() + &quot;.ser&quot;);</span>
+<span class="nc" id="L193">    }</span>
+    
+    public static MyNode load(String fileName) throws IOException, ClassNotFoundException {
+<span class="nc" id="L196">        ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileName));</span>
+<span class="nc" id="L197">        MyNode res = (MyNode) ois.readObject();</span>
+<span class="nc" id="L198">        res.name = new SimpleStringProperty(res._name);</span>
+<span class="nc" id="L199">        res.friends.restoreProperties();</span>
+<span class="nc bnc" id="L200" title="All 2 branches missed.">        for(Information info : res.informations)</span>
+<span class="nc" id="L201">            info.restoreProperties();</span>
+<span class="nc" id="L202">        res.mesures.restoreProperties();</span>
+<span class="nc" id="L203">        res.messages.restoreProperties();</span>
+<span class="nc" id="L204">        res.states.restoreProperties();</span>
+<span class="nc" id="L205">        res.logo = new SimpleStringProperty(res._logo);</span>
+<span class="nc" id="L206">        res.platform = new CloudProperty(res._platform);</span>
+<span class="nc" id="L207">        res._vector.restoreProperties();</span>
+<span class="nc" id="L208">        res.vector = new SimpleObjectProperty&lt;&gt;(res._vector);</span>
+<span class="nc" id="L209">        return res;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>

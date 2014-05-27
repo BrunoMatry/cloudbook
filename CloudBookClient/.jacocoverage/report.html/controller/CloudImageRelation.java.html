@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>CloudImageRelation.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;CloudBookClient&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">controller</a> &gt; <span class="el_source">CloudImageRelation.java</span></div><h1>CloudImageRelation.java</h1><pre class="source lang-java linenums">package controller;
+
+import hmi.button.IconFlyWeight;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Observable;
+import javafx.scene.image.Image;
+import model.node.Cloud;
+
+/**
+ * A relation associating a cloud and its corresponding image.
+ * An image must be bound to an instance of this class,
+ * and the same instance bound to a cloud in order to make the link
+ */
+public class CloudImageRelation extends Relation&lt;Cloud, Image&gt; {
+    
+    //Associations cloud - image
+    private Map&lt;Cloud, Image&gt; relation;
+    
+    /**
+     * Constructor
+     */
+    public CloudImageRelation() {
+<span class="nc" id="L24">        super();</span>
+<span class="nc" id="L25">        initialize();</span>
+<span class="nc" id="L26">    }</span>
+
+    /**
+     * Constructor
+     * @param t initial value
+     */
+    public CloudImageRelation(Cloud t) {
+<span class="nc" id="L33">        super(t);</span>
+<span class="nc" id="L34">        initialize();</span>
+<span class="nc" id="L35">        this.image.set(this.relation.get(t));</span>
+<span class="nc" id="L36">    }</span>
+    
+    /**
+     * Sets up the correspondance table
+     */
+    private void initialize() {
+<span class="nc" id="L42">        this.relation = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L43">        Image google = IconFlyWeight.INSTANCE.getGoogle();</span>
+<span class="nc" id="L44">        Image amazon = IconFlyWeight.INSTANCE.getAmazon();</span>
+<span class="nc" id="L45">        Image windows = IconFlyWeight.INSTANCE.getWindows();</span>
+<span class="nc" id="L46">        Image defaultCloud = IconFlyWeight.INSTANCE.getDefaultCloud();</span>
+<span class="nc" id="L47">        this.relation.put(Cloud.GOOGLE, google);</span>
+<span class="nc" id="L48">        this.relation.put(Cloud.AMAZON, amazon);</span>
+<span class="nc" id="L49">        this.relation.put(Cloud.WINDOWS, windows);</span>
+<span class="nc" id="L50">        this.relation.put(Cloud.DEFAULT, defaultCloud);</span>
+<span class="nc" id="L51">    }</span>
+
+    @Override
+    public void update(Observable o, Object o1) {
+<span class="nc" id="L55">        Cloud c = (Cloud)o1;</span>
+<span class="nc" id="L56">        this.image.set(this.relation.get(c));</span>
+<span class="nc" id="L57">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>

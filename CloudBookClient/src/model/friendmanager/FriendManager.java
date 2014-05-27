@@ -55,7 +55,6 @@ public class FriendManager implements IFriendManager {
         for(Friend friend : friends) {
             if(friend.daysSinceLastConnection() > delay)
                 remove(friend.idProperty().get());
-            //TODO : A compléter
         }   
     }
 

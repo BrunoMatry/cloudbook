@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>InformationBox.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;CloudBookClient&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">model.node</a> &gt; <span class="el_source">InformationBox.java</span></div><h1>InformationBox.java</h1><pre class="source lang-java linenums">package model.node;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import model.network.interfaces.Information;
+
+/**
+ * Box containing some informations with string property describing the box content
+ * @param &lt;T&gt; type of information
+ */
+public class InformationBox&lt;T extends Information&gt; implements Information, Iterable&lt;T&gt; {
+    
+    public static final String EMPTY_FLAG = &quot;No information to display at this time&quot;;
+    
+    private List&lt;T&gt; _box; //box containing information
+    private transient ObservableList&lt;T&gt; box; //box containing information
+    public final ObservableList&lt;T&gt; boxObservableList() {
+<span class="nc" id="L23">        return box;</span>
+    }
+    
+    protected String _description; //description of the box
+    
+    protected transient StringProperty description; //description property
+    public StringProperty descriptionProperty() {
+<span class="fc" id="L30">        return description;</span>
+    }
+
+    /**
+     * Constructor
+     */
+<span class="fc" id="L36">    public InformationBox() {</span>
+<span class="fc" id="L37">        ObservableList&lt;T&gt; bbox = FXCollections.observableArrayList();</span>
+<span class="fc" id="L38">        box = FXCollections.synchronizedObservableList(bbox);</span>
+<span class="fc" id="L39">        description = new SimpleStringProperty(EMPTY_FLAG);</span>
+<span class="fc" id="L40">    }</span>
+    
+    /**
+     * Adds information to the box and update the description
+     * @param info information to add
+     */
+    public void push(T info) {
+<span class="pc bpc" id="L47" title="3 of 6 branches missed.">        if(info != null &amp;&amp; box != null &amp;&amp; description != null) {</span>
+<span class="fc" id="L48">            box.add(info);</span>
+<span class="fc" id="L49">            description.set(info.toString());</span>
+        }
+<span class="fc" id="L51">    }</span>
+    
+    /**
+     * Pops information from the stack
+     * @return top information
+     */
+    public T pop() {
+<span class="fc" id="L58">        int lastIndex = box.size() - 1;</span>
+<span class="fc" id="L59">        T info = box.remove(lastIndex);</span>
+<span class="fc bfc" id="L60" title="All 2 branches covered.">        if(box.isEmpty())</span>
+<span class="fc" id="L61">            description.set(EMPTY_FLAG);</span>
+        else
+<span class="fc" id="L63">            description.set(box.get(lastIndex-1).toString());</span>
+<span class="fc" id="L64">        return info;</span>
+    }
+    
+    /**
+     * Removes specified information from the box
+     * Description is set to the new peek if needed
+     * @param info information to remove
+     */
+    public void remove(T info) {
+<span class="fc" id="L73">        int lastIndex = box.size() - 1;</span>
+<span class="fc bfc" id="L74" title="All 2 branches covered.">        if(info == box.get(lastIndex))</span>
+<span class="fc" id="L75">            this.pop();</span>
+        else {
+<span class="fc" id="L77">            box.remove(info);</span>
+<span class="pc bpc" id="L78" title="1 of 2 branches missed.">            if(box.isEmpty())</span>
+<span class="nc" id="L79">                description.set(EMPTY_FLAG);</span>
+        }
+<span class="fc" id="L81">    }</span>
+    
+    /**
+     * Empty predicate
+     * @return true if the box doesn't contains elements, false otherwise
+     */
+    public boolean empty() {
+<span class="fc" id="L88">        return box.isEmpty();</span>
+    }
+    
+    /**
+     * Returns element at the given position in this box
+     * @param index index of the element to return
+     * @return element at the given position in this box
+     */
+    public T get(int index) {
+<span class="nc" id="L97">        return box.get(index);</span>
+    }
+    
+    /**
+     * Saves all properties of contained informations
+     */
+    @Override
+    public void saveProperties() {
+<span class="nc" id="L105">        _box = new ArrayList&lt;&gt;();</span>
+<span class="nc bnc" id="L106" title="All 2 branches missed.">        for(Information info : box) {</span>
+<span class="nc" id="L107">            info.saveProperties();</span>
+<span class="nc" id="L108">            _box.add((T)info);</span>
+<span class="nc" id="L109">        }</span>
+<span class="nc" id="L110">        _description = description.get();</span>
+<span class="nc" id="L111">    }</span>
+
+    /**
+     * Restores all properties of contained informations
+     */
+    @Override
+    public void restoreProperties() {
+<span class="nc" id="L118">        ObservableList&lt;T&gt; bbox = FXCollections.observableArrayList();</span>
+<span class="nc" id="L119">        box = FXCollections.synchronizedObservableList(bbox);</span>
+<span class="nc bnc" id="L120" title="All 2 branches missed.">        for(Information info : _box) {</span>
+<span class="nc" id="L121">           info.restoreProperties();</span>
+<span class="nc" id="L122">           box.add((T)info);</span>
+<span class="nc" id="L123">        }  </span>
+<span class="nc" id="L124">        description = new SimpleStringProperty(_description);</span>
+<span class="nc" id="L125">    }</span>
+    
+    /**
+     * Get the last nb values from the InformationBox
+     * @param nb number of values wanted
+     * @return List of nb values
+     */
+    public ArrayList&lt;T&gt; getLastValues(int nb) {
+<span class="nc" id="L133">        ArrayList&lt;T&gt; tab = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L134">        int start = box.size() - nb;</span>
+<span class="nc bnc" id="L135" title="All 2 branches missed.">        if(start &lt; 0)</span>
+<span class="nc" id="L136">            start = 0;</span>
+<span class="nc bnc" id="L137" title="All 2 branches missed.">        for(int i = start ; i &lt; box.size() ; i++) {</span>
+<span class="nc" id="L138">            tab.add(box.get(i));</span>
+        }
+<span class="nc" id="L140">        return tab;</span>
+    }
+
+    @Override
+    public Iterator&lt;T&gt; iterator() {
+<span class="nc" id="L145">        return box.iterator();</span>
+    }
+    
+    /**
+     * Computes the number of elements of the box
+     * @return the number of elements of the box
+     */
+    public int size() {
+<span class="nc" id="L153">        return box.size();</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>

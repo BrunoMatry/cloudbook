@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Engine.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;CloudBookClient&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">model.engine</a> &gt; <span class="el_source">Engine.java</span></div><h1>Engine.java</h1><pre class="source lang-java linenums">package model.engine;
+
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.rmi.RemoteException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import model.friendmanager.FriendManager;
+import model.friendmanager.IFriendManager;
+import model.network.interfaces.Information;
+import model.monitoring.IMonitoring;
+import model.monitoring.Monitoring;
+import model.network.implementation.Network;
+import model.network.interfaces.RemoteClient;
+import model.request.IRequestManager;
+import model.node.MyNode;
+import model.request.RequestManager;
+import model.network.interfaces.Sendable;
+import model.node.AppVector;
+import model.node.Cloud;
+import model.node.Message;
+import model.node.friend.Friend;
+import model.node.friend.Member;
+import model.request.Request;
+
+public class Engine implements IEngine {
+    
+    protected IRequestManager requestManager;
+    protected IFriendManager friendManager;
+    protected Monitoring monitoring;
+    protected MyNode node;
+    protected RemoteClient network;
+    private EngineThread thread;
+
+    /* Getters and setters */
+<span class="nc" id="L39">    public IFriendManager getFriendManager() { return friendManager; }</span>
+<span class="nc" id="L40">    public IMonitoring getMonitoring() { return monitoring; }</span>
+<span class="nc" id="L41">    public RemoteClient getNetwork() { return network; }</span>
+<span class="fc" id="L42">    public MyNode getNode() { return node; }</span>
+<span class="nc" id="L43">    public IRequestManager getRequestManager() { return requestManager; }</span>
+    
+    @Override
+<span class="nc" id="L46">    public void setNetwork(RemoteClient network) { this.network = network; }</span>
+    
+    /**
+     * Constructor
+     * Initializes all the modules of the application
+     * @param n current instance of MyNode
+     * @throws RemoteException remote access problem
+     * @throws UnknownHostException host unknown
+     */
+<span class="fc" id="L55">    public Engine(MyNode n) throws UnknownHostException, RemoteException {</span>
+<span class="fc" id="L56">        monitoring = new Monitoring(this);</span>
+<span class="fc" id="L57">        node = n;</span>
+<span class="fc" id="L58">        network = new Network(InetAddress.getLocalHost().getHostAddress(),</span>
+                node.getNodePort(),
+                this);
+<span class="fc" id="L61">        friendManager = new FriendManager(node);</span>
+<span class="fc" id="L62">        requestManager = new RequestManager(friendManager, this);</span>
+<span class="fc" id="L63">    }</span>
+    
+    @Override
+    public void save() throws IOException {
+        try {
+<span class="nc" id="L68">            node.save();</span>
+<span class="nc" id="L69">        } catch (ClassNotFoundException ex) {</span>
+<span class="nc" id="L70">            Logger.getLogger(Engine.class.getName()).log(Level.SEVERE, null, ex);</span>
+<span class="nc" id="L71">        }</span>
+<span class="nc" id="L72">    }</span>
+
+    @Override
+    public void setInformation(Information info) {
+<span class="nc" id="L76">        node.addInformation(info);</span>
+<span class="nc" id="L77">    }</span>
+
+    @Override
+    public void handleRequest(Sendable req) {
+<span class="nc" id="L81">        requestManager.handleRequest(req);</span>
+<span class="nc" id="L82">    }</span>
+    
+    /**
+     * Generates a list of messages containing the specified information
+     * @param informationList list of information to be sent
+     * @return list of messages containing the specified information
+     * @throws UnknownHostException
+     */
+    protected List&lt;Message&gt; makeMessages(List&lt;Information&gt; informationList) throws UnknownHostException {
+<span class="nc" id="L91">        List&lt;Message&gt; res = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L92">        String id = node.getMemberId();</span>
+<span class="nc" id="L93">        AppVector vector = node.getVector();</span>
+<span class="nc bnc" id="L94" title="All 2 branches missed.">        for(Information info : informationList) {</span>
+<span class="nc" id="L95">            Message msg = new Message(id, vector, info, true);</span>
+<span class="nc" id="L96">            res.add(msg);</span>
+<span class="nc" id="L97">        }</span>
+<span class="nc" id="L98">        return res;</span>
+    }
+
+    /**
+     * Sends some requests to some friends
+     * @param requests requests to be sent
+     * @param friends friends to which the requests are to be sent
+     * @throws RemoteException required for RMI
+     */
+    protected void send(List&lt;Request&gt; requests, List&lt;Friend&gt; friends) throws RemoteException {
+<span class="nc bnc" id="L108" title="All 2 branches missed.">        for(Friend f : friends) {</span>
+<span class="nc" id="L109">            String[] temp = f.getId().split(&quot;@&quot;);</span>
+<span class="nc bnc" id="L110" title="All 2 branches missed.">            for(Request req : requests)</span>
+<span class="nc" id="L111">                network.send(req, temp[1]);</span>
+<span class="nc" id="L112">        }</span>
+<span class="nc" id="L113">    }</span>
+    
+    /**
+     * Sends a list of requests to all the members of the network
+     * @param requests list of requests to be broadcasted
+     * @throws RemoteException required for RMI
+     */
+    protected void broadcast(List&lt;Request&gt; requests) throws RemoteException {
+<span class="nc bnc" id="L121" title="All 2 branches missed.">        for(Request req : requests)</span>
+<span class="nc" id="L122">            network.broadcast(req);</span>
+<span class="nc" id="L123">    }</span>
+    
+    public void update(Member member) {
+<span class="nc" id="L126">        friendManager.update(member);</span>
+<span class="nc" id="L127">    }</span>
+    
+    /**
+     * Looks for the best platform.
+     * The choice is based on the current data.
+     */
+    public void updateState() {
+<span class="nc" id="L134">        Cloud cloud = friendManager.bestCloud();</span>
+<span class="nc bnc" id="L135" title="All 2 branches missed.">        if(cloud != null)</span>
+<span class="nc" id="L136">            node.majCurrentState(cloud);</span>
+<span class="nc" id="L137">    }</span>
+    
+    /**
+     * Starts the engine thread
+     * If the thread is running, it stops it befor creating and starting a new one
+     * @throws InterruptedException problem when stopping the thread
+     */
+    public void start() throws InterruptedException {
+<span class="nc bnc" id="L145" title="All 2 branches missed.">        if(thread != null)</span>
+<span class="nc" id="L146">            stop();</span>
+<span class="nc" id="L147">        thread = new EngineThread(this);</span>
+<span class="nc" id="L148">        thread.start();</span>
+<span class="nc" id="L149">    }</span>
+    
+    /**
+     * Stops the engine thread
+     * @throws InterruptedException problem when waiting the thread ending
+     */
+    public void stop() throws InterruptedException {
+<span class="nc" id="L156">        thread.setStopFlag(true);</span>
+<span class="nc" id="L157">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>

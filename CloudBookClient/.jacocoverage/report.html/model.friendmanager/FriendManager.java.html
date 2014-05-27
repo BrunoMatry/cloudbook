@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>FriendManager.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;CloudBookClient&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">model.friendmanager</a> &gt; <span class="el_source">FriendManager.java</span></div><h1>FriendManager.java</h1><pre class="source lang-java linenums">package model.friendmanager;
+
+import static java.lang.Math.pow;
+import static java.lang.Math.sqrt;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+import model.node.AppVector;
+import model.node.Cloud;
+import model.node.MyNode;
+import model.node.InformationBox;
+import model.node.friend.Friend;
+import model.node.friend.Member;
+
+public class FriendManager implements IFriendManager {
+    
+    protected static final double seuil = 30; //Distance en dessous de laquelle une noeud est considéré comme pertinent (valeure choisie arbitrairement, à modifier)
+    protected static final int delay = 10; //Délai en jours après lequel on enlève un noeud de la liste d'amis si on a pas eu d'échange avec lui pendant cette période (valeure choisie arbitrairement, à modifier)
+    
+    protected MyNode node;
+    
+    /**
+     * Constructor
+     */
+<span class="nc" id="L27">    public FriendManager() {</span>
+<span class="nc" id="L28">        node = new MyNode();</span>
+<span class="nc" id="L29">    }</span>
+    
+    /**
+     * Constructor
+     * @param node current application
+     */
+<span class="fc" id="L35">    public FriendManager(MyNode node) {</span>
+<span class="fc" id="L36">        this.node = node;</span>
+<span class="fc" id="L37">    }</span>
+
+    @Override
+    public boolean add(Member sender) {
+<span class="nc" id="L41">        AppVector vector = sender.getVector();</span>
+<span class="nc" id="L42">        String id = sender.getId();</span>
+<span class="nc" id="L43">        Cloud cloud = sender.getCloud();</span>
+<span class="nc bnc" id="L44" title="All 4 branches missed.">        if(!isFriend(id) &amp;&amp; relevant(vector)) {</span>
+<span class="nc" id="L45">            Friend friend = new Friend(id, 0, relevance(vector), vector, cloud);</span>
+<span class="nc" id="L46">            node.addFriend(friend); //indice de confiance initialiser à 0 lors de l'ajout d'un nouvel ami</span>
+<span class="nc" id="L47">            return true;</span>
+        }
+<span class="nc" id="L49">        return false;</span>
+    }
+    
+    @Override
+    public void clear() {
+<span class="nc" id="L54">        InformationBox&lt;Friend&gt; friends = node.getFriends();</span>
+<span class="nc bnc" id="L55" title="All 2 branches missed.">        for(Friend friend : friends) {</span>
+<span class="nc bnc" id="L56" title="All 2 branches missed.">            if(friend.daysSinceLastConnection() &gt; delay)</span>
+<span class="nc" id="L57">                remove(friend.idProperty().get());</span>
+            //TODO : A compléter
+<span class="nc" id="L59">        }   </span>
+<span class="nc" id="L60">    }</span>
+
+    @Override
+    public boolean isFriend(String id) {
+<span class="nc" id="L64">        InformationBox&lt;Friend&gt; friends = node.getFriends();</span>
+<span class="nc bnc" id="L65" title="All 2 branches missed.">        for(Friend friend : friends) </span>
+<span class="nc bnc" id="L66" title="All 2 branches missed.">            if(friend.getId().equals(id))</span>
+<span class="nc" id="L67">                return true;</span>
+<span class="nc" id="L68">        return false;</span>
+    }
+
+    @Override
+    public double relevance(AppVector v) {
+<span class="nc" id="L73">        AppVector vector = node.getVector();</span>
+<span class="nc" id="L74">        double xa = vector.getAppType(); </span>
+<span class="nc" id="L75">        double ya = vector.getPerformanceNeed();</span>
+<span class="nc" id="L76">        double za = vector.getSpeedNeed(); </span>
+<span class="nc" id="L77">        double xb = v.getAppType(); </span>
+<span class="nc" id="L78">        double yb = v.getPerformanceNeed(); </span>
+<span class="nc" id="L79">        double zb = v.getSpeedNeed(); </span>
+<span class="nc" id="L80">        double dist = sqrt(pow(xb-xa, 2)+pow(yb-ya, 2)+pow(zb-za, 2));</span>
+<span class="nc" id="L81">        return dist;</span>
+    }
+    
+    @Override
+    public boolean relevant(AppVector v) {
+        //System.out.println(&quot;(Vector, seuil) = &quot; + relevance(v) + &quot; &quot; + seuil);
+<span class="nc bnc" id="L87" title="All 2 branches missed.">        return relevance(v) &lt; seuil;</span>
+    }
+
+    @Override
+    public void remove(String id) {
+<span class="nc" id="L92">        InformationBox&lt;Friend&gt; friends = node.getFriends();</span>
+<span class="nc bnc" id="L93" title="All 2 branches missed.">        for(int i = 0; i &lt; friends.size(); i++) {</span>
+<span class="nc bnc" id="L94" title="All 2 branches missed.">            if(friends.get(i).getId().equals(id)) {</span>
+<span class="nc" id="L95">                friends.remove(friends.get(i));</span>
+<span class="nc" id="L96">                break;</span>
+            }  
+        }
+<span class="nc" id="L99">    }</span>
+
+    @Override
+    public void update(Member sender) {
+        //On tente d'ajouter le sender à la liste d'amis
+<span class="nc bnc" id="L104" title="All 2 branches missed.">        if(add(sender))</span>
+<span class="nc" id="L105">            return;</span>
+        /*
+        Si l'ajout échoue, soit le sender n'est pas pertinent, soit il est déja dans la liste des amis
+        On parcours donc la liste des amis et si on l'y trouve on vérifie s'il est toujours pertinent
+        si oui, on met à jour son vecteur sinon on le supprime de la liste d'amis
+        */
+<span class="nc" id="L111">        InformationBox&lt;Friend&gt; friends = node.getFriends();</span>
+<span class="nc bnc" id="L112" title="All 2 branches missed.">        for(Friend friend : friends) {</span>
+<span class="nc" id="L113">            String id = sender.getId();</span>
+<span class="nc bnc" id="L114" title="All 2 branches missed.">            if(friend.getId().equals(id)) {</span>
+<span class="nc" id="L115">                AppVector vector = sender.getVector();</span>
+<span class="nc bnc" id="L116" title="All 2 branches missed.">                if(relevant(vector)) {</span>
+<span class="nc" id="L117">                    friend.setVector(vector);</span>
+<span class="nc" id="L118">                    friend.relevanceProperty().set(relevance(vector));</span>
+                } else
+<span class="nc" id="L120">                    remove(id);</span>
+<span class="nc" id="L121">                break;</span>
+            }  
+<span class="nc" id="L123">        }</span>
+<span class="nc" id="L124">    }</span>
+    
+    @Override
+    public List&lt;Friend&gt; getRelevantFriends(int nb) {
+<span class="nc" id="L128">        InformationBox&lt;Friend&gt; allFriends = node.getFriends();</span>
+<span class="nc bnc" id="L129" title="All 2 branches missed.">        if(allFriends.size() &lt;= nb)</span>
+<span class="nc" id="L130">            return allFriends.boxObservableList();</span>
+<span class="nc" id="L131">        List&lt;Friend&gt; friends = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L132">        sortByRelevance(allFriends.boxObservableList(), 0, allFriends.size()-1);</span>
+<span class="nc bnc" id="L133" title="All 2 branches missed.">        for(int i = 0; i&lt;nb; i++) {</span>
+<span class="nc" id="L134">            friends.add(allFriends.get(i));</span>
+        }
+<span class="nc" id="L136">        return friends;</span>
+    }
+    
+    @Override
+    public List&lt;Friend&gt; getTrustedFriends(int nb) {
+<span class="nc" id="L141">        List&lt;Friend&gt; allFriends = node.getFriends().boxObservableList();</span>
+<span class="nc bnc" id="L142" title="All 2 branches missed.">        if(allFriends.size() &lt;= nb)</span>
+<span class="nc" id="L143">            return allFriends;</span>
+<span class="nc" id="L144">        List&lt;Friend&gt; friends = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L145">        sortByConfidence(allFriends, 0, allFriends.size()-1);</span>
+<span class="nc bnc" id="L146" title="All 2 branches missed.">        for(int i = 0; i&lt;nb; i++) {</span>
+<span class="nc" id="L147">            friends.add(allFriends.get(i));</span>
+        }
+<span class="nc" id="L149">        return friends;</span>
+    }
+    
+    @Override
+    public List&lt;Friend&gt; getSomeFriends(int nb) {
+<span class="nc" id="L154">        List&lt;Friend&gt; allFriends = node.getFriends().boxObservableList();</span>
+<span class="nc bnc" id="L155" title="All 2 branches missed.">        if(allFriends.size() &lt;= nb)</span>
+<span class="nc" id="L156">            return allFriends;</span>
+<span class="nc" id="L157">        List&lt;Friend&gt; friends = new ArrayList&lt;&gt;();</span>
+<span class="nc bnc" id="L158" title="All 2 branches missed.">        for (Friend f : allFriends) {</span>
+<span class="nc" id="L159">            friends.add(f);</span>
+<span class="nc" id="L160">        }</span>
+<span class="nc bnc" id="L161" title="All 2 branches missed.">        for(int i = 0; i&lt;friends.size()-nb; i++) {</span>
+<span class="nc" id="L162">            Random rand = new Random();</span>
+<span class="nc" id="L163">            int j = rand.nextInt(friends.size());</span>
+<span class="nc" id="L164">            friends.remove(j);</span>
+        }
+<span class="nc" id="L166">        return friends;</span>
+    }
+    
+    /**
+     * Methode permettant de trier un liste d'amis par ordre de pertinence (les plus pertinent au début)
+     * @param friends   liste d'amis à trier
+     * @param left      rang à partir duquel le tri doit être fait
+     * @param right     rang juqu'auquel le tri doit être fait
+     */
+    private void sortByRelevance(List&lt;Friend&gt; friends, int left, int right) {
+        //algorithme quicksort
+<span class="nc" id="L177">        int i = left, j = right;</span>
+        Friend tmp;
+<span class="nc" id="L179">        Friend pivot = friends.get(left+(right-left)/2);</span>
+<span class="nc bnc" id="L180" title="All 2 branches missed.">        while(i &lt;= j) {</span>
+<span class="nc bnc" id="L181" title="All 2 branches missed.">            while(friends.get(i).relevanceProperty().get() &lt; pivot.relevanceProperty().get())</span>
+<span class="nc" id="L182">                i++;</span>
+<span class="nc bnc" id="L183" title="All 2 branches missed.">            while(friends.get(j).relevanceProperty().get() &gt; pivot.relevanceProperty().get())</span>
+<span class="nc" id="L184">                j--;</span>
+<span class="nc bnc" id="L185" title="All 2 branches missed.">            if (i &lt;= j) {</span>
+<span class="nc" id="L186">                tmp = friends.get(i);</span>
+<span class="nc" id="L187">                friends.set(i, friends.get(j));</span>
+<span class="nc" id="L188">                friends.set(j, tmp);</span>
+<span class="nc" id="L189">                i++;</span>
+<span class="nc" id="L190">                j--;</span>
+            }
+        }
+<span class="nc bnc" id="L193" title="All 2 branches missed.">        if (left &lt; j)</span>
+<span class="nc" id="L194">            sortByRelevance(friends, left, j);</span>
+<span class="nc bnc" id="L195" title="All 2 branches missed.">        if (i &lt; right)</span>
+<span class="nc" id="L196">            sortByRelevance(friends, i, right);</span>
+<span class="nc" id="L197">    }</span>
+    
+    /**
+     * Methode permettant de trier un liste d'amis par ordre de confiance (ceux à qui on fait le plus confiance au début)
+     * @param friends   liste d'amis à trier
+     * @param left      rang à partir duquel le tri doit être fait
+     * @param right     rang juqu'auquel le tri doit être fait
+     */
+    private void sortByConfidence(List&lt;Friend&gt; friends, int left, int right) {
+        //algorithme quicksort
+<span class="nc" id="L207">        int i = left, j = right;</span>
+        Friend tmp;
+<span class="nc" id="L209">        Friend pivot = friends.get(left+(right-left)/2);</span>
+<span class="nc bnc" id="L210" title="All 2 branches missed.">        while(i &lt;= j) {</span>
+<span class="nc bnc" id="L211" title="All 2 branches missed.">            while(friends.get(i).confidenceProperty().get() &gt; pivot.confidenceProperty().get())</span>
+<span class="nc" id="L212">                i++;</span>
+<span class="nc bnc" id="L213" title="All 2 branches missed.">            while(friends.get(j).confidenceProperty().get() &lt; pivot.confidenceProperty().get())</span>
+<span class="nc" id="L214">                j--;</span>
+<span class="nc bnc" id="L215" title="All 2 branches missed.">            if (i &lt;= j) {</span>
+<span class="nc" id="L216">                tmp = friends.get(i);</span>
+<span class="nc" id="L217">                friends.set(i, friends.get(j));</span>
+<span class="nc" id="L218">                friends.set(j, tmp);</span>
+<span class="nc" id="L219">                i++;</span>
+<span class="nc" id="L220">                j--;</span>
+            }
+        }
+<span class="nc bnc" id="L223" title="All 2 branches missed.">        if (left &lt; j)</span>
+<span class="nc" id="L224">            sortByConfidence(friends, left, j);</span>
+<span class="nc bnc" id="L225" title="All 2 branches missed.">        if (i &lt; right)</span>
+<span class="nc" id="L226">            sortByConfidence(friends, i, right);</span>
+<span class="nc" id="L227">    }</span>
+    
+    /**
+     * Finds out the best rated cloud for this application
+     * @return the best rated cloud for this application
+     */
+    @Override
+    public Cloud bestCloud() {
+<span class="nc" id="L235">        Map&lt;Cloud, Double&gt; scoreTable = scores();</span>
+<span class="nc" id="L236">        Cloud res = null;</span>
+<span class="nc" id="L237">        double max = 0.0;</span>
+<span class="nc bnc" id="L238" title="All 2 branches missed.">        for(Cloud c : scoreTable.keySet()) {</span>
+<span class="nc" id="L239">            double d = scoreTable.get(c);</span>
+<span class="nc bnc" id="L240" title="All 2 branches missed.">            if(d &gt; max) {</span>
+<span class="nc" id="L241">                max = d;</span>
+<span class="nc" id="L242">                res = c;</span>
+            }
+<span class="nc" id="L244">        }</span>
+<span class="nc" id="L245">        return res;</span>
+    }
+    
+    /**
+     * Computes the relavance sum for each existing cloud
+     * @return an association table containing all the scores
+     */
+    @Override
+    public Map&lt;Cloud, Double&gt; scores() {
+<span class="nc" id="L254">        Map&lt;Cloud, Double&gt; res = new HashMap&lt;&gt;();</span>
+<span class="nc bnc" id="L255" title="All 2 branches missed.">        for(Cloud c : Cloud.values()) {</span>
+<span class="nc" id="L256">            double score = relevanceSum(c);</span>
+<span class="nc" id="L257">            res.put(c, score);</span>
+        }
+<span class="nc" id="L259">        return res;</span>
+    }
+    
+    /**
+     * Computes the relevance sum over the friend list of friends who are on the specified cloud
+     * @param cloud cloud we look for to increment relevance
+     * @return the relevance sum over the friend list for the specified cloud
+     */
+    @Override
+    public double relevanceSum(Cloud cloud) {
+<span class="nc" id="L269">        InformationBox&lt;Friend&gt; friends = node.getFriends();</span>
+<span class="nc" id="L270">        double res = 0.0;</span>
+<span class="nc bnc" id="L271" title="All 2 branches missed.">        for(Friend f : friends) {</span>
+<span class="nc bnc" id="L272" title="All 2 branches missed.">            if(f.cloudProperty().get() == cloud)</span>
+<span class="nc" id="L273">                res += f.relevanceProperty().get();</span>
+<span class="nc" id="L274">        }</span>
+<span class="nc" id="L275">        return res;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>

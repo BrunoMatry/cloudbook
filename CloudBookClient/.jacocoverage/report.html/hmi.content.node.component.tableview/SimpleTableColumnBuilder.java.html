@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>SimpleTableColumnBuilder.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;CloudBookClient&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">hmi.content.node.component.tableview</a> &gt; <span class="el_source">SimpleTableColumnBuilder.java</span></div><h1>SimpleTableColumnBuilder.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package hmi.content.node.component.tableview;
+
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+
+/**
+ * Builds a column representing a simple type (int, string, double etc...)
+ * @author Gwendal
+ */
+public class SimpleTableColumnBuilder extends TableColumnBuilder {
+
+    /**
+     * Constructor
+     * @param owner table to which this column belongs
+     */
+    public SimpleTableColumnBuilder(TableView owner) {
+<span class="nc" id="L24">        super(owner);</span>
+<span class="nc" id="L25">    }</span>
+    
+    /**
+     * Set up the column with its specified name, bound property
+     * and size computed from the number of columns in the table
+     * @param name label of the column
+     * @param propertyName name of the property which is bound to the column
+     * @param columnCount number of columns
+     * @return a column of name name, bound with the property propertyName and with intelligent size
+     */
+    @Override
+    public TableColumn buildColumn(String name, String propertyName, int columnCount) {
+<span class="nc" id="L37">        TableColumn column = new TableColumn(name);</span>
+<span class="nc" id="L38">        column.setCellValueFactory(new PropertyValueFactory(propertyName));</span>
+<span class="nc" id="L39">        column.prefWidthProperty().bind(owner.widthProperty().divide(columnCount));</span>
+<span class="nc" id="L40">        return column;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>

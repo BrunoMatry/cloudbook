@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>IconArea.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;CloudBookClient&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">hmi.content.register</a> &gt; <span class="el_source">IconArea.java</span></div><h1>IconArea.java</h1><pre class="source lang-java linenums">package hmi.content.register;
+
+import hmi.Launcher;
+import hmi.button.IconFlyWeight;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.geometry.Rectangle2D;
+import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
+import static javafx.scene.layout.VBox.setMargin;
+import javafx.stage.FileChooser;
+
+/**
+ * icon and browse button to choose it
+ */
+public class IconArea extends BorderPane {
+    
+        //logo of the application
+        protected ImageView logo;
+        
+        //&quot;browse to choose a logo&quot; button
+        protected Button browse;
+        
+        //File containing the chosen image
+        private final ObjectProperty&lt;File&gt; imageFile;
+        
+        //View port of the image
+<span class="nc" id="L40">        protected static final Rectangle2D viewPort = new Rectangle2D(0, 0, 120, 120);</span>
+        
+        /**
+         * Constructor
+         */
+        public IconArea() {
+<span class="nc" id="L46">            super();</span>
+<span class="nc" id="L47">            File f = new File(&quot;./res/default_app.png&quot;);</span>
+<span class="nc" id="L48">            imageFile = new SimpleObjectProperty&lt;&gt;(f);</span>
+<span class="nc" id="L49">            setCenter(getLogo());</span>
+<span class="nc" id="L50">            setBottom(getBrowse());</span>
+<span class="nc" id="L51">            setWidth(100);</span>
+<span class="nc" id="L52">        }</span>
+        
+        /**
+         * getter
+         * if logo is null, it is initialized
+         * @return logo attribute 
+         */
+        public final ImageView getLogo() {
+<span class="nc bnc" id="L60" title="All 2 branches missed.">            if(logo == null) {</span>
+<span class="nc" id="L61">                logo = new ImageView(IconFlyWeight.INSTANCE.getDefaultLogo());</span>
+<span class="nc" id="L62">                setMargin(this.logo, new Insets(10, 10, 10, 10));</span>
+<span class="nc" id="L63">                setAlignment(logo, Pos.CENTER);</span>
+<span class="nc" id="L64">                this.logo.setViewport(viewPort);</span>
+            }
+<span class="nc" id="L66">            return logo;</span>
+        }
+
+        /**
+         * setter
+         * replaces the current logo by a new one
+         * @param logo the logo to replace with
+         */
+        public void setLogo(ImageView logo) {
+<span class="nc bnc" id="L75" title="All 2 branches missed.">            if(this.logo != null)</span>
+<span class="nc" id="L76">                getChildren().remove(this.logo);</span>
+<span class="nc" id="L77">            this.logo = logo;</span>
+<span class="nc" id="L78">            setMargin(this.logo, new Insets(10, 10, 10, 10));</span>
+<span class="nc" id="L79">            this.logo.resize(128, 128);</span>
+<span class="nc" id="L80">            this.logo.setViewport(new Rectangle2D(0, 0, this.logo.getImage().getHeight(),</span>
+                    this.logo.getImage().getWidth()));
+<span class="nc" id="L82">            setCenter(this.logo);</span>
+<span class="nc" id="L83">        }</span>
+        
+        /**
+         * getter
+         * if browse is null, it is initialized
+         * @return browse attribute 
+         */
+        public final Button getBrowse() {
+<span class="nc bnc" id="L91" title="All 2 branches missed.">            if(browse == null) {</span>
+<span class="nc" id="L92">                browse = new Button(&quot;Browse...&quot;);</span>
+<span class="nc" id="L93">                setMargin(browse, new Insets(0, 0, 100, 0));</span>
+<span class="nc" id="L94">                setAlignment(browse, Pos.CENTER);</span>
+<span class="nc" id="L95">                browse.setOnAction(new EventHandler&lt;ActionEvent&gt;() {</span>
+
+                    @Override
+                    public void handle(ActionEvent t) {
+<span class="nc" id="L99">                        FileInputStream fis = null;</span>
+                        try {
+<span class="nc" id="L101">                            fis = chooseFile();</span>
+<span class="nc" id="L102">                        } catch (FileNotFoundException ex) {</span>
+<span class="nc" id="L103">                            Logger.getLogger(RegisterView.class.getName()).log(Level.SEVERE, null, ex);</span>
+<span class="nc" id="L104">                        } catch(NullPointerException ex) {</span>
+                        } finally {
+<span class="nc" id="L106">                            try {</span>
+<span class="nc" id="L107">                                fis.close();</span>
+<span class="nc" id="L108">                            } catch (IOException ex) {</span>
+<span class="nc" id="L109">                                Logger.getLogger(RegisterView.class.getName()).log(Level.SEVERE, null, ex);</span>
+<span class="nc" id="L110">                            }</span>
+<span class="nc" id="L111">                        }</span>
+<span class="nc" id="L112">                    }</span>
+                    
+                });
+            }
+<span class="nc" id="L116">            return browse;</span>
+        }
+        
+        /**
+         * Open a file chooser dialog in order to choose a new logo
+         * @return the input stream corresponding to the image file
+         * @throws FileNotFoundException
+         * @throws NullPointerException 
+         */
+        private FileInputStream chooseFile()
+                throws FileNotFoundException, NullPointerException {
+<span class="nc" id="L127">            FileChooser fc = new FileChooser();</span>
+<span class="nc" id="L128">            imageFile.set(fc.showOpenDialog(Launcher.STAGE));</span>
+<span class="nc bnc" id="L129" title="All 2 branches missed.">            if(imageFile == null) throw new NullPointerException();</span>
+<span class="nc" id="L130">            FileInputStream fis = new FileInputStream(imageFile.get());</span>
+<span class="nc" id="L131">            Image i = new Image(fis);</span>
+<span class="nc" id="L132">            ImageView iv = new ImageView(i);</span>
+<span class="nc" id="L133">            setLogo(iv);</span>
+<span class="nc" id="L134">            return fis;</span>
+        }
+
+        /**
+         * Getter
+         * @return file contaning the chosen image
+         */
+    public ObjectProperty&lt;File&gt; imageFileProperty() {
+<span class="nc" id="L142">        return imageFile;</span>
+    }
+        
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>
