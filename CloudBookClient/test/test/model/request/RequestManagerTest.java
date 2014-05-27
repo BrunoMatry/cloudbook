@@ -1,14 +1,18 @@
 package test.model.request;
 
+import java.io.File;
 import java.net.UnknownHostException;
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.engine.Engine;
 import model.network.interfaces.Information;
-import model.network.interfaces.Sendable;
 import model.node.AppVector;
+import model.node.Cloud;
+import model.node.Message;
+import model.node.Mesure;
 import model.node.MyNode;
 import model.request.Request;
 import model.request.RequestManager;
@@ -23,11 +27,7 @@ public class RequestManagerTest {
     private RequestManager instance;
     
     public RequestManagerTest() {
-        try {
-            instance = new RequestManager(null, new Engine(new MyNode()));
-        } catch (UnknownHostException | RemoteException ex) {
-            Logger.getLogger(RequestManagerTest.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
     }
     
     @BeforeClass
@@ -41,6 +41,12 @@ public class RequestManagerTest {
     
     @Before
     public void setUp() {
+        try {
+            MyNode node = new MyNode(new File("name"), "test", Cloud.GOOGLE, 0, 2, 2, 2);
+            instance = new RequestManager(null, new Engine(node));
+        } catch (UnknownHostException | RemoteException ex) {
+            Logger.getLogger(RequestManagerTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     @After
@@ -61,13 +67,8 @@ public class RequestManagerTest {
     @Test
     public void testCreateRequest() {
         Information data = new AppVector(0, 0, 0);
-        try {
-            Request expResult = new Request(data, instance);
-            Request result = instance.createRequest(data);
-            assertEquals(expResult, result);
-        } catch (RemoteException | UnknownHostException ex) {
-            Logger.getLogger(RequestManagerTest.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        Request result = instance.createRequest(data);
+        assertEquals(result.getInfo(),data);
     }
 
     /**
@@ -75,42 +76,12 @@ public class RequestManagerTest {
      */
     @Test
     public void testCreateRequests() {
-        System.out.println("createRequests");
-        RequestManager instance = null;
-        List<Request> expResult = null;
-        List<Request> result = instance.createRequests(null);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getInbox method, of class RequestManager.
-     */
-    @Test
-    public void testGetInbox_0args() {
-        System.out.println("getInbox");
-        RequestManager instance = null;
-        List<Information> expResult = null;
-        List<Information> result = instance.getInbox();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getInbox method, of class RequestManager.
-     */
-    @Test
-    public void testGetInbox_int() {
-        System.out.println("getInbox");
-        int i = 0;
-        RequestManager instance = null;
-        Information expResult = null;
-        Information result = instance.getInbox(i);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        List<Information> infos = new ArrayList<>();
+        infos.add(new AppVector(0,0,0));
+        infos.add(new Mesure(null, 0, 0, 0));
+        List<Request> result = instance.createRequests(infos);
+        assertEquals(result.get(0).getInfo(), infos.get(0));
+        assertEquals(result.get(1).getInfo(), infos.get(1));
     }
 
     /**

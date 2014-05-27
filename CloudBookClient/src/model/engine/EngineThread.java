@@ -32,6 +32,7 @@ public class EngineThread extends Thread {
     private final static long nbSecUpdate = 3;
     private final static long nbSecSave = 20;
     private final static long nbSecShare = 5;
+    private final static long nbSecClearFriends = 86400; // Once a day
     
     //Stop signal
     private boolean stopFlag;
@@ -80,7 +81,7 @@ public class EngineThread extends Thread {
             }
         }
         stopFlag = false;
-        int cpt = Integer.MIN_VALUE;
+        int cpt = 0;
         int type = 0;
         while(!stopFlag) {
             try {
@@ -92,6 +93,8 @@ public class EngineThread extends Thread {
                     shareInformation(type, 3, 3);
                 if(cpt % nbSecSave == 0)
                     save();
+                if(cpt % nbSecClearFriends == 0)
+                    friendManager.clear();
                 if(cpt >= Integer.MAX_VALUE)
                     cpt = Integer.MIN_VALUE;
             } catch (InterruptedException | UnknownHostException | RemoteException ex) {
