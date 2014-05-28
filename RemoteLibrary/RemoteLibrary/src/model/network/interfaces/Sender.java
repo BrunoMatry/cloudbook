@@ -9,7 +9,7 @@ package model.network.interfaces;
 import java.io.Serializable;
 
 /**
- *
+ * Author of a request.
  * @author Gwendal
  */
 public interface Sender extends Serializable {
