@@ -5,6 +5,10 @@ import model.network.interfaces.Information;
 import model.network.interfaces.RemoteClient;
 import model.network.interfaces.Sendable;
 
+/**
+ * Coordination module specification.
+ * @author Gwendal
+ */
 public interface IEngine {
     
     /**
