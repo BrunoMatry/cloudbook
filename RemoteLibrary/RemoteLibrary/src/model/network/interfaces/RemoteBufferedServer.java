@@ -22,7 +22,7 @@ public interface RemoteBufferedServer extends RemoteServer, Remote {
      * @param receiver receiver of a request.
      * @param index position of the message in the data structure.
      * @return the corresponding request.
-     * @throws RemoteException 
+     * @throws RemoteException Problem with remote access.
      */
     Sendable getSendable(String receiver, int index) throws RemoteException;
 }
