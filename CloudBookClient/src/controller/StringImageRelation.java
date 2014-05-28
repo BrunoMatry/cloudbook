@@ -10,7 +10,6 @@ import javafx.scene.image.Image;
 /**
  * Defines a relation between an image and its imgae file name.
  * The image is set when its name is set in the property to which this one is bound.
- * @author Gwendal
  */
 public class StringImageRelation extends SimpleStringProperty {
     
