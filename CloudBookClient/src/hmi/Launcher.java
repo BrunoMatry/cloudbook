@@ -8,7 +8,6 @@ import model.node.FileEngineRelation;
 
 /**
  * Launches the application.
- * @author Gwendal
  */
 public class Launcher extends Application {
     

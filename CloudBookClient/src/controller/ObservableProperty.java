@@ -5,7 +5,6 @@ import java.util.Observer;
 /**
  * Observer
  * A Javafx property which is also observable by observers.
- * @author Gwendal
  */
 public interface ObservableProperty {
     

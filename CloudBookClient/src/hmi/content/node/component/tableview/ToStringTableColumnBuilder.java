@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package hmi.content.node.component.tableview;
 
 import javafx.scene.control.TableCell;
@@ -15,7 +9,6 @@ import javafx.util.Callback;
 
 /**
  * Builds columns which represent the toString result of the specified column type
- * @author Gwendal
  * @param <E> type related to the table
  * @param <C> type related to the column
  */

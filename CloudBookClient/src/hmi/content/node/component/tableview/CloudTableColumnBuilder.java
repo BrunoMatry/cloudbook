@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package hmi.content.node.component.tableview;
 
 import controller.CloudImageRelation;
@@ -17,7 +11,6 @@ import model.node.Cloud;
 
 /**
  * Builds a column with a cloud representation
- * @author Gwendal
  * @param <E> type of the table
  */
 public class CloudTableColumnBuilder<E> extends TableColumnBuilder {

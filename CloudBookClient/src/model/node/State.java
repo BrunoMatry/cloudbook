@@ -10,13 +10,11 @@ import javafx.beans.property.SimpleObjectProperty;
 
 public class State implements Information {
     
-    /* Attributs serialisables */
     protected Cloud _cloud;
     protected Date _from;
     protected Date _to;
     protected boolean _current;
     
-    /* Proprietes non serialisables */
     protected transient ObjectProperty<Cloud> cloud;
     protected transient ObjectProperty<Date> from;
     protected transient ObjectProperty<Date> to;
@@ -40,7 +38,7 @@ public class State implements Information {
     public BooleanProperty currentProperty() { return current; }
     
     /**
-     * Method
+     * Getter
      * @return the Enum Cloud associate to the cloud property
      */
     public Cloud getCloud() {

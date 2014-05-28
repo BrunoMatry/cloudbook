@@ -19,6 +19,7 @@ public class Activity extends AbstractActivity {
     //activity that must be launch if the back button is pressed
     protected AbstractActivity prec;
     
+    //Pane which contains the menuButtons
     protected BorderPane menuPane;
     
     /**

@@ -1,26 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package hmi.content.node.component;
 
 import hmi.content.AbstractActivity;
 import hmi.content.node.NodeComponentView;
 import hmi.content.node.SummarizedView;
 import hmi.content.node.component.tableview.FriendTableView;
-import java.net.UnknownHostException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.collections.ObservableList;
 import javafx.scene.text.Text;
 import model.node.MyNode;
 import model.node.friend.Friend;
 
 /**
- *
- * @author Gwendal
  * Pane containing the friends' table
  */
 public class FriendPane extends NodeComponentView<Friend> {
