@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package model.engine;
 
 import static com.sun.deploy.util.SessionState.save;
@@ -23,10 +17,6 @@ import model.node.MyNode;
 import model.node.friend.Friend;
 import model.request.Request;
 
-/**
- *
- * @author Gwendal
- */
 public class EngineThread extends Thread {
     
     private final static long nbSecUpdate = 3;
@@ -167,6 +157,5 @@ public class EngineThread extends Thread {
      */
     public void setStopFlag(boolean stopFlag) {
         this.stopFlag = stopFlag;
-    }
-    
+    }   
 }

@@ -53,8 +53,8 @@ public class Engine implements IEngine {
      * @throws UnknownHostException host unknown
      */
     public Engine(MyNode n) throws UnknownHostException, RemoteException {
-        monitoring = new Monitoring(this);
         node = n;
+        monitoring = new Monitoring(node);
         network = new Network(InetAddress.getLocalHost().getHostAddress(),
                 node.getNodePort(),
                 this);
@@ -120,10 +120,6 @@ public class Engine implements IEngine {
     protected void broadcast(List<Request> requests) throws RemoteException {
         for(Request req : requests)
             network.broadcast(req);
-    }
-    
-    public void update(Member member) {
-        friendManager.update(member);
     }
     
     /**

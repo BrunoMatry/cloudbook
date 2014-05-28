@@ -17,6 +17,7 @@ public class RequestManager implements IRequestManager {
     
     protected List<Information> inbox;
     protected Engine engine;
+    protected IFriendManager friendManager;
     
     /**
      * Constructor
@@ -26,6 +27,7 @@ public class RequestManager implements IRequestManager {
     public RequestManager(IFriendManager friendManager, Engine engine) {
         inbox = new ArrayList<>();
         this.engine = engine;
+        this.friendManager = friendManager;
     }
 
     /**
@@ -39,7 +41,7 @@ public class RequestManager implements IRequestManager {
         try {
             Member mem = (Member)req.getSender();
             mem.afterDeserialization();
-            this.engine.update(mem);
+            friendManager.update(mem);
         } catch (RemoteException ex) {
             Logger.getLogger(RequestManager.class.getName()).log(Level.SEVERE, null, ex);
         }
