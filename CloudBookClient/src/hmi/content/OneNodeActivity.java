@@ -20,18 +20,30 @@ public class OneNodeActivity extends Activity {
 
     //name of the current node
     protected Text name;
+    /**
+     * name of the current node
+     * @return name of the current node
+     */
     public StringProperty nameProperty() {
         return name.textProperty();
     }
     
     //logo of the current node
     protected ImageView logo;
+    /**
+     * logo of the current node
+     * @return logo of the current node
+     */
     public ObjectProperty<Image> logoProperty() {
         return logo.imageProperty();
     }
     
     //state of the connection
     protected ImageView connectionState;
+    /**
+     * state of the connection
+     * @return state of the connection
+     */
     public ObjectProperty<Image> connectionStateProperty() {
         return connectionState.imageProperty();
     }

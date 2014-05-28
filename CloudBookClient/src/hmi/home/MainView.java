@@ -2,7 +2,7 @@ package hmi.home;
 
 import hmi.button.ConnectionButton;
 import hmi.button.IconFlyWeight;
-import hmi.content.HomeActivity;
+import hmi.content.AbstractActivity;
 import hmi.content.register.RegisterView;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -29,7 +29,7 @@ import model.node.NodeBuilder;
  * Show the list of all the nodes registered on this computer
  * singleton
  */
-public final class MainView extends HomeActivity {
+public final class MainView extends AbstractActivity {
 
     public static final MainView INSTANCE = new MainView();
     
