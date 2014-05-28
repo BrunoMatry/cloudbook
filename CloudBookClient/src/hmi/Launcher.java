@@ -6,6 +6,10 @@ import javafx.stage.Stage;
 import model.engine.Engine;
 import model.node.FileEngineRelation;
 
+/**
+ * Launches the application.
+ * @author Gwendal
+ */
 public class Launcher extends Application {
     
     //stage corresponding to the main window
@@ -33,6 +37,10 @@ public class Launcher extends Application {
         launch(args);
     }
 
+    /**
+     * Saves the registered applications state before closing the program.
+     * @throws Exception 
+     */
     @Override
     public void stop() throws Exception {
         for(Engine engine : FileEngineRelation.INSTANCE.values())
