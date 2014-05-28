@@ -14,12 +14,10 @@ import model.node.Cloud;
 
 public class Friend extends Member implements Information {  
     
-    /* Attributs serialisables */
     protected double _relevance;
     protected int _confidence;
     protected Date _lastConnection;
     
-    /* Proprietes non serialisables */
     protected transient StringProperty id;
     protected transient DoubleProperty relevance;
     protected transient IntegerProperty confidence;
@@ -85,6 +83,7 @@ public class Friend extends Member implements Information {
     }
     
     public StringProperty idProperty() { return id; }
+    
     @Override
     public AppVector getVector() { return appVector.get(); }
     public DoubleProperty relevanceProperty() { return relevance; }
@@ -113,10 +112,6 @@ public class Friend extends Member implements Information {
         cloud = new SimpleObjectProperty<>(_cloud);
     }
 
-    /**
-     * hashCode
-     * @return hash code
-     */
     @Override
     public int hashCode() {
         int hash = 5;
@@ -125,12 +120,7 @@ public class Friend extends Member implements Information {
         hash = 17 * hash + Objects.hashCode(this.lastConnection);
         return hash;
     }
-
-    /**
-     * equals
-     * @param obj object to be compared with
-     * @return true if the two objects have equals fields
-     */
+    
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
@@ -147,7 +137,5 @@ public class Friend extends Member implements Information {
     @Override
     public String toString() {
         return "Friend{" + "id=" + id.get() + ", relevance=" + relevance.get() + ", confidence=" + confidence.get() + ", lastConnection=" + lastConnection.get()+ '}';
-    }
-    
-    
+    }   
 }
