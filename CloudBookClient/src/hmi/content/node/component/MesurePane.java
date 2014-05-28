@@ -4,12 +4,15 @@ import hmi.content.node.component.tableview.MesureTableView;
 import hmi.content.AbstractActivity;
 import hmi.content.node.NodeComponentView;
 import hmi.content.node.SummarizedView;
-import hmi.content.node.component.tableview.MessageTableView;
 import javafx.collections.ObservableList;
 import javafx.scene.text.Text;
 import model.node.Mesure;
 import model.node.MyNode;
 
+/**
+ * Area displaying generated mesures.
+ * @author Gwendal
+ */
 public class MesurePane extends NodeComponentView<Mesure> {
 
     /**

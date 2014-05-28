@@ -6,6 +6,10 @@ import javafx.scene.control.TableView;
 import model.node.AppVector;
 import model.node.friend.Friend;
 
+/**
+ * Table displaying friends.
+ * @author Gwendal
+ */
 public class FriendTableView extends TableView<Friend> {
     
     private static final int nbCol = 5;

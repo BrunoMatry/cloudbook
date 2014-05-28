@@ -6,8 +6,13 @@ import javafx.scene.control.TableView;
 import model.node.Cloud;
 import model.node.State;
 
+/**
+ * Table of the history of the cloud.
+ * @author Gwendal
+ */
 public class StateTableView extends TableView<State> {
     
+    //column
     protected TableColumn<State, Cloud> cloudCol;
     protected TableColumn<State, Date> fromCol;
     protected TableColumn<State, Date> toCol;

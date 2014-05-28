@@ -14,12 +14,19 @@ import model.node.FileEngineRelation;
 import model.node.MyNode;
 import model.node.State;
 
-
+/**
+ * Area displaying the history of the application.
+ * @author Gwendal
+ */
 public class StatePane extends NodeComponentView<State> {
 
     //Look for the best platform, according to the current data
     private Button update;
     
+    /**
+     * Constructor
+     * @param p parent activity
+     */
     public StatePane(AbstractActivity p) {
         super(p);
         title = "History";

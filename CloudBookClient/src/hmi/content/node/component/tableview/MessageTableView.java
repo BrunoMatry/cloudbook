@@ -6,8 +6,13 @@ import javafx.scene.control.TableView;
 import model.network.interfaces.Information;
 import model.node.Message;
 
+/**
+ * Table displaying messages.
+ * @author Gwendal
+ */
 public class MessageTableView extends TableView<Message> {
     
+    //columns
     protected TableColumn<Message, String> idSenderCol;
     protected TableColumn<Message, Boolean> relevantCol;
     protected TableColumn<Message, Date> dateCol;
