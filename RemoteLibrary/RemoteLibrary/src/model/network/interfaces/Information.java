@@ -1,14 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package model.network.interfaces;
 
 import java.io.Serializable;
 
+/**
+ * Sharable information. 
+ * @author Gwendal
+ */
 public interface Information extends Serializable {
+    
+    /**
+     * Saves the class properties before the serialization.
+     */
     void saveProperties();
+    
+    /**
+     * Restores the class properties after the deserialization.
+     */
     void restoreProperties();
 }

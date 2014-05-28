@@ -10,7 +10,7 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 
 /**
- *
+ * A client receiving its request in a buffer.
  * @author Gwendal
  */
 public interface RemoteBufferedClient extends Remote, RemoteClient {

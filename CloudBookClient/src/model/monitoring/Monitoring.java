@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import model.engine.Engine;
 import model.node.Mesure;
 import model.node.MyNode;
 

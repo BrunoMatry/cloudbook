@@ -64,6 +64,9 @@ public final class Mesure implements Information {
         actualizeDate();
     }
     
+    /**
+     * The date is updated.
+     */
     private void actualizeDate() {
         _date = new Date();
         date.set(_date.toString());

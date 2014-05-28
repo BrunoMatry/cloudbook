@@ -82,7 +82,6 @@ public class FriendManager implements IFriendManager {
     
     @Override
     public boolean relevant(AppVector v) {
-        //System.out.println("(Vector, seuil) = " + relevance(v) + " " + seuil);
         return relevance(v) < seuil;
     }
 
