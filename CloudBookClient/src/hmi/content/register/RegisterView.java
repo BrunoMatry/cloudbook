@@ -108,30 +108,58 @@ public class RegisterView extends Activity {
         return settings;
     }
     
+    /**
+     * File of the application icon.
+     * @return File of the application icon.
+     */
     public ObjectProperty<File> imageFileProperty() {
         return imageFile;
     }
     
+    /**
+     * Name of the application.
+     * @return Name of the application.
+     */
     public StringProperty nameProperty() {
         return settings.getFieldArea().getName().getHint().textProperty();
     }
     
+    /**
+     * Port used by this application to communicate on the network.
+     * @return Port used by this application to communicate on the network.
+     */
     public StringProperty nodePortProperty() {
         return settings.getFieldArea().getNodePort().getHint().textProperty();
     }
     
+    /**
+     * Cloud on which the application runs.
+     * @return Cloud on which the application runs.
+     */
     public ObjectProperty<Cloud> cloudProperty() {
         return settings.clouds.valueProperty();
     }
     
+    /**
+     * Application type.
+     * @return Application type.
+     */
     public StringProperty appTypeProperty() {
         return settings.getFieldArea().getAppType().getHint().textProperty();
     }
     
-    public StringProperty PerfromanceProperty() {
+    /**
+     * Application performance need.
+     * @return Application performance need.
+     */
+    public StringProperty PerformanceProperty() {
         return settings.getFieldArea().getPerformance().getHint().textProperty();
     }
     
+    /**
+     * Application speed need.
+     * @return Application speed need.
+     */
     public StringProperty SpeedProperty() {
         return settings.getFieldArea().getSpeed().getHint().textProperty();
     }

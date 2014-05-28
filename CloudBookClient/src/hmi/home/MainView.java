@@ -70,7 +70,7 @@ public final class MainView extends AbstractActivity {
                 cb.platformProperty().bind(registerView.cloudProperty());
                 cb.nodePortProperty().bind(registerView.nodePortProperty());
                 cb.appTypeProperty().bind(registerView.appTypeProperty());
-                cb.performanceProperty().bind(registerView.PerfromanceProperty());
+                cb.performanceProperty().bind(registerView.PerformanceProperty());
                 cb.speedProperty().bind(registerView.SpeedProperty());
                 registerView.launch();
             }
