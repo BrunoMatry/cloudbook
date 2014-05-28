@@ -19,16 +19,14 @@ public class InformationBox<T extends Information> implements Information, Itera
     
     private List<T> _box; //box containing information
     private transient ObservableList<T> box; //box containing information
+    
     public final ObservableList<T> boxObservableList() {
         return box;
     }
     
     protected String _description; //description of the box
-    
     protected transient StringProperty description; //description property
-    public StringProperty descriptionProperty() {
-        return description;
-    }
+    public StringProperty descriptionProperty() { return description; }
 
     /**
      * Constructor
@@ -110,9 +108,6 @@ public class InformationBox<T extends Information> implements Information, Itera
         _description = description.get();
     }
 
-    /**
-     * Restores all properties of contained informations
-     */
     @Override
     public void restoreProperties() {
         ObservableList<T> bbox = FXCollections.observableArrayList();
@@ -152,5 +147,4 @@ public class InformationBox<T extends Information> implements Information, Itera
     public int size() {
         return box.size();
     }
-
 }

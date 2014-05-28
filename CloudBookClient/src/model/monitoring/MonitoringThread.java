@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package model.monitoring;
 
 import static java.lang.Thread.sleep;
@@ -12,10 +6,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.node.Mesure;
 
-/**
- * 
- * @author Gwendal
- */
 public class MonitoringThread extends Thread {
     
     private final static long TIME = 5000;
@@ -26,6 +16,10 @@ public class MonitoringThread extends Thread {
     //monitoring instance responsible of the thread
     private final Monitoring owner;
     
+    /**
+     * MonitoringThread Constructor
+     * @param owner the class Monitoring associate with this Thread
+     */
     public MonitoringThread(Monitoring owner) {
         stopFlag = false;
         this.owner = owner;

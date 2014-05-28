@@ -18,7 +18,6 @@ public class Monitoring implements IMonitoring {
     
     // logs containing information on sent objects
     protected StringProperty logs;
-    // getter
     public final StringProperty logsProperty() { return logs; }
     
     /**
@@ -31,9 +30,6 @@ public class Monitoring implements IMonitoring {
         node = n;
     }
 
-    /**
-     * Pushes information on the current node
-     */
     @Override
     public synchronized void pushInformation() {
         node.addMesures(mesures);
@@ -51,6 +47,12 @@ public class Monitoring implements IMonitoring {
                             getRandomInteger(0, 100));
     }
     
+    /**
+     * Generate a random integer
+     * @param min the min value
+     * @param max the max value
+     * @return the random integer
+     */
     protected int getRandomInteger(int min, int max) {
         return (int) (min + Math.random() * (max - min + 1));
     }
@@ -74,5 +76,4 @@ public class Monitoring implements IMonitoring {
     public void stop() throws InterruptedException {
         thread.setStopFlag(true);
     }
-    
 }
