@@ -11,68 +11,69 @@ import model.node.friend.Member;
 
 public interface IFriendManager {
     /**
-     * Methode permettant d'ajouter le sender passer en paramètre à la liste des amis si il est pertinent et qu'il n'est pas déjà dans la liste
-     * @param sender    Emetteur d'une requête qu'on veut ajouter à la liste d'amis
-     * @return          Vrai si l'ajout est correctement effectué, faux sinon
+     * Adds a sender to the friends list if it's relevant
+     * @param sender    sender of a request
+     * @return          true if it's added, false otherwise
      */
     boolean add(Member sender);
     
     /**
-     * Methode permettant de nettoyer la liste des amis
+     * Clears the fiends list (delete the friends that didn't connect for too long)
      */
     void clear();
     
     /**
-     * Methode permettant vérifier si le noeud identifier par l'id passé en paramètre est dans la liste d'amis
-     * @param id    Id du noeud dont on veut savoir s'il est dans la liste d'amis
-     * @return      Vrai si ami, faux sinon
+     * Checks if a member is in the friends list
+     * @param id    Id of the member
+     * @return      True if friend, false otherwise
      */
     boolean isFriend(String id);
     
     /**
-     * Methode permettant de calculer la pertinence (la distance) du noeud dont le vecteur est passé en paramètre
-     * @param v     Vecteur du noeud dont on veut calculer la pertinence
-     * @return      La pertinence du noeud
+     * Computes the relevance
+     * @param v     vector
+     * @return      relevance computed from the given vector
      */
     double relevance(AppVector v);
     
     /**
-     * Methode permettant de vérifier si le noeud dont l'AppVector est en paramètre est pertinent
-     * @param v     Vecteur du noeud dont on veut savoir si il est pertinent
-     * @return      Vrai si pertinent, faux sinon
+     * Checks the relevance
+     * @param v     vector
+     * @return      True if relevant, false otherwise
      */
     boolean relevant(AppVector v);
     
     /**
-     * Methode permettant d'enlever le noeud identifier par l'id passé en paramètre de la liste d'amis
-     * @param id    Id du noeud à supprimer de la liste d'amis
+     * Removes a friend from the friends list
+     * @param id    Id of the friend to remove
      */
     void remove(String id);
     
     /**
-     * Methode permettant de mettre à jour les informations du sender s'il est dans la liste des amis et de l'y ajouter s'il n'y est pas et qu'il est pertinent
-     * @param sender    Emetteur d'une requête qu'on veut mettre à jour
+     * Updates the friends list with the given sender 
+     * (if in the list and still relevant: updates it's information, if not in the list and relevant: adds it, if in the list but not relevant anymore: removes it)
+     * @param sender    sender of a request
      */
     void update(Member sender);
     
     /**
-     * Methode permettant de récupérer les nb amis les plus pertinents
-     * @param nb    nombre d'amis à récupérer
-     * @return      Liste contenant les nb amis les plus pertinents 
+     * Gets the nb most relevant friends form the friends list
+     * @param nb    number of friends
+     * @return      List of nb friends
      */
     List<Friend> getRelevantFriends(int nb);
     
     /**
-     * Methode permettant de récupérer les nb amis à qui on fait le plus confiance
-     * @param nb    nombre d'amis à récupérer
-     * @return      Liste contenant les nb amis à qui on fait le plus confiance
+     * Gets the nb most trusted friends form the friends list
+     * @param nb    number of friends
+     * @return      List of nb friends
      */
     List<Friend> getTrustedFriends(int nb);
     
     /**
-     * Methode permettant de récupérer nb amis au hasard dans la liste d'amis
-     * @param nb    nombre d'amis à récupérer
-     * @return      Liste contenant nb amis pris au hasard 
+     * Gets the nb friends form the friends list
+     * @param nb    number of friends
+     * @return      List of nb friends
      */
     List<Friend> getSomeFriends(int nb);
     
