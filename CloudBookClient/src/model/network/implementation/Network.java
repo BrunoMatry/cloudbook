@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package model.network.implementation;
 
 import java.io.BufferedReader;
@@ -26,9 +20,6 @@ import model.network.interfaces.Sendable;
 import model.node.friend.Member;
 
 /**
- * 
- * @author Gwendal
- * 
  * Network management root
  */
 public class Network extends UnicastRemoteObject implements RemoteClient {

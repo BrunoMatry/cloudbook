@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package model.node;
 
 import controller.ObservableProperty;
@@ -13,19 +7,27 @@ import javafx.beans.property.SimpleObjectProperty;
 
 /**
  * Observable property
- * @author Gwendal
  */
 public class CloudProperty extends SimpleObjectProperty<Cloud> implements ObservableProperty {
 
     private final OpenObservable o;
 
+    /**
+     * CloudProperty Constructor
+     * Instanciate an empty CloudProperty
+     */
     public CloudProperty() {
         super();
         o = new OpenObservable();
     }
 
-    public CloudProperty(Cloud t) {
-        super(t);
+    /**
+     * CloudProperty Constructor
+     * Instanciate a CloudProperty binding a Cloud enum
+     * @param c the Cloud to bind
+     */
+    public CloudProperty(Cloud c) {
+        super(c);
         o = new OpenObservable();
     }
     
@@ -41,6 +43,5 @@ public class CloudProperty extends SimpleObjectProperty<Cloud> implements Observ
         super.set(t);
         o.setChanged();
         o.notifyObservers(t);
-    }
-    
+    }   
 }

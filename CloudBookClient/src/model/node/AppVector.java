@@ -9,7 +9,6 @@ public class AppVector implements Information {
     protected int perfNeed;
     protected int spdNeed;
     
-
     /**
      * Constructor
      * The type, performance and speed are generated randomly in this implementation
@@ -23,11 +22,6 @@ public class AppVector implements Information {
         spdNeed = spd;
     }
     
-    /**
-     * equals
-     * @param o object to be compared with
-     * @return true if the two objects are equivalents
-     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -39,6 +33,10 @@ public class AppVector implements Information {
                 && spdNeed == v.spdNeed;
     }
     
+    /**
+     * Return a copy of the current AppVector
+     * @return a copy of the current AppVector
+     */
     public AppVector copy(){
         return new AppVector(appType, perfNeed, spdNeed);
     }

@@ -15,7 +15,7 @@ import model.engine.Engine;
 
 
 /**
- * singleton
+ * Design pattern : singleton
  */
 public final class FileEngineRelation extends Observable {
 
@@ -75,15 +75,14 @@ public final class FileEngineRelation extends Observable {
      */
     public void save(Object o, String fileName) throws IOException, ClassNotFoundException {
         
-        //The file is saved in the file system
-        FileOutputStream fos = new FileOutputStream(fileName);
-        try (ObjectOutputStream oos = new ObjectOutputStream(fos)) {
-            oos.writeObject(o);
-            oos.flush();
-            oos.close();
+        try (FileOutputStream fos = new FileOutputStream(fileName)) {
+            try (ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+                oos.writeObject(o);
+                oos.flush();
+                oos.close();
+            }
+            fos.flush();
         }
-        fos.flush();
-        fos.close();
         
         /* If the file is registered in the application,
            the engine is kept and only the file change.
