@@ -20,3 +20,5 @@
 /CloudBookClient/build/
 HMI-JavaFX/serverConfig.txt
 HMI-JavaFX/serverConfig.txt
+/TestClientServer/JavaFxDoc/nbproject/private/
+/TestClientServer/JavaFxDoc/dist/

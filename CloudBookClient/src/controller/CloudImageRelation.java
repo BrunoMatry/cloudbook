@@ -14,7 +14,9 @@ import model.node.Cloud;
  */
 public class CloudImageRelation extends Relation<Cloud, Image> {
     
-    //Associations cloud - image
+    /**
+     * Defines the correspondance cloud - image
+     */
     private Map<Cloud, Image> relation;
     
     /**
