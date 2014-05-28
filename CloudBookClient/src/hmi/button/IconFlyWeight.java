@@ -5,8 +5,9 @@ import java.util.Map;
 import javafx.scene.image.Image;
 
 /**
- * fly-weight for images that are displayed in the application
- * singleton
+ * fly-weight for images that are displayed in the application.
+ * All the getters instanciate the corresponding image only once.
+ * Singleton.
  */
 public final class IconFlyWeight {
     
@@ -32,8 +33,14 @@ public final class IconFlyWeight {
     private Image windows;
     private Image defaultCloud;
     
+    //Relation between image file name and its image content
     private final Map<String, Image> relation;
     
+    /**
+     * Retrieves an image using its file name.
+     * @param name name of the image file.
+     * @return The image which is in the sepcified file.
+     */
     public Image getByName(String name) {
         if(relation.containsKey(name))
             return relation.get(name);
@@ -44,24 +51,40 @@ public final class IconFlyWeight {
         }
     }
    
+    /**
+     * Getter
+     * @return the back arrow image.
+     */
     public Image getBackArrow() {
         if(backArrow == null)
             backArrow = new Image("file:res/back_button.png");
         return backArrow;
     }
 
+    /**
+     * Getter
+     * @return the back cloud image.
+     */
     public Image getCloud() {
         if(cloud == null)
             cloud = new Image("file:res/cloud_picture.png");
         return cloud;
     }
     
+    /**
+     * Getter
+     * @return the default logo for an application.
+     */
     public Image getDefaultLogo() {
         if(defaultLogo == null)
             defaultLogo = new Image("file:res/default_app.png");
         return defaultLogo;
     }
 
+    /**
+     * Getter
+     * @return the home image.
+     */
     public Image getHome() {
         if(home == null)
             home = new Image("file:res/home.png");
