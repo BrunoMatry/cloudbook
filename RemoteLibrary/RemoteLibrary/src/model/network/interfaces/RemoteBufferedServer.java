@@ -10,10 +10,9 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 
 /**
- *
- * @author Gwendal
- * interface for a remote server which stores the received Sendables
+ * Interface for a remote server which stores the received Sendables
  * producer/consumer
+ * @author Gwendal
  */
 public interface RemoteBufferedServer extends RemoteServer, Remote {
     

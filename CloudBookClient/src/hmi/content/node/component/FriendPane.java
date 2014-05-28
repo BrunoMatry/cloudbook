@@ -10,7 +10,7 @@ import model.node.MyNode;
 import model.node.friend.Friend;
 
 /**
- * Pane containing the friends' table
+ * Pane containing the friends table
  */
 public class FriendPane extends NodeComponentView<Friend> {
 

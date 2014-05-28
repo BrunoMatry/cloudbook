@@ -14,6 +14,10 @@ import model.network.interfaces.RemoteClient;
 import model.network.interfaces.RemoteServer;
 import model.network.interfaces.Sendable;
 
+/**
+ * Server reachable from outside.
+ * @author Gwendal
+ */
 public class Server extends UnicastRemoteObject implements RemoteServer {
 
     protected Map<String, RemoteClient> clients;

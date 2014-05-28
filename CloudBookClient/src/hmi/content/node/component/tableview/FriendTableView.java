@@ -12,6 +12,7 @@ import model.node.friend.Friend;
  */
 public class FriendTableView extends TableView<Friend> {
     
+    //number of columns
     private static final int nbCol = 5;
     
     //columns corresponding to the friend properties
