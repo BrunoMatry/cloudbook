@@ -16,5 +16,13 @@ import java.rmi.RemoteException;
  * producer/consumer
  */
 public interface RemoteBufferedServer extends RemoteServer, Remote {
+    
+    /**
+     * Gets the request stored at the specified position and for the specified client.
+     * @param receiver receiver of a request.
+     * @param index position of the message in the data structure.
+     * @return the corresponding request.
+     * @throws RemoteException 
+     */
     Sendable getSendable(String receiver, int index) throws RemoteException;
 }
