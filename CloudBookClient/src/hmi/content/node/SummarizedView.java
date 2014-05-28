@@ -6,6 +6,7 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 
 /**
+ * Button displaying a global description of a content.
  * @param <T> View type
  */
 public class SummarizedView<T extends Node> extends Button {
@@ -58,10 +59,18 @@ public class SummarizedView<T extends Node> extends Button {
         });
     }
     
+    /**
+     * Getter
+     * @return the full view xhich is accessed by clicking the button.
+     */
     public NodeComponentView getFullView() {
         return fullView;
     }
 
+    /**
+     * Getter
+     * @return the view itself.
+     */
     public T getView() {
         return view;
     }
