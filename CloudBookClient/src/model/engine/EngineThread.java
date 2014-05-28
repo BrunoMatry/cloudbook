@@ -19,7 +19,7 @@ import model.request.Request;
 
 /**
  * Thread performing regular calls to the others modules.
- * @author Gwendal
+ 
  */
 public class EngineThread extends Thread {
     

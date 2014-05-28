@@ -16,7 +16,7 @@ import model.node.State;
 
 /**
  * Area displaying the history of the application.
- * @author Gwendal
+ 
  */
 public class StatePane extends NodeComponentView<State> {
 

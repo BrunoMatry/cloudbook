@@ -16,7 +16,7 @@ import model.node.MyNode;
 
 /**
  * Graphic chart which allow to modify a vector of features.
- * @author Gwendal
+ 
  */
 public class AppVectorEditer extends HBox {
     

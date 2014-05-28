@@ -11,7 +11,7 @@ import model.node.MyNode;
 
 /**
  * Area displaying arriving messages.
- * @author Gwendal
+ 
  */
 public class MessagePane extends NodeComponentView {
     

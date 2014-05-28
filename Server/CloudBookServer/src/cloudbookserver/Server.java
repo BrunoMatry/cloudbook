@@ -16,7 +16,7 @@ import model.network.interfaces.Sendable;
 
 /**
  * Server reachable from outside.
- * @author Gwendal
+ 
  */
 public class Server extends UnicastRemoteObject implements RemoteServer {
 

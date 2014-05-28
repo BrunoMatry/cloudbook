@@ -8,7 +8,7 @@ import model.network.interfaces.Sendable;
 
 /**
  * Thread handling an arriving request.
- * @author Gwendal
+ 
  */
 public class Servant extends Thread {
 

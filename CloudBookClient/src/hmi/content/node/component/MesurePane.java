@@ -11,7 +11,7 @@ import model.node.MyNode;
 
 /**
  * Area displaying generated mesures.
- * @author Gwendal
+ 
  */
 public class MesurePane extends NodeComponentView<Mesure> {
 

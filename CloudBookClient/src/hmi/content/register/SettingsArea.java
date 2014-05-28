@@ -8,7 +8,7 @@ import model.node.Cloud;
 
 /**
  * Area dedicated to the general settings when registering an application.
- * @author Gwendal
+ 
  */
 public class SettingsArea extends HBox {
     

@@ -27,7 +27,7 @@ import model.request.Request;
 
 /**
  * Coordination module.
- * @author Gwendal
+ 
  */
 public class Engine implements IEngine {
     

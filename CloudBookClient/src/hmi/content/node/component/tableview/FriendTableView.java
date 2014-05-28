@@ -8,7 +8,7 @@ import model.node.friend.Friend;
 
 /**
  * Table displaying friends.
- * @author Gwendal
+ 
  */
 public class FriendTableView extends TableView<Friend> {
     

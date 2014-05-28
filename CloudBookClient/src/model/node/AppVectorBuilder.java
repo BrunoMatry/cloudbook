@@ -6,7 +6,7 @@ import javafx.beans.property.StringProperty;
 /**
  * Builder.
  * Builds a features vector.
- * @author Gwendal
+ 
  */
 public class AppVectorBuilder {
     

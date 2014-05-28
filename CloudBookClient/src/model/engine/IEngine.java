@@ -7,7 +7,7 @@ import model.network.interfaces.Sendable;
 
 /**
  * Coordination module specification.
- * @author Gwendal
+ 
  */
 public interface IEngine {
     

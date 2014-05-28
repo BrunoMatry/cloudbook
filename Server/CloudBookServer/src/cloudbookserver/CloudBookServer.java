@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 
 /**
  * Main class
- * @author Gwendal
+ 
  */
 public class CloudBookServer {
 

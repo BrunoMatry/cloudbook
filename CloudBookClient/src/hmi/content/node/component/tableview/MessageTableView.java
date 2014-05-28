@@ -8,7 +8,7 @@ import model.node.Message;
 
 /**
  * Table displaying messages.
- * @author Gwendal
+ 
  */
 public class MessageTableView extends TableView<Message> {
     

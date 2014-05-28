@@ -8,7 +8,7 @@ import model.node.State;
 
 /**
  * Table of the history of the cloud.
- * @author Gwendal
+ 
  */
 public class StateTableView extends TableView<State> {
     
