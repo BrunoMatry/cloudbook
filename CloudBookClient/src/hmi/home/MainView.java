@@ -54,6 +54,9 @@ public final class MainView extends AbstractActivity {
         setBottom(addButton);
     }
     
+    /**
+     * Sets the image and the action of the add button.
+     */
     private void setUpAdderButton() {
         Image plus = IconFlyWeight.INSTANCE.getPlus();
         ImageView iv = new ImageView(plus);
@@ -65,6 +68,9 @@ public final class MainView extends AbstractActivity {
             public void handle(ActionEvent t) {
                 NodeBuilder cb = new NodeBuilder();
                 registerView.setBuilder(cb);
+                
+                //All the features properties of the application builder are
+                //bound to the corresponding ones in the view
                 cb.logoProperty().bind(registerView.imageFileProperty());
                 cb.nameProperty().bind(registerView.nameProperty());
                 cb.platformProperty().bind(registerView.cloudProperty());

@@ -29,6 +29,9 @@ public abstract class RegistryButton extends Button {
         setUp();
     }
     
+    /**
+     * Sets the button action as the execution of the execute() method.
+     */
     private void setUp() {
         this.setOnAction(new EventHandler<ActionEvent>() {
 
