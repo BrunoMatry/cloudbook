@@ -6,33 +6,33 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import model.engine.Engine;
 import model.node.Mesure;
+import model.node.MyNode;
 
 public class Monitoring implements IMonitoring {
     
     protected List<Mesure> mesures;
-    protected Engine engine;
+    protected MyNode node;
     
-    //monitoring thread
+    // monitoring thread
     private MonitoringThread thread;
     
-    //logs containing information on sent objects
+    // logs containing information on sent objects
     protected StringProperty logs;
-    public final StringProperty logsProperty() {
-        return logs;
-    }
+    public final StringProperty logsProperty() { return logs; }
     
-    public Monitoring(Engine engine) {
-        this.mesures = new ArrayList<>();
-        this.logs = new SimpleStringProperty("===== LOGS =====\n\n");
-        this.engine = engine;
+    /**
+     * Monitoring constructor
+     * @param n the current node
+     */
+    public Monitoring(MyNode n) {
+        mesures = new ArrayList<>();
+        logs = new SimpleStringProperty("===== LOGS =====\n\n");
+        node = n;
     }
 
-    /**
-     * Pushes information on the current node
-     */
     @Override
     public synchronized void pushInformation() {
-        engine.getNode().addMesures(mesures);
+        node.addMesures(mesures);
         mesures.clear(); 
     }
 
@@ -41,12 +41,18 @@ public class Monitoring implements IMonitoring {
      * @return Random generated mesure
      */
     protected Mesure genererMesure() {
-        return new Mesure(engine.getNode(),
-                getRandomInteger(0, 100),
+        return new Mesure(node,
+                            getRandomInteger(0, 100),
                             getRandomInteger(0, 100), 
                             getRandomInteger(0, 100));
     }
     
+    /**
+     * Generate a random integer
+     * @param min the min value
+     * @param max the max value
+     * @return the random integer
+     */
     protected int getRandomInteger(int min, int max) {
         return (int) (min + Math.random() * (max - min + 1));
     }
@@ -70,5 +76,4 @@ public class Monitoring implements IMonitoring {
     public void stop() throws InterruptedException {
         thread.setStopFlag(true);
     }
-    
 }

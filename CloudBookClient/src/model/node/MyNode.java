@@ -22,8 +22,6 @@ import javafx.beans.property.StringProperty;
  */
 public class MyNode implements Serializable {
 
-    /************************************** ATTRIBUTS **************************************/
-    
     /* Attributs serialisables */
     protected String _name; //name of the application
     private String _logo; //logo of the application
@@ -46,14 +44,10 @@ public class MyNode implements Serializable {
     private transient CloudProperty platform;
     private transient ObjectProperty<AppVector> vector;
     
-    /************************************ CONSTRUCTEURS ************************************/
-    
     /**
      * default constructor
      */
     public MyNode() {
-        //topMessage = new Message();
-        
         friends = new InformationBox<>();
         informations = new ArrayList<>();
         states = new InformationBox<>();
@@ -65,14 +59,14 @@ public class MyNode implements Serializable {
     }
     
     /**
-     * arg constructor
+     * MyNode constructor
      * @param logoFile File contaning the logo of the application
      * @param string name
      * @param cloud cloud-platform
      * @param nodePort port of the current application
      * @param appType type of the application
-     * @param performance TODO
-     * @param speed TODO
+     * @param performance performance of the application
+     * @param speed speed of the application
      * @throws java.net.UnknownHostException
      * @throws java.rmi.RemoteException
      */
@@ -109,8 +103,6 @@ public class MyNode implements Serializable {
             this.mesures.push(m);
     }
     
-    /********************************** SETTERS / GETTERS **********************************/
-    
     public void addMessage(Message m) { messages.push(m); } 
     public void addInformation(Information info) { informations.add(info); }
     public void addFriend(Friend f) { friends.push(f); }
@@ -123,21 +115,8 @@ public class MyNode implements Serializable {
     public InformationBox getMesures() { return mesures; }
     public InformationBox getStates() { return states; }
     
-    /**
-     * Getter
-     * @return nodePort field
-     */
-    public int getNodePort() {
-        return nodePort;
-    }
-    
-    /**
-     * Getter
-     * @return platform field
-     */
-    public final Cloud getPlatform() {
-        return this.platform.get();
-    }
+    public int getNodePort() { return nodePort; }
+    public final Cloud getPlatform() { return this.platform.get(); }
       
     public StringProperty topMesureProperty() { return topMesure.dateProperty(); }
     public StringProperty nameProperty() { return name; }
@@ -145,12 +124,9 @@ public class MyNode implements Serializable {
     public CloudProperty platformProperty() { return platform; }
     public ObjectProperty<AppVector> vectorProperty() { return vector; }
     
-    /* ATTENTION ! Mauvaise pratique ! */
     public void setInformations(List<Information> informations) { this.informations = informations; }
     public void setVector(AppVector vector) { this.vector.set(vector); }
-    
-    /*************************************** METHODES **************************************/
-    
+      
     /**
      * updates the cloud-platform of the current application
      * @param c new cloud-platform
@@ -177,6 +153,11 @@ public class MyNode implements Serializable {
                 + ":" + nodePort;
     }
     
+    /**
+     * Save the state of the current node
+     * @throws IOException
+     * @throws ClassNotFoundException 
+     */
     public void save() throws IOException, ClassNotFoundException {
         _name = name.get();
         _logo = logo.get();
@@ -192,6 +173,13 @@ public class MyNode implements Serializable {
         FileEngineRelation.INSTANCE.save(this, name.get() + ".ser");
     }
     
+    /**
+     * Deserialize a node
+     * @param fileName the file to deserialize
+     * @return the deserilaized node
+     * @throws IOException
+     * @throws ClassNotFoundException 
+     */
     public static MyNode load(String fileName) throws IOException, ClassNotFoundException {
         ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileName));
         MyNode res = (MyNode) ois.readObject();

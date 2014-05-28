@@ -47,6 +47,9 @@ public class NodeBuilder {
         return speed;
     }
     
+    /**
+     * Instanciate the node builder
+     */
     public NodeBuilder() {
         logo = new SimpleObjectProperty<>();
         name = new SimpleStringProperty();
@@ -72,6 +75,5 @@ public class NodeBuilder {
                 Integer.parseInt(speed.get())
         );
         return cbn;
-    }
-    
+    }   
 }

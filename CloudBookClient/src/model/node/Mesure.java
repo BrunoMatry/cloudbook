@@ -93,14 +93,8 @@ public final class Mesure implements Information {
     public IntegerProperty mesure3Property() { return mesure3; }
     public StringProperty dateProperty() { return date; }
     public StringProperty applicationNameProperty() { return applicationName; }
-    public ObjectProperty<Cloud> cloudProperty() {
-        return cloud;
-    }
+    public ObjectProperty<Cloud> cloudProperty() { return cloud; }
 
-    /**
-     * hashCode
-     * @return hash code
-     */
     @Override
     public int hashCode() {
         int hash = 7;
@@ -111,11 +105,6 @@ public final class Mesure implements Information {
         return hash;
     }
 
-    /**
-     * equals
-     * @param obj object to be compared with
-     * @return true if the two objects have equals fields
-     */
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {

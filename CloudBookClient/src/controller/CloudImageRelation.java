@@ -14,7 +14,7 @@ import model.node.Cloud;
  */
 public class CloudImageRelation extends Relation<Cloud, Image> {
     
-    //Associations cloud - image
+    //Defines the correspondance cloud - image
     private Map<Cloud, Image> relation;
     
     /**
@@ -50,6 +50,11 @@ public class CloudImageRelation extends Relation<Cloud, Image> {
         this.relation.put(Cloud.DEFAULT, defaultCloud);
     }
 
+    /**
+     * Sets the image corresponding to the observable obect notifying this relation
+     * @param o observable notifying the relation
+     * @param o1 cloud which is set, the corresponding image must be set too.
+     */
     @Override
     public void update(Observable o, Object o1) {
         Cloud c = (Cloud)o1;

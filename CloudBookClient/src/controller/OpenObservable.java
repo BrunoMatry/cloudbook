@@ -1,23 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package controller;
 
 import java.util.Observable;
 
 /**
- *
+ * An observable which change state can be set from outside the class
  * @author Gwendal
  */
 public class OpenObservable extends Observable {
 
+    /**
+     * Constructor
+     */
     public OpenObservable() {
         super();
     }
     
+    /**
+     * Sets the state as "changed"
+     */
     @Override
     public synchronized void setChanged() {
         super.setChanged();

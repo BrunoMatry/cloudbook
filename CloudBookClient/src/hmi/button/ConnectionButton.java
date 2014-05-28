@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package hmi.button;
 
 import java.util.logging.Level;
@@ -18,19 +12,20 @@ import model.engine.Engine;
 import model.network.implementation.Network;
 
 /**
- *
+ * A button showing the connection state of a client : connected or disconnected.
  * @author Gwendal
  */
 public class ConnectionButton extends Button {
     
+    //Observed client
     protected Network network;
     
-    //images corresponding to the connection state
+    //Images corresponding to the connection state
     protected ImageView iconConnected;
     
     /**
-     * Construct a button with a led image
-     * @param network network to be connected or disconnected
+     * Constructs a button with a led image.
+     * @param network network to be connected or disconnected.
      */
     public ConnectionButton(Network network) {
         super();
