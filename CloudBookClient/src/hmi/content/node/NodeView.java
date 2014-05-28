@@ -55,16 +55,19 @@ public final class NodeView extends OneNodeActivity {
     //summary of the messages
     private SummarizedView<Text> message;
     
+    //Button to access the friends
     private SummarizedView<Text> friends;
     
+    //Button to access the friends
     private AppVectorEditer appVector;
     
+    //Relation table between clouds and related images 
     private CloudImageRelation binder;
     
     
     
     /**
-     * 
+     * Constructor
      * @param p the previous Activity
      */
     private NodeView(AbstractActivity p) {
@@ -76,7 +79,7 @@ public final class NodeView extends OneNodeActivity {
         components.add(getMessage());
         components.add(getFriend());
         
-        
+        //Components are placed on a circle
         int size = components.size();
         for(int i = 0 ; i < size ; i++) {
             Button cmp = components.get(i);
