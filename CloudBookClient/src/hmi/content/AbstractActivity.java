@@ -18,6 +18,9 @@ public abstract class AbstractActivity extends BorderPane {
     //standard scene corresponding to the activity
     protected Scene scene;
     
+    /**
+     * Constructor
+     */
     public AbstractActivity() {
         scene = new Scene(this, 800, 600);
         scene.setFill(Color.CORNFLOWERBLUE);
