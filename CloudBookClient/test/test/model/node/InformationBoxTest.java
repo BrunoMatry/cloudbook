@@ -6,10 +6,6 @@ import model.node.InformationBox;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-/**
- *
- * @author Gwendal
- */
 public class InformationBoxTest {
     
     public InformationBoxTest() {
