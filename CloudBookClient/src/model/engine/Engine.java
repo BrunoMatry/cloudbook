@@ -23,9 +23,12 @@ import model.node.AppVector;
 import model.node.Cloud;
 import model.node.Message;
 import model.node.friend.Friend;
-import model.node.friend.Member;
 import model.request.Request;
 
+/**
+ * Coordination module.
+ * @author Gwendal
+ */
 public class Engine implements IEngine {
     
     protected IRequestManager requestManager;
@@ -36,10 +39,34 @@ public class Engine implements IEngine {
     private EngineThread thread;
 
     /* Getters and setters */
+    /**
+     * Getter
+     * @return the module responsible of the friend management.
+     */
     public IFriendManager getFriendManager() { return friendManager; }
+    
+    /**
+     * Getter
+     * @return monitoring unit.
+     */
     public IMonitoring getMonitoring() { return monitoring; }
+    
+    /**
+     * Getter
+     * @return the network client module.
+     */
     public RemoteClient getNetwork() { return network; }
+    
+    /**
+     * Getter
+     * @return the application.
+     */
     public MyNode getNode() { return node; }
+    
+    /**
+     * Getter
+     * @return the module in charge of the handling of the requests.
+     */
     public IRequestManager getRequestManager() { return requestManager; }
     
     @Override
