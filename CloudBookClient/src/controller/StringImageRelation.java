@@ -7,6 +7,11 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.image.Image;
 
+/**
+ * Defines a relation between an image and its imgae file name.
+ * The image is set when its name is set in the property to which this one is bound.
+ * @author Gwendal
+ */
 public class StringImageRelation extends SimpleStringProperty {
     
     //property to bind to the view
@@ -51,8 +56,8 @@ public class StringImageRelation extends SimpleStringProperty {
     }
     
     /**
-     * Sets the model value and the corresponding image to the image property as well
-     * @param value model value
+     * Sets the model value and the corresponding image to the image property as well.
+     * @param value model value.
      */
     @Override
     public void set(String value) {
