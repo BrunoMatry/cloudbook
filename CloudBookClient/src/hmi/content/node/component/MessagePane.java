@@ -9,7 +9,12 @@ import javafx.scene.text.Text;
 import model.node.Message;
 import model.node.MyNode;
 
+/**
+ * Area displaying arriving messages.
+ * @author Gwendal
+ */
 public class MessagePane extends NodeComponentView {
+    
     /**
      * Constructor
      * @param p parent activity
