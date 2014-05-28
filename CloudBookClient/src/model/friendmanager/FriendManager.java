@@ -16,8 +16,8 @@ import model.node.friend.Member;
 
 public class FriendManager implements IFriendManager {
     
-    protected static final double seuil = 30; //Distance en dessous de laquelle une noeud est considéré comme pertinent (valeure choisie arbitrairement, à modifier)
-    protected static final int delay = 10; //Délai en jours après lequel on enlève un noeud de la liste d'amis si on a pas eu d'échange avec lui pendant cette période (valeure choisie arbitrairement, à modifier)
+    protected static final double seuil = 30;
+    protected static final int delay = 10; 
     
     protected MyNode node;
     
@@ -42,7 +42,7 @@ public class FriendManager implements IFriendManager {
         String id = sender.getId();
         Cloud cloud = sender.getCloud();
         if(!isFriend(id) && relevant(vector)) {
-            Friend friend = new Friend(id, 0, relevance(vector), vector, cloud);//indice de confiance initialiser à 0 lors de l'ajout d'un nouvel ami
+            Friend friend = new Friend(id, 0, relevance(vector), vector, cloud);//confidence initialized to 0
             node.addFriend(friend); 
             return true;
         }
@@ -99,14 +99,10 @@ public class FriendManager implements IFriendManager {
 
     @Override
     public void update(Member sender) {
-        //On tente d'ajouter le sender à la liste d'amis
+        //Try to add the sender
         if(add(sender))
             return;
-        /*
-        Si l'ajout échoue, soit le sender n'est pas pertinent, soit il est déja dans la liste des amis
-        On parcours donc la liste des amis et si on l'y trouve on vérifie s'il est toujours pertinent
-        si oui, on met à jour son vecteur sinon on le supprime de la liste d'amis
-        */
+        
         InformationBox<Friend> friends = node.getFriends();
         for(Friend friend : friends) {
             String id = sender.getId();
@@ -166,13 +162,13 @@ public class FriendManager implements IFriendManager {
     }
     
     /**
-     * Methode permettant de trier un liste d'amis par ordre de pertinence (les plus pertinent au début)
-     * @param friends   liste d'amis à trier
-     * @param left      rang à partir duquel le tri doit être fait
-     * @param right     rang juqu'auquel le tri doit être fait
+     * Sort the friends list by relevance
+     * @param friends   friends list
+     * @param left      left
+     * @param right     right
      */
     private void sortByRelevance(List<Friend> friends, int left, int right) {
-        //algorithme quicksort
+        //algorithm quicksort
         int i = left, j = right;
         Friend tmp;
         Friend pivot = friends.get(left+(right-left)/2);
@@ -196,13 +192,13 @@ public class FriendManager implements IFriendManager {
     }
     
     /**
-     * Methode permettant de trier un liste d'amis par ordre de confiance (ceux à qui on fait le plus confiance au début)
-     * @param friends   liste d'amis à trier
-     * @param left      rang à partir duquel le tri doit être fait
-     * @param right     rang juqu'auquel le tri doit être fait
+     * Sort the friends list by confidence
+     * @param friends   friends list
+     * @param left      left
+     * @param right     right
      */
     private void sortByConfidence(List<Friend> friends, int left, int right) {
-        //algorithme quicksort
+        //algorithm quicksort
         int i = left, j = right;
         Friend tmp;
         Friend pivot = friends.get(left+(right-left)/2);
