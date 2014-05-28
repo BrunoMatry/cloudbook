@@ -4,7 +4,6 @@ import java.util.Observable;
 
 /**
  * An observable which change state can be set from outside the class
- * @author Gwendal
  */
 public class OpenObservable extends Observable {
 

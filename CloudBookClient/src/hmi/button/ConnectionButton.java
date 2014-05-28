@@ -13,7 +13,6 @@ import model.network.implementation.Network;
 
 /**
  * A button showing the connection state of a client : connected or disconnected.
- * @author Gwendal
  */
 public class ConnectionButton extends Button {
     
