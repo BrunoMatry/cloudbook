@@ -5,7 +5,6 @@ import model.node.AppVector;
 import model.node.Cloud;
 
 /**
- *
  * A simple member of the network
  */
 public class Member implements Sender {
