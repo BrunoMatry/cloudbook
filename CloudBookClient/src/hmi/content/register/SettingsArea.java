@@ -6,12 +6,16 @@ import javafx.scene.control.SingleSelectionModel;
 import javafx.scene.layout.HBox;
 import model.node.Cloud;
 
+/**
+ * Area dedicated to the general settings when registering an application.
+ * @author Gwendal
+ */
 public class SettingsArea extends HBox {
     
     //icon of the application with browse button
     protected IconArea iconArea;
     
-    //fields defining the app name and the host location and port
+    //fields defining the app name, its port and features
     protected FieldArea fieldArea;
     
     //selector : current cloud platform of the application
@@ -33,10 +37,18 @@ public class SettingsArea extends HBox {
         );
     }
 
+    /**
+     * Getter
+     * @return icon of the application with browse button
+     */
     public final IconArea getIconArea() {
         return iconArea;
     }
 
+    /**
+     * Getter
+     * @return fields defining the app name, its port and features
+     */
     public final FieldArea getFieldArea() {
         return fieldArea;
     }
