@@ -5,6 +5,10 @@ import model.node.MyNode;
 
 public class MonitoringType1 extends Monitoring{
 
+    /**
+     * Constructor
+     * @param n application for which the mesures have to be token.
+     */
     public MonitoringType1(MyNode n) {
         super(n);
     }
