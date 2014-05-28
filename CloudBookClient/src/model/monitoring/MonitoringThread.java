@@ -44,7 +44,7 @@ public class MonitoringThread extends Thread {
     
     /**
      * Getter
-     * @return stopFlag field
+     * @return true if the application must stop, false otherwise.
      */
     public final boolean isStopFlag() {
         return stopFlag;
@@ -52,7 +52,7 @@ public class MonitoringThread extends Thread {
 
     /**
      * Setter
-     * @param stopFlag stopFlag field
+     * @param stopFlag true if the application must stop, false otherwise.
      */
     public void setStopFlag(boolean stopFlag) {
         this.stopFlag = stopFlag;
