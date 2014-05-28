@@ -59,6 +59,14 @@ public class Message implements Information {
         return relevant;
     }
     
+    /**
+     * Message constructor
+     * @param id id of the sender
+     * @param vect vector of the sender
+     * @param ctnt content of the message
+     * @param rlvnt
+     * @throws NullPointerException in case of content or vector empty
+     */
     public Message(String id, AppVector vect, Information ctnt, boolean rlvnt) throws NullPointerException {
         if(ctnt == null || vect == null)
             throw new NullPointerException();
@@ -80,9 +88,6 @@ public class Message implements Information {
     public AppVector getVector() { return vector.copy(); }
     public boolean getRelevance() { return relevant.get(); }
     
-    /**
-     * save each property of each contained object
-     */
     @Override
     public void saveProperties() {
         _idSender = idSender.get();
@@ -93,9 +98,6 @@ public class Message implements Information {
         vector.saveProperties();
     }
 
-    /**
-     * restore each property of each contained object
-     */
     @Override
     public void restoreProperties() {
         idSender = new SimpleStringProperty(_idSender);
@@ -106,36 +108,19 @@ public class Message implements Information {
         vector.restoreProperties();
     }
 
-    /**
-     * Compares two messages field by field
-     * @param obj object to be compared with
-     * @return true if the two objects have equals fields
-     */
     @Override
     public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
+        if(obj == this)
+            return true;
+        boolean res = (obj != null);
+        res &= (getClass() == obj.getClass());
         final Message other = (Message) obj;
-        if (!Objects.equals(this.content, other.content)) {
-            return false;
-        }
-        if (this.idSender.equals(other.idSender)) {
-            return false;
-        }
-        if (!this.date.equals(other.date)) {
-            return false;
-        }
-        if (this.relevant != other.relevant) {
-            return false;
-        }
-        if (!Objects.equals(this.vector, other.vector)) {
-            return false;
-        }
-        return true;
+        res &= Objects.equals(this.content, other.content);
+        res &= this.idSender.equals(other.idSender);
+        res &= this.date.equals(other.date);
+        res &= (this.relevant == other.relevant);
+        res &= Objects.equals(this.vector, other.vector);
+        return res;
     }
 
     @Override

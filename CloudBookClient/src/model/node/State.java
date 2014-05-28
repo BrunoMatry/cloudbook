@@ -82,11 +82,6 @@ public class State implements Information {
         return hash;
     }
 
-    /**
-     * equals
-     * @param obj object to be compared with
-     * @return true if the two objects have equals fields
-     */
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
@@ -109,6 +104,5 @@ public class State implements Information {
     @Override
     public String toString() {
         return "State{" + "cloud=" + cloud.get() + ", from=" + from.get() + ", to=" + to.get() + ", current=" + current.get() + '}';
-    }
-    
+    }   
 }
